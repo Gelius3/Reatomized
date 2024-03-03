@@ -78,7 +78,7 @@ ItemHandlers::UseFromBag.add(:WHITEFLUTE,proc{|item|
 ItemHandlers::UseFromBag.add(:HONEY,proc{|item|  next 4  })
 
 ItemHandlers::UseFromBag.add(:HONEYATTRACTOR,proc{|item|
-   #Kernel.pbMessage(_INTL("{1} used the {2}!",$Trainer.name,PBItems.getName(item)))
+   Kernel.pbMessage(_INTL("{1} used the {2}!",$Trainer.name,PBItems.getName(item)))
    pbSweetScent
 }) 
 
@@ -3424,7 +3424,7 @@ ItemHandlers::UseInField.add(:HONEY,proc{|item|
 
 ItemHandlers::UseInField.add(:HONEYATTRACTOR,proc{|item|  
    Kernel.pbMessage(_INTL("{1} used the {2}!",$Trainer.name,PBItems.getName(item)))
-   #pbSweetScent
+   pbSweetScent
 })
 
 ItemHandlers::UseInField.add(:ESCAPEROPE,lambda{|item|
