@@ -1634,6 +1634,53 @@ class PokeBattle_Battler
       end
     end
     # Silvally / Arceus
+
+    #! this branch is for Galarian Lilligant
+    if ((self.ability == PBAbilities::TRAITINHERITANCE && self.traiting == PBAbilities::MULTITYPE))
+      case self.item
+        when PBItems::ATOMICPLATE
+          self.type1=self.type2=(PBTypes::NUCLEAR)
+          #self.type2=(PBTypes::NUCLEAR)
+        when PBItems::FLAMEPLATE
+          self.type1=self.type2=(PBTypes::FIRE)
+        when PBItems::SPLASHPLATE
+          self.type1=self.type2=(PBTypes::WATER)
+        when PBItems::ZAPPLATE
+          self.type1=self.type2=(PBTypes::ELECTRIC)
+        when PBItems::MEADOWPLATE
+          self.type1=self.type2=(PBTypes::GRASS)
+        when PBItems::ICICLEPLATE
+          self.type1=self.type2=(PBTypes::ICE)
+        when PBItems::FISTPLATE
+          self.type1=self.type2=(PBTypes::FIGHTING)
+        when PBItems::TOXICPLATE
+          self.type1=self.type2=(PBTypes::POISON)
+        when PBItems::EARTHPLATE
+          self.type1=self.type2=(PBTypes::GROUND)
+        when PBItems::SKYPLATE
+          self.type1=self.type2=(PBTypes::FLYING)
+        when PBItems::MINDPLATE
+          self.type1=self.type2=(PBTypes::PSYCHIC)
+        when PBItems::INSECTPLATE
+          self.type1=self.type2=(PBTypes::BUG)
+        when PBItems::STONEPLATE
+          self.type1=self.type2=(PBTypes::ROCK)
+        when PBItems::SPOOKYPLATE
+          self.type1=self.type2=(PBTypes::GHOST)
+        when PBItems::DRACOPLATE
+          self.type1=self.type2=(PBTypes::DRAGON)
+        when PBItems::DREADPLATE
+          self.type1=self.type2=(PBTypes::DARK)
+        when PBItems::IRONPLATE
+          self.type1=self.type2=(PBTypes::STEEL)
+        when PBItems::PIXIEPLATE
+          self.type1=self.type2=(PBTypes::FAIRY)
+        when PBItems::COSMICPLATE
+          self.type1=self.type2=(PBTypes::COSMIC)
+      end
+    end
+    #! this branch is for Galarian Lilligant
+
     if ((self.ability == PBAbilities::RKSSYSTEM && self.species == PBSpecies::SILVALLY) ||
       (self.ability == PBAbilities::MULTITYPE && self.species == PBSpecies::ARCEUS)) && !self.isFainted?
       oldform = self.form
