@@ -1624,7 +1624,7 @@ class PokemonScreen
               # Break
               when -1
                 break
-              # 
+              # Set EVs
 					when 0
             cmd2=0
               loop do
