@@ -1641,39 +1641,39 @@ class PokeBattle_Battler
         when PBItems::ATOMICPLATE
           self.type1=self.type2=(PBTypes::NUCLEAR)
           #self.type2=(PBTypes::NUCLEAR)
-        when PBItems::FLAMEPLATE
+        when PBItems::FLAMEPLATE || PBItems::FIRIUMZ2
           self.type1=self.type2=(PBTypes::FIRE)
-        when PBItems::SPLASHPLATE
+        when PBItems::SPLASHPLATE || PBItems::WATERIUMZ2
           self.type1=self.type2=(PBTypes::WATER)
-        when PBItems::ZAPPLATE
+        when PBItems::ZAPPLATE || PBItems::ELECTRIUMZ2
           self.type1=self.type2=(PBTypes::ELECTRIC)
-        when PBItems::MEADOWPLATE
+        when PBItems::MEADOWPLATE || PBItems::GRASSIUMZ2
           self.type1=self.type2=(PBTypes::GRASS)
-        when PBItems::ICICLEPLATE
+        when PBItems::ICICLEPLATE || PBItems::ICIUMZ2
           self.type1=self.type2=(PBTypes::ICE)
-        when PBItems::FISTPLATE
+        when PBItems::FISTPLATE || PBItems::FIGHTINIUMZ2
           self.type1=self.type2=(PBTypes::FIGHTING)
-        when PBItems::TOXICPLATE
+        when PBItems::TOXICPLATE || PBItems::POISONIUMZ2
           self.type1=self.type2=(PBTypes::POISON)
-        when PBItems::EARTHPLATE
+        when PBItems::EARTHPLATE || PBItems::GROUNDIUMZ2
           self.type1=self.type2=(PBTypes::GROUND)
-        when PBItems::SKYPLATE
+        when PBItems::SKYPLATE || PBItems::FLYINIUMZ2
           self.type1=self.type2=(PBTypes::FLYING)
-        when PBItems::MINDPLATE
+        when PBItems::MINDPLATE || PBItems::PSYCHIUMZ2
           self.type1=self.type2=(PBTypes::PSYCHIC)
-        when PBItems::INSECTPLATE
+        when PBItems::INSECTPLATE || PBItems::BUGINIUMZ2
           self.type1=self.type2=(PBTypes::BUG)
-        when PBItems::STONEPLATE
+        when PBItems::STONEPLATE || PBItems::ROCKIUMZ2
           self.type1=self.type2=(PBTypes::ROCK)
-        when PBItems::SPOOKYPLATE
+        when PBItems::SPOOKYPLATE || PBItems::GHOSTIUMZ2
           self.type1=self.type2=(PBTypes::GHOST)
-        when PBItems::DRACOPLATE
+        when PBItems::DRACOPLATE || PBItems::DRAGONIUMZ2
           self.type1=self.type2=(PBTypes::DRAGON)
-        when PBItems::DREADPLATE
+        when PBItems::DREADPLATE || PBItems::DARKINIUMZ2
           self.type1=self.type2=(PBTypes::DARK)
-        when PBItems::IRONPLATE
+        when PBItems::IRONPLATE || PBItems::STEELIUMZ2
           self.type1=self.type2=(PBTypes::STEEL)
-        when PBItems::PIXIEPLATE
+        when PBItems::PIXIEPLATE || PBItems::FAIRIUMZ2
           self.type1=self.type2=(PBTypes::FAIRY)
         when PBItems::COSMICPLATE
           self.type1=self.type2=(PBTypes::COSMIC)
