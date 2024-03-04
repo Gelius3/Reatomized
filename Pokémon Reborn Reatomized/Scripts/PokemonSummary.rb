@@ -961,10 +961,17 @@ class PokemonSummaryScene
         elsif @page==2 || @page==3
           abilityname = PBAbilities.getName(@pokemon.ability)
           abilitydesc = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.ability)
+          abilitynametrait = nil
+          abilitydesctrait = nil
     
-          if pokemon.traiting == PBAbilities::TRAITINHERITANCE
-            abilityname=PBAbilities.getName(@pokemon.traiting)
-            abilitydesc=pbGetMessage(MessageTypes::AbilityDescs, @pokemon.traiting)
+          if abilityname == "Trait Inheritance"
+            if (@pokemon.traiting) != 0 
+            abilitynametrait = "\\c[1]Traited!\n\\c[0]" + PBAbilities.getName(@pokemon.traiting)
+            abilitydesctrait = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.traiting)
+            end
+            
+            abilityname = abilitynametrait
+            abilitydesc = abilitydesctrait
           end
 
           Kernel.pbMessage(_INTL("#{abilityname}: #{abilitydesc}"))
