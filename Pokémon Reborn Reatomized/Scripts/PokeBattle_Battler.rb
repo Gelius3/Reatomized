@@ -2222,6 +2222,7 @@ class PokeBattle_Battler
         when PBAbilities::TABLETSOFRUIN then @battle.pbDisplay(_INTL("{1}'s Tablets of Ruin lowers all others' Attack!",pbThis))
         when PBAbilities::SWORDOFRUIN then @battle.pbDisplay(_INTL("{1}'s Sword of Ruin lowers all others' Defense!",pbThis))
         when PBAbilities::COSMICPRESENCE then @battle.pbDisplay(_INTL("{1}'s Cosmic Presence lowers all others' Defense and Special Defense!",pbThis))
+        when PBAbilities::PERVASIVENESS then @battle.pbDisplay(_INTL("{1}'s Pervasiveness lowers all others' Evasion!",pbThis))
         when PBAbilities::UNNERVE, PBAbilities::ASONE
           if @battle.pbIsOpposing?(@index)
             @battle.pbDisplay(_INTL("Your team is too nervous to eat berries!"))

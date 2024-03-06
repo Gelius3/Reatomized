@@ -1126,16 +1126,20 @@ DNAFUSERS=4011
 ETERNAITE=4012
 DEVGEM=4013
 HONEYATTRACTOR=4014
+MARKCHARM=4015
+EXPCHARM=4016
+GLIMMERINGCHARM=4017
+INFINITYREPEL=4018
 
 def PBItems.getName(id)
 return pbGetMessage(MessageTypes::Items,id)
 end
 
 def PBItems.getCount
-return 4015
+return 4019
 end
 
 def PBItems.maxValue
-return 4014
+return 4018
 end
 end

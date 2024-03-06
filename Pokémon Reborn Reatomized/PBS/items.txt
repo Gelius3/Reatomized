@@ -1124,4 +1124,8 @@
 4011,DNAFUSERS,DNA Fusers,8,0,"A fuser that ???. The process is not known.",5,0,6,
 4012,ETERNAITE,Eternaite,6,999,"Have Eternatus hold it, and this stone will enable it to Dynamax during battle.",0,0,0
 4013,DEVGEM,Dev Gem,1,1200,"MULTICORE WAS HERE.",0,0,0
-4014,HONEYATTRACTOR,Honey Attractor,8,0,"A device capable of attracting wild Pokémon by simulating honey's aroma.",2,0,6
+4014,HONEYATTRACTOR,Honey Attractor,8,0,"A device capable of attracting wild Pokémon by simulating honey's aroma.",2,0,6,
+4015,MARKCHARM,Mark Charm,8,0,"A mysterious and unique charm that increases the chance of finding a Pokémon with a mark.",0,0,6,
+4016,EXPCHARM,Exp. Charm,8,0,"A charm that increases the Exp. Points that Pokémon can get. A machine-like object is inside the charm.",0,0,6,
+4017,GLIMMERINGCHARM,Glimmering Charm,8,0,"Having one of these mysterious glimmering charms increases the number of Tera Shards you receive from Tera Raid Battles.",0,0,6,
+4018,INFINITYREPEL,Infinity Repel,8,0,"A device that simulates the effects of a Repel permanently.",2,0,6,
