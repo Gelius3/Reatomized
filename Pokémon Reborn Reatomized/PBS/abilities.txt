@@ -399,7 +399,7 @@
 454,RUNUP,Run Up,"The Pokémon's 'tackling' moves and Priority moves are boosted."
 455,SEQUENCE,Sequence,"Raises the Pokémon's Atk and SpAtk depending on the amount of Electric-type Pokémon in their party."
 456,SHACKLE,Shackle,"Lowers the Opponent's Speed on contact."
-457,SHADOWDASH,Shadow Dash,"The Pokémon's Speed is raised if the opponent faints or is switched out."
+457,SHADOWDASH,Shadow Dash,"When entering battle, the next move will hit first."
 458,SHARE,Share,"The Pokémon shares the benefits of the abilities of its allies."
 459,SHIELD,Shield,"The Pokémon may shield it's allies from attacks."
 460,SPIRIT,Spirit,"The Pokémon makes a last stand once it reaches low HP, healing back 50% of the HP and raising Atk and SpAtk by 1 stage each, but only once in battle."
