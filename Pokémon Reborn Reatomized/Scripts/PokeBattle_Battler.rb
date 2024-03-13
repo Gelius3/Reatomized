@@ -2974,7 +2974,7 @@ class PokeBattle_Battler
           end
 	  if target.ability == PBAbilities::CALMING && @battle.pbRandom(10)<3 && user.pbCanSleep?(false)
             user.pbSleep(target)
-            @battle.pbDisplay(_INTL("{1}'s {2} made {3} sleep!",target.pbThis,
+            @battle.pbDisplay(_INTL("{1}'s {2} made {3} fall sleep!",target.pbThis,
               PBAbilities.getName(target.ability),user.pbThis(true)))
           end
           if target.ability == PBAbilities::IRONBARBS && !user.isFainted? && !user.hasWorkingAbility(:MAGICGUARD)
