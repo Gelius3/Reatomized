@@ -2972,6 +2972,11 @@ class PokeBattle_Battler
             @battle.pbDisplay(_INTL("{1}'s {2} burned {3}!",target.pbThis,
               PBAbilities.getName(target.ability),user.pbThis(true)))
           end
+	  if target.ability == PBAbilities::CALMING && @battle.pbRandom(10)<3 && user.pbCanSleep?(false)
+            user.pbSleep(target)
+            @battle.pbDisplay(_INTL("{1}'s {2} made {3} sleep!",target.pbThis,
+              PBAbilities.getName(target.ability),user.pbThis(true)))
+          end
           if target.ability == PBAbilities::IRONBARBS && !user.isFainted? && !user.hasWorkingAbility(:MAGICGUARD)
             @battle.scene.pbDamageAnimation(user,0)
             user.pbReduceHP((user.totalhp/8.0).floor)
