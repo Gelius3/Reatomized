@@ -3033,6 +3033,17 @@ class PokeBattle_Battler
               @battle.pbDisplay(_INTL("{1}'s {2} lowered {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
             end
           end
+	  if target.ability == PBAbilities::SHACKLE
+            if user.hasWorkingAbility(:CONTRARY) || user.hasWorkingAbility(:ALOLANTECHNIQUESB)
+              user.pbReduceStat(PBStats::SPEED,1,statmessage:false)
+              @battle.pbDisplay(_INTL("{1}'s {2} boosted {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
+            elsif user.hasWorkingAbility(:WHITESMOKE) || user.hasWorkingAbility(:CLEARBODY) || user.hasWorkingAbility(:FULLMETALBODY) || user.hasWorkingItem(:CLEARAMULET)
+              @battle.pbDisplay(_INTL("{1}'s {2} prevents stat loss!",user.pbThis,PBAbilities.getName(user.ability)))
+            else
+              user.pbReduceStat(PBStats::SPEED,1,statmessage:false)
+              @battle.pbDisplay(_INTL("{1}'s {2} lowered {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
+            end
+          end
           eschance = 3
           eschance = 6 if @battle.FE == PBFields::WASTELAND
           eschance.to_i
