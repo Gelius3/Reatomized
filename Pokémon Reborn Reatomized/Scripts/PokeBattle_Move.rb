@@ -2405,6 +2405,7 @@ class PokeBattle_Move
     pri = @priority
     pri = 0 if @zmove && @basedamage > 0
     pri += 4 if attacker.ability == PBAbilities::QUICKCHARGE && attacker.turncount==1 
+    pri += 4 if attacker.ability == PBAbilities::SHADOWDASH && attacker.turncount==1
     pri += 1 if @battle.FE == PBFields::CHESSB && attacker.pokemon && attacker.pokemon.piece == :KING
     pri += 1 if attacker.ability == PBAbilities::PRANKSTER && @basedamage==0 && attacker.effects[PBEffects::TwoTurnAttack] == 0 # Is status move
     pri += 1 if attacker.ability == PBAbilities::GALEWINGS && @type==PBTypes::FLYING && ((attacker.hp >= (attacker.totalhp*0.75).floor) || ((@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM) && @battle.weather == PBWeather::STRONGWINDS))
