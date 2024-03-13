@@ -1676,7 +1676,13 @@ class PokeBattle_Move
     if (attacker.pbPartner.ability == PBAbilities::STEELYSPIRIT || attacker.ability == PBAbilities::STEELYSPIRIT) && type == PBTypes::STEEL
       atkmult=(atkmult*1.5).round
     end
-
+    if (attacker.pbPartner.ability == PBAbilities::AQUABOOST || attacker.ability == PBAbilities::AQUABOOST) && type == PBTypes::WATER
+      atkmult=(atkmult*1.3).round
+    end
+    if (attacker.pbPartner.ability == PBAbilities::FLAMEBOOST || attacker.ability == PBAbilities::FLAMEBOOST) && type == PBTypes::FIRE
+      atkmult=(atkmult*1.3).round
+    end
+	  
     atkmult=(atkmult*1.5).round if attacker.effects[PBEffects::FlashFire] && type == PBTypes::FIRE
 
     if attitemworks
