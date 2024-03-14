@@ -527,7 +527,7 @@ class PokeBattle_Move
       end
       return 0
     end
-    if !(opponent.moldbroken) && (((opponent.ability == PBAbilities::DRYSKIN || opponent.ability == PBAbilities::WATERABSORB) &&  type == PBTypes::WATER) || (opponent.ability == PBAbilities::VOLTABSORB && type == PBTypes::ELECTRIC) || (opponent.ability == PBAbilities::EARTHEATER && type == PBTypes::GROUND) || (opponent.ability == PBAbilities::HERBIVORE && type == PBTypes::GRASS) || (opponent.ability == PBAbilities::WARMBLANKET && type == PBTypes::FIRE) || (opponent.ability == PBAbilities::HOTBLOODED && (type == PBTypes::FIRE || type == PBTypes::ROCK || type == PBTypes::GROUND))) 
+    if !(opponent.moldbroken) && (((opponent.ability == PBAbilities::DRYSKIN || opponent.ability == PBAbilities::WATERABSORB) &&  type == PBTypes::WATER) || (opponent.ability == PBAbilities::VOLTABSORB && type == PBTypes::ELECTRIC) || (opponent.ability == PBAbilities::EARTHEATER && type == PBTypes::GROUND) || (opponent.ability == PBAbilities::HERBIVORE && type == PBTypes::GRASS) || (opponent.ability == PBAbilities::WARMBLANKET && type == PBTypes::FIRE) || (opponent.ability == PBAbilities::HOTBLOODED && (type == PBTypes::FIRE || type == PBTypes::ROCK || type == PBTypes::GROUND)) || (opponent.ability == PBAbilities::COLDBLOODED && (type == PBTypes::ICE || type == PBTypes::WATER))) 
       if opponent.effects[PBEffects::HealBlock]==0
         if opponent.pbRecoverHP((opponent.totalhp/4.0).floor,true)>0
           @battle.pbDisplay(_INTL("{1}'s {2} restored its HP!",
