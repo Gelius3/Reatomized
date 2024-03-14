@@ -1954,7 +1954,7 @@ PBSpecies::KINGAMBIT => {
 	"Female" => {
 		:BaseStats => [100,135,50,120,60,85],
 		:Ability => [PBAbilities::KEENEYE,PBAbilities::INFILTRATOR,PBAbilities::COMPETITIVE,
-			PBAbilities::SHARPNESS]
+			PBAbilities::SHARPNESS,PBAbilities::SHACKLE]
 	}
 },
 
