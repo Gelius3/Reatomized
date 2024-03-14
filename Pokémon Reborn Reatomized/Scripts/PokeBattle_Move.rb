@@ -929,6 +929,9 @@ class PokeBattle_Move
     if opponent.ability == PBAbilities::SNOWCLOAK && (@battle.pbWeather==PBWeather::HAIL || @battle.FE == PBFields::ICYF || @battle.FE == PBFields::SNOWYM) && !(opponent.moldbroken)
       evasion*=1.2
     end
+    if opponent.ability == PBAbilities::LEAFSHROUD && (@battle.FE == PBFields::GRASSYT || @battle.FE == PBFields::FORESTF || @battle.FE == PBFields::FLOWERGARDENF) && !(opponent.moldbroken)
+      evasion*=1.2
+    end
     if opponent.hasWorkingItem(:BRIGHTPOWDER)
       evasion*=1.1
     end
