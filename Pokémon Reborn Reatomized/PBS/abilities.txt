@@ -409,4 +409,5 @@
 464,TENACITY,Tenacity,"May cause any attacker with contact moves to cringe the turn after."
 465,THRUST,Thrust,"The Pokémon may force the target to switch out if they are hit with a Contact move."
 466,VANGUARD,Vanguard,"This Pokémon's Moves deal more damage if they're the first Pokémon to move in the turn."
-467,WARMBLANKET,Warm Blanket."Heals when hit by a Fire-type Move."
+467,WARMBLANKET,Warm Blanket,"Heals when hit by a Fire-type Move."
+468,COLDBLOODED,Cold Blooded,"Heals when hit by a Water- or Ice-type Move."
