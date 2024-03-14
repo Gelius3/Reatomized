@@ -398,7 +398,7 @@ PBSpecies::DARMANITAN => {
 		:DexEntry => "Though it has a gentle disposition, it's also very strong. It will quickly freeze the snowball on its head before going for a headbutt.",
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::ICE,
-		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::ZENMODE],
+		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::ZENMODE],
 		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[4,PBMoves::TAUNT],[8,PBMoves::BITE],
 		[12,PBMoves::HEADBUTT],[16,PBMoves::AVALANCHE],[20,PBMoves::WORKUP],[24,PBMoves::ICEFANG],
 		[28,PBMoves::UPROAR],[32,PBMoves::BELLYDRUM],[36,PBMoves::ICEPUNCH],[40,PBMoves::THRASH],
