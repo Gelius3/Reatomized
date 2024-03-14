@@ -3749,7 +3749,7 @@ PBSpecies::SAMUROTT => {
 	"Hisui" => {
 		:DexEntry => "Hard of heart and deft of blade, this rare form of Samurott is a product of the Pokémon's evolution in the region of Hisui. Its turbulent blows crash into foes like ceaseless pounding waves.",
 		:Type2 => PBTypes::DARK,
-		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::SHARPNESS],
+		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::AQUABOOST,PBAbilities::SHARPNESS],
 		:BaseStats => [90,108,80,85,100,65],
 		:Movelist => [[0,PBMoves::CEASELESSEDGE],[1,PBMoves::PSYCHOCUT],[1,PBMoves::POISONJAB],
 			[1,PBMoves::SACREDSWORD],[1,PBMoves::AQUACUTTER],[1,PBMoves::CEASELESSEDGE],
