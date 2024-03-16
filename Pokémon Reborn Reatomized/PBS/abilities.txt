@@ -411,3 +411,4 @@
 466,VANGUARD,Vanguard,"This Pokémon's Moves deal more damage if they're the first Pokémon to move in the turn."
 467,WARMBLANKET,Warm Blanket,"Heals when hit by a Fire-type Move."
 468,COLDBLOODED,Cold Blooded,"Heals when hit by a Water- or Ice-type Move."
+469,STRONGHEEL,Strong Heel,"Kicking moves used by it are greatly powered up."
