@@ -3138,7 +3138,7 @@ class PokeBattle_Battler
         user.pbReduceHP(innards)
         @battle.pbDisplay(_INTL("{2}'s innards hurt {1}!",user.pbThis,target.pbThis))
       end
-      if @battle.FE == PBFields::GLITCHF # Glitch Field Hyper Beam Reset
+      if @battle.FE == PBFields::GLITCHF || (user.ability == PBAbilities::CELEBRATION) # Glitch Field/Celebration Hyper Beam Reset
         if user.hp>0 && target.hp<=0
           user.effects[PBEffects::HyperBeam]=0
         end
