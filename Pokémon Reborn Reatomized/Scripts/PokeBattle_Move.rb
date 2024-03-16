@@ -965,6 +965,7 @@ class PokeBattle_Move
     c+=attacker.effects[PBEffects::FocusEnergy]
     c+=1 if hasHighCriticalRate?
     c+=1 if attacker.ability == PBAbilities::SUPERLUCK
+    c+=1 if attacker.pbPartner.hasWorkingAbility(:MOODMAKER)
     c+=2 if attacker.ability == PBAbilities::TANGLEDFEET && attacker.effects[PBEffects::Confusion] > 0
     c+=2 if attacker.hasWorkingItem(:STICK) && (attacker.pokemon.species == PBSpecies::FARFETCHD || attacker.pokemon.species == PBSpecies::SIRFETCHD)
     c+=2 if attacker.hasWorkingItem(:LONGCLUB) && (attacker.pokemon.species == PBSpecies::TERATHWACK)
