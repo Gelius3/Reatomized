@@ -3767,7 +3767,7 @@ class PokeBattle_Battler
     itemname=PBItems.getName(self.item)
     #non-berries go first!
     hpcure=false if @effects[PBEffects::HealBlock]!=0
-    if hpcure && (self.item == PBItems::LEFTOVERS) || (self.item == PBItems::BLACKSLUDGE && pbHasType?(:POISON)) || (self.ability == PBAbilities::LIFEFORCE)) && self.hp!=self.totalhp
+    if hpcure && (self.item == PBItems::LEFTOVERS || (self.item == PBItems::BLACKSLUDGE && pbHasType?(:POISON)) || (self.ability == PBAbilities::LIFEFORCE)) && self.hp!=self.totalhp
       pbRecoverHP((self.totalhp/16.0).floor,true)
       @battle.pbDisplay(_INTL("{1}'s {2} restored its HP a little!",pbThis,itemname))
       return
