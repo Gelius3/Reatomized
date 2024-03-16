@@ -9674,7 +9674,7 @@ PBSpecies::LILLIGANT => {
 		:DexEntry => "I suspect that its well-developed legs are the result of a life spent on mountains covered in deep snow. The scent it exudes from its flower crown heartens those in proximity.",
 		:Type2 => PBTypes::FIGHTING,
 		:BaseStats => [70,105,75,105,50,75],
-		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::LEAFGUARD,PBAbilities::HUSTLE],
+		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::LEAFGUARD,PBAbilities::HUSTLE,PBAbilities::LIFEFORCE],
 		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::FOCUSENERGY],[1,PBMoves::TEETERDANCE],
 			[1,PBMoves::ROCKSMASH],[1,PBMoves::ABSORB],[4,PBMoves::GROWTH],[8,PBMoves::LEAFAGE],
 			[10,PBMoves::LEECHSEED],[13,PBMoves::STUNSPORE],[15,PBMoves::POISONPOWDER],
