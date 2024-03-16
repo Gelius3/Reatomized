@@ -2464,6 +2464,14 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("{1}'s {2} boosted its Attack!", pbThis,PBAbilities.getName(ability)))
       end
     end
+    # Sprint
+    if self.ability == PBAbilities::SPRINT && onactive
+      if !pbTooHigh?(PBStats::SPEED)
+        pbIncreaseStatBasic(PBStats::SPEED,1)
+        @battle.pbCommonAnimation("StatUp",self)
+        @battle.pbDisplay(_INTL("{1}'s {2} raised its Speed!", pbThis,PBAbilities.getName(ability)))
+      end
+    end
     # Embody Aspect
     if self.ability == PBAbilities::EMBODYASPECT && onactive
       if self.item == PBItems::TEALMASK && !pbTooHigh?(PBStats::SPEED)
