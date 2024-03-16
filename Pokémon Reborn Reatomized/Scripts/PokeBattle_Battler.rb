@@ -168,6 +168,8 @@ class PokeBattle_Battler
     when (PBItems::MEWNIUMZ2)
       if pkmn.pokemon.species==PBSpecies::MEW
          canuse=pkmn.moves.any?{|stuffthings| stuffthings.id == PBMoves::PSYCHIC}
+      if pkmn.pokemon.species==PBSpecies::MEWTWO
+         canuse=pkmn.moves.any?{|stuffthings| stuffthings.id == PBMoves::PSYCHIC}
       end
     when (PBItems::TAPUNIUMZ2)
       if pkmn.pokemon.species==PBSpecies::TAPUKOKO || pkmn.pokemon.species==PBSpecies::TAPULELE || pkmn.pokemon.species==PBSpecies::TAPUFINI || pkmn.pokemon.species==PBSpecies::TAPUBULU
