@@ -1043,6 +1043,8 @@ class PokeBattle_Move
       damagemult=(damagemult*1.3).round
     elsif (attacker.ability == PBAbilities::IRONFIST || attacker.item == PBItems::PUNCHINGGLOVE) && isPunchingMove?
       damagemult=(damagemult*1.4).round
+    elsif attacker.ability == PBAbilities::STRONGHEEL
+      damagemult=(damagemult*1.4).round if (PBStuff::KICKMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::ENCHANTEDCANNON 
       damagemult=(damagemult*1.4) if (PBStuff::BEAMMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::SHARPNESS
