@@ -3797,7 +3797,7 @@ PBSpecies::DECIDUEYE => {
 	"Hisui" => {
 		:DexEntry => "The air stored inside the rachises of Decidueye's feathers insulates the Pokémon against Hisui's extreme cold. This is firm proof that evolution can be influenced by environment.",
 		:Type2 => PBTypes::FIGHTING,
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::LONGREACH,PBAbilities::SCRAPPY],
+		:Ability => [PBAbilities::OVERGROW,PBAbilities::LONGREACH,PBAbilities::SCRAPPY,PBAbilities::STRONGHEEL],
 		:BaseStats => [88,112,80,60,95,95],
 		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::PSYCHOCUT],[1,PBMoves::SPIKES],[1,PBMoves::BULKUP],
 			[1,PBMoves::FOCUSENERGY],[1,PBMoves::ROCKSMASH],[1,PBMoves::TACKLE],[1,PBMoves::GROWL],
