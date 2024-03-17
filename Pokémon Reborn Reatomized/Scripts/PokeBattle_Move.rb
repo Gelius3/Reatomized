@@ -938,7 +938,7 @@ class PokeBattle_Move
     if opponent.hasWorkingItem(:LAXINCENSE)
       evasion*=1.1
     end
-    if opponent.ability == PBAbilities::INSTINCT
+    if (opponent.ability == PBAbilities::INSTINCT || opponent.ability == PBAbilities::OMNIPOTENT)
       evasion*=1.2
     end
     # UPDATE 11/17/2013
