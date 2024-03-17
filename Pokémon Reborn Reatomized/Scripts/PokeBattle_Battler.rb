@@ -4528,7 +4528,7 @@ class PokeBattle_Battler
       if target.effects[PBEffects::SkyDrop]
         invulmiss=true unless thismove.function==0xCE || PBStuff::AIRHITMOVES.include?(thismove.id) || (thismove.function==0x10D && !user.pbHasType?(:GHOST))
       end
-      if (user.hasWorkingAbility(:NOGUARD) || user.hasWorkingAbility(:MOUNTAINEER) || user.hasWorkingAbility(:OMNIPOTENT)) || target.hasWorkingAbility(:NOGUARD) || (user.hasWorkingAbility(:FAIRYAURA) && @battle.FE==PBFields::FAIRYTALEF) || user.hasWorkingAbility(:ALOLANTECHNIQUESA) || target.hasWorkingAbility(:ALOLANTECHNIQUESA)
+      if user.hasWorkingAbility(:NOGUARD) || user.hasWorkingAbility(:MOUNTAINEER) || user.hasWorkingAbility(:OMNIPOTENT) || target.hasWorkingAbility(:NOGUARD) || (user.hasWorkingAbility(:FAIRYAURA) && @battle.FE==PBFields::FAIRYTALEF) || user.hasWorkingAbility(:ALOLANTECHNIQUESA) || target.hasWorkingAbility(:ALOLANTECHNIQUESA)
         invulmiss=false
       end
       if invulmiss
