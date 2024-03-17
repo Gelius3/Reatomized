@@ -2736,7 +2736,7 @@ PBSpecies::RAICHU => {
 		:BaseStats => [60,85,50,120,95,85],
 		:Height => 7,
 		:Weight => 210,
-		:Ability => [PBAbilities::SURGESURFER],
+		:Ability => [PBAbilities::SURGESURFER,PBAbilities::SURGESURFER,PBAbilities::SURGESURFER,PBAbilities::INSTINCT],
 		:Movelist => [[0,PBMoves::PSYCHIC],[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],
 			[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],[1,PBMoves::SPEEDSWAP],[1,PBMoves::FAKEOUT],
 			[1,PBMoves::ENCORE],[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],
