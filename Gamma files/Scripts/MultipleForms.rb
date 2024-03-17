@@ -224,27 +224,27 @@ PBSpecies::ROTOM => {
 
 	"Heat" => {
 		:Type2 => PBTypes::FIRE,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::SOLARPOWER],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::SOLARPOWER,PBAbilities::MOTORDRIVE],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Wash" => {
 		:Type2 => PBTypes::WATER,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::WATERABSORB],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::WATERABSORB,PBAbilities::MOTORDRIVE],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Frost" => {
 		:Type2 => PBTypes::ICE,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::SNOWWARNING],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::SNOWWARNING,PBAbilities::MOTORDRIVE],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Fan" => {
 		:Type2 => PBTypes::FLYING,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::WINDPOWER],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::WINDPOWER,PBAbilities::MOTORDRIVE],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Mow" => {
 		:Type2 => PBTypes::GRASS,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::GRASSYSURGE],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::GRASSYSURGE,PBAbilities::MOTORDRIVE],
 		:BaseStats => [50,65,107,86,105,107]
 	}
 },
