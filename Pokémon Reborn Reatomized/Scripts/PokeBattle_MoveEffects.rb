@@ -7432,6 +7432,10 @@ end
 # Scatters coins that the player picks up after winning the battle. (Pay Day)
 ################################################################################
 class PokeBattle_Move_109 < PokeBattle_Move
+  def pbBaseDamage(basedmg,attacker,opponent)
+      return 2*basedmg if attacker.ability==PBAbilities::BONANZA
+      return basedmg
+  end
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     if @basedamage > 0
       ret = super(attacker,opponent,hitnum,alltargets,showanimation)
@@ -7451,6 +7455,9 @@ class PokeBattle_Move_109 < PokeBattle_Move
         @battle.pbDisplay(_INTL("Treasure scattered everywhere!"))
       else
         @battle.pbDisplay(_INTL("Coins were scattered everywhere!"))
+      end
+      if attacker.ability== PBAbilities::BONANZA
+        @battle.extramoney*=1.5
       end
     end
     return ret
