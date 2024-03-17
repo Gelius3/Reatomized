@@ -4565,6 +4565,11 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} makes Ground moves miss with Levitate!",target.pbThis))
           return false
         end
+      if (type == PBTypes::ROCK) && !target.hasWorkingItem(:RINGTARGET)
+        if target.hasWorkingAbility(:MOUNTAINEER) && !(target.moldbroken)
+          @battle.pbDisplay(_INTL("{1} makes Rock moves miss with Mountaineer!",target.pbThis))
+          return false
+        end
         if target.hasWorkingItem(:AIRBALLOON)
           @battle.pbDisplay(_INTL("{1}'s Air Balloon makes Ground moves miss!",target.pbThis))
           return false
