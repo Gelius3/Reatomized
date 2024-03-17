@@ -394,13 +394,15 @@ class PokeBattle_Move
     mod1, mod2 = mods
       
     if !opponent.moldbroken
-      if (atype == PBTypes::FIRE && (opponent.ability == PBAbilities::FLASHFIRE || opponent.ability == PBAbilities::WELLBAKEDBODY)) || 
-        (atype == PBTypes::GRASS && opponent.ability == PBAbilities::SAPSIPPER) ||
-        (atype == PBTypes::GROUND && opponent.ability == PBAbilities::EARTHEATER) ||
+      if (atype == PBTypes::FIRE && (opponent.ability == PBAbilities::FLASHFIRE || opponent.ability == PBAbilities::WELLBAKEDBODY || opponent.ability == PBAbilities::WARMBLANKET || opponent.ability == PBAbilities::HOTBLOODED)) || 
+        (atype == PBTypes::GRASS && (opponent.ability == PBAbilities::SAPSIPPER || oppontent.ability == PBAbilities::HERBIVORE)) ||
+        (atype == PBTypes::GROUND && (opponent.ability == PBAbilities::EARTHEATER || opponent.ability == PBAbilities::HOTBLOODED)) ||
         (atype == PBTypes::NUCLEAR && opponent.ability == PBAbilities::PLOTARMOR) ||
         (atype == PBTypes::COSMIC && opponent.ability == PBAbilities::PLOTARMOR) ||
-        (atype == PBTypes::WATER && (opponent.ability == PBAbilities::WATERABSORB || opponent.ability == PBAbilities::STORMDRAIN || opponent.ability == PBAbilities::DRYSKIN)) ||
+        (atype == PBTypes::WATER && (opponent.ability == PBAbilities::WATERABSORB || opponent.ability == PBAbilities::STORMDRAIN || opponent.ability == PBAbilities::DRYSKIN || opponent.ability == PBAbilities::COLDBLOODED)) ||
         (atype == PBTypes::ELECTRIC && (opponent.ability == PBAbilities::VOLTABSORB || opponent.ability == PBAbilities::LIGHTNINGROD || opponent.ability == PBAbilities::MOTORDRIVE)) ||
+	(atype == PBTypes::ICE && opponent.ability == PBAbilities::COLDBLOODED) ||
+	(atype == PBTypes::ROCK && (opponent.ability == PBAbilities::HOTBLOODED || opponent.ability == PBAbilities::MOUNTAINEER)) ||
         (atype == PBTypes::GROUND && opponent.ability == PBAbilities::LEVITATE && @battle.FE != PBFields::CAVE && @id != PBMoves::THOUSANDARROWS && opponent.isAirborne?) 
         mod1=0
       end
