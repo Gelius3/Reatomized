@@ -878,7 +878,7 @@ class PokeBattle_Move
     evastage=0 if opponent.effects[PBEffects::Foresight] || opponent.effects[PBEffects::MiracleEye] || @function==0xA9 || # Chip Away
                   (attacker.ability == PBAbilities::UNAWARE || opponent.ability == PBAbilities::MULTICORE) && !(opponent.moldbroken)
     evasion=(evastage>=0) ? (evastage+3)*100.0/3 : 300.0/(3-evastage)
-    if attacker.ability == PBAbilities::COMPOUNDEYES
+    if attacker.ability == (PBAbilities::COMPOUNDEYES || PBAbilities::BLACKHOLE)
       accuracy*=1.3
     end
     if attacker.hasWorkingItem(:MICLEBERRY)
