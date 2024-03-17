@@ -7790,7 +7790,7 @@ PBSpecies::MRMIME => {
 		:Type2 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,2,0,0],
 		:BaseStats => [50,65,65,100,90,90],
-		:Ability => [PBAbilities::VITALSPIRIT,PBAbilities::SCREENCLEANER,PBAbilities::ICEBODY],
+		:Ability => [PBAbilities::VITALSPIRIT,PBAbilities::SCREENCLEANER,PBAbilities::STRONGHEEL,PBAbilities::ICEBODY],
 		:Movelist => [[1,PBMoves::MISTYTERRAIN],[1,PBMoves::ICESHARD],[1,PBMoves::RAPIDSPIN],
 			[1,PBMoves::ALLYSWITCH],[1,PBMoves::DOUBLEKICK],[1,PBMoves::MIRRORCOAT],[1,PBMoves::TICKLE],
 			[1,PBMoves::CONFUSION],[1,PBMoves::BARRIER],[1,PBMoves::POUND],[4,PBMoves::COPYCAT],
