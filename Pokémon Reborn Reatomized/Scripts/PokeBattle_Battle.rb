@@ -1864,9 +1864,9 @@ class PokeBattle_Battle
       opp=opp1 if opp1.ability == PBAbilities::ARENATRAP
       opp=opp2 if opp2.ability == PBAbilities::ARENATRAP
     end
-    unless thispkmn.ability == PBAbilities::SHADOWTAG
-      opp=opp1 if opp1.ability == PBAbilities::SHADOWTAG
-      opp=opp2 if opp2.ability == PBAbilities::SHADOWTAG
+    unless thispkmn.ability == (PBAbilities::SHADOWTAG || PBAbilities::BLACKHOLE)
+      opp=opp1 if opp1.ability == (PBAbilities::SHADOWTAG || PBAbilities::BLACKHOLE)
+      opp=opp2 if opp2.ability == (PBAbilities::SHADOWTAG || PBAbilities::BLACKHOLE)
     end
     if opp
       abilityname=PBAbilities.getName(opp.ability)
