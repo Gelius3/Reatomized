@@ -368,7 +368,7 @@
 423,BONANZA,Bonanza,"Doubles the Power of Pay Day, and raises it's gains by half."
 424,CALMING,Calming,"May put an attacker to sleep if they make direct contact."
 425,CELEBRATION,Celebration,"Raises the Pokémon's Speed by one Stage after a K.O., skips Recharge if so."
-426,CLIMBER,Climber,"Boosts the Pokémon's movoes if the target's larger than it."
+426,CLIMBER,Climber,"Boosts the Pokémon's moves if the target's larger than it."
 427,CONQUEROR,Conqueror,"Boosts all of the Pokémon's stats after scoring a K.O., maxing out at +3."
 428,DAZE,Daze,"May put an attacker to sleep for a long time."
 429,DECOY,Decoy,"Redirects opponent's moves towards it."
