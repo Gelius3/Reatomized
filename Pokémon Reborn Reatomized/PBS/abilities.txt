@@ -389,7 +389,7 @@
 444,MEDIC,Medic,"The Pokémon heals it's ally's HP a little at the end of every turn."
 445,MELEE,Melee,"In the turmoil of battle, the Pokémon damages opponents adjacent to the target, but only with contact moves."
 446,MOODMAKER,Mood Maker,"Raises the ally's Crit Hit Ratio by 1 stage."
-447,MOUNTAINEER,Mountaineer,"The Pokémon can bypass Semi-Invulnerable states, and is immune to Stealth Rock."
+447,MOUNTAINEER,Mountaineer,"The Pokémon can bypass Semi-Invulnerable states, and is immune to Rock-type moves."
 448,NOMAD,Nomad,"Raises the Pokémon's Atk and SpAtk by 1 stage each if they're faster than the opponent."
 449,NURSE,Nurse,"May heal an ally's volatile status."
 450,OMNIPOTENT,Omnipotent,"Divine Forces grant this Pokémon multiple abilities, as well as ignoring the type chart."
