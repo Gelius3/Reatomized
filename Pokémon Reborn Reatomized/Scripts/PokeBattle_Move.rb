@@ -938,6 +938,9 @@ class PokeBattle_Move
     if opponent.hasWorkingItem(:LAXINCENSE)
       evasion*=1.1
     end
+    if opponent.ability == PBAbilities::INSTINCT
+      evasion*=1.2
+    end
     # UPDATE 11/17/2013
     # keen eye should now ignore evasion increases
     # since in the above nothing can lower evasion, this will work
