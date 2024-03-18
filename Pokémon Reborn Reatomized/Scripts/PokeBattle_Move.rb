@@ -370,6 +370,9 @@ class PokeBattle_Move
         mod=1 if (otype == PBTypes::STEEL)
         mod=0 if (otype == PBTypes::GHOST) && !opponent.effects[PBEffects::Foresight]
       end
+      if attacker.ability == PBAbilities::OMNIPOTENT
+	mod=2 if otype == PBTypes::NORMAL && PBTypes::FIGHTING && PBTypes::FLYING && PBTypes::POISON && PBTypes::GROUND && PBTypes::ROCK && PBTypes::BUG && PBTypes::GHOST && PBTypes::STEEL && PBTypes::QMARKS && PBTypes::FIRE && PBTypes::WATER && PBTypes::GRASS && PBTypes::ELECTRIC && PBTypes::PSYCHIC && PBTypes::ICE && PBTypes::DRAGON && PBTypes::DARK && PBTypes::FAIRY && PBTypes::NUCLEAR && PBTypes::COSMIC && PBTypes::IFE && PBTypes::EFW && PBTypes::WGF && PBTypes::SWG && PBTypes::GFW && PBTypes::GS && PBTypes::BS && PBTypes::PF && PBTypes::FG && PBTypes::GFS && PBTypes::PFD && PBTypes::NPG && PBTypes::STELLAR
+      end
 
       # Effect related type effectiveness changes
       if opponent.effects[PBEffects::Electrify]
