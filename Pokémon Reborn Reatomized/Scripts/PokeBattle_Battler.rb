@@ -2534,9 +2534,12 @@ class PokeBattle_Battler
     end
     # Sequence
     if self.ability == PBAbilities::SEQUENCE && onactive
-      if self.pbElectricPokemonCount > 0
+      if !pbTooHigh?(PBStats::ATTACK) && !pbTooHigh(PBStats::SPATK) && self.pbElectricPokemonCount > 0
         self.effects[PBEffects::Sequence] = self.pbElectricPokemonCount
-        @battle.pbDisplay(_INTL("{1} was amped up by the allies", pbThis))
+	pbIncreaseStatBasic(PBStats::ATTACK,PBEffects::Sequence)
+	pbIncreaseStatBasic(PBStats::SPATK,PBEffects::Sequence)
+        @battle.pbCommonAnimation("StatUp",self)
+        @battle.pbDisplay(_INTL("{1} was amped up by the allies!", pbThis))
       end
     end
     # Water Veil (Custom)
