@@ -643,6 +643,7 @@ class PokeBattle_Battler
     @effects[PBEffects::LashOut]          = false
     @effects[PBEffects::Disenchant]       = false
     @effects[PBEffects::SupremeOverlord]  = 0
+    @effects[PBEffects::Sequence]         = 0
     @effects[PBEffects::Commander]        = false
     @effects[PBEffects::Commandee]        = false
     @effects[PBEffects::CudChew]          = []
@@ -1238,6 +1239,17 @@ class PokeBattle_Battler
       end
     end
     return faints
+  end
+
+  def pbElectricPokemonCount()
+    electrics=0
+    party=@battle.pbPartySingleOwner(self.index)
+    for i in 0...party.length
+      if party[i] && !party[i].isEgg? && (party[i].type1==13 || party[i].type1==21 || party[i].type1==22 || party[i].type2==13) && i!=self.pokemonIndex && i!=self.pbPartner.pokemonIndex)
+        electrics+=1
+      end
+    end
+    return electrics
   end
 
 ################################################################################
@@ -2518,6 +2530,13 @@ class PokeBattle_Battler
       if self.pbFaintedPokemonCount > 0
         self.effects[PBEffects::SupremeOverlord] = self.pbFaintedPokemonCount
         @battle.pbDisplay(_INTL("{1} gained strength from the fallen!", pbThis))
+      end
+    end
+    # Sequence
+    if self.ability == PBAbilities::SEQUENCE && onactive
+      if self.pbElectricPokemonCount > 0
+        self.effects[PBEffects::Sequence] = self.pbElectricPokemonCount
+        @battle.pbDisplay(_INTL("{1} was amped up by the allies", pbThis))
       end
     end
     # Water Veil (Custom)
