@@ -168,6 +168,7 @@ class PokeBattle_Battler
     when (PBItems::MEWNIUMZ2)
       if pkmn.pokemon.species==PBSpecies::MEW
          canuse=pkmn.moves.any?{|stuffthings| stuffthings.id == PBMoves::PSYCHIC}
+      end
       if pkmn.pokemon.species==PBSpecies::MEWTWO
          canuse=pkmn.moves.any?{|stuffthings| stuffthings.id == PBMoves::PSYCHIC}
       end
