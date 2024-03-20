@@ -1245,7 +1245,7 @@ class PokeBattle_Battler
     electrics=0
     party=@battle.pbPartySingleOwner(self.index)
     for i in 0...party.length
-      if party[i] && !party[i].isEgg? && (party[i].type1==13 || party[i].type1==21 || party[i].type1==22 || party[i].type2==13) && i!=self.pokemonIndex && i!=self.pbPartner.pokemonIndex)
+      if party[i] && !party[i].isEgg? && (party[i].type1==13 || party[i].type1==21 || party[i].type1==22 || party[i].type2==13) && i!=self.pokemonIndex && i!=self.pbPartner.pokemonIndex
         electrics+=1
       end
     end
