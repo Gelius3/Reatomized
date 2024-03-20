@@ -1596,9 +1596,6 @@ class PokeBattle_Move
     if attacker.ability==PBAbilities::SUPREMEOVERLORD
       atkmult=(atkmult*(1+(0.1*attacker.effects[PBEffects::SupremeOverlord]))).round
     end
-    if attacker.ability==PBAbilities::SEQUENCE
-      atkmult=(atkmult*(1+(0.1*attacker.effects[PBEffects::Sequence]))).round
-    end
     if pbIsPhysical?(type) && attacker.effects[PBEffects::ParadoxBoost][0] == PBStats::ATTACK
       atkmult=(atkmult*1.3).round
     elsif pbIsSpecial?(type) && @battle.FE != 24 && attacker.effects[PBEffects::ParadoxBoost][0] == PBStats::SPATK
