@@ -1200,7 +1200,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
          if pokemon.form==1 
        if (move == PBMoves::NUCLEARSLASH) || (move == PBMoves::NUCLEARFANGS) ||
            (move == PBMoves::HALFLIFE) || (move == PBMoves::OVERDOSAGE) ||
-           (move == PBMoves::NUCLEARWIND)
+           (move == PBMoves::NUCLEARWIND) || (move == PBMoves::EMERGENCYEXIT)
            return true
          end
          end
