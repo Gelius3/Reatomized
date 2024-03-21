@@ -604,7 +604,7 @@ class PokeBattle_Battle
 
       # Special effect from seed that need specific code
       case @field.effect
-        when PBFields::MISTYT, PBFields::RAINBOWF,PBFields::STARLIGHTA
+        when PBFields::MISTYT, PBFields::RAINBOWF,PBFields::STARLIGHTA, PBFields::GUFIELD, PBFields::DWORLD
           if battler.effects[PBEffects::Wish]==0
             battler.effects[PBEffects::Wish]=2
             battler.effects[PBEffects::WishAmount]=((battler.totalhp+1)*0.75).floor
