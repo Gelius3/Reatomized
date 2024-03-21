@@ -398,7 +398,7 @@ class PokeBattle_Move
       
     if !opponent.moldbroken
       if (atype == PBTypes::FIRE && (opponent.ability == PBAbilities::FLASHFIRE || opponent.ability == PBAbilities::WELLBAKEDBODY || opponent.ability == PBAbilities::WARMBLANKET || opponent.ability == PBAbilities::HOTBLOODED)) || 
-        (atype == PBTypes::GRASS && (opponent.ability == PBAbilities::SAPSIPPER || oppontent.ability == PBAbilities::HERBIVORE)) ||
+        (atype == PBTypes::GRASS && (opponent.ability == PBAbilities::SAPSIPPER || opponent.ability == PBAbilities::HERBIVORE)) ||
         (atype == PBTypes::GROUND && (opponent.ability == PBAbilities::EARTHEATER || opponent.ability == PBAbilities::HOTBLOODED)) ||
         (atype == PBTypes::NUCLEAR && opponent.ability == PBAbilities::PLOTARMOR) ||
         (atype == PBTypes::COSMIC && opponent.ability == PBAbilities::PLOTARMOR) ||
