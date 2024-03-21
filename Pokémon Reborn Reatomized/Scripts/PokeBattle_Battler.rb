@@ -3205,6 +3205,25 @@ class PokeBattle_Battler
             end
         end
       end
+      if user.hasWorkingAbility(:THRUST) && @battle.pbRandom(10)<2 && !target.damagestate.substitute
+        choices = []
+        party=@battle.pbParty(target.index)
+        for i in 0...party.length
+          choices[choices.length]=i if @battle.pbCanSwitchLax?(target.index,i,false)
+        end
+        if choices.length!=0
+          @battle.pbDisplay(_INTL("#{user.pbThis}'s Thrust activates!"))
+          if target.hasWorkingAbility(:SUCTIONCUPS)
+           @battle.pbDisplay(_INTL("{1} anchored itself with {2}!",target.pbThis,PBAbilities.getName(target.ability)))
+          elsif target.effects[PBEffects::Ingrain]
+            @battle.pbDisplay(_INTL("{1} anchored itself with its roots!",target.pbThis))
+          elsif target.hasWorkingAbility(:GUARDDOG)
+            @battle.pbDisplay(_INTL("{1} refused to move away from its post!",target.pbThis))
+          else
+            target.forcedSwitch = true
+          end
+        end
+      end
 
       if !target.damagestate.substitute
         # Cursed Body
