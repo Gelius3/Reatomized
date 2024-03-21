@@ -4593,6 +4593,7 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} makes Rock moves miss with Mountaineer!",target.pbThis))
           return false
         end
+      end
         if target.hasWorkingItem(:AIRBALLOON)
           @battle.pbDisplay(_INTL("{1}'s Air Balloon makes Ground moves miss!",target.pbThis))
           return false
