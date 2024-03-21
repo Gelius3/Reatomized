@@ -5301,7 +5301,7 @@ class PokeBattle_Battler
           user.pbIncreaseStatBasic(PBStats::ATTACK,1)
           @battle.pbDisplay(_INTL("{1}'s Chilling Neigh raised its Attack!",user.pbThis))
         end
-      elsif (user.hasWorkingAbility(:CELEBRATION) && user.hp>0
+      elsif (user.hasWorkingAbility(:CELEBRATION)) && user.hp>0
         if !user.pbTooHigh?(PBStats::SPEED)
           @battle.pbCommonAnimation("StatUp",self,nil)
           user.pbIncreaseStatBasic(PBStats::SPEED,1)
