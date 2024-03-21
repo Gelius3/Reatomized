@@ -3146,6 +3146,25 @@ class PokeBattle_Battler
              user.pbThis(true),PBItems.getName(target.item)))
           end
         end
+        if target.hasWorkingAbility(:DISGUST) && @battle.pbRandom(10)<2
+          choices = []
+          party=@battle.pbParty(user.index)
+          for i in 0...party.length
+            choices[choices.length]=i if @battle.pbCanSwitchLax?(user.index,i,false)
+          end
+          if choices.length!=0
+            @battle.pbDisplay(_INTL("#{target.pbThis}'s Disgust activates!"))
+            if user.hasWorkingAbility(:SUCTIONCUPS)
+             @battle.pbDisplay(_INTL("{1} anchored itself with {2}!",user.pbThis,PBAbilities.getName(user.ability)))
+            elsif user.effects[PBEffects::Ingrain]
+              @battle.pbDisplay(_INTL("{1} anchored itself with its roots!",user.pbThis))
+            elsif user.hasWorkingAbility(:GUARDDOG)
+              @battle.pbDisplay(_INTL("{1} refused to move away from its post!",user.pbThis))
+            else
+              user.forcedSwitch = true
+            end
+          end
+	end
       end
     end
 
