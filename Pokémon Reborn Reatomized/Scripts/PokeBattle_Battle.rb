@@ -3116,7 +3116,7 @@ class PokeBattle_Battle
       end
       # Stealth Rock
       if pkmn.pbOwnSide.effects[PBEffects::StealthRock]
-        if pkmn.ability != PBAbilities::MAGICGUARD && != PBAbilities::MOUNTAINEER && != PBAbilities::OMNIPOTENT && !pkmn.hasWorkingItem(:HEAVYDUTYBOOTS) && @field.effect != PBFields::WASTELAND
+        if (pkmn.ability != PBAbilities::MAGICGUARD || pkmn.ability != PBAbilities::MOUNTAINEER || pkmn.ability != PBAbilities::OMNIPOTENT) && !pkmn.hasWorkingItem(:HEAVYDUTYBOOTS) && @field.effect != PBFields::WASTELAND
           atype = PBTypes::ROCK
           atype = @field.getRoll if @field.effect == PBFields::CRYSTALC
           eff=PBTypes.getCombinedEffectiveness(atype,pkmn.type1,pkmn.type2)
