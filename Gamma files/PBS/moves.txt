@@ -1002,7 +1002,7 @@
 1102,ELECTROSHOT,Electro Shot,203,130,ELECTRIC,Special,100,10,0,00,0,bef,"First turn boost Sp.Atk, second turn attack the target. No charge during rain."
 1103,TERASTARSTORM,Tera Starstorm,000,120,STELLAR,Special,100,5,0,00,0,bef,"Attacks the target with crystals. Hits all opposing Pokémon in Stellar Form."
 1104,SUPERCELLSLAM,Supercell Slam,10B,100,ELECTRIC,Physical,95,15,0,00,0,abef,"The user slams down on the target. If it misses, the user is hurt instead."
-1105,MALIGNANTCHAIN,Malignant Chain,006,100,POISON,Special,100,5,50,00,0,bef,"The user pours toxins into the target with chains. May leave the target badly poisoned."
+1105,MALIGNANTCHAIN,Malignant Chain,006,100,POISON,Special,100,5,50,00,0,bf,"The user pours toxins into the target with chains. May leave the target badly poisoned."
 1106,TEMPERFLARE,Temper Flare,171,75,FIRE,Physical,100,10,0,00,0,abef,"Spurred by desperation, the user attacks. If the user's previous move failed, the power of this move doubles."
 1107,ALLURINGVOICE,Alluring Voice,207,80,FAIRY,Special,100,10,100,04,0,befk,"Attack the target with an angelic voice. Confuses all opponents that boosted their stats this turn."
 1108,DRAGONCHEER,Dragon Cheer,286,0,DRAGON,Status,0,15,0,100,0,,"Encourages ally Pokémon, boosting their Critical Strike chance."
