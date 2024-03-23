@@ -4235,7 +4235,7 @@ class PokeBattle_Battler
        thismove.target==PBTargets::OppositeOpposing
       for i in priority # use Pokémon latest in priority
         next if !pbIsOpposing?(i.index) || i.isFainted?
-        if i.effects[PBEffects::FollowMe] || i.effects[PBEffects::RagePowder] || i.ability == PBAbilities::DECOY || i.ability == PBAbilities::BODYGUARD || i.ability == PBAbilities::SHIELD
+        if i.effects[PBEffects::FollowMe] || i.effects[PBEffects::RagePowder]
           unless (i.effects[PBEffects::RagePowder] && (self.ability == PBAbilities::OVERCOAT || self.pbHasType?(:GRASS) || self.hasWorkingItem(:SAFETYGOGGLES))) # change target to this
             target=i
             changeeffect = 0
