@@ -1638,7 +1638,7 @@ class PokeBattle_Move
       end
     end
     case attacker.ability
-    when PBAbilities::GUTS
+    when PBAbilities::GUTS, PBAbilities::PRIDE
       atkmult=(atkmult*1.5).round if attacker.status!=0 && pbIsPhysical?(type)
     when PBAbilities::PLUS, PBAbilities::MINUS
       if pbIsSpecial?(type) && @battle.FE != 24
@@ -1790,6 +1790,9 @@ class PokeBattle_Move
     if opponent.ability == PBAbilities::MARVELSCALE && pbIsPhysical?(type) &&
     (opponent.status>0 || @battle.FE == PBFields::MISTYT || @battle.FE == PBFields::RAINBOWF ||
     @battle.FE == PBFields::FAIRYTALEF || @battle.FE == PBFields::DRAGONSD || @battle.FE == PBFields::STARLIGHTA) && !(opponent.moldbroken)
+      defmult=(defmult*1.5).round
+    end
+    if opponent.ability == PBAbilities::PRIDE && pbIsPhysical?(type) && opponent.status>0 && !(opponent.moldbroken)
       defmult=(defmult*1.5).round
     end
     if opponent.ability == PBAbilities::GRASSPELT && pbIsPhysical?(type) &&
@@ -2089,7 +2092,7 @@ class PokeBattle_Move
 
     # Burn
     if attacker.status==PBStatuses::BURN && pbIsPhysical?(type) &&
-       attacker.ability != PBAbilities::GUTS && @id != PBMoves::FACADE
+       attacker.ability != PBAbilities::GUTS && attacker.ability != PBAbilities::PRIDE && @id != PBMoves::FACADE
       damage=(damage*0.5).round
     end
 
