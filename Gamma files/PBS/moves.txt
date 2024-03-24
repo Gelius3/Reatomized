@@ -1015,3 +1015,4 @@
 1115,FLASHFLOOD,Flash Flood,000,40,WATER,Special,100,30,0,00,1,bef,"The user causes a surge of flowing water to drown out the foe. This move always goes first."
 1116,BRAINSTORM,Brain Storm,020,70,PSYCHIC,Special,90,10,70,00,0,bef,"The user attacks using psychic force whilst brainstorming. This may raise the user's Sp. Atk stat."
 1117,CINDERBREATH,Cinder Breath,047,55,FIRE,Special,100,10,100,00,0,be,"The foe is blasted with a cloud of hot ash to inflict damage and lower accuracy."
+1118,LIGHTOFRUIN,Light of Ruin,0FC,140,FAIRY,Special,90,5,0,00,0,bef,"Drawing power from the Eternal Flower, firing a beam of light. Damages the user terribly."
