@@ -4415,7 +4415,7 @@ PBSpecies::WOOPER => {
 		:DexEntry => "After losing a territorial struggle, Wooper began living on land. The Pokémon changed over time, developing a poisonous film to protect its body.",
 		:Type1 => PBTypes::POISON,
 		:Type2 => PBTypes::GROUND,
-		:Ability => [PBAbilities::POISONPOINT,PBAbilities::WATERABSORB,PBAbilities::WATERABSORB,PBAbilities::UNAWARE],
+		:Ability => [PBAbilities::POISONPOINT,PBAbilities::WATERABSORB,PBAbilities::WATERABSORB,PBAbilities::DEEPSLEEP,PBAbilities::UNAWARE],
 		:Movelist => [[1,PBMoves::TAILWHIP],[1,PBMoves::POISONSTING],[1,PBMoves::MUDSHOT],[4,PBMoves::TACKLE],
 			[8,PBMoves::POISONTAIL],[12,PBMoves::TOXICSPIKES],[16,PBMoves::SLAM],[21,PBMoves::YAWN],
 			[24,PBMoves::POISONJAB],[28,PBMoves::SLUDGEWAVE],[32,PBMoves::AMNESIA],[40,PBMoves::TOXIC],
