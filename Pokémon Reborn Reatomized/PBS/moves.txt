@@ -890,7 +890,7 @@
 990,CAUSTICBREATH,Caustic Breath,246,60,DRAGON,Special,100,15,100,00,0,bef,"The user damages the opposing Pokémon and lowers its defense and special defense."
 991,LASERPULSE,Laser Pulse,240,90,NORMAL,Special,100,20,0,00,0,bef,"Hits randomly as a Fire, Electric, or Ice-type move."
 992,INFERNALBLADE,Infernal Blade,00A,90,FIRE,Physical,95,10,10,00,0,abef,"The user slashes the foe with cursed fire. This move is always supereffective against Fairy-types, and may also burn."
-993,GOLDENFIST,Golden Fist,109,90,FIGHTING,Physical,100,20,0,00,0,abef,"Punches the target and scatters gold particles. Money is earned after the battle."
+993,GOLDENFIST,Golden Fist,109,90,FIGHTING,Physical,100,20,0,00,0,abefj,"Punches the target and scatters gold particles. Money is earned after the battle."
 994,CORALBREAK,Coral Break,122,80,WATER,Special,95,15,0,00,0,bef,"The user creates waves in the water to attack the target. This move does physical damage."
 995,OCEANSWRATH,Ocean's Wrath,0D0,90,WATER,Special,100,20,0,00,0,bef,"Traps the foe in a giant whirlpool for four to five turns."
 996,SUBDUCTION,Subduction,000,140,GROUND,Physical,100,5,0,00,0,bef,"Causes a massive earthquake of the land underneath the foe to rise up and crash down, inflicting damage."
