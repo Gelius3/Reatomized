@@ -3884,7 +3884,7 @@ PBSpecies::BRAVIARY => {
 		:DexEntry => "Screaming a bloodcurdling battle cry, this huge and ferocious bird Pokémon goes out on the hunt. It blasts lakes with shock waves, then scoops up any prey that float to the water's surface.",
 		:Type1 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,0,2,0],
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::TINTEDLENS],
+		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::PRIDE,PBAbilities::TINTEDLENS],
 		:BaseStats => [110,57,70,70,123,80], #Canon: [110,83,70,65,112,70]
 		:Movelist => [[0,PBMoves::ESPERWING],[1,PBMoves::MYSTICALFIRE],[1,PBMoves::OMINOUSWIND],
 			[1,PBMoves::SUPERPOWER],[1,PBMoves::POUNCE],[1,PBMoves::PSYWAVE],[1,PBMoves::ESPERWING],
@@ -4415,7 +4415,7 @@ PBSpecies::WOOPER => {
 		:DexEntry => "After losing a territorial struggle, Wooper began living on land. The Pokémon changed over time, developing a poisonous film to protect its body.",
 		:Type1 => PBTypes::POISON,
 		:Type2 => PBTypes::GROUND,
-		:Ability => [PBAbilities::POISONPOINT,PBAbilities::WATERABSORB,PBAbilities::WATERABSORB,PBAbilities::UNAWARE],
+		:Ability => [PBAbilities::POISONPOINT,PBAbilities::WATERABSORB,PBAbilities::WATERABSORB,PBAbilities::DEEPSLEEP,PBAbilities::UNAWARE],
 		:Movelist => [[1,PBMoves::TAILWHIP],[1,PBMoves::POISONSTING],[1,PBMoves::MUDSHOT],[4,PBMoves::TACKLE],
 			[8,PBMoves::POISONTAIL],[12,PBMoves::TOXICSPIKES],[16,PBMoves::SLAM],[21,PBMoves::YAWN],
 			[24,PBMoves::POISONJAB],[28,PBMoves::SLUDGEWAVE],[32,PBMoves::AMNESIA],[40,PBMoves::TOXIC],

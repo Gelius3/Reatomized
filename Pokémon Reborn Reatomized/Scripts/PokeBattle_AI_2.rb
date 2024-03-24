@@ -4718,7 +4718,7 @@ class PokeBattle_AI
 	end
 
 	def mooncode
-		return 0 if @attacker.effects[PBEffects::BloodMoon] && @attacker.lastMoveUsed == PBMoves::BLOODMOOON
+		return 0 if @attacker.effects[PBEffects::BloodMoon] && @attacker.lastMoveUsed == PBMoves::BLOODMOON
 		miniscore = 1.0
 		return miniscore
 	end
