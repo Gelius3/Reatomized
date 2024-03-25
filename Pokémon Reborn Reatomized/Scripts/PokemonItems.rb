@@ -710,15 +710,15 @@ def pbSpeciesCompatible?(species,move,pokemon)
       end    
     when PBSpecies::GRIMER #Grimer
       if pokemon.form==0
-        if (move == PBMoves::BRUTALSWING) || (move == PBMoves::QUASH) ||
-          (move == PBMoves::EMBARGO) || (move == PBMoves::ROCKPOLISH) ||
-          (move == PBMoves::STONEEDGE) || (move == PBMoves::SNARL) ||
-          (move == PBMoves::KNOCKOFF) || (move == PBMoves::GASTROACID) ||
-          (move == PBMoves::SPITE)
+        if (move == PBMoves::SPITE) || (move == PBMoves::QUASH) || (move == PBMoves::SWIFT) ||
+          (move == PBMoves::EMBARGO) || (move == PBMoves::ROCKPOLISH) || (move == PBMoves::DARKPULSE) ||
+          (move == PBMoves::STONEEDGE) || (move == PBMoves::SNARL) || (move == PBMoves::GIGAIMPACT) ||
+          (move == PBMoves::KNOCKOFF) || (move == PBMoves::GASTROACID) || (move == PBMoves::HYPERBEAM) ||
+	  (move == PBMoves::CRUNCH) || (move == PBMoves::POISONFANG)
           return false
         end
       elsif pokemon.form==1
-        if (move == PBMoves::THUNDERBOLT) || (move == PBMoves::THUNDER)
+        if (move == PBMoves::INCINERATE)
           return false
         end
       elsif pokemon.form==3
@@ -752,15 +752,14 @@ def pbSpeciesCompatible?(species,move,pokemon)
       end 
     when PBSpecies::MUK #Muk
       if pokemon.form==0
-        if (move == PBMoves::BRUTALSWING) || (move == PBMoves::QUASH) ||
-          (move == PBMoves::EMBARGO) || (move == PBMoves::ROCKPOLISH) ||
-          (move == PBMoves::STONEEDGE) || (move == PBMoves::SNARL) ||
-          (move == PBMoves::KNOCKOFF) || (move == PBMoves::GASTROACID) ||
-          (move == PBMoves::SPITE) || (move == PBMoves::RECYCLE)
+        if (move == PBMoves::POISONFANG) || (move == PBMoves::QUASH) || (move == PBMoves::RECYCLE) ||
+          (move == PBMoves::EMBARGO) || (move == PBMoves::ROCKPOLISH) || (move == PBMoves::FOULPLAY) ||
+          (move == PBMoves::STONEEDGE) || (move == PBMoves::SNARL) || (move == PBMoves::CRUNCH) ||
+          (move == PBMoves::GASTROACID)
           return false
         end
       elsif pokemon.form==1
-        if (move == PBMoves::THUNDERBOLT) || (move == PBMoves::THUNDER)
+        if (move == PBMoves::INCINERATE) || (move == PBMoves::TOXICSPIKES) || (move == PBMoves::LUNGE)
           return false
         end
       elsif pokemon.form==3
