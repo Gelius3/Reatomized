@@ -2548,6 +2548,20 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("{1} surrounded itself with a veil of water!", pbThis))
       end
     end
+    # Nomad
+    if self.ability == PBAbilities::NOMAD && onactive
+      if ((self.pbSpeed > pbOpposing1.pbSpeed) && pbOpposing1.hp>0) || ((self.pbSpeed > pbOpposing2.pbSpeed) && pbOpposing2.hp>0)
+        @battle.pbDisplay(_INTL("{1}'s {2} boosted its offenses!",pbThis,PBAbilities.getName(ability)))
+        if !pbTooHigh?(PBStats::ATTACK)
+          pbIncreaseStatBasic(PBStats::ATTACK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+        end
+        if !pbTooHigh?(PBStats::SPATK)
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+        end
+      end
+    end
 
     # Mirror Field Entry
     if @battle.FE == PBFields::MIRRORA
