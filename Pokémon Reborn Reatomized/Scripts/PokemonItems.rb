@@ -650,7 +650,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
       end 
     when PBSpecies::PERSIAN #Persian
       if pokemon.form==0
-        if (move == PBMoves::QUASH) || (move == PBMoves::EMBARGO) || (move == PBMoves::CONFUSERAY)
+        if (move == PBMoves::QUASH) || (move == PBMoves::SMACKDOWN) || (move == PBMoves::CONFUSERAY) ||
+          (move == PBMoves::BURNINGJEALOUSY) || (move == PBMoves::BEATUP)
           return false
         end
       elsif pokemon.form==1
