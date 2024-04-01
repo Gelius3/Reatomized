@@ -3846,7 +3846,7 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("{1}'s {2} snacked to restore its HP!",pbThis,itemname))
       return
     end
-    if hpcure && (self.item == PBItems::LEFTOVERS || (self.item == PBItems::BLACKSLUDGE && pbHasType?(:POISON)) || (self.ability == PBAbilities::LIFEFORCE) || (self.ability == PBAbilities::OMNIPOTENT)) && self.hp!=self.totalhp
+    if hpcure && (self.item == PBItems::LEFTOVERS || (self.item == PBItems::BLACKSLUDGE && pbHasType?(:POISON))) && self.hp!=self.totalhp
       pbRecoverHP((self.totalhp/16.0).floor,true)
       @battle.pbDisplay(_INTL("{1}'s {2} restored its HP a little!",pbThis,itemname))
       return
