@@ -4613,6 +4613,31 @@ class PokeBattle_Battle
 
     for i in priority
       next if i.isFainted?
+      # Deep Sleep
+      if i.ability == PBAbilities::DEEPSLEEP && i.effects[PBEffects::HealBlock]== 0 && i.status == PBStatuses::SLEEP
+        hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
+        pbDisplay(_INTL("{1} recovered health in a Deep Sleep!",i.pbThis)) if hpgain>0
+      end
+      # Rebuild
+      if i.ability == PBAbilities::REBUILD && i.effects[PBEffects::HealBlock]==0 && i.lastHPLost <= 0
+        if @field.effect == PBFields::ROCKYF || @field.effect == PBFields::CAVE
+        hpgain=i.pbRecoverHP((i.totalhp/4.0).floor,true)
+        pbDisplay(_INTL("{1} reassembled through Rebuild!",i.pbThis)) if hpgain>0
+        else
+        hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
+        pbDisplay(_INTL("{1} reassembled through Rebuild!",i.pbThis)) if hpgain>0
+        end
+      end
+      # Life Force
+      if i.ability == PBAbilities::LIFEFORCE && i.effects[PBEffects::HealBlock]==0
+        hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
+        pbDisplay(_INTL("{1} regenerated through Life Force!",i.pbThis)) if hpgain>0
+      end
+      # Omnipotent
+      if i.ability == PBAbilities::OMNIPOTENT && i.effects[PBEffects::HealBlock]==0
+        hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
+        pbDisplay(_INTL("{1} regenerated through Omnipotent!",i.pbThis)) if hpgain>0
+      end
       # Rain Dish
       if i.ability == PBAbilities::RAINDISH && (pbWeather==PBWeather::RAINDANCE && !i.hasWorkingItem(:UTILITYUMBRELLA)) && i.effects[PBEffects::HealBlock]==0
         hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
@@ -4773,20 +4798,6 @@ class PokeBattle_Battle
           pbDisplay(_INTL("{1}'s Aqua Ring restored its HP a little!",i.pbThis)) if hpgain>0
         end
       end
-    end
-    # Rebuild
-    if i.hasWorkingAbility(:REBUILD)
-      if i.lastHPLost <= 0
-       if @field.effect == PBFields::CAVE || @field.effect == PBFields::ROCKYF
-         hpgain=(i.totalhp/4.0).floor
-         hpgain=i.pbRecoverHP(hpgain,true)
-         pbDisplay(_INTL("{1}'s was healed through Rebuild!",i.pbThis)) if hpgain>0
-         end
-      else
-         hpgain=(i.totalhp/8.0).floor
-         hpgain=i.pbRecoverHP(hpgain,true)
-         pbDisplay(_INTL("{1}'s was healed through Rebuild!",i.pbThis)) if hpgain>0
-        end
     end
     # Ingrain
     for i in priority
