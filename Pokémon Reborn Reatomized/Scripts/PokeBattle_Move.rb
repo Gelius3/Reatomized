@@ -373,6 +373,9 @@ class PokeBattle_Move
       if attacker.ability == PBAbilities::OMNIPOTENT
         mod=2 if (otype == PBTypes::NORMAL) || (otype == PBTypes::FIGHTING) || (otype == PBTypes::FLYING) || (otype == PBTypes::POISON) || (otype == PBTypes::GROUND) || (otype == PBTypes::ROCK) || (otype == PBTypes::BUG) || (otype == PBTypes::GHOST) || (otype == PBTypes::STEEL) || (otype == PBTypes::QMARKS) || (otype == PBTypes::FIRE) || (otype == PBTypes::WATER) || (otype == PBTypes::GRASS) || (otype == PBTypes::ELECTRIC) || (otype == PBTypes::PSYCHIC) || (otype == PBTypes::ICE) || (otype == PBTypes::DRAGON) || (otype == PBTypes::DARK) || (otype == PBTypes::FAIRY) || (otype == PBTypes::NUCLEAR) || (otype == PBTypes::COSMIC) || (otype == PBTypes::IFE) || (otype == PBTypes::EFW) || (otype == PBTypes::WGF) || (otype == PBTypes::SWG) || (otype == PBTypes::GFW) || (otype == PBTypes::GS) || (otype == PBTypes::BS) || (otype == PBTypes::PF) || (otype == PBTypes::FG) || (otype == PBTypes::GFS) || (otype == PBTypes::PFD) || (otype == PBTypes::NPG) || (otype == PBTypes::STELLAR)
       end
+      if opponent.ability == PBAbilities::TERASHELL && opponent.hp==opponent.totalhp && !(attacker.ability == PBAbilities::OMNIPOTENT)
+        mod=1 if mod!=0
+      end
 
       # Effect related type effectiveness changes
       if opponent.effects[PBEffects::Electrify]
