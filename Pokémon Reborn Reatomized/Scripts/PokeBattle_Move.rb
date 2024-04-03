@@ -370,6 +370,9 @@ class PokeBattle_Move
         mod=1 if (otype == PBTypes::STEEL)
         mod=0 if (otype == PBTypes::GHOST) && !opponent.effects[PBEffects::Foresight]
       end
+      if attacker.ability == PBAbilities::OMNIPOTENT
+        mod=2 if (otype == PBTypes::NORMAL) || (otype == PBTypes::FIGHTING) || (otype == PBTypes::FLYING) || (otype == PBTypes::POISON) || (otype == PBTypes::GROUND) || (otype == PBTypes::ROCK) || (otype == PBTypes::BUG) || (otype == PBTypes::GHOST) || (otype == PBTypes::STEEL) || (otype == PBTypes::QMARKS) || (otype == PBTypes::FIRE) || (otype == PBTypes::WATER) || (otype == PBTypes::GRASS) || (otype == PBTypes::ELECTRIC) || (otype == PBTypes::PSYCHIC) || (otype == PBTypes::ICE) || (otype == PBTypes::DRAGON) || (otype == PBTypes::DARK) || (otype == PBTypes::FAIRY) || (otype == PBTypes::NUCLEAR) || (otype == PBTypes::COSMIC) || (otype == PBTypes::IFE) || (otype == PBTypes::EFW) || (otype == PBTypes::WGF) || (otype == PBTypes::SWG) || (otype == PBTypes::GFW) || (otype == PBTypes::GS) || (otype == PBTypes::BS) || (otype == PBTypes::PF) || (otype == PBTypes::FG) || (otype == PBTypes::GFS) || (otype == PBTypes::PFD) || (otype == PBTypes::NPG) || (otype == PBTypes::STELLAR)
+      end
 
       # Effect related type effectiveness changes
       if opponent.effects[PBEffects::Electrify]
@@ -394,13 +397,15 @@ class PokeBattle_Move
     mod1, mod2 = mods
       
     if !opponent.moldbroken
-      if (atype == PBTypes::FIRE && (opponent.ability == PBAbilities::FLASHFIRE || opponent.ability == PBAbilities::WELLBAKEDBODY)) || 
-        (atype == PBTypes::GRASS && opponent.ability == PBAbilities::SAPSIPPER) ||
-        (atype == PBTypes::GROUND && opponent.ability == PBAbilities::EARTHEATER) ||
+      if (atype == PBTypes::FIRE && (opponent.ability == PBAbilities::FLASHFIRE || opponent.ability == PBAbilities::WELLBAKEDBODY || opponent.ability == PBAbilities::WARMBLANKET || opponent.ability == PBAbilities::HOTBLOODED)) || 
+        (atype == PBTypes::GRASS && (opponent.ability == PBAbilities::SAPSIPPER || opponent.ability == PBAbilities::HERBIVORE)) ||
+        (atype == PBTypes::GROUND && (opponent.ability == PBAbilities::EARTHEATER || opponent.ability == PBAbilities::HOTBLOODED)) ||
         (atype == PBTypes::NUCLEAR && opponent.ability == PBAbilities::PLOTARMOR) ||
         (atype == PBTypes::COSMIC && opponent.ability == PBAbilities::PLOTARMOR) ||
-        (atype == PBTypes::WATER && (opponent.ability == PBAbilities::WATERABSORB || opponent.ability == PBAbilities::STORMDRAIN || opponent.ability == PBAbilities::DRYSKIN)) ||
+        (atype == PBTypes::WATER && (opponent.ability == PBAbilities::WATERABSORB || opponent.ability == PBAbilities::STORMDRAIN || opponent.ability == PBAbilities::DRYSKIN || opponent.ability == PBAbilities::COLDBLOODED)) ||
         (atype == PBTypes::ELECTRIC && (opponent.ability == PBAbilities::VOLTABSORB || opponent.ability == PBAbilities::LIGHTNINGROD || opponent.ability == PBAbilities::MOTORDRIVE)) ||
+	(atype == PBTypes::ICE && opponent.ability == PBAbilities::COLDBLOODED) ||
+	(atype == PBTypes::ROCK && (opponent.ability == PBAbilities::HOTBLOODED || opponent.ability == PBAbilities::MOUNTAINEER)) ||
         (atype == PBTypes::GROUND && opponent.ability == PBAbilities::LEVITATE && @battle.FE != PBFields::CAVE && @id != PBMoves::THOUSANDARROWS && opponent.isAirborne?) 
         mod1=0
       end
@@ -527,7 +532,7 @@ class PokeBattle_Move
       end
       return 0
     end
-    if !(opponent.moldbroken) && (((opponent.ability == PBAbilities::DRYSKIN || opponent.ability == PBAbilities::WATERABSORB) &&  type == PBTypes::WATER) || (opponent.ability == PBAbilities::VOLTABSORB && type == PBTypes::ELECTRIC) || (opponent.ability == PBAbilities::EARTHEATER && type == PBTypes::GROUND)) 
+    if !(opponent.moldbroken) && (((opponent.ability == PBAbilities::DRYSKIN || opponent.ability == PBAbilities::WATERABSORB) &&  type == PBTypes::WATER) || (opponent.ability == PBAbilities::VOLTABSORB && type == PBTypes::ELECTRIC) || (opponent.ability == PBAbilities::EARTHEATER && type == PBTypes::GROUND) || (opponent.ability == PBAbilities::HERBIVORE && type == PBTypes::GRASS) || (opponent.ability == PBAbilities::WARMBLANKET && type == PBTypes::FIRE) || (opponent.ability == PBAbilities::HOTBLOODED && (type == PBTypes::FIRE || type == PBTypes::ROCK || type == PBTypes::GROUND)) || (opponent.ability == PBAbilities::COLDBLOODED && (type == PBTypes::ICE || type == PBTypes::WATER))) 
       if opponent.effects[PBEffects::HealBlock]==0
         if opponent.pbRecoverHP((opponent.totalhp/4.0).floor,true)>0
           @battle.pbDisplay(_INTL("{1}'s {2} restored its HP!",
@@ -878,7 +883,7 @@ class PokeBattle_Move
     evastage=0 if opponent.effects[PBEffects::Foresight] || opponent.effects[PBEffects::MiracleEye] || @function==0xA9 || # Chip Away
                   (attacker.ability == PBAbilities::UNAWARE || opponent.ability == PBAbilities::MULTICORE) && !(opponent.moldbroken)
     evasion=(evastage>=0) ? (evastage+3)*100.0/3 : 300.0/(3-evastage)
-    if attacker.ability == PBAbilities::COMPOUNDEYES
+    if attacker.ability == (PBAbilities::COMPOUNDEYES || PBAbilities::BLACKHOLE)
       accuracy*=1.3
     end
     if attacker.hasWorkingItem(:MICLEBERRY)
@@ -929,11 +934,17 @@ class PokeBattle_Move
     if opponent.ability == PBAbilities::SNOWCLOAK && (@battle.pbWeather==PBWeather::HAIL || @battle.FE == PBFields::ICYF || @battle.FE == PBFields::SNOWYM) && !(opponent.moldbroken)
       evasion*=1.2
     end
+    if opponent.ability == PBAbilities::LEAFSHROUD && (@battle.FE == PBFields::GRASSYT || @battle.FE == PBFields::FORESTF || @battle.FE == PBFields::FLOWERGARDENF) && !(opponent.moldbroken)
+      evasion*=1.2
+    end
     if opponent.hasWorkingItem(:BRIGHTPOWDER)
       evasion*=1.1
     end
     if opponent.hasWorkingItem(:LAXINCENSE)
       evasion*=1.1
+    end
+    if (opponent.ability == PBAbilities::INSTINCT || opponent.ability == PBAbilities::OMNIPOTENT)
+      evasion*=1.2
     end
     # UPDATE 11/17/2013
     # keen eye should now ignore evasion increases
@@ -962,6 +973,7 @@ class PokeBattle_Move
     c+=attacker.effects[PBEffects::FocusEnergy]
     c+=1 if hasHighCriticalRate?
     c+=1 if attacker.ability == PBAbilities::SUPERLUCK
+    c+=1 if attacker.pbPartner.hasWorkingAbility(:MOODMAKER)
     c+=2 if attacker.ability == PBAbilities::TANGLEDFEET && attacker.effects[PBEffects::Confusion] > 0
     c+=2 if attacker.hasWorkingItem(:STICK) && (attacker.pokemon.species == PBSpecies::FARFETCHD || attacker.pokemon.species == PBSpecies::SIRFETCHD)
     c+=2 if attacker.hasWorkingItem(:LONGCLUB) && (attacker.pokemon.species == PBSpecies::TERATHWACK)
@@ -1039,10 +1051,16 @@ class PokeBattle_Move
       damagemult=(damagemult*1.3).round
     elsif (attacker.ability == PBAbilities::IRONFIST || attacker.item == PBItems::PUNCHINGGLOVE) && isPunchingMove?
       damagemult=(damagemult*1.4).round
+    elsif attacker.ability == PBAbilities::STRONGHEEL
+      damagemult=(damagemult*1.4).round if (PBStuff::KICKMOVE).include?(@id)
+    elsif !opponent.hasMovedThisRound? && attacker.ability == PBAbilities::VANGUARD
+      damagemult=(damagemult*1.5).round
     elsif attacker.ability == PBAbilities::ENCHANTEDCANNON 
       damagemult=(damagemult*1.4) if (PBStuff::BEAMMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::SHARPNESS
       damagemult=(damagemult*1.5).round if (PBStuff::SLASHMOVE).include?(@id)
+    elsif attacker.ability == PBAbilities::RUNUP
+      damagemult=(damagemult*1.5).round if (PBStuff::TACKLEMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::INJECTION
       damagemult=(damagemult*1.5).round if (PBStuff::STINGMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::ACCELERATION 
@@ -1578,6 +1596,9 @@ class PokeBattle_Move
     if attacker.ability==PBAbilities::SUPREMEOVERLORD
       atkmult=(atkmult*(1+(0.1*attacker.effects[PBEffects::SupremeOverlord]))).round
     end
+    if attacker.ability==PBAbilities::SEQUENCE
+      atkmult=(atkmult*(1+(0.15*attacker.effects[PBEffects::Sequence]))).round
+    end
     if pbIsPhysical?(type) && attacker.effects[PBEffects::ParadoxBoost][0] == PBStats::ATTACK
       atkmult=(atkmult*1.3).round
     elsif pbIsSpecial?(type) && @battle.FE != 24 && attacker.effects[PBEffects::ParadoxBoost][0] == PBStats::SPATK
@@ -1617,7 +1638,7 @@ class PokeBattle_Move
       end
     end
     case attacker.ability
-    when PBAbilities::GUTS
+    when PBAbilities::GUTS, PBAbilities::PRIDE
       atkmult=(atkmult*1.5).round if attacker.status!=0 && pbIsPhysical?(type)
     when PBAbilities::PLUS, PBAbilities::MINUS
       if pbIsSpecial?(type) && @battle.FE != 24
@@ -1676,7 +1697,13 @@ class PokeBattle_Move
     if (attacker.pbPartner.ability == PBAbilities::STEELYSPIRIT || attacker.ability == PBAbilities::STEELYSPIRIT) && type == PBTypes::STEEL
       atkmult=(atkmult*1.5).round
     end
-
+    if (attacker.pbPartner.ability == PBAbilities::AQUABOOST || attacker.ability == PBAbilities::AQUABOOST) && type == PBTypes::WATER
+      atkmult=(atkmult*1.3).round
+    end
+    if (attacker.pbPartner.ability == PBAbilities::FLAMEBOOST || attacker.ability == PBAbilities::FLAMEBOOST) && type == PBTypes::FIRE
+      atkmult=(atkmult*1.3).round
+    end
+	  
     atkmult=(atkmult*1.5).round if attacker.effects[PBEffects::FlashFire] && type == PBTypes::FIRE
 
     if attitemworks
@@ -1763,6 +1790,9 @@ class PokeBattle_Move
     if opponent.ability == PBAbilities::MARVELSCALE && pbIsPhysical?(type) &&
     (opponent.status>0 || @battle.FE == PBFields::MISTYT || @battle.FE == PBFields::RAINBOWF ||
     @battle.FE == PBFields::FAIRYTALEF || @battle.FE == PBFields::DRAGONSD || @battle.FE == PBFields::STARLIGHTA) && !(opponent.moldbroken)
+      defmult=(defmult*1.5).round
+    end
+    if opponent.ability == PBAbilities::PRIDE && pbIsPhysical?(type) && opponent.status>0 && !(opponent.moldbroken)
       defmult=(defmult*1.5).round
     end
     if opponent.ability == PBAbilities::GRASSPELT && pbIsPhysical?(type) &&
@@ -2062,7 +2092,7 @@ class PokeBattle_Move
 
     # Burn
     if attacker.status==PBStatuses::BURN && pbIsPhysical?(type) &&
-       attacker.ability != PBAbilities::GUTS && @id != PBMoves::FACADE
+       attacker.ability != PBAbilities::GUTS && attacker.ability != PBAbilities::PRIDE && @id != PBMoves::FACADE
       damage=(damage*0.5).round
     end
 
@@ -2399,6 +2429,8 @@ class PokeBattle_Move
     pri = @priority
     pri = 0 if @zmove && @basedamage > 0
     pri += 4 if attacker.ability == PBAbilities::QUICKCHARGE && attacker.turncount==1 
+    pri += 1 if attacker.ability == PBAbilities::SPRINT && attacker.turncount>=1 
+    pri += 4 if attacker.ability == PBAbilities::SHADOWDASH && attacker.turncount==1
     pri += 1 if @battle.FE == PBFields::CHESSB && attacker.pokemon && attacker.pokemon.piece == :KING
     pri += 1 if attacker.ability == PBAbilities::PRANKSTER && @basedamage==0 && attacker.effects[PBEffects::TwoTurnAttack] == 0 # Is status move
     pri += 1 if attacker.ability == PBAbilities::GALEWINGS && @type==PBTypes::FLYING && ((attacker.hp >= (attacker.totalhp*0.75).floor) || ((@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM) && @battle.weather == PBWeather::STRONGWINDS))

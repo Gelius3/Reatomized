@@ -7432,6 +7432,10 @@ end
 # Scatters coins that the player picks up after winning the battle. (Pay Day)
 ################################################################################
 class PokeBattle_Move_109 < PokeBattle_Move
+  def pbBaseDamage(basedmg,attacker,opponent)
+      return 2*basedmg if attacker.ability==PBAbilities::BONANZA
+      return basedmg
+  end
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     if @basedamage > 0
       ret = super(attacker,opponent,hitnum,alltargets,showanimation)
@@ -7451,6 +7455,9 @@ class PokeBattle_Move_109 < PokeBattle_Move
         @battle.pbDisplay(_INTL("Treasure scattered everywhere!"))
       else
         @battle.pbDisplay(_INTL("Coins were scattered everywhere!"))
+      end
+      if attacker.ability== PBAbilities::BONANZA
+        @battle.extramoney*=1.5
       end
     end
     return ret
@@ -10337,6 +10344,12 @@ end
 class PokeBattle_Move_203 < PokeBattle_Move
   def pbTwoTurnAttack(attacker,checking=false)
    @immediate=false
+   if attacker.effects[PBEffects::TwoTurnAttack]==0 && @id == PBMoves::ELECTROSHOT
+    @immediate=true if @battle.FE == PBFields::ELECTRICT || @battle.FE == PBFields::FACTORYF
+  end
+  if attacker.effects[PBEffects::TwoTurnAttack]==0 && @id == PBMoves::METEORBEAM
+    @immediate=true if @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::CRYSTALC || @battle.FE == PBFields::NEWW
+  end
    if !@immediate && attacker.hasWorkingItem(:POWERHERB)
      @immediate=true
      if !checking
@@ -10352,7 +10365,8 @@ class PokeBattle_Move_203 < PokeBattle_Move
  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
    if @immediate || attacker.effects[PBEffects::TwoTurnAttack]>0
      @battle.pbCommonAnimation("Solar Beam charging",attacker,nil)
-     @battle.pbDisplay(_INTL("{1} is overflowing with space power!",attacker.pbThis))
+     @battle.pbDisplay(_INTL("{1} is overflowing with power!",attacker.pbThis)) if @id == PBMoves::METEORBEAM
+     @battle.pbDisplay(_INTL("{1} is gathering electricity!",attacker.pbThis)) if @id == PBMoves::ELECTROSHOT
      if attacker.pbCanIncreaseStatStage?(PBStats::SPATK,false)
        attacker.pbIncreaseStat(PBStats::SPATK,1,abilitymessage:false)
      end

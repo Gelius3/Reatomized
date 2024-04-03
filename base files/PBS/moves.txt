@@ -1012,3 +1012,6 @@
 1112,HOLDBACK,Hold Back,0E9,40,NORMAL,Physical,100,40,0,00,0,abef,"The user holds back when it attacks and the target is left with at least 1 HP."
 1113,HOLDHANDS,Hold Hands,001,0,NORMAL,Status,0,40,0,100,0,,"The user and an ally hold hands. This makes them very happy."
 1114,HAPPYHOUR,Happy Hour,109,0,NORMAL,Status,0,30,0,20,0,,"Using Happy Hour doubles the amount of prize money received after battle."
+1115,FLASHFLOOD,Flash Flood,000,40,WATER,Special,100,30,0,00,1,bef,"The user causes a surge of flowing water to drown out the foe. This move always goes first."
+1116,BRAINSTORM,Brain Storm,020,70,PSYCHIC,Special,90,10,70,00,0,bef,"The user attacks using psychic force whilst brainstorming. This may raise the user's Sp. Atk stat."
+1117,CINDERBREATH,Cinder Breath,047,55,FIRE,Special,100,10,100,00,0,be,"The foe is blasted with a cloud of hot ash to inflict damage and lower accuracy."
