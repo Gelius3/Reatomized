@@ -640,14 +640,6 @@ def pbLoadPokemonBitmapSpecies(pokemon, species, back=false)
     ret=Bitmap.new(bitmapFileName)
     return ret
   end
-  if (pokemon.form !=0 && ShitList.include?(species)) || (species == PBSpecies::METALGREYMON)
-    formnumber = pokemon.form != 0 ? "_"+pokemon.form.to_s : ""
-    shinytag = pokemon.isShiny? ? "s" : ""
-    backtag = back ? "b" : ""
-    if pbResolveBitmap(sprintf("Graphics/Battlers/%03d%s%s%s",species,shinytag,backtag,formnumber))
-      return RPG::Cache.load_bitmap(sprintf("Graphics/Battlers/%03d%s%s%s",species,shinytag,backtag,formnumber))
-    end
-  end
   x = pokemon.isShiny? ? 192 : 0
   x = 0 if pokemon.isPulse?
   y = pokemon.form*384
