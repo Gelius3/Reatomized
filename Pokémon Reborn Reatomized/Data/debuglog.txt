@@ -47348,3 +47348,2113 @@ Final action chosen:                                        |[Prefer Feint Attac
  ______________________________________________________________________________ 
 
 ************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Klang: Gear Grind=[100, -1, -1, -1], Bind=[105, -1, -1, -1], Charge Beam=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1]]
+[Prefer Autotomize]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Klang , HP percentage: 100.0 %
+Held Item:  , Ability: Clear Body , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Autotomize]
+ ______________________________________________________________________________ 
+
+Project L used Sleep Powder
+Klang used Autotomize
+************************** Round 2 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Klang: Gear Grind=[100, -1, -1, -1], Bind=[105, -1, -1, -1], Charge Beam=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1]]
+[Prefer Bind]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Klang , HP percentage: 100.0 %
+Held Item:  , Ability: Clear Body , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Bind]      
+ ______________________________________________________________________________ 
+
+Project L used Leech Seed
+Klang used Bind
+[The wild Klang lost 11 HP, now has 81 HP]
+[Project L gained 11 HP, now has 99 HP]
+************************** Round 3 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Klang: Gear Grind=[100, -1, -1, -1], Bind=[105, -1, -1, -1], Charge Beam=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1]]
+[Prefer Gear Grind]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Klang , HP percentage: 88.0 %
+Held Item:  , Ability: Clear Body , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Gear Grind]
+ ______________________________________________________________________________ 
+
+Klang used Gear Grind
+[Project L lost 17 HP, now has 82 HP]
+[Project L lost 15 HP, now has 67 HP]
+[The wild Klang lost 11 HP, now has 70 HP]
+[Project L gained 11 HP, now has 78 HP]
+************************** Round 4 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Klang: Gear Grind=[100, -1, -1, -1], Bind=[105, -1, -1, -1], Charge Beam=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1]]
+[Prefer Charge Beam]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Klang , HP percentage: 76.1 %
+Held Item:  , Ability: Clear Body , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Charge Beam]
+ ______________________________________________________________________________ 
+
+Project L used Sleep Powder
+Klang used Charge Beam
+[The wild Klang lost 11 HP, now has 59 HP]
+[Project L gained 11 HP, now has 89 HP]
+************************** Round 5 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Klang: Gear Grind=[100, -1, -1, -1], Bind=[105, -1, -1, -1], Charge Beam=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1]]
+[Prefer Autotomize]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Klang , HP percentage: 64.1 %
+Held Item:  , Ability: Clear Body , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Autotomize]
+ ______________________________________________________________________________ 
+
+************************** Round 1 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Skorupi: Bug Bite=[105, -1, -1, -1], Poison Fang=[100, -1, -1, -1], Venoshock=[100, -1, -1, -1], Hone Claws=[100, -1, -1, -1]]
+[Prefer Hone Claws]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Skorupi , HP percentage: 100.0 %
+Held Item:  , Ability: Battle Armor , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Hone Claws]
+ ______________________________________________________________________________ 
+
+Project L used Sleep Powder
+Skorupi used Hone Claws
+************************** Round 2 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Skorupi: Bug Bite=[105, -1, -1, -1], Poison Fang=[100, -1, -1, -1], Venoshock=[100, -1, -1, -1], Hone Claws=[100, -1, -1, -1]]
+[Prefer Venoshock]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Skorupi , HP percentage: 100.0 %
+Held Item:  , Ability: Battle Armor , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Venoshock] 
+ ______________________________________________________________________________ 
+
+Skorupi used Venoshock
+************************** Round 3 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Skorupi: Bug Bite=[105, -1, -1, -1], Poison Fang=[100, -1, -1, -1], Venoshock=[100, -1, -1, -1], Hone Claws=[100, -1, -1, -1]]
+[Prefer Hone Claws]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Skorupi , HP percentage: 100.0 %
+Held Item:  , Ability: Battle Armor , Field: Cave
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Hone Claws]
+ ______________________________________________________________________________ 
+
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Inkay: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Inkay: initial noswitchscore: 150
+ShouldSwitchScore: -75 
+
+[The foe Inkay: Psybeam=[15, -1, -1, -1], Switcheroo=[30, -1, -1, -1], Payback=[30, -1, -1, -1], Light Screen=[54, -1, -1, -1]]
+[Prefer Light Screen]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Inkay , HP percentage: 100.0 %
+Held Item:  , Ability: Infiltrator , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+
+Scoring for Switching to other mon                          |-75.0 
+ 
+Light Screen - 0 vs Project L, Init scoring move:           |35 
+Light Screen - 0 vs Project L, Final scoring move:          |54 
+
+Payback - 0 vs Project L, Init scoring move:                |15 
+Payback - 0 vs Project L, Final scoring move:               |30 
+
+Psybeam - 0 vs Project L, Init scoring move:                |15 
+Psybeam - 0 vs Project L, Final scoring move:               |15 
+
+Switcheroo - 0 vs Project L, Init scoring move:             |25 
+Switcheroo - 0 vs Project L, Final scoring move:            |30 
+
+Final action chosen:                                        |[Prefer Light Screen]
+ ______________________________________________________________________________ 
+
+Project L used Growth
+Inkay used Light Screen
+************************** Round 2 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Inkay: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (25)
+Inkay: initial noswitchscore: 25
+ShouldSwitchScore: -12 
+
+[The foe Inkay: Psybeam=[15, -1, -1, -1], Switcheroo=[30, -1, -1, -1], Payback=[30, -1, -1, -1], Light Screen=[0, -1, -1, -1]]
+[Prefer Payback]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Inkay , HP percentage: 100.0 %
+Held Item:  , Ability: Infiltrator , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+
+Scoring for Switching to other mon                          |-12.5 
+ 
+Light Screen - 0 vs Project L, Init scoring move:           |35 
+Light Screen - 0 vs Project L, Final scoring move:          |0 
+
+Payback - 0 vs Project L, Init scoring move:                |15 
+Payback - 0 vs Project L, Final scoring move:               |30 
+
+Psybeam - 0 vs Project L, Init scoring move:                |15 
+Psybeam - 0 vs Project L, Final scoring move:               |15 
+
+Switcheroo - 0 vs Project L, Init scoring move:             |25 
+Switcheroo - 0 vs Project L, Final scoring move:            |30 
+
+Final action chosen:                                        |[Prefer Payback]   
+ ______________________________________________________________________________ 
+
+Project L used Growth
+Inkay used Payback
+[Project L lost 24 HP, now has 65 HP]
+************************** Round 3 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Inkay: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Inkay: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Inkay: Psybeam=[21, -1, -1, -1], Switcheroo=[30, -1, -1, -1], Payback=[42, -1, -1, -1], Light Screen=[0, -1, -1, -1]]
+[Prefer Payback]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Inkay , HP percentage: 100.0 %
+Held Item:  , Ability: Infiltrator , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+
+Scoring for Switching to other mon                          |0.0 
+ 
+Light Screen - 0 vs Project L, Init scoring move:           |35 
+Light Screen - 0 vs Project L, Final scoring move:          |0 
+
+Payback - 0 vs Project L, Init scoring move:                |21 
+Payback - 0 vs Project L, Final scoring move:               |42 
+
+Psybeam - 0 vs Project L, Init scoring move:                |21 
+Psybeam - 0 vs Project L, Final scoring move:               |21 
+
+Switcheroo - 0 vs Project L, Init scoring move:             |25 
+Switcheroo - 0 vs Project L, Final scoring move:            |30 
+
+Final action chosen:                                        |[Prefer Payback]   
+ ______________________________________________________________________________ 
+
+Project L used Growth
+Inkay used Payback
+[Project L lost 23 HP, now has 42 HP]
+************************** Round 4 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Inkay: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Inkay: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Inkay: Psybeam=[33, -1, -1, -1], Switcheroo=[30, -1, -1, -1], Payback=[66, -1, -1, -1], Light Screen=[0, -1, -1, -1]]
+[Prefer Payback]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Inkay , HP percentage: 100.0 %
+Held Item:  , Ability: Infiltrator , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+
+Scoring for Switching to other mon                          |0.0 
+ 
+Light Screen - 0 vs Project L, Init scoring move:           |35 
+Light Screen - 0 vs Project L, Final scoring move:          |0 
+
+Payback - 0 vs Project L, Init scoring move:                |33 
+Payback - 0 vs Project L, Final scoring move:               |66 
+
+Psybeam - 0 vs Project L, Init scoring move:                |33 
+Psybeam - 0 vs Project L, Final scoring move:               |33 
+
+Switcheroo - 0 vs Project L, Init scoring move:             |25 
+Switcheroo - 0 vs Project L, Final scoring move:            |30 
+
+Final action chosen:                                        |[Prefer Payback]   
+ ______________________________________________________________________________ 
+
+Project L used Leech Seed
+Inkay used Payback
+[Project L lost 23 HP, now has 19 HP]
+[The foe Inkay lost 10 HP, now has 72 HP]
+[Project L gained 10 HP, now has 29 HP]
+************************** Round 5 *******************************
+Initial switchscore building: Statuses (60)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Inkay: initial switchscore: 60
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Inkay: initial noswitchscore: 0
+ShouldSwitchScore: 30 
+
+Scoring for Inkay switching to: Inkay
+Score: -10000000
+
+Scoring for Inkay switching to: Misdreavus
+incomingpercentage: 0.000000
+Defensive: 395
+Offensive: 60
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 455 
+
+[The foe Inkay: Psybeam=[48, -1, -1, -1], Switcheroo=[30, -1, -1, -1], Payback=[96, -1, -1, -1], Light Screen=[0, -1, -1, -1]]
+[Prefer Payback]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Inkay , HP percentage: 87.8 %
+Held Item:  , Ability: Infiltrator , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+
+Scoring for Switching to other mon                          |30.0 
+ 
+Light Screen - 0 vs Project L, Init scoring move:           |35 
+Light Screen - 0 vs Project L, Final scoring move:          |0 
+
+Payback - 0 vs Project L, Init scoring move:                |48 
+Payback - 0 vs Project L, Final scoring move:               |96 
+
+Psybeam - 0 vs Project L, Init scoring move:                |48 
+Psybeam - 0 vs Project L, Final scoring move:               |48 
+
+Switcheroo - 0 vs Project L, Init scoring move:             |25 
+Switcheroo - 0 vs Project L, Final scoring move:            |30 
+
+Final action chosen:                                        |[Prefer Payback]   
+ ______________________________________________________________________________ 
+
+Project L used Giga Drain
+[The foe Inkay lost 72 HP, now has 0 HP]
+[Project L gained 36 HP, now has 65 HP]
+[The foe Inkay fainted]
+[AI made a switch]
+
+Scoring for Inkay switching to: Inkay
+Score: -10000000
+
+Scoring for Inkay switching to: Misdreavus
+incomingpercentage: 1.758621
+Defensive: -150
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -150 
+
+Scoring for switching from: Inkay
+                                                            |New AI
+Score for switching to Inkay                                |-10000000 
+Score for switching to Misdreavus                           |-150.0 
+Switch chosen =                                             |Misdreavus 
+
+ ______________________________________________________________________________ 
+
+************************** Round 6 *******************************
+[Not preferring status move]
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Misdreavus: Mean Look=[12, -1, -1, -1], Hex=[36, -1, -1, -1], Psybeam=[24, -1, -1, -1], Pain Split=[0, -1, -1, -1]]
+[Prefer Hex]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Misdreavus , HP percentage: 100.0 %
+Held Item:  , Ability: Levitate , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |175.9 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Hex - 0 vs Project L, Init scoring move:                    |36 
+Hex - 0 vs Project L, Final scoring move:                   |36 
+
+Mean Look - 0 vs Project L, Init scoring move:              |20 
+Mean Look - 0 vs Project L, Final scoring move:             |12 
+
+Pain Split - 0 vs Project L, Init scoring move:             |25 
+Pain Split - 0 vs Project L, Final scoring move:            |0 
+
+Psybeam - 0 vs Project L, Init scoring move:                |24 
+Psybeam - 0 vs Project L, Final scoring move:               |24 
+
+Final action chosen:                                        |[Prefer Hex]       
+ ______________________________________________________________________________ 
+
+Project L used Giga Drain
+[The foe Misdreavus lost 87 HP, now has 0 HP]
+[Project L gained 44 HP, now has 109 HP]
+[The foe Misdreavus fainted]
+************************** Round 1 *******************************
+Priority Check Begin
+Player Pokemon is faster.
+pre-check: 15
+Expected damage taken: 0
+post-check: 15
+Priority Check End
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (-40)
+Initial switchscore building: Specific Switches (0)
+Shedinja: initial switchscore: -40
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Shedinja: initial noswitchscore: 150
+ShouldSwitchScore: -95 
+
+[The foe Shedinja: Spite=[0, -1, -1, -1], Shadow Sneak=[15, -1, -1, -1], Mind Reader=[5, -1, -1, -1], Confuse Ray=[0, -1, -1, -1]]
+[Prefer Shadow Sneak]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Shedinja , HP percentage: 100.0 %
+Held Item:  , Ability: Wonder Guard , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+
+Scoring for Switching to other mon                          |-95.0 
+ 
+Confuse Ray - 0 vs Project L, Init scoring move:            |25 
+Confuse Ray - 0 vs Project L, Final scoring move:           |0 
+
+Mind Reader - 0 vs Project L, Init scoring move:            |5 
+Mind Reader - 0 vs Project L, Final scoring move:           |5 
+
+Shadow Sneak - 0 vs Project L, Init scoring move:           |15 
+Shadow Sneak - 0 vs Project L, Final scoring move:          |15 
+
+Spite - 0 vs Project L, Init scoring move:                  |0 
+Spite - 0 vs Project L, Final scoring move:                 |0 
+
+Final action chosen:                                        |[Prefer Shadow Sneak]
+ ______________________________________________________________________________ 
+
+Shedinja used Shadow Sneak
+[Dunseraph lost 14 HP, now has 189 HP]
+************************** Round 2 *******************************
+Priority Check Begin
+AI Pokemon is faster.
+pre-check: 7
+Expected damage taken: -1
+post-check: 7
+Priority Check End
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (20)
+Initial switchscore building: Specific Switches (0)
+Shedinja: initial switchscore: 20
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (25)
+Shedinja: initial noswitchscore: 25
+ShouldSwitchScore: -2 
+
+[The foe Shedinja: Spite=[0, -1, -1, -1], Shadow Sneak=[7, -1, -1, -1], Mind Reader=[5, -1, -1, -1], Confuse Ray=[42, -1, -1, -1]]
+[Prefer Confuse Ray]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Shedinja , HP percentage: 100.0 %
+Held Item:  , Ability: Wonder Guard , Field: 
+                                                            |AI Scores
+Expected Damage taken from Dunseraph                        |0.0 % 
+
+Scoring for Switching to other mon                          |-2.5 
+ 
+Confuse Ray - 0 vs Dunseraph, Init scoring move:            |25 
+Confuse Ray - 0 vs Dunseraph, Final scoring move:           |42 
+
+Mind Reader - 0 vs Dunseraph, Init scoring move:            |5 
+Mind Reader - 0 vs Dunseraph, Final scoring move:           |5 
+
+Shadow Sneak - 0 vs Dunseraph, Init scoring move:           |7 
+Shadow Sneak - 0 vs Dunseraph, Final scoring move:          |7 
+
+Spite - 0 vs Dunseraph, Init scoring move:                  |0 
+Spite - 0 vs Dunseraph, Final scoring move:                 |0 
+
+Final action chosen:                                        |[Prefer Confuse Ray]
+ ______________________________________________________________________________ 
+
+Shedinja used Confuse Ray
+Dunseraph used Sky Fall
+[The foe Shedinja lost 1 HP, now has 0 HP]
+[The foe Shedinja fainted]
+[AI made a switch]
+
+Scoring for Shedinja switching to: Shedinja
+Score: -10000000
+
+Scoring for Shedinja switching to: Deino
+incomingpercentage: 1.085366
+Defensive: -150
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -150 
+
+Scoring for switching from: Shedinja
+                                                            |New AI
+Score for switching to Shedinja                             |-10000000 
+Score for switching to Deino                                |-150.0 
+Switch chosen =                                             |Deino 
+
+ ______________________________________________________________________________ 
+
+************************** Round 3 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Deino: Roar=[11, -1, -1, -1], Crunch=[13, -1, -1, -1], Slam=[9, -1, -1, -1], Dragon Pulse=[21, -1, -1, -1]]
+[Prefer Dragon Pulse]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Deino , HP percentage: 100.0 %
+Held Item:  , Ability: Hustle , Field: 
+                                                            |AI Scores
+Expected Damage taken from Dunseraph                        |108.5 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Crunch - 0 vs Dunseraph, Init scoring move:                 |15 
+Crunch - 0 vs Dunseraph, Final scoring move:                |13 
+
+Dragon Pulse - 0 vs Dunseraph, Init scoring move:           |21 
+Dragon Pulse - 0 vs Dunseraph, Final scoring move:          |21 
+
+Roar - 0 vs Dunseraph, Init scoring move:                   |20 
+Roar - 0 vs Dunseraph, Final scoring move:                  |11 
+
+Slam - 0 vs Dunseraph, Init scoring move:                   |10 
+Slam - 0 vs Dunseraph, Final scoring move:                  |9 
+
+Final action chosen:                                        |[Prefer Dragon Pulse]
+ ______________________________________________________________________________ 
+
+Dunseraph used Dragon Breath
+[The foe Deino lost 82 HP, now has 0 HP]
+[The foe Deino fainted]
+************************** Round 1 *******************************
+ShouldSwitchScore: -1000 
+
+[The foe Spheal: Aurora Beam=[31, -1, -1, -1], Body Slam=[10, -1, -1, -1], Rest=[0, -1, -1, -1], Snore=[0, -1, -1, -1]]
+[Prefer Aurora Beam]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Spheal , HP percentage: 100.0 %
+Held Item:  , Ability: Oblivious , Field: 
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |212.9 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Aurora Beam - 0 vs Project L, Init scoring move:            |31 
+Aurora Beam - 0 vs Project L, Final scoring move:           |31 
+
+Body Slam - 0 vs Project L, Init scoring move:              |10 
+Body Slam - 0 vs Project L, Final scoring move:             |10 
+
+Rest - 0 vs Project L, Init scoring move:                   |20 
+Rest - 0 vs Project L, Final scoring move:                  |0 
+
+Snore - 0 vs Project L, Init scoring move:                  |8 
+Snore - 0 vs Project L, Final scoring move:                 |0 
+
+Final action chosen:                                        |[Prefer Aurora Beam]
+ ______________________________________________________________________________ 
+
+Project L used Giga Drain
+[The foe Spheal lost 93 HP, now has 0 HP]
+[Project L gained 14 HP, now has 123 HP]
+[The foe Spheal fainted]
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (-20)
+Initial switchscore building: Specific Switches (0)
+Vulpix: initial switchscore: -20
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Vulpix: initial noswitchscore: 150
+ShouldSwitchScore: -85 
+
+ShouldSwitchScore: -1000 
+
+Opposing threat scores : -2.3099999999999996, 1.0, -6.005999999999999, 1.0
+[The foe Vulpix: Feint Attack=[7, -1, 4, -1], Hex=[8, -1, 5, -1], Flame Burst=[47, -1, 6, -1], Extrasensory=[10, -1, 6, -1]]
+[Prefer Flame Burst]
+[The foe Numel: Lava Plume=[47, 29, 6, -1], Earth Power=[10, -1, 0, -1], Curse=[33, -1, 43, -1], Take Down=[10, -1, 5, -1]]
+[Prefer Curse]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Vulpix , HP percentage: 100.0 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+Expected Damage taken from Dunseraph                        |0.0 % 
+
+Scoring for Switching to other mon                          |-85.0 
+ 
+Extrasensory - 0 vs Project L, Init scoring move:           |10 
+Extrasensory - 0 vs Project L, Final scoring move:          |10 
+
+Extrasensory - 2 vs Dunseraph, Init scoring move:           |6 
+Extrasensory - 2 vs Dunseraph, Final scoring move:          |6 
+
+Feint Attack - 0 vs Project L, Init scoring move:           |7 
+Feint Attack - 0 vs Project L, Final scoring move:          |7 
+
+Feint Attack - 2 vs Dunseraph, Init scoring move:           |4 
+Feint Attack - 2 vs Dunseraph, Final scoring move:          |4 
+
+Flame Burst - 0 vs Project L, Init scoring move:            |43 
+Flame Burst - 0 vs Project L, Final scoring move:           |47 
+
+Flame Burst - 2 vs Dunseraph, Init scoring move:            |6 
+Flame Burst - 2 vs Dunseraph, Final scoring move:           |6 
+
+Hex - 0 vs Project L, Init scoring move:                    |8 
+Hex - 0 vs Project L, Final scoring move:                   |8 
+
+Hex - 2 vs Dunseraph, Init scoring move:                    |5 
+Hex - 2 vs Dunseraph, Final scoring move:                   |5 
+
+Final action chosen:                                        |[Prefer Flame Burst]
+ ______________________________________________________________________________ 
+
+
+ ______________________________________________________________________________ 
+Scoring for battler: Numel , HP percentage: 100.0 %
+Held Item:  , Ability: Own Tempo , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |0.0 % 
+Expected Damage taken from Dunseraph                        |0.0 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Curse - 0 vs Project L, Init scoring move:                  |10 
+Curse - 0 vs Project L, Final scoring move:                 |33 
+
+Curse - 2 vs Dunseraph, Init scoring move:                  |10 
+Curse - 2 vs Dunseraph, Final scoring move:                 |43 
+
+Earth Power - 0 vs Project L, Init scoring move:            |10 
+Earth Power - 0 vs Project L, Final scoring move:           |10 
+
+Earth Power - 2 vs Dunseraph, Init scoring move:            |0 
+Earth Power - 2 vs Dunseraph, Final scoring move:           |0 
+
+Lava Plume - 0 vs Project L, Init scoring move:             |42 
+Lava Plume - 0 vs Project L, Final scoring move:            |47 
+
+Lava Plume - 1 vs Vulpix, Init scoring move:                |29 
+Lava Plume - 1 vs Vulpix, Final scoring move:               |29 
+
+Lava Plume - 2 vs Dunseraph, Init scoring move:             |6 
+Lava Plume - 2 vs Dunseraph, Final scoring move:            |6 
+
+Take Down - 0 vs Project L, Init scoring move:              |13 
+Take Down - 0 vs Project L, Final scoring move:             |10 
+
+Take Down - 2 vs Dunseraph, Init scoring move:              |7 
+Take Down - 2 vs Dunseraph, Final scoring move:             |5 
+
+Final action chosen:                                        |[Prefer Curse]     
+ ______________________________________________________________________________ 
+
+Dunseraph used Sky Fall
+[The foe Vulpix lost 65 HP, now has 6 HP]
+Vulpix used Flame Burst
+[Pikablue lost 30 HP, now has 68 HP]
+[Dunseraph lost 12 HP, now has 177 HP]
+Numel used Curse
+************************** Round 2 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Vulpix: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (25)
+Vulpix: initial noswitchscore: 25
+ShouldSwitchScore: -12 
+
+ShouldSwitchScore: -1000 
+
+Opposing threat scores : -3.960000000000001, 1.0, -9.008999999999999, 1.0
+[The foe Vulpix: Feint Attack=[17, -1, 4, -1], Hex=[19, -1, 5, -1], Flame Burst=[51, -1, 7, -1], Extrasensory=[23, -1, 6, -1]]
+[Prefer Flame Burst]
+[The foe Numel: Lava Plume=[66, 110, 7, -1], Earth Power=[100, -1, 0, -1], Curse=[27, -1, 0, -1], Take Down=[29, -1, 9, -1]]
+[Prefer Earth Power]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Vulpix , HP percentage: 8.5 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |0.0 % 
+Expected Damage taken from Dunseraph                        |108.5 % 
+
+Scoring for Switching to other mon                          |-12.5 
+ 
+Extrasensory - 0 vs Pikablue, Init scoring move:            |23 
+Extrasensory - 0 vs Pikablue, Final scoring move:           |23 
+
+Extrasensory - 2 vs Dunseraph, Init scoring move:           |6 
+Extrasensory - 2 vs Dunseraph, Final scoring move:          |6 
+
+Feint Attack - 0 vs Pikablue, Init scoring move:            |17 
+Feint Attack - 0 vs Pikablue, Final scoring move:           |17 
+
+Feint Attack - 2 vs Dunseraph, Init scoring move:           |4 
+Feint Attack - 2 vs Dunseraph, Final scoring move:          |4 
+
+Flame Burst - 0 vs Pikablue, Init scoring move:             |47 
+Flame Burst - 0 vs Pikablue, Final scoring move:            |51 
+
+Flame Burst - 2 vs Dunseraph, Init scoring move:            |7 
+Flame Burst - 2 vs Dunseraph, Final scoring move:           |7 
+
+Hex - 0 vs Pikablue, Init scoring move:                     |19 
+Hex - 0 vs Pikablue, Final scoring move:                    |19 
+
+Hex - 2 vs Dunseraph, Init scoring move:                    |5 
+Hex - 2 vs Dunseraph, Final scoring move:                   |5 
+
+Final action chosen:                                        |[Prefer Flame Burst]
+ ______________________________________________________________________________ 
+
+
+ ______________________________________________________________________________ 
+Scoring for battler: Numel , HP percentage: 100.0 %
+Held Item:  , Ability: Own Tempo , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |0.0 % 
+Expected Damage taken from Dunseraph                        |120.2 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Curse - 0 vs Pikablue, Init scoring move:                   |10 
+Curse - 0 vs Pikablue, Final scoring move:                  |27 
+
+Curse - 2 vs Dunseraph, Init scoring move:                  |10 
+Curse - 2 vs Dunseraph, Final scoring move:                 |0 
+
+Earth Power - 0 vs Pikablue, Init scoring move:             |94 
+Earth Power - 0 vs Pikablue, Final scoring move:            |100 
+
+Earth Power - 2 vs Dunseraph, Init scoring move:            |0 
+Earth Power - 2 vs Dunseraph, Final scoring move:           |0 
+
+Lava Plume - 0 vs Pikablue, Init scoring move:              |47 
+Lava Plume - 0 vs Pikablue, Final scoring move:             |66 
+
+Lava Plume - 1 vs Vulpix, Init scoring move:                |110 
+Lava Plume - 1 vs Vulpix, Final scoring move:               |110 
+
+Lava Plume - 2 vs Dunseraph, Init scoring move:             |7 
+Lava Plume - 2 vs Dunseraph, Final scoring move:            |7 
+
+Take Down - 0 vs Pikablue, Init scoring move:               |48 
+Take Down - 0 vs Pikablue, Final scoring move:              |29 
+
+Take Down - 2 vs Dunseraph, Init scoring move:              |11 
+Take Down - 2 vs Dunseraph, Final scoring move:             |9 
+
+Final action chosen:                                        |[Prefer Earth Power]
+ ______________________________________________________________________________ 
+
+Pikablue used Fake Out
+[The foe Vulpix lost 6 HP, now has 0 HP]
+[The foe Vulpix fainted]
+Dunseraph used Sky Fall
+[The foe Numel lost 84 HP, now has 0 HP]
+[The foe Numel fainted]
+[AI made a switch]
+
+Scoring for Vulpix switching to: Vulpix
+Score: -10000000
+
+Scoring for Vulpix switching to: Slugma
+incomingpercentage: 2.111111
+Defensive: -150
+Offensive: 45
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -105 
+
+Scoring for Vulpix switching to: Houndour
+incomingpercentage: 1.818182
+Defensive: -150
+Offensive: 37
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -112 
+
+Score: -10000000
+
+Score: -10000000
+
+Score: -10000000
+
+Scoring for Vulpix switching to: Numel
+Score: -10000000
+
+Scoring for Vulpix switching to: Fennekin
+Score: -10000000
+
+Scoring for Vulpix switching to: Houndour
+Score: -10000000
+
+Scoring for switching from: Vulpix
+                                                            |New AI
+Score for switching to Vulpix                               |-10000000 
+Score for switching to Slugma                               |-105.0 
+Score for switching to Houndour                             |-112.5 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to Numel                                |-10000000 
+Score for switching to Fennekin                             |-10000000 
+Score for switching to Houndour                             |-10000000 
+Switch chosen =                                             |Slugma 
+
+ ______________________________________________________________________________ 
+
+[AI made a switch]
+
+Scoring for Numel switching to: Vulpix
+Score: -10000000
+
+Scoring for Numel switching to: Slugma
+Score: -10000000
+
+Scoring for Numel switching to: Houndour
+Score: -10000000
+
+Score: -10000000
+
+Score: -10000000
+
+Score: -10000000
+
+Scoring for Numel switching to: Numel
+Score: -10000000
+
+Scoring for Numel switching to: Fennekin
+incomingpercentage: 1.736111
+Defensive: 0
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 0 
+
+Scoring for Numel switching to: Houndour
+incomingpercentage: 1.818182
+Defensive: 0
+Offensive: 37
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 37 
+
+Scoring for switching from: Numel
+                                                            |New AI
+Score for switching to Vulpix                               |-10000000 
+Score for switching to Slugma                               |-10000000 
+Score for switching to Houndour                             |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to Numel                                |-10000000 
+Score for switching to Fennekin                             |0.0 
+Score for switching to Houndour                             |37.5 
+Switch chosen =                                             |Houndour 
+
+ ______________________________________________________________________________ 
+
+************************** Round 3 *******************************
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Slugma: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Slugma: initial noswitchscore: 150
+ShouldSwitchScore: -75 
+
+ShouldSwitchScore: -1000 
+
+Opposing threat scores : -2.6400000000000006, 1.0, -6.005999999999999, 1.0
+[The foe Slugma: Clear Smog=[19, -1, 5, -1], Ancient Power=[22, -1, 14, -1], Flame Burst=[66, -1, 9, -1], Rock Slide=[15, -1, 6, -1]]
+[Prefer Flame Burst]
+[The foe Houndour: Odor Sleuth=[5, -1, 5, -1], Beat Up=[13, 0, 3, -1], Fire Fang=[47, -1, 7, -1], Feint Attack=[26, -1, 8, -1]]
+[Prefer Fire Fang]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Slugma , HP percentage: 100.0 %
+Held Item:  , Ability: Weak Armor , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |61.1 % 
+Expected Damage taken from Dunseraph                        |150.0 % 
+
+Scoring for Switching to other mon                          |-75.0 
+ 
+Ancient Power - 0 vs Pikablue, Init scoring move:           |22 
+Ancient Power - 0 vs Pikablue, Final scoring move:          |22 
+
+Ancient Power - 2 vs Dunseraph, Init scoring move:          |13 
+Ancient Power - 2 vs Dunseraph, Final scoring move:         |14 
+
+Clear Smog - 0 vs Pikablue, Init scoring move:              |19 
+Clear Smog - 0 vs Pikablue, Final scoring move:             |19 
+
+Clear Smog - 2 vs Dunseraph, Init scoring move:             |5 
+Clear Smog - 2 vs Dunseraph, Final scoring move:            |5 
+
+Flame Burst - 0 vs Pikablue, Init scoring move:             |60 
+Flame Burst - 0 vs Pikablue, Final scoring move:            |66 
+
+Flame Burst - 2 vs Dunseraph, Init scoring move:            |9 
+Flame Burst - 2 vs Dunseraph, Final scoring move:           |9 
+
+Rock Slide - 0 vs Pikablue, Init scoring move:              |16 
+Rock Slide - 0 vs Pikablue, Final scoring move:             |15 
+
+Rock Slide - 2 vs Dunseraph, Init scoring move:             |7 
+Rock Slide - 2 vs Dunseraph, Final scoring move:            |6 
+
+Final action chosen:                                        |[Prefer Flame Burst]
+ ______________________________________________________________________________ 
+
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndour , HP percentage: 100.0 %
+Held Item:  , Ability: Unnerve , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |66.2 % 
+Expected Damage taken from Dunseraph                        |115.6 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Beat Up - 0 vs Pikablue, Init scoring move:                 |13 
+Beat Up - 0 vs Pikablue, Final scoring move:                |13 
+
+Beat Up - 1 vs Slugma, Init scoring move:                   |19 
+Beat Up - 1 vs Slugma, Final scoring move:                  |0 
+
+Beat Up - 2 vs Dunseraph, Init scoring move:                |3 
+Beat Up - 2 vs Dunseraph, Final scoring move:               |3 
+
+Feint Attack - 0 vs Pikablue, Init scoring move:            |35 
+Feint Attack - 0 vs Pikablue, Final scoring move:           |26 
+
+Feint Attack - 2 vs Dunseraph, Init scoring move:           |8 
+Feint Attack - 2 vs Dunseraph, Final scoring move:          |8 
+
+Fire Fang - 0 vs Pikablue, Init scoring move:               |57 
+Fire Fang - 0 vs Pikablue, Final scoring move:              |47 
+
+Fire Fang - 2 vs Dunseraph, Init scoring move:              |7 
+Fire Fang - 2 vs Dunseraph, Final scoring move:             |7 
+
+Odor Sleuth - 0 vs Pikablue, Init scoring move:             |5 
+Odor Sleuth - 0 vs Pikablue, Final scoring move:            |5 
+
+Odor Sleuth - 2 vs Dunseraph, Init scoring move:            |5 
+Odor Sleuth - 2 vs Dunseraph, Final scoring move:           |5 
+
+Final action chosen:                                        |[Prefer Fire Fang] 
+ ______________________________________________________________________________ 
+
+Pikablue used Zippy Zap
+[The foe Houndour lost 77 HP, now has 0 HP]
+[The foe Houndour fainted]
+Dunseraph used Sky Fall
+[The foe Slugma lost 72 HP, now has 0 HP]
+[The foe Slugma fainted]
+[AI made a switch]
+
+Scoring for Slugma switching to: Vulpix
+Score: -10000000
+
+Scoring for Slugma switching to: Slugma
+Score: -10000000
+
+Scoring for Slugma switching to: Houndour
+incomingpercentage: 3.909091
+Defensive: -150
+Offensive: 37
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -112 
+
+Score: -10000000
+
+Score: -10000000
+
+Score: -10000000
+
+Scoring for Slugma switching to: Numel
+Score: -10000000
+
+Scoring for Slugma switching to: Fennekin
+Score: -10000000
+
+Scoring for Slugma switching to: Houndour
+Score: -10000000
+
+Scoring for switching from: Slugma
+                                                            |New AI
+Score for switching to Vulpix                               |-10000000 
+Score for switching to Slugma                               |-10000000 
+Score for switching to Houndour                             |-112.5 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to Numel                                |-10000000 
+Score for switching to Fennekin                             |-10000000 
+Score for switching to Houndour                             |-10000000 
+Switch chosen =                                             |Houndour 
+
+ ______________________________________________________________________________ 
+
+[AI made a switch]
+
+Scoring for Houndour switching to: Vulpix
+Score: -10000000
+
+Scoring for Houndour switching to: Slugma
+Score: -10000000
+
+Scoring for Houndour switching to: Houndour
+Score: -10000000
+
+Score: -10000000
+
+Score: -10000000
+
+Score: -10000000
+
+Scoring for Houndour switching to: Numel
+Score: -10000000
+
+Scoring for Houndour switching to: Fennekin
+incomingpercentage: 3.666667
+Defensive: -150
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -150 
+
+Scoring for Houndour switching to: Houndour
+Score: -10000000
+
+Scoring for switching from: Houndour
+                                                            |New AI
+Score for switching to Vulpix                               |-10000000 
+Score for switching to Slugma                               |-10000000 
+Score for switching to Houndour                             |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to                                      |-10000000 
+Score for switching to Numel                                |-10000000 
+Score for switching to Fennekin                             |-150.0 
+Score for switching to Houndour                             |-10000000 
+Switch chosen =                                             |Fennekin 
+
+ ______________________________________________________________________________ 
+
+************************** Round 4 *******************************
+[Not preferring status move]
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+ShouldSwitchScore: -1000 
+
+Opposing threat scores : -2.6400000000000006, 1.0, -6.005999999999999, 1.0
+[The foe Houndour: Odor Sleuth=[4, -1, 4, -1], Beat Up=[8, -1, 2, 0], Fire Fang=[47, -1, 7, -1], Feint Attack=[26, -1, 8, -1]]
+[Prefer Fire Fang]
+[The foe Fennekin: Fire Spin=[23, -1, 3, -1], Lucky Chant=[20, -1, 20, -1], Light Screen=[37, -1, 37, -1], Psyshock=[30, -1, 7, -1]]
+[Prefer Light Screen]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndour , HP percentage: 100.0 %
+Held Item:  , Ability: Unnerve , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |275.3 % 
+Expected Damage taken from Dunseraph                        |115.6 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Beat Up - 0 vs Pikablue, Init scoring move:                 |8 
+Beat Up - 0 vs Pikablue, Final scoring move:                |8 
+
+Beat Up - 2 vs Dunseraph, Init scoring move:                |2 
+Beat Up - 2 vs Dunseraph, Final scoring move:               |2 
+
+Beat Up - 3 vs Fennekin, Init scoring move:                 |12 
+Beat Up - 3 vs Fennekin, Final scoring move:                |0 
+
+Feint Attack - 0 vs Pikablue, Init scoring move:            |35 
+Feint Attack - 0 vs Pikablue, Final scoring move:           |26 
+
+Feint Attack - 2 vs Dunseraph, Init scoring move:           |8 
+Feint Attack - 2 vs Dunseraph, Final scoring move:          |8 
+
+Fire Fang - 0 vs Pikablue, Init scoring move:               |57 
+Fire Fang - 0 vs Pikablue, Final scoring move:              |47 
+
+Fire Fang - 2 vs Dunseraph, Init scoring move:              |7 
+Fire Fang - 2 vs Dunseraph, Final scoring move:             |7 
+
+Odor Sleuth - 0 vs Pikablue, Init scoring move:             |5 
+Odor Sleuth - 0 vs Pikablue, Final scoring move:            |4 
+
+Odor Sleuth - 2 vs Dunseraph, Init scoring move:            |5 
+Odor Sleuth - 2 vs Dunseraph, Final scoring move:           |4 
+
+Final action chosen:                                        |[Prefer Fire Fang] 
+ ______________________________________________________________________________ 
+
+
+ ______________________________________________________________________________ 
+Scoring for battler: Fennekin , HP percentage: 100.0 %
+Held Item:  , Ability: Blaze , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |254.2 % 
+Expected Damage taken from Dunseraph                        |112.5 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Fire Spin - 0 vs Pikablue, Init scoring move:               |30 
+Fire Spin - 0 vs Pikablue, Final scoring move:              |23 
+
+Fire Spin - 2 vs Dunseraph, Init scoring move:              |5 
+Fire Spin - 2 vs Dunseraph, Final scoring move:             |3 
+
+Light Screen - 0 vs Pikablue, Init scoring move:            |35 
+Light Screen - 0 vs Pikablue, Final scoring move:           |37 
+
+Light Screen - 2 vs Dunseraph, Init scoring move:           |35 
+Light Screen - 2 vs Dunseraph, Final scoring move:          |37 
+
+Lucky Chant - 0 vs Pikablue, Init scoring move:             |0 
+Lucky Chant - 0 vs Pikablue, Final scoring move:            |20 
+
+Lucky Chant - 2 vs Dunseraph, Init scoring move:            |0 
+Lucky Chant - 2 vs Dunseraph, Final scoring move:           |20 
+
+Psyshock - 0 vs Pikablue, Init scoring move:                |30 
+Psyshock - 0 vs Pikablue, Final scoring move:               |30 
+
+Psyshock - 2 vs Dunseraph, Init scoring move:               |7 
+Psyshock - 2 vs Dunseraph, Final scoring move:              |7 
+
+Final action chosen:                                        |[Prefer Light Screen]
+ ______________________________________________________________________________ 
+
+Pikablue used Zippy Zap
+[The foe Fennekin lost 72 HP, now has 0 HP]
+[The foe Fennekin fainted]
+Dunseraph used Sky Fall
+[The foe Houndour lost 77 HP, now has 0 HP]
+[The foe Houndour fainted]
+************************** Round 1 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (-40)
+Initial switchscore building: Specific Switches (0)
+Ninetales: initial switchscore: -40
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (180)
+Ninetales: initial noswitchscore: 280
+ShouldSwitchScore: -320 
+
+[The foe Ninetales: Will-O-Wisp=[16, -1, -1, -1], Payback=[12, -1, -1, -1], Flamethrower=[112, -1, -1, -1], Confuse Ray=[0, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Ninetales , HP percentage: 100.0 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Petilil                          |17.6 % 
+
+Scoring for Switching to other mon                          |-320 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Confuse Ray - 0 vs Project L, Init scoring move:            |25 
+Confuse Ray - 0 vs Project L, Final scoring move:           |0 
+
+Flamethrower - 0 vs Project L, Init scoring move:           |110 
+Flamethrower - 0 vs Project L, Final scoring move:          |112 
+
+Payback - 0 vs Project L, Init scoring move:                |12 
+Payback - 0 vs Project L, Final scoring move:               |12 
+
+Will-O-Wisp - 0 vs Project L, Init scoring move:            |25 
+Will-O-Wisp - 0 vs Project L, Final scoring move:           |16 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Ninetales used Flamethrower
+[Project L lost 123 HP, now has 0 HP]
+[Project L fainted]
+[Player made a switch]
+
+************************** Round 2 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Ninetales: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (25)
+Ninetales: initial noswitchscore: 25
+ShouldSwitchScore: -25 
+
+[The foe Ninetales: Will-O-Wisp=[7, -1, -1, -1], Payback=[48, -1, -1, -1], Flamethrower=[117, -1, -1, -1], Confuse Ray=[6, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Ninetales , HP percentage: 100.0 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |48.0 % 
+
+Scoring for Switching to other mon                          |-25 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Confuse Ray - 0 vs Pikablue, Init scoring move:             |25 
+Confuse Ray - 0 vs Pikablue, Final scoring move:            |6 
+
+Flamethrower - 0 vs Pikablue, Init scoring move:            |110 
+Flamethrower - 0 vs Pikablue, Final scoring move:           |117 
+
+Payback - 0 vs Pikablue, Init scoring move:                 |32 
+Payback - 0 vs Pikablue, Final scoring move:                |48 
+
+Will-O-Wisp - 0 vs Pikablue, Init scoring move:             |25 
+Will-O-Wisp - 0 vs Pikablue, Final scoring move:            |7 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Pikablue used Fake Out
+[The foe Ninetales lost 18 HP, now has 107 HP]
+Ninetales used Flamethrower
+************************** Round 3 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Ninetales: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Ninetales: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Ninetales: Will-O-Wisp=[7, -1, -1, -1], Payback=[48, -1, -1, -1], Flamethrower=[117, -1, -1, -1], Confuse Ray=[6, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Ninetales , HP percentage: 85.6 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Pikachu                          |48.0 % 
+
+Scoring for Switching to other mon                          |0 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Confuse Ray - 0 vs Pikablue, Init scoring move:             |25 
+Confuse Ray - 0 vs Pikablue, Final scoring move:            |6 
+
+Flamethrower - 0 vs Pikablue, Init scoring move:            |110 
+Flamethrower - 0 vs Pikablue, Final scoring move:           |117 
+
+Payback - 0 vs Pikablue, Init scoring move:                 |32 
+Payback - 0 vs Pikablue, Final scoring move:                |48 
+
+Will-O-Wisp - 0 vs Pikablue, Init scoring move:             |25 
+Will-O-Wisp - 0 vs Pikablue, Final scoring move:            |7 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Pikablue used Zippy Zap
+[The foe Ninetales lost 51 HP, now has 56 HP]
+Ninetales used Flamethrower
+[Pikablue lost 68 HP, now has 0 HP]
+[Pikablue fainted]
+[Player made a switch]
+
+************************** Round 4 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Ninetales: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Ninetales: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Ninetales: Will-O-Wisp=[38, -1, -1, -1], Payback=[30, -1, -1, -1], Flamethrower=[63, -1, -1, -1], Confuse Ray=[36, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Ninetales , HP percentage: 44.8 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Furfrou                          |73.6 % 
+
+Scoring for Switching to other mon                          |0 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Confuse Ray - 0 vs Octa, Init scoring move:                 |25 
+Confuse Ray - 0 vs Octa, Final scoring move:                |36 
+
+Flamethrower - 0 vs Octa, Init scoring move:                |56 
+Flamethrower - 0 vs Octa, Final scoring move:               |63 
+
+Payback - 0 vs Octa, Init scoring move:                     |15 
+Payback - 0 vs Octa, Final scoring move:                    |30 
+
+Will-O-Wisp - 0 vs Octa, Init scoring move:                 |25 
+Will-O-Wisp - 0 vs Octa, Final scoring move:                |38 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Octa used Bite
+[The foe Ninetales lost 39 HP, now has 17 HP]
+Ninetales used Flamethrower
+************************** Round 5 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Ninetales: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Ninetales: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Ninetales: Will-O-Wisp=[38, -1, -1, -1], Payback=[30, -1, -1, -1], Flamethrower=[63, -1, -1, -1], Confuse Ray=[36, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Ninetales , HP percentage: 13.6 %
+Held Item:  , Ability: Drought , Field: Rainbow Field
+                                                            |AI Scores
+Expected Damage taken from Furfrou                          |73.6 % 
+
+Scoring for Switching to other mon                          |0 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Confuse Ray - 0 vs Octa, Init scoring move:                 |25 
+Confuse Ray - 0 vs Octa, Final scoring move:                |36 
+
+Flamethrower - 0 vs Octa, Init scoring move:                |56 
+Flamethrower - 0 vs Octa, Final scoring move:               |63 
+
+Payback - 0 vs Octa, Init scoring move:                     |15 
+Payback - 0 vs Octa, Final scoring move:                    |30 
+
+Will-O-Wisp - 0 vs Octa, Init scoring move:                 |25 
+Will-O-Wisp - 0 vs Octa, Final scoring move:                |38 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Octa used Bite
+[The foe Ninetales lost 17 HP, now has 0 HP]
+[The foe Ninetales fainted]
+[AI made a switch]
+
+Scoring for Ninetales switching to: Ninetales
+Score: -10000000
+
+Scoring for Ninetales switching to: Charizard
+incomingpercentage: 0.651515
+Defensive: 0
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 0 
+
+Scoring for Ninetales switching to: Houndoom
+incomingpercentage: 0.713287
+Defensive: 0
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 0 
+
+Scoring for switching from: Ninetales
+                                                            |New AI
+Score for switching to Ninetales                            |-10000000 
+Score for switching to Charizard                            |0.0 
+Score for switching to Houndoom                             |0.0 
+Switch chosen =                                             |Charizard 
+
+ ______________________________________________________________________________ 
+
+************************** Round 6 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Charizard: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Charizard: initial noswitchscore: 150
+ShouldSwitchScore: -150 
+
+[The foe Charizard: Dragon Rage=[31, -1, -1, -1], Hidden Power=[30, -1, -1, -1], Flame Burst=[51, -1, -1, -1], Ancient Power=[32, -1, -1, -1]]
+[Prefer Flame Burst]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Charizard , HP percentage: 100.0 %
+Held Item:  , Ability: Solar Power , Field: 
+                                                            |AI Scores
+Expected Damage taken from Grafaiai                         |37.9 % 
+
+Scoring for Switching to other mon                          |-150 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Ancient Power - 0 vs Grafaiai, Init scoring move:           |30 
+Ancient Power - 0 vs Grafaiai, Final scoring move:          |32 
+
+Dragon Rage - 0 vs Grafaiai, Init scoring move:             |31 
+Dragon Rage - 0 vs Grafaiai, Final scoring move:            |31 
+
+Flame Burst - 0 vs Grafaiai, Init scoring move:             |51 
+Flame Burst - 0 vs Grafaiai, Final scoring move:            |51 
+
+Hidden Power - 0 vs Grafaiai, Init scoring move:            |30 
+Hidden Power - 0 vs Grafaiai, Final scoring move:           |30 
+
+Final action chosen:                                        |[Prefer Flame Burst]
+ ______________________________________________________________________________ 
+
+Grafaiai used Acid Spray
+[The foe Charizard lost 17 HP, now has 115 HP]
+Charizard used Flame Burst
+[Grafaiai lost 93 HP, now has 33 HP]
+************************** Round 7 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (30)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Charizard: initial switchscore: 30
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (25)
+Charizard: initial noswitchscore: 25
+ShouldSwitchScore: 5 
+
+Scoring for Charizard switching to: Ninetales
+Score: -10000000
+
+Scoring for Charizard switching to: Charizard
+Score: -10000000
+
+Scoring for Charizard switching to: Houndoom
+incomingpercentage: 0.412587
+Defensive: 35
+Offensive: 105
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 140 
+
+[The foe Charizard: Dragon Rage=[110, -1, -1, -1], Hidden Power=[110, -1, -1, -1], Flame Burst=[110, -1, -1, -1], Ancient Power=[121, -1, -1, -1]]
+[Prefer Ancient Power]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Charizard , HP percentage: 87.1 %
+Held Item:  , Ability: Solar Power , Field: 
+                                                            |AI Scores
+Expected Damage taken from Grafaiai                         |37.9 % 
+
+Scoring for Switching to other mon                          |5 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Ancient Power - 0 vs Grafaiai, Init scoring move:           |110 
+Ancient Power - 0 vs Grafaiai, Final scoring move:          |121 
+
+Dragon Rage - 0 vs Grafaiai, Init scoring move:             |110 
+Dragon Rage - 0 vs Grafaiai, Final scoring move:            |110 
+
+Flame Burst - 0 vs Grafaiai, Init scoring move:             |110 
+Flame Burst - 0 vs Grafaiai, Final scoring move:            |110 
+
+Hidden Power - 0 vs Grafaiai, Init scoring move:            |110 
+Hidden Power - 0 vs Grafaiai, Final scoring move:           |110 
+
+Final action chosen:                                        |[Prefer Ancient Power]
+ ______________________________________________________________________________ 
+
+Grafaiai used Parting Shot
+[The foe Charizard gained 0 HP, now has 115 HP]
+[Player made a switch]
+
+Charizard used Ancient Power
+[Dunseraph lost 40 HP, now has 137 HP]
+************************** Round 8 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (45)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Charizard: initial switchscore: 45
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Charizard: initial noswitchscore: 0
+ShouldSwitchScore: 45 
+
+Scoring for Charizard switching to: Ninetales
+Score: -10000000
+
+Scoring for Charizard switching to: Charizard
+Score: -10000000
+
+Scoring for Charizard switching to: Houndoom
+incomingpercentage: 0.272727
+Defensive: 75
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 75 
+
+[The foe Charizard: Dragon Rage=[29, -1, -1, -1], Hidden Power=[14, -1, -1, -1], Flame Burst=[13, -1, -1, -1], Ancient Power=[34, -1, -1, -1]]
+[Prefer Ancient Power]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Charizard , HP percentage: 87.1 %
+Held Item:  , Ability: Solar Power , Field: 
+                                                            |AI Scores
+Expected Damage taken from Dunseraph                        |62.9 % 
+
+Scoring for Switching to other mon                          |45 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Ancient Power - 0 vs Dunseraph, Init scoring move:          |29 
+Ancient Power - 0 vs Dunseraph, Final scoring move:         |34 
+
+Dragon Rage - 0 vs Dunseraph, Init scoring move:            |29 
+Dragon Rage - 0 vs Dunseraph, Final scoring move:           |29 
+
+Flame Burst - 0 vs Dunseraph, Init scoring move:            |13 
+Flame Burst - 0 vs Dunseraph, Final scoring move:           |13 
+
+Hidden Power - 0 vs Dunseraph, Init scoring move:           |14 
+Hidden Power - 0 vs Dunseraph, Final scoring move:          |14 
+
+Final action chosen:                                        |[Prefer Ancient Power]
+ ______________________________________________________________________________ 
+
+Charizard used Ancient Power
+[Dunseraph lost 42 HP, now has 95 HP]
+Dunseraph used Roost
+[Dunseraph gained 102 HP, now has 197 HP]
+************************** Round 9 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (45)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Charizard: initial switchscore: 45
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Charizard: initial noswitchscore: 0
+ShouldSwitchScore: 45 
+
+Scoring for Charizard switching to: Ninetales
+Score: -10000000
+
+Scoring for Charizard switching to: Charizard
+Score: -10000000
+
+Scoring for Charizard switching to: Houndoom
+incomingpercentage: 0.272727
+Defensive: 75
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 75 
+
+[The foe Charizard: Dragon Rage=[20, -1, -1, -1], Hidden Power=[10, -1, -1, -1], Flame Burst=[9, -1, -1, -1], Ancient Power=[27, -1, -1, -1]]
+[Prefer Ancient Power]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Charizard , HP percentage: 87.1 %
+Held Item:  , Ability: Solar Power , Field: 
+                                                            |AI Scores
+Expected Damage taken from Dunseraph                        |62.9 % 
+
+Scoring for Switching to other mon                          |45 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Ancient Power - 0 vs Dunseraph, Init scoring move:          |20 
+Ancient Power - 0 vs Dunseraph, Final scoring move:         |27 
+
+Dragon Rage - 0 vs Dunseraph, Init scoring move:            |20 
+Dragon Rage - 0 vs Dunseraph, Final scoring move:           |20 
+
+Flame Burst - 0 vs Dunseraph, Init scoring move:            |9 
+Flame Burst - 0 vs Dunseraph, Final scoring move:           |9 
+
+Hidden Power - 0 vs Dunseraph, Init scoring move:           |10 
+Hidden Power - 0 vs Dunseraph, Final scoring move:          |10 
+
+Final action chosen:                                        |[Prefer Ancient Power]
+ ______________________________________________________________________________ 
+
+Charizard used Ancient Power
+[Dunseraph lost 38 HP, now has 159 HP]
+Dunseraph used Sky Fall
+[The foe Charizard lost 78 HP, now has 37 HP]
+************************** Round 10 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -86
+Highest item score: -86
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (45)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Charizard: initial switchscore: 45
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Charizard: initial noswitchscore: 0
+ShouldSwitchScore: 45 
+
+Scoring for Charizard switching to: Ninetales
+Score: -10000000
+
+Scoring for Charizard switching to: Charizard
+Score: -10000000
+
+Scoring for Charizard switching to: Houndoom
+incomingpercentage: 0.286713
+Defensive: 75
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 75 
+
+[The foe Charizard: Dragon Rage=[25, -1, -1, -1], Hidden Power=[12, -1, -1, -1], Flame Burst=[11, -1, -1, -1], Ancient Power=[28, -1, -1, -1]]
+[Prefer Ancient Power]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Charizard , HP percentage: 28.0 %
+Held Item:  , Ability: Solar Power , Field: 
+                                                            |AI Scores
+Expected Damage taken from Dunseraph                        |65.9 % 
+
+Scoring for Switching to other mon                          |45 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-86.8672            
+Ancient Power - 0 vs Dunseraph, Init scoring move:          |25 
+Ancient Power - 0 vs Dunseraph, Final scoring move:         |28 
+
+Dragon Rage - 0 vs Dunseraph, Init scoring move:            |25 
+Dragon Rage - 0 vs Dunseraph, Final scoring move:           |25 
+
+Flame Burst - 0 vs Dunseraph, Init scoring move:            |11 
+Flame Burst - 0 vs Dunseraph, Final scoring move:           |11 
+
+Hidden Power - 0 vs Dunseraph, Init scoring move:           |12 
+Hidden Power - 0 vs Dunseraph, Final scoring move:          |12 
+
+Final action chosen:                                        |[Prefer Ancient Power]
+ ______________________________________________________________________________ 
+
+Charizard used Ancient Power
+[Dunseraph lost 42 HP, now has 117 HP]
+Dunseraph used Sky Fall
+[The foe Charizard lost 37 HP, now has 0 HP]
+[The foe Charizard fainted]
+[AI made a switch]
+
+Scoring for Charizard switching to: Ninetales
+Score: -10000000
+
+Scoring for Charizard switching to: Charizard
+Score: -10000000
+
+Scoring for Charizard switching to: Houndoom
+incomingpercentage: 0.286713
+Defensive: 75
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 75 
+
+Scoring for switching from: Charizard
+                                                            |New AI
+Score for switching to Ninetales                            |-10000000 
+Score for switching to Charizard                            |-10000000 
+Score for switching to Houndoom                             |75.0 
+Switch chosen =                                             |Houndoom 
+
+ ______________________________________________________________________________ 
+
+************************** Round 11 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Houndoom: Fire Fang=[110, -1, -1, -1], Feint Attack=[115, -1, -1, -1], Thunder Fang=[108, -1, -1, -1], Return=[99, -1, -1, -1]]
+[Prefer Fire Fang]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 100.0 %
+Held Item:  , Ability: Flash Fire , Field: 
+                                                            |AI Scores
+Expected Damage taken from Grafaiai                         |41.3 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Feint Attack - 0 vs Grafaiai, Init scoring move:            |110 
+Feint Attack - 0 vs Grafaiai, Final scoring move:           |115 
+
+Fire Fang - 0 vs Grafaiai, Init scoring move:               |110 
+Fire Fang - 0 vs Grafaiai, Final scoring move:              |110 
+
+Return - 0 vs Grafaiai, Init scoring move:                  |110 
+Return - 0 vs Grafaiai, Final scoring move:                 |99 
+
+Thunder Fang - 0 vs Grafaiai, Init scoring move:            |110 
+Thunder Fang - 0 vs Grafaiai, Final scoring move:           |108 
+
+Final action chosen:                                        |[Prefer Fire Fang] 
+ ______________________________________________________________________________ 
+
+Grafaiai used Parting Shot
+Houndoom used Fire Fang
+[Grafaiai lost 33 HP, now has 0 HP]
+[Grafaiai fainted]
+[Player made a switch]
+
+************************** Round 12 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Houndoom: Fire Fang=[27, -1, -1, -1], Feint Attack=[49, -1, -1, -1], Thunder Fang=[17, -1, -1, -1], Return=[0, -1, -1, -1]]
+[Prefer Feint Attack]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 100.0 %
+Held Item:  , Ability: Flash Fire , Field: 
+                                                            |AI Scores
+Expected Damage taken from Furfrou                          |71.3 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Feint Attack - 0 vs Octa, Init scoring move:                |49 
+Feint Attack - 0 vs Octa, Final scoring move:               |49 
+
+Fire Fang - 0 vs Octa, Init scoring move:                   |26 
+Fire Fang - 0 vs Octa, Final scoring move:                  |27 
+
+Return - 0 vs Octa, Init scoring move:                      |0 
+Return - 0 vs Octa, Final scoring move:                     |0 
+
+Thunder Fang - 0 vs Octa, Init scoring move:                |17 
+Thunder Fang - 0 vs Octa, Final scoring move:               |17 
+
+Final action chosen:                                        |[Prefer Feint Attack]
+ ______________________________________________________________________________ 
+
+Octa used Baby-Doll Eyes
+Houndoom used Feint Attack
+[Octa lost 40 HP, now has 90 HP]
+************************** Round 13 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Houndoom: Fire Fang=[26, -1, -1, -1], Feint Attack=[46, -1, -1, -1], Thunder Fang=[15, -1, -1, -1], Return=[0, -1, -1, -1]]
+[Prefer Feint Attack]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 100.0 %
+Held Item:  , Ability: Flash Fire , Field: 
+                                                            |AI Scores
+Expected Damage taken from Furfrou                          |71.3 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Feint Attack - 0 vs Octa, Init scoring move:                |46 
+Feint Attack - 0 vs Octa, Final scoring move:               |46 
+
+Fire Fang - 0 vs Octa, Init scoring move:                   |25 
+Fire Fang - 0 vs Octa, Final scoring move:                  |26 
+
+Return - 0 vs Octa, Init scoring move:                      |0 
+Return - 0 vs Octa, Final scoring move:                     |0 
+
+Thunder Fang - 0 vs Octa, Init scoring move:                |16 
+Thunder Fang - 0 vs Octa, Final scoring move:               |15 
+
+Final action chosen:                                        |[Prefer Feint Attack]
+ ______________________________________________________________________________ 
+
+Octa used Retaliate
+[The foe Houndoom lost 80 HP, now has 63 HP]
+Houndoom used Feint Attack
+[Octa lost 46 HP, now has 44 HP]
+************************** Round 14 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Berry Ice Cream: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Houndoom: Fire Fang=[54, -1, -1, -1], Feint Attack=[95, -1, -1, -1], Thunder Fang=[33, -1, -1, -1], Return=[0, -1, -1, -1]]
+[Prefer Feint Attack]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 44.1 %
+Held Item:  , Ability: Flash Fire , Field: 
+                                                            |AI Scores
+Expected Damage taken from Furfrou                          |62.9 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Berry Ice Cream                                             |-100.0              
+Feint Attack - 0 vs Octa, Init scoring move:                |95 
+Feint Attack - 0 vs Octa, Final scoring move:               |95 
+
+Fire Fang - 0 vs Octa, Init scoring move:                   |52 
+Fire Fang - 0 vs Octa, Final scoring move:                  |54 
+
+Return - 0 vs Octa, Init scoring move:                      |0 
+Return - 0 vs Octa, Final scoring move:                     |0 
+
+Thunder Fang - 0 vs Octa, Init scoring move:                |34 
+Thunder Fang - 0 vs Octa, Final scoring move:               |33 
+
+Final action chosen:                                        |[Prefer Feint Attack]
+ ______________________________________________________________________________ 
+
+Octa used Retaliate
+[The foe Houndoom lost 63 HP, now has 0 HP]
+[The foe Houndoom fainted]
+************************** Round 1 *******************************
+************************** Round 1 *******************************
