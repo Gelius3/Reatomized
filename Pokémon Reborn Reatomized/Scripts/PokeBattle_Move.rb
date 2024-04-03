@@ -2137,6 +2137,11 @@ class PokeBattle_Move
     if ((opponent.ability == PBAbilities::MULTISCALE && !(opponent.moldbroken)) || opponent.ability == PBAbilities::SHADOWSHIELD) && opponent.hp==opponent.totalhp
       finaldamagemult=(finaldamagemult*0.5).round
     end
+    if (opponent.ability == PBAbilities::PARRY && !(opponent.moldbroken) && isContactMove?)
+      finaldamagemult=(finaldamagemult*0)
+      attacker.hp==(finaldamagemult*0.75).round
+      #! to clean up and add animations!!!
+    end
     if opponent.ability == PBAbilities::PLOTARMOR && !(opponent.moldbroken) && !(opponent.damagestate.typemod > 4)
       finaldamagemult=(finaldamagemult*0.25).round
     end
