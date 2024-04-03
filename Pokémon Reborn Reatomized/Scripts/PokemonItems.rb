@@ -802,6 +802,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
         end
       elsif pokemon.form==1
         if (move == PBMoves::PSYCHOCUT) || (move == PBMoves::FUTURESIGHT) || (move == PBMoves::EXPANDINGFORCE)
+          return false
+        end
       end
     when PBSpecies::MAROWAK # Marowak
       if pokemon.form==0
@@ -814,8 +816,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::POLTERGEIST)
           return false
         end
-      elsif pokemon.form==1
-      end      
+      end
     when PBSpecies::MISDREAVUS # Misdreavus -- Aevian
       if pokemon.form==0
         if (move == PBMoves::WORKUP) || (move == PBMoves::VENOSHOCK) ||
@@ -946,6 +947,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
 	        (move == PBMoves::SEISMICTOSS)
           return true
         end
+      end
       if pokemon.form==2
         if (move == PBMoves::SLUDGEBOMB) || (move == PBMoves::BRUTALSWING) ||
           (move == PBMoves::SLUDGEWAVE) || (move == PBMoves::POISONJAB) || 
@@ -959,6 +961,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::AERIALACE) || (move == PBMoves::PSYCHICNOISE) || (move == PBMoves::LUNGE)
           return true
         end
+      end
       if pokemon.form==2
         if (move == PBMoves::SLUDGEBOMB) || (move == PBMoves::BRUTALSWING) || (move == PBMoves::SCARYFACE) ||
           (move == PBMoves::SLUDGEWAVE) || (move == PBMoves::POISONJAB) || (move == PBMoves::ICEFANG) ||
@@ -976,6 +979,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
 	        (move == PBMoves::POWERUPPUNCH)
           return true
         end
+      end
       if pokemon.form==2
         if (move == PBMoves::SLUDGEBOMB) || (move == PBMoves::BRUTALSWING) || (move == PBMoves::VENOMDRENCH) ||
           (move == PBMoves::SLUDGEWAVE) || (move == PBMoves::POISONJAB) || (move == PBMoves::SCARYFACE) ||
