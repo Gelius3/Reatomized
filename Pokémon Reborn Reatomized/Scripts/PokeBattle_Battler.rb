@@ -4544,13 +4544,11 @@ class PokeBattle_Battler
         @battle.successStates[user.index].protected=true
         return false
       end
-      # Protect / King's Shield / Obstruct / Spiky Shield / Baneful Bunker / Silk Trap / Parry
-      parrychance=@battle.pbRandom(10)
+      # Protect / King's Shield / Obstruct / Spiky Shield / Baneful Bunker / Silk Trap
       if !target.effects[PBEffects::ProtectNegation] && thismove.canProtectAgainst? && !unseenfist &&
         ((target.effects[PBEffects::KingsShield] && (thismove.basedamage > 0 || @battle.FE == PBFields::FAIRYTALEF || @battle.FE == PBFields::CHESSB)) || target.effects[PBEffects::Protect] ||
-        (target.effects[PBEffects::Obstruct] && thismove.basedamage > 0) || target.effects[PBEffects::SpikyShield] || target.effects[PBEffects::BanefulBunker] || target.effects[PBEffects::SilkTrap] ||
-        (target.ability[PBAbilities::PARRY] && (parrychance < 10) && thismove.hasFlags?('a') && !(user.abilityWorks? && user.ability == PBAbilities::LONGREACH) && thismove.basedamage > 0))
-        @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis)) if !target.ability[PBAbilities::PARRY]
+        (target.effects[PBEffects::Obstruct] && thismove.basedamage > 0) || target.effects[PBEffects::SpikyShield] || target.effects[PBEffects::BanefulBunker] || target.effects[PBEffects::SilkTrap])
+        @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
         @battle.successStates[user.index].protected=true
         # physical contact
         if thismove.hasFlags?('a') && !(user.abilityWorks? && user.ability == PBAbilities::LONGREACH)
@@ -4567,11 +4565,6 @@ class PokeBattle_Battler
           elsif target.effects[PBEffects::BanefulBunker] && user.pbCanPoison?(false)
             user.pbPoison(target)
             @battle.pbDisplay(_INTL("{1}'s Baneful Bunker poisoned {2}!",target.pbThis,user.pbThis(true)))
-          elsif target.ability[PBAbilities::PARRY] && parrychance < 10
-            @battle.pbDisplay(_INTL("{1} parried the attack!",target.pbThis))
-            @battle.scene.pbDamageAnimation(user,0)
-            @battle.pbDisplay(_INTL("{1} was counterattacked!",user.pbThis))
-            user.pbReduceHP((user.totalhp/4.0).floor)
           end
         end
         return false
