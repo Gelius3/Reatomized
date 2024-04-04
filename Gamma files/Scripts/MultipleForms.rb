@@ -4869,7 +4869,7 @@ PBSpecies::INFERNAPE => {
 		:Type1 => PBTypes::DARK,
 		:Type2 => PBTypes::FIRE,
 		:BaseStats => [77,106,69,116,101,69],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE],
+		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE,PBAbilities::PARRY],
 		:Movelist => [[1,PBMoves::KNOCKOFF],[1,PBMoves::BULKUP],[1,PBMoves::FACADE],[1,PBMoves::VACUUMWAVE],[1,PBMoves::FLAREBLITZ],[1,PBMoves::BRUTALSWING],[1,PBMoves::MACHPUNCH],[1,PBMoves::NASTYPLOT],[1,PBMoves::FOULPLAY],[1,PBMoves::SLACKOFF],[1,PBMoves::LASHOUT],[1,PBMoves::NIGHTDAZE],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::BRICKBREAK],[19,PBMoves::FLAMEWHEEL],[26,PBMoves::FEINT],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]],
 		:Weight => 370
 	},
@@ -4879,7 +4879,7 @@ PBSpecies::INFERNAPE => {
 		:Type1 => PBTypes::NUCLEAR,
 		:Type2 => PBTypes::FIRE,
 		:BaseStats => [77,106,138,174,101,138],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE],
+		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE,PBAbilities::PARRY],
 		:Movelist => [[1,PBMoves::KNOCKOFF],[1,PBMoves::BULKUP],[1,PBMoves::FACADE],[1,PBMoves::VACUUMWAVE],[1,PBMoves::FLAREBLITZ],[1,PBMoves::BRUTALSWING],[1,PBMoves::MACHPUNCH],[1,PBMoves::NASTYPLOT],[1,PBMoves::FOULPLAY],[1,PBMoves::SLACKOFF],[1,PBMoves::LASHOUT],[1,PBMoves::NIGHTDAZE],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::THROATCHOP],[19,PBMoves::FLAMEWHEEL],[26,PBMoves::FEINT],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]],
 		:Weight => 370
 	},
