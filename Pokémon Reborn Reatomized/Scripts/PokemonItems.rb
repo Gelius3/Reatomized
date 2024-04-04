@@ -980,8 +980,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
 	        (move == PBMoves::TAUNT) || (move == PBMoves::TOXICSPIKES) || (move == PBMoves::GUNKSHOT)
           return false
         end
-      end
-      if pokemon.form==2
+      elsif pokemon.form==2
         if (move == PBMoves::FISSURE) || (move == PBMoves::ZAPCANNON) || (move == PBMoves::OCTAZOOKA) ||
           (move == PBMoves::ROCKTOMB) || (move == PBMoves::ROCKSLIDE) || (move == PBMoves::PSYCHICNOISE) ||
 	        (move == PBMoves::LUNGE) || (move == PBMoves::QUASH) || (move == PBMoves::DRAGONTAIL) ||
