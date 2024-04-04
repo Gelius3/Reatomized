@@ -47348,3 +47348,576 @@ Final action chosen:                                        |[Prefer Feint Attac
  ______________________________________________________________________________ 
 
 ************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+************************** Round 1 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Ultra Potion: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Houndoom: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Houndoom: initial noswitchscore: 150
+ShouldSwitchScore: -150 
+
+[The foe Houndoom: Flamethrower=[57, -1, -1, -1], Dark Pulse=[48, -1, -1, -1], Sludge Bomb=[38, -1, -1, -1], Strength=[31, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 100.0 %
+Held Item: Focus Sash , Ability: Flash Fire , Field: Rocky Field
+                                                            |AI Scores
+Expected Damage taken from Maushold                         |66.7 % 
+
+Scoring for Switching to other mon                          |-150 
+ 
+Scoring for items                                           |                    | 
+Ultra Potion                                                |-100.0              
+Dark Pulse - 0 vs Maushold, Init scoring move:              |48 
+Dark Pulse - 0 vs Maushold, Final scoring move:             |48 
+
+Flamethrower - 0 vs Maushold, Init scoring move:            |54 
+Flamethrower - 0 vs Maushold, Final scoring move:           |57 
+
+Sludge Bomb - 0 vs Maushold, Init scoring move:             |36 
+Sludge Bomb - 0 vs Maushold, Final scoring move:            |38 
+
+Strength - 0 vs Maushold, Init scoring move:                |31 
+Strength - 0 vs Maushold, Final scoring move:               |31 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Maushold used Population Bomb
+[Maushold lost 49 HP, now has 148 HP]
+[Maushold lost 24 HP, now has 124 HP]
+Houndoom used Flamethrower
+[Maushold lost 114 HP, now has 10 HP]
+[Maushold lost 10 HP, now has 0 HP]
+[Maushold fainted]
+[The foe Houndoom lost 12 HP, now has 180 HP]
+[Player made a switch]
+
+************************** Round 2 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Ultra Potion: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (100)
+Houndoom: initial switchscore: 100
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (25)
+Houndoom: initial noswitchscore: 25
+ShouldSwitchScore: 75 
+
+Scoring for Houndoom switching to: Houndoom
+Score: -10000000
+
+Scoring for Houndoom switching to: Honchkrow
+incomingpercentage: 0.626335
+Defensive: 0
+Offensive: 45
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 45 
+
+Scoring for Houndoom switching to: Crobat
+incomingpercentage: 0.587156
+Defensive: 0
+Offensive: 37
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 12 
+
+Scoring for Houndoom switching to: Gyarados
+incomingpercentage: 0.578947
+Defensive: 0
+Offensive: 37
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 40
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 52 
+
+Scoring for Houndoom switching to: Weavile
+incomingpercentage: 0.756345
+Defensive: 0
+Offensive: 105
+Roles: -25
+Weather: 25
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 42 
+
+[The foe Houndoom: Flamethrower=[46, -1, -1, -1], Dark Pulse=[39, -1, -1, -1], Sludge Bomb=[14, -1, -1, -1], Strength=[47, -1, -1, -1]]
+[Prefer Flamethrower]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 93.8 %
+Held Item: Focus Sash , Ability: Flash Fire , Field: Rocky Field
+                                                            |AI Scores
+Expected Damage taken from Crobat                           |99.5 % 
+
+Scoring for Switching to other mon                          |75 
+ 
+Scoring for items                                           |                    | 
+Ultra Potion                                                |-100.0              
+Dark Pulse - 0 vs Crobat, Init scoring move:                |39 
+Dark Pulse - 0 vs Crobat, Final scoring move:               |39 
+
+Flamethrower - 0 vs Crobat, Init scoring move:              |44 
+Flamethrower - 0 vs Crobat, Final scoring move:             |46 
+
+Sludge Bomb - 0 vs Crobat, Init scoring move:               |14 
+Sludge Bomb - 0 vs Crobat, Final scoring move:              |14 
+
+Strength - 0 vs Crobat, Init scoring move:                  |47 
+Strength - 0 vs Crobat, Final scoring move:                 |47 
+
+Final action chosen:                                        |[Prefer Flamethrower]
+ ______________________________________________________________________________ 
+
+Crobat used Cross Poison
+[Crobat lost 55 HP, now has 166 HP]
+[Crobat lost 27 HP, now has 139 HP]
+Houndoom used Flamethrower
+[Crobat lost 99 HP, now has 40 HP]
+[Crobat lost 13 HP, now has 27 HP]
+[The foe Houndoom lost 12 HP, now has 168 HP]
+************************** Round 3 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Ultra Potion: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Houndoom: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Houndoom: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Houndoom: Flamethrower=[113, -1, -1, -1], Dark Pulse=[110, -1, -1, -1], Sludge Bomb=[110, -1, -1, -1], Strength=[110, -1, -1, -1]]
+[Prefer Dark Pulse]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 87.5 %
+Held Item: Focus Sash , Ability: Flash Fire , Field: Rocky Field
+                                                            |AI Scores
+Expected Damage taken from Crobat                           |99.5 % 
+
+Scoring for Switching to other mon                          |0 
+ 
+Scoring for items                                           |                    | 
+Ultra Potion                                                |-100.0              
+Dark Pulse - 0 vs Crobat, Init scoring move:                |110 
+Dark Pulse - 0 vs Crobat, Final scoring move:               |110 
+
+Flamethrower - 0 vs Crobat, Init scoring move:              |110 
+Flamethrower - 0 vs Crobat, Final scoring move:             |113 
+
+Sludge Bomb - 0 vs Crobat, Init scoring move:               |110 
+Sludge Bomb - 0 vs Crobat, Final scoring move:              |110 
+
+Strength - 0 vs Crobat, Init scoring move:                  |110 
+Strength - 0 vs Crobat, Final scoring move:                 |110 
+
+Final action chosen:                                        |[Prefer Dark Pulse]
+ ______________________________________________________________________________ 
+
+Crobat used Zen Headbutt
+[Crobat lost 27 HP, now has 0 HP]
+[Crobat fainted]
+Houndoom used Dark Pulse
+[The foe Houndoom lost 12 HP, now has 156 HP]
+[Player made a switch]
+
+************************** Round 4 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Ultra Potion: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Houndoom: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (0)
+Initial noswitchscore building: Second Wind Situations (0)
+Houndoom: initial noswitchscore: 0
+ShouldSwitchScore: 0 
+
+[The foe Houndoom: Flamethrower=[53, -1, -1, -1], Dark Pulse=[59, -1, -1, -1], Sludge Bomb=[37, -1, -1, -1], Strength=[28, -1, -1, -1]]
+[Prefer Dark Pulse]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Houndoom , HP percentage: 81.3 %
+Held Item: Focus Sash , Ability: Flash Fire , Field: Rocky Field
+                                                            |AI Scores
+Expected Damage taken from Lilligant                        |51.6 % 
+
+Scoring for Switching to other mon                          |0 
+ 
+Scoring for items                                           |                    | 
+Ultra Potion                                                |-100.0              
+Dark Pulse - 0 vs Lilligant, Init scoring move:             |46 
+Dark Pulse - 0 vs Lilligant, Final scoring move:            |59 
+
+Flamethrower - 0 vs Lilligant, Init scoring move:           |52 
+Flamethrower - 0 vs Lilligant, Final scoring move:          |53 
+
+Sludge Bomb - 0 vs Lilligant, Init scoring move:            |35 
+Sludge Bomb - 0 vs Lilligant, Final scoring move:           |37 
+
+Strength - 0 vs Lilligant, Init scoring move:               |28 
+Strength - 0 vs Lilligant, Final scoring move:              |28 
+
+Final action chosen:                                        |[Prefer Dark Pulse]
+ ______________________________________________________________________________ 
+
+Lilligant used Judgment
+[The foe Houndoom lost 156 HP, now has 0 HP]
+[The foe Houndoom fainted]
+[Lilligant lost 13 HP, now has 201 HP]
+[AI made a switch]
+
+Scoring for Houndoom switching to: Houndoom
+Score: -10000000
+
+Scoring for Houndoom switching to: Honchkrow
+incomingpercentage: 2.106762
+Defensive: -150
+Offensive: 52
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -97 
+
+Scoring for Houndoom switching to: Crobat
+incomingpercentage: 1.963303
+Defensive: -150
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -175 
+
+Scoring for Houndoom switching to: Gyarados
+incomingpercentage: 1.614035
+Defensive: -150
+Offensive: 52
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -122 
+
+Scoring for Houndoom switching to: Weavile
+incomingpercentage: 2.071066
+Defensive: -150
+Offensive: 87
+Roles: -25
+Weather: 25
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -31 
+
+Scoring for switching from: Houndoom
+                                                            |New AI
+Score for switching to Houndoom                             |-10000000 
+Score for switching to Honchkrow                            |-97.5 
+Score for switching to Crobat                               |-175.0 
+Score for switching to Gyarados                             |-122.5 
+Score for switching to Weavile                              |-31.25 
+Switch chosen =                                             |Weavile 
+
+ ______________________________________________________________________________ 
+
+************************** Round 5 *******************************
+Priority Check Begin
+AI Pokemon is faster.
+pre-check: 28
+Expected damage taken: 408
+post-check: 28
+Priority Check End
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Ultra Potion: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Weavile: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Weavile: initial noswitchscore: 150
+ShouldSwitchScore: -150 
+
+[The foe Weavile: Night Slash=[72, -1, -1, -1], Rock Smash=[80, -1, -1, -1], Ice Shard=[92, -1, -1, -1], Strength=[55, -1, -1, -1]]
+[Prefer Ice Shard]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Weavile , HP percentage: 100.0 %
+Held Item: Chople Berry , Ability: Sharpness , Field: Rocky Field
+                                                            |AI Scores
+Expected Damage taken from Lilligant                        |207.1 % 
+
+Scoring for Switching to other mon                          |-150 
+ 
+Scoring for items                                           |                    | 
+Ultra Potion                                                |-100.0              
+Ice Shard - 0 vs Lilligant, Init scoring move:              |28 
+Ice Shard - 0 vs Lilligant, Final scoring move:             |92 
+
+Night Slash - 0 vs Lilligant, Init scoring move:            |72 
+Night Slash - 0 vs Lilligant, Final scoring move:           |72 
+
+Rock Smash - 0 vs Lilligant, Init scoring move:             |73 
+Rock Smash - 0 vs Lilligant, Final scoring move:            |80 
+
+Strength - 0 vs Lilligant, Init scoring move:               |55 
+Strength - 0 vs Lilligant, Final scoring move:              |55 
+
+Final action chosen:                                        |[Prefer Ice Shard] 
+ ______________________________________________________________________________ 
+
+Weavile used Ice Shard
+[Lilligant lost 66 HP, now has 135 HP]
+Lilligant used Judgment
+[The foe Weavile lost 197 HP, now has 0 HP]
+[The foe Weavile fainted]
+[Lilligant lost 13 HP, now has 122 HP]
+[AI made a switch]
+
+Scoring for Weavile switching to: Houndoom
+Score: -10000000
+
+Scoring for Weavile switching to: Honchkrow
+incomingpercentage: 2.106762
+Defensive: 0
+Offensive: 105
+Roles: 110
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 215 
+
+Scoring for Weavile switching to: Crobat
+incomingpercentage: 1.963303
+Defensive: -150
+Offensive: 75
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -100 
+
+Scoring for Weavile switching to: Gyarados
+incomingpercentage: 1.614035
+Defensive: -150
+Offensive: 105
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -70 
+
+Scoring for Weavile switching to: Weavile
+Score: -10000000
+
+Scoring for switching from: Weavile
+                                                            |New AI
+Score for switching to Houndoom                             |-10000000 
+Score for switching to Honchkrow                            |215.0 
+Score for switching to Crobat                               |-100.0 
+Score for switching to Gyarados                             |-70.0 
+Score for switching to Weavile                              |-10000000 
+Switch chosen =                                             |Honchkrow 
+
+ ______________________________________________________________________________ 
+
+************************** Round 6 *******************************
+Priority Check Begin
+Player Pokemon is faster.
+pre-check: 208
+Expected damage taken: 592
+post-check: 358
+Priority Check End
+Beginning AI Item use check.
+
+This is a HP-healing item.
+Score for Ultra Potion: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Honchkrow: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Honchkrow: initial noswitchscore: 150
+ShouldSwitchScore: -150 
+
+[The foe Honchkrow: Night Slash=[110, -1, -1, -1], Roost=[0, -1, -1, -1], Air Cutter=[61, -1, -1, -1], Sucker Punch=[465, -1, -1, -1]]
+[Prefer Sucker Punch]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Honchkrow , HP percentage: 100.0 %
+Held Item: Scope Lens , Ability: Super Luck , Field: Rocky Field
+                                                            |AI Scores
+Expected Damage taken from Lilligant                        |210.7 % 
+
+Scoring for Switching to other mon                          |-150 
+ 
+Scoring for items                                           |                    | 
+Ultra Potion                                                |-100.0              
+Air Cutter - 0 vs Lilligant, Init scoring move:             |63 
+Air Cutter - 0 vs Lilligant, Final scoring move:            |61 
+
+Night Slash - 0 vs Lilligant, Init scoring move:            |110 
+Night Slash - 0 vs Lilligant, Final scoring move:           |110 
+
+Roost - 0 vs Lilligant, Init scoring move:                  |20 
+Roost - 0 vs Lilligant, Final scoring move:                 |0 
+
+Sucker Punch - 0 vs Lilligant, Init scoring move:           |104 
+Sucker Punch - 0 vs Lilligant, Final scoring move:          |465 
+
+Final action chosen:                                        |[Prefer Sucker Punch]
+ ______________________________________________________________________________ 
+
+Honchkrow used Sucker Punch
+[The foe Honchkrow lost 70 HP, now has 211 HP]
+[The foe Honchkrow lost 35 HP, now has 176 HP]
+Lilligant used Judgment
+[The foe Honchkrow lost 176 HP, now has 0 HP]
+[The foe Honchkrow fainted]
+[Lilligant lost 13 HP, now has 109 HP]
+[AI made a switch]
+
+Scoring for Honchkrow switching to: Houndoom
+Score: -10000000
+
+Scoring for Honchkrow switching to: Honchkrow
+Score: -10000000
+
+Scoring for Honchkrow switching to: Crobat
+incomingpercentage: 1.963303
+Defensive: -150
+Offensive: 87
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -87 
+
+Scoring for Honchkrow switching to: Gyarados
+incomingpercentage: 1.614035
+Defensive: -150
+Offensive: 105
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -70 
+
+Scoring for Honchkrow switching to: Weavile
+Score: -10000000
+
+Scoring for switching from: Honchkrow
+                                                            |New AI
+Score for switching to Houndoom                             |-10000000 
+Score for switching to Honchkrow                            |-10000000 
+Score for switching to Crobat                               |-87.5 
+Score for switching to Gyarados                             |-70.0 
+Score for switching to Weavile                              |-10000000 
+Switch chosen =                                             |Gyarados 
+
+ ______________________________________________________________________________ 
+
+************************** Round 7 *******************************
