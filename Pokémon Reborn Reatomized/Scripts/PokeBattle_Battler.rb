@@ -3291,7 +3291,6 @@ class PokeBattle_Battler
       # Celestial Reincarnation
       if target.abilityWorks?(true)
         if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && @effects[PBEffects::Reincarnation]
-          @effects[PBEffects::Reincarnation]=false
           party=@battle.pbParty(target.index)
           revivablePokemon = []
           for i in party
@@ -3310,6 +3309,7 @@ class PokeBattle_Battler
             pokemon.status=0
             pokemon.hp=1+(pokemon.totalhp/2.0).floor
             @battle.pbDisplay(_INTL("{1} was reincarnated and is ready to fight again!",target.name))
+            @effects[PBEffects::Reincarnation]=false
           else
             @battle.pbDisplay(_INTL("But it failed."))
           end
