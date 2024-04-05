@@ -3290,7 +3290,7 @@ class PokeBattle_Battler
 
       # Celestial Reincarnation
       if target.abilityWorks?(true)
-        if target.ability == PBAbilities::CELESTIALREINCARNATION && !user.isFainted? && target.hp <= 0 && @effects[PBEffects::Reincarnation]
+        if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && @effects[PBEffects::Reincarnation]
           @effects[PBEffects::Reincarnation]=false
           party=@battle.pbParty(target.index)
           revivablePokemon = []
