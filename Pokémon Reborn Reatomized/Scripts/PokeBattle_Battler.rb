@@ -2224,6 +2224,12 @@ class PokeBattle_Battler
       else
         @battle.pbDisplay(_INTL("The tailwind blew from behind the opposing team!"))
       end
+      if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM) && !@battle.state.effects[PBEffects::HeavyRain] && !@battle.state.effects[PBEffects::HarshSunlight] && !@battle.state.effects[PBEffects::Storm]
+      @battle.weather=PBWeather::STRONGWINDS
+      @battle.weatherduration=6
+      @battle.pbCommonAnimation("Wind",nil,nil)
+      @battle.pbDisplay(_INTL("Strong winds kicked up around the field!"))
+      end
     end
 
     # Ability Messages
