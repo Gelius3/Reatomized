@@ -3289,8 +3289,8 @@ class PokeBattle_Battler
 
       # Celestial Reincarnation
       if target.abilityWorks?(true)
-        if target.ability == PBAbilities::CELESTIALREINCARNATION && !user.isFainted? && target.hp <= 0 && !opponent.damagestate.celestialreincarnation
-          opponent.damagestate.celestialreincarnation = true
+        if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && !target.damagestate.celestialreincarnation
+          target.damagestate.celestialreincarnation = true
           party=@battle.pbParty(target.index)
           revivablePokemon = []
           for i in party
