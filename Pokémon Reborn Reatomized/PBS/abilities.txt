@@ -412,3 +412,7 @@
 467,WARMBLANKET,Warm Blanket,"Heals when hit by a Fire-type Move."
 468,COLDBLOODED,Cold Blooded,"Heals when hit by a Water- or Ice-type Move."
 469,STRONGHEEL,Strong Heel,"Kicking moves used by it are greatly powered up."
+470,CELESTIALREINCARNATION,Celestial Reincarnation,"When this pokémon is defeated, resurrects a party member of choice."
+471,STURDINESS,Sturdiness,"The Pokémon withstands with 1HP once, no matter how much it had before."
+472,BALANCEBRINGER,Balance Bringer,"After dealing the first hit, this Pokémon switches out."
+473,ARGONAUT,Argonaut,"Matches opponent's highest stat through stat boosts."
