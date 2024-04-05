@@ -663,7 +663,7 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("{1}'s {2} prevents Speed loss!",pbThis,abilityname)) if showMessages
         return false
       end
-      if stat==PBStats::ACCURACY && !(self.moldbroken) && (self.ability == PBAbilities::KEENEYE || self.ability == PBAbilities::MINDSEYE)
+      if stat==PBStats::ACCURACY && !(self.moldbroken) && (self.ability == PBAbilities::KEENEYE || self.ability == PBAbilities::MINDSEYE || self.ability == PBAbilities::ILLUMINATE)
         @battle.pbDisplay(_INTL("{1}'s {2} prevents Accuracy loss!",pbThis,abilityname)) if showMessages
         return false
       end
@@ -689,7 +689,7 @@ class PokeBattle_Battler
 
   def pbReduceStat(stat,increment,abilitymessage:true,statmessage:true, statdropper: nil, defiant_proc: true, mirrorable: true)
     # here we call increase if we have Contrary
-    if (self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.ability(:REVERSALIZE)) && !self.moldbroken && @statrepeat == false
+    if (self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.ability == PBAbilities::REVERSALIZE) && !self.moldbroken && @statrepeat == false
       @statrepeat = true
       return pbIncreaseStat(stat,increment,abilitymessage:abilitymessage,statmessage:statmessage)
     end
@@ -796,7 +796,7 @@ class PokeBattle_Battler
       oppabilityname=PBAbilities.getName(opponent.ability)
       if self.ability == PBAbilities::MIRRORARMOR
         return false # Function and message are both handled by pbReduceStat
-      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.hasWorkingAbility(:REVERSALIZE)
+      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.ability == PBAbilities::REVERSALIZE
         @battle.pbDisplay(_INTL("{1}'s {2} boosts {3}'s Attack!",opponent.pbThis, oppabilityname,pbThis(true)))
       else
         @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Attack!",opponent.pbThis, oppabilityname,pbThis(true)))
@@ -875,7 +875,7 @@ class PokeBattle_Battler
       oppabilityname=PBAbilities.getName(opponent.ability)
       if self.ability == PBAbilities::MIRRORARMOR
         return false # Function and message are both handled by pbReduceStat
-      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.hasWorkingAbility(:REVERSALIZE)
+      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.ability == PBAbilities::REVERSALIZE
         @battle.pbDisplay(_INTL("{1}'s {2} boosts {3}'s Evasion!",opponent.pbThis, oppabilityname,pbThis(true)))
       else
         @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Evasion!",opponent.pbThis, oppabilityname,pbThis(true)))
@@ -940,7 +940,7 @@ class PokeBattle_Battler
       oppabilityname=PBAbilities.getName(opponent.ability)
       if self.ability == PBAbilities::MIRRORARMOR
         return false # Function and message are both handled by pbReduceStat
-      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.hasWorkingAbility(:REVERSALIZE)
+      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.ability == PBAbilities::REVERSALIZE
         @battle.pbDisplay(_INTL("{1}'s {2} boosts {3}'s Speed!",opponent.pbThis, oppabilityname,pbThis(true)))
       else
         @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Speed!",opponent.pbThis, oppabilityname,pbThis(true)))
@@ -1005,7 +1005,7 @@ class PokeBattle_Battler
       oppabilityname=PBAbilities.getName(opponent.ability)
       if self.ability == PBAbilities::MIRRORARMOR
         return false # Function and message are both handled by pbReduceStat
-      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.hasWorkingAbility(:REVERSALIZE)
+      elsif self.ability == PBAbilities::CONTRARY || self.ability == PBAbilities::ALOLANTECHNIQUESB || self.ability == PBAbilities::REVERSALIZE
         @battle.pbDisplay(_INTL("{1}'s {2} boosts {3}'s Accuracy!",opponent.pbThis, oppabilityname,pbThis(true)))
       else
         @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Accuracy!",opponent.pbThis, oppabilityname,pbThis(true)))
