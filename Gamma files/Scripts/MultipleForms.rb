@@ -7024,7 +7024,7 @@ PBSpecies::PICHU => {
 
 	"Spiky-Eared" => {
 		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::SEQUENCE,PBAbilities::MOODMAKER,PBAbilities::MOTORDRIVE],
 		:Movelist => [[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::TAILWHIP],[3,PBMoves::PLAYNICE],
 			[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::HELPINGHAND],[11,PBMoves::NUZZLE],[13,PBMoves::CHARGE],
 			[15,PBMoves::QUICKATTACK],[17,PBMoves::ENDURE],[21,PBMoves::SWIFT],[25,PBMoves::SWAGGER],[27,PBMoves::SPARK],[31,PBMoves::DIZZYPUNCH],
