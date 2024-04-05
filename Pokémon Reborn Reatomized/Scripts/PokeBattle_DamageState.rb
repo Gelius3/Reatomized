@@ -12,7 +12,6 @@ class PokeBattle_DamageState
   attr_accessor :endured         # Damage was endured
   attr_accessor :pawnsturdy      # Focus Sash but for chess field
   attr_accessor :pawnsturdyused # pawn ability used
-  attr_accessor :celestialreincarnation # Revive ability used
 
   def reset
     @hplost          = 0
@@ -27,7 +26,6 @@ class PokeBattle_DamageState
     @pawnsturdy      = false
     @sturdy          = false
     @endured         = false
-    @celestialreincarnation = false
   end
 
   def initialize
