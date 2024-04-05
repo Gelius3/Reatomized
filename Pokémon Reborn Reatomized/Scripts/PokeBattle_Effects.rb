@@ -663,7 +663,7 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("{1}'s {2} prevents Speed loss!",pbThis,abilityname)) if showMessages
         return false
       end
-      if stat==PBStats::ACCURACY && !(self.moldbroken) && (self.ability == PBAbilities::KEENEYE || self.ability == PBAbilities::MINDSEYE)
+      if stat==PBStats::ACCURACY && !(self.moldbroken) && (self.ability == PBAbilities::KEENEYE || self.ability == PBAbilities::MINDSEYE || self.ability == PBAbilities::ILLUMINATE)
         @battle.pbDisplay(_INTL("{1}'s {2} prevents Accuracy loss!",pbThis,abilityname)) if showMessages
         return false
       end
