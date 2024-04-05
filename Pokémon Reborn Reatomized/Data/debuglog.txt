@@ -67572,3 +67572,87 @@ Final action chosen:                                        |[Prefer Crunch]
 Lilligant used Judgment
 [The foe Gyarados lost 388 HP, now has 0 HP]
 [The foe Gyarados fainted]
+************************** Round 1 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Arceus: Moonlight=[0, -1, -1, -1], Judgment=[46, -1, -1, -1], Doom Desire=[11, -1, -1, -1], Dark Pulse=[25, -1, -1, -1]]
+[Prefer Dark Pulse]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Arceus , HP percentage: 100.0 %
+Held Item: Darkinium-Z , Ability: Multitype , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Rillaboom                        |40.2 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Black Hole Eclipse - 0 vs Rillaboom, Init scoring move:     |99 
+Black Hole Eclipse - 0 vs Rillaboom, Final scoring move:    |99 
+
+Dark Pulse - 0 vs Rillaboom, Init scoring move:             |25 
+Dark Pulse - 0 vs Rillaboom, Final scoring move:            |25 
+
+Doom Desire - 0 vs Rillaboom, Init scoring move:            |28 
+Doom Desire - 0 vs Rillaboom, Final scoring move:           |11 
+
+Judgment - 0 vs Rillaboom, Init scoring move:               |46 
+Judgment - 0 vs Rillaboom, Final scoring move:              |46 
+
+Moonlight - 0 vs Rillaboom, Init scoring move:              |20 
+Moonlight - 0 vs Rillaboom, Final scoring move:             |0 
+
+Final action chosen:                                        |[Prefer Dark Pulse]
+ ______________________________________________________________________________ 
+
+Rillaboom used Fake Out
+[The foe Arceus lost 87 HP, now has 627 HP]
+Arceus used Dark Pulse
+************************** Round 2 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Arceus: Moonlight=[0, -1, -1, -1], Judgment=[93, -1, -1, -1], Doom Desire=[11, -1, -1, -1], Dark Pulse=[25, -1, -1, -1]]
+[Prefer Dark Pulse]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Arceus , HP percentage: 87.8 %
+Held Item: Darkinium-Z , Ability: Multitype , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Rillaboom                        |20.2 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Black Hole Eclipse - 0 vs Rillaboom, Init scoring move:     |99 
+Black Hole Eclipse - 0 vs Rillaboom, Final scoring move:    |99 
+
+Dark Pulse - 0 vs Rillaboom, Init scoring move:             |25 
+Dark Pulse - 0 vs Rillaboom, Final scoring move:            |25 
+
+Doom Desire - 0 vs Rillaboom, Init scoring move:            |28 
+Doom Desire - 0 vs Rillaboom, Final scoring move:           |11 
+
+Judgment - 0 vs Rillaboom, Init scoring move:               |93 
+Judgment - 0 vs Rillaboom, Final scoring move:              |93 
+
+Moonlight - 0 vs Rillaboom, Init scoring move:              |20 
+Moonlight - 0 vs Rillaboom, Final scoring move:             |0 
+
+Final action chosen:                                        |[Prefer Dark Pulse]
+ ______________________________________________________________________________ 
+
+Rillaboom used Fake Out
