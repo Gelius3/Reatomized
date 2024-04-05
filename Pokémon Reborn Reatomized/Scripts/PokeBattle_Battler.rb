@@ -2215,6 +2215,17 @@ class PokeBattle_Battler
     end
     #### END OF WEATHER ABILITIES
 
+    # Star Stream
+    if (ability == PBAbilities::STARSTREAM) && onactive && self.pbOwnSide.effects[PBEffects::Tailwind]<=0
+        self.pbOwnSide.effects[PBEffects::Tailwind]=4
+        self.pbOwnSide.effects[PBEffects::Tailwind]=6 if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM)
+      if !@battle.pbIsOpposing?(self.index)
+        @battle.pbDisplay(_INTL("The tailwind blew from behind your team!"))
+      else
+        @battle.pbDisplay(_INTL("The tailwind blew from behind the opposing team!"))
+      end
+    end
+
     # Ability Messages
     if onactive
       case self.ability
