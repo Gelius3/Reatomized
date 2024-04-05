@@ -413,15 +413,19 @@ VANGUARD=466
 WARMBLANKET=467
 COLDBLOODED=468
 STRONGHEEL=469
+CELESTIALREINCARNATION=470
+STURDINESS=471
+BALANCEBRINGER=472
+ARGONAUT=473
 
 def self.getName(id)
 return pbGetMessage(MessageTypes::Abilities,id)
 end
 def self.getCount
-return 414
+return 418
 end
 
 def self.maxValue
-return 469
+return 473
 end
 end

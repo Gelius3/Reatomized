@@ -963,15 +963,21 @@ class PokemonSummaryScene
           abilitydesc = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.ability)
           abilitynametrait = nil
           abilitydesctrait = nil
-    
+          # Trait Inheritance
           if abilityname == "Trait Inheritance"
             if (@pokemon.traiting) != 0 
             abilitynametrait = "\\c[1]Traited!\n\\c[0]" + PBAbilities.getName(@pokemon.traiting)
             abilitydesctrait = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.traiting)
             end
-            
             abilityname = abilitynametrait
             abilitydesc = abilitydesctrait
+          # Celestial Reincarnation
+          elsif abilityname == "Celestial Reincarnation"
+            if $game_switches[1305] #? switch Postgame_Active
+              abilitydesc = "\\c[3]ACTIVE!\n\\c[0]" + abilitydesc
+            else
+              abilitydesc = "\\c[2]INACTIVE!\n\\c[0]" + abilitydesc
+            end
           end
 
           Kernel.pbMessage(_INTL("#{abilityname}: #{abilitydesc}"))
