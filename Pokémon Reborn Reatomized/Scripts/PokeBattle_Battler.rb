@@ -2224,6 +2224,17 @@ class PokeBattle_Battler
       else
         @battle.pbDisplay(_INTL("The tailwind blew from behind the opposing team!"))
       end
+      for i in [attacker,attacker.pbPartner]
+      next if !i || i.isFainted?
+        if i.ability == PBAbilities::WINDRIDER && i.pbCanIncreaseStatStage?(PBStats::ATTACK)
+          i.pbIncreaseStatBasic(PBStats::ATTACK,1)
+          @battle.pbCommonAnimation("StatUp",i,nil)
+          @battle.pbDisplay(_INTL("{1}'s {2} raised its Attack!", i.pbThis, PBAbilities.getName(i.ability)))
+        elsif i.ability == PBAbilities::WINDPOWER && i.effects[PBEffects::Charge]<2
+          i.effects[PBEffects::Charge]=2
+          @battle.pbDisplay(_INTL("{1}'s {2} charged it with power!", i.pbThis, PBAbilities.getName(i.ability)))
+        end
+      end
       if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM) && !@battle.state.effects[PBEffects::HeavyRain] && !@battle.state.effects[PBEffects::HarshSunlight] && !@battle.state.effects[PBEffects::Storm]
       @battle.weather=PBWeather::STRONGWINDS
       @battle.weatherduration=6
