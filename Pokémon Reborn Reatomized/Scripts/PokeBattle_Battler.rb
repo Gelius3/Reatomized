@@ -3051,10 +3051,10 @@ class PokeBattle_Battler
           if target.ability == PBAbilities::GOOEY
             if user.hasWorkingAbility(:CONTRARY) || user.hasWorkingAbility(:ALOLANTECHNIQUESB)
               if @battle.FE == PBFields::SWAMPF || @battle.FE == PBFields::MURKWATERS
-                user.pbReduceStat(PBStats::SPEED,2,statmessage:false)
+                user.pbIncreaseStatBasic(PBStats::SPEED,2,statmessage:false)
                 @battle.pbDisplay(_INTL("{1}'s {2} sharply boosted {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
               else
-                user.pbReduceStat(PBStats::SPEED,1,statmessage:false)
+                user.pbIncreaseStatBasic(PBStats::SPEED,1,statmessage:false)
                 @battle.pbDisplay(_INTL("{1}'s {2} boosted {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
               end
             elsif user.hasWorkingAbility(:WHITESMOKE) || user.hasWorkingAbility(:CLEARBODY) || user.hasWorkingAbility(:FULLMETALBODY) || user.hasWorkingItem(:CLEARAMULET)
@@ -3073,7 +3073,7 @@ class PokeBattle_Battler
           end
           if target.ability == PBAbilities::TANGLINGHAIR
             if user.hasWorkingAbility(:CONTRARY) || user.hasWorkingAbility(:ALOLANTECHNIQUESB)
-              user.pbReduceStat(PBStats::SPEED,1,statmessage:false)
+              user.pbIncraseStatBasic(PBStats::SPEED,1,statmessage:false)
               @battle.pbDisplay(_INTL("{1}'s {2} boosted {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
             elsif user.hasWorkingAbility(:WHITESMOKE) || user.hasWorkingAbility(:CLEARBODY) || user.hasWorkingAbility(:FULLMETALBODY) || user.hasWorkingItem(:CLEARAMULET)
               @battle.pbDisplay(_INTL("{1}'s {2} prevents stat loss!",user.pbThis,PBAbilities.getName(user.ability)))
@@ -3084,7 +3084,7 @@ class PokeBattle_Battler
           end
 	  if target.ability == PBAbilities::SHACKLE
             if user.hasWorkingAbility(:CONTRARY) || user.hasWorkingAbility(:ALOLANTECHNIQUESB)
-              user.pbReduceStat(PBStats::SPEED,1,statmessage:false)
+              user.pbIncreaseStatBasic(PBStats::SPEED,1,statmessage:false)
               @battle.pbDisplay(_INTL("{1}'s {2} boosted {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
             elsif user.hasWorkingAbility(:WHITESMOKE) || user.hasWorkingAbility(:CLEARBODY) || user.hasWorkingAbility(:FULLMETALBODY) || user.hasWorkingItem(:CLEARAMULET)
               @battle.pbDisplay(_INTL("{1}'s {2} prevents stat loss!",user.pbThis,PBAbilities.getName(user.ability)))
