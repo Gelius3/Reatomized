@@ -3266,6 +3266,7 @@ class PokeBattle_Battler
             end
         end
       end
+      # Thrust
       if user.hasWorkingAbility(:THRUST) && @battle.pbRandom(10)<2 && !target.damagestate.substitute
         choices = []
         party=@battle.pbParty(target.index)
@@ -3283,6 +3284,34 @@ class PokeBattle_Battler
           else
             target.forcedSwitch = true
           end
+        end
+      end
+
+      # Celestial Reincarnation
+      if target.abilityWorks?(true)
+        if target.ability == PBAbilities::CELESTIALREINCARNATION && !user.isFainted? && target.hp <= 0
+          party=@battle.pbParty(target.index)
+          revivablePokemon = []
+          for i in party
+            revivablePokemon.push(i) if !i.isEgg? && i.hp <= 0
+          end
+          if revivablePokemon.length==0 || (@battle.pbOwnedByPlayer?(target.index) && $game_switches[:Nuzlocke_Mode]==true)
+            @battle.pbDisplay(_INTL("There were no allies available for reincarnation!"))
+            return -1
+          end
+          if !@battle.pbOwnedByPlayer?(target.index)
+            pokemon = revivablePokemon.sample
+          else
+            pokemon = @battle.scene.pbChooseRevivalBlessingRecipient(target.index)
+          end
+          if pokemon
+            pokemon.status=0
+            pokemon.hp=1+(pokemon.totalhp/2.0).floor
+            @battle.pbDisplay(_INTL("{1} was reincarnated and is ready to fight again!",target.name))
+          else
+            @battle.pbDisplay(_INTL("But it failed."))
+          end
+          return 0
         end
       end
 
