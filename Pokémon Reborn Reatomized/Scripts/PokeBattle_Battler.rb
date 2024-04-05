@@ -2225,7 +2225,7 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("The tailwind blew from behind the opposing team!"))
       end
       for i in [attacker,attacker.pbPartner]
-      next if !i || i.isFainted?
+        next if !i || i.isFainted?
         if i.ability == PBAbilities::WINDRIDER && i.pbCanIncreaseStatStage?(PBStats::ATTACK)
           i.pbIncreaseStatBasic(PBStats::ATTACK,1)
           @battle.pbCommonAnimation("StatUp",i,nil)
