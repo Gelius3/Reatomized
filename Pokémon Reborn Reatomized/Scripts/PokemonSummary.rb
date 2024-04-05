@@ -976,7 +976,7 @@ class PokemonSummaryScene
             if $game_switches[1305] #? switch Postgame_Active
               abilitydesc = "\\c[3]ACTIVE!\n\\c[0]" + abilitydesc
             else
-              abilitydesc = "\\c[2]INACTIVE!\n\\c[0]" + abilitydesc
+              abilitydesc = "\\c[2]INACTIVE!\n\\c[0]" + abilitydesc + "\n\\c[5]Ability unlocks in post-game.\\c[0]"
             end
           end
 
