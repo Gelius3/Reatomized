@@ -5412,8 +5412,8 @@ class PokeBattle_Battle
           pbDisplay(_INTL("...Sticky string shot out of the ground!"))
           for mon in [i, i.pbPartner]
             next if mon.isFainted? && !PBStuff::TWOTURNMOVE.include?(mon.effects[PBEffects::TwoTurnAttack])
-            if mon.ability == PBAbilities::CONTRARY && !mon.pbTooHigh?(PBStats::SPEED) || mon.ability == PBAbilities::ALOLANTECHNIQUESB && !mon.pbTooHigh?(PBStats::SPEED)
-              mon.pbIncreaseStatBasic(PBStats::SPEED,4)
+            if (mon.ability == PBAbilities::CONTRARY || mon.ability == PBAbilities::ALOLANTECHNIQUESB || mon.ability == PBAbilities::REVERSALIZE) && !mon.pbTooHigh?(PBStats::SPEED)
+              mon.pbReduceStatBasic(PBStats::SPEED,4)
                 pbCommonAnimation("StatUp",mon,nil)
                 pbDisplay(_INTL("{1}'s Speed went way up!",mon.pbThis))
             elsif !mon.pbTooLow?(PBStats::SPEED)
@@ -5476,7 +5476,7 @@ class PokeBattle_Battle
       if @field.effect == PBFields::SWAMPF && ![PBAbilities::WHITESMOKE, PBAbilities::CLEARBODY, PBAbilities::FULLMETALBODY, PBAbilities::FLOWERPOWER, PBAbilities::QUICKFEET, PBAbilities::SWIFTSWIM].include?(i.ability)
         if !i.isAirborne?
           if !i.pbTooLow?(PBStats::SPEED)
-            contcheck = (i.ability == PBAbilities::CONTRARY || i.ability == PBAbilities::ALOLANTECHNIQUESB)
+            contcheck = (i.ability == PBAbilities::CONTRARY || i.ability == PBAbilities::ALOLANTECHNIQUESB || i.ability == PBAbilities::REVERSALIZE)
             candrop = i.pbCanReduceStatStage?(PBStats::SPEED)
             canraise = i.pbCanIncreaseStatStage?(PBStats::SPEED) if contcheck
             i.pbReduceStat(PBStats::SPEED,1, statmessage: false)
