@@ -149,7 +149,7 @@
 147,ELIAS,Elite Four Agent,44,Battle- Elite.ogg,Victory2,,Female,100
 148,ANNA,Elite Four Starcrosser,39,Battle- Elite.ogg,Victory2,,Female,100
 149,LIN,Meteor Champion,85,Battle- Champion.ogg,Battle- Champion.ogg,,Female,100
-150,CHILDLIN,Mordant Urchin,2,Atmosphere- Labyrinth.ogg,Battle- Champion.ogg,,Female,100
+150,CHILDLIN,Mordant Urchin,2,Battle- Champion.ogg,Battle- Champion.ogg,,Female,100
 151,LAURA,Elite Four Floral Artist,34,Battle- Elite.ogg,Victory2,,Female,100
 152,SHIINOTIC,Creeping,0,Battle- Wild4.ogg,,,Mixed,100
 153,CRESSELIA,Anomaly,0,Battle- Legendary.ogg,,,Mixed,100

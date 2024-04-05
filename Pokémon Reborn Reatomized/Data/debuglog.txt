@@ -66780,3 +66780,795 @@ Infernape used Close Combat
 [The foe Honchkrow lost 257 HP, now has 0 HP]
 **Exception: wrong number of arguments (given 1, expected 0)
 ["PokeBattle_Effects:692:in `pbReduceStat'", "PokeBattle_MoveEffects:1717:in `block in pbEffect'", "PokeBattle_MoveEffects:1715:in `each'", "PokeBattle_MoveEffects:1715:in `pbEffect'", "PokeBattle_Battler:5083:in `block in pbProcessMoveAgainstTarget'", "PokeBattle_Battler:4980:in `each'", "PokeBattle_Battler:4980:in `pbProcessMoveAgainstTarget'", "PokeBattle_Battler:5839:in `block in pbUseMove'", "PokeBattle_Battler:5769:in `loop'", "PokeBattle_Battler:5769:in `pbUseMove'", "PokeBattle_Battler:6339:in `block in pbProcessTurn'", "PBDebug:4:in `logonerr'", "PokeBattle_Battler:6338:in `pbProcessTurn'", "PokeBattle_Battle:4047:in `block in pbAttackPhase'", "PokeBattle_Battle:4046:in `each'", "PokeBattle_Battle:4046:in `pbAttackPhase'", "PokeBattle_Battle:3677:in `block (2 levels) in pbStartBattleCore'", "PBDebug:4:in `logonerr'", "PokeBattle_Battle:3675:in `block in pbStartBattleCore'", "PokeBattle_Battle:3660:in `loop'", "PokeBattle_Battle:3660:in `pbStartBattleCore'", "PokeBattle_Battle:3416:in `pbStartBattle'", "PokemonTrainers:396:in `block (2 levels) in pbTrainerBattle'", "PokemonField:679:in `pbSceneStandby'", "PokemonTrainers:395:in `block in pbTrainerBattle'", "PokemonField:1013:in `pbBattleAnimation'", "PokemonTrainers:394:in `pbTrainerBattle'", "(eval):1:in `pbExecuteScript'", "Interpreter:243:in `eval'", "Interpreter:243:in `pbExecuteScript'", "Interpreter:673:in `command_111'", "Interpreter:311:in `execute_command'", "Interpreter:193:in `block in update'", "Interpreter:106:in `loop'", "Interpreter:106:in `update'", "Scene_Map:103:in `block in update'", "Scene_Map:101:in `loop'", "Scene_Map:101:in `update'", "Scene_Map:68:in `block in main'", "Scene_Map:65:in `loop'", "Scene_Map:65:in `main'", "Main:45:in `mainFunctionDebug'", "Main:24:in `block in mainFunction'", "Compiler:66:in `pbCriticalCode'", "Main:24:in `mainFunction'", "Main:81:in `block (2 levels) in <main>'", "Main:80:in `loop'", "Main:80:in `block in <main>'", "000:script yeetifier pro:307:in `eval'", "000:script yeetifier pro:307:in `block in <main>'", "000:script yeetifier pro:303:in `each'", "000:script yeetifier pro:303:in `each_with_index'", "000:script yeetifier pro:303:in `<main>'", "-e:in `eval'"]
+************************** Round 1 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (100)
+Mismagius: initial switchscore: 100
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Mismagius: initial noswitchscore: 150
+ShouldSwitchScore: -50 
+
+[The foe Mismagius: Dazzling Gleam=[28, -1, -1, -1], Shadow Ball=[29, -1, -1, -1], Power Gem=[28, -1, -1, -1], Foul Play=[42, -1, -1, -1]]
+[Prefer Foul Play]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Mismagius , HP percentage: 100.0 %
+Held Item: Life Orb , Ability: Levitate , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Rillaboom                        |183.0 % 
+
+Scoring for Switching to other mon                          |-50 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Dazzling Gleam - 0 vs Rillaboom, Init scoring move:         |28 
+Dazzling Gleam - 0 vs Rillaboom, Final scoring move:        |28 
+
+Foul Play - 0 vs Rillaboom, Init scoring move:              |42 
+Foul Play - 0 vs Rillaboom, Final scoring move:             |42 
+
+Power Gem - 0 vs Rillaboom, Init scoring move:              |28 
+Power Gem - 0 vs Rillaboom, Final scoring move:             |28 
+
+Shadow Ball - 0 vs Rillaboom, Init scoring move:            |28 
+Shadow Ball - 0 vs Rillaboom, Final scoring move:           |29 
+
+Final action chosen:                                        |[Prefer Foul Play] 
+ ______________________________________________________________________________ 
+
+Rillaboom used Knock Off
+[The foe Mismagius lost 324 HP, now has 0 HP]
+[The foe Mismagius fainted]
+[AI made a switch]
+
+Scoring for Mismagius switching to: Mismagius
+Score: -10000000
+
+Scoring for Mismagius switching to: Flygon
+incomingpercentage: 5.505495
+Defensive: -150
+Offensive: 37
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 25
+Other Score: 0
+Final Pokemon Score: -87 
+
+Scoring for Mismagius switching to: Gyarados
+incomingpercentage: 1.469072
+Defensive: -150
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -175 
+
+Scoring for Mismagius switching to: Honchkrow
+incomingpercentage: 0.789604
+Defensive: 0
+Offensive: 45
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 50
+Other Score: 0
+Final Pokemon Score: 70 
+
+Scoring for Mismagius switching to: Clefable
+incomingpercentage: 1.104061
+Defensive: -150
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -150 
+
+Scoring for Mismagius switching to: Celesteela
+incomingpercentage: 1.306533
+Defensive: -150
+Offensive: 0
+Roles: -10
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 25
+Other Score: 0
+Final Pokemon Score: -135 
+
+Scoring for Mismagius switching to: Hydreigon
+incomingpercentage: 0.734536
+Defensive: 0
+Offensive: 60
+Roles: 20
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 50
+Other Score: 0
+Final Pokemon Score: 130 
+
+Scoring for switching from: Mismagius
+                                                            |New AI
+Score for switching to Mismagius                            |-10000000 
+Score for switching to Flygon                               |-87.5 
+Score for switching to Gyarados                             |-175.0 
+Score for switching to Honchkrow                            |70.0 
+Score for switching to Clefable                             |-150.0 
+Score for switching to Celesteela                           |-135.0 
+Score for switching to Hydreigon                            |130.0 
+Switch chosen =                                             |Hydreigon 
+
+ ______________________________________________________________________________ 
+
+************************** Round 2 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Hydreigon: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Hydreigon: initial noswitchscore: 150
+ShouldSwitchScore: -150 
+
+[The foe Hydreigon: Dark Pulse=[45, -1, -1, -1], Earth Power=[29, -1, -1, -1], Flash Cannon=[26, -1, -1, -1], Draco Meteor=[59, -1, -1, -1]]
+[Prefer Draco Meteor]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Hydreigon , HP percentage: 100.0 %
+Held Item: White Herb , Ability: Levitate , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Lilligant                        |65.5 % 
+
+Scoring for Switching to other mon                          |-150 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Dark Pulse - 0 vs Lilligant, Init scoring move:             |38 
+Dark Pulse - 0 vs Lilligant, Final scoring move:            |45 
+
+Draco Meteor - 0 vs Lilligant, Init scoring move:           |82 
+Draco Meteor - 0 vs Lilligant, Final scoring move:          |59 
+
+Earth Power - 0 vs Lilligant, Init scoring move:            |28 
+Earth Power - 0 vs Lilligant, Final scoring move:           |29 
+
+Flash Cannon - 0 vs Lilligant, Init scoring move:           |25 
+Flash Cannon - 0 vs Lilligant, Final scoring move:          |26 
+
+Final action chosen:                                        |[Prefer Draco Meteor]
+ ______________________________________________________________________________ 
+
+Lilligant used Judgment
+[The foe Hydreigon lost 388 HP, now has 0 HP]
+[The foe Hydreigon fainted]
+[AI made a switch]
+
+Scoring for Hydreigon switching to: Mismagius
+Score: -10000000
+
+Scoring for Hydreigon switching to: Flygon
+incomingpercentage: 1.664835
+Defensive: -150
+Offensive: 62
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 25
+Other Score: 0
+Final Pokemon Score: -62 
+
+Scoring for Hydreigon switching to: Gyarados
+incomingpercentage: 2.505155
+Defensive: -150
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -175 
+
+Scoring for Hydreigon switching to: Honchkrow
+incomingpercentage: 3.851485
+Defensive: -150
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 50
+Other Score: 0
+Final Pokemon Score: -125 
+
+Scoring for Hydreigon switching to: Clefable
+incomingpercentage: 1.294416
+Defensive: -150
+Offensive: 0
+Roles: 30
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -120 
+
+Scoring for Hydreigon switching to: Celesteela
+incomingpercentage: 0.660804
+Defensive: 0
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 25
+Other Score: 0
+Final Pokemon Score: 0 
+
+Scoring for Hydreigon switching to: Hydreigon
+Score: -10000000
+
+Scoring for switching from: Hydreigon
+                                                            |New AI
+Score for switching to Mismagius                            |-10000000 
+Score for switching to Flygon                               |-62.5 
+Score for switching to Gyarados                             |-175.0 
+Score for switching to Honchkrow                            |-125.0 
+Score for switching to Clefable                             |-120.0 
+Score for switching to Celesteela                           |0.0 
+Score for switching to Hydreigon                            |-10000000 
+Switch chosen =                                             |Celesteela 
+
+ ______________________________________________________________________________ 
+
+************************** Round 3 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (20)
+Initial switchscore building: Specific Switches (100)
+Celesteela: initial switchscore: 120
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Celesteela: initial noswitchscore: 150
+ShouldSwitchScore: -30 
+
+[The foe Celesteela: Flamethrower=[9, -1, -1, -1], Flash Cannon=[19, -1, -1, -1], Giga Drain=[8, -1, -1, -1], Leech Seed=[31, -1, -1, -1]]
+[Prefer Leech Seed]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Celesteela , HP percentage: 100.0 %
+Held Item: Leftovers , Ability: Beast Boost , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Infernape                        |126.1 % 
+
+Scoring for Switching to other mon                          |-30 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Flamethrower - 0 vs Infernape, Init scoring move:           |9 
+Flamethrower - 0 vs Infernape, Final scoring move:          |9 
+
+Flash Cannon - 0 vs Infernape, Init scoring move:           |19 
+Flash Cannon - 0 vs Infernape, Final scoring move:          |19 
+
+Giga Drain - 0 vs Infernape, Init scoring move:             |8 
+Giga Drain - 0 vs Infernape, Final scoring move:            |8 
+
+Leech Seed - 0 vs Infernape, Init scoring move:             |25 
+Leech Seed - 0 vs Infernape, Final scoring move:            |31 
+
+Final action chosen:                                        |[Prefer Leech Seed]
+ ______________________________________________________________________________ 
+
+Infernape used Blaze Kick
+[The foe Celesteela lost 398 HP, now has 0 HP]
+[The foe Celesteela fainted]
+[AI made a switch]
+
+Scoring for Celesteela switching to: Mismagius
+Score: -10000000
+
+Scoring for Celesteela switching to: Flygon
+incomingpercentage: 2.054945
+Defensive: -150
+Offensive: 52
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 25
+Other Score: 0
+Final Pokemon Score: -72 
+
+Scoring for Celesteela switching to: Gyarados
+incomingpercentage: 0.842784
+Defensive: 0
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -25 
+
+Scoring for Celesteela switching to: Honchkrow
+incomingpercentage: 1.178218
+Defensive: -150
+Offensive: 45
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 50
+Other Score: 0
+Final Pokemon Score: -80 
+
+Scoring for Celesteela switching to: Clefable
+incomingpercentage: 0.822335
+Defensive: 0
+Offensive: 0
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: 0 
+
+Scoring for Celesteela switching to: Celesteela
+Score: -10000000
+
+Scoring for Celesteela switching to: Hydreigon
+Score: -10000000
+
+Scoring for switching from: Celesteela
+                                                            |New AI
+Score for switching to Mismagius                            |-10000000 
+Score for switching to Flygon                               |-72.5 
+Score for switching to Gyarados                             |-25.0 
+Score for switching to Honchkrow                            |-80.0 
+Score for switching to Clefable                             |0.0 
+Score for switching to Celesteela                           |-10000000 
+Score for switching to Hydreigon                            |-10000000 
+Switch chosen =                                             |Clefable 
+
+ ______________________________________________________________________________ 
+
+************************** Round 4 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (0)
+Clefable: initial switchscore: 0
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Clefable: initial noswitchscore: 150
+ShouldSwitchScore: -150 
+
+[The foe Clefable: Cosmic Power=[5, -1, -1, -1], Moonblast=[50, -1, -1, -1], Soft-Boiled=[0, -1, -1, -1], Fire Blast=[18, -1, -1, -1]]
+[Prefer Moonblast]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Clefable , HP percentage: 100.0 %
+Held Item: Leftovers , Ability: Unaware , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Maushold                         |52.5 % 
+
+Scoring for Switching to other mon                          |-150 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Cosmic Power - 0 vs Maushold, Init scoring move:            |10 
+Cosmic Power - 0 vs Maushold, Final scoring move:           |5 
+
+Fire Blast - 0 vs Maushold, Init scoring move:              |19 
+Fire Blast - 0 vs Maushold, Final scoring move:             |18 
+
+Moonblast - 0 vs Maushold, Init scoring move:               |50 
+Moonblast - 0 vs Maushold, Final scoring move:              |50 
+
+Soft-Boiled - 0 vs Maushold, Init scoring move:             |20 
+Soft-Boiled - 0 vs Maushold, Final scoring move:            |0 
+
+Final action chosen:                                        |[Prefer Moonblast] 
+ ______________________________________________________________________________ 
+
+Maushold used Population Bomb
+[The foe Clefable lost 77 HP, now has 317 HP]
+[The foe Clefable lost 69 HP, now has 248 HP]
+[The foe Clefable lost 74 HP, now has 174 HP]
+[The foe Clefable lost 77 HP, now has 97 HP]
+[The foe Clefable lost 75 HP, now has 22 HP]
+[The foe Clefable lost 22 HP, now has 0 HP]
+[The foe Clefable fainted]
+[AI made a switch]
+
+Scoring for Clefable switching to: Mismagius
+Score: -10000000
+
+Scoring for Clefable switching to: Flygon
+incomingpercentage: 3.263736
+Defensive: -150
+Offensive: 37
+Roles: 0
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 25
+Other Score: 0
+Final Pokemon Score: -87 
+
+Scoring for Clefable switching to: Gyarados
+incomingpercentage: 1.422680
+Defensive: -150
+Offensive: 0
+Roles: -10
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -160 
+
+Scoring for Clefable switching to: Honchkrow
+incomingpercentage: 1.871287
+Defensive: -150
+Offensive: 0
+Roles: -10
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 50
+Other Score: 0
+Final Pokemon Score: -110 
+
+Scoring for Clefable switching to: Clefable
+Score: -10000000
+
+Scoring for Clefable switching to: Celesteela
+Score: -10000000
+
+Scoring for Clefable switching to: Hydreigon
+Score: -10000000
+
+Scoring for switching from: Clefable
+                                                            |New AI
+Score for switching to Mismagius                            |-10000000 
+Score for switching to Flygon                               |-87.5 
+Score for switching to Gyarados                             |-160.0 
+Score for switching to Honchkrow                            |-110.0 
+Score for switching to Clefable                             |-10000000 
+Score for switching to Celesteela                           |-10000000 
+Score for switching to Hydreigon                            |-10000000 
+Switch chosen =                                             |Flygon 
+
+ ______________________________________________________________________________ 
+
+************************** Round 5 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (40)
+Initial switchscore building: Specific Switches (100)
+Flygon: initial switchscore: 140
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Flygon: initial noswitchscore: 150
+ShouldSwitchScore: -10 
+
+[The foe Flygon: Earth Power=[20, -1, -1, -1], Draco Meteor=[37, -1, -1, -1], Throat Chop=[20, -1, -1, -1], Roost=[0, -1, -1, -1]]
+[Prefer Draco Meteor]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Flygon , HP percentage: 100.0 %
+Held Item: Life Orb , Ability: Levitate , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Rillaboom                        |550.5 % 
+
+Scoring for Switching to other mon                          |-10 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Draco Meteor - 0 vs Rillaboom, Init scoring move:           |51 
+Draco Meteor - 0 vs Rillaboom, Final scoring move:          |37 
+
+Earth Power - 0 vs Rillaboom, Init scoring move:            |20 
+Earth Power - 0 vs Rillaboom, Final scoring move:           |20 
+
+Roost - 0 vs Rillaboom, Init scoring move:                  |20 
+Roost - 0 vs Rillaboom, Final scoring move:                 |0 
+
+Throat Chop - 0 vs Rillaboom, Init scoring move:            |20 
+Throat Chop - 0 vs Rillaboom, Final scoring move:           |20 
+
+Final action chosen:                                        |[Prefer Draco Meteor]
+ ______________________________________________________________________________ 
+
+Rillaboom used Grassy Glide
+[The foe Flygon lost 364 HP, now has 0 HP]
+[The foe Flygon fainted]
+[AI made a switch]
+
+Scoring for Flygon switching to: Mismagius
+Score: -10000000
+
+Scoring for Flygon switching to: Flygon
+Score: -10000000
+
+Scoring for Flygon switching to: Gyarados
+incomingpercentage: 1.469072
+Defensive: -150
+Offensive: 0
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -175 
+
+Scoring for Flygon switching to: Honchkrow
+incomingpercentage: 0.690594
+Defensive: 0
+Offensive: 45
+Roles: -25
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 50
+Other Score: 0
+Final Pokemon Score: 70 
+
+Scoring for Flygon switching to: Clefable
+Score: -10000000
+
+Scoring for Flygon switching to: Celesteela
+Score: -10000000
+
+Scoring for Flygon switching to: Hydreigon
+Score: -10000000
+
+Scoring for switching from: Flygon
+                                                            |New AI
+Score for switching to Mismagius                            |-10000000 
+Score for switching to Flygon                               |-10000000 
+Score for switching to Gyarados                             |-175.0 
+Score for switching to Honchkrow                            |70.0 
+Score for switching to Clefable                             |-10000000 
+Score for switching to Celesteela                           |-10000000 
+Score for switching to Hydreigon                            |-10000000 
+Switch chosen =                                             |Honchkrow 
+
+ ______________________________________________________________________________ 
+
+************************** Round 6 *******************************
+Priority Check Begin
+Player Pokemon is faster.
+pre-check: 33
+Expected damage taken: 1556
+post-check: 183
+Priority Check End
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+Initial switchscore building: Statuses (0)
+Initial switchscore building: Stat Stages (0)
+Initial switchscore building: Healing (0)
+Initial switchscore building: fsteak (0)
+Initial switchscore building: Typing (0)
+Initial switchscore building: Specific Switches (100)
+Honchkrow: initial switchscore: 100
+Initial noswitchscore building: Stat Stages (0)
+Initial noswitchscore building: Entry Hazards (0)
+Initial noswitchscore building: Alternate Switching Options (100)
+Initial noswitchscore building: Second Wind Situations (50)
+Honchkrow: initial noswitchscore: 150
+ShouldSwitchScore: -50 
+
+[The foe Honchkrow: Night Slash=[33, -1, -1, -1], Roost=[0, -1, -1, -1], Brave Bird=[33, -1, -1, -1], Sucker Punch=[237, -1, -1, -1]]
+[Prefer Sucker Punch]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Honchkrow , HP percentage: 100.0 %
+Held Item: Darkinium-Z , Ability: Moxie , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Lilligant                        |385.1 % 
+
+Scoring for Switching to other mon                          |-50 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Black Hole Eclipse - 0 vs Lilligant, Init scoring move:     |110 
+Black Hole Eclipse - 0 vs Lilligant, Final scoring move:    |110 
+
+Brave Bird - 0 vs Lilligant, Init scoring move:             |37 
+Brave Bird - 0 vs Lilligant, Final scoring move:            |33 
+
+Night Slash - 0 vs Lilligant, Init scoring move:            |33 
+Night Slash - 0 vs Lilligant, Final scoring move:           |33 
+
+Roost - 0 vs Lilligant, Init scoring move:                  |20 
+Roost - 0 vs Lilligant, Final scoring move:                 |0 
+
+Sucker Punch - 0 vs Lilligant, Init scoring move:           |33 
+Sucker Punch - 0 vs Lilligant, Final scoring move:          |237 
+
+Final action chosen:                                        |[Prefer Sucker Punch]
+ ______________________________________________________________________________ 
+
+Lilligant used Judgment
+[The foe Honchkrow lost 404 HP, now has 0 HP]
+[The foe Honchkrow fainted]
+[AI made a switch]
+
+Scoring for Honchkrow switching to: Mismagius
+Score: -10000000
+
+Scoring for Honchkrow switching to: Flygon
+Score: -10000000
+
+Scoring for Honchkrow switching to: Gyarados
+incomingpercentage: 2.505155
+Defensive: -150
+Offensive: 0
+Roles: 30
+Weather: 0
+Moves: 0
+Abilities: 0
+Items: 0
+Fields: 0
+Other Score: 0
+Final Pokemon Score: -120 
+
+Scoring for Honchkrow switching to: Honchkrow
+Score: -10000000
+
+Scoring for Honchkrow switching to: Clefable
+Score: -10000000
+
+Scoring for Honchkrow switching to: Celesteela
+Score: -10000000
+
+Scoring for Honchkrow switching to: Hydreigon
+Score: -10000000
+
+Scoring for switching from: Honchkrow
+                                                            |New AI
+Score for switching to Mismagius                            |-10000000 
+Score for switching to Flygon                               |-10000000 
+Score for switching to Gyarados                             |-120.0 
+Score for switching to Honchkrow                            |-10000000 
+Score for switching to Clefable                             |-10000000 
+Score for switching to Celesteela                           |-10000000 
+Score for switching to Hydreigon                            |-10000000 
+Switch chosen =                                             |Gyarados 
+
+ ______________________________________________________________________________ 
+
+************************** Round 7 *******************************
+Beginning AI Item use check.
+
+This is a HP-healing item.
+This is a status-curing item.
+Score for Full Restore: -100
+Highest item score: -100
+ShouldSwitchScore: -1000 
+
+[The foe Gyarados: Waterfall=[27, -1, -1, -1], Stone Edge=[19, -1, -1, -1], Crunch=[28, -1, -1, -1], Flamethrower=[23, -1, -1, -1]]
+[Prefer Crunch]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Gyarados , HP percentage: 100.0 %
+Held Item: Leftovers , Ability: Hydra Bond , Field: New World
+                                                            |AI Scores
+Expected Damage taken from Lilligant                        |250.5 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Scoring for items                                           |                    | 
+Full Restore                                                |-100.0              
+Crunch - 0 vs Lilligant, Init scoring move:                 |27 
+Crunch - 0 vs Lilligant, Final scoring move:                |28 
+
+Flamethrower - 0 vs Lilligant, Init scoring move:           |23 
+Flamethrower - 0 vs Lilligant, Final scoring move:          |23 
+
+Stone Edge - 0 vs Lilligant, Init scoring move:             |22 
+Stone Edge - 0 vs Lilligant, Final scoring move:            |19 
+
+Waterfall - 0 vs Lilligant, Init scoring move:              |27 
+Waterfall - 0 vs Lilligant, Final scoring move:             |27 
+
+Final action chosen:                                        |[Prefer Crunch]    
+ ______________________________________________________________________________ 
+
+Lilligant used Judgment
+[The foe Gyarados lost 388 HP, now has 0 HP]
+[The foe Gyarados fainted]
