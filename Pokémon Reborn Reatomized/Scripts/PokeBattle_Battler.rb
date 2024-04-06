@@ -2511,6 +2511,12 @@ class PokeBattle_Battler
         ospeed+=(opp2.speed*stagemult[opp2.stages[PBStats::SPEED]+6]/stagediv[opp2.stages[PBStats::SPEED]+6]) if opp2.hp>0
         ospatk+=(opp2.spatk*stagemult[opp2.stages[PBStats::SPATK]+6]/stagediv[opp2.stages[PBStats::SPATK]+6]) if opp2.hp>0
         ospdef+=(opp2.spdef*stagemult[opp2.stages[PBStats::SPDEF]+6]/stagediv[opp2.stages[PBStats::SPDEF]+6]) if opp2.hp>0
+        #? averaging
+        oatk/=2
+        odef/=2
+        ospeed/=2
+        ospatk/=2
+        ospdef/=2
       end
       #? highest stat checker
       checker=oatk
@@ -2531,35 +2537,35 @@ class PokeBattle_Battler
       case statselector
       when "attack"
         argounautboost = (oatk/(self.attack*stagemult[opp1.stages[PBStats::ATTACK]+6]/stagediv[opp1.stages[PBStats::ATTACK]+6])).ceiling
-          if !pbTooHigh?(PBStats::ATTACK)
+          if !pbTooHigh?(PBStats::ATTACK) && (argounautboost > 0)
             pbIncreaseStatBasic(PBStats::ATTACK,argounautboost)
             @battle.pbCommonAnimation("StatUp",self)
             @battle.pbDisplay(_INTL("{1}'s {2} boosted its Attack!", pbThis,PBAbilities.getName(ability)))
           end
       when "defense"
         argounautboost = (oatk/(self.defense*stagemult[opp1.stages[PBStats::DEFENSE]+6]/stagediv[opp1.stages[PBStats::DEFENSE]+6])).ceiling
-          if !pbTooHigh?(PBStats::DEFENSE)
+          if !pbTooHigh?(PBStats::DEFENSE) && (argounautboost > 0)
             pbIncreaseStatBasic(PBStats::DEFENSE,argounautboost)
             @battle.pbCommonAnimation("StatUp",self)
             @battle.pbDisplay(_INTL("{1}'s {2} boosted its Defense!", pbThis,PBAbilities.getName(ability)))
           end
         when "speed"
           argounautboost = (oatk/(self.speed*stagemult[opp1.stages[PBStats::SPEED]+6]/stagediv[opp1.stages[PBStats::SPEED]+6])).ceiling
-          if !pbTooHigh?(PBStats::SPEED)
+          if !pbTooHigh?(PBStats::SPEED) && (argounautboost > 0)
             pbIncreaseStatBasic(PBStats::SPEED,argounautboost)
             @battle.pbCommonAnimation("StatUp",self)
             @battle.pbDisplay(_INTL("{1}'s {2} boosted its Speed!", pbThis,PBAbilities.getName(ability)))
           end
         when "spatk"
           argounautboost = (oatk/(self.spatk*stagemult[opp1.stages[PBStats::SPATK]+6]/stagediv[opp1.stages[PBStats::SPATK]+6])).ceiling
-          if !pbTooHigh?(PBStats::SPATK)
+          if !pbTooHigh?(PBStats::SPATK) && (argounautboost > 0)
             pbIncreaseStatBasic(PBStats::SPATK,argounautboost)
             @battle.pbCommonAnimation("StatUp",self)
             @battle.pbDisplay(_INTL("{1}'s {2} boosted its Special Attack!", pbThis,PBAbilities.getName(ability)))
           end
         when "spdef"
           argounautboost = (oatk/(self.spdef*stagemult[opp1.stages[PBStats::SPDEF]+6]/stagediv[opp1.stages[PBStats::SPDEF]+6])).ceiling
-          if !pbTooHigh?(PBStats::SPDEF)
+          if !pbTooHigh?(PBStats::SPDEF) && (argounautboost > 0)
             pbIncreaseStatBasic(PBStats::SPDEF,argounautboost)
             @battle.pbCommonAnimation("StatUp",self)
             @battle.pbDisplay(_INTL("{1}'s {2} boosted its Special Defense!", pbThis,PBAbilities.getName(ability)))
