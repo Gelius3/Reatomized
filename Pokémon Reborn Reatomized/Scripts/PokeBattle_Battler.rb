@@ -610,6 +610,7 @@ class PokeBattle_Battler
     @effects[PBEffects::BloodMoon]        = 0
     @effects[PBEffects::Toxic]            = 0
     @effects[PBEffects::Reincarnation]    = false if  self.ability == PBAbilities::CELESTIALREINCARNATION
+    @effects[PBEffects::Sturdiness]       = false
     @effects[PBEffects::Trace]            = false
     @effects[PBEffects::TracedAbility]    = 0
     @effects[PBEffects::Sketched]         = false
@@ -4752,9 +4753,9 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} avoided the attack!",target.pbThis))
         elsif thismove.function==0xDC # Leech Seed
           @battle.pbDisplay(_INTL("{1} evaded the attack!",target.pbThis))          
-        elsif thismove.function==0x70 && (((target.hasWorkingAbility(:STURDY) && !target.moldbroken) || user.level < target.level) || target.pokemon.piece==:PAWN && @battle.FE==PBFields::CHESSB)
+        elsif thismove.function==0x70 && ((((target.hasWorkingAbility(:STURDY) || target.hasWorkingAbility(:STURDINESS)) && !target.moldbroken) || user.level < target.level) || target.pokemon.piece==:PAWN && @battle.FE==PBFields::CHESSB)
           @battle.pbDisplay(_INTL("{1} is unaffected!",target.pbThis))
-        elsif thismove.function==0x70 && !((target.hasWorkingAbility(:STURDY)) || (user.level<target.level))
+        elsif thismove.function==0x70 && !((target.hasWorkingAbility(:STURDY) || target.hasWorkingAbility(:STURDINESS)) || (user.level<target.level))
           @battle.pbDisplay(_INTL("{1} avoided the attack!",target.pbThis))
         else
           @battle.pbDisplay(_INTL("{1}'s attack missed!",user.pbThis))
@@ -4837,9 +4838,9 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} avoided the attack!",target.pbThis))
         elsif thismove.function==0xDC # Leech Seed
           @battle.pbDisplay(_INTL("{1} evaded the attack!",target.pbThis))
-        elsif thismove.function==0x70 && (((target.hasWorkingAbility(:STURDY) && !target.moldbroken) || user.level < target.level) || @battle.FE==PBFields::CHESSB && target.pokemon.piece==:PAWN)
+        elsif thismove.function==0x70 && ((((target.hasWorkingAbility(:STURDY) || target.hasWorkingAbility(:STURDINESS)) && !target.moldbroken) || user.level < target.level) || target.pokemon.piece==:PAWN && @battle.FE==PBFields::CHESSB)
           @battle.pbDisplay(_INTL("{1} is unaffected!",target.pbThis))
-        elsif thismove.function==0x70 && !((target.hasWorkingAbility(:STURDY)) || (user.level<target.level))
+        elsif thismove.function==0x70 && !((target.hasWorkingAbility(:STURDY) || target.hasWorkingAbility(:STURDINESS)) || (user.level<target.level))
           @battle.pbDisplay(_INTL("{1} avoided the attack!",target.pbThis))
         else
           @battle.pbDisplay(_INTL("{1}'s attack missed!",user.pbThis))
@@ -4952,7 +4953,7 @@ class PokeBattle_Battler
     if @effects[PBEffects::Flinch]
       @effects[PBEffects::Flinch]=false
       if @battle.FE == PBFields::ROCKYF
-        if !(self.ability == PBAbilities::STEADFAST) && !(self.ability == PBAbilities::STURDY) && !(self.ability == PBAbilities::INNERFOCUS) && (self.stages[PBStats::DEFENSE] < 1)
+        if !(self.ability == PBAbilities::STEADFAST) && !(self.ability == PBAbilities::STURDY) && !(self.ability == PBAbilities::INNERFOCUS) && (self.stages[PBStats::DEFENSE] < 1) && !(self.ability == PBAbilities::STURDINESS)
           @battle.pbDisplay(_INTL("{1} was knocked into a rock!",pbThis))
           damage=[1,(self.totalhp/4.0).floor].max
           if damage>0
@@ -5944,6 +5945,9 @@ class PokeBattle_Battler
         if target.hasWorkingItem(:FOCUSSASH)
           target.damagestate.focussash=true
         end
+        if target.hasWorkingAbility(:STURDINESS)
+          target.damagestate.sturdiness=true
+        end
 
         # Use move against the current target
         disguisecheck = true if (target.index==0 || target.index==1) && target.effects[PBEffects::Disguise] # Only used to stop anim playing after a disguise is broken
@@ -6247,7 +6251,7 @@ class PokeBattle_Battler
         next if i.pbOwnSide.effects[PBEffects::WideGuard]
         next if i.ability == PBAbilities::FLASHFIRE || i.ability == PBAbilities::WELLBAKEDBODY
         next if i.effects[PBEffects::SkyDrop] || i.effects[PBEffects::Commander]
-        combustdamage -= 1 if i.effects[PBEffects::Endure] || i.ability == PBAbilities::STURDY
+        combustdamage -= 1 if i.effects[PBEffects::Endure] || i.ability == PBAbilities::STURDY || i.ability == PBAbilities::STURDINESS
         i.pbReduceHP(combustdamage) if combustdamage != 0
         i.pbFaint if i.isFainted?
       end
