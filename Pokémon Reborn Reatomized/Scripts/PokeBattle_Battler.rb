@@ -3398,6 +3398,19 @@ class PokeBattle_Battler
         end
       end
 
+      # Balance Bringer
+      if !user.isFainted? && user.hasWorkingAbility(:BALANCEBRINGER) && !(user.userSwitch)
+        choices = []
+        party=@battle.pbParty(user.index)
+        for i in 0...party.length
+          choices[choices.length]=i if @battle.pbCanSwitchLax?(user.index,i,false)
+        end
+        if choices.length!=0
+          @battle.pbDisplay(_INTL("#{user.pbThis}'s Balance Bringer activates!"))
+           user.userSwitch = true
+        end
+      end
+
       if !target.damagestate.substitute
         # Cursed Body
         if target.hasWorkingAbility(:CURSEDBODY,true) && @battle.pbRandom(10)<3 && @battle.FE != PBFields::HOLYF
