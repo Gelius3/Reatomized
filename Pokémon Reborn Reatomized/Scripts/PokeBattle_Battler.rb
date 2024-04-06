@@ -610,7 +610,7 @@ class PokeBattle_Battler
     @effects[PBEffects::BloodMoon]        = 0
     @effects[PBEffects::Toxic]            = 0
     @effects[PBEffects::Reincarnation]    = false if  self.ability == PBAbilities::CELESTIALREINCARNATION
-    @effects[PBEffects::Sturdiness]       = false
+    @effects[PBEffects::Sturdiness]       = false if !(self.isFainted?)
     @effects[PBEffects::Trace]            = false
     @effects[PBEffects::TracedAbility]    = 0
     @effects[PBEffects::Sketched]         = false
