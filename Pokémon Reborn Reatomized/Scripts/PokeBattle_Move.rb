@@ -2310,6 +2310,9 @@ class PokeBattle_Move
         elsif damage==opponent.totalhp && opponent.ability == PBAbilities::STURDY && !opponent.moldbroken
           opponent.damagestate.sturdy=true
           damage=damage-1
+        elsif !(opponent.effects[PBEffects::Sturdiness]) && opponent.damagestate.sturdiness && opponent.ability == PBAbilities::STURDINESS && !opponent.moldbroken
+          opponent.damagestate.sturdinessused=true
+          damage=damage-1
         elsif opponent.damagestate.focussash && damage==opponent.totalhp && opponent.item!=0
           opponent.damagestate.focussashused=true
           damage=damage-1
@@ -2360,6 +2363,11 @@ class PokeBattle_Move
     elsif opponent.damagestate.sturdy
       @battle.pbDisplay(_INTL("{1} hung on with Sturdy!",opponent.pbThis))
       opponent.damagestate.sturdy=false
+    elsif opponent.damagestate.sturdinessused
+      opponent.damagestate.sturdinessused=false
+      opponent.damagestate.sturdiness=false
+      opponent.effects[PBEffects::Sturdiness]=true
+      @battle.pbDisplay(_INTL("{1} hung on using its Sturdiness!",opponent.pbThis))
     elsif opponent.damagestate.focussashused
       @battle.pbDisplay(_INTL("{1} hung on using its Focus Sash!",opponent.pbThis))
       opponent.damagestate.focussashused=false
