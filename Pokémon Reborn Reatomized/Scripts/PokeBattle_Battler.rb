@@ -610,7 +610,6 @@ class PokeBattle_Battler
     @effects[PBEffects::BloodMoon]        = 0
     @effects[PBEffects::Toxic]            = 0
     @effects[PBEffects::Reincarnation]    = false if  self.ability == PBAbilities::CELESTIALREINCARNATION
-    @effects[PBEffects::Reincarnation]    = false if  self.ability == PBAbilities::CELESTIALREINCARNATION
     @effects[PBEffects::Trace]            = false
     @effects[PBEffects::TracedAbility]    = 0
     @effects[PBEffects::Sketched]         = false
@@ -3291,7 +3290,7 @@ class PokeBattle_Battler
 
       # Celestial Reincarnation
       if target.abilityWorks?(true)
-        if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && (@effects[PBEffects::Reincarnation] == true)
+        if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && (@effects[PBEffects::Reincarnation] == true) && $game_switches[1305] #? switch Postgame_Active
           party=@battle.pbParty(target.index)
           revivablePokemon = []
           for i in party
@@ -3310,7 +3309,6 @@ class PokeBattle_Battler
             pokemon.status=0
             pokemon.hp=1+(pokemon.totalhp/2.0).floor
             @battle.pbDisplay(_INTL("{1} was reincarnated and is ready to fight again!",target.name))
-            @effects[PBEffects::Reincarnation]=true
             @effects[PBEffects::Reincarnation]=true
           else
             @battle.pbDisplay(_INTL("But it failed."))
