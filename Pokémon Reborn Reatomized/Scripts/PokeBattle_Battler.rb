@@ -609,7 +609,7 @@ class PokeBattle_Battler
     @effects[PBEffects::GigatonHammer]    = 0
     @effects[PBEffects::BloodMoon]        = 0
     @effects[PBEffects::Toxic]            = 0
-    @effects[PBEffects::Reincarnation]    = true if  self.ability == PBAbilities::CELESTIALREINCARNATION
+    @effects[PBEffects::Reincarnation]    = false if  self.ability == PBAbilities::CELESTIALREINCARNATION
     @effects[PBEffects::Trace]            = false
     @effects[PBEffects::TracedAbility]    = 0
     @effects[PBEffects::Sketched]         = false
@@ -3290,7 +3290,7 @@ class PokeBattle_Battler
 
       # Celestial Reincarnation
       if target.abilityWorks?(true)
-        if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && @effects[PBEffects::Reincarnation]
+        if target.ability == PBAbilities::CELESTIALREINCARNATION && target.hp <= 0 && (@effects[PBEffects::Reincarnation] == true)
           party=@battle.pbParty(target.index)
           revivablePokemon = []
           for i in party
