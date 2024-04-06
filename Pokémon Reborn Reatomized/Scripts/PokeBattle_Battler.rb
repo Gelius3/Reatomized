@@ -3309,7 +3309,7 @@ class PokeBattle_Battler
             pokemon.status=0
             pokemon.hp=1+(pokemon.totalhp/2.0).floor
             @battle.pbDisplay(_INTL("{1} was reincarnated and is ready to fight again!",target.name))
-            @effects[PBEffects::Reincarnation]=false
+            @effects[PBEffects::Reincarnation]=true
           else
             @battle.pbDisplay(_INTL("But it failed."))
           end
