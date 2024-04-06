@@ -210,6 +210,7 @@ class PBEffects
   SketchedAbility    = 165
   Sequence           = 166
   Reincarnation      = 167 # Cosmic Reincarnation
+  Sturdiness         = 168
 
   # These effects apply to a side
   LightScreen   = 200
