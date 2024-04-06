@@ -2515,14 +2515,19 @@ class PokeBattle_Battler
       #? highest stat checker
       checker=oatk
       statselector = "attack"
-      checker=odef if checker < odef
-      statselector = "defense"
-      checker=ospeed if checker < ospeed
-      statselector = "speed"
-      checker=ospatk if checker < ospatk
-      statselector = "spatk"
-      checker=ospdef if checker < ospdef
-      statselector = "spdef"
+      if checker < odef
+        checker=odef
+        statselector = "defense"
+      elsif checker < ospeed
+        checker=ospeed
+        statselector = "speed"
+      elsif checker < ospatk
+        checker=ospatk
+        statselector = "spatk"
+      elsif checker < ospdef
+        checker=ospdef 
+        statselector = "spdef"
+      end
       case statselector
       when "attack"
         argounautboost = (oatk/(self.attack*stagemult[opp1.stages[PBStats::ATTACK]+6]/stagediv[opp1.stages[PBStats::ATTACK]+6])).round
