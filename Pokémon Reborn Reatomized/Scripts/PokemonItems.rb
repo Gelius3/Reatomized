@@ -3332,7 +3332,7 @@ end
       if pokemon.form==0
         if (move == PBMoves::CURSE) || (move == PBMoves::ICYWIND) || (move == PBMoves::SNOWSCAPE) ||
           (move == PBMoves::WILLOWISP) || (move == PBMoves::PHANTOMFORCE) || (move == PBMoves::HYPERBEAM) ||
-          (move == PBMoves::GIGAIMPACT) || (move == PBMoves::FOCUSPUNCH)
+          (move == PBMoves::GIGAIMPACT) || (move == PBMoves::FOCUSPUNCH) || (move == PBMoves::OMINOUSWIND)
           return false
         end
       elsif pokemon.form==1
