@@ -711,8 +711,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
         if (move == PBMoves::SPITE) || (move == PBMoves::QUASH) || (move == PBMoves::SWIFT) ||
           (move == PBMoves::EMBARGO) || (move == PBMoves::ROCKPOLISH) || (move == PBMoves::DARKPULSE) ||
           (move == PBMoves::STONEEDGE) || (move == PBMoves::SNARL) || (move == PBMoves::GIGAIMPACT) ||
-          (move == PBMoves::KNOCKOFF) || (move == PBMoves::GASTROACID) || (move == PBMoves::HYPERBEAM) ||
-	        (move == PBMoves::CRUNCH) || (move == PBMoves::POISONFANG)
+          (move == PBMoves::POISONFANG) || (move == PBMoves::GASTROACID) || (move == PBMoves::HYPERBEAM) ||
+	        (move == PBMoves::CRUNCH)
           return false
         end
       elsif pokemon.form==1
