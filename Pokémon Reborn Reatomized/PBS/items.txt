@@ -1100,6 +1100,57 @@
 1147,TM205,TM205,4,6000,"Damages the target and prevents it from healing for two turns.",3,0,0,PSYCHICNOISE
 1148,TM206,TM206,4,6000,"Reacts to the enemy's priority move and flinches them.",3,0,0,UPPERHAND
 1149,METALALLOY,Metal Alloy,1,1100,"A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.",1,0,0,
+1150,TM207,TM207,4,5000,"The power of this attack is doubled if it is used on a target that is switching out of battle.",3,0,0,PURSUIT
+1151,TM208,TM208,4,5000,"The user makes the target see a frightening mirage. It inflicts damage equal to the user's level.",3,0,0,NIGHTSHADE
+1152,TM209,TM209,4,10000,"The user stirs up a violent petal blizzard and attacks everything around themselves.",3,0,0,PETALBLIZZARD
+1153,TM210,TM210,4,5000,"This attack hits the target with a shock wave of pure rage. This attack always inflicts 40 HP damage.",3,0,0,DRAGONRAGE
+1154,TM211,TM211,4,5000,"The user exhales a mighty gust that inflicts damage. This may also leave the target with paralysis.",3,0,0,DRAGONBREATH
+1155,TM212,TM212,4,5000,"A reckless, full-body charge to slam into the target. This also damages the user a little.",3,0,0,TAKEDOWN
+1156,TM213,TM213,4,3000,"A charming cry does emotional damage to opposing Pokémon. This attack never misses.",3,0,0,DISARMINGVOICE
+1157,TM214,TM214,4,5000,"Unsanitary sludge is hurled at the target. This may also poison the target.",3,0,0,SLUDGE
+1158,TM215,TM215,4,3000,"The user spits fluid that works to melt the target. This harshly lowers the target's Sp. Def stat.",3,0,0,ACIDSPRAY
+1159,TM216,TM216,4,5000,"The user launches a hard-packed mud ball to attack. This may also lower the target's Accuracy.",3,0,0,MUDBOMB
+1160,TM217,TM217,4,5000,"The user hits the target with a tail. This may also poison the target. Critical hits land more easily.",3,0,0,POISONTAIL
+1161,TM218,TM218,4,2000,"The user growls in an endearing way, making opposing Pokémon less wary. This lowers their Attack stat.",3,0,0,GROWL
+1162,TM219,TM219,4,3000,"The target is exposed to a sinister ray that triggers confusion.",3,0,0,CONFUSERAY
+1163,TM220,TM220,4,2000,"The user hurls mud in the target's face to inflict damage and lower its Accuracy.",3,0,0,MUDSLAP
+1164,TM221,TM221,4,3000,"The user flails about aimlessly to attack. The less HP the user has, the greater the move's power.",3,0,0,FLAIL
+1165,TM222,TM222,4,3000,"A horrible sound like scraping metal harshly lowers the target's Sp. Def stat.",3,0,0,METALSOUND
+1166,TM223,TM223,4,5000,"The user covers the target's body with a mass of down that harshly lowers its Attack stat.",3,0,0,FEATHERDANCE
+1167,TM224,TM224,4,5000,"A move that works differently for the Ghost-type than for all other types.",3,0,0,CURSE
+1168,TM225,TM225,4,5000,"The target is quickly kicked twice in succession using both feet.",3,0,0,DOUBLEKICK
+1169,TM226,TM226,4,5000,"The target is bitten with viciously sharp fangs. This may also make the target flinch.",3,0,0,BITE
+1170,TM227,TM227,4,5000,"The target is raked with steel claws. This may also raise the user's Attack stat.",3,0,0,METALCLAW
+1171,TM228,TM228,4,5000,"The target is attacked with a peculiar ray. This may also leave the target confused.",3,0,0,PSYBEAM
+1172,TM229,TM229,4,6000,"The user launches razor-like wind to slash the opposing Pokémon. Critical hits land more easily.",3,0,0,AIRCUTTER
+1173,TM230,TM230,4,6000,"As long as this move is in use, the user's Attack stat raises each time the user is hit.",3,0,0,RAGE
+1174,TM231,TM231,4,6000,"The user endures attacks for two turns, then strikes back to cause double the damage taken.",3,0,0,BIDE
+1175,TM232,TM232,4,6000,"A spray of bubbles is forcefully ejected at the target. This may also lower its Speed stat.",3,0,0,BUBBLEBEAM
+1176,TM233,TM233,4,6000,"The target is blasted with a forceful shot of water.",3,0,0,WATERGUN
+1177,TM234,TM234,4,6000,"The user attacks with powdery scales blown by the wind. This may raise all the user's stats.",3,0,0,SILVERWIND
+1178,TM235,TM235,4,6000,"Enables the user to evade all attacks. Its chance of failing rises if it is used in succession.",3,0,0,DETECT
+1179,TM236,TM236,4,6000,"The target is blown away, and a different Pokémon is dragged out. Ends the battle in the wild.",3,0,0,WHIRLWIND
+1180,TM237,TM237,4,6000,"Use it to flee from any wild Pokémon. It can also warp to the last Pokémon Center visited.",3,0,0,TELEPORT
+1181,TM238,TM238,4,6000,"The target is attacked with an odd psychic wave. The attack varies in intensity.",3,0,0,PSYWAVE
+1182,TM239,TM239,4,6000,"The user kisses the target with a sweet, angelic cuteness that causes confusion.",3,0,0,SWEETKISS
+1183,TM240,TM240,4,6000,"Opposing Pokémon of the opposite gender are charmed, and their Sp. Atk stat harshly lowered.",3,0,0,CAPTIVATE
+1184,TM241,TM241,4,6000,"The user draws power to attack by using a held Berry. The Berry determines the move's type and power.",3,0,0,NATURALGIFT
+1185,TM242,TM242,4,6000,"The user releases cotton-like spores that harshly lower the targets' Speed stat.",3,0,0,COTTONSPORE
+1186,TM243,TM243,4,6000,"A sweet scent that harshly lowers opposing Pokémons' Evasion.",3,0,0,SWEETSCENT
+1187,TM244,TM244,4,6000,"The user sharpens their claws to boost their Attack stat and Accuracy.",3,0,0,HONECLAWS
+1188,TM245,TM245,4,6000,"The user attacks everything around with a ground-shaking quake. Its power varies.",3,0,0,MAGNITUDE
+1189,TM246,TM246,4,6000,"The user strikes the target with a hard bone two to five times in a row.",3,0,0,BONERUSH
+1190,TM247,TM247,4,6000,"The user charges at the target, cloaked in flames. This may also burn the target.",3,0,0,FLAMEWHEEL
+1191,TM248,TM248,4,6000,"The user attacks with fire. If a Pokémon is holding a Berry or a Type Gem, the item becomes unusable.",3,0,0,INCINERATE
+1192,TM249,TM249,4,6000,"The user pecks the target. If the target is holding a Berry, the user eats it and gains its effect.",3,0,0,PLUCK
+1193,TM250,TM250,4,6000,"The user bites the target with toxic fangs. This may also leave the target badly poisoned.",3,0,0,POISONFANG
+1194,TM251,TM251,4,6000,"The user delivers a double chop with their forearms crossed. Critical hits land more easily.",3,0,0,CROSSCHOP
+1195,TM252,TM252,4,6000,"The user damages the opposing Pokémon and lowers its defense and special defense.",3,0,0,CAUSTICBREATH
+1196,TM253,TM253,4,6000,"The user creates waves in the water to attack the target. This move does physical damage.",3,0,0,CORALBREAK
+1197,TM254,TM254,4,6000,"The user slams the target with a whimsical strike of the fangs. It may make the target flinch.",3,0,0,FAENGRUSH
+1198,TM255,TM255,4,6000,"The user attacks using psychic force whilst brainstorming. This may raise the user's Sp. Atk stat.",3,0,0,BRAINSTORM
+1199,TM256,TM256,4,6000,"The user causes a quick surge of flowing water to drown out the foe. This move always goes first.",3,0,0,FLASHFLOOD
+1200,TM257,TM257,4,6000,"The foe is blasted with a cloud of hot ash to inflict damage and lower accuracy.",3,0,0,CINDERBREATH
 3000,INCINEROARITE,Incineroarite,6,999,"Have Incineroar hold it, and this stone will enable it to Mega Evolve during battle.",0,0,0
 3001,LUCARIONITER,Lucarionite R,6,999,"Have Lucario hold it, and this stone will enable it to Mega Evolve during battle.",0,0,0
 3002,SAIYANITE,Saiyanite,6,999,"Have Teddinomo hold it. It's a special stone that boosts its Attack and Sp. Atk stats.",0,0,0
@@ -1124,4 +1175,8 @@
 4011,DNAFUSERS,DNA Fusers,8,0,"A fuser that ???. The process is not known.",5,0,6,
 4012,ETERNAITE,Eternaite,6,999,"Have Eternatus hold it, and this stone will enable it to Dynamax during battle.",0,0,0
 4013,DEVGEM,Dev Gem,1,1200,"MULTICORE WAS HERE.",0,0,0
-4014,HONEYATTRACTOR,Honey Attractor,8,0,"A device capable of attracting wild Pokémon by simulating honey's aroma.",2,0,6
+4014,HONEYATTRACTOR,Honey Attractor,8,0,"A device capable of attracting wild Pokémon by simulating honey's aroma.",2,0,6,
+4015,MARKCHARM,Mark Charm,8,0,"A mysterious and unique charm that increases the chance of finding a Pokémon with a mark.",0,0,6,
+4016,EXPCHARM,Exp. Charm,8,0,"A charm that increases the Exp. Points that Pokémon can get. A machine-like object is inside the charm.",0,0,6,
+4017,GLIMMERINGCHARM,Glimmering Charm,8,0,"Having one of these mysterious glimmering charms increases the number of Tera Shards you receive from Tera Raid Battles.",0,0,6,
+4018,INFINITYREPEL,Infinity Repel,8,0,"A device that simulates the effects of a Repel permanently.",2,0,6,

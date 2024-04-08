@@ -604,7 +604,7 @@ class PokeBattle_Battle
 
       # Special effect from seed that need specific code
       case @field.effect
-        when PBFields::MISTYT, PBFields::RAINBOWF,PBFields::STARLIGHTA
+        when PBFields::MISTYT, PBFields::RAINBOWF,PBFields::STARLIGHTA, PBFields::GUFIELD, PBFields::DWORLD
           if battler.effects[PBEffects::Wish]==0
             battler.effects[PBEffects::Wish]=2
             battler.effects[PBEffects::WishAmount]=((battler.totalhp+1)*0.75).floor
@@ -1864,9 +1864,9 @@ class PokeBattle_Battle
       opp=opp1 if opp1.ability == PBAbilities::ARENATRAP
       opp=opp2 if opp2.ability == PBAbilities::ARENATRAP
     end
-    unless thispkmn.ability == PBAbilities::SHADOWTAG
-      opp=opp1 if opp1.ability == PBAbilities::SHADOWTAG
-      opp=opp2 if opp2.ability == PBAbilities::SHADOWTAG
+    unless thispkmn.ability == (PBAbilities::SHADOWTAG || PBAbilities::BLACKHOLE)
+      opp=opp1 if opp1.ability == (PBAbilities::SHADOWTAG || PBAbilities::BLACKHOLE)
+      opp=opp2 if opp2.ability == (PBAbilities::SHADOWTAG || PBAbilities::BLACKHOLE)
     end
     if opp
       abilityname=PBAbilities.getName(opp.ability)
@@ -3116,7 +3116,7 @@ class PokeBattle_Battle
       end
       # Stealth Rock
       if pkmn.pbOwnSide.effects[PBEffects::StealthRock]
-        if pkmn.ability != PBAbilities::MAGICGUARD && !pkmn.hasWorkingItem(:HEAVYDUTYBOOTS) && @field.effect != PBFields::WASTELAND
+        if (pkmn.ability != PBAbilities::MAGICGUARD || pkmn.ability != PBAbilities::MOUNTAINEER || pkmn.ability != PBAbilities::OMNIPOTENT) && !pkmn.hasWorkingItem(:HEAVYDUTYBOOTS) && @field.effect != PBFields::WASTELAND
           atype = PBTypes::ROCK
           atype = @field.getRoll if @field.effect == PBFields::CRYSTALC
           eff=PBTypes.getCombinedEffectiveness(atype,pkmn.type1,pkmn.type2)
@@ -4613,6 +4613,31 @@ class PokeBattle_Battle
 
     for i in priority
       next if i.isFainted?
+      # Deep Sleep
+      if i.ability == PBAbilities::DEEPSLEEP && i.effects[PBEffects::HealBlock]== 0 && i.status == PBStatuses::SLEEP
+        hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
+        pbDisplay(_INTL("{1} recovered health in a Deep Sleep!",i.pbThis)) if hpgain>0
+      end
+      # Rebuild
+      if i.ability == PBAbilities::REBUILD && i.effects[PBEffects::HealBlock]==0 && i.lastHPLost <= 0
+        if @field.effect == PBFields::ROCKYF || @field.effect == PBFields::CAVE
+        hpgain=i.pbRecoverHP((i.totalhp/4.0).floor,true)
+        pbDisplay(_INTL("{1} reassembled through Rebuild!",i.pbThis)) if hpgain>0
+        else
+        hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
+        pbDisplay(_INTL("{1} reassembled through Rebuild!",i.pbThis)) if hpgain>0
+        end
+      end
+      # Life Force
+      if i.ability == PBAbilities::LIFEFORCE && i.effects[PBEffects::HealBlock]==0
+        hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
+        pbDisplay(_INTL("{1} regenerated through Life Force!",i.pbThis)) if hpgain>0
+      end
+      # Omnipotent
+      if i.ability == PBAbilities::OMNIPOTENT && i.effects[PBEffects::HealBlock]==0
+        hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
+        pbDisplay(_INTL("{1} regenerated through Omnipotent!",i.pbThis)) if hpgain>0
+      end
       # Rain Dish
       if i.ability == PBAbilities::RAINDISH && (pbWeather==PBWeather::RAINDANCE && !i.hasWorkingItem(:UTILITYUMBRELLA)) && i.effects[PBEffects::HealBlock]==0
         hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
@@ -4773,20 +4798,6 @@ class PokeBattle_Battle
           pbDisplay(_INTL("{1}'s Aqua Ring restored its HP a little!",i.pbThis)) if hpgain>0
         end
       end
-    end
-    # Rebuild
-    if i.hasWorkingAbility(:REBUILD)
-      if i.lastHPLost <= 0
-       if @field.effect == PBFields::CAVE || @field.effect == PBFields::ROCKYF
-         hpgain=(i.totalhp/4.0).floor
-         hpgain=i.pbRecoverHP(hpgain,true)
-         pbDisplay(_INTL("{1}'s was healed through Rebuild!",i.pbThis)) if hpgain>0
-         end
-      else
-         hpgain=(i.totalhp/8.0).floor
-         hpgain=i.pbRecoverHP(hpgain,true)
-         pbDisplay(_INTL("{1}'s was healed through Rebuild!",i.pbThis)) if hpgain>0
-        end
     end
     # Ingrain
     for i in priority
@@ -5401,8 +5412,8 @@ class PokeBattle_Battle
           pbDisplay(_INTL("...Sticky string shot out of the ground!"))
           for mon in [i, i.pbPartner]
             next if mon.isFainted? && !PBStuff::TWOTURNMOVE.include?(mon.effects[PBEffects::TwoTurnAttack])
-            if mon.ability == PBAbilities::CONTRARY && !mon.pbTooHigh?(PBStats::SPEED) || mon.ability == PBAbilities::ALOLANTECHNIQUESB && !mon.pbTooHigh?(PBStats::SPEED)
-              mon.pbIncreaseStatBasic(PBStats::SPEED,4)
+            if (mon.ability == PBAbilities::CONTRARY || mon.ability == PBAbilities::ALOLANTECHNIQUESB || mon.ability == PBAbilities::REVERSALIZE) && !mon.pbTooHigh?(PBStats::SPEED)
+              mon.pbReduceStatBasic(PBStats::SPEED,4)
                 pbCommonAnimation("StatUp",mon,nil)
                 pbDisplay(_INTL("{1}'s Speed went way up!",mon.pbThis))
             elsif !mon.pbTooLow?(PBStats::SPEED)
@@ -5465,7 +5476,7 @@ class PokeBattle_Battle
       if @field.effect == PBFields::SWAMPF && ![PBAbilities::WHITESMOKE, PBAbilities::CLEARBODY, PBAbilities::FULLMETALBODY, PBAbilities::FLOWERPOWER, PBAbilities::QUICKFEET, PBAbilities::SWIFTSWIM].include?(i.ability)
         if !i.isAirborne?
           if !i.pbTooLow?(PBStats::SPEED)
-            contcheck = (i.ability == PBAbilities::CONTRARY || i.ability == PBAbilities::ALOLANTECHNIQUESB)
+            contcheck = (i.ability == PBAbilities::CONTRARY || i.ability == PBAbilities::ALOLANTECHNIQUESB || i.ability == PBAbilities::REVERSALIZE)
             candrop = i.pbCanReduceStatStage?(PBStats::SPEED)
             canraise = i.pbCanIncreaseStatStage?(PBStats::SPEED) if contcheck
             i.pbReduceStat(PBStats::SPEED,1, statmessage: false)

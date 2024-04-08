@@ -340,14 +340,15 @@ MIRAIDON=342
 SPAWNOFMULTICORE=343
 UMBSIRIUS=344
 SPAWNOFMULTICORETWO=345
+GALACTICCONQUERER=346
 
 def self.getName(id)
 return pbGetMessage(MessageTypes::TrainerTypes,id)
 end
 def self.getCount
-return 341
+return 342
 end
 def self.maxValue
-return 345
+return 346
 end
 end

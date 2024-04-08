@@ -1292,7 +1292,8 @@ class PokeBattle_Move_02A < PokeBattle_Move
     pbShowAnimation(@id,attacker,nil,hitnum,alltargets,showanimation)
     boost_amount=1
     if ((@battle.FE == PBFields::MISTYT || @battle.FE == PBFields::RAINBOWF || @battle.FE == PBFields::HOLYF ||
-      @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT) &&
+      @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT ||
+      @battle.FE == PBFields::GUFIELD) &&
       (@id == PBMoves::COSMICPOWER)) || (@battle.FE == PBFields::FORESTF && (@id == PBMoves::DEFENDORDER))
       boost_amount=2
     end
@@ -1934,7 +1935,7 @@ class PokeBattle_Move_047 < PokeBattle_Move
     pbShowAnimation(@id,attacker,opponent,hitnum,alltargets,showanimation)
     if ((@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::CORROSIVEMISTF) && (@id == PBMoves::SMOKESCREEN)) ||
        ((@battle.FE == PBFields::DESERTF || @battle.FE == PBFields::ASHENB) && (@id == PBMoves::SANDATTACK)) ||
-       ((@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::MIRRORA || @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW) && (@id == PBMoves::FLASH)) ||
+       ((@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::MIRRORA || @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::GUFIELD) && (@id == PBMoves::FLASH)) ||
        (@battle.FE == PBFields::ASHENB && (@id == PBMoves::KINESIS))
       ret=opponent.pbReduceStat(PBStats::ACCURACY,2,abilitymessage:false, statdropper: attacker)
     elsif @battle.FE == PBFields::PSYCHICT && (@id == PBMoves::KINESIS)
@@ -2579,7 +2580,7 @@ class PokeBattle_Move_05B < PokeBattle_Move
     end
     pbShowAnimation(@id,attacker,nil,hitnum,alltargets,showanimation)
     attacker.pbOwnSide.effects[PBEffects::Tailwind]=4
-    attacker.pbOwnSide.effects[PBEffects::Tailwind]=6 if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM)
+    attacker.pbOwnSide.effects[PBEffects::Tailwind]=6 if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM || @battle.FE == PBFields::GUFIELD)
     if !@battle.pbIsOpposing?(attacker.index)
       @battle.pbDisplay(_INTL("The tailwind blew from behind your team!"))
     else
@@ -3090,7 +3091,8 @@ end
 class PokeBattle_Move_06C < PokeBattle_Move
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     if (@id == PBMoves::NATURESMADNESS) && (@battle.FE == PBFields::GRASSYT || #Grassy terrain
-      @battle.FE == PBFields::FORESTF || @battle.FE == PBFields::NEWW) # Forest Field, New World
+      @battle.FE == PBFields::FORESTF || @battle.FE == PBFields::NEWW || # Forest Field, New World
+      @battle.FE == PBFields::GUFIELD)  #Galactic Universe Field
       hploss = (opponent.hp*0.75).floor
     elsif (@id == PBMoves::NATURESMADNESS) && @battle.FE == PBFields::HOLYF # Holy Field
       hploss = (opponent.hp*0.66).floor
@@ -5924,7 +5926,7 @@ class PokeBattle_Move_0D8 < PokeBattle_Move
       hpgain=(attacker.totalhp/4.0).floor
     else
       hpgain=(attacker.totalhp/2.0).floor
-      if @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW
+      if @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::GUFIELD
         if (@id == PBMoves::MOONLIGHT)
           hpgain=(attacker.totalhp*3/4.0).floor
         else
@@ -6889,7 +6891,7 @@ class PokeBattle_Move_0F9 < PokeBattle_Move
     else
       pbShowAnimation(@id,attacker,opponent,hitnum,alltargets,showanimation)
       @battle.state.effects[PBEffects::MagicRoom]=5
-      if @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT || # New World
+      if @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT || @battle.FE == PBFields::GUFIELD || # New World
        (attacker.item == PBItems::AMPLIFIELDROCK)
               @battle.state.effects[PBEffects::MagicRoom]=8
       end
@@ -7432,6 +7434,10 @@ end
 # Scatters coins that the player picks up after winning the battle. (Pay Day)
 ################################################################################
 class PokeBattle_Move_109 < PokeBattle_Move
+  def pbBaseDamage(basedmg,attacker,opponent)
+      return 2*basedmg if attacker.ability==PBAbilities::BONANZA
+      return basedmg
+  end
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     if @basedamage > 0
       ret = super(attacker,opponent,hitnum,alltargets,showanimation)
@@ -7451,6 +7457,9 @@ class PokeBattle_Move_109 < PokeBattle_Move
         @battle.pbDisplay(_INTL("Treasure scattered everywhere!"))
       else
         @battle.pbDisplay(_INTL("Coins were scattered everywhere!"))
+      end
+      if attacker.ability== PBAbilities::BONANZA
+        @battle.extramoney*=1.5
       end
     end
     return ret
@@ -8120,7 +8129,7 @@ class PokeBattle_Move_11F < PokeBattle_Move
     pbShowAnimation(@id,attacker,opponent,hitnum,alltargets,showanimation)
     if @battle.trickroom == 0
       @battle.trickroom=5
-      if @battle.FE == PBFields::CHESSB || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT || (attacker.item == PBItems::AMPLIFIELDROCK)
+      if @battle.FE == PBFields::CHESSB || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT || @battle.FE == PBFields::GUFIELD || (attacker.item == PBItems::AMPLIFIELDROCK)
         @battle.trickroom=8
       end
       @battle.pbDisplay(_INTL("{1} twisted the dimensions!",attacker.pbThis))
@@ -8197,7 +8206,7 @@ class PokeBattle_Move_124 < PokeBattle_Move
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     if @battle.state.effects[PBEffects::WonderRoom] == 0
       @battle.state.effects[PBEffects::WonderRoom] = 5
-      if @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT || # New World, Psychic Terrain
+      if @battle.FE == PBFields::NEWW || @battle.FE == PBFields::PSYCHICT || @battle.FE == PBFields::GUFIELD || # New World, Psychic Terrain
        (attacker.itemWorks? && attacker.item == PBItems::AMPLIFIELDROCK)
         @battle.state.effects[PBEffects::WonderRoom] = 8
       end

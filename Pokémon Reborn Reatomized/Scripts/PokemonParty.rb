@@ -1625,72 +1625,161 @@ class PokemonScreen
               when -1
                 break
               # Set EVs
-              when 0
-                cmd2=0
-                loop do
-                  evcommands=[]
-                  for i in 0...stats.length
-                    evcommands.push(stats[i]+" (#{pkmn.ev[i]})")
-                  end
-                  cmd2=@scene.pbShowCommands(_INTL("Change which EV?"),evcommands,cmd2)
-                  if cmd2==-1
-                    break
-                  elsif cmd2>=0 && cmd2<stats.length
-                    params=ChooseNumberParams.new
-                    params.setRange(0,255)
-                    params.setDefaultValue(pkmn.ev[cmd2])
-                    params.setCancelValue(pkmn.ev[cmd2])
-                    f=Kernel.pbMessageChooseNumber(
-                       _INTL("Set the EV for {1} (max. 255).",stats[cmd2]),params) { @scene.update }
-                    pkmn.ev[cmd2]=f
-                    pkmn.totalhp
-                    pkmn.calcStats
-                    pbRefreshSingle(pkmnid)
-                  end
+					when 0
+            cmd2=0
+              loop do
+              evcommands=[]
+                for i in 0...stats.length
+                evcommands.push(stats[i]+" (#{pkmn.ev[i]})")
                 end
-              # Set IVs
-              when 1
-                cmd2=0
-                loop do
-                  hiddenpower=pbHiddenPower(pkmn)
-                  msg=_INTL("Hidden Power:\n{1}",PBTypes.getName(hiddenpower))
-                  ivcommands=[]
-                  for i in 0...stats.length
-                    ivcommands.push(stats[i]+" (#{pkmn.iv[i]})")
-                  end
-                  ivcommands.push(_INTL("Randomise all"))
-                  cmd2=@scene.pbShowCommands(msg,ivcommands,cmd2)
-                  if cmd2==-1
-                    break
-                  elsif cmd2>=0 && cmd2<stats.length
-                    params=ChooseNumberParams.new
-                    params.setRange(0,31)
-                    params.setDefaultValue(pkmn.iv[cmd2])
-                    params.setCancelValue(pkmn.iv[cmd2])
-                    f=Kernel.pbMessageChooseNumber(
-                       _INTL("Set the IV for {1} (max. 31).",stats[cmd2]),params) { @scene.update }
-                    pkmn.iv[cmd2]=f
-                    pkmn.calcStats
-                    pbRefreshSingle(pkmnid)
-                  elsif cmd2==ivcommands.length-1
-                    pkmn.iv[0]=rand(32)
-                    pkmn.iv[1]=rand(32)
-                    pkmn.iv[2]=rand(32)
-                    pkmn.iv[3]=rand(32)
-                    pkmn.iv[4]=rand(32)
-                    pkmn.iv[5]=rand(32)
-                    pkmn.calcStats
-                    pbRefreshSingle(pkmnid)
-                  end
-                end
-              # Randomise pID
-              when 2
-                pkmn.personalID=rand(256)
-                pkmn.personalID|=rand(256)<<8
-                pkmn.personalID|=rand(256)<<16
-                pkmn.personalID|=rand(256)<<24
+              evcommands.push("EV Presets")
+              cmd2=@scene.pbShowCommands(_INTL("Change which EV?"),evcommands,cmd2)
+                if cmd2==-1
+                break
+                elsif cmd2>=0 && cmd2<stats.length
+                params=ChooseNumberParams.new
+                params.setRange(0,255)
+                params.setDefaultValue(pkmn.ev[cmd2])
+                params.setCancelValue(pkmn.ev[cmd2])
+                f=Kernel.pbMessageChooseNumber(
+                _INTL("Set the EV for {1} (max. 255).",stats[cmd2]),params) { @scene.update }
+                pkmn.ev[cmd2]=f
+                pkmn.totalhp
                 pkmn.calcStats
                 pbRefreshSingle(pkmnid)
+                elsif cmd2>=stats.length
+                evpresetscommands=0
+                evpresetscommands=@scene.pbShowCommands(_INTL("Which preset do you fancy?"),[
+                _INTL("252 HP and Atk"),
+                _INTL("252 HP and Def"),
+                _INTL("252 HP and SpAtk"),
+                _INTL("252 HP and SpDef"),
+                _INTL("252 HP and Speed"),
+                _INTL("252 Atk and Speed"),
+                _INTL("252 SpAtk and Speed"),
+                _INTL("Uncommon Presets")],evpresetscommands)
+                  case evpresetscommands
+                  # Break
+                  when -1
+                  break
+                  when 0
+                  pkmn.ev[0]=252; pkmn.ev[1]=252; pkmn.ev[2]=0; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=0; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                  when 1
+                  pkmn.ev[0]=252; pkmn.ev[1]=0; pkmn.ev[2]=252; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                  when 2
+                  pkmn.ev[0]=252; pkmn.ev[1]=0; pkmn.ev[2]=0; pkmn.ev[3]=0; pkmn.ev[4]=252; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                  when 3
+                  pkmn.ev[0]=252; pkmn.ev[1]=0; pkmn.ev[2]=0; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=252; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                  when 4
+                  pkmn.ev[0]=252; pkmn.ev[1]=0; pkmn.ev[2]=0; pkmn.ev[3]=252; pkmn.ev[4]=0; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                  when 5
+                  pkmn.ev[0]=0; pkmn.ev[1]=252; pkmn.ev[2]=0; pkmn.ev[3]=252; pkmn.ev[4]=0; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                  when 6
+                  pkmn.ev[0]=0; pkmn.ev[1]=0; pkmn.ev[2]=0; pkmn.ev[3]=252; pkmn.ev[4]=252; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                  when 7
+                  
+                  evbispresetscommands=0
+                    evbispresetscommands=@scene.pbShowCommands(_INTL("Which other preset?"),[
+                    _INTL("252 Atk and Def"),
+                    _INTL("252 Atk and SpDef"),
+                    _INTL("252 SpAtk and Def"),
+                    _INTL("252 SpAtk and SpDef"),
+                    _INTL("252 Atk and SpAtk"),
+                    _INTL("252 Def and Speed"),
+                    _INTL("252 SpDef and Speed"),
+                    _INTL("252 Def and SpDef"),
+                    _INTL("252 HP, 128 Def, 128 SpDef"),
+                    _INTL("PULSE2")],evbispresetscommands)
+                      case evbispresetscommands
+                      # Break
+                      when -1
+                      break
+                      when 0
+                      pkmn.ev[0]=0; pkmn.ev[1]=252; pkmn.ev[2]=252; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=0; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                      when 1
+                      pkmn.ev[0]=0; pkmn.ev[1]=252; pkmn.ev[2]=0; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=252; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 2
+                      pkmn.ev[0]=0; pkmn.ev[1]=0; pkmn.ev[2]=252; pkmn.ev[3]=0; pkmn.ev[4]=252; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 3
+                      pkmn.ev[0]=0; pkmn.ev[1]=0; pkmn.ev[2]=0; pkmn.ev[3]=0; pkmn.ev[4]=252; pkmn.ev[5]=252; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 4
+                      pkmn.ev[0]=0; pkmn.ev[1]=252; pkmn.ev[2]=0; pkmn.ev[3]=0; pkmn.ev[4]=252; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 5
+                      pkmn.ev[0]=0; pkmn.ev[1]=0; pkmn.ev[2]=252; pkmn.ev[3]=252; pkmn.ev[4]=0; pkmn.ev[5]=0; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 6
+                      pkmn.ev[0]=0; pkmn.ev[1]=0; pkmn.ev[2]=0; pkmn.ev[3]=252; pkmn.ev[4]=0; pkmn.ev[5]=252; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 7
+                      pkmn.ev[0]=0; pkmn.ev[1]=0; pkmn.ev[2]=252; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=252; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 8
+                      pkmn.ev[0]=252; pkmn.ev[1]=0; pkmn.ev[2]=128; pkmn.ev[3]=0; pkmn.ev[4]=0; pkmn.ev[5]=128; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      when 9
+                      pkmn.ev[0]=252; pkmn.ev[1]=252; pkmn.ev[2]=252; pkmn.ev[3]=252; pkmn.ev[4]=252; pkmn.ev[5]=252; pkmn.calcStats ;pbRefreshSingle(pkmnid);
+                      end
+                      pkmn.calcStats ;
+                  
+                  
+                  
+                  end
+                  pkmn.calcStats ;
+                end
+              end
+            # Set IVs
+            when 1
+            cmd2=0
+              loop do
+              ivcommands=[]
+                for i in 0...stats.length
+                ivcommands.push(stats[i]+" (#{pkmn.iv[i]})")
+                end
+              ivcommands.push("IV Presets")
+              cmd2=@scene.pbShowCommands(_INTL("Change which IV?"),ivcommands,cmd2)
+                if cmd2==-1
+                break
+                elsif cmd2>=0 && cmd2<stats.length
+                params=ChooseNumberParams.new
+                params.setRange(0,31)
+                params.setDefaultValue(pkmn.iv[cmd2])
+                params.setCancelValue(pkmn.iv[cmd2])
+                f=Kernel.pbMessageChooseNumber(
+                _INTL("Set the IV for {1} (max. 31).",stats[cmd2]),params) { @scene.update }
+                pkmn.iv[cmd2]=f
+                pkmn.totalhp
+                pkmn.calcStats
+                pbRefreshSingle(pkmnid)
+                elsif cmd2>=stats.length
+                ivpresetscommands=0
+                ivpresetscommands=@scene.pbShowCommands(_INTL("Which preset do you fancy?"),[
+                _INTL("Perfect Physical"),
+                _INTL("Perfect Special"),
+                _INTL("Trick Room"),
+                _INTL("Mixed Offenses"),
+                _INTL("Stakataka")],ivpresetscommands)
+                  case ivpresetscommands
+                  # Break
+                  when -1
+                  break
+                  when 0
+                  pkmn.iv[0]=31; pkmn.iv[1]=31; pkmn.iv[2]=31; pkmn.iv[3]=31; pkmn.iv[5]=31; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                  when 1
+                  pkmn.iv[0]=31; pkmn.iv[2]=31; pkmn.iv[3]=31; pkmn.iv[4]=31; pkmn.iv[5]=31; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                  when 2
+                  pkmn.iv[0]=31; pkmn.iv[1]=31; pkmn.iv[2]=31; pkmn.iv[3]=0; pkmn.iv[4]=31; pkmn.iv[5]=31; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                  when 3
+                  pkmn.iv[0]=31; pkmn.iv[1]=31; pkmn.iv[2]=31; pkmn.iv[3]=31; pkmn.iv[4]=31; pkmn.iv[5]=31; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                  when 4
+                  pkmn.iv[0]=31; pkmn.iv[1]=31; pkmn.iv[2]=0; pkmn.iv[3]=31; pkmn.iv[5]=31; pkmn.calcStats ; pbRefreshSingle(pkmnid);
+                  end
+                  pkmn.calcStats ;
+                end
+              end
+            # Randomise pID
+            when 2
+            pkmn.personalID=rand(256)
+            pkmn.personalID|=rand(256)<<8
+            pkmn.personalID|=rand(256)<<16
+            pkmn.personalID|=rand(256)<<24
+            pkmn.calcStats
+            pbRefreshSingle(pkmnid)
             end
           end
         ### Pokérus ###

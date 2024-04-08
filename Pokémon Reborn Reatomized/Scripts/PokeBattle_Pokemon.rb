@@ -358,9 +358,9 @@ class PokeBattle_Pokemon
     return @mark if @mark!=false
   end
 
-# Gives marker 10 to the Pokemon.
+# Gives Destiny Mark marker to the Pokemon.
   def giveMark
-    @mark=10
+    @mark << "Destiny Mark"
   end
 
 ################################################################################
@@ -760,6 +760,32 @@ class PokeBattle_Pokemon
     @happiness=[[255,@happiness].min,0].max
   end
 
+  #! modded
+
+  #TODO: finish markers like SwSh
+  def generateMarker #! must order the markers by priority (lowest % to highest) in order to provide better chance for very rare marks.
+
+    generatedMarker = []
+    rolls = 1
+    rolls += (hasConst?(PBItems,:MARKCHARM) && $PokemonBag.pbQuantity(:MARKCHARM)>0) ? 2 : 0 #? true gives +2, false gives 0.
+    rolls += (hasConst?(PBItems,:DEVCHARM) && $PokemonBag.pbQuantity(:DEVCHARM)>0) ? 5 : 0 #? true gives +5, false gives 0.
+
+    while rolls > 0
+      # Generate a Pokemon with a Destiny Mark, with a 0.01% chance.
+      generatedMarker << "Destiny Mark" if (rand(10000) == 1)
+      # Generate a Pokemon with a Rare Mark, with a 0.1% chance.
+      generatedMarker << "Rare Mark" if (rand(1000) == 1)
+      # Generate a Pokemon with a Uncommon or Curry Mark, with a 2% chance.
+      generatedMarker << "Uncommon Mark" if (rand(50) == 1)
+      generatedMarker << "Curry Mark" if (rand(50) == 2)
+      rolls -= 1
+    end
+    
+    return generatedMarker
+  end
+
+  #! end of modded
+
 ################################################################################
 # Stat calculations, Pokémon creation
 ################################################################################
@@ -892,7 +918,7 @@ class PokeBattle_Pokemon
     @form = 0
     @totem = false
     @traiting = 0
-    @mark=rand(10) # From 0 to 8 there's no markings!
+    @mark=generateMarker()
     @eggsteps=0
     @status=0
     @statusCount=0

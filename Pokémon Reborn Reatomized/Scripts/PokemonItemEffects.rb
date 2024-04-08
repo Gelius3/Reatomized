@@ -13,12 +13,22 @@
 
 def pbRepel(item,steps)
   if $PokemonGlobal.repel>0
-    Kernel.pbMessage(_INTL("But the effects of a Repel lingered from earlier."))
-    return 0
+    if item != PBItems::INFINITYREPEL
+      Kernel.pbMessage(_INTL("But the effects of a Repel lingered from earlier."))
+      return 0
+    else
+      Kernel.pbMessage(_INTL("{1} deatcivated the {2}.",$Trainer.name,PBItems.getName(item)))
+      $PokemonGlobal.repel=0
+      return 1
+    end
   else
     Kernel.pbMessage(_INTL("{1} used the {2}.",$Trainer.name,PBItems.getName(item)))
     $PokemonGlobal.repel=steps
-    return 3
+    if item != PBItems::INFINITYREPEL
+      return 3
+    else
+      return 1
+    end
   end
 end
 
@@ -41,6 +51,8 @@ ItemHandlers::UseFromBag.add(:REPEL,proc{|item|  pbRepel(item,200)  })
 ItemHandlers::UseFromBag.add(:SUPERREPEL,proc{|item|  pbRepel(item,400)  })
 
 ItemHandlers::UseFromBag.add(:MAXREPEL,proc{|item|  pbRepel(item,500)  })
+
+ItemHandlers::UseFromBag.add(:INFINITYREPEL,proc{|item|  pbRepel(item,999999)  })
 
 Events.onStepTaken+=proc {
    if $game_player.terrain_tag!=PBTerrain::Ice   # Shouldn't count down if on ice
@@ -3425,6 +3437,10 @@ ItemHandlers::UseInField.add(:HONEY,proc{|item|
 ItemHandlers::UseInField.add(:HONEYATTRACTOR,proc{|item|  
    Kernel.pbMessage(_INTL("{1} used the {2}!",$Trainer.name,PBItems.getName(item)))
    pbSweetScent
+})
+
+ItemHandlers::UseInField.add(:INFINITYREPEL,proc{|item|  
+   pbRepel(item,999999) 
 })
 
 ItemHandlers::UseInField.add(:ESCAPEROPE,lambda{|item|

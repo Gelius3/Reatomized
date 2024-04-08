@@ -2558,6 +2558,7 @@ class PokeBattle_AI
 				if @battle.pbWeather==PBWeather::RAINDANCE #Making Rainbow Field
 					miniscore*= getFieldDisruptScore(@attacker,@opponent)
 					miniscore*=1.2 if @attacker.pbHasType?(:NORMAL)
+					miniscore=9999 if @battle.opponent.trainertype==PBTrainers::GALACTICWANDERER
 				end
 				if @mondata.skill>=BESTSKILL
 					miniscore*=1.3 if @battle.FE == PBFields::DESERTF || @battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM # Desert/Mountian/Snowy Mountain
@@ -2571,6 +2572,7 @@ class PokeBattle_AI
 				if @battle.pbWeather==PBWeather::SUNNYDAY #Making Rainbow Field
 					miniscore*= getFieldDisruptScore(@attacker,@opponent)
 					miniscore*=1.2 if @attacker.pbHasType?(:NORMAL)
+					miniscore=9999 if @battle.opponent.trainertype==PBTrainers::GALACTICWANDERER
 				end
 				if !@battle.opponent.is_a?(Array)
 					if Reborn && (@battle.opponent.trainertype==PBTrainers::SHELLY) && (@battle.FE == PBFields::GRASSYT || @battle.FE == PBFields::FORESTF || @battle.FE == PBFields::FLOWERGARDENF) # Shelly
@@ -4718,7 +4720,7 @@ class PokeBattle_AI
 	end
 
 	def mooncode
-		return 0 if @attacker.effects[PBEffects::BloodMoon] && @attacker.lastMoveUsed == PBMoves::BLOODMOOON
+		return 0 if @attacker.effects[PBEffects::BloodMoon] && @attacker.lastMoveUsed == PBMoves::BLOODMOON
 		miniscore = 1.0
 		return miniscore
 	end
