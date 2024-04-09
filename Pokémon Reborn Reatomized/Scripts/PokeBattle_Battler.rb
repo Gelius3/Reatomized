@@ -62,6 +62,7 @@ class PokeBattle_Battler
   attr_accessor :statrepeat
   attr_accessor :statsRaisedSinceLastCheck
   attr_accessor :totem
+  attr_accessor :event
   def inHyperMode?; return false; end
   def isShadow?; return false; end
 
@@ -356,6 +357,7 @@ class PokeBattle_Battler
     @statrepeat = false
     @statsRaisedSinceLastCheck = {}; @statsRaisedSinceLastCheck.default = 0
     @totem        = false
+    @event        = false
     pbInitBlank
     pbInitEffects(false,fakebattler)
     pbInitPermanentEffects
@@ -1856,7 +1858,7 @@ class PokeBattle_Battler
     pbCheckBurnyForm if onactive
 
     # Trait Inheritance #! I hate this ability soo much
-    if self.ability == PBAbilities::TRAITINHERITANCE
+    if self.ability == PBAbilities::TRAITINHERITANCE || (self.ability!=PBAbilities::TRAITINHERITANCE && self.eventmon == true && self.traiting!=0)
       if self.traiting == 0 || self.traiting == nil
         choices=[]
         for i in 0...4

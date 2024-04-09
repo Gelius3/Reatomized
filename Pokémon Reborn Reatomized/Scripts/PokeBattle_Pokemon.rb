@@ -64,7 +64,7 @@ class PokeBattle_Pokemon
   attr_accessor :totem
   attr_accessor(:mark)         # Marks like in the SwSh games
   attr_accessor :traiting      # Trait Inheritance ability
-
+  attr_accessor :event         # For event releases
 
 
   def traiting
@@ -917,6 +917,7 @@ class PokeBattle_Pokemon
     @name=PBSpecies.getName(@species)
     @form = 0
     @totem = false
+    @event = false
     @traiting = 0
     @mark=generateMarker()
     @eggsteps=0
