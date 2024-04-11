@@ -1646,6 +1646,8 @@ class PokeBattle_Battle
       if @choices[i][0] == 1 # Is a move
         pri = @choices[i][2].priority if !@choices[i][2].zmove  #Base move priority
         pri += 4 if @battlers[i].ability == PBAbilities::QUICKCHARGE && @battlers[i].turncount==1 
+        pri += 4 if @battlers[i].ability == PBAbilities::SHADOWDASH && @battlers[i].turncount==1 
+        pri += 1 if @battlers[i].ability == PBAbilities::SPRINT && @battlers[i].turncount>=1 
         pri += 1 if @field.effect == PBFields::CHESSB && @battlers[i].pokemon && @battlers[i].pokemon.piece == :KING
         pri += 1 if @battlers[i].ability == PBAbilities::PRANKSTER && @choices[i][2].basedamage==0 && @battlers[i].effects[PBEffects::TwoTurnAttack] == 0 # Is status move
         pri -= 1 if @battlers[i].ability == PBAbilities::MYCELIUMMIGHT && @choices[i][2].basedamage==0 && @battlers[i].effects[PBEffects::TwoTurnAttack] == 0
