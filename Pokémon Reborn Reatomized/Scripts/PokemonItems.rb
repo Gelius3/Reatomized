@@ -665,7 +665,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::CHARGEBEAM) || (move == PBMoves::THUNDERWAVE) || (move == PBMoves::WILDCHARGE) ||
           (move == PBMoves::VOLTSWITCH) || (move == PBMoves::MAGNETRISE) || (move == PBMoves::SCREECH) ||
           (move == PBMoves::ELECTROWEB) || (move == PBMoves::CHARGE) || (move == PBMoves::SPARK) ||
-	        (move == PBMoves::ZAPCANNON)
+	        (move == PBMoves::ZAPCANNON) || (move == PBMoves::ELECTRICTERRAIN)
           return false
         end
       elsif pokemon.form==1
