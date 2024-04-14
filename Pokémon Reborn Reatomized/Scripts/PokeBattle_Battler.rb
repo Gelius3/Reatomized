@@ -94,6 +94,15 @@ class PokeBattle_Battler
     @pokemon.traiting = value if @pokemon
   end
 
+  def eventmonability
+    return (@pokemon) ? @pokemon.eventmonability : 0
+  end
+
+  def eventmonability=(value)
+    @eventmonability = value
+    @pokemon.eventmonability = value if @pokemon
+  end
+
   attr_reader :form
 
   def form=(value)
@@ -1857,6 +1866,11 @@ class PokeBattle_Battler
     self.pbCheckFormRoundEnd if onactive
     pbCheckBurnyForm if onactive
 
+    # eventmon abilities #! this is similar to traiting ffs
+    if self.eventmon == true && self.eventmonability > 0
+      self.ability = self.eventmonability
+    end
+
     # Trait Inheritance #! I hate this ability soo much
     if self.ability == PBAbilities::TRAITINHERITANCE
       if self.traiting == 0 || self.traiting == nil
@@ -2981,11 +2995,11 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("The battlefield has been engulfed by the aura!"))
       self.pbIncreaseStatBasic(PBStats::ACCURACY,1)
       @battle.pbDisplay(_INTL("The aura manifested around {1}!", pbThis(true)))
-      self.pbIncreaseStatBasic(PBStats::ATTACK,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO].include?(self.species) #? Nerfing for Lin,4 and Lin,5
-      self.pbIncreaseStatBasic(PBStats::DEFENSE,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::TEDDINOMO].include?(self.species) #? Nerfing for Lin,4 and Lin,5
-      self.pbIncreaseStatBasic(PBStats::SPEED,1) unless [PBSpecies::CRUSTLE, PBSpecies::NECROZMA, PBSpecies::TEDDINOMO, PBSpecies::ARCEUS].include?(self.species)
-      self.pbIncreaseStatBasic(PBStats::SPATK,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO].include?(self.species) #? Nerfing for Lin,4 and Lin,5
-      self.pbIncreaseStatBasic(PBStats::SPDEF,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::TEDDINOMO].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::ATTACK,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::DEFENSE,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::SPEED,1) unless [PBSpecies::CRUSTLE, PBSpecies::NECROZMA, PBSpecies::TEDDINOMO, PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species)
+      self.pbIncreaseStatBasic(PBStats::SPATK,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::SPDEF,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
       @battle.pbDisplay(_INTL("{1}'s aura boosted its stats!",pbThis))
       #* Specific Species Area
       if self.species == PBSpecies::AMBIPOM #! Ambipom

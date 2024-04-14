@@ -484,6 +484,11 @@ class PokemonSummaryScene
       abilityname=PBAbilities.getName(pokemon.traiting)
       abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.traiting)
     end
+    
+    if pokemon.eventmon == true
+      abilityname=PBAbilities.getName(pokemon.eventmonability)
+      abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.eventmonability)
+    end
 
     itemname=pokemon.hasItem? ? PBItems.getName(pokemon.item) : _INTL("None")
     pokename=@pokemon.name
@@ -568,6 +573,11 @@ class PokemonSummaryScene
     if pokemon.traiting == PBAbilities::TRAITINHERITANCE
       abilityname=PBAbilities.getName(pokemon.traiting)
       abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.traiting)
+    end
+    
+    if pokemon.eventmon == true && pokemon.eventmonability > 0
+      abilityname=PBAbilities.getName(pokemon.eventmonability)
+      abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.eventmonability)
     end
 
     itemname=pokemon.item==0 ? _INTL("None") : PBItems.getName(pokemon.item)
@@ -971,6 +981,14 @@ class PokemonSummaryScene
             end
             abilityname = abilitynametrait
             abilitydesc = abilitydesctrait
+          # event abilities
+          elsif @pokemon.eventmon == true
+            if (@pokemon.eventmonability) != 0 
+            abilitynamevent = "\\c[1]Event!\n\\c[0]" + PBAbilities.getName(@pokemon.eventmonability)
+            abilitydescevent = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.eventmonability)
+            end
+            abilityname = abilitynamevent
+            abilitydesc = abilitydescevent
           # Celestial Reincarnation
           elsif abilityname == "Celestial Reincarnation"
             if $game_switches[1305] #? switch Postgame_Active
