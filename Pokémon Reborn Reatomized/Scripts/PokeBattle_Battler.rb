@@ -1867,7 +1867,7 @@ class PokeBattle_Battler
     pbCheckBurnyForm if onactive
 
     # eventmon abilities #! this is similar to traiting ffs
-    if self.eventmon == true && self.eventmonability > 0
+    if self.pokemon.eventmon
       self.ability = self.eventmonability
     end
 
