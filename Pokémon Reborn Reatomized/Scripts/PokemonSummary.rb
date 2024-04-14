@@ -480,7 +480,7 @@ class PokemonSummaryScene
     abilityname=PBAbilities.getName(pokemon.ability)
     abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.ability)
     
-    if pokemon.traiting == PBAbilities::TRAITINHERITANCE || (self.ability!=PBAbilities::TRAITINHERITANCE && self.eventmon == true && self.traiting!=0)
+    if pokemon.traiting == PBAbilities::TRAITINHERITANCE
       abilityname=PBAbilities.getName(pokemon.traiting)
       abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.traiting)
     end
