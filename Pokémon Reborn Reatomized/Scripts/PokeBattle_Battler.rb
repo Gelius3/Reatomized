@@ -1491,8 +1491,8 @@ class PokeBattle_Battler
         end
       elsif thismove.basedamage > 0 && self.form != 1
         self.form = 1; transformed = true # Attack Forme
-      elsif thismove.basedamage == 0 && self.form != 3
-        self.form = 3; transformed = true # Speed Forme
+       #elsif thismove.basedamage == 0 && self.form != 3
+        #self.form = 3; transformed = true # Speed Forme
       end
     end
     # End of update
@@ -5288,6 +5288,19 @@ class PokeBattle_Battler
           user.pbUpdate(false)
           @battle.scene.pbChangePokemon(user,user.pokemon)
           @battle.pbDisplay(_INTL("{1} caught prey!",user.pbThis))
+        end
+      end
+
+      # Astral Reckon
+      if !user.isFainted? && user.pokemon && user.pokemon.species == PBSpecies::DEOXYS && user.ability == PBAbilities::ASTRALRECKON
+        transformed = false
+        if user.form != 2
+          user.form = 2; transformed = true # switching into Deoxys Defense Form
+        end
+        if transformed
+          user.pbUpdate(false)
+          @battle.scene.pbChangePokemon(user,user.pokemon)
+          @battle.pbDisplay(_INTL("{1} transformed!",user.pbThis))
         end
       end
 

@@ -5726,6 +5726,13 @@ class PokeBattle_Battle
         scene.pbChangePokemon(i,i.pokemon)
         pbDisplay(_INTL("{1} transformed!",i.pbThis))
       end
+      # Astral Reckon
+      if (i.ability == PBAbilities::ASTRALRECKON) && (i.species == PBSpecies::DEOXYS)
+        i.form = (@battle.trickroom == 0) ? 3 : 2
+        i.pbUpdate(true)
+        scene.pbChangePokemon(i,i.pokemon)
+        pbDisplay(_INTL("{1} transformed!",i.pbThis))
+      end
     end
     # Form checks
     for i in 0...4
