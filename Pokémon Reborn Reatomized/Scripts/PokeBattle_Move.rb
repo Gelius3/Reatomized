@@ -947,7 +947,7 @@ class PokeBattle_Move
       evasion*=1.1
     end
     if (opponent.ability == PBAbilities::INSTINCT || opponent.ability == PBAbilities::OMNIPOTENT)
-      evasion*=1.2
+      evasion*=1.15
     end
     # UPDATE 11/17/2013
     # keen eye should now ignore evasion increases
