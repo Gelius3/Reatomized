@@ -5728,10 +5728,14 @@ class PokeBattle_Battle
       end
       # Astral Reckon
       if (i.ability == PBAbilities::ASTRALRECKON) && (i.species == PBSpecies::DEOXYS)
+        tempform = i.form 
         i.form = (@battle.trickroom == 0) ? 3 : 2
         i.pbUpdate(true)
         scene.pbChangePokemon(i,i.pokemon)
-        pbDisplay(_INTL("{1} transformed!",i.pbThis))
+        if tempform != i.form 
+          @battle.pbCommonAnimation("SilvallyGlitch",i.pbThis,nil)
+          pbDisplay(_INTL("{1} transformed!",i.pbThis))
+        end
       end
     end
     # Form checks

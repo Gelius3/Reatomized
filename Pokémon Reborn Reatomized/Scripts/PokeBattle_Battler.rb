@@ -1485,7 +1485,7 @@ class PokeBattle_Battler
     end
     # Deoxys - Astral Reckon
     if self.pokemon && self.pokemon.species == PBSpecies::DEOXYS && self.ability == PBAbilities::ASTRALRECKON && !@effects[PBEffects::Transform] && !thismove.nil?
-      if [PBMoves::TRICKROOM,PBMoves::BODYPRESS].include?(thismove.id)
+      if [PBMoves::TRICKROOM,PBMoves::BODYPRESS,PBMoves::RECOVER].include?(thismove.id)
         if self.form != 2
           self.form = 2; transformed = true # Defense Forme
         end
@@ -5300,6 +5300,7 @@ class PokeBattle_Battler
         if transformed
           user.pbUpdate(false)
           @battle.scene.pbChangePokemon(user,user.pokemon)
+          @battle.pbCommonAnimation("SilvallyGlitch",user,nil)
           @battle.pbDisplay(_INTL("{1} transformed!",user.pbThis))
         end
       end

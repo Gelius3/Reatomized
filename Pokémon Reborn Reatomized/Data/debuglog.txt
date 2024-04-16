@@ -211,3 +211,171 @@ Maushold used Population Bomb
 [The wild Deoxys lost 60 HP, now has 16 HP]
 [The wild Deoxys lost 16 HP, now has 0 HP]
 [The wild Deoxys fainted]
+************************** Round 1 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Absol: Sucker Punch=[105, -1, -1, -1], Razor Wind=[100, -1, -1, -1], Future Sight=[100, -1, -1, -1], Perish Song=[100, -1, -1, -1]]
+[Prefer Perish Song]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Absol , HP percentage: 100.0 %
+Held Item:  , Ability: Pressure , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Perish Song]
+ ______________________________________________________________________________ 
+
+Deoxys used Stealth Rock
+Absol used Perish Song
+************************** Round 2 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Absol: Sucker Punch=[105, -1, -1, -1], Razor Wind=[100, -1, -1, -1], Future Sight=[100, -1, -1, -1], Perish Song=[100, -1, -1, -1]]
+[Prefer Perish Song]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Absol , HP percentage: 100.0 %
+Held Item:  , Ability: Pressure , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Perish Song]
+ ______________________________________________________________________________ 
+
+Deoxys used Cosmic Power
+Absol used Perish Song
+************************** Round 3 *******************************
+************************** Round 1 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Aggron: Double-Edge=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1], Heavy Slam=[105, -1, -1, -1], Metal Burst=[100, -1, -1, -1]]
+[Prefer Metal Burst]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Aggron , HP percentage: 100.0 %
+Held Item:  , Ability: Sturdy , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Metal Burst]
+ ______________________________________________________________________________ 
+
+Deoxys used Cosmic Power
+Aggron used Metal Burst
+************************** Round 2 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Aggron: Double-Edge=[100, -1, -1, -1], Autotomize=[100, -1, -1, -1], Heavy Slam=[105, -1, -1, -1], Metal Burst=[100, -1, -1, -1]]
+[Prefer Metal Burst]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Aggron , HP percentage: 100.0 %
+Held Item:  , Ability: Sturdy , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Metal Burst]
+ ______________________________________________________________________________ 
+
+Deoxys used Stealth Rock
+Aggron used Metal Burst
+************************** Round 1 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Abomasnow: Ingrain=[100, -1, -1, -1], Wood Hammer=[105, -1, -1, -1], Blizzard=[100, -1, -1, -1], Sheer Cold=[100, -1, -1, -1]]
+[Prefer Ingrain]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Abomasnow , HP percentage: 100.0 %
+Held Item: Never-Melt Ice , Ability: Soundproof , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Ingrain]   
+ ______________________________________________________________________________ 
+
+Deoxys used Cosmic Power
+Abomasnow used Ingrain
+************************** Round 2 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Abomasnow: Ingrain=[100, -1, -1, -1], Wood Hammer=[105, -1, -1, -1], Blizzard=[100, -1, -1, -1], Sheer Cold=[100, -1, -1, -1]]
+[Prefer Wood Hammer]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Abomasnow , HP percentage: 100.0 %
+Held Item: Never-Melt Ice , Ability: Soundproof , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Wood Hammer]
+ ______________________________________________________________________________ 
+
+Deoxys used Stealth Rock
+Abomasnow used Wood Hammer
+[Deoxys lost 36 HP, now has 193 HP]
+[The wild Abomasnow lost 12 HP, now has 231 HP]
+[The wild Abomasnow gained 12 HP, now has 243 HP]
+************************** Round 3 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Abomasnow: Ingrain=[100, -1, -1, -1], Wood Hammer=[105, -1, -1, -1], Blizzard=[100, -1, -1, -1], Sheer Cold=[100, -1, -1, -1]]
+[Prefer Sheer Cold]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Abomasnow , HP percentage: 100.0 %
+Held Item: Never-Melt Ice , Ability: Soundproof , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Sheer Cold]
+ ______________________________________________________________________________ 
+
+Deoxys used Recover
+[Deoxys gained 36 HP, now has 229 HP]
+Abomasnow used Sheer Cold
+************************** Round 4 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Abomasnow: Ingrain=[100, -1, -1, -1], Wood Hammer=[105, -1, -1, -1], Blizzard=[100, -1, -1, -1], Sheer Cold=[100, -1, -1, -1]]
+[Prefer Sheer Cold]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Abomasnow , HP percentage: 100.0 %
+Held Item: Never-Melt Ice , Ability: Soundproof , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Sheer Cold]
+ ______________________________________________________________________________ 
+
+Deoxys used Cosmic Power
+Abomasnow used Sheer Cold
+************************** Round 5 *******************************
+ShouldSwitchScore: -1000 
+
+[The wild Abomasnow: Ingrain=[100, -1, -1, -1], Wood Hammer=[105, -1, -1, -1], Blizzard=[100, -1, -1, -1], Sheer Cold=[100, -1, -1, -1]]
+[Prefer Ingrain]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Abomasnow , HP percentage: 100.0 %
+Held Item: Never-Melt Ice , Ability: Soundproof , Field: Holy Field
+                                                            |AI Scores
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Final action chosen:                                        |[Prefer Ingrain]   
+ ______________________________________________________________________________ 
+
+Deoxys used Hyper Beam
+[The wild Abomasnow lost 243 HP, now has 0 HP]
+[The wild Abomasnow fainted]
