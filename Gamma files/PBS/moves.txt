@@ -827,7 +827,7 @@
 827,WAVECRASH,Wave Crash,0FB,120,WATER,Physical,100,10,0,00,0,abef,"The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user quite a lot."
 828,TRIPLEARROWS,Triple Arrows,229,90,FIGHTING,Physical,100,10,50,00,0,beh,"The user kicks, then fires three arrows. This may also lower the target’s Defense stat and make it flinch. Critical hits land more easily too."
 829,RAGINGFURY,Raging Fury,0D2,120,FIRE,Physical,100,10,0,02,0,bef,"The user rampages around spewing flames for two to three turns. The user then becomes confused."
-830,FLOWERTRICK,Flower Trick,0A5,70,GRASS,Physical,0,10,0,00,0,abef,"The user throws a rigged bouquet of flowers at the target. This attack never misses and always lands a critical hit."
+830,FLOWERTRICK,Flower Trick,0A5,70,GRASS,Physical,0,10,0,00,0,bef,"The user throws a rigged bouquet of flowers at the target. This attack never misses and always lands a critical hit."
 831,TORCHSONG,Torch Song,020,80,FIRE,Special,100,10,100,00,0,befk,"The user blows out raging flames as if singing a song, scorching the target. This also boosts the user's Sp. Atk stat."
 832,AQUASTEP,Aqua Step,01F,80,WATER,Physical,100,10,100,00,0,abef,"The user toys with the target and attacks it using light and fluid dance steps. This also boosts the user's Speed stat."
 833,POPULATIONBOMB,Population Bomb,251,20,NORMAL,Physical,90,10,0,00,0,abef,"The user’s fellows gather in droves to perform a combo attack that hits the target one to ten times in a row."
