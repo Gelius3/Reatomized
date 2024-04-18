@@ -172,13 +172,13 @@ PBSpecies::WORMADAM => {
 		:BaseStats => [60,79,105,36,59,85],
 		:EVs => [0,0,2,0,0,0],
 		:Type2 => PBTypes::GROUND,
-		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::LEAFSTORM],[1,PBMoves::ROLLOUT],[1,PBMoves::MUDSLAP],
+		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::ROLLOUT],[1,PBMoves::MUDSLAP],
 		[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],[1,PBMoves::STRUGGLEBUG],
 		[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],[23,PBMoves::CONFUSION],
 		[26,PBMoves::ROCKBLAST],[28,PBMoves::HARDEN],[30,PBMoves::INFESTATION],[32,PBMoves::CAPTIVATE],
 		[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],[39,PBMoves::FLAIL],[41,PBMoves::ATTRACT],
 		[43,PBMoves::EARTHPOWER],[45,PBMoves::PSYCHIC],[47,PBMoves::FISSURE],[50,PBMoves::SUCKERPUNCH],
-		[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE]],
+		[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE],[59,PBMoves::LEAFSTORM]],
 	},
 
 	"Trash Cloak" => {
