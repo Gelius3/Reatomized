@@ -1534,7 +1534,7 @@ class PokeBattle_Battler
       @battle.scene.pbChangePokemon(self,@pokemon)
       @battle.pbDisplay(_INTL("{1} transformed!",pbThis))
 
-      if (self.ability == PBAbilities::STANCECHANGE) && @battle.FE == PBFields::FAIRYTALEF
+      if (self.ability == PBAbilities::STANCECHANGE) && (@battle.FE == PBFields::FAIRYTALEF || @battle.FE == PBFields::CHESSB)
         if self.form == 0
           self.pbReduceStat(PBStats::ATTACK,1,abilitymessage:false)
           self.pbIncreaseStat(PBStats::DEFENSE,1,abilitymessage:false)
@@ -2750,6 +2750,15 @@ class PokeBattle_Battler
         end
       end
     end
+    if @battle.FE == PBFields::BIGTOPA
+      if !pbTooHigh?(PBStats::SPATK)
+        if self.ability == PBAbilities::TRICKSTER && onactive
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s {2} boosted its Special Attack!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    end
     # Electric Terrain Entry
     if @battle.FE == PBFields::ELECTRICT || @battle.FE == PBFields::FACTORYF || @battle.FE == PBFields::SHORTCIRCUITF
       if !pbTooHigh?(PBStats::ATTACK)
@@ -2762,6 +2771,38 @@ class PokeBattle_Battler
         end
       end
     end
+    if @battle.FE == PBFields::ELECTRICT
+      if !pbTooHigh?(PBStats::SPEED)
+        if (self.ability == PBAbilities::STEADFAST) && onactive
+          pbIncreaseStatBasic(PBStats::SPEED,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s {2} boosted its Speed!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    end
+    # Dark Crystal Cavern Entry
+    if @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::SHORTCIRCUITF
+      if !pbTooHigh?(PBStats::EVASION)
+        if (self.ability == PBAbilities::SHADOWDASH) && onactive
+          pbIncreaseStatBasic(PBStats::EVASION,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1} faded into the darkness!",pbThis))
+        end
+      end
+    end
+    # Chess Board Entry
+    if @battle.FE == PBFields::CHESSB
+      if !pbTooHigh?(PBStats::DEFENSE)
+        if (self.ability == PBAbilities::STALL) && onactive
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1} is stalling and playing defensively!",pbThis))
+        end
+	if (self.ability == PBAbilities::STANCECHANGE) && onactive
+		pbIncreaseStatBasic(PBStats::DEFENSE,1)
+	end
+      end
+    end
     # Burning Field Entry
     if @battle.FE == PBFields::BURNINGF
       if !pbTooHigh?(PBStats::SPEED)
@@ -2770,6 +2811,46 @@ class PokeBattle_Battler
           @battle.pbCommonAnimation("StatUp",self,nil)
           @battle.pbDisplay(_INTL("The heat activates {1}'s Steam Engine!",
            pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    end
+    if @battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::DRAGONSD
+      if !pbTooHigh?(PBStats::DEFENSE)
+        if (self.ability == PBAbilities::WELLBAKEDBODY) && onactive
+          pbIncreaseStatBasic(PBStats::DEFENSE,2)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s {2} sharply raised its Defense!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    elsif @battle.FE == PBFields::SUPERHEATEDF
+      if !pbTooHigh?(PBStats::DEFENSE)
+        if (self.ability == PBAbilities::WELLBAKEDBODY) && onactive
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s {2} raised its Defense!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    end
+    if @battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::SUPERHEATEDF || @battle.FE == PBFields::DRAGONSD
+      if (self.ability == PBAbilities::HOTBLOODED) && onactive
+        @battle.pbDisplay(_INTL("{1}'s blood started boiling!",pbThis))
+        if !pbTooHigh?(PBStats::ATTACK)
+          pbIncreaseStatBasic(PBStats::ATTACK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+        end
+        if !pbTooHigh?(PBStats::SPATK)
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+        end
+      end
+    end
+    # Swamp Field Entry
+    if @battle.FE == PBFields::SWAMPF
+      if !pbTooHigh?(PBStats::SPEED)
+        if (self.ability == PBAbilities::RATTLED) && onactive
+          pbIncreaseStatBasic(PBStats::SPEED,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1} got spooked by the environment!",pbThis))
         end
       end
     end
