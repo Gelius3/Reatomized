@@ -2076,6 +2076,15 @@ class PokeBattle_Battler
         pbDisposeItem(false)
       end
     end
+    # Cell Battery
+    if self.hasWorkingItem(:CELLBATTERY) && onactive
+      if @battle.FE == PBFields::ELECTRICT && pbCanIncreaseStatStage?(PBStats::ATTACK)
+        pbIncreaseStatBasic(PBStats::ATTACK,1)
+        @battle.pbCommonAnimation("StatUp",self,nil)
+        @battle.pbDisplay(_INTL("The Cell Battery charged up #{pbThis}'s Attack!"))
+        pbDisposeItem(false)
+      end
+    end
 
     #### START OF WEATHER ABILITIES
     if (ability == PBAbilities::DRIZZLE) && onactive && @battle.weather!=PBWeather::RAINDANCE
