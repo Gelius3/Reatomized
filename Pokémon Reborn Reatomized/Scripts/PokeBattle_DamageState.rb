@@ -9,6 +9,8 @@ class PokeBattle_DamageState
   attr_accessor :focussash       # Focus Sash possible
   attr_accessor :focussashused   # Focus Sash used
   attr_accessor :sturdy          # Sturdy ability used
+  attr_accessor :sturdiness      # Sturdiness ability possible
+  attr_accessor :sturdinessused  # Sturdiness ability actually used
   attr_accessor :endured         # Damage was endured
   attr_accessor :pawnsturdy      # Focus Sash but for chess field
   attr_accessor :pawnsturdyused # pawn ability used
@@ -25,6 +27,8 @@ class PokeBattle_DamageState
     @focussashused   = false
     @pawnsturdy      = false
     @sturdy          = false
+    @sturdiness      = false
+    @sturdinessused  = false
     @endured         = false
   end
 

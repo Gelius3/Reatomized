@@ -1013,15 +1013,19 @@ UPPERHAND=1111
 HOLDBACK=1112
 HOLDHANDS=1113
 HAPPYHOUR=1114
+FLASHFLOOD=1115
+BRAINSTORM=1116
+CINDERBREATH=1117
+LIGHTOFRUIN=1118
 
 def self.getName(id)
 return pbGetMessage(MessageTypes::Moves,id) if id < 10000 
 return PokeBattle_ZMoves::ZMOVENAMES[id-10001]
 end
 def self.getCount
-return 1014
+return 1018
 end
 def self.maxValue
-return 1114
+return 1118
 end
 end

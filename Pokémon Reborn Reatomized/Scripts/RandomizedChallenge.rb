@@ -1228,6 +1228,7 @@ def pbLoadTrainer(trainerid,trainername,partyid=0)
       end
       pokemon.ballused=poke[TPBALL]
       pokemon.totem=poke[TPTOTEM]
+      pokemon.eventmon=poke[TPEVENT]
       pokemon.calcStats
       party.push(pokemon)
     end

@@ -371,7 +371,16 @@ class PokeBattle_Move
         mod=0 if (otype == PBTypes::GHOST) && !opponent.effects[PBEffects::Foresight]
       end
       if attacker.ability == PBAbilities::OMNIPOTENT
-        mod=2 if (otype == PBTypes::NORMAL) || (otype == PBTypes::FIGHTING) || (otype == PBTypes::FLYING) || (otype == PBTypes::POISON) || (otype == PBTypes::GROUND) || (otype == PBTypes::ROCK) || (otype == PBTypes::BUG) || (otype == PBTypes::GHOST) || (otype == PBTypes::STEEL) || (otype == PBTypes::QMARKS) || (otype == PBTypes::FIRE) || (otype == PBTypes::WATER) || (otype == PBTypes::GRASS) || (otype == PBTypes::ELECTRIC) || (otype == PBTypes::PSYCHIC) || (otype == PBTypes::ICE) || (otype == PBTypes::DRAGON) || (otype == PBTypes::DARK) || (otype == PBTypes::FAIRY) || (otype == PBTypes::NUCLEAR) || (otype == PBTypes::COSMIC) || (otype == PBTypes::IFE) || (otype == PBTypes::EFW) || (otype == PBTypes::WGF) || (otype == PBTypes::SWG) || (otype == PBTypes::GFW) || (otype == PBTypes::GS) || (otype == PBTypes::BS) || (otype == PBTypes::PF) || (otype == PBTypes::FG) || (otype == PBTypes::GFS) || (otype == PBTypes::PFD) || (otype == PBTypes::NPG) || (otype == PBTypes::STELLAR)
+        mod=2
+      end
+      if opponent.ability == PBAbilities::TERASHELL && opponent.hp==opponent.totalhp && !(attacker.ability == PBAbilities::OMNIPOTENT)
+        mod=1 if mod!=0
+      end
+      if attacker.ability == PBAbilities::TERAVOLT && @battle.FE == PBFields::ELECTRICT
+        mod=2 if otype == PBTypes::GROUND
+      end
+      if opponent.ability == PBAbilities::TRANSISTOR
+        mod=1 if (atype == PBTypes::GROUND)
       end
 
       # Effect related type effectiveness changes
@@ -944,7 +953,7 @@ class PokeBattle_Move
       evasion*=1.1
     end
     if (opponent.ability == PBAbilities::INSTINCT || opponent.ability == PBAbilities::OMNIPOTENT)
-      evasion*=1.2
+      evasion*=1.15
     end
     # UPDATE 11/17/2013
     # keen eye should now ignore evasion increases
@@ -1097,12 +1106,18 @@ class PokeBattle_Move
         @function==0x130    # Shadow End
         damagemult=(damagemult*1.2).round
       end
+    elsif attacker.ability == PBAbilities::TERAVOLT && type==PBTypes::ELECTRIC
+      damagemult=(damagemult*1.5).round
     elsif attacker.ability == PBAbilities::FLAREBOOST && (attacker.status==PBStatuses::BURN || @battle.FE == PBFields::BURNINGF) && pbIsSpecial?(type)
       damagemult=(damagemult*1.5).round
     elsif attacker.ability == PBAbilities::TOXICBOOST && (attacker.status==PBStatuses::POISON || @battle.FE == PBFields::CORROSIVEF || @battle.FE == PBFields::CORROSIVEMISTF || @battle.FE == PBFields::WASTELAND || @battle.FE == PBFields::MURKWATERS) && pbIsPhysical?(type)
       damagemult=(damagemult*1.5).round
     elsif attacker.ability == PBAbilities::PUNKROCK && isSoundBased?
-      damagemult=(damagemult*1.3).round
+      if @battle.FE == PBFields::BIGTOPA
+        damagemult=(damagemult*1.5).round
+      else
+        damagemult=(damagemult*1.3).round
+      end
     elsif attacker.ability == PBAbilities::RIVALRY && attacker.gender!=2 && opponent.gender!=2
       if attacker.gender==opponent.gender
         damagemult=(damagemult*1.5).round
@@ -1139,7 +1154,11 @@ class PokeBattle_Move
           damagemult=(damagemult*1.2).round
         end
       elsif attacker.ability == PBAbilities::DUSKILATE
-        damagemult=(damagemult*1.2).round
+        if @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::NEWW
+          damagemult=(damagemult*1.5).round
+        else
+          damagemult=(damagemult*1.2).round
+        end
       elsif attacker.ability == PBAbilities::ATOMIZATE 
         damagemult=(damagemult*1.2).round
       elsif attacker.ability == PBAbilities::REFRIGERATE
@@ -1432,10 +1451,14 @@ class PokeBattle_Move
     case @battle.FE
       when 5 # Chess Board
         if (PBFields::CHESSMOVES).include?(@id)
-          if (opponent.ability == PBAbilities::ADAPTABILITY) || (opponent.ability == PBAbilities::ANTICIPATION) || (opponent.ability == PBAbilities::SYNCHRONIZE) || (opponent.ability == PBAbilities::TELEPATHY)
+          if attacker.ability == PBAbilities::KLUTZ
+            @battle.pbDisplay(_INTL("It was too much of a klutz to move the chess piece."))
+            return 0
+          end
+          if (opponent.ability == PBAbilities::ADAPTABILITY) || (opponent.ability == PBAbilities::ANTICIPATION) || (opponent.ability == PBAbilities::SYNCHRONIZE) || (opponent.ability == PBAbilities::TELEPATHY) || (opponent.ability == PBAbilities::OPPORTUNIST)
             damagemult=(damagemult*0.5).round
           end
-          if (opponent.ability == PBAbilities::OBLIVIOUS) || (opponent.ability == PBAbilities::KLUTZ) || (opponent.ability == PBAbilities::UNAWARE) || (opponent.ability == PBAbilities::MULTICORE) || (opponent.ability == PBAbilities::SIMPLE) || opponent.effects[PBEffects::Confusion]>0
+          if (opponent.ability == PBAbilities::OBLIVIOUS) || (opponent.ability == PBAbilities::KLUTZ) || (opponent.ability == PBAbilities::UNAWARE) || (opponent.ability == PBAbilities::MULTICORE) || (opponent.ability == PBAbilities::SIMPLE) || (opponent.ability == PBAbilities::DEFEATIST) || (opponent.ability == PBAbilities::LAZY) || opponent.effects[PBEffects::Confusion]>0
             damagemult=(damagemult*2).round
           end
           @battle.pbDisplay("The chess piece slammed forward!") if !@fieldmessageshown
@@ -1461,7 +1484,7 @@ class PokeBattle_Move
           striker = 1+@battle.pbRandom(14)
           @battle.pbDisplay("WHAMMO!") if !@fieldmessageshown
           @fieldmessageshown = true
-          if attacker.ability == PBAbilities::HUGEPOWER || attacker.ability == PBAbilities::GUTS || attacker.ability == PBAbilities::PUREPOWER || attacker.ability == PBAbilities::SHEERFORCE || attacker.ability == PBAbilities::INFURIATE || attacker.ability == PBAbilities::PUNKROCK
+          if attacker.ability == PBAbilities::HUGEPOWER || attacker.ability == PBAbilities::GUTS || attacker.ability == PBAbilities::PUREPOWER || attacker.ability == PBAbilities::SHEERFORCE || attacker.ability == PBAbilities::INFURIATE || attacker.ability == PBAbilities::PRIDE
             if striker >=9
               striker = 15
             else
@@ -1612,7 +1635,7 @@ class PokeBattle_Move
 
     if @battle.FE == PBFields::BURNINGF && (attacker.ability == PBAbilities::BLAZE && type == PBTypes::FIRE)
       atkmult=(atkmult*1.5).round
-    elsif @battle.FE == PBFields::FORESTF && (attacker.ability == PBAbilities::OVERGROW && type == PBTypes::GRASS)
+    elsif (@battle.FE == PBFields::FORESTF || @battle.FE == PBFields::GRASSYT) && (attacker.ability == PBAbilities::OVERGROW && type == PBTypes::GRASS)
       atkmult=(atkmult*1.5).round
     elsif @battle.FE == PBFields::FORESTF && (attacker.ability == PBAbilities::SWARM && type == PBTypes::BUG)
       atkmult=(atkmult*1.5).round
@@ -1645,7 +1668,7 @@ class PokeBattle_Move
         partner=attacker.pbPartner
         if partner.ability == PBAbilities::PLUS || partner.ability == PBAbilities::MINUS
           atkmult=(atkmult*1.5).round
-        elsif @battle.FE == PBFields::SHORTCIRCUITF
+        elsif (@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::ELECTRICT)
           atkmult=(atkmult*1.5).round
         end
       end
@@ -1692,7 +1715,11 @@ class PokeBattle_Move
     end
 
     if attacker.pbPartner.hasWorkingAbility(:BATTERY) && pbIsSpecial?(type) && @battle.FE != 24
-      atkmult=(atkmult*1.3).round
+      if @battle.FE == PBFields::ELECTRICT
+        atkmult=(atkmult*1.5).round
+      else
+        atkmult=(atkmult*1.3).round
+      end
     end
     if (attacker.pbPartner.ability == PBAbilities::STEELYSPIRIT || attacker.ability == PBAbilities::STEELYSPIRIT) && type == PBTypes::STEEL
       atkmult=(atkmult*1.5).round
@@ -1700,8 +1727,15 @@ class PokeBattle_Move
     if (attacker.pbPartner.ability == PBAbilities::AQUABOOST || attacker.ability == PBAbilities::AQUABOOST) && type == PBTypes::WATER
       atkmult=(atkmult*1.3).round
     end
-    if (attacker.pbPartner.ability == PBAbilities::FLAMEBOOST || attacker.ability == PBAbilities::FLAMEBOOST) && type == PBTypes::FIRE
+    if (attacker.pbPartner.ability == PBAbilities::AQUABOOST || attacker.ability == PBAbilities::AQUABOOST) && type == PBTypes::POISON && (@battle.FE == PBFields::SWAMPF || @battle.FE == PBFields::MURKWATERS)
       atkmult=(atkmult*1.3).round
+    end 
+    if (attacker.pbPartner.ability == PBAbilities::FLAMEBOOST || attacker.ability == PBAbilities::FLAMEBOOST) && type == PBTypes::FIRE
+      if (@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::SUPERHEATEDF || @battle.FE == PBFields::DRAGONSD)
+        atkmult=(atkmult*1.5).round
+      else
+        atkmult=(atkmult*1.3).round
+      end
     end
 	  
     atkmult=(atkmult*1.5).round if attacker.effects[PBEffects::FlashFire] && type == PBTypes::FIRE
@@ -1742,6 +1776,12 @@ class PokeBattle_Move
         atkmult=(atkmult*1.5).round if @battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM
       elsif attacker.ability == PBAbilities::CORROSION
         atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::CORROSIVEF || @battle.FE == PBFields::CORROSIVEMISTF)
+      elsif attacker.ability == PBAbilities::POISONPUPPETEER
+        atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::CORROSIVEF || @battle.FE == PBFields::CORROSIVEMISTF || @battle.FE == PBFields::WASTELAND || @battle.FE == PBFields::MURKWATERS)
+      elsif attacker.ability == PBAbilities::NOVABURNER
+        atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::BURNINGF)
+      elsif attacker.ability == PBAbilities::FLAMESOFRUIN
+        atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::NEWW)
       end
     end
 
@@ -2041,7 +2081,7 @@ class PokeBattle_Move
         damage=(damage*2).round
       elsif (attacker.ability == PBAbilities::STEELWORKER && type == PBTypes::STEEL) && @battle.FE == PBFields::FACTORYF # Factory Field
         damage=(damage*2).round
-      elsif (attacker.ability == PBAbilities::INNERFLAME && type == PBTypes::FIRE) && (@battle.FE == PBFields::SUPERHEATEDF || @battle.FE == PBFields::DRAGONSD)
+      elsif (attacker.ability == PBAbilities::INNERFLAME && type == PBTypes::FIRE) && (@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::SUPERHEATEDF || @battle.FE == PBFields::DRAGONSD)
         damage=(damage*2).round
       else
         damage=(damage*1.5).round
@@ -2133,6 +2173,12 @@ class PokeBattle_Move
     end
     if ((opponent.ability == PBAbilities::MULTISCALE && !(opponent.moldbroken)) || opponent.ability == PBAbilities::SHADOWSHIELD) && opponent.hp==opponent.totalhp
       finaldamagemult=(finaldamagemult*0.5).round
+    end
+    if ((opponent.ability == PBAbilities::PARRY) && !(opponent.moldbroken) && isContactMove? && !(attacker.hasWorkingAbility(:LONGREACH)) && (@battle.pbRandom(10)<3))
+      parrydamage=(damage*0.25).round
+      finaldamagemult=0
+      attacker.hp-=parrydamage
+      #! to clean up and add animations!!!
     end
     if opponent.ability == PBAbilities::PLOTARMOR && !(opponent.moldbroken) && !(opponent.damagestate.typemod > 4)
       finaldamagemult=(finaldamagemult*0.25).round
@@ -2301,6 +2347,9 @@ class PokeBattle_Move
         elsif damage==opponent.totalhp && opponent.ability == PBAbilities::STURDY && !opponent.moldbroken
           opponent.damagestate.sturdy=true
           damage=damage-1
+        elsif !(opponent.effects[PBEffects::Sturdiness]) && opponent.damagestate.sturdiness && opponent.ability == PBAbilities::STURDINESS && !opponent.moldbroken
+          opponent.damagestate.sturdinessused=true
+          damage=damage-1
         elsif opponent.damagestate.focussash && damage==opponent.totalhp && opponent.item!=0
           opponent.damagestate.focussashused=true
           damage=damage-1
@@ -2351,6 +2400,11 @@ class PokeBattle_Move
     elsif opponent.damagestate.sturdy
       @battle.pbDisplay(_INTL("{1} hung on with Sturdy!",opponent.pbThis))
       opponent.damagestate.sturdy=false
+    elsif opponent.damagestate.sturdinessused
+      opponent.damagestate.sturdinessused=false
+      opponent.damagestate.sturdiness=false
+      opponent.effects[PBEffects::Sturdiness]=true
+      @battle.pbDisplay(_INTL("{1} hung on using its Sturdiness!",opponent.pbThis))
     elsif opponent.damagestate.focussashused
       @battle.pbDisplay(_INTL("{1} hung on using its Focus Sash!",opponent.pbThis))
       opponent.damagestate.focussashused=false

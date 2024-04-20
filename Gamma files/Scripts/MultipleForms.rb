@@ -172,13 +172,13 @@ PBSpecies::WORMADAM => {
 		:BaseStats => [60,79,105,36,59,85],
 		:EVs => [0,0,2,0,0,0],
 		:Type2 => PBTypes::GROUND,
-		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::LEAFSTORM],[1,PBMoves::ROLLOUT],[1,PBMoves::MUDSLAP],
+		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::ROLLOUT],[1,PBMoves::MUDSLAP],
 		[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],[1,PBMoves::STRUGGLEBUG],
 		[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],[23,PBMoves::CONFUSION],
 		[26,PBMoves::ROCKBLAST],[28,PBMoves::HARDEN],[30,PBMoves::INFESTATION],[32,PBMoves::CAPTIVATE],
 		[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],[39,PBMoves::FLAIL],[41,PBMoves::ATTRACT],
 		[43,PBMoves::EARTHPOWER],[45,PBMoves::PSYCHIC],[47,PBMoves::FISSURE],[50,PBMoves::SUCKERPUNCH],
-		[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE]],
+		[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE],[59,PBMoves::LEAFSTORM]],
 	},
 
 	"Trash Cloak" => {
@@ -3024,7 +3024,7 @@ PBSpecies::RELICANTH => {
 		:Type2 => PBTypes::WATER,
 		:BaseStats => [160,120,55,80,100,55], #? Cosmic adds +85 to BST
 		:EVs => [1,1,0,0,1,0],
-		:Ability => [PBAbilities::SHADOWTAG,PBAbilities::GRAVITOSY,PBAbilities::ANALYTIC],
+		:Ability => [PBAbilities::SHADOWTAG,PBAbilities::GRAVITOSY,PBAbilities::ANALYTIC,PBAbilities::STURDINESS],
 		:Movelist => [[1,PBMoves::AQUAJET],[1,PBMoves::ASTRALSHOT],[1,PBMoves::FLAIL],[1,PBMoves::CURSE],
 			[1,PBMoves::TACKLE],[1,PBMoves::HARDEN],[1,PBMoves::MUDSPORT],[1,PBMoves::THUNDERBOLT],
 			[1,PBMoves::REFRESH],[6,PBMoves::MUDSPORT],[10,PBMoves::WATERGUN],[10,PBMoves::WATERSPOUT],
@@ -4869,7 +4869,7 @@ PBSpecies::INFERNAPE => {
 		:Type1 => PBTypes::DARK,
 		:Type2 => PBTypes::FIRE,
 		:BaseStats => [77,106,69,116,101,69],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE],
+		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE,PBAbilities::PARRY],
 		:Movelist => [[1,PBMoves::KNOCKOFF],[1,PBMoves::BULKUP],[1,PBMoves::FACADE],[1,PBMoves::VACUUMWAVE],[1,PBMoves::FLAREBLITZ],[1,PBMoves::BRUTALSWING],[1,PBMoves::MACHPUNCH],[1,PBMoves::NASTYPLOT],[1,PBMoves::FOULPLAY],[1,PBMoves::SLACKOFF],[1,PBMoves::LASHOUT],[1,PBMoves::NIGHTDAZE],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::BRICKBREAK],[19,PBMoves::FLAMEWHEEL],[26,PBMoves::FEINT],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]],
 		:Weight => 370
 	},
@@ -4879,7 +4879,7 @@ PBSpecies::INFERNAPE => {
 		:Type1 => PBTypes::NUCLEAR,
 		:Type2 => PBTypes::FIRE,
 		:BaseStats => [77,106,138,174,101,138],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE],
+		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE,PBAbilities::PARRY],
 		:Movelist => [[1,PBMoves::KNOCKOFF],[1,PBMoves::BULKUP],[1,PBMoves::FACADE],[1,PBMoves::VACUUMWAVE],[1,PBMoves::FLAREBLITZ],[1,PBMoves::BRUTALSWING],[1,PBMoves::MACHPUNCH],[1,PBMoves::NASTYPLOT],[1,PBMoves::FOULPLAY],[1,PBMoves::SLACKOFF],[1,PBMoves::LASHOUT],[1,PBMoves::NIGHTDAZE],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::THROATCHOP],[19,PBMoves::FLAMEWHEEL],[26,PBMoves::FEINT],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]],
 		:Weight => 370
 	},
@@ -7024,7 +7024,7 @@ PBSpecies::PICHU => {
 
 	"Spiky-Eared" => {
 		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::SEQUENCE,PBAbilities::MOODMAKER,PBAbilities::MOTORDRIVE],
 		:Movelist => [[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::TAILWHIP],[3,PBMoves::PLAYNICE],
 			[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::HELPINGHAND],[11,PBMoves::NUZZLE],[13,PBMoves::CHARGE],
 			[15,PBMoves::QUICKATTACK],[17,PBMoves::ENDURE],[21,PBMoves::SWIFT],[25,PBMoves::SWAGGER],[27,PBMoves::SPARK],[31,PBMoves::DIZZYPUNCH],
@@ -9756,7 +9756,7 @@ PBSpecies::LILLIGANT => {
 		:Type1 => PBTypes::FLYING,
 		:Type2 => PBTypes::DARK,
 		:BaseStats => [85,100,90,100,85,80], #? Celestial adds +60 to BST
-		:Ability => [PBAbilities::AERILATE,PBAbilities::DRIZZLE,PBAbilities::CELESTIALAURA],
+		:Ability => [PBAbilities::AERILATE,PBAbilities::DRIZZLE,PBAbilities::CELESTIALAURA,PBAbilities::CELESTIALREINCARNATION],
 		:Movelist => [[0,PBMoves::FEATHERDANCE],[0,PBMoves::FURYSWIPES],[0,PBMoves::FURYATTACK],[1,PBMoves::FEATHERDANCE],
 					[1,PBMoves::ABSORB],[1,PBMoves::ENDEAVOR],[1,PBMoves::QUICKATTACK],[1,PBMoves::SUCKERPUNCH],[1,PBMoves::PECK],[5,PBMoves::AERIALACE],[5,PBMoves::FAKEOUT],[5,PBMoves::FALSESWIPE],[9,PBMoves::STUNSPORE],[10,PBMoves::TRIATTACK],[10,PBMoves::SLASH],[15,PBMoves::POISONPOWDER],[15,PBMoves::DEFOG],[15,PBMoves::THROATCHOP],[18,PBMoves::BULLETSEED],[18,PBMoves::BARRAGE],[18,PBMoves::ROCKBLAST],[18,PBMoves::PINMISSILE],[18,PBMoves::COMETPUNCH],[18,PBMoves::FURYATTACK],[18,PBMoves::SPIKECANNON],[20,PBMoves::SWIFT],[21,PBMoves::GIGADRAIN],[21,PBMoves::FACADE],[21,PBMoves::DRILLPECK],[25,PBMoves::BODYSLAM],[25,PBMoves::HEADBUTT],[25,PBMoves::DARKPULSE],[28,PBMoves::QUIVERDANCE],[29,PBMoves::SLEEPPOWDER],[29,PBMoves::CHIPAWAY],[31,PBMoves::VICTORYDANCE],[33,PBMoves::HYPERVOICE],[33,PBMoves::CRUSHCLAW],[35,PBMoves::TAILWIND],[37,PBMoves::LEAFBLADE],[37,PBMoves::CRUNCH],[37,PBMoves::ROOST],[42,PBMoves::VICTORYDANCE],[45,PBMoves::HYPERBEAM],[46,PBMoves::HYPERFANG],[47,PBMoves::ACROBATICS],[50,PBMoves::EXTREMESPEED],[50,PBMoves::THRASH],[53,PBMoves::PETALDANCE],[55,PBMoves::KNOCKOFF],[57,PBMoves::CLOSECOMBAT],[59,PBMoves::GIGAIMPACT],[60,PBMoves::LEAFSTORM],[80,PBMoves::STORMCUTTER],[80,PBMoves::POWERTRIP],[90,PBMoves::BOOMBURST],[100,PBMoves::REVIVALBLESSING]
 					],

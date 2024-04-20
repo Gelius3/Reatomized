@@ -235,6 +235,8 @@ def pbDayCareGenerateEgg
     babyspecies=PBSpecies::HOOTHOOT
   elsif (babyspecies == PBSpecies::VILEDOOM) || (babyspecies == PBSpecies::MORTOSSUM)
     babyspecies=PBSpecies::ODDISH
+  elsif (babyspecies == PBSpecies::CLODSIRE)
+    babyspecies=PBSpecies::WOOPER
   elsif [PBSpecies::OMEON, PBSpecies::CHAMPEON, PBSpecies::LEPIDEON, PBSpecies::GUARDEON, PBSpecies::OBSIDEON, PBSpecies::SCORPEON, PBSpecies::SPHYNXEON, PBSpecies::NIMBEON, PBSpecies::DRACONEON, PBSpecies::EEVEEON, PBSpecies::VAREON].include?(babyspecies)
     babyspecies=PBSpecies::EEVEE
   end

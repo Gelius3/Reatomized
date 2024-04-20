@@ -23,6 +23,7 @@ TPSPEEV       = 21
 TPSPAEV       = 22
 TPSPDEV       = 23
 TPTOTEM       = 24
+TPEVENT       = 25
 TPDEFAULTS = [0,10,0,0,0,0,0,nil,nil,0,false,PBNatures::HARDY,10,70,nil,false,0,17,0,0,0,0,0,0]
 
 def pbLoadTrainer(trainerid,trainername,partyid=0)
@@ -118,6 +119,7 @@ def pbLoadTrainer(trainerid,trainername,partyid=0)
       pokemon.ballused=poke[TPBALL]
       pokemon.calcStats
       pokemon.totem=poke[TPTOTEM]
+      pokemon.eventmon=poke[TPEVENT]
       party.push(pokemon)
     end
     success=true
