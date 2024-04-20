@@ -813,7 +813,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::DREAMEATER) || (move == PBMoves::DARKPULSE) || (move == PBMoves::FLAREBLITZ) ||
           (move == PBMoves::HEATWAVE) || (move == PBMoves::PAINSPLIT) || (move == PBMoves::IMPRISON) ||
           (move == PBMoves::SPITE) || (move == PBMoves::ALLYSWITCH) || (move == PBMoves::BURNINGJEALOUSY) ||
-          (move == PBMoves::POLTERGEIST)
+          (move == PBMoves::POLTERGEIST) || (move == PBMoves::RAGINGFURY)
           return false
         end
       end
