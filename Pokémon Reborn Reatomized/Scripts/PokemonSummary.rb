@@ -439,7 +439,10 @@ class PokemonSummaryScene
       when 10
         markdesc="Partner Mark"
       end
-        memo+=sprintf("<c3=404040,B0B0B0>\nMark:   %s",markdesc)
+      memo+=sprintf("<c3=404040,B0B0B0>Mark:   %s\n",markdesc)
+      if pokemon.totem
+        memo+=sprintf("\n<c3=F83820,E09890>This Pokémon is a Totem<c3=404040,B0B0B0>!")
+      end
     end
     drawFormattedTextEx(overlay,232,78,276,memo)
     drawMarkings(overlay,15,291,72,20,pokemon.markings)
@@ -483,6 +486,11 @@ class PokemonSummaryScene
     if pokemon.traiting == PBAbilities::TRAITINHERITANCE
       abilityname=PBAbilities.getName(pokemon.traiting)
       abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.traiting)
+    end
+    
+    if pokemon.eventmon == true && pokemon.eventmonability > 0 
+      abilityname=PBAbilities.getName(pokemon.eventmonability)
+      abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.eventmonability)
     end
 
     itemname=pokemon.hasItem? ? PBItems.getName(pokemon.item) : _INTL("None")
@@ -568,6 +576,11 @@ class PokemonSummaryScene
     if pokemon.traiting == PBAbilities::TRAITINHERITANCE
       abilityname=PBAbilities.getName(pokemon.traiting)
       abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.traiting)
+    end
+    
+    if pokemon.eventmon == true && pokemon.eventmonability > 0
+      abilityname=PBAbilities.getName(pokemon.eventmonability)
+      abilitydesc=pbGetMessage(MessageTypes::AbilityDescs,pokemon.eventmonability)
     end
 
     itemname=pokemon.item==0 ? _INTL("None") : PBItems.getName(pokemon.item)
@@ -968,9 +981,17 @@ class PokemonSummaryScene
             if (@pokemon.traiting) != 0 
             abilitynametrait = "\\c[1]Traited!\n\\c[0]" + PBAbilities.getName(@pokemon.traiting)
             abilitydesctrait = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.traiting)
-            end
             abilityname = abilitynametrait
             abilitydesc = abilitydesctrait
+            end
+          # event abilities
+          elsif @pokemon.eventmon && @pokemon.eventmonability >0
+            if (@pokemon.eventmonability) != 0 
+            abilitynamevent = "\\c[5]Event!\n\\c[0]" + PBAbilities.getName(@pokemon.eventmonability)
+            abilitydescevent = pbGetMessage(MessageTypes::AbilityDescs, @pokemon.eventmonability)
+            abilityname = abilitynamevent
+            abilitydesc = abilitydescevent
+            end
           # Celestial Reincarnation
           elsif abilityname == "Celestial Reincarnation"
             if $game_switches[1305] #? switch Postgame_Active

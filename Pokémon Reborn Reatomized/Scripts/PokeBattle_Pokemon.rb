@@ -64,7 +64,8 @@ class PokeBattle_Pokemon
   attr_accessor :totem
   attr_accessor(:mark)         # Marks like in the SwSh games
   attr_accessor :traiting      # Trait Inheritance ability
-
+  attr_accessor :eventmon         # For event releases
+  attr_accessor :eventmonability # event ability
 
 
   def traiting
@@ -72,6 +73,13 @@ class PokeBattle_Pokemon
       @traiting = 0
     end
     return @traiting
+  end
+
+  def eventmonability
+    if @eventmonability == nil
+      @eventmonability = 0
+    end
+    return @eventmonability
   end
 
 ################################################################################
@@ -917,7 +925,9 @@ class PokeBattle_Pokemon
     @name=PBSpecies.getName(@species)
     @form = 0
     @totem = false
+    @eventmon = false
     @traiting = 0
+    @eventmonability = 0
     @mark=generateMarker()
     @eggsteps=0
     @status=0
