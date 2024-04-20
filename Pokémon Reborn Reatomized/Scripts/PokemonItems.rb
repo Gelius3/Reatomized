@@ -795,9 +795,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
         if (move == PBMoves::DRACOMETEOR) || (move == PBMoves::BRICKBREAK) || (move == PBMoves::BREAKINGSWIPE) ||
           (move == PBMoves::FLAMETHROWER) || (move == PBMoves::BRUTALSWING) || (move == PBMoves::TRAILBLAZE) ||
           (move == PBMoves::OUTRAGE) || (move == PBMoves::DRAGONTAIL) || (move == PBMoves::DRAGONCHEER) ||
-          (move == PBMoves::IRONHEAD) || (move == PBMoves::SUPERPOWER) ||
-          (move == PBMoves::DRAGONPULSE) || (move == PBMoves::IRONTAIL) ||
-          (move == PBMoves::KNOCKOFF)
+          (move == PBMoves::IRONHEAD) || (move == PBMoves::SUPERPOWER) || (move == PBMoves::KNOCKOFF) ||
+          (move == PBMoves::DRAGONPULSE) || (move == PBMoves::IRONTAIL)
           return false
         end
       elsif pokemon.form==1
