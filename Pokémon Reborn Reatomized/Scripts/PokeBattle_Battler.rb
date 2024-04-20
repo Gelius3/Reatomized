@@ -2085,6 +2085,15 @@ class PokeBattle_Battler
         pbDisposeItem(false)
       end
     end
+    # Absorb Bulb
+    if self.hasWorkingItem(:ABSORBBULB) && onactive
+      if (@battle.FE == PBFields::SWAMPF || @battle.FE == PBFields::WATERS) && pbCanIncreaseStatStage?(PBStats::SPATK)
+        pbIncreaseStatBasic(PBStats::SPATK,1)
+        @battle.pbCommonAnimation("StatUp",self,nil)
+        @battle.pbDisplay(_INTL("The Absorb Bulb boosted #{pbThis}'s Special Attack!"))
+        pbDisposeItem(false)
+      end
+    end
 
     #### START OF WEATHER ABILITIES
     if (ability == PBAbilities::DRIZZLE) && onactive && @battle.weather!=PBWeather::RAINDANCE
