@@ -1351,7 +1351,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::SCARYFACE) || (move == PBMoves::IMPRISON) || (move == PBMoves::PSYCHICNOISE) ||
           (move == PBMoves::POWERSWAP) || (move == PBMoves::GUARDSWAP) || (move == PBMoves::HYPNOSIS) ||
           (move == PBMoves::PSYCHOCUT) || (move == PBMoves::STOREDPOWER) || (move == PBMoves::EXPANDINGFORCE) ||
-	  (move == PBMoves::ESPERWING)
+          (move == PBMoves::ESPERWING)
           return false
         end
       end
@@ -3409,6 +3409,59 @@ end
         end
       elsif pokemon.form==1
         if (move == PBMoves::HYDROPUMP) || (move == PBMoves::SUPERPOWER)
+          return false
+        end
+      end
+    when  PBSpecies::WOOPER
+      if pokemon.form==0
+        if (move == PBMoves::POISONTAIL) || (move == PBMoves::POISONJAB) || (move == PBMoves::VENOSHOCK) ||
+          (move == PBMoves::BODYPRESS) || (move == PBMoves::GUNKSHOT) || (move == PBMoves::SLUDGEBOMB)
+          return false
+        end
+      elsif pokemon.form==1
+        if (move == PBMoves::MUDDYWATER) || (move == PBMoves::AQUATAIL) || (move == PBMoves::DIVE) ||
+          (move == PBMoves::WHIRLPOOL) || (move == PBMoves::DYNAMICPUNCH) || (move == PBMoves::ICEPUNCH) ||
+          (move == PBMoves::ICEBEAM) || (move == PBMoves::HAIL) || (move == PBMoves::SNOWSCAPE) ||
+          (move == PBMoves::BLIZZARD) || (move == PBMoves::SCALD) || (move == PBMoves::ICYWIND) ||
+          (move == PBMoves::AVALANCHE) || (move == PBMoves::TAILSLAP) || (move == PBMoves::SCARYFACE) ||
+          (move == PBMoves::SEISMICTOSS)
+        end
+      end
+    when  PBSpecies::TAUROS
+      if pokemon.form==0
+        if (move == PBMoves::FLAREBLITZ) || (move == PBMoves::RAGINGFURY) || (move == PBMoves::FLAMECHARGE) ||
+          (move == PBMoves::WAVECRASH) || (move == PBMoves::BULKUP) || (move == PBMoves::DRILLRUN) ||
+          (move == PBMoves::FIRESPIN) || (move == PBMoves::WILLOWISP) || (move == PBMoves::OVERHEAT) ||
+          (move == PBMoves::TEMPERFLARE) || (move == PBMoves::CHILLINGWATER) || (move == PBMoves::BODYPRESS) ||
+          (move == PBMoves::LIQUIDATION) || (move == PBMoves::HYDROPUMP)
+          return false
+        end
+      if pokemon.form==1
+        if (move == PBMoves::FLAREBLITZ) || (move == PBMoves::RAGINGFURY) || (move == PBMoves::FLAMECHARGE) ||
+          (move == PBMoves::WAVECRASH) || (move == PBMoves::HYDROPUMP) || (move == PBMoves::LIQUIDATION) ||
+          (move == PBMoves::FIRESPIN) || (move == PBMoves::WILLOWISP) || (move == PBMoves::OVERHEAT) ||
+          (move == PBMoves::TEMPERFLARE) || (move == PBMoves::CHILLINGWATER) || (move == PBMoves::ICEBEAM) ||
+          (move == PBMoves::BLIZZARD) || (move == PBMoves::THUNDERBOLT) || (move == PBMoves::THUNDER) ||
+          (move == PBMoves::ZAPCANNON) || (move == PBMoves::FIREBLAST) || (move == PBMoves::ICYWIND) ||
+          (move == PBMoves::WATERPULSE) || (move == PBMoves::SOLARBEAM) || (move == PBMoves::SHOCKWAVE) ||
+          (move == PBMoves::FLAMETHROWER) || (move == PBMoves::WHIRLPOOL) || (move == PBMoves::INCINERATE)
+          return false
+        end
+      if pokemon.form==2
+        if (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) || (move == PBMoves::THUNDERBOLT) ||
+          (move == PBMoves::WAVECRASH) || (move == PBMoves::THUNDER) || (move == PBMoves::ZAPCANNON) ||
+          (move == PBMoves::ICYWIND) || (move == PBMoves::WATERPULSE) || (move == PBMoves::SOLARBEAM) ||
+          (move == PBMoves::SHOCKWAVE) || (move == PBMoves::CHILLINGWATER) || (move == PBMoves::WHIRLPOOL) ||
+          (move == PBMoves::LIQUIDATION) || (move == PBMoves::HYDROPUMP) || (move == PBMoves::SURF)
+          return false
+        end
+      if pokemon.form==3
+        if (move == PBMoves::FLAREBLITZ) || (move == PBMoves::RAGINGFURY) || (move == PBMoves::FLAMECHARGE) ||
+          (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) || (move == PBMoves::THUNDERBOLT) ||
+          (move == PBMoves::FIRESPIN) || (move == PBMoves::WILLOWISP) || (move == PBMoves::OVERHEAT) ||
+          (move == PBMoves::TEMPERFLARE) || (move == PBMoves::THUNDER) || (move == PBMoves::ZAPCANNON) ||
+          (move == PBMoves::FIREBLAST) || (move == PBMoves::ICYWIND) || (move == PBMoves::SHOCKWAVE) ||
+          (move == PBMoves::SOLARBEAM) || (move == PBMoves::FLAMETHROWER) || (move == PBMoves::INCINERATE)
           return false
         end
       end
