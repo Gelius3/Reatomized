@@ -995,7 +995,7 @@ class PokeBattle_Battler
       when PBAbilities::NOVABURNER, PBAbilities::UBERSTRAT, PBAbilities::MULTICORE
         speed*=3 if @battle.pbWeather==PBWeather::SUNNYDAY && !self.hasWorkingItem(:UTILITYUMBRELLA)
       when PBAbilities::QUICKFEET
-        speed*=1.5 if self.status>0
+        speed*=1.5 if (self.status>0 || @battle.FE == PBFields::ELECTRICT)
       when PBAbilities::LIGHTMETAL
         speed*=1.25 if self.status=0
       when PBAbilities::SANDRUSH
@@ -1441,7 +1441,7 @@ class PokeBattle_Battler
     # Rage Mode
     if (self.pokemon && self.pokemon.species == PBSpecies::INFERNAPE) && !self.isFainted?
       if self.ability == PBAbilities::RAGINGBLAZE
-        if @battle.FE == PBFields::ASHENB
+        if (@battle.FE == PBFields::ASHENB || @battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::DRAGONSD || @battle.FE == PBFields::FALLOUT)
           if self.form == 1
             self.form = 2; transformed=true
           end
@@ -2473,7 +2473,7 @@ class PokeBattle_Battler
       pbUpdate(true)
     end
     # Lazy
-    if self.ability == PBAbilities::LAZY && onactive
+    if self.ability == PBAbilities::LAZY && onactive && (@battle.FE != PBFields::ELECTRICT)
       if pbCanSleep?(false)
         pbSleepSelf(3)
         @battle.pbDisplay(_INTL("Lazy made {1} sleep!",pbThis(true)))
@@ -2780,6 +2780,17 @@ class PokeBattle_Battler
         end
       end
     end
+    if @battle.FE == PBFields::ELECTRICT
+      if (self.ability == PBAbilities::SEQUENCE) && onactive
+        @battle.pbAnimation(PBMoves::CHARGE,self,nil)
+        @battle.pbDisplay(_INTL("{1} began charging power!",pbThis))
+        if !pbTooHigh?(PBStats::SPDEF)
+          pbIncreaseStatBasic(PBStats::SPDEF,2)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s Special Defense sharply rose!",pbThis))
+        end
+      end
+    end
     # Dark Crystal Cavern Entry
     if @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::SHORTCIRCUITF
       if !pbTooHigh?(PBStats::EVASION)
@@ -2801,6 +2812,27 @@ class PokeBattle_Battler
 	if (self.ability == PBAbilities::STANCECHANGE) && onactive
 		pbIncreaseStatBasic(PBStats::DEFENSE,1)
 	end
+      end
+    end
+    # Big Top Arena Entry
+    if @battle.FE == PBFields::BIGTOPA
+      if (self.ability == PBAbilities::LAZY) && onactive
+        @battle.pbDisplay(_INTL("The crowd wants to see some action!"))
+        @battle.pbAnimation(PBMoves::TAUNT,self,nil)
+        self.effects[PBEffects::Taunt]=4
+        @battle.pbDisplay(_INTL("{1} fell for the taunt!",pbThis))
+      end
+    end
+    if @battle.FE == PBFields::BIGTOPA
+      if (self.ability == PBAbilities::COSTAR) && onactive
+        @battle.pbAnimation(PBMoves::HELPINGHAND,self,nil)
+        self.effects[PBEffects::HelpingHand]=true
+        @battle.pbDisplay(_INTL("{1} helped itself out!",pbThis))
+        if !self.pbPartner.isFainted?
+          @battle.pbAnimation(PBMoves::HELPINGHAND,self.pbPartner,nil)
+          self.pbPartner.effects[PBEffects::HelpingHand]=true
+          @battle.pbDisplay(_INTL("... and is ready to help out {1} too!",self.pbPartner.pbThis(true)))
+        end
       end
     end
     # Burning Field Entry
@@ -2844,6 +2876,13 @@ class PokeBattle_Battler
         end
       end
     end
+    if (@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::SUPERHEATEDF || @battle.FE == PBFields::DRAGONSD)
+      if (self.ability == PBAbilities::ICEFACE) && onactive && (self.species == PBSpecies::EISCUE)
+        self.pbBreakDisguise
+        @battle.pbDisplay(_INTL("The ice melted!"))
+        self.effects[PBEffects::IceFace]=false
+      end
+    end
     # Swamp Field Entry
     if @battle.FE == PBFields::SWAMPF
       if !pbTooHigh?(PBStats::SPEED)
@@ -2885,7 +2924,7 @@ class PokeBattle_Battler
       end
     end
     # Dragon's Den Entry
-    if @battle.FE == PBFields::DRAGONSD
+    if (@battle.FE == PBFields::DRAGONSD || @battle.FE == PBFields::BURNINGF)
       if (self.ability == PBAbilities::MAGMAARMOR) && onactive
         @battle.pbDisplay(_INTL("{1}'s Magma Armor boosted its defenses!",
          pbThis,PBAbilities.getName(ability)))
@@ -3319,7 +3358,7 @@ class PokeBattle_Battler
           eschance = 3
           eschance = 6 if @battle.FE == PBFields::ICYF || @battle.FE == PBFields::SNOWYM
           eschance.to_i
-          if target.ability == PBAbilities::DEEPFREEZE && @battle.pbRandom(10) < eschance && user.pbCanFreeze?(false) # Uranium
+          if target.ability == PBAbilities::DEEPFREEZE && @battle.pbRandom(10) < eschance && user.pbCanFreeze?(false) && (@battle.FE != PBFields::BURNINGF || @battle.FE != PBFields::SUPERHEATEDF || @battle.FE != PBFields::DRAGONSD) # Uranium
             user.pbFreeze
             @battle.pbDisplay(_INTL("{1}'s {2} froze {3} solid!",target.pbThis,
               PBAbilities.getName(target.ability),user.pbThis(true)))
@@ -3330,7 +3369,7 @@ class PokeBattle_Battler
             @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!",target.pbThis, PBAbilities.getName(target.ability),user.pbThis(true)))
           end
           eschance = 3
-          eschance = 6 if @battle.FE == PBFields::SHORTCIRCUITF
+          eschance = 6 if (@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::ELECTRICT)
           eschance.to_i
           if target.ability == PBAbilities::STATIC && @battle.pbRandom(10) < eschance && user.pbCanParalyze?(false)
             user.pbParalyze(target)
@@ -3678,14 +3717,27 @@ class PokeBattle_Battler
           target.effects[PBEffects::Charge]=2
           @battle.pbDisplay(_INTL("{1}'s {2} charged it with power!", target.pbThis,PBAbilities.getName(target.ability)))
         end
+        if (target.hasWorkingAbility(:ELECTROMORPHOSIS)) && (@battle.FE == PBFields::ELECTRICT || @battle.FE == PBFields::SHORTCIRCUITF)
+          if target.pbCanIncreaseStatStage?(PBStats::SPDEF)
+            target.pbIncreaseStatBasic(PBStats::SPDEF,1)
+            @battle.pbCommonAnimation("StatUp",target,nil)
+            @battle.pbDisplay(_INTL("{1}'s Special Defense rose!",target.pbThis))
+          end
+        end
         # Infuriate
         if target.hasWorkingAbility(:INFURIATE) && move.pbIsPhysical?(movetype)
           if @battle.FE!=PBFields::ASHENB
             if target.pbCanIncreaseStatStage?(PBStats::ATTACK)
               target.pbIncreaseStatBasic(PBStats::ATTACK,1)
               @battle.pbCommonAnimation("StatUp",target,nil)
-              @battle.pbDisplay(_INTL("{1}'s Infuriate raised its Attack!",
-               target.pbThis,PBAbilities.getName(target.ability)))
+              @battle.pbDisplay(_INTL("{1}'s Infuriate raised its Attack!",target.pbThis,PBAbilities.getName(target.ability)))
+              if @battle.FE == PBFields::CHESSB
+                if target.pbCanConfuse?(true)
+                  target.effects[PBEffects::Confusion]=2+@battle.pbRandom(4)
+                  @battle.pbCommonAnimation("Confusion",target,nil)
+                  @battle.pbDisplay(_INTL("{1} became confused!",target.pbThis))
+                end
+              end
              end
            else
             if target.pbCanIncreaseStatStage?(PBStats::ATTACK)
