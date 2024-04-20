@@ -1300,7 +1300,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::HEATWAVE) || (move == PBMoves::OVERHEAT) || (move == PBMoves::REFLECT) ||
           (move == PBMoves::WILLOWISP) || (move == PBMoves::FLAMECHARGE) || (move == PBMoves::MYSTICALFIRE) ||
           (move == PBMoves::FLAREBLITZ) || (move == PBMoves::BURNINGJEALOUSY) || (moves == PBMoves::TEMPERFLARE) ||
-          (move == PBMoves::SCORCHINGSANDS)
+          (move == PBMoves::SCORCHINGSANDS) || (move == PBMoves::RAGINGFURY)
         return false
         end
       elsif pokemon.form=0
@@ -1309,7 +1309,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::DARKPULSE) || (move == PBMoves::FOULPLAY) || (move == PBMoves::ASSURANCE) ||
           (move == PBMoves::HYPERVOICE) || (move == PBMoves::SCARYFACE) || (move == PBMoves::THIEF) ||
           (move == PBMoves::IMPRISON) || (move == PBMoves::HEX) || (move == PBMoves::SPITE) ||
-          (move == PBMoves::NASTYPLOT) || (move == PBMoves::LASHOUT) || (move == PBMoves:: PAINSPLIT)
+          (move == PBMoves::NASTYPLOT) || (move == PBMoves::LASHOUT) || (move == PBMoves::PAINSPLIT)
         return false
         end
       end
