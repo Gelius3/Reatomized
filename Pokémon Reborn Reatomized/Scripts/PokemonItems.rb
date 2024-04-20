@@ -3373,6 +3373,7 @@ end
           (move == PBMoves::SHADOWBALL) || (move == PBMoves::HYPERVOICE) || (move == PBMoves::CALMMIND) ||
           (move == PBMoves::PSYCHICTERRAIN) || (move == PBMoves::VACUUMWAVE) || (move == PBMoves::PSYCHUP) ||
           (move == PBMoves::FUTURESIGHT) || (move == PBMoves::EXPANDINGFORCE) || (move == PBMoves::PSYCHICNOISE)
+	  (move == PBMoves::ESPERWING)
           return false
         end
       end
