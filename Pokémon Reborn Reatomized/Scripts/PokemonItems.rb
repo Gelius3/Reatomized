@@ -1351,7 +1351,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::HYPERVOICE) || (move == PBMoves::SKILLSWAP) || (move == PBMoves::TRICK) ||
           (move == PBMoves::SCARYFACE) || (move == PBMoves::IMPRISON) || (move == PBMoves::PSYCHICNOISE) ||
           (move == PBMoves::POWERSWAP) || (move == PBMoves::GUARDSWAP) || (move == PBMoves::HYPNOSIS) ||
-          (move == PBMoves::PSYCHOCUT) || (move == PBMoves::STOREDPOWER) || (move == PBMoves::EXPANDINGFORCE)
+          (move == PBMoves::PSYCHOCUT) || (move == PBMoves::STOREDPOWER) || (move == PBMoves::EXPANDINGFORCE) ||
+	  (move == PBMoves::ESPERWING)
           return false
         end
       end
