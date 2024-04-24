@@ -274,7 +274,7 @@ FIELDEFFECTS = {
 			"Back, foul beast!" => [PBMoves::VINEWHIP, PBMoves::POWERWHIP, PBMoves::FIRELASH,
 				PBMoves::METALWHIP, PBMoves::IONICWHIPLASH, PBMoves::THORNWHIP], 
 			"What grace!" => [PBMoves::FIERYDANCE, PBMoves::PETALDANCE, PBMoves::REVELATIONDANCE,
-				PBMoves::AQUASTEP, PBMoves::ORDERUP, PBMoves::AURAWHEEL, PBMoves::AURAWHEELMINUS], 
+				PBMoves::AQUASTEP, PBMoves::ORDERUP, PBMoves::AURAWHEELPLUS, PBMoves::AURAWHEELMINUS], 
 			"An extravagant aerial finish!" => [PBMoves::FLY, PBMoves::ACROBATICS], 
 			"And what an entrance it is!" => [PBMoves::FIRSTIMPRESSION],
 			"And A-One, and A-Two!" => [PBMoves::TRIPLEAXEL, PBMoves::TRIPLEKICK,
