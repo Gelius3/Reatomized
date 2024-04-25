@@ -2659,6 +2659,10 @@ class PokeBattle_Battler
             @battle.pbCommonAnimation("StatUp",self)
           end
           @battle.pbDisplay(_INTL("The fairy king's sword empowered {1}!",pbThis))
+      	elsif @battle.FE == PBFields::DRAGONSD
+          pbIncreaseStatBasic(PBStats::ATTACK,2)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("The Chosen One descended onto the battlefield!"))
         else
           pbIncreaseStatBasic(PBStats::ATTACK,1)
           @battle.pbCommonAnimation("StatUp",self)
