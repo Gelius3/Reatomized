@@ -1396,9 +1396,13 @@ class PokeBattle_Battler
     # Zen Mode
     if (self.pokemon && self.pokemon.species == PBSpecies::DARMANITAN) && !self.isFainted?
       if self.ability == PBAbilities::ZENMODE
-        if @battle.FE == PBFields::ASHENB
+        if (@battle.FE == PBFields::ASHENB || @battle.FE == PBFields::PSYCHICT)
           if self.form == 0
             self.form = 1; transformed=true   
+          end
+        elsif (@battle.FE == PBFields::ICYF || @battle.FE == PBFields::SNOWYM)
+          if self.form == 2
+            self.form = 3; transformed=true
           end
         elsif @hp<=((@totalhp/2).floor)
           if self.form == 0
@@ -2094,6 +2098,15 @@ class PokeBattle_Battler
         pbDisposeItem(false)
       end
     end
+    # Snowball
+    if self.hasWorkingItem(:SNOWBALL) && onactive
+      if @battle.FE == PBFields::SNOWYM && pbCanIncreaseStatStage?(PBStats::ATTACK)
+        pbIncreaseStatBasic(PBStats::ATTACK,1)
+        @battle.pbCommonAnimation("StatUp",self,nil)
+        @battle.pbDisplay(_INTL("The Snowball boosted #{pbThis}'s Attack!"))
+        pbDisposeItem(false)
+      end
+    end
 
     #### START OF WEATHER ABILITIES
     if (ability == PBAbilities::DRIZZLE) && onactive && @battle.weather!=PBWeather::RAINDANCE
@@ -2501,7 +2514,17 @@ class PokeBattle_Battler
         odef+=(opp2.defense*stagemult[opp2.stages[PBStats::DEFENSE]+6]/stagediv[opp2.stages[PBStats::DEFENSE]+6]) if opp2.hp>0
         ospdef+=(opp2.spdef*stagemult[opp2.stages[PBStats::SPDEF]+6]/stagediv[opp2.stages[PBStats::SPDEF]+6]) if opp2.hp>0
       end
-      if ospdef>odef
+      if (@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::GLITCHF)
+        if !pbTooHigh?(PBStats::ATTACK)
+          pbIncreaseStatBasic(PBStats::ATTACK,1)
+          @battle.pbCommonAnimation("StatUp",self)
+        end
+        if !pbTooHigh?(PBStats::SPATK)
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          @battle.pbCommonAnimation("StatUp",self)
+          @battle.pbDisplay(_INTL("{1}'s Download boosted its offenses in the broken terrain!",pbThis))
+        end
+      elsif ospdef>odef
         if !pbTooHigh?(PBStats::ATTACK)
           if @battle.FE == PBFields::FACTORYF
             pbIncreaseStatBasic(PBStats::ATTACK,2)
@@ -2610,17 +2633,37 @@ class PokeBattle_Battler
     # Dauntless Shield
     if self.ability == PBAbilities::DAUNTLESSSHIELD && onactive
       if !pbTooHigh?(PBStats::DEFENSE)
-        pbIncreaseStatBasic(PBStats::DEFENSE,1)
-        @battle.pbCommonAnimation("StatUp",self)
-        @battle.pbDisplay(_INTL("{1}'s {2} boosted its Defense!", pbThis,PBAbilities.getName(ability)))
+        if @battle.FE == PBFields::FAIRYTALEF
+          pbIncreaseStatBasic(PBStats::DEFENSE,2)
+          @battle.pbCommonAnimation("StatUp",self)
+          if !pbTooHigh?(PBStats::SPDEF)
+            pbIncreaseStatBasic(PBStats::SPDEF,1)
+            @battle.pbCommonAnimation("StatUp",self)
+          end
+          @battle.pbDisplay(_INTL("The fairy king's shield protects {1}!",pbThis))
+        else
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          @battle.pbCommonAnimation("StatUp",self)
+          @battle.pbDisplay(_INTL("{1}'s {2} boosted its Defense!", pbThis,PBAbilities.getName(ability)))
+        end
       end
     end
     # Intrepid Sword
     if self.ability == PBAbilities::INTREPIDSWORD && onactive
       if !pbTooHigh?(PBStats::ATTACK)
-        pbIncreaseStatBasic(PBStats::ATTACK,1)
-        @battle.pbCommonAnimation("StatUp",self)
-        @battle.pbDisplay(_INTL("{1}'s {2} boosted its Attack!", pbThis,PBAbilities.getName(ability)))
+        if @battle.FE == PBFields::FAIRYTALEF
+          pbIncreaseStatBasic(PBStats::ATTACK,2)
+          @battle.pbCommonAnimation("StatUp",self)
+          if !pbTooHigh?(PBStats::SPATK)
+            pbIncreaseStatBasic(PBStats::SPATK,1)
+            @battle.pbCommonAnimation("StatUp",self)
+          end
+          @battle.pbDisplay(_INTL("The fairy king's sword empowered {1}!",pbThis))
+        else
+          pbIncreaseStatBasic(PBStats::ATTACK,1)
+          @battle.pbCommonAnimation("StatUp",self)
+          @battle.pbDisplay(_INTL("{1}'s {2} boosted its Attack!", pbThis,PBAbilities.getName(ability)))
+        end
       end
     end
     # Sprint
@@ -2695,14 +2738,26 @@ class PokeBattle_Battler
     # Nomad
     if self.ability == PBAbilities::NOMAD && onactive
       if ((self.pbSpeed > pbOpposing1.pbSpeed) && pbOpposing1.hp>0) || ((self.pbSpeed > pbOpposing2.pbSpeed) && pbOpposing2.hp>0)
-        @battle.pbDisplay(_INTL("{1}'s {2} boosted its offenses!",pbThis,PBAbilities.getName(ability)))
-        if !pbTooHigh?(PBStats::ATTACK)
-          pbIncreaseStatBasic(PBStats::ATTACK,1)
-          @battle.pbCommonAnimation("StatUp",self,nil)
-        end
-        if !pbTooHigh?(PBStats::SPATK)
-          pbIncreaseStatBasic(PBStats::SPATK,1)
-          @battle.pbCommonAnimation("StatUp",self,nil)
+        if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM)
+          @battle.pbDisplay(_INTL("{1}'s {2} sharply boosted its offenses!",pbThis,PBAbilities.getName(ability)))
+          if !pbTooHigh?(PBStats::ATTACK)
+            pbIncreaseStatBasic(PBStats::ATTACK,2)
+            @battle.pbCommonAnimation("StatUp",self,nil)
+          end
+          if !pbTooHigh?(PBStats::SPATK)
+            pbIncreaseStatBasic(PBStats::SPATK,2)
+            @battle.pbCommonAnimation("StatUp",self,nil)
+          end
+        else
+          @battle.pbDisplay(_INTL("{1}'s {2} boosted its offenses!",pbThis,PBAbilities.getName(ability)))
+          if !pbTooHigh?(PBStats::ATTACK)
+            pbIncreaseStatBasic(PBStats::ATTACK,1)
+            @battle.pbCommonAnimation("StatUp",self,nil)
+          end
+          if !pbTooHigh?(PBStats::SPATK)
+            pbIncreaseStatBasic(PBStats::SPATK,1)
+            @battle.pbCommonAnimation("StatUp",self,nil)
+          end
         end
       end
     end
@@ -2902,6 +2957,65 @@ class PokeBattle_Battler
         end
       end
     end
+    # Factory Field Entry
+    if @battle.FE == PBFields::FACTORYF
+      if (self.ability == PBAbilities::HEAVYMETAL) && onactive
+        if !pbTooLow?(PBStats::SPEED)
+          pbReduceStatBasic(PBStats::SPEED,1)
+          @battle.pbCommonAnimation("StatDown",self,nil)
+        end
+        if !pbTooHigh?(PBStats::DEFENSE)
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s heavy body is sturdy and unmoving!",pbThis))
+        end
+      end
+    end
+    if @battle.FE == PBFields::FACTORYF
+      if !pbTooHigh?(PBStats::SPEED)
+        if (self.ability == PBAbilities::LIGHTMETAL) && onactive
+          pbIncreaseStatBasic(PBStats::SPEED,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}'s light body makes it nimble!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    end
+    if @battle.FE == PBFields::FACTORYF
+      if !pbTooHigh?(PBStats::SPATK)
+        if (self.ability == PBAbilities::MEGALAUNCHER) && onactive
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1}, initializing {2} boost!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+    end
+    # Ashen Beach Entry
+    if @battle.FE == PBFields::ASHENB
+      if (self.ability == PBAbilities::PUREFOCUS) && onactive
+        self.effects[PBEffects::FocusEnergy]=3
+        @battle.pbAnimation(PBMoves::FOCUSENERGY,self,nil)
+        @battle.pbDisplay(_INTL("{1} is getting pumped!",pbThis))
+      end
+    end
+    # Mountain Entry
+    if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM)
+      if !pbTooHigh?(PBStats::SPEED)
+        if (self.ability == PBAbilities::WINDRIDER) && onactive
+          pbIncreaseStatBasic(PBStats::SPEED,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1} sped up in the wind!",pbThis))
+        end
+      end
+    end
+    if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM)
+      if !pbTooHigh?(PBStats::ACCURACY)
+        if (self.ability == PBAbilities::CLIMBER || self.ability == PBAbilities::MOUNTAINEER) && onactive
+          pbIncreaseStatBasic(PBStats::ACCURACY,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1} is focused on the peak and nothing more!",pbThis))
+        end
+      end
+    end
     # Fairy Tale Field Entry
     if @battle.FE == PBFields::FAIRYTALEF
       if !pbTooHigh?(PBStats::DEFENSE)
@@ -2911,12 +3025,17 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1}'s shining armor boosted its Defense!",
            pbThis,PBAbilities.getName(ability)))
         end
+        if (self.ability == PBAbilities::PARRY) && onactive
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("{1} readied a counterattack!",pbThis))
+        end
         if (self.ability == PBAbilities::STANCECHANGE) && onactive
           pbIncreaseStatBasic(PBStats::DEFENSE,1)
         end
       end
       if !pbTooHigh?(PBStats::SPDEF)
-        if (self.ability == PBAbilities::MAGICGUARD || self.ability == PBAbilities::MAGICBOUNCE || self.ability == PBAbilities::POWEROFALCHEMY || self.ability == PBAbilities::MIRRORARMOR) && onactive
+        if (self.ability == PBAbilities::MAGICGUARD || self.ability == PBAbilities::MAGICBOUNCE || self.ability == PBAbilities::POWEROFALCHEMY || self.ability == PBAbilities::MIRRORARMOR || self.ability == PBAbilities::PASTELVEIL) && onactive
           pbIncreaseStatBasic(PBStats::SPDEF,1)
           @battle.pbCommonAnimation("StatUp",self,nil)
           @battle.pbDisplay(_INTL("{1}'s magical power boosted its Special Defense!",
@@ -2929,6 +3048,17 @@ class PokeBattle_Battler
           @battle.pbCommonAnimation("StatUp",self,nil)
           @battle.pbDisplay(_INTL("{1}'s magical power boosted its Special Attack!",
            pbThis,PBAbilities.getName(ability)))
+        elsif (self.ability == PBAbilities::ENCHANTEDCANNON) && onactive
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("Magical energy surged through {1}'s {2}!",pbThis,PBAbilities.getName(ability)))
+        end
+      end
+      if !pbTooHigh?(PBStats::ATTACK)
+        if (self.ability == PBAbilities::DRAGONSWORD) && onactive
+          pbIncreaseStatBasic(PBStats::ATTACK,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+          @battle.pbDisplay(_INTL("Magical energy surged through {1}'s {2}!",pbThis,PBAbilities.getName(ability)))
         end
       end
     end
@@ -5679,11 +5809,17 @@ class PokeBattle_Battler
           user.pbIncreaseStatBasic(PBStats::ATTACK,1)
           @battle.pbDisplay(_INTL("{1}'s Moxie raised its Attack!",user.pbThis))
         end
-      elsif (user.hasWorkingAbility(:CHILLINGNEIGH) || (user.hasWorkingAbility(:ASONE) && user.form==1)) && user.hp>0
+      elsif (user.hasWorkingAbility(:CHILLINGNEIGH) || (user.hasWorkingAbility(:ASONE) && user.form==1)) && user.hp>0 && @battle.FE != PBFields::BURNINGF && @battle.FE != PBFields::SUPERHEATEDF && @battle.FE != PBFields::DRAGONSD
         if !user.pbTooHigh?(PBStats::ATTACK)
-          @battle.pbCommonAnimation("StatUp",self,nil)
-          user.pbIncreaseStatBasic(PBStats::ATTACK,1)
-          @battle.pbDisplay(_INTL("{1}'s Chilling Neigh raised its Attack!",user.pbThis))
+          if (@battle.FE == PBFields::ICYF || @battle.FE == PBFields::SNOWYM)
+            @battle.pbCommonAnimation("StatUp",self,nil)
+            user.pbIncreaseStatBasic(PBStats::ATTACK,2)
+            @battle.pbDisplay(_INTL("{1}'s Chilling Neigh sharply raised its Attack!",user.pbThis))
+          else
+            @battle.pbCommonAnimation("StatUp",self,nil)
+            user.pbIncreaseStatBasic(PBStats::ATTACK,1)
+            @battle.pbDisplay(_INTL("{1}'s Chilling Neigh raised its Attack!",user.pbThis))
+          end
         end
       elsif (user.hasWorkingAbility(:CELEBRATION)) && user.hp>0
         if !user.pbTooHigh?(PBStats::SPEED)
@@ -5691,11 +5827,17 @@ class PokeBattle_Battler
           user.pbIncreaseStatBasic(PBStats::SPEED,1)
           @battle.pbDisplay(_INTL("{1}'s Celebration raised its Speed!",user.pbThis))
         end
-      elsif (user.hasWorkingAbility(:GRIMNEIGH) || (user.hasWorkingAbility(:ASONE) && user.form==2)) && user.hp>0
+      elsif (user.hasWorkingAbility(:GRIMNEIGH) || (user.hasWorkingAbility(:ASONE) && user.form==2)) && user.hp>0 && @battle.FE != PBFields::RAINBOWF && @battle.FE != PBFields::HOLYF
         if !user.pbTooHigh?(PBStats::SPATK)
-          @battle.pbCommonAnimation("StatUp",self,nil)
-          user.pbIncreaseStatBasic(PBStats::SPATK,1)
-          @battle.pbDisplay(_INTL("{1}'s Grim Neigh raised its Special Attack!",user.pbThis))
+          if (@battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::SHORTCIRCUITF)
+            @battle.pbCommonAnimation("StatUp",self,nil)
+            user.pbIncreaseStatBasic(PBStats::SPATK,2)
+            @battle.pbDisplay(_INTL("{1}'s Grim Neigh sharply raised its Special Attack!",user.pbThis))
+          else
+            @battle.pbCommonAnimation("StatUp",self,nil)
+            user.pbIncreaseStatBasic(PBStats::SPATK,1)
+            @battle.pbDisplay(_INTL("{1}'s Grim Neigh raised its Special Attack!",user.pbThis))
+          end
         end
       end
     end
@@ -6202,6 +6344,9 @@ class PokeBattle_Battler
             if @battle.field.backup == PBFields::WATERS
               @battle.setField(PBFields::WATERS)
               @battle.pbDisplay(_INTL("The quake broke up the ice and revealed the water beneath!"))
+            elsif @battle.field.backup == PBFields::MURKWATERS
+              @battle.setField(PBFields::MURKWATERS)
+              @battle.pbDisplay(_INTL("The ice broken from underneath!"))
             else
               spikevar=false
               if @battle.battlers[0].pbOwnSide.effects[PBEffects::Spikes]<3
@@ -6217,7 +6362,7 @@ class PokeBattle_Battler
               end
             end
           end
-          if (thismove.id == PBMoves::SCALD || thismove.id == PBMoves::STEAMERUPTION) # Icy Field => Water Surface
+          if (thismove.id == PBMoves::SCALD || thismove.id == PBMoves::STEAMERUPTION || thismove.id == PBMoves::HYDROSTEAM || thismove.id == PBMoves::INFERNALWATERBLAST) # Icy Field => Water Surface
             @battle.field.counter += 1
             case @battle.field.counter
             when 1
@@ -6231,7 +6376,7 @@ class PokeBattle_Battler
           if (thismove.id == PBMoves::SURF || thismove.id == PBMoves::MUDDYWATER ||
            thismove.id == PBMoves::WATERPLEDGE || thismove.id == PBMoves::WATERSPOUT ||
            thismove.id == PBMoves::SPARKLINGARIA || thismove.id == PBMoves::OCEANICOPERETTA ||
-           thismove.id == PBMoves::HYDROVORTEX)
+           thismove.id == PBMoves::HYDROVORTEX || thismove.id == PBMoves::CORALBREAK)
             @battle.pbDisplay(_INTL("Steam shot up from the field!"))
             for i in 0...4
               canthit = PBStuff::TWOTURNMOVE.include?(@battle.battlers[i].effects[PBEffects::TwoTurnAttack])
