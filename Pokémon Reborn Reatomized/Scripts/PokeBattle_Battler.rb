@@ -3077,6 +3077,19 @@ class PokeBattle_Battler
         end
       end
     end
+    if @battle.FE == PBFields::DRAGONSD
+      if (self.ability == PBAbilities::STALWART || self.ability == PBAbilities::ARMORTAIL) && onactive
+        @battle.pbDisplay(_INTL("{1}'s {2} boosted its defenses!",pbThis,PBAbilities.getName(ability)))
+        if !pbTooHigh?(PBStats::DEFENSE)
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+        end
+        if !pbTooHigh?(PBStats::SPDEF)
+          pbIncreaseStatBasic(PBStats::SPDEF,1)
+          @battle.pbCommonAnimation("StatUp",self,nil)
+        end
+      end
+    end
     # Flower Garden Entry
     if @battle.field.effect == PBFields::FLOWERGARDENF && [PBAbilities::FLOWERGIFT,PBAbilities::FLOWERVEIL,PBAbilities::DROUGHT,PBAbilities::DRIZZLE].include?(ability) && onactive
       message = _INTL("{1}'s {2}", pbThis,PBAbilities.getName(ability))
