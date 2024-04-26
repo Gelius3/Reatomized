@@ -868,6 +868,7 @@ class PokeBattle_Move
     return true if @battle.pbWeather==PBWeather::RAINDANCE && (@function==0x08 || @function==0x15 || [PBMoves::BLEAKWINDSTORM, PBMoves::WILDBOLTSTORM, PBMoves::SANDSEARSTORM, PBMoves::SPRINGTIDESTORM].include?(@id)) # Thunder, Hurricane
     return true if @function==0x08 && (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM) # Thunder
     return true if @type == PBTypes::ELECTRIC && @battle.FE == PBFields::UNDERWATER
+    return true if @id == PBMoves::AURAWHEELMINUS && @battle.FE == PBFields::UNDERWATER
     return true if attacker.pbHasType?(:POISON) && @id == PBMoves::TOXIC
     return true if (@function==0x10 || @id == PBMoves::BODYSLAM || @function==0x137 || @function==0x9B) && opponent.effects[PBEffects::Minimize] # Flying Press, Stomp, DRush
     return true if @battle.FE == PBFields::MIRRORA && (PBFields::BLINDINGMOVES + [PBMoves::MIRRORSHOT]).include?(@id)
@@ -1067,7 +1068,11 @@ class PokeBattle_Move
     elsif attacker.ability == PBAbilities::ENCHANTEDCANNON 
       damagemult=(damagemult*1.4) if (PBStuff::BEAMMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::SHARPNESS
-      damagemult=(damagemult*1.5).round if (PBStuff::SLASHMOVE).include?(@id)
+      if @battle.FE == PBFields::FAIRYTALEF
+        damagemult=(damagemult*2.0).round if (PBStuff::SLASHMOVE).include?(@id)
+      else
+        damagemult=(damagemult*1.5).round if (PBStuff::SLASHMOVE).include?(@id)
+      end
     elsif attacker.ability == PBAbilities::RUNUP
       damagemult=(damagemult*1.5).round if (PBStuff::TACKLEMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::INJECTION
@@ -1160,7 +1165,11 @@ class PokeBattle_Move
           damagemult=(damagemult*1.2).round
         end
       elsif attacker.ability == PBAbilities::ATOMIZATE 
-        damagemult=(damagemult*1.2).round
+        if @battle.FE == PBFields::FALLOUT
+          damagemult=(damagemult*1.5).round
+        else
+          damagemult=(damagemult*1.2).round
+        end
       elsif attacker.ability == PBAbilities::REFRIGERATE
         if @battle.FE == PBFields::ICYF || @battle.FE == PBFields::SNOWYM # Icy Fields
           damagemult=(damagemult*1.5).round
@@ -1722,10 +1731,18 @@ class PokeBattle_Move
       end
     end
     if (attacker.pbPartner.ability == PBAbilities::STEELYSPIRIT || attacker.ability == PBAbilities::STEELYSPIRIT) && type == PBTypes::STEEL
-      atkmult=(atkmult*1.5).round
+      if @battle.FE == PBFields::FAIRYTALEF
+        atkmult=(atkmult*2.0).round
+      else
+        atkmult=(atkmult*1.5).round
+      end
     end
     if (attacker.pbPartner.ability == PBAbilities::AQUABOOST || attacker.ability == PBAbilities::AQUABOOST) && type == PBTypes::WATER
-      atkmult=(atkmult*1.3).round
+      if (@battle.FE == PBFields::WATERS || @battle.FE == PBFields::UNDERWATER)
+        atkmult=(atkmult*1.5).round
+      else
+        atkmult=(atkmult*1.3).round
+      end
     end
     if (attacker.pbPartner.ability == PBAbilities::AQUABOOST || attacker.ability == PBAbilities::AQUABOOST) && type == PBTypes::POISON && (@battle.FE == PBFields::SWAMPF || @battle.FE == PBFields::MURKWATERS)
       atkmult=(atkmult*1.3).round
@@ -2038,6 +2055,18 @@ class PokeBattle_Move
           @battle.setField(PBFields::FACTORYF)
           @battle.pbDisplay(_INTL("SYSTEM ONLINE."))
           damage=(damage*1.3).floor if damage >= 0
+        end
+      when PBFields::WATERS
+        if (@id == PBMoves::TRIPLEDIVE)
+          @battle.setField(PBFields::UNDERWATER)
+          @battle.pbDisplay(_INTL("The battle was pulled underwater!"))
+          damage=(damage*1.5).floor if damage >= 0
+        end
+      when PBFields::UNDERWATER
+        if (@id == PBMoves::TRIPLEDIVE)
+          @battle.setField(PBFields::WATERS)
+          @battle.pbDisplay(_INTL("The battle resurfaced!"))
+          damage=(damage*1.5).floor if damage >= 0
         end
     end
 
