@@ -983,6 +983,7 @@ class PokeBattle_Move
     c+=attacker.effects[PBEffects::FocusEnergy]
     c+=1 if hasHighCriticalRate?
     c+=1 if attacker.ability == PBAbilities::SUPERLUCK
+    c+=1 if (opponent.ability == PBAbilities::GORILLATACTICS || opponent.ability == PBAbilities::RECKLESS) && @battle.FE == PBFields::CHESSB
     c+=1 if attacker.pbPartner.hasWorkingAbility(:MOODMAKER)
     c+=2 if attacker.ability == PBAbilities::TANGLEDFEET && attacker.effects[PBEffects::Confusion] > 0
     c+=2 if attacker.hasWorkingItem(:STICK) && (attacker.pokemon.species == PBSpecies::FARFETCHD || attacker.pokemon.species == PBSpecies::SIRFETCHD)
@@ -1796,9 +1797,35 @@ class PokeBattle_Move
       elsif attacker.ability == PBAbilities::POISONPUPPETEER
         atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::CORROSIVEF || @battle.FE == PBFields::CORROSIVEMISTF || @battle.FE == PBFields::WASTELAND || @battle.FE == PBFields::MURKWATERS)
       elsif attacker.ability == PBAbilities::NOVABURNER
-        atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::BURNINGF)
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::BURNINGF
+        atkmult=(atkmult*1.2).round if @battle.FE == PBFields::SUPERHEATEDF
       elsif attacker.ability == PBAbilities::FLAMESOFRUIN
         atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::NEWW)
+        atkmult=(atkmult*1.2).round if @battle.FE == PBFields::SUPERHEATEDF
+      elsif (attacker.ability == PBAbilities::GORILLATACTICS || attacker.ability == PBAbilities::RECKLESS)
+        atkmult=(atkmult*1.2).round if @battle.FE == PBFields::CHESSB
+      elsif attacker.ability == PBAbilities::SHARPCORAL
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::ASHENB
+      elsif attacker.ability == PBAbilities::WINDPOWER
+        atkmult=(atkmult*1.5).round if (@battle.FE == PBFields::MOUNTAIN || @battle.FE == PBFields::SNOWYM)
+      elsif attacker.ability == PBAbilities::BLOODLUST
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::DRAGONSD
+      elsif attacker.ability == PBAbilities::GOODASGOLD
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::DRAGONSD
+      elsif attacker.ability == PBAbilities::DRAGONSWORD
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::DRAGONSD
+      elsif attacker.ability == PBAbilities::HYDRABOND
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::DRAGONSD
+      elsif attacker.ability == PBAbilities::STARFALLGRACE
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::STARLIGHTA
+      elsif attacker.ability == PBAbilities::SWORDOFRUIN
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::NEWW
+      elsif attacker.ability == PBAbilities::VESSELOFRUIN
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::NEWW
+      elsif attacker.ability == PBAbilities::BEADSOFRUIN
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::NEWW
+      elsif attacker.ability == PBAbilities::TABLETSOFRUIN
+        atkmult=(atkmult*1.5).round if @battle.FE == PBFields::NEWW
       end
     end
 
