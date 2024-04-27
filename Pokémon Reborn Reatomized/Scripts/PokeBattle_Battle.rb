@@ -4205,7 +4205,7 @@ class PokeBattle_Battle
               eff=PBTypes.getCombinedEffectiveness(PBTypes::FIRE,i.type1,i.type2)
               if eff>0
                 @scene.pbDamageAnimation(i,0)
-                if (i.ability == PBAbilities::LEAFGUARD) || (i.ability == PBAbilities::ICEBODY) || (i.ability == PBAbilities::FLUFFY) || (i.ability == PBAbilities::GRASSPELT)
+                if (i.ability == PBAbilities::LEAFGUARD) || (i.ability == PBAbilities::ICEBODY) || (i.ability == PBAbilities::FLUFFY) || (i.ability == PBAbilities::GRASSPELT) || (i.ability == PBAbilities::ICESCALES) || (i.ability == PBAbilities::FLOWERPOWER) || (i.ability == PBAbilities::LEAFSHROUD)
                   eff = eff*2
                 end
                 pbDisplay(_INTL("The Pokémon were burned by the field!",i.pbThis)) if endmessage == false
@@ -4414,7 +4414,7 @@ class PokeBattle_Battle
             eff=PBTypes.getCombinedEffectiveness(PBTypes::WATER,i.type1,i.type2)
             if eff>4
               @scene.pbDamageAnimation(i,0)
-              if i.ability == PBAbilities::FLAMEBODY || i.ability == PBAbilities::MAGMAARMOR
+              if i.ability == PBAbilities::FLAMEBODY || i.ability == PBAbilities::MAGMAARMOR || i.ability == PBAbilities::NOVABURNER || i.ability == PBAbilities::FLAMESOFRUIN || i.ability == PBAbilities::INNERFLAME
                 eff = eff*2
               end
               i.pbReduceHP([(i.totalhp*eff/32).floor,1].max)
@@ -4427,7 +4427,7 @@ class PokeBattle_Battle
         when PBFields::MURKWATERS # Murkwater Surface
           if i.murkyWaterSurfacePassiveDamage?
             eff=PBTypes.getCombinedEffectiveness(PBTypes::POISON,i.type1,i.type2)
-            if i.ability == PBAbilities::FLAMEBODY || i.ability == PBAbilities::MAGMAARMOR || i.ability == PBAbilities::DRYSKIN || i.ability == PBAbilities::WATERABSORB
+            if i.ability == PBAbilities::FLAMEBODY || i.ability == PBAbilities::MAGMAARMOR || i.ability == PBAbilities::DRYSKIN || i.ability == PBAbilities::WATERABSORB || i.ability == PBAbilities::NOVABURNER || i.ability == PBAbilities::FLAMESOFRUIN || i.ability == PBAbilities::INNERFLAME || i.ability == PBAbilities::SPONGE
               eff = eff*2
             end
             if $cache.pkmn_move[i.effects[PBEffects::TwoTurnAttack]][PBMoveData::FUNCTION]==0xCB # Dive
@@ -4443,7 +4443,7 @@ class PokeBattle_Battle
           if i.isFainted?
             return if !i.pbFaint
           end
-          if ((i.pbHasType?(:POISON) && (i.ability == PBAbilities::DRYSKIN || i.ability == PBAbilities::WATERABSORB)) || i.ability == PBAbilities::POISONHEAL) && !i.isAirborne? && i.effects[PBEffects::HealBlock]==0 && i.hp<i.totalhp
+          if ((i.pbHasType?(:POISON) && (i.ability == PBAbilities::DRYSKIN || i.ability == PBAbilities::WATERABSORB || i.ability == PBAbilities::SPONGE)) || i.ability == PBAbilities::POISONHEAL) && !i.isAirborne? && i.effects[PBEffects::HealBlock]==0 && i.hp<i.totalhp
             pbCommonAnimation("Poison",i,nil)
             i.pbRecoverHP((i.totalhp/8.0).floor,true)
             pbDisplay(_INTL("{1} was healed by the poisoned water!",i.pbThis))
