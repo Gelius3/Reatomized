@@ -6389,6 +6389,13 @@ class PokeBattle_Battler
               @battle.pbDisplay(_INTL("The hot water melted the ice!"))
             end
           end
+        when PBFields::FALLOUT
+          if (thismove.id == PBMoves::ROAROFTIME || thismove.id == PBMoves::PURIFY || thismove.id == PBMoves::CLEARSMOG || thismove.id == PBMoves::SEEDFLARE)
+            if @battle.field.backup == PBFields::CAVE
+              @battle.setField(PBFields::CAVE)
+              @battle.pbDisplay(_INTL("All corruption was cleared from the cave!"))
+            end
+          end
         when PBFields::SUPERHEATEDF # Superheated Steam
           if (thismove.id == PBMoves::SURF || thismove.id == PBMoves::MUDDYWATER ||
            thismove.id == PBMoves::WATERPLEDGE || thismove.id == PBMoves::WATERSPOUT ||
