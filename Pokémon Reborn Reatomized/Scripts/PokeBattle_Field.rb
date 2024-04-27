@@ -36,6 +36,7 @@ class PokeBattle_Field
   attr_accessor :data                 #associated field information
   attr_accessor :layer                #order of fields, stacked up from base
   attr_accessor :counter              #counter for certain field triggers
+  attr_accessor :counter2
   attr_accessor :pledge               #whether a pledge move has been used
   attr_accessor :conversion           #whether conversion has been used
   attr_accessor :duration             #number of turns remaining on a temporary field
@@ -49,6 +50,7 @@ class PokeBattle_Field
     @pledge = nil
     @conversion = nil
     @counter = 0
+    @counter2 = 0
     @duration = 0
     @duration_condition = nil
     @permanent_condition = nil
@@ -95,6 +97,7 @@ class PokeBattle_Field
       @counter = @old_counter 
       @old_counter = nil
     end
+    @counter2 = 0
   end
 
   def getRoll(update_roll: true)
@@ -186,6 +189,7 @@ class PokeBattle_FieldOnline < PokeBattle_Field
     @pledge = nil
     @conversion = nil
     @counter = 0
+    @counter2 = 0
     @duration = 0
     @roll = 0
     @overlay = nil 
@@ -338,17 +342,39 @@ class PokeBattle_Battle
     # sorry cass this seems to be the right timing here but i'm so sorry to do this to your beautiful code
     case @field.effect 
       when PBFields::CORROSIVEMISTF
-        @battle.mistExplosion if PBFields::IGNITEMOVES.include?(thismove.id) || [PBMoves::SELFDESTRUCT, PBMoves::EXPLOSION].include?(thismove.id)
+        @battle.mistExplosion if PBFields::IGNITEMOVES.include?(thismove.id) || [PBMoves::SELFDESTRUCT, PBMoves::EXPLOSION, PBMoves::MISTYEXPLOSION].include?(thismove.id)
       when PBFields::CAVE
         if PBFields::QUAKEMOVES.include?(thismove.id)
           @battle.caveCollapse
           return
+        elsif (thismove.id == PBMoves::DRAGONPULSE || thismove.id == PBMoves::DRACOMETEOR || thismove.id == PBMoves::DEVASTATINGDRAKE)
+          @field.counter += 1
+          @field.counter = 2 if (thismove.id == PBMoves::DRACOMETEOR || thismove.id == PBMoves::DEVASTATINGDRAKE)
+          case @field.counter
+            when 1
+              pbDisplay(_INTL("Draconic energy seeps in..."))
+            when 2
+              setField(PBFields::DRAGONSD)
+              pbDisplay(_INTL("The draconic energy mutated the field!"))
+          end
+        elsif (thismove.id == PBMoves::NUCLEARWASTE || thismove.id == PBMoves::NUCLEARWIND || thismove.id == PBMoves::RADIOACID || thismove.id == PBMoves::PROTONBEAM || thismove.id == PBMoves::FISSIONBURST)
+          @field.counter2 += 1
+          @field.counter2 = 3 if (thismove.id == PBMoves::PROTONBEAM || thismove.id == PBMoves::FISSIONBURST)
+          case @field.counter2
+            when 1
+              pbDisplay(_INTL("Nuclear energy seeps in..."))
+            when 2
+              pbDisplay(_INTL("It's starting to feel very dangerous..."))
+            when 3
+              setField(PBFields::FALLOUT)
+              pbDisplay(_INTL("The field radiates with nuclear energy!"))
+          end
         end
       when PBFields::MIRRORA
-        @battle.mirrorShatter if PBFields::QUAKEMOVES.include?(thismove.id) || [PBMoves::BOOMBURST, PBMoves::HYPERVOICE, PBMoves::SELFDESTRUCT,PBMoves::EXPLOSION].include?(thismove.id)
+        @battle.mirrorShatter if PBFields::QUAKEMOVES.include?(thismove.id) || [PBMoves::BOOMBURST, PBMoves::HYPERVOICE, PBMoves::SELFDESTRUCT, PBMoves::EXPLOSION, PBMoves::OVERDRIVE, PBMoves::MISTYEXPLOSION, PBMoves::RAGINGBULL, PBMoves::RUINATION, PBMoves::COLLISIONCOURSE, PBMoves::FISSIONBURST].include?(thismove.id)
       when PBFields::MISTYT # Misty Field
         if (thismove.id == PBMoves::CLEARSMOG || thismove.id == PBMoves::SMOG ||
-         thismove.id == PBMoves::POISONGAS || thismove.id == PBMoves::ACIDDOWNPOUR)
+         thismove.id == PBMoves::POISONGAS || thismove.id == PBMoves::ACIDDOWNPOUR || thismove.id == PBMoves::CORROSIVEGAS)
          @field.counter += 1
          @field.counter = 2 if thismove.id == PBMoves::ACIDDOWNPOUR
           case @field.counter
@@ -359,6 +385,52 @@ class PokeBattle_Battle
               pbDisplay(_INTL("The mist was corroded!"))
               @field.counter = 0
           end
+        end
+      when PBFields::GRASSYT
+        if (thismove.id == PBMoves::SURF || thismove.id == PBMoves::MUDDYWATER)
+          @field.counter += 1 if thismove.id == PBMoves::SURF
+          @field.counter += 2 if thismove.id == PBMoves::MUDDYWATER
+          case @field.counter
+            when 1
+              pbDisplay(_INTL("The ground became soggy..."))
+            when 2
+              pbDisplay(_INTL("The ground became waterlogged..."))
+            when 3
+              setField(PBFields::SWAMPF)
+              pbDisplay(_INTL("The grassy terrain became marshy!"))
+            when 4
+              setField(PBFields::SWAMPF)
+              pbDisplay(_INTL("The grassy terrain became marshy!"))
+          end
+        end
+      when PBFields::FORESTF
+        if (thismove.id == PBMoves::SURF || thismove.id == PBMoves::MUDDYWATER)
+          @field.counter += 1 if thismove.id == PBMoves::SURF
+          @field.counter += 2 if thismove.id == PBMoves::MUDDYWATER
+          case @field.counter
+            when 1
+              pbDisplay(_INTL("The ground became soggy..."))
+            when 2
+              pbDisplay(_INTL("The ground became waterlogged..."))
+            when 3
+              setField(PBFields::SWAMPF)
+              pbDisplay(_INTL("The forest became marshy!"))
+            when 4
+              setField(PBFields::SWAMPF)
+              pbDisplay(_INTL("The forest became marshy!"))
+          end
+        end
+      when PBFields::CORROSIVEF
+        if (thismove.id == PBMoves::SMOG || thismove.id == PBMoves::CLEARSMOG || thismove.id == PBMoves::POISONGAS || thismove.id == PBMoves::STRANGESTEAM || thismove.id == PBMoves::CORROSIVEGAS || thismove.id == PBMoves::FOGGYSTRIKE)
+          @field.counter += 1
+            case @field.counter
+              when 1
+                pbDisplay(_INTL("The field started to mist..."))
+              when 2
+                setField(PBFields::CORROSIVEMISTF)
+                pbDisplay(_INTL("Poisonous mist clouded the field!"))
+                @field.counter = 0
+            end
         end
       when PBFields::WATERS # Water Surface #Underwater handled ~300 lines above
         if (thismove.id == PBMoves::SLUDGEWAVE || thismove.id==PBMoves::ACIDDOWNPOUR)
@@ -631,6 +703,7 @@ class PokeBattle_Battler
   def murkyWaterSurfacePassiveDamage?
     return false if pbHasType?(:STEEL) || pbHasType?(:POISON)
     return false if [PBAbilities::POISONHEAL, PBAbilities::MAGICGUARD, PBAbilities::WONDERGUARD, PBAbilities::TOXICBOOST, PBAbilities::IMMUNITY].include?(@ability)
+    return false if [PBAbilities::PASTELVEIL, PBAbilities::SURGESURFER, PBAbilities::LEADSKIN].include?(@ability)
     return true
   end
   
