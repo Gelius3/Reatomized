@@ -4257,12 +4257,75 @@ class PokeBattle_Battle
               end
             end
           end
+        when PBFields::ELECTRICT
+          next if i.hp<=0
+          if i.ability == PBAbilities::VOLTABSORB && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} absorbed electricity!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::GRASSYT
+          next if i.hp<=0
+          if i.ability == PBAbilities::SAPSIPPER && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} drank sap to recover!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::GRASSYT
+          next if i.hp<=0
+          if i.ability == PBAbilities::HERBIVORE && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} snacked on grass to recover!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::BURNINGF
+          next if i.hp<=0
+          if i.ability == PBAbilities::WARMBLANKET && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("The flames washed over {1}!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::DESERTF
+          next if i.hp<=0
+          if i.ability == PBAbilities::HOTBLOODED && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("The heat soothed {1}!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::ICYF
+          next if i.hp<=0
+          if i.ability == PBAbilities::COLDBLOODED && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("The cold calmed {1} down!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::ROCKYF
+          next if i.hp<=0
+          if i.ability == PBAbilities::EARTHEATER && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} gulped down some rocks!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::ROCKYF
+          next if i.hp<=0
+          if i.ability == PBAbilities::HOTBLOODED && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} healed from the field!",i.pbThis)) if hpgain>0
+          end
         when PBFields::FORESTF # Forest Field
           next if i.hp<=0
           if i.ability == PBAbilities::SAPSIPPER && i.effects[PBEffects::HealBlock]==0
             hpgain=(i.totalhp/16.0).floor
             hpgain=i.pbRecoverHP(hpgain,true)
             pbDisplay(_INTL("{1} drank tree sap to recover!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::FORESTF
+          next if i.hp<=0
+          if i.ability == PBAbilities::HERBIVORE && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} ate tree leaves to recover!",i.pbThis)) if hpgain>0
           end
         when PBFields::SHORTCIRCUITF # Shortcircuit Field
           next if i.hp<=0
@@ -4277,6 +4340,13 @@ class PokeBattle_Battle
             hpgain=(i.totalhp/16.0).floor
             hpgain=i.pbRecoverHP(hpgain,true)
             pbDisplay(_INTL("{1} fed on some sand!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::SUPERHEATEDF
+          next if i.hp<=0
+          if i.ability == PBAbilities::WARMBLANKET && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("The warmth soothed {1}!",i.pbThis)) if hpgain>0
           end
         when PBFields::CAVE # Cave
           next if i.hp<=0
@@ -4293,14 +4363,49 @@ class PokeBattle_Battle
           end
         when PBFields::WATERS # Water Surface
           next if i.hp<=0
-          if (i.ability == PBAbilities::WATERABSORB || i.ability == PBAbilities::DRYSKIN) && i.effects[PBEffects::HealBlock]==0 && !i.isAirborne?
+          if (i.ability == PBAbilities::WATERABSORB || i.ability == PBAbilities::DRYSKIN || i.ability == PBAbilities::COLDBLOODED || i.ability == PBAbilities::SPONGE) && i.effects[PBEffects::HealBlock]==0 && !i.isAirborne?
             hpgain=(i.totalhp/16.0).floor
             hpgain=i.pbRecoverHP(hpgain,true)
             pbDisplay(_INTL("{1} absorbed some of the water!",i.pbThis)) if hpgain>0
           end
+        when PBFields::SNOWYM
+          next if i.hp<=0
+          if i.ability == PBAbilities::COLDBLOODED && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("The cold air soothed {1}!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::DRAGONSD
+          next if i.hp<=0
+          if i.ability == PBAbilities::WARMBLANKET && i.effects[PBEffects::HealBlock]==0
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("The heat flowed over {1}!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::FLOWERGARDENF
+          next if i.hp<=0
+          if i.ability == PBAbilities::HERBIVORE && i.effects[PBEffects::HealBlock]==0 && @field.counter == 2
+            hpgain=(i.totalhp/16.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} nibbled on some flowers!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::FLOWERGARDENF
+          next if i.hp<=0
+          if i.ability == PBAbilities::HERBIVORE && i.effects[PBEffects::HealBlock]==0 && @field.counter == 3
+            hpgain=(i.totalhp/8.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("{1} ate a lot of flowers!",i.pbThis)) if hpgain>0
+          end
+        when PBFields::FLOWERGARDENF
+          next if i.hp<=0
+          if i.ability == PBAbilities::HERBIVORE && i.effects[PBEffects::HealBlock]==0 && @field.counter == 4
+            hpgain=(i.totalhp/4.0).floor
+            hpgain=i.pbRecoverHP(hpgain,true)
+            pbDisplay(_INTL("It's a banquet of flowers!",i.pbThis)) if hpgain>0
+          end
         when PBFields::UNDERWATER
           next if i.hp<=0
-          if (i.ability == PBAbilities::WATERABSORB || i.ability == PBAbilities::DRYSKIN) && i.effects[PBEffects::HealBlock]==0
+          if (i.ability == PBAbilities::WATERABSORB || i.ability == PBAbilities::DRYSKIN || i.ability == PBAbilities::COLDBLOODED || i.ability == PBAbilities::SPONGE) && i.effects[PBEffects::HealBlock]==0
             hpgain=(i.totalhp/16.0).floor
             hpgain=i.pbRecoverHP(hpgain,true)
             pbDisplay(_INTL("{1} absorbed some of the water!",i.pbThis)) if hpgain>0
