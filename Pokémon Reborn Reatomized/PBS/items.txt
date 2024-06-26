@@ -1168,7 +1168,7 @@
 4004,HORNFOSSIL,Horn Fossil - Ice,1,1000,"A fossil of an ancient Pokémon that lived during the ice age. It appears to be a horn.",0,0,0
 4005,LONGCLUB,Long Club,1,4000,"A long bone club, to be held by Terathwack, that ups the holder's critical-hit ratio.",0,0,0
 4006,QUANTUMUPGRADE,Quantum Upgrade,1,20000,"A software upgrade created by Professor ?????. It is designed to make an advanced upgrade to Porygon.",0,0,0,
-4007,TM197,TM197,4,3000,"The user slams the target with a whimsical strike of the fangs. It may make the target flinch.",3,0,0,FAENGRUSH
+4007,TM197,TM197,4,3000,"The user creates a haze that eliminates every stat change among all the Pokémon engaged in battle. ",3,0,0,HAZE
 4008,COSMICMEMORY,Cosmic Memory,1,1000,"A memory disc that contains Cosmic-type data. It changes the type of the holder if held by a certain Pokémon.",0,0,0
 4009,COSMICPLATE,Cosmic Plate,1,1000,"An item to be held by a Pokémon. It's a stone tablet that boosts the power of Cosmic-type moves.",0,0,0
 4010,COSMICGEM,Cosmic Gem,1,1200,"A gem with an essence of cosmic. When held, it strengthens the power of a Cosmic-type move one time.",0,0,0
@@ -1180,3 +1180,5 @@
 4016,EXPCHARM,Exp. Charm,8,0,"A charm that increases the Exp. Points that Pokémon can get. A machine-like object is inside the charm.",0,0,6,
 4017,GLIMMERINGCHARM,Glimmering Charm,8,0,"Having one of these mysterious glimmering charms increases the number of Tera Shards you receive from Tera Raid Battles.",0,0,6,
 4018,INFINITYREPEL,Infinity Repel,8,0,"A device that simulates the effects of a Repel permanently.",2,0,6,
+4019,TM198,TM198,4,3000,"The user becomes charged, boosting the power of the next Electric-type move it uses. This also boosts the user's Sp. Def stat. ",3,0,0,CHARGE
+4020,TM199,TM199,4,3000,"The user makes a lunge at the target, attacking with full force. This also lowers the target's Attack stat. ",3,0,0,LUNGE
