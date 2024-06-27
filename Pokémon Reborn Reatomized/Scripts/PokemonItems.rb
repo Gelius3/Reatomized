@@ -3436,7 +3436,7 @@ end
           (move == PBMoves::LIQUIDATION) || (move == PBMoves::HYDROPUMP)
           return false
         end
-      if pokemon.form==1
+      elsif pokemon.form==1
         if (move == PBMoves::FLAREBLITZ) || (move == PBMoves::RAGINGFURY) || (move == PBMoves::FLAMECHARGE) ||
           (move == PBMoves::WAVECRASH) || (move == PBMoves::HYDROPUMP) || (move == PBMoves::LIQUIDATION) ||
           (move == PBMoves::FIRESPIN) || (move == PBMoves::WILLOWISP) || (move == PBMoves::OVERHEAT) ||
@@ -3447,7 +3447,7 @@ end
           (move == PBMoves::FLAMETHROWER) || (move == PBMoves::WHIRLPOOL) || (move == PBMoves::INCINERATE)
           return false
         end
-      if pokemon.form==2
+      elsif pokemon.form==2
         if (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) || (move == PBMoves::THUNDERBOLT) ||
           (move == PBMoves::WAVECRASH) || (move == PBMoves::THUNDER) || (move == PBMoves::ZAPCANNON) ||
           (move == PBMoves::ICYWIND) || (move == PBMoves::WATERPULSE) || (move == PBMoves::SOLARBEAM) ||
@@ -3455,7 +3455,7 @@ end
           (move == PBMoves::LIQUIDATION) || (move == PBMoves::HYDROPUMP) || (move == PBMoves::SURF)
           return false
         end
-      if pokemon.form==3
+      elsif pokemon.form==3
         if (move == PBMoves::FLAREBLITZ) || (move == PBMoves::RAGINGFURY) || (move == PBMoves::FLAMECHARGE) ||
           (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) || (move == PBMoves::THUNDERBOLT) ||
           (move == PBMoves::FIRESPIN) || (move == PBMoves::WILLOWISP) || (move == PBMoves::OVERHEAT) ||
