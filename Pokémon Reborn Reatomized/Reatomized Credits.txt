@@ -400,11 +400,16 @@ Sapphiada
 SilverTotodile
 Skylar
 Wolfry
+Habble
+jonokirby
 
 --Beta Testers--
 @jonokirby
 @thor192
 @l_ajmic_l
+
+--Multicore Contributors--
+Eggcav/manatine
 
 ----------------------------------------
 Big credits to @throwingtorre ( Torre ) for the Data mod and @kay.haru ( Haru ) for letting me steal, without asking, the Relearn function from their mod depot!
