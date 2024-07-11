@@ -1128,9 +1128,9 @@ class PokeBattle_Move
       if attacker.gender==opponent.gender
         damagemult=(damagemult*1.5).round
       end
-    elsif attacker.ability == PBAbilities::CLIMBER && attacker.weight<opponent.weight
+    elsif attacker.ability == PBAbilities::CLIMBER && attacker.height<opponent.height
       damagemult=(damagemult*1.5).round
-    elsif attacker.ability == PBAbilities::HIGHRISE && attacker.weight>opponent.weight
+    elsif attacker.ability == PBAbilities::HIGHRISE && attacker.height>opponent.height
       damagemult=(damagemult*1.5).round
     elsif (attacker.ability == PBAbilities::MEGALAUNCHER)
       if @id == PBMoves::AURASPHERE || @id == PBMoves::DRAGONPULSE || @id == PBMoves::DARKPULSE || @id == PBMoves::WATERPULSE || @id == PBMoves::ORIGINPULSE || @id == PBMoves::LASERPULSE || @id == PBMoves::PROTONBEAM || @id == PBMoves::GROUNDZERO || @id == PBMoves::TERRAINPULSE
