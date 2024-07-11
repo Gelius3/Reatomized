@@ -4720,7 +4720,8 @@ class PokeBattle_Battler
        thismove.target==PBTargets::OppositeOpposing
       for i in priority # use Pokémon latest in priority
         next if !pbIsOpposing?(i.index) || i.isFainted?
-        if i.effects[PBEffects::FollowMe] || i.effects[PBEffects::RagePowder]
+        if i.effects[PBEffects::FollowMe] || i.effects[PBEffects::RagePowder] || 
+	   (i.hasWorkingAbility(:DECOY) && !((i.pbPartner.hasWorkingAbility(:LIGHTNINGROD) && thismove.type == PBTypes::ELECTRIC) || (i.pbPartner.hasWorkingAbility(:STORMDRAIN) && thismove.type == PBTypes::WATER))) # Prioritize Lightning Rod and Storm Drain		
           unless (i.effects[PBEffects::RagePowder] && (self.ability == PBAbilities::OVERCOAT || self.pbHasType?(:GRASS) || self.hasWorkingItem(:SAFETYGOGGLES))) # change target to this
             target=i
             changeeffect = 0
