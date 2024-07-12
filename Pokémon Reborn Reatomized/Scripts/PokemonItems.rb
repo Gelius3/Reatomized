@@ -3157,7 +3157,7 @@ end
     when  PBSpecies::DECIDUEYE
       if pokemon.form==1
         if (move == PBMoves::SPITE) || (move == PBMoves::PHANTOMFORCE) || (move == PBMoves::SHADOWBALL) ||
-          (move == PBMoves::ACROBATICS) || (move == PBMoves::SOLARBLADE) || (moves == PBMoves::IMPRISON) ||
+          (move == PBMoves::ACROBATICS) || (move == PBMoves::SOLARBLADE) || (move == PBMoves::IMPRISON) ||
           (move == PBMoves::HEX) || (move == PBMoves::HURRICANE) || (move == PBMoves::POLTERGEIST) ||
           (move == PBMoves::SKITTERSMACK)
           return false
