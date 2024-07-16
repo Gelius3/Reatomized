@@ -806,7 +806,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
       end
     when PBSpecies::MAROWAK # Marowak
       if pokemon.form==0
-        if (move == PBMoves::RAINDANCE) || (move == PBMoves::THUNDERBOLT) || (move == PBMoves::FLAMEWHEEEL) ||
+        if (move == PBMoves::RAINDANCE) || (move == PBMoves::THUNDERBOLT) || (move == PBMoves::FLAMEWHEEL) ||
           (move == PBMoves::THUNDER) || (move == PBMoves::SHADOWBALL) || (move == PBMoves::FIRESPIN) ||
           (move == PBMoves::FLAMECHARGE) || (move == PBMoves::WILLOWISP) || (move == PBMoves::HEX) ||
           (move == PBMoves::DREAMEATER) || (move == PBMoves::DARKPULSE) || (move == PBMoves::FLAREBLITZ) ||
