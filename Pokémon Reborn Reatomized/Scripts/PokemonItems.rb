@@ -917,7 +917,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
       elsif pokemon.form==1
         if (move == PBMoves::SOLARBEAM) || (move == PBMoves::SOLARBLADE) || (move == PBMoves::TOXIC) ||
           (move == PBMoves::SUNNYDAY) || (move == PBMoves::HEATWAVE) || (move == PBMoves::INCINERATE) ||
-          (move == PBMoves::WILLOWISP) || (move == PBMoves::FLAMETHROWER) || (move == PBMoves::FLAMEWHEEEL) ||
+          (move == PBMoves::WILLOWISP) || (move == PBMoves::FLAMETHROWER) || (move == PBMoves::FLAMEWHEEL) ||
           (move == PBMoves::OVERHEAT)
           return false
         end
@@ -935,7 +935,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
         if (move == PBMoves::SOLARBEAM) || (move == PBMoves::SOLARBLADE) || (move == PBMoves::TOXIC) ||
           (move == PBMoves::SUNNYDAY) || (move == PBMoves::HEATWAVE) || (move == PBMoves::POISONJAB) ||
           (move == PBMoves::WILLOWISP) || (move == PBMoves::FLAMETHROWER) || (move == PBMoves::SCORCHINGSANDS) ||
-          (move == PBMoves::OVERHEAT) || (move == PBMoves::FLAMEWHEEEL) || (move == PBMoves::INCINERATE)
+          (move == PBMoves::OVERHEAT) || (move == PBMoves::FLAMEWHEEL) || (move == PBMoves::INCINERATE)
           return false
         end
       end
