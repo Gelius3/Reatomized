@@ -4312,11 +4312,6 @@ class PokeBattle_Battler
     itemname=PBItems.getName(self.item)
     #non-berries go first!
     hpcure=false if @effects[PBEffects::HealBlock]!=0
-    if self.hasWorkingAbility(:LUNCHBOX) && (!(thismove.pbIsPhysical?(thismove.type) || thismove.pbIsSpecial?(thismove.type)) || (!thismove.zmove && !flags[:instructed] && @battle.choices[self.index][2]!=thismove)) && hpcure && self.hp!=self.totalhp
-      pbRecoverHP((self.totalhp/4.0).floor,true)
-      @battle.pbDisplay(_INTL("{1}'s {2} snacked to restore its HP!",pbThis,itemname))
-      return
-    end
     if hpcure && (self.item == PBItems::LEFTOVERS || (self.item == PBItems::BLACKSLUDGE && pbHasType?(:POISON))) && self.hp!=self.totalhp
       pbRecoverHP((self.totalhp/16.0).floor,true)
       @battle.pbDisplay(_INTL("{1}'s {2} restored its HP a little!",pbThis,itemname))
