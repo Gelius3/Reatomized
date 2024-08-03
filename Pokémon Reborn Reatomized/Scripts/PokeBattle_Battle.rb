@@ -4745,6 +4745,11 @@ class PokeBattle_Battle
         hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
         pbDisplay(_INTL("{1} regenerated through Omnipotent!",i.pbThis)) if hpgain>0
       end
+      # Lunchbox
+      if i.ability == PBAbilities::LUNCHBOX && i.effects[PBEffects::HealBlock]==0 && i.effects[PBEffects::TwoTurnAttack]==0 && @choices[i.index][0]==1 && @choices[i.index][2].basedamage==0
+        hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
+        pbDisplay(_INTL("{1} snacked on its lunch to recover HP!",i.pbThis)) if hpgain>0
+      end
       # Rain Dish
       if i.ability == PBAbilities::RAINDISH && (pbWeather==PBWeather::RAINDANCE && !i.hasWorkingItem(:UTILITYUMBRELLA)) && i.effects[PBEffects::HealBlock]==0
         hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
