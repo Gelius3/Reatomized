@@ -3977,6 +3977,11 @@ class PokeBattle_Battler
           target.pbPoison(user,true)
           @battle.pbDisplay(_INTL("{1}'s {2} badly poisoned {3}!",user.pbThis, PBAbilities.getName(user.ability),target.pbThis(true)))
         end
+        # Daze
+        if user.hasWorkingAbility(:DAZE,true) && ((!target.hasWorkingAbility(:SHIELDDUST) || target.moldbroken) && !target.hasWorkingItem(:COVERTCLOAK)) && target.pbCanSleep?(false) && @battle.pbRandom(20)<3
+          target.pbSleep
+          @battle.pbDisplay(_INTL("{1}'s {2} put {3} to sleep!",user.pbThis, PBAbilities.getName(user.ability),target.pbThis(true)))
+        end
       end
 
       # Cotton Down
