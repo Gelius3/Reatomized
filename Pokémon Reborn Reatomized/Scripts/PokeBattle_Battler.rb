@@ -5187,6 +5187,15 @@ class PokeBattle_Battler
         return false
       end
     end
+    if ((target.ability == PBAbilities::PARRY) && !(target.moldbroken) && thismove.isContactMove? && !(user.hasWorkingAbility(:LONGREACH)) && !(user.hasWorkingItem(:PROTECTIVEPADS)))
+      parrydamage=(user.totalhp*0.2).round
+      parrydamage=user.hp if parrydamage>user.hp
+      @battle.pbDisplay(_INTL("{1} parried {2}'s attack!",target.pbThis,user.pbThis))
+      #@battle.pbDisplay(_INTL("{1}",parrydamage)) #for easy access to see the damage being dealt
+      user.hp-=parrydamage
+      return false
+      #! to clean up and add animations!!! current method is still a placeholder, just slightly improved
+    end
     return true
   end
 
