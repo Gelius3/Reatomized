@@ -1954,7 +1954,7 @@ PBSpecies::KINGAMBIT => {
 	"Female" => {
 		:BaseStats => [100,135,50,120,60,85],
 		:Ability => [PBAbilities::KEENEYE,PBAbilities::INFILTRATOR,PBAbilities::COMPETITIVE,
-			PBAbilities::SHARPNESS,PBAbilities::SHACKLE]
+			PBAbilities::SHARPNESS,PBAbilities::SHACKLE,PBAbilities::PARRY]
 	}
 },
 
@@ -3618,7 +3618,7 @@ PBSpecies::SNEASEL => {
 		:Type1 => PBTypes::FIGHTING,
 		:Type2 => PBTypes::POISON,
 		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::KEENEYE,PBAbilities::SHARPNESS,
-			PBAbilities::PICKPOCKET,PBAbilities::HIGHRISE,PBAbilities::POISONTOUCH],
+			PBAbilities::DODGE,PBAbilities::PICKPOCKET,PBAbilities::HIGHRISE,PBAbilities::POISONTOUCH],
 		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[1,PBMoves::TAUNT],[6,PBMoves::ROCKSMASH],
 			[8,PBMoves::QUICKATTACK],[11,PBMoves::METALCLAW],[18,PBMoves::SWIFT],[24,PBMoves::SCREECH],
 			[30,PBMoves::SLASH],[34,PBMoves::HONECLAWS],[36,PBMoves::POISONJAB],[42,PBMoves::AGILITY],
@@ -3633,7 +3633,7 @@ PBSpecies::SNEASEL => {
 		:Type1 => PBTypes::FIGHTING,
 		:Type2 => PBTypes::NUCLEAR,
 		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::KEENEYE,PBAbilities::SHARPNESS,
-		PBAbilities::PICKPOCKET,PBAbilities::HIGHRISE,PBAbilities::POISONTOUCH],
+			PBAbilities::DODGE,PBAbilities::PICKPOCKET,PBAbilities::HIGHRISE,PBAbilities::POISONTOUCH],
 		:Movelist => [[1,PBMoves::NUCLEARSLASH],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[1,PBMoves::TAUNT],
 			[6,PBMoves::ROCKSMASH],[8,PBMoves::QUICKATTACK],[11,PBMoves::METALCLAW],[18,PBMoves::SWIFT],
 			[24,PBMoves::SCREECH],[30,PBMoves::SLASH],[34,PBMoves::HONECLAWS],[36,PBMoves::POISONJAB],
