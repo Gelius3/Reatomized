@@ -5187,7 +5187,7 @@ class PokeBattle_Battler
         return false
       end
     end
-    if ((target.ability == PBAbilities::PARRY) && !(target.moldbroken) && thismove.isContactMove? && !(user.hasWorkingAbility(:LONGREACH)) && !(user.hasWorkingItem(:PROTECTIVEPADS)))
+    if ((target.ability == PBAbilities::PARRY) && !(target.moldbroken) && thismove.isContactMove? && !(user.hasWorkingAbility(:LONGREACH)) && !(user.hasWorkingItem(:PROTECTIVEPADS)) && @battle.pbRandom(10)<3)
       parrydamage=(user.totalhp*0.2).round
       parrydamage=user.hp if parrydamage>user.hp
       @battle.pbDisplay(_INTL("{1} parried {2}'s attack!",target.pbThis,user.pbThis))
