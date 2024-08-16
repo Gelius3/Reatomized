@@ -2725,8 +2725,7 @@ class PokeBattle_Battler
       end
     end
     # Sequence
-    if self.ability == PBAbilities::SEQUENCE && onactive
-      if self.pbElectricPokemonCount > 0
+    if self.ability == PBAbilities::SEQUENCE && onactive && self.pbElectricPokemonCount > 0
         self.effects[PBEffects::Sequence] = self.pbElectricPokemonCount
         @battle.pbDisplay(_INTL("{1} was amped up by the allies!", pbThis))
       end
