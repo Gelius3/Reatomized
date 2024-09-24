@@ -1186,7 +1186,8 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("{1} is freed from Sky Drop effect!",oppmon.pbThis))
     end
     # Activate Hero & Last Bastion if the fainting party member is the last required one
-    if self.pbPartner.ability == PBAbilities::HERO && (((self.pbPartner.pbPartyPokemonCount/2.0).round)<=self.pbPartner.pbFaintedPokemonCount) && self.pbPartner.effects[PBEffects::Hero]==false
+    if self.pbPartner.ability == PBAbilities::HERO && (((self.pbPartner.pbPartyPokemonCount/2.0).round)<=self.pbPartner.pbFaintedPokemonCount) && self.pbPartner.effects[PBEffects::Hero]==false &&
+       !(self.pbPartner.pbTooHigh?(PBStats:ATTACK) && self.pbPartner.pbTooHigh?(PBStats:DEFENSE) && self.pbPartner.pbTooHigh?(PBStats:SPATK) && self.pbPartner.pbTooHigh?(PBStats:SPDEF))
       self.pbPartner.pbIncreaseStatBasic(PBStats::ATTACK,1)
       self.pbPartner.pbIncreaseStatBasic(PBStats::DEFENSE,1)
       self.pbPartner.pbIncreaseStatBasic(PBStats::SPATK,1)
@@ -1195,7 +1196,8 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("{2} {1} raised its offenses and defenses!",self.pbPartner.pbThis,PBAbilities.getName(ability)))
       self.pbPartner.effects[PBEffects::Hero]=true
     end
-    if self.pbPartner.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.pbPartner.effects[PBEffects::LastBastion]==false
+    if self.pbPartner.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.pbPartner.effects[PBEffects::LastBastion]==false &&
+       !(self.pbPartner.pbTooHigh?(PBStats:ATTACK) && self.pbPartner.pbTooHigh?(PBStats:DEFENSE) && self.pbPartner.pbTooHigh?(PBStats:SPATK) && self.pbPartner.pbTooHigh?(PBStats:SPDEF))
       self.pbPartner.pbIncreaseStatBasic(PBStats::ATTACK,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::DEFENSE,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::SPATK,2)
@@ -2763,7 +2765,8 @@ class PokeBattle_Battler
       end
     end
     # Hero
-    if self.ability == PBAbilities::HERO && (((self.pbPartyPokemonCount/2.0).ceiling)<=self.pbFaintedPokemonCount)  && self.effects[PBEffects::Hero]==false && onactive
+    if self.ability == PBAbilities::HERO && (((self.pbPartyPokemonCount/2.0).ceiling)<=self.pbFaintedPokemonCount)  && self.effects[PBEffects::Hero]==false && onactive &&
+       !(self.pbTooHigh?(PBStats:ATTACK) && self.pbTooHigh?(PBStats:DEFENSE) && self.pbTooHigh?(PBStats:SPATK) && self.pbTooHigh?(PBStats:SPDEF))
       pbIncreaseStatBasic(PBStats::ATTACK,1)
       pbIncreaseStatBasic(PBStats::DEFENSE,1)
       pbIncreaseStatBasic(PBStats::SPATK,1)
@@ -2773,7 +2776,8 @@ class PokeBattle_Battler
       self.effects[PBEffects::Hero]=true
     end
     # Last Bastion
-    if self.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.effects[PBEffects::LastBastion]==false && onactive
+    if self.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.effects[PBEffects::LastBastion]==false && onactive &&
+       !(self.pbTooHigh?(PBStats:ATTACK) && self.pbTooHigh?(PBStats:DEFENSE) && self.pbTooHigh?(PBStats:SPATK) && self.pbTooHigh?(PBStats:SPDEF))
       pbIncreaseStatBasic(PBStats::ATTACK,2)
       pbIncreaseStatBasic(PBStats::DEFENSE,2)
       pbIncreaseStatBasic(PBStats::SPATK,2)
