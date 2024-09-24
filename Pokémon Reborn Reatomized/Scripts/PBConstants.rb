@@ -213,6 +213,7 @@ class PBEffects
   Sturdiness         = 168
   Hero               = 169
   LastBastion        = 170
+  Conqueror          = 171
 
   # These effects apply to a side
   LightScreen   = 200
