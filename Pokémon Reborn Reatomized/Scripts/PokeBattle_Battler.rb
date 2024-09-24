@@ -658,6 +658,8 @@ class PokeBattle_Battler
     @effects[PBEffects::Disenchant]       = false
     @effects[PBEffects::SupremeOverlord]  = 0
     @effects[PBEffects::Sequence]         = 0
+    @effects[PBEffects::Hero]             = false
+    @effects[PBEffects::LastBastion]      = false
     @effects[PBEffects::Commander]        = false
     @effects[PBEffects::Commandee]        = false
     @effects[PBEffects::CudChew]          = []
@@ -1183,14 +1185,24 @@ class PokeBattle_Battler
       @battle.scene.pbUnVanishSprite(oppmon)
       @battle.pbDisplay(_INTL("{1} is freed from Sky Drop effect!",oppmon.pbThis))
     end
-    # Activate Last Bastion if the fainting partner is the last ally
-    if self.pbPartner.ability == PBAbilities::LASTBASTION && self.pbPartner.pbRemainingAllyPokemonCount==0
-      @battle.pbDisplay(_INTL("{1}'s {2} sharply raised its offenses and defenses!",self.pbPartner.pbThis,PBAbilities.getName(ability)))
+    # Activate Hero & Last Bastion if the fainting party member is the last required one
+    if self.pbPartner.ability == PBAbilities::HERO && (((self.pbPartner.pbPartyPokemonCount/2.0).round)<=self.pbPartner.pbFaintedPokemonCount) && self.pbPartner.effects[PBEffects::Hero]==false
+      self.pbPartner.pbIncreaseStatBasic(PBStats::ATTACK,1)
+      self.pbPartner.pbIncreaseStatBasic(PBStats::DEFENSE,1)
+      self.pbPartner.pbIncreaseStatBasic(PBStats::SPATK,1)
+      self.pbPartner.pbIncreaseStatBasic(PBStats::SPDEF,1)
+      @battle.pbCommonAnimation("StatUp",self.pbPartner,nil)
+      @battle.pbDisplay(_INTL("{2} {1} raised its offenses and defenses!",self.pbPartner.pbThis,PBAbilities.getName(ability)))
+      self.pbPartner.effects[PBEffects::Hero]=true
+    end
+    if self.pbPartner.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.pbPartner.effects[PBEffects::LastBastion]==false
       self.pbPartner.pbIncreaseStatBasic(PBStats::ATTACK,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::DEFENSE,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::SPATK,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::SPDEF,2)
       @battle.pbCommonAnimation("StatUp",self.pbPartner,nil)
+      @battle.pbDisplay(_INTL("{2} {1} raised its offenses and defenses!",self.pbPartner.pbThis,PBAbilities.getName(ability)))
+      self.pbPartner.effects[PBEffects::LastBastion]=true
     end
     # set ace message flag
     if (self.index==1 || self.index==3) && !@battle.pbIsWild? && !@battle.opponent.is_a?(Array) && @battle.pbPokemonCount(@battle.party2)==1 && !@battle.ace_message_handled
@@ -1253,7 +1265,7 @@ class PokeBattle_Battler
     return count
   end
 
-  def pbFaintedPokemonCount() #Used for Supreme Overlord ability
+  def pbFaintedPokemonCount() #Used for Supreme Overlord, Hero & Last Bastion ability
     faints=0
     party=@battle.pbPartySingleOwner(self.index)
     for i in 0...party.length
@@ -1264,7 +1276,18 @@ class PokeBattle_Battler
     return faints
   end
 
-  def pbElectricPokemonCount() #Used for Sequence ability
+  def pbPartyPokemonCount() #Used for Hero & Last Bastion ability
+    partyMembers=0
+    party=@battle.pbPartySingleOwner(self.index)
+    for i in 0...party.length
+      if party[i] && !party[i].isEgg?
+        partyMembers+=1
+      end
+    end
+    return partyMembers
+  end
+
+  def pbElectricPokemonCount() # Used for Sequence ability
     electrics=0
     party=@battle.pbPartySingleOwner(self.index)
     for i in 0...party.length
@@ -1273,17 +1296,6 @@ class PokeBattle_Battler
       end
     end
     return electrics
-  end
-	
-  def pbRemainingAllyPokemonCount() #Used for Last Bastion ability
-    remainingAllies=0
-    party=@battle.pbParty(self.index)
-    for i in 0...party.length
-      if i!=self.pokemonIndex && party[i] && !party[i].isEgg? && party[i].hp>0
-        remainingAllies+=1
-      end
-    end
-    return remainingAllies
   end
 
 ################################################################################
@@ -2750,14 +2762,25 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("{1} was amped up by the allies!", pbThis))
       end
     end
+    # Hero
+    if self.ability == PBAbilities::HERO && (((self.pbPartyPokemonCount/2.0).ceiling)<=self.pbFaintedPokemonCount)  && self.effects[PBEffects::Hero]==false && onactive
+      pbIncreaseStatBasic(PBStats::ATTACK,1)
+      pbIncreaseStatBasic(PBStats::DEFENSE,1)
+      pbIncreaseStatBasic(PBStats::SPATK,1)
+      pbIncreaseStatBasic(PBStats::SPDEF,1)
+      @battle.pbCommonAnimation("StatUp",self,nil)
+      @battle.pbDisplay(_INTL("{2} {1} raised its offenses and defenses!",pbThis,PBAbilities.getName(ability)))
+      self.effects[PBEffects::Hero]=true
+    end
     # Last Bastion
-    if self.ability == PBAbilities::LASTBASTION && self.pbRemainingAllyPokemonCount==0 && onactive
-      @battle.pbDisplay(_INTL("{1}'s {2} sharply raised its offenses and defenses!",pbThis,PBAbilities.getName(ability)))
+    if self.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.effects[PBEffects::LastBastion]==false && onactive
       pbIncreaseStatBasic(PBStats::ATTACK,2)
       pbIncreaseStatBasic(PBStats::DEFENSE,2)
       pbIncreaseStatBasic(PBStats::SPATK,2)
       pbIncreaseStatBasic(PBStats::SPDEF,2)
       @battle.pbCommonAnimation("StatUp",self,nil)
+      @battle.pbDisplay(_INTL("{2} {1} raised its offenses and defenses!",pbThis,PBAbilities.getName(ability)))
+      self.effects[PBEffects::LastBastion]=true
     end
     # Water Veil (Custom)
     if self.ability == PBAbilities::WATERVEIL && onactive
