@@ -660,6 +660,7 @@ class PokeBattle_Battler
     @effects[PBEffects::Sequence]         = 0
     @effects[PBEffects::Hero]             = false
     @effects[PBEffects::LastBastion]      = false
+    @effects[PBEffects::Conqueror]        = 0
     @effects[PBEffects::Commander]        = false
     @effects[PBEffects::Commandee]        = false
     @effects[PBEffects::CudChew]          = []
@@ -5932,6 +5933,16 @@ class PokeBattle_Battler
             user.pbIncreaseStatBasic(PBStats::SPATK,1)
             @battle.pbDisplay(_INTL("{1}'s Grim Neigh raised its Special Attack!",user.pbThis))
           end
+      elsif (user.hasWorkingAbility(:CONQUEROR)) && user.hp>0 && user.effects[PBEffects::Conqueror]<=2
+        if !(user.pbTooHigh?(PBStats::ATTACK) && user.pbTooHigh?(PBStats::DEFENSE) && user.pbTooHigh?(PBStats::SPATK) && user.pbTooHigh?(PBStats::SPDEF) && user.pbTooHigh?(PBStats::SPEED))
+          pbIncreaseStatBasic(PBStats::ATTACK,1)
+          pbIncreaseStatBasic(PBStats::DEFENSE,1)
+          pbIncreaseStatBasic(PBStats::SPATK,1)
+          pbIncreaseStatBasic(PBStats::SPDEF,1)
+          pbIncreaseStatBasic(PBStats::SPEED,1)
+          @battle.pbCommonAnimation("StatUp",user,nil)
+          @battle.pbDisplay(_INTL("{1}'s {2} raised its offenses and defenses!",pbThis,PBAbilities.getName(ability)))
+          user.effects[PBEffects::Conqueror]+=1
         end
       end
     end
