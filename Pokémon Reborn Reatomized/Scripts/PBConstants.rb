@@ -211,6 +211,8 @@ class PBEffects
   Sequence           = 166
   Reincarnation      = 167 # Cosmic Reincarnation
   Sturdiness         = 168
+  Hero               = 169
+  LastBastion        = 170
 
   # These effects apply to a side
   LightScreen   = 200
