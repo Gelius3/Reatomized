@@ -340,6 +340,7 @@ class PokeBattle_Battle
   attr_accessor(:ultraBurst)      # Battle index of each trainer's Pokémon to Ultra Burst
   attr_accessor(:necrozmaVar)     # Store the form Necrozma was in initially if it bursts
   attr_accessor(:amuletcoin)      # Whether Amulet Coin's effect applies
+  attr_accessor(:fortune)         # Whether Fortune ability's effect applies
   attr_accessor(:extramoney)      # Money gained in battle by using Pay Day
   attr_accessor(:endspeech)       # Speech by opponent when player wins
   attr_accessor(:endspeech2)      # Speech by opponent when player wins
@@ -480,6 +481,7 @@ class PokeBattle_Battle
       @zMove[1]=[-1]
     end
     @amuletcoin      = false
+    @fortune         = false
     @switchedOut     = []
     @extramoney      = 0
     @ace_message     = false
@@ -2971,6 +2973,7 @@ class PokeBattle_Battle
     for i in 0...4 # Currently unfainted participants will earn EXP even if they faint afterwards
       @battlers[i].pbUpdateParticipants if pbIsOpposing?(i)
       @amuletcoin=true if !pbIsOpposing?(i) && ((@battlers[i].item == PBItems::AMULETCOIN) || (@battlers[i].item == PBItems::LUCKINCENSE))
+      @fortune=true if !pbIsOpposing?(i) && (@battlers[i].ability == PBAbilities::FORTUNE)
     end
 
     # Shadow Pokemon
@@ -3005,6 +3008,7 @@ class PokeBattle_Battle
       for i in 0...4 # Currently unfainted participants will earn EXP even if they faint afterwards
         @battlers[i].pbUpdateParticipants if pbIsOpposing?(i)
         @amuletcoin=true if !pbIsOpposing?(i) && ((@battlers[i].item == PBItems::AMULETCOIN) || (@battlers[i].item == PBItems::LUCKINCENSE))
+        @fortune=true if !pbIsOpposing?(i) && (@battlers[i].ability == PBAbilities::FORTUNE)
       end
       # Chess Field piece boosts
       if @field.effect == PBFields::CHESSB
@@ -5966,6 +5970,7 @@ class PokeBattle_Battle
           badgemultiplier = (1+(self.pbPlayer.numbadges/3)).floor
           tmoney*=badgemultiplier
           tmoney*=2 if @amuletcoin
+          tmoney*=2 if @fortune
           tmoney*=2 if  $game_switches[:Moneybags]==true
           if $game_switches[:Grinding_Trainer_Money_Cut]==true || $game_switches[:Penniless_Mode] == true #grinding trainers
             tmoney*=0.33
@@ -5981,6 +5986,7 @@ class PokeBattle_Battle
       end
       if @internalbattle && @extramoney>0
         @extramoney*=2 if @amuletcoin
+        @extramoney*=2 if @fortune
         oldmoney=self.pbPlayer.money
         self.pbPlayer.money+=@extramoney
         moneygained=self.pbPlayer.money-oldmoney
