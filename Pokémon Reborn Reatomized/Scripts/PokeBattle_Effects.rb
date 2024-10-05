@@ -394,7 +394,7 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("Misty Terrain prevents {1} from being inflicted by status!",pbThis)) if showMessages
       return false
     end
-    if @battle.FE == PBFields::DRAGONSD && hasWorkingItem(:AMULETCOIN) # Dragon's Den
+    if @battle.FE == PBFields::DRAGONSD && (hasWorkingItem(:AMULETCOIN) || hasWorkingAbility(:FORTUNE)) # Dragon's Den
       @battle.pbDisplay(_INTL("{1}'s {2} prevents it from being inflicted by status on Dragon's Den!",pbThis,PBItems.getName(self.item))) if showMessages
       return false
     end
