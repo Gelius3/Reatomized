@@ -4802,6 +4802,14 @@ class PokeBattle_Battle
         hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
         pbDisplay(_INTL("{1}'s Ice Body restored its HP a little!",i.pbThis)) if hpgain>0
       end
+      # Power Nap
+      if i.ability == PBAbilities::POWERNAP && i.hp<=(i.totalhp/4.0).floor && i.effects[PBEffects::PowerNap]==false && 
+         (i.pbCanSleep?(true,true,true) || !(i.status==PBStatuses::SLEEP))
+        i.pbSleepSelf(3)
+        @battle.pbDisplay(_INTL("{1} took a Power Nap!",i.pbThis))
+        hp=i.pbRecoverHP(i.totalhp-i.hp,true)
+        i.effects[PBEffects::PowerNap]=true
+      end
       if i.isFainted?
         return if !i.pbFaint
         next
