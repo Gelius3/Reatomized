@@ -4749,6 +4749,14 @@ class PokeBattle_Battle
         hpgain=i.pbRecoverHP((i.totalhp/16.0).floor,true)
         pbDisplay(_INTL("{1} regenerated through Omnipotent!",i.pbThis)) if hpgain>0
       end
+      # Medic
+      if i.ability == PBAbilities::MEDIC && i.pbPartner.effects[PBEffects::HealBlock]==0
+        if i.pbPartner.hp != i.pbPartner.totalhp && !i.pbPartner.isFainted?
+          hpgain=((i.pbPartner.totalhp)/16.0).floor
+          i.pbPartner.pbRecoverHP(hpgain,true)
+          @battle.pbDisplay(_INTL("{1} used a first aid kit on {2}!",i.pbThis,i.pbPartner.pbThis)) if hpgain>0
+        end
+      end
       # Lunchbox
       if i.ability == PBAbilities::LUNCHBOX && i.effects[PBEffects::HealBlock]==0 && i.effects[PBEffects::TwoTurnAttack]==0 && @choices[i.index][0]==1 && @choices[i.index][2].basedamage==0
         hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
