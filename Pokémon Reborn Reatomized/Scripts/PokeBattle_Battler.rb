@@ -665,6 +665,7 @@ class PokeBattle_Battler
     @effects[PBEffects::Commandee]        = false
     @effects[PBEffects::CudChew]          = []
     @effects[PBEffects::ParadoxBoost]     = []
+    @effects[PBEffects::PowerNap]         = false
     for i in 0...4
       next if !@battle.battlers[i] || fakebattler
       if @battle.battlers[i].effects[PBEffects::MultiTurnUser]==@index
@@ -2535,6 +2536,14 @@ class PokeBattle_Battler
         pbSleepSelf(3)
         @battle.pbDisplay(_INTL("Lazy made {1} sleep!",pbThis(true)))
       end
+    end
+    # Power Nap
+    if self.ability == PBAbilities::POWERNAP && onactive && (@battle.FE != PBFields::ELECTRICT) && self.hp<=(self.totalhp/4.0).floor && 
+       (self.pbCanSleep?(true,true,true) || !(self.status==PBStatuses::SLEEP))
+      pbSleepSelf(3)
+      @battle.pbDisplay(_INTL("{1} took a Power Nap!",self.pbThis))
+      hp=self.pbRecoverHP(self.totalhp-self.hp,true)
+      self.effects[PBEffects::PowerNap]=true
     end
     # Download
     if self.ability == PBAbilities::DOWNLOAD && onactive
@@ -5493,6 +5502,9 @@ class PokeBattle_Battler
     if target
       aboveHalfHp = target.hp>(target.totalhp/2.0).floor
     end
+    if target
+      aboveQuarterHp = target.hp>(target.totalhp/4.0).floor
+    end
 
     for i in 0...numhits
       if user.status==PBStatuses::SLEEP && !thismove.pbCanUseWhileAsleep? && !@simplemove
@@ -5746,6 +5758,15 @@ class PokeBattle_Battler
               user.userSwitch=false
             end
           end
+        end
+      end
+      # Power Nap
+      if !target.isFainted? && aboveQuarterHp && target.hp<=(target.totalhp/4.0).floor && target.effects[PBEffects::PowerNap]==false
+        if (target.abilityWorks? && (target.ability == PBAbilities::POWERNAP)) && (target.pbCanSleep?(true,true,true) || !(target.status==PBStatuses::SLEEP))
+          target.pbSleepSelf(3)
+          @battle.pbDisplay(_INTL("{1} took a Power Nap!",target.pbThis))
+          hp=target.pbRecoverHP(target.totalhp-target.hp,true)
+          target.effects[PBEffects::PowerNap]=true
         end
       end
       # Grudge
