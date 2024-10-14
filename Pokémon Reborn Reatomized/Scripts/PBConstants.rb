@@ -215,6 +215,7 @@ class PBEffects
   LastBastion        = 170
   Conqueror          = 171
   PowerNap           = 172
+  Tenacity           = 173
 
   # These effects apply to a side
   LightScreen   = 200
