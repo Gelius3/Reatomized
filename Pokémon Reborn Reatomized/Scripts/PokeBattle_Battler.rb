@@ -562,6 +562,7 @@ class PokeBattle_Battler
     @effects[PBEffects::FairyLockRate]    = false
     @effects[PBEffects::FlashFire]        = false
     @effects[PBEffects::Flinch]           = false
+    @effects[PBEffects::Tenacity]         = false
     @effects[PBEffects::FollowMe]         = false
     @effects[PBEffects::RagePowder]       = false
     @effects[PBEffects::Foresight]        = false
@@ -3593,6 +3594,13 @@ class PokeBattle_Battler
             user.pbReduceHP((user.totalhp/8.0).floor)
             @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!",target.pbThis, PBAbilities.getName(target.ability),user.pbThis(true)))
           end
+          # Tenacity
+          if target.ability == PBAbilities::TENACITY && !user.isFainted? && !user.hasWorkingAbility(:INNERFOCUS) && @battle.pbRandom(10)<2
+            # maybe animation here
+            user.effects[PBEffects::Flinch]=true
+            user.effects[PBEffects::Tenacity]=true
+            @battle.pbDisplay(_INTL("{1}'s {2} will flinch {3} next turn!",target.pbThis, PBAbilities.getName(target.ability),user.pbThis(true)))
+          end
           eschance = 3
           eschance = 6 if (@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::ELECTRICT)
           eschance.to_i
@@ -5394,6 +5402,7 @@ class PokeBattle_Battler
         end
         return false
       end
+      self.effects[PBEffects::Tenacity]=false
     end
 
     if @effects[PBEffects::Confusion]>0 && !@simplemove
