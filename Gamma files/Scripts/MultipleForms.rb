@@ -398,7 +398,7 @@ PBSpecies::DARMANITAN => {
 		:DexEntry => "Though it has a gentle disposition, it's also very strong. It will quickly freeze the snowball on its head before going for a headbutt.",
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::ICE,
-		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::HERO,PBAbilities::ZENMODE],
+		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::CONQUEROR,PBAbilities::HERO,PBAbilities::ZENMODE],
 		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[4,PBMoves::TAUNT],[8,PBMoves::BITE],
 		[12,PBMoves::HEADBUTT],[16,PBMoves::AVALANCHE],[20,PBMoves::WORKUP],[24,PBMoves::ICEFANG],
 		[28,PBMoves::UPROAR],[32,PBMoves::BELLYDRUM],[36,PBMoves::ICEPUNCH],[40,PBMoves::THRASH],
@@ -3456,7 +3456,7 @@ PBSpecies::GROWLITHE => {
 	"Hisui" => {
 		:DexEntry => "They patrol their territory in pairs. I believe the igneous rock components in the fur of this species are the result of volcanic activity in its habitat.",
 		:Type2 => PBTypes::ROCK,
-		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD,PBAbilities::JUSTIFIED],
+		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD,PBAbilities::ROCKHEAD,PBAbilities::JUSTIFIED],
 		:BaseStats => [60,75,45,55,65,50],
 		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[1,PBMoves::EMBER],[4,PBMoves::HOWL],[8,PBMoves::BITE],
 			[12,PBMoves::FLAMEWHEEL],[16,PBMoves::HELPINGHAND],[20,PBMoves::ROCKTHROW],[24,PBMoves::FIREFANG],
@@ -3487,7 +3487,7 @@ PBSpecies::ARCANINE => {
 	"Hisui" => {
 		:DexEntry => "Despite its bulk, it deftly feints every which way, leading opponents on a deceptively merry chase as it all but dances around them.",
 		:Type2 => PBTypes::ROCK,
-		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD,PBAbilities::JUSTIFIED],
+		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD,PBAbilities::CONQUEROR,PBAbilities::JUSTIFIED],
 		:BaseStats => [95,115,80,90,95,80],
 		:Movelist => [[0,PBMoves::EXTREMESPEED],[1,PBMoves::AGILITY],[1,PBMoves::EXTREMESPEED],[1,PBMoves::TACKLE],
 			[1,PBMoves::LEER],[1,PBMoves::EMBER],[4,PBMoves::HOWL],[8,PBMoves::BITE],[12,PBMoves::FLAMEWHEEL],
@@ -3749,7 +3749,7 @@ PBSpecies::SAMUROTT => {
 	"Hisui" => {
 		:DexEntry => "Hard of heart and deft of blade, this rare form of Samurott is a product of the Pokémon's evolution in the region of Hisui. Its turbulent blows crash into foes like ceaseless pounding waves.",
 		:Type2 => PBTypes::DARK,
-		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::AQUABOOST,PBAbilities::SHARPNESS],
+		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::AQUABOOST,PBAbilities::SWIFTSWIM,PBAbilities::CONQUEROR,PBAbilities::SHARPNESS],
 		:BaseStats => [90,108,80,85,100,65],
 		:Movelist => [[0,PBMoves::CEASELESSEDGE],[1,PBMoves::PSYCHOCUT],[1,PBMoves::POISONJAB],
 			[1,PBMoves::SACREDSWORD],[1,PBMoves::AQUACUTTER],[1,PBMoves::CEASELESSEDGE],
