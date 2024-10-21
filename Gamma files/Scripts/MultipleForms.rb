@@ -398,7 +398,7 @@ PBSpecies::DARMANITAN => {
 		:DexEntry => "Though it has a gentle disposition, it's also very strong. It will quickly freeze the snowball on its head before going for a headbutt.",
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::ICE,
-		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::ZENMODE],
+		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::HERO,PBAbilities::ZENMODE],
 		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[4,PBMoves::TAUNT],[8,PBMoves::BITE],
 		[12,PBMoves::HEADBUTT],[16,PBMoves::AVALANCHE],[20,PBMoves::WORKUP],[24,PBMoves::ICEFANG],
 		[28,PBMoves::UPROAR],[32,PBMoves::BELLYDRUM],[36,PBMoves::ICEPUNCH],[40,PBMoves::THRASH],
@@ -3884,7 +3884,7 @@ PBSpecies::BRAVIARY => {
 		:DexEntry => "Screaming a bloodcurdling battle cry, this huge and ferocious bird Pokémon goes out on the hunt. It blasts lakes with shock waves, then scoops up any prey that float to the water's surface.",
 		:Type1 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,0,2,0],
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::PRIDE,PBAbilities::TINTEDLENS],
+		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::PRIDE,PBAbilities::HERO,PBAbilities::TINTEDLENS],
 		:BaseStats => [110,57,70,70,123,80], #Canon: [110,83,70,65,112,70]
 		:Movelist => [[0,PBMoves::ESPERWING],[1,PBMoves::MYSTICALFIRE],[1,PBMoves::OMINOUSWIND],
 			[1,PBMoves::SUPERPOWER],[1,PBMoves::POUNCE],[1,PBMoves::PSYWAVE],[1,PBMoves::ESPERWING],
