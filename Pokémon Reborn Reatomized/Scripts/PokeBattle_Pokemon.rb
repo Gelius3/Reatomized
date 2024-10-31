@@ -21,6 +21,7 @@ class PokeBattle_Pokemon
   attr_accessor(:itemInitial) # Resulting held item (used in battle only)
   attr_accessor(:itemReallyInitialHonestlyIMeanItThisTime) # Original held item (used in battle only)
   attr_accessor(:belch)       # If pokemon has used belch this battle (used in battle only)
+  attr_accessor(:spirit)      # If pokemon has exhausted Spirit ability this battle (used in battle only)
   attr_accessor(:piece)       # Piece roll given for Chess field
   attr_accessor(:mail)        # Mail
   attr_accessor(:fused)       # The Pokémon fused into this one
