@@ -523,18 +523,20 @@ class PokeBattle_Battle
       i.itemInitial = i.item
       i.itemReallyInitialHonestlyIMeanItThisTime = i.item
       i.belch       = false
-      i.corrosiveGas=false
+      i.corrosiveGas= false
       i.piece       = nil
       i.landCritical=0
+      i.spirit      = false # Pokemon Conquest ability
     end
     for i in @party2
       next if !i
       i.itemRecycle = 0
       i.itemInitial = i.item
       i.belch       = false
-      i.corrosiveGas=false
+      i.corrosiveGas= false
       i.piece       = nil
       i.landCritical=0
+      i.spirit      = false # Pokemon Conquest ability
     end
     #### YUMIL - 6 - NPC REACTION MOD - START  
     if @recorded == true
