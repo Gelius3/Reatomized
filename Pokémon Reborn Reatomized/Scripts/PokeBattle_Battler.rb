@@ -5778,6 +5778,24 @@ class PokeBattle_Battler
           target.effects[PBEffects::PowerNap]=true
         end
       end
+      # Spirit
+      if !target.isFainted? && aboveQuarterHp && (target.hp<=(target.totalhp/4.0).floor) && target.pokemon.spirit==false
+        if (target.abilityWorks? && (target.ability == PBAbilities::SPIRIT))
+          hp=target.pbRecoverHP((target.totalhp/2.0).floor,true) if target.effects[PBEffects::HealBlock]==0
+          if !pbTooHigh?(PBStats::ATTACK)
+            target.pbIncreaseStatBasic(PBStats::ATTACK,1)
+            @battle.pbCommonAnimation("StatUp",target,nil)
+            spiritAtkCheck=true
+          end
+          if !pbTooHigh?(PBStats::SPATK)
+            target.pbIncreaseStatBasic(PBStats::SPATK,1)
+            @battle.pbCommonAnimation("StatUp",target,nil)
+            spiritSpAtkCheck=true
+          end
+          target.pokemon.spirit=true if (spiritAtkCheck || spiritSpAtkCheck || target.effects[PBEffects::HealBlock]==0)
+          #@battle.pbDisplay(_INTL("{1}!",target.pbThis)) if target.pokemon.spirit==true ## add ability activation text here Idk
+        end
+      end
       # Grudge
       if !user.isFainted? && target.isFainted?
         if target.effects[PBEffects::Grudge] && target.pbIsOpposing?(user.index)
