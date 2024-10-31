@@ -5273,6 +5273,15 @@ class PokeBattle_Battle
         end
       end
     end
+    # Lullaby
+    for i in priority
+      next if i.isFainted?
+      if (i.pbOpposing1.hasWorkingAbility(:LULLABY) || i.pbOpposing2.hasWorkingAbility(:LULLABY)) && pbRandom(10)>1 && i.pbCanSleep?(false,false,false)
+        i.pbSleep
+        pbDisplay(_INTL("A lullaby made {1} fall asleep!",i.pbThis))
+        i.pbBerryCureCheck
+      end
+    end
     # Perish Song
     perishSongUsers=[]
     for i in priority
