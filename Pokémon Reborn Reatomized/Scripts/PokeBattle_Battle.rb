@@ -5276,7 +5276,8 @@ class PokeBattle_Battle
     # Lullaby
     for i in priority
       next if i.isFainted?
-      if (i.pbOpposing1.hasWorkingAbility(:LULLABY) || i.pbOpposing2.hasWorkingAbility(:LULLABY)) && pbRandom(10)>1 && i.pbCanSleep?(false,false,false)
+      if ((i.pbOpposing1.hasWorkingAbility(:LULLABY) && i.pbOpposing1.effects[PBEffects::ThroatChop]==0) || (i.pbOpposing2.hasWorkingAbility(:LULLABY) && i.pbOpposing2.effects[PBEffects::ThroatChop]==0)) && 
+	      pbRandom(10)>1 && i.pbCanSleep?(false,false,false) && !(i.hasWorkingAbility(:SOUNDPROOF))
         i.pbSleep
         pbDisplay(_INTL("A lullaby made {1} fall asleep!",i.pbThis))
         i.pbBerryCureCheck
