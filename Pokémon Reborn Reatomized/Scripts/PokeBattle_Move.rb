@@ -893,7 +893,7 @@ class PokeBattle_Move
     evastage=0 if opponent.effects[PBEffects::Foresight] || opponent.effects[PBEffects::MiracleEye] || @function==0xA9 || # Chip Away
                   (attacker.ability == PBAbilities::UNAWARE || opponent.ability == PBAbilities::MULTICORE) && !(opponent.moldbroken)
     evasion=(evastage>=0) ? (evastage+3)*100.0/3 : 300.0/(3-evastage)
-    if attacker.ability == (PBAbilities::COMPOUNDEYES || PBAbilities::BLACKHOLE)
+    if (attacker.ability == (PBAbilities::COMPOUNDEYES || PBAbilities::BLACKHOLE)) || (attacker.ability == PBAbilities::LULLABY && @id == PBMoves::SING)
       accuracy*=1.3
     end
     if attacker.hasWorkingItem(:MICLEBERRY)
@@ -1134,6 +1134,10 @@ class PokeBattle_Move
       damagemult=(damagemult*1.5).round
     elsif (attacker.ability == PBAbilities::MEGALAUNCHER)
       if @id == PBMoves::AURASPHERE || @id == PBMoves::DRAGONPULSE || @id == PBMoves::DARKPULSE || @id == PBMoves::WATERPULSE || @id == PBMoves::ORIGINPULSE || @id == PBMoves::LASERPULSE || @id == PBMoves::PROTONBEAM || @id == PBMoves::GROUNDZERO || @id == PBMoves::TERRAINPULSE
+        damagemult=(damagemult*1.5).round
+      end
+    elsif (attacker.ability == PBAbilities::LULLABY)
+      if @id == PBMoves::ROUND
         damagemult=(damagemult*1.5).round
       end
     elsif attacker.ability == PBAbilities::SANDFORCE && (@battle.pbWeather==PBWeather::SANDSTORM || @battle.FE == PBFields::DESERTF|| @battle.FE == PBFields::ASHENB) && (type == PBTypes::ROCK || type == PBTypes::GROUND || type == PBTypes::STEEL)
