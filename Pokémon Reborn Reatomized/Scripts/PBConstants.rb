@@ -216,6 +216,7 @@ class PBEffects
   Conqueror          = 171
   PowerNap           = 172
   Tenacity           = 173
+  Spirit             = 174
 
   # These effects apply to a side
   LightScreen   = 200
