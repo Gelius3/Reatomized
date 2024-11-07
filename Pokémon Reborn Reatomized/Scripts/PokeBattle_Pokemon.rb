@@ -262,19 +262,20 @@ class PokeBattle_Pokemon
     abil=abilityIndex
     ret1=$cache.pkmn_dex[@species][:Abilities][0]
     ret2=$cache.pkmn_dex[@species][:Abilities][1]
-	ret3=$cache.pkmn_dex[@species][:Abilities][2]
-	ret4=$cache.pkmn_dex[@species][:Abilities][3]
-	ret5=$cache.pkmn_dex[@species][:Abilities][4]
-	ret6=$cache.pkmn_dex[@species][:Abilities][5]
-	ret7=$cache.pkmn_dex[@species][:Abilities][6]
-	ret8=$cache.pkmn_dex[@species][:Abilities][7]
+    ret3=$cache.pkmn_dex[@species][:Abilities][2]
+    ret4=$cache.pkmn_dex[@species][:Abilities][3]
+    ret5=$cache.pkmn_dex[@species][:Abilities][4]
+    ret6=$cache.pkmn_dex[@species][:Abilities][5]
+    ret7=$cache.pkmn_dex[@species][:Abilities][6]
+    ret8=$cache.pkmn_dex[@species][:Abilities][7]
+    ret9=$cache.pkmn_dex[@species][:Abilities][8]
     h1=$cache.pkmn_dex[@species][:HiddenAbilities]
 
-    chosenabil = [ret1,ret2,ret3,ret4,ret5,ret6,ret7,ret8,h1][abil]
+    chosenabil = [ret1,ret2,ret3,ret4,ret5,ret6,ret7,ret8,ret9,h1][abil]
     if chosenabil==0 #Just for fixing old mons who might swap abilities from the code change
       abil=(@personalID&1)
       @abilityflag=abil
-      chosenabil = [ret1,ret2,ret3,ret4,ret5,ret6,ret7,ret8,h1][abil]
+      chosenabil = [ret1,ret2,ret3,ret4,ret5,ret6,ret7,ret8,ret9,h1][abil]
     end
     return chosenabil if chosenabil && chosenabil > 0
     return ret1
