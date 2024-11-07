@@ -1515,7 +1515,7 @@ class PokemonScreen
             oldabil=PBAbilities.getName(pkmn.ability)
             commands=[]
             for i in abils.keys
-              commands.push(( i < 8 ? "" : "(H) ")+PBAbilities.getName(abils[i]))
+              commands.push(( i < 9 ? "" : "(H) ")+PBAbilities.getName(abils[i]))
             end
             commands.push(_INTL("Remove override"))
             msg=[_INTL("Ability {1} is natural.",oldabil),
