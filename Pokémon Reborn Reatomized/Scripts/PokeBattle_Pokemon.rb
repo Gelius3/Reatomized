@@ -252,7 +252,7 @@ class PokeBattle_Pokemon
 ################################################################################
 # Returns the index of this Pokémon's ability.
   def abilityIndex
-    abil=@abilityflag!=nil ? @abilityflag : (@personalID%9)
+    abil=@abilityflag!=nil ? @abilityflag : (@personalID%10)
     abil = 0 if abil.nil?
     return abil
   end
@@ -297,12 +297,13 @@ class PokeBattle_Pokemon
 
     abils.push($cache.pkmn_dex[@species][:Abilities][0])
     abils.push($cache.pkmn_dex[@species][:Abilities][1])
-	abils.push($cache.pkmn_dex[@species][:Abilities][2])
-	abils.push($cache.pkmn_dex[@species][:Abilities][3])
-	abils.push($cache.pkmn_dex[@species][:Abilities][4])
-	abils.push($cache.pkmn_dex[@species][:Abilities][5])
-	abils.push($cache.pkmn_dex[@species][:Abilities][6])
-	abils.push($cache.pkmn_dex[@species][:Abilities][7])
+    abils.push($cache.pkmn_dex[@species][:Abilities][2])
+    abils.push($cache.pkmn_dex[@species][:Abilities][3])
+    abils.push($cache.pkmn_dex[@species][:Abilities][4])
+    abils.push($cache.pkmn_dex[@species][:Abilities][5])
+    abils.push($cache.pkmn_dex[@species][:Abilities][6])
+    abils.push($cache.pkmn_dex[@species][:Abilities][7])
+    abils.push($cache.pkmn_dex[@species][:Abilities][8])
     abils.push($cache.pkmn_dex[@species][:HiddenAbilities])
     
     if @form != 0 || (GenderDiffSpecies.include?(@species) && gender==1)
