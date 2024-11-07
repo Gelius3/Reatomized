@@ -2447,7 +2447,7 @@ ItemHandlers::UseOnPokemon.add(:ABILITYCAPSULE,proc{|item,pokemon,scene|
   for i in abillist.keys
     next if abillist[i] == abilid
     next if abils.include?(abillist[i])
-    commands.push((i < 8 ? "" : "(H) ") + PBAbilities.getName(abillist[i]))
+    commands.push((i < 9 ? "" : "(H) ") + PBAbilities.getName(abillist[i]))
     command_option.push(i)
     abils.push(abillist[i])
   end
