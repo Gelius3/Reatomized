@@ -286,7 +286,7 @@ class PokeBattle_Pokemon
     if getAbilityList.has_key?(value)
       @abilityflag=value
     else
-      @abilityflag=8
+      @abilityflag=9
     end
   end
 
