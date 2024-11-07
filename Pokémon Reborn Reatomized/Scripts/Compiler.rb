@@ -1623,7 +1623,7 @@ def pbCompilePokemonData
      "Evolutions"=>[0,"*ses",nil,PBEvolution],
      "Habitat"=>[:Habitat,"e",["","Grassland","Forest","WatersEdge","Sea","Cave","Mountain","RoughTerrain","Urban","Rare"]],
      "Type2"=>[:Type2,"e",PBTypes],
-     "Abilities"=>[:Abilities,"eggggggg",PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities],
+     "Abilities"=>[:Abilities,"egggggggg",PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities,PBAbilities],
      "HiddenAbility"=>[:HiddenAbilities,"e",PBAbilities],
      "WildItemCommon"=>[:WildItemCommon,"*E",PBItems],
      "WildItemUncommon"=>[:WildItemUncommon,"*E",PBItems],
