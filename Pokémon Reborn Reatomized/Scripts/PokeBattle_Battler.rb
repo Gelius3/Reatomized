@@ -5980,6 +5980,7 @@ class PokeBattle_Battler
             user.pbIncreaseStatBasic(PBStats::SPATK,1)
             @battle.pbDisplay(_INTL("{1}'s Grim Neigh raised its Special Attack!",user.pbThis))
           end
+	end
       elsif (user.hasWorkingAbility(:CONQUEROR)) && user.hp>0 && user.effects[PBEffects::Conqueror]<=2
         if !(user.pbTooHigh?(PBStats::ATTACK) && user.pbTooHigh?(PBStats::DEFENSE) && user.pbTooHigh?(PBStats::SPATK) && user.pbTooHigh?(PBStats::SPDEF) && user.pbTooHigh?(PBStats::SPEED))
           pbIncreaseStatBasic(PBStats::ATTACK,1)
