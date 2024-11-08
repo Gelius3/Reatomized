@@ -1200,7 +1200,7 @@ class PokeBattle_Battler
       self.pbPartner.effects[PBEffects::Hero]=true
     end
     if self.pbPartner.ability == PBAbilities::LASTBASTION && (self.pbPartner.pbPartyPokemonCount==(self.pbPartner.pbFaintedPokemonCount+1)) && self.pbPartner.effects[PBEffects::LastBastion]==false &&
-       !(self.pbPartner.pbTooHigh?(PBStats:ATTACK) && self.pbPartner.pbTooHigh?(PBStats:DEFENSE) && self.pbPartner.pbTooHigh?(PBStats:SPATK) && self.pbPartner.pbTooHigh?(PBStats:SPDEF))
+       !(self.pbPartner.pbTooHigh?(PBStats::ATTACK) && self.pbPartner.pbTooHigh?(PBStats::DEFENSE) && self.pbPartner.pbTooHigh?(PBStats::SPATK) && self.pbPartner.pbTooHigh?(PBStats::SPDEF))
       self.pbPartner.pbIncreaseStatBasic(PBStats::ATTACK,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::DEFENSE,2)
       self.pbPartner.pbIncreaseStatBasic(PBStats::SPATK,2)
