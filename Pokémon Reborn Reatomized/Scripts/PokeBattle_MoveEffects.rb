@@ -7451,15 +7451,13 @@ class PokeBattle_Move_109 < PokeBattle_Move
         if @battle.FE == PBFields::BIGTOPA || @battle.FE == PBFields::DRAGONSD
           @battle.extramoney+=495*attacker.level
         end
+        @battle.extramoney*=1.5 if attacker.ability == PBAbilities::BONANZA
         @battle.extramoney=MAXMONEY if @battle.extramoney>MAXMONEY
       end
       if @battle.FE == PBFields::DRAGONSD
         @battle.pbDisplay(_INTL("Treasure scattered everywhere!"))
       else
         @battle.pbDisplay(_INTL("Coins were scattered everywhere!"))
-      end
-      if attacker.ability== PBAbilities::BONANZA
-        @battle.extramoney*=1.5
       end
     end
     return ret
