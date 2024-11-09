@@ -405,11 +405,9 @@ STUNKY,5,9
 OldRod
 GOLDEEN,7,11
 FINNEON,7,11
-SURSKIT,7,11
 GoodRod
 GOLDEEN,37,45
 FINNEON,40,50
-SURSKIT,40,50
 SEAKING,40,50
 #########################
 052 # Lower Peridot Alley
