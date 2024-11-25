@@ -584,7 +584,4 @@ Events.onWildPokemonCreate+=proc {|sender,e|
       pokemon.pbLearnMove(:MYSTICALFIRE) 
       pokemon.pbLearnMove(:SLUDGEBOMB) 
     end
-    if pokemon.getFormName == "Egho"
-      pokemon.form=0
-    end
   }
