@@ -1129,9 +1129,6 @@ def pbWildBattle(species,level,variable=nil,canescape=true,canlose=false)
   if species.is_a?(String) || species.is_a?(Symbol)
     species=getID(PBSpecies,species)
   end
-  if species >= 1200 && species <= 1282
-    return 0
-  end  
   handled=[nil]
   Events.onWildBattleOverride.trigger(nil,species,level,handled)
   if handled[0]!=nil
@@ -1197,9 +1194,6 @@ def pbDoubleWildBattle(species1,level1,species2,level2,variable=nil,canescape=tr
   end
   if species2.is_a?(String) || species2.is_a?(Symbol)
     species2=getID(PBSpecies,species2)
-  end
-  if (species1 >= 1200 && species1 <= 1282) || (species2 >= 1200 && species2 <= 1282)
-    return 0
   end
   currentlevels=[]
   for i in $Trainer.party
