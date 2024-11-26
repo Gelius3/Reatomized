@@ -2892,10 +2892,6 @@ class PokeBattle_Battler
         end
       end
     end
-    if self.pokemon.getFormName == "Egho" && @battle.pbOwnedByPlayer?(@index)
-      self.form=0 if self.form!=0
-      pbUpdate(true)
-    end
     # Electric Terrain Entry
     if @battle.FE == PBFields::ELECTRICT || @battle.FE == PBFields::FACTORYF || @battle.FE == PBFields::SHORTCIRCUITF
       if !pbTooHigh?(PBStats::ATTACK)
