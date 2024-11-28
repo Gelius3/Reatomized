@@ -4056,6 +4056,16 @@ class PokeBattle_Battler
           target.pbSleep
           @battle.pbDisplay(_INTL("{1}'s {2} put {3} to sleep!",user.pbThis, PBAbilities.getName(user.ability),target.pbThis(true)))
         end
+        # Sponge
+        if user.hasWorkingAbility(:SPONGE) && !target.pbPartner.isFainted? && !target.pbPartner.hasWorkingAbility(:MAGICGUARD) && 
+         !(move.target == PBTargets::AllNonUsers) && !(move.target == PBTargets::AllOpposing) && 
+         (move.function==0xDD || move.function==0xDE || move.function==0x139 || #move.function==0x277 Matcha Gotcha is not single target || 
+         move.function==0x804 || move.function==0x909 || move.function==0x914)
+          @battle.scene.pbDamageAnimation(target.pbPartner,0)
+          damageSponged=target.pbPartner.pbReduceHP((target.pbPartner.totalhp/16.0).floor)
+          user.pbRecoverHP(damageSponged,true)
+          @battle.pbDisplay(_INTL("{1}'s {2} drained {3}!",user.pbThis, PBAbilities.getName(user.ability),target.pbPartner.pbThis(true)))
+        end
       end
 
       # Cotton Down
