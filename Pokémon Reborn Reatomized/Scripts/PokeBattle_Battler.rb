@@ -562,7 +562,7 @@ class PokeBattle_Battler
     @effects[PBEffects::FairyLockRate]    = false
     @effects[PBEffects::FlashFire]        = false
     @effects[PBEffects::Flinch]           = false
-    @effects[PBEffects::Tenacity]         = false if self.ability == PBAbilities::TENACITY
+    @effects[PBEffects::Tenacity]         = false
     @effects[PBEffects::FollowMe]         = false
     @effects[PBEffects::RagePowder]       = false
     @effects[PBEffects::Foresight]        = false
@@ -5413,7 +5413,7 @@ class PokeBattle_Battler
         end
         return false
       end
-      self.effects[PBEffects::Tenacity]=false
+      self.effects[PBEffects::Tenacity]=false if self.effects[PBEffects::Tenacity]==true
     end
 
     if @effects[PBEffects::Confusion]>0 && !@simplemove
