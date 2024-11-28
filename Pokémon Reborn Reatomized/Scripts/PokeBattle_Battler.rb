@@ -3589,6 +3589,12 @@ class PokeBattle_Battler
             user.pbReduceHP((user.totalhp/8.0).floor)
             @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!",target.pbThis, PBAbilities.getName(target.ability),user.pbThis(true)))
           end
+          # Melee
+          if user.ability == PBAbilities::MELEE && !target.pbPartner.isFainted? && !target.pbPartner.hasWorkingAbility(:MAGICGUARD) && !(move.target == PBTargets::AllNonUsers) && !(move.target == PBTargets::AllOpposing)
+            @battle.scene.pbDamageAnimation(target.pbPartner,0)
+            target.pbPartner.pbReduceHP((target.pbPartner.totalhp/16.0).floor)
+            @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!",user.pbThis, PBAbilities.getName(user.ability),target.pbPartner.pbThis(true)))
+          end
           # Tenacity
           if target.ability == PBAbilities::TENACITY && !user.isFainted? && !user.hasWorkingAbility(:INNERFOCUS) && @battle.pbRandom(10)<2
             # maybe animation here
