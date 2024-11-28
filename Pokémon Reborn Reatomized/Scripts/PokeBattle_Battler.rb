@@ -5385,6 +5385,7 @@ class PokeBattle_Battler
 
     if @effects[PBEffects::Flinch]
       @effects[PBEffects::Flinch]=false
+      self.effects[PBEffects::Tenacity]=false if self.effects[PBEffects::Tenacity]==true
       if @battle.FE == PBFields::ROCKYF
         if !(self.ability == PBAbilities::STEADFAST) && !(self.ability == PBAbilities::STURDY) && !(self.ability == PBAbilities::INNERFOCUS) && (self.stages[PBStats::DEFENSE] < 1) && !(self.ability == PBAbilities::STURDINESS)
           @battle.pbDisplay(_INTL("{1} was knocked into a rock!",pbThis))
@@ -5413,7 +5414,6 @@ class PokeBattle_Battler
         end
         return false
       end
-      self.effects[PBEffects::Tenacity]=false if self.effects[PBEffects::Tenacity]==true
     end
 
     if @effects[PBEffects::Confusion]>0 && !@simplemove
