@@ -5914,7 +5914,7 @@ class PokeBattle_Battle
         @battlers[i].effects[PBEffects::LockOnPos]=-1 if @battlers[i].effects[PBEffects::LockOn]==0
       end
       @battlers[i].effects[PBEffects::Roost]=false
-      @battlers[i].effects[PBEffects::Flinch]=false if @battlers[i].effects[PBEffects::Tenacity]==false
+      @battlers[i].effects[PBEffects::Flinch]=false if @battlers[i].effects[PBEffects::Tenacity]!=true
       @battlers[i].effects[PBEffects::BurningJealousy] = false
       @battlers[i].effects[PBEffects::LashOut] = false
       @battlers[i].effects[PBEffects::FollowMe]=false
