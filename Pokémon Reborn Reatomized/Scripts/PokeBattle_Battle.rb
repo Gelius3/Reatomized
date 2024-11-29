@@ -4896,10 +4896,23 @@ class PokeBattle_Battle
       if i.ability == PBAbilities::HEALER
         partner=i.pbPartner
         if partner
-          if pbRandom(10)<3 && partner.status>0
+          if pbRandom(10)<5 && partner.status>0 # Reatomized chance buff 30% -> 50%
             pbDisplay(_INTL("{1}'s Healer cured its partner's {2} problem!",i.pbThis,STATUSTEXTS[partner.status]))
             partner.status=0
             partner.statusCount=0
+          end
+        end
+      end
+      # Nurse (How does this not break catastrophically?)
+      if i.ability == PBAbilities::NURSE
+        patient=i.pbPartner
+        if patient
+          if pbRandom(10)<5
+            patient.effects[PBEffects::Nurse]=true
+            patient.pbInitEffects(false)
+            @battle.scene.pbUnSubstituteSprite(patient, patient.pbIsOpposing?(1))
+            @battle.scene.pbUnVanishSprite(patient, true)
+            pbDisplay(_INTL("{2} was Nursed by its partner {1}!",i.pbThis,patient))
           end
         end
       end
