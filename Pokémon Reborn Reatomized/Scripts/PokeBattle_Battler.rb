@@ -3493,7 +3493,7 @@ class PokeBattle_Battler
               PBAbilities.getName(target.ability),user.pbThis(true)))
           end
 	  if target.ability == PBAbilities::CALMING && @battle.pbRandom(10)<3 && user.pbCanSleep?(false)
-            user.pbSleep(target)
+            user.pbSleep
             @battle.pbDisplay(_INTL("{1}'s {2} made {3} fall sleep!",target.pbThis,
               PBAbilities.getName(target.ability),user.pbThis(true)))
           end
