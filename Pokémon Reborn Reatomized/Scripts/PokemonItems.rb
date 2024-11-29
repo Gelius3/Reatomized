@@ -1169,7 +1169,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
       if pokemon.form==0
         if (move == PBMoves::WONDERROOM) || (move == PBMoves::MISTYTERRAIN) || (move == PBMoves::DEFOG) ||
           (move == PBMoves::BRUTALSWING) || (move == PBMoves::OVERHEAT) || (move == PBMoves::MISTYEXPLOSION) ||
-          (move == PBMoves::PLAYROUGH) || (move == PBMoves::DAZZLINGGLEAM) || (move == DOUBLEEDGE)
+          (move == PBMoves::PLAYROUGH) || (move == PBMoves::DAZZLINGGLEAM) || (move == PBMoves::DOUBLEEDGE)
           return false
         end
       elsif pokemon.form==2
@@ -1179,7 +1179,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
       elsif pokemon.form==2
         if (move == PBMoves::WONDERROOM) || (move == PBMoves::MISTYTERRAIN) || (move == PBMoves::DEFOG) ||
           (move == PBMoves::BRUTALSWING) || (move == PBMoves::OVERHEAT) || (move == PBMoves::MISTYEXPLOSION) ||
-          (move == PBMoves::PLAYROUGH) || (move == PBMoves::DAZZLINGGLEAM) || (move == DOUBLEEDGE)
+          (move == PBMoves::PLAYROUGH) || (move == PBMoves::DAZZLINGGLEAM) || (move == PBMoves::DOUBLEEDGE)
           return false
         end
       end
