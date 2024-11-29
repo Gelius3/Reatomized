@@ -26,11 +26,13 @@ PBSpecies::SQUAWKABILLY => {
 	},
 
 	"Yellow" => {
-		:DexEntry => "These Squawkabilly are hotheaded, and their fighting style is vicious. They’ll leap within reach of their foes to engage in close combat."
+		:DexEntry => "These Squawkabilly are hotheaded, and their fighting style is vicious. They’ll leap within reach of their foes to engage in close combat.",
+		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::HUSTLE,PBAbilities::SHEERFORCE]
 	},
 
 	"White" => {
-		:DexEntry => "This Pokémon dislikes being alone. It has a strong sense of community and survives by cooperating with allies."
+		:DexEntry => "This Pokémon dislikes being alone. It has a strong sense of community and survives by cooperating with allies.",
+		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::HUSTLE,PBAbilities::SHEERFORCE]
 	}
 },
 
@@ -42,6 +44,9 @@ PBSpecies::CASTFORM => {
 		4 => "Sandy Form",
 		9 => "Amalgaform"
 	},
+
+	:PulseForm => 9,
+	
 	"Sunny Form" => {
 		:BaseStats => [70,70,80,110,110,80],
 		:Type1 => PBTypes::FIRE,
@@ -85,27 +90,44 @@ PBSpecies::DEOXYS => {
 	"Attack Form" => {
 		:BaseStats => [50,180,20,150,180,20],
 		:EVs => [0,2,0,0,1,0],
+		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::WRAP],[7,PBMoves::NIGHTSHADE],[13,PBMoves::TELEPORT],
+		[19,PBMoves::TAUNT],[25,PBMoves::PURSUIT],[31,PBMoves::PSYCHIC],[37,PBMoves::SUPERPOWER],
+		[43,PBMoves::PSYCHOSHIFT],[49,PBMoves::ZENHEADBUTT],[55,PBMoves::COSMICPOWER],
+		[61,PBMoves::ZAPCANNON],[67,PBMoves::PSYCHOBOOST],[73,PBMoves::HYPERBEAM]],
 	},
 
 	"Defense Form" => {
 		:BaseStats => [50, 70,160, 90, 70,160],
 		:EVs => [0,0,2,0,0,1],
+		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::WRAP],[7,PBMoves::NIGHTSHADE],[13,PBMoves::TELEPORT],
+		[19,PBMoves::KNOCKOFF],[25,PBMoves::SPIKES],[31,PBMoves::PSYCHIC],[37,PBMoves::SNATCH],
+		[43,PBMoves::PSYCHOSHIFT],[49,PBMoves::ZENHEADBUTT],[55,PBMoves::IRONDEFENSE],
+		[55,PBMoves::AMNESIA],[61,PBMoves::RECOVER],[67,PBMoves::PSYCHOBOOST],
+		[73,PBMoves::COUNTER],[73,PBMoves::MIRRORCOAT]],
 	},
 
 	"Speed Form" => {
 		:BaseStats => [50, 95, 90,180, 95, 90],
 		:EVs => [0,0,0,3,0,0],
+		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::WRAP],[7,PBMoves::NIGHTSHADE],[13,PBMoves::DOUBLETEAM],
+		[19,PBMoves::KNOCKOFF],[25,PBMoves::PURSUIT],[31,PBMoves::PSYCHIC],[37,PBMoves::SWIFT],
+		[43,PBMoves::PSYCHOSHIFT],[49,PBMoves::ZENHEADBUTT],[55,PBMoves::AGILITY],
+		[61,PBMoves::RECOVER],[67,PBMoves::PSYCHOBOOST],[73,PBMoves::EXTREMESPEED]],
 	},
 
 	"PULSE" => {
-		:BaseStats => [80,180,160,40,160,180],
+		:BaseStats => [180,180,160,40,160,180],
 		:EVs => [0,2,2,3,1,1],
 		:Ability => PBAbilities::ENCHANTEDCANNON
 	},
 
 	"Health Form" => {
-		:BaseStats => [150,95,90,180,95,90],
+		:BaseStats => [150,75,110,100,75,110],
 		:EVs => [0,0,0,3,0,0],
+		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::WRAP],[7,PBMoves::NIGHTSHADE],[13,PBMoves::DOUBLETEAM],
+		[19,PBMoves::KNOCKOFF],[25,PBMoves::PURSUIT],[31,PBMoves::PSYCHIC],[37,PBMoves::SWIFT],
+		[43,PBMoves::PSYCHOSHIFT],[49,PBMoves::ZENHEADBUTT],[55,PBMoves::AGILITY],
+		[61,PBMoves::RECOVER],[67,PBMoves::PSYCHOBOOST],[73,PBMoves::EXTREMESPEED]],
 	}
 },
 
@@ -172,37 +194,23 @@ PBSpecies::WORMADAM => {
 		:BaseStats => [60,79,105,36,59,85],
 		:EVs => [0,0,2,0,0,0],
 		:Type2 => PBTypes::GROUND,
-		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::ROLLOUT],[1,PBMoves::MUDSLAP],
-		[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],[1,PBMoves::STRUGGLEBUG],
-		[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],[23,PBMoves::CONFUSION],
-		[26,PBMoves::ROCKBLAST],[28,PBMoves::HARDEN],[30,PBMoves::INFESTATION],[32,PBMoves::CAPTIVATE],
-		[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],[39,PBMoves::FLAIL],[41,PBMoves::ATTRACT],
-		[43,PBMoves::EARTHPOWER],[45,PBMoves::PSYCHIC],[47,PBMoves::FISSURE],[50,PBMoves::SUCKERPUNCH],
-		[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE],[59,PBMoves::LEAFSTORM]],
+		:Movelist => [[0,PBMoves::QUIVERDANCE],[1,PBMoves::SUCKERPUNCH],
+		[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],[1,PBMoves::BUGBITE],
+		[10,PBMoves::PROTECT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],
+		[23,PBMoves::CONFUSION],[26,PBMoves::ROCKBLAST],[29,PBMoves::HARDEN],[32,PBMoves::PSYBEAM],
+		[35,PBMoves::CAPTIVATE],[38,PBMoves::FLAIL],[41,PBMoves::ATTRACT],[44,PBMoves::PSYCHIC],
+		[47,PBMoves::FISSURE],[50,PBMoves::BUGBUZZ]],
 	},
 
 	"Trash Cloak" => {
 		:BaseStats => [60,69,95,36,69,95],
 		:EVs => [0,0,1,0,0,1],
 		:Type2 => PBTypes::STEEL,
-		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::MAGNETRISE],[1,PBMoves::TELEKINESIS],
-		[1,PBMoves::ALLYSWITCH],[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],
-		[1,PBMoves::STRUGGLEBUG],[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],
-		[23,PBMoves::CONFUSION],[26,PBMoves::MIRRORSHOT],[28,PBMoves::METALSOUND],[30,PBMoves::INFESTATION],
-		[32,PBMoves::CAPTIVATE],[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],[39,PBMoves::FLAIL],
-		[41,PBMoves::ATTRACT],[43,PBMoves::IRONHEAD],[45,PBMoves::PSYCHIC],[47,PBMoves::METALBURST],
-		[50,PBMoves::SUCKERPUNCH],[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE]],
-	}
-},
-
-PBSpecies::CHERRIM => {
-	:FormName => {
-		1 => "Sunshine Form"
-	},
-
-	"Sunshine Form" => {
-		:BaseStats => [70,90,70,85,87,117],
-		:Type2 => PBTypes::FAIRY,
+		:Movelist => [[0,PBMoves::QUIVERDANCE],[1,PBMoves::METALBURST],[1,PBMoves::SUCKERPUNCH],
+		[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],[1,PBMoves::BUGBITE],[10,PBMoves::PROTECT],
+		[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],[23,PBMoves::CONFUSION],[26,PBMoves::MIRRORSHOT],
+		[29,PBMoves::METALSOUND],[32,PBMoves::PSYBEAM],[35,PBMoves::CAPTIVATE],[38,PBMoves::FLAIL],
+		[41,PBMoves::ATTRACT],[44,PBMoves::PSYCHIC],[47,PBMoves::IRONHEAD],[50,PBMoves::BUGBUZZ]],
 	}
 },
 
@@ -224,27 +232,27 @@ PBSpecies::ROTOM => {
 
 	"Heat" => {
 		:Type2 => PBTypes::FIRE,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::SOLARPOWER,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::SOLARPOWER],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Wash" => {
 		:Type2 => PBTypes::WATER,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::WATERABSORB,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::WATERABSORB],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Frost" => {
 		:Type2 => PBTypes::ICE,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::SNOWWARNING,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::SNOWWARNING],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Fan" => {
 		:Type2 => PBTypes::FLYING,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::WINDPOWER,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::WINDPOWER],
 		:BaseStats => [50,65,107,86,105,107]
 	},
 	"Mow" => {
 		:Type2 => PBTypes::GRASS,
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::GRASSYSURGE,PBAbilities::MOTORDRIVE],
+		:Ability => [PBAbilities::LEVITATE,PBAbilities::GRASSYSURGE],
 		:BaseStats => [50,65,107,86,105,107]
 	}
 },
@@ -320,6 +328,9 @@ PBSpecies::SHAYMIN => {
 		:EVs => [0,0,0,3,0,0],
 		:Type2 => PBTypes::FLYING,
 		:Ability => PBAbilities::SERENEGRACE,
+		:Movelist => [[1,PBMoves::GROWTH],[10,PBMoves::MAGICALLEAF],[19,PBMoves::LEECHSEED],[28,PBMoves::QUICKATTACK],
+		[37,PBMoves::SWEETSCENT],[46,PBMoves::NATURALGIFT],[55,PBMoves::WORRYSEED],[64,PBMoves::AIRSLASH],
+		[73,PBMoves::ENERGYBALL],[82,PBMoves::SWEETKISS],[91,PBMoves::LEAFSTORM],[100,PBMoves::SEEDFLARE]],
 		:Height => 04,
 		:Weight => 52
 	}
@@ -335,12 +346,22 @@ PBSpecies::BASCULIN => {
 
 	"Red-Striped" => {
 		:DexEntry => "Its temperament is vicious and aggressive. This Pokémon is also full of vitality and can multiply rapidly before anyone notices.",
+		:Ability => [PBAbilities::RECKLESS,PBAbilities::ADAPTABILITY,PBAbilities::MOLDBREAKER],
+		:Movelist => [[1,PBMoves::TAILWHIP],[1,PBMoves::TACKLE],[1,PBMoves::WATERGUN],[3,PBMoves::UPROAR],
+			[5,PBMoves::HEADBUTT],[7,PBMoves::BITE],[9,PBMoves::AQUAJET],[11,PBMoves::CHIPAWAY],[14,PBMoves::TAKEDOWN],
+			[17,PBMoves::CRUNCH],[20,PBMoves::AQUATAIL],[23,PBMoves::SOAK],[26,PBMoves::DOUBLEEDGE],[30,PBMoves::SCARYFACE],
+			[34,PBMoves::FLAIL],[38,PBMoves::LIQUIDATION],[42,PBMoves::THRASH],[46,PBMoves::HEADSMASH],[50,PBMoves::FINALGAMBIT]],
 		:WildHoldItems => [0,PBItems::DEEPSEATOOTH,0],
 		:GetEvo => []
 	},
 
 	"Blue-Striped" => {
 		:DexEntry => "The power of its jaws is immense—enough to leave teeth marks in iron sheets. Its personality is also extremely vicious.",
+		:Ability => [PBAbilities::ROCKHEAD,PBAbilities::ADAPTABILITY,PBAbilities::MOLDBREAKER],
+		:Movelist => [[1,PBMoves::TAILWHIP],[1,PBMoves::TACKLE],[1,PBMoves::WATERGUN],[3,PBMoves::UPROAR],
+			[5,PBMoves::HEADBUTT],[7,PBMoves::BITE],[9,PBMoves::AQUAJET],[11,PBMoves::CHIPAWAY],[14,PBMoves::TAKEDOWN],
+			[17,PBMoves::CRUNCH],[20,PBMoves::AQUATAIL],[23,PBMoves::SOAK],[26,PBMoves::DOUBLEEDGE],[30,PBMoves::SCARYFACE],
+			[34,PBMoves::FLAIL],[38,PBMoves::LIQUIDATION],[42,PBMoves::THRASH],[46,PBMoves::HEADSMASH],[50,PBMoves::FINALGAMBIT]],
 		:WildHoldItems => [0,PBItems::DEEPSEASCALE,0],
 		:GetEvo => []
 	}
@@ -366,12 +387,12 @@ PBSpecies::DARUMAKA => {
 		:DexEntry => "It lived in snowy areas for so long that its fire sac cooled off and atrophied. It now has an organ that generates cold instead.",
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::ICE,
-		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[4,PBMoves::TAUNT],[8,PBMoves::BITE],
-			[12,PBMoves::HEADBUTT],[16,PBMoves::AVALANCHE],[20,PBMoves::WORKUP],[24,PBMoves::ICEFANG],
-			[28,PBMoves::UPROAR],[32,PBMoves::BELLYDRUM],[36,PBMoves::ICEPUNCH],[40,PBMoves::THRASH],
-			[44,PBMoves::BLIZZARD],[48,PBMoves::SUPERPOWER]],
 		:EggMoves => [PBMoves::FLAMEWHEEL,PBMoves::FOCUSPUNCH,PBMoves::FREEZEDRY,PBMoves::HAMMERARM,
-			PBMoves::INCINERATE,PBMoves::POWERUPPUNCH,PBMoves::TAKEDOWN,PBMoves::YAWN]
+									PBMoves::INCINERATE,PBMoves::POWERUPPUNCH,PBMoves::TAKEDOWN,PBMoves::YAWN],
+		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[1,PBMoves::TAUNT],[1,PBMoves::BITE],
+									[12,PBMoves::AVALANCHE],[16,PBMoves::WORKUP],[20,PBMoves::ICEFANG],[24,PBMoves::HEADBUTT],
+									[28,PBMoves::ICEPUNCH],[32,PBMoves::UPROAR],[36,PBMoves::BELLYDRUM],
+									[40,PBMoves::BLIZZARD],[44,PBMoves::THRASH],[48,PBMoves::SUPERPOWER]]
 	}
 },
 
@@ -398,11 +419,11 @@ PBSpecies::DARMANITAN => {
 		:DexEntry => "Though it has a gentle disposition, it's also very strong. It will quickly freeze the snowball on its head before going for a headbutt.",
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::ICE,
-		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::CONQUEROR,PBAbilities::HERO,PBAbilities::SPIRIT,PBAbilities::ZENMODE],
-		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[4,PBMoves::TAUNT],[8,PBMoves::BITE],
-		[12,PBMoves::HEADBUTT],[16,PBMoves::AVALANCHE],[20,PBMoves::WORKUP],[24,PBMoves::ICEFANG],
-		[28,PBMoves::UPROAR],[32,PBMoves::BELLYDRUM],[36,PBMoves::ICEPUNCH],[40,PBMoves::THRASH],
-		[44,PBMoves::BLIZZARD],[48,PBMoves::SUPERPOWER],[50,PBMoves::ICICLECRASH]],
+		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::ZENMODE],
+		:Movelist => [[0,PBMoves::ICICLECRASH],[1,PBMoves::ICICLECRASH],[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[1,PBMoves::TAUNT],[1,PBMoves::BITE],
+		[12,PBMoves::AVALANCHE],[16,PBMoves::WORKUP],[20,PBMoves::ICEFANG],[24,PBMoves::HEADBUTT],
+		[28,PBMoves::ICEPUNCH],[32,PBMoves::UPROAR],[38,PBMoves::BELLYDRUM],
+		[44,PBMoves::BLIZZARD],[50,PBMoves::THRASH],[56,PBMoves::SUPERPOWER]],
 		:Height => 1.7,
 		:Weight => 120
 	},
@@ -413,11 +434,11 @@ PBSpecies::DARMANITAN => {
 		:EVs => [0,0,0,0,2,0],
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::FIRE,
-		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::GORILLATACTICS,PBAbilities::ZENMODE],
-		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[4,PBMoves::TAUNT],[8,PBMoves::BITE],
-		[12,PBMoves::HEADBUTT],[16,PBMoves::AVALANCHE],[20,PBMoves::WORKUP],[24,PBMoves::ICEFANG],
-		[28,PBMoves::UPROAR],[32,PBMoves::BELLYDRUM],[36,PBMoves::ICEPUNCH],[40,PBMoves::THRASH],
-		[44,PBMoves::BLIZZARD],[48,PBMoves::SUPERPOWER],[50,PBMoves::ICICLECRASH]],
+		:Ability => [PBAbilities::GORILLATACTICS,PBAbilities::ZENMODE],
+		:Movelist => [[0,PBMoves::ICICLECRASH],[1,PBMoves::ICICLECRASH],[1,PBMoves::POWDERSNOW],[1,PBMoves::TACKLE],[1,PBMoves::TAUNT],[1,PBMoves::BITE],
+		[12,PBMoves::AVALANCHE],[16,PBMoves::WORKUP],[20,PBMoves::ICEFANG],[24,PBMoves::HEADBUTT],
+		[28,PBMoves::ICEPUNCH],[32,PBMoves::UPROAR],[38,PBMoves::BELLYDRUM],
+		[44,PBMoves::BLIZZARD],[50,PBMoves::THRASH],[56,PBMoves::SUPERPOWER]],
 		:Height => 1.7,
 		:Weight => 120
 	}
@@ -439,7 +460,7 @@ PBSpecies::TORNADUS => {
 	"Therian" => {
 		:BaseStats => [79,100,80,121,110,90],
 		:EVs => [0,0,0,3,0,0],
-		:Ability => [PBAbilities::REGENERATOR,PBAbilities::WINDRIDER,PBAbilities::WINDPOWER],
+		:Ability => PBAbilities::REGENERATOR,
 		:Height => 14
 	}
 },
@@ -450,7 +471,7 @@ PBSpecies::THUNDURUS => {
 	"Therian" => {
 		:BaseStats => [79,105,70,101,145,80],
 		:EVs => [0,0,0,0,3,0],
-		:Ability => [PBAbilities::VOLTABSORB,PBAbilities::WINDRIDER,PBAbilities::STORMBRINGER],
+		:Ability => PBAbilities::VOLTABSORB,
 		:Height => 30
 	}
 },
@@ -461,7 +482,7 @@ PBSpecies::LANDORUS => {
 	"Therian" => {
 		:BaseStats => [89,145,90,91,105,80],
 		:EVs => [0,3,0,0,0,0],
-		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::WINDRIDER],
+		:Ability => PBAbilities::INTIMIDATE,
 		:Height => 13
 	}
 },
@@ -471,7 +492,7 @@ PBSpecies::ENAMORUS => {
 
 	"Therian" => {
 		:BaseStats => [74,115,110,46,135,100],
-		:Ability => [PBAbilities::OVERCOAT,PBAbilities::WINDRIDER],
+		:Ability => PBAbilities::OVERCOAT,
 		:Height => 16
 	}
 },
@@ -485,6 +506,11 @@ PBSpecies::KYUREM => {
 	"White" => {
 		:BaseStats => [125,120,90,95,170,100],
 		:EVs => [0,0,0,0,3,0],
+		:Movelist => [[1,PBMoves::ICYWIND],[1,PBMoves::DRAGONRAGE],[8,PBMoves::IMPRISON],
+		[15,PBMoves::ANCIENTPOWER],[22,PBMoves::ICEBEAM],[29,PBMoves::DRAGONBREATH],
+		[36,PBMoves::SLASH],[43,PBMoves::FUSIONFLARE],[50,PBMoves::ICEBURN],
+		[57,PBMoves::DRAGONPULSE],[64,PBMoves::NOBLEROAR],[71,PBMoves::ENDEAVOR],
+		[78,PBMoves::BLIZZARD],[85,PBMoves::OUTRAGE],[92,PBMoves::HYPERVOICE]],
 		:Ability => PBAbilities::TURBOBLAZE,
 		:Height => 36
 	},
@@ -492,6 +518,11 @@ PBSpecies::KYUREM => {
 	"Black" => {
 		:BaseStats => [125,170,100,95,120,90],
 		:EVs => [0,3,0,0,0,0],
+		:Movelist => [[1,PBMoves::ICYWIND],[1,PBMoves::DRAGONRAGE],[8,PBMoves::IMPRISON],
+		[15,PBMoves::ANCIENTPOWER],[22,PBMoves::ICEBEAM],[29,PBMoves::DRAGONBREATH],
+		[36,PBMoves::SLASH],[43,PBMoves::FUSIONBOLT],[50,PBMoves::FREEZESHOCK],
+		[57,PBMoves::DRAGONPULSE],[64,PBMoves::NOBLEROAR],[71,PBMoves::ENDEAVOR],
+		[78,PBMoves::BLIZZARD],[85,PBMoves::OUTRAGE],[92,PBMoves::HYPERVOICE]],
 		:Ability => PBAbilities::TERAVOLT,
 		:Height => 33
 	}
@@ -508,6 +539,12 @@ PBSpecies::CALYREX => {
 		:BaseStats => [100,165,150,50,85,130],
 		:EVs => [0,3,0,0,0,0],
 		:Type2 => PBTypes::ICE,
+		:Movelist => [[1,PBMoves::GLACIALLANCE],[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[1,PBMoves::DOUBLEKICK],[1,PBMoves::AVALANCHE],
+		[1,PBMoves::STOMP],[1,PBMoves::TORMENT],[1,PBMoves::MIST],[1,PBMoves::ICICLECRASH],[1,PBMoves::TAKEDOWN],
+		[1,PBMoves::IRONDEFENSE],[1,PBMoves::THRASH],[1,PBMoves::TAUNT],[1,PBMoves::DOUBLEEDGE],[1,PBMoves::SWORDSDANCE],
+		[1,PBMoves::POUND],[1,PBMoves::MEGADRAIN],[1,PBMoves::CONFUSION],[1,PBMoves::GROWTH],[8,PBMoves::LIFEDEW],[16,PBMoves::GIGADRAIN],
+		[24,PBMoves::PSYSHOCK],[32,PBMoves::HELPINGHAND],[40,PBMoves::AROMATHERAPY],[48,PBMoves::ENERGYBALL],[56,PBMoves::PSYCHIC],
+		[64,PBMoves::LEECHSEED],[72,PBMoves::HEALPULSE],[80,PBMoves::SOLARBEAM],[88,PBMoves::FUTURESIGHT]],
 		:Ability => PBAbilities::ASONE,
 		:Height => 24,
 		:Weight => 809
@@ -518,6 +555,13 @@ PBSpecies::CALYREX => {
 		:BaseStats => [100,85,80,150,165,100],
 		:EVs => [0,3,0,0,0,0],
 		:Type2 => PBTypes::GHOST,
+		:Movelist => [[1,PBMoves::ASTRALBARRAGE],[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[1,PBMoves::DOUBLEKICK],[1,PBMoves::HEX],
+		[1,PBMoves::STOMP],[1,PBMoves::CONFUSERAY],[1,PBMoves::HAZE],[1,PBMoves::SHADOWBALL],[1,PBMoves::TAKEDOWN],
+		[1,PBMoves::AGILITY],[1,PBMoves::THRASH],[1,PBMoves::DISABLE],[1,PBMoves::DOUBLEEDGE],[1,PBMoves::NASTYPLOT],
+		[1,PBMoves::POUND],[1,PBMoves::MEGADRAIN],[1,PBMoves::CONFUSION],[1,PBMoves::GROWTH],
+		[8,PBMoves::LIFEDEW],[16,PBMoves::GIGADRAIN],[24,PBMoves::PSYSHOCK],[32,PBMoves::HELPINGHAND],[40,PBMoves::AROMATHERAPY],
+		[48,PBMoves::ENERGYBALL],[56,PBMoves::PSYCHIC],[64,PBMoves::LEECHSEED],[72,PBMoves::HEALPULSE],[80,PBMoves::SOLARBEAM],
+		[88,PBMoves::FUTURESIGHT]],
 		:Ability => PBAbilities::ASONE,
 		:Height => 24,
 		:Weight => 53
@@ -573,7 +617,7 @@ PBSpecies::AEGISLASH => {
 		2 => "Crystal"
 	},
 
-	"Blade" => {:BaseStats => [60,140,50,60,140,50]},
+	"Blade" => {:BaseStats => [60,150,50,60,150,50]},
 
 	"Crystal" => {
 		:BaseStats => [200,150,150,70,150,150],
@@ -611,8 +655,41 @@ PBSpecies::HOOPA => {
 	"Unbound" => {
 		:BaseStats => [80,160,60,80,170,130],
 		:Type2 => PBTypes::DARK,
+		:Movelist => [[1,PBMoves::HYPERSPACEFURY],[1,PBMoves::TRICK],[1,PBMoves::DESTINYBOND],[1,PBMoves::ALLYSWITCH],
+		[1,PBMoves::CONFUSION],[6,PBMoves::ASTONISH],[10,PBMoves::MAGICCOAT],[15,PBMoves::LIGHTSCREEN],
+		[19,PBMoves::PSYBEAM],[25,PBMoves::SKILLSWAP],[29,PBMoves::POWERSPLIT],[29,PBMoves::GUARDSPLIT],
+		[46,PBMoves::KNOCKOFF],[50,PBMoves::WONDERROOM],[50,PBMoves::TRICKROOM],[55,PBMoves::DARKPULSE],
+		[75,PBMoves::PSYCHIC],[85,PBMoves::HYPERSPACEFURY]],
 		:Height => 65,
 		:Weight => 4900
+	}
+},
+
+PBSpecies::TERAPAGOS => {
+	:FormName => {
+		0 => "Normal Form",
+		1 => "Terastal Form",
+		2 => "Stellar Form"
+	},
+	
+	:DefaultForm => 0,
+	:MegaForm => 2,
+
+	"Terastal Form" => {
+		:BaseStats => [95,95,110,85,105,110],
+		:Ability => PBAbilities::TERASHELL,
+		#:Type1 => PBTypes::STELLAR,
+		:Height => 30,
+		:Weight => 1600
+	},
+
+	"Stellar Form" => {
+		:BaseStats => [160,105,110,85,130,110],
+		:Ability => PBAbilities::TERAFORMZERO,
+		:Type1 => PBTypes::STELLAR,
+		:Type2 => PBTypes::STELLAR,
+		:Height => 30,
+		:Weight => 1600
 	}
 },
 
@@ -660,16 +737,28 @@ PBSpecies::LYCANROC => {
 	"Midnight" => {
 		:DexEntry => "It goads its enemies into attacking, withstands the hits, and in return, delivers a headbutt, crushing their bones with its rocky mane.",
 		:BaseStats => [85,115,75,82,55,75],
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::VITALSPIRIT,PBAbilities::VITALSPIRIT,
-			PBAbilities::NOGUARD],
+		:Ability => [PBAbilities::KEENEYE,PBAbilities::VITALSPIRIT,PBAbilities::NOGUARD],
+		:Movelist => [[0,PBMoves::COUNTER],[1,PBMoves::REVERSAL],[1,PBMoves::TAUNT],
+		[1,PBMoves::TACKLE],[1,PBMoves::LEER],[1,PBMoves::SANDATTACK],
+		[1,PBMoves::BITE],[4,PBMoves::SANDATTACK],[7,PBMoves::BITE],[12,PBMoves::HOWL],
+		[15,PBMoves::ROCKTHROW],[18,PBMoves::ODORSLEUTH],[23,PBMoves::ROCKTOMB],
+		[26,PBMoves::ROAR],[29,PBMoves::STEALTHROCK],[34,PBMoves::ROCKSLIDE],
+		[37,PBMoves::SCARYFACE],[40,PBMoves::CRUNCH],[45,PBMoves::ROCKCLIMB],
+		[48,PBMoves::STONEEDGE]],
 		:Height => 11,
 	},
 
 	"Dusk" => {
 		:DexEntry => "Bathed in the setting sun of evening, Lycanroc has undergone a special kind of evolution. An intense fighting spirit underlies its calmness.",
 		:BaseStats => [75,117,65,110,55,65],
-		:Ability => [PBAbilities::TOUGHCLAWS,PBAbilities::TOUGHCLAWS,PBAbilities::TOUGHCLAWS,
-			PBAbilities::TOUGHCLAWS],
+		:Ability => [PBAbilities::TOUGHCLAWS,PBAbilities::TOUGHCLAWS,PBAbilities::TOUGHCLAWS],
+		:Movelist => [[0,PBMoves::THRASH],[1,PBMoves::ACCELEROCK],[1,PBMoves::COUNTER],
+		[1,PBMoves::TACKLE],[1,PBMoves::LEER],[1,PBMoves::SANDATTACK],
+		[1,PBMoves::BITE],[4,PBMoves::SANDATTACK],[7,PBMoves::BITE],[12,PBMoves::HOWL],
+		[15,PBMoves::ROCKTHROW],[18,PBMoves::ODORSLEUTH],[23,PBMoves::ROCKTOMB],
+		[26,PBMoves::ROAR],[29,PBMoves::STEALTHROCK],[34,PBMoves::ROCKSLIDE],
+		[37,PBMoves::SCARYFACE],[40,PBMoves::CRUNCH],[45,PBMoves::ROCKCLIMB],
+		[48,PBMoves::STONEEDGE]],
 	}
 },
 
@@ -689,8 +778,6 @@ PBSpecies::MINIOR => {
 	:OnCreation => proc{rand(7)},
 
 	"Core" => {
-		:Type1 => PBTypes::COSMIC,
-		:Type2 => PBTypes::FLYING,
 		:BaseStats => [60,60,100,60,60,100],
 		:EVs => [0,1,0,0,1,0],
  		:Weight => 400,
@@ -770,9 +857,11 @@ PBSpecies::INDEEDEE => {
 	#Gender difference
 	"Female" => {
 		:DexEntry => "These intelligent Pokémon touch horns with each other to share information between them.",
-		:Ability => [PBAbilities::SYNCHRONIZE,PBAbilities::PSYCHICSURGE,PBAbilities::INNERFOCUS,
-			PBAbilities::OWNTEMPO],
-		:BaseStats => [70,55,65,85,95,105]
+		:Ability => [PBAbilities::SYNCHRONIZE, PBAbilities::PSYCHICSURGE, PBAbilities::OWNTEMPO],
+		:BaseStats => [70,55,65,85,95,105],
+		:Movelist => [[1,PBMoves::STOREDPOWER],[1,PBMoves::PLAYNICE],[5,PBMoves::ENCORE],[10,PBMoves::DISARMINGVOICE],[15,PBMoves::PSYBEAM],
+						[20,PBMoves::HELPINGHAND],[25,PBMoves::FOLLOWME],[30,PBMoves::HEALINGWISH],[35,PBMoves::PSYCHIC],[40,PBMoves::CALMMIND],
+						[45,PBMoves::GUARDSPLIT],[50,PBMoves::PSYCHICTERRAIN]]
 	}
 },
 
@@ -906,13 +995,11 @@ PBSpecies::RATTATA => {
 		:Type2 => PBTypes::NORMAL,
 		:Weight => 38,
 		:Ability => [PBAbilities::GLUTTONY,PBAbilities::HUSTLE,PBAbilities::THICKFAT],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[1,PBMoves::GROWL],
-			[4,PBMoves::QUICKATTACK],[6,PBMoves::LEER],[8,PBMoves::FOCUSENERGY],
-			[10,PBMoves::BITE],[12,PBMoves::SANDATTACK],[14,PBMoves::PURSUIT],
-			[16,PBMoves::LASERFOCUS],[18,PBMoves::TAKEDOWN],[22,PBMoves::HYPERFANG],
-			[24,PBMoves::ASSURANCE],[28,PBMoves::SUCKERPUNCH],[30,PBMoves::CRUNCH],
-			[32,PBMoves::SUPERFANG],[34,PBMoves::DOUBLEEDGE],[42,PBMoves::REVERSAL],
-			[44,PBMoves::ENDEAVOR],[46,PBMoves::HYPERBEAM]],
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[4,PBMoves::QUICKATTACK],
+			[7,PBMoves::FOCUSENERGY],[10,PBMoves::BITE],[13,PBMoves::PURSUIT],
+			[16,PBMoves::HYPERFANG],[19,PBMoves::ASSURANCE],[22,PBMoves::CRUNCH],
+			[25,PBMoves::SUCKERPUNCH],[29,PBMoves::SUPERFANG],[31,PBMoves::DOUBLEEDGE],
+			[34,PBMoves::ENDEAVOR]] ,
 		:EggMoves => [PBMoves::COUNTER,PBMoves::FINALGAMBIT,PBMoves::FURYSWIPES,PBMoves::MEFIRST,
 				PBMoves::REVENGE,PBMoves::REVERSAL,PBMoves::SNATCH,PBMoves::STOCKPILE,
 				PBMoves::SWALLOW,PBMoves::SWITCHEROO,PBMoves::UPROAR],
@@ -936,16 +1023,12 @@ PBSpecies::RATICATE => {
 		:BaseStats => [75,71,70,77,40,80],
 		:Weight => 255,
 		:Ability => [PBAbilities::GLUTTONY,PBAbilities::HUSTLE,PBAbilities::THICKFAT],
-		:Movelist => [[0,PBMoves::SCARYFACE],[1,PBMoves::SWORDSDANCE],[1,PBMoves::COUNTER],
-			[1,PBMoves::FURYSWIPES],[1,PBMoves::SCARYFACE],[1,PBMoves::TACKLE],
-			[1,PBMoves::TAILWHIP],[1,PBMoves::GROWL],[4,PBMoves::QUICKATTACK],
-			[6,PBMoves::LEER],[8,PBMoves::FOCUSENERGY],[10,PBMoves::BITE],
-			[12,PBMoves::SANDATTACK],[14,PBMoves::PURSUIT],[16,PBMoves::LASERFOCUS],
-			[18,PBMoves::TAKEDOWN],[22,PBMoves::HYPERFANG],[24,PBMoves::ASSURANCE],
-			[26,PBMoves::GLARE],[28,PBMoves::SUCKERPUNCH],[30,PBMoves::CRUNCH],
-			[32,PBMoves::SUPERFANG],[34,PBMoves::DOUBLEEDGE],[36,PBMoves::LUNGE],
-			[38,PBMoves::THRASH],[40,PBMoves::SLASH],[42,PBMoves::REVERSAL],
-			[44,PBMoves::ENDEAVOR],[46,PBMoves::HYPERBEAM]],
+		:Movelist => [[0,PBMoves::SCARYFACE],[1,PBMoves::SWORDSDANCE],[1,PBMoves::TACKLE],
+			[1,PBMoves::TAILWHIP],[1,PBMoves::QUICKATTACK],[1,PBMoves::FOCUSENERGY],
+			[4,PBMoves::QUICKATTACK],[7,PBMoves::FOCUSENERGY],[10,PBMoves::BITE],[13,PBMoves::PURSUIT],
+			[16,PBMoves::HYPERFANG],[19,PBMoves::ASSURANCE],[24,PBMoves::CRUNCH],
+			[29,PBMoves::SUCKERPUNCH],[34,PBMoves::SUPERFANG],[39,PBMoves::DOUBLEEDGE],
+			[44,PBMoves::ENDEAVOR]],
 		:WildHoldItems => [0,PBItems::PECHABERRY,0]
 	}
 },
@@ -1267,14 +1350,10 @@ PBSpecies::URSALUNA => {
 		:DexEntry => "This special Ursaluna can see in the dark with its left eye and protects itself with mud that is as hard as iron.",
 		:BaseStats => [113,70,120,52,135,65],
 		:Ability => [PBAbilities::MINDSEYE],
-		:Movelist => [[0,PBMoves::HARDEN],[1,PBMoves::SCARYFACE],[1,PBMoves::MOONLIGHT],[1,PBMoves::HARDEN],
-			[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[1,PBMoves::LICK],[1,PBMoves::BABYDOLLEYES],
-			[7,PBMoves::FAKETEARS],[10,PBMoves::FURYSWIPES],[13,PBMoves::SWEETSCENT],[15,PBMoves::TACKLE],
-			[17,PBMoves::PAYBACK],[19,PBMoves::FLING],[22,PBMoves::COVET],[25,PBMoves::PLAYNICE],
-			[27,PBMoves::BULLDOZE],[29,PBMoves::CHARM],[31,PBMoves::FEINTATTACK],[33,PBMoves::SLASH],
-			[36,PBMoves::PLAYROUGH],[41,PBMoves::REST],[41,PBMoves::SNORE],[43,PBMoves::EARTHPOWER],
-			[45,PBMoves::THRASH],[47,PBMoves::MOONBLAST],[49,PBMoves::HIGHHORSEPOWER],[51,PBMoves::DOUBLEEDGE],
-			[54,PBMoves::HAMMERARM],[57,PBMoves::HEADLONGRUSH],[64,PBMoves::BLOODMOON]]
+		:Movelist => [[0,PBMoves::MOONLIGHT],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[1,PBMoves::LICK],[1,PBMoves::HEADLONGRUSH],
+			[8,PBMoves::FURYSWIPES],[13,PBMoves::PAYBACK],[17,PBMoves::HARDEN],[22,PBMoves::SLASH],[25,PBMoves::PLAYNICE],
+			[35,PBMoves::SCARYFACE],[41,PBMoves::REST],[41,PBMoves::SNORE],[48,PBMoves::EARTHPOWER],[56,PBMoves::MOONBLAST],
+			[64,PBMoves::HAMMERARM],[70,PBMoves::BLOODMOON]]
 	}
 },
 
@@ -1337,14 +1416,12 @@ PBSpecies::YAMASK => {
 
 	"Galar" => {
 		:Type2 => PBTypes::GROUND,
-		:Ability => [PBAbilities::WANDERINGSPIRIT],
-		:Movelist => [[1,PBMoves::ASTONISH],[1,PBMoves::MEANLOOK],[4,PBMoves::DISABLE],[8,PBMoves::HAZE],
-			[12,PBMoves::NIGHTSHADE],[16,PBMoves::CURSE],[20,PBMoves::SLAM],[24,PBMoves::CRAFTYSHIELD],
-			[28,PBMoves::BRUTALSWING],[32,PBMoves::HEX],[36,PBMoves::POWERSPLIT],[36,PBMoves::GUARDSPLIT],
-			[40,PBMoves::PROTECT],[44,PBMoves::SHADOWBALL],[48,PBMoves::EARTHQUAKE],[52,PBMoves::DESTINYBOND]],
-		:EggMoves => [PBMoves::ALLYSWITCH,PBMoves::CRAFTYSHIELD,PBMoves::DISABLE,PBMoves::ENDURE,
-			PBMoves::FAKETEARS,PBMoves::HEALBLOCK,PBMoves::IMPRISON,PBMoves::MEMENTO,PBMoves::NASTYPLOT,
-			PBMoves::NIGHTMARE,PBMoves::POLTERGEIST,PBMoves::TOXICSPIKES],
+		:Movelist => [[1,PBMoves::ASTONISH],[1,PBMoves::PROTECT],[4,PBMoves::HAZE],[8,PBMoves::NIGHTSHADE],
+			[12,PBMoves::DISABLE],[16,PBMoves::BRUTALSWING],[20,PBMoves::CRAFTYSHIELD],[24,PBMoves::HEX],[28,PBMoves::MEANLOOK],
+			[32,PBMoves::SLAM],[36,PBMoves::CURSE],[40,PBMoves::SHADOWBALL],[44,PBMoves::EARTHQUAKE],[48,PBMoves::GUARDSPLIT],
+			[48,PBMoves::POWERSPLIT],[52,PBMoves::DESTINYBOND]],
+		:EggMoves => [PBMoves::ALLYSWITCH,PBMoves::CRAFTYSHIELD,PBMoves::DISABLE,PBMoves::ENDURE,PBMoves::FAKETEARS,
+			PBMoves::HEALBLOCK,PBMoves::IMPRISON,PBMoves::MEMENTO,PBMoves::NASTYPLOT,PBMoves::TOXICSPIKES],
 		:GetEvo => [[PBSpecies::RUNERIGUS,PBEvolution::LevelNight,34]]
 	},
 
@@ -1354,13 +1431,12 @@ PBSpecies::YAMASK => {
 
 	"NuclearGalar" => {
 		:Type2 => PBTypes::NUCLEAR,
-		:Ability => [PBAbilities::WANDERINGSPIRIT],
-		:Movelist => [[1,PBMoves::ASTONISH],[1,PBMoves::MEANLOOK],[4,PBMoves::DISABLE],[8,PBMoves::HAZE],
-		[12,PBMoves::NIGHTSHADE],[16,PBMoves::CURSE],[20,PBMoves::SLAM],[24,PBMoves::CRAFTYSHIELD],
-		[28,PBMoves::BRUTALSWING],[32,PBMoves::HEX],[36,PBMoves::POWERSPLIT],[36,PBMoves::GUARDSPLIT],
-		[40,PBMoves::PROTECT],[44,PBMoves::SHADOWBALL],[48,PBMoves::EARTHQUAKE],[52,PBMoves::DESTINYBOND]],
-	:EggMoves => [PBMoves::ALLYSWITCH,PBMoves::CRAFTYSHIELD,PBMoves::DISABLE,PBMoves::ENDURE,
-		PBMoves::FAKETEARS,PBMoves::POLTERGEIST,PBMoves::TOXICSPIKES],
+		:Movelist => [[1,PBMoves::ASTONISH],[1,PBMoves::PROTECT],[4,PBMoves::HAZE],[8,PBMoves::NIGHTSHADE],
+			[12,PBMoves::DISABLE],[16,PBMoves::BRUTALSWING],[20,PBMoves::CRAFTYSHIELD],[24,PBMoves::HEX],[28,PBMoves::MEANLOOK],
+			[32,PBMoves::SLAM],[36,PBMoves::CURSE],[40,PBMoves::SHADOWBALL],[44,PBMoves::EARTHQUAKE],[48,PBMoves::GUARDSPLIT],
+			[48,PBMoves::POWERSPLIT],[52,PBMoves::DESTINYBOND]],
+		:EggMoves => [PBMoves::ALLYSWITCH,PBMoves::CRAFTYSHIELD,PBMoves::DISABLE,PBMoves::ENDURE,PBMoves::FAKETEARS,
+			PBMoves::HEALBLOCK,PBMoves::IMPRISON,PBMoves::MEMENTO,PBMoves::NASTYPLOT,PBMoves::TOXICSPIKES],
 		:GetEvo => [[PBSpecies::RUNERIGUS,PBEvolution::LevelNight,34]]
 	}
 },
@@ -1933,8 +2009,13 @@ PBSpecies::MEOWSTIC => {
 
 	#Gender difference
 	"Female" => {
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::INFILTRATOR,PBAbilities::COMPETITIVE,
-			PBAbilities::PRANKSTER]
+		:Movelist => [[1,PBMoves::STOREDPOWER],[1,PBMoves::MEFIRST],[1,PBMoves::MAGICALLEAF],[1,PBMoves::SCRATCH],
+			[1,PBMoves::LEER],[1,PBMoves::COVET],[1,PBMoves::CONFUSION],[5,PBMoves::COVET],[9,PBMoves::CONFUSION],[13,PBMoves::LIGHTSCREEN],
+			[17,PBMoves::PSYBEAM],[19,PBMoves::FAKEOUT],[22,PBMoves::DISARMINGVOICE],[25,PBMoves::PSYSHOCK],[28,PBMoves::CHARGEBEAM],
+			[31,PBMoves::SHADOWBALL],[35,PBMoves::EXTRASENSORY],[40,PBMoves::PSYCHIC],
+			[43,PBMoves::ROLEPLAY],[45,PBMoves::SIGNALBEAM],[48,PBMoves::SUCKERPUNCH],
+			[50,PBMoves::FUTURESIGHT],[53,PBMoves::STOREDPOWER]],
+		:Ability => [PBAbilities::KEENEYE, PBAbilities::INFILTRATOR, PBAbilities::COMPETITIVE]
 	},
 
 	"Nuclear" => {
@@ -1943,8 +2024,13 @@ PBSpecies::MEOWSTIC => {
 
 	#Gender difference
 	"NuclearFemale" => {
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::INFILTRATOR,PBAbilities::COMPETITIVE,
-		PBAbilities::PRANKSTER],
+		:Movelist => [[1,PBMoves::STOREDPOWER],[1,PBMoves::MEFIRST],[1,PBMoves::MAGICALLEAF],[1,PBMoves::SCRATCH],
+			[1,PBMoves::LEER],[1,PBMoves::COVET],[1,PBMoves::CONFUSION],[5,PBMoves::COVET],[9,PBMoves::CONFUSION],[13,PBMoves::LIGHTSCREEN],
+			[17,PBMoves::PSYBEAM],[19,PBMoves::FAKEOUT],[22,PBMoves::DISARMINGVOICE],[25,PBMoves::PSYSHOCK],[28,PBMoves::CHARGEBEAM],
+			[31,PBMoves::SHADOWBALL],[35,PBMoves::EXTRASENSORY],[40,PBMoves::PSYCHIC],
+			[43,PBMoves::ROLEPLAY],[45,PBMoves::SIGNALBEAM],[48,PBMoves::SUCKERPUNCH],
+			[50,PBMoves::FUTURESIGHT],[53,PBMoves::STOREDPOWER]],
+		:Ability => [PBAbilities::KEENEYE, PBAbilities::INFILTRATOR, PBAbilities::COMPETITIVE],
 		:Type2 => PBTypes::NUCLEAR
 	}
 },
@@ -1953,8 +2039,8 @@ PBSpecies::KINGAMBIT => {
 	#Gender difference
 	"Female" => {
 		:BaseStats => [100,135,50,120,60,85],
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::INFILTRATOR,PBAbilities::COMPETITIVE,
-			PBAbilities::SHARPNESS,PBAbilities::SHACKLE,PBAbilities::PARRY]
+		:Movelist => [[0,PBMoves::KOWTOWCLEAVE],[1,PBMoves::SACREDSWORD],[1,PBMoves::AQUACUTTER],[1,PBMoves::METALBURST],[1,PBMoves::METALCLAW],[1,PBMoves::FURYCUTTER],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[15,PBMoves::TORMENT],[20,PBMoves::SCARYFACE],[25,PBMoves::ASSURANCE],[30,PBMoves::METALSOUND],[35,PBMoves::SLASH],[40,PBMoves::NIGHTSLASH],[45,PBMoves::IRONDEFENSE],[50,PBMoves::RETALIATE],[57,PBMoves::IRONHEAD],[64,PBMoves::SWORDSDANCE],[71,PBMoves::GUILLOTINE]],
+		:Ability => [PBAbilities::KEENEYE, PBAbilities::INFILTRATOR, PBAbilities::COMPETITIVE]
 	}
 },
 
@@ -2733,21 +2819,12 @@ PBSpecies::RAICHU => {
 	"Alolan" => {
 		:DexEntry => "It uses psychokinesis to control electricity. It hops aboard its own tail, using psychic power to lift the tail and move about while riding it.",
 		:Type2 => PBTypes::PSYCHIC,
-		:BaseStats => [60,85,50,120,95,85],
+		:BaseStats => [60,85,50,110,95,85],
 		:Height => 7,
 		:Weight => 210,
-		:Ability => [PBAbilities::SURGESURFER,PBAbilities::SURGESURFER,PBAbilities::SURGESURFER,PBAbilities::INSTINCT],
-		:Movelist => [[0,PBMoves::PSYCHIC],[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],
-			[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],[1,PBMoves::SPEEDSWAP],[1,PBMoves::FAKEOUT],
-			[1,PBMoves::ENCORE],[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],
-			[1,PBMoves::TAILSLAP],[1,PBMoves::PSYCHIC],[1,PBMoves::METEORMASH],[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],
-			[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],
-			[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],[3,PBMoves::PLAYNICE],
-			[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN],[101,PBMoves::ZIPPYZAP],[101,PBMoves::FLOATYFALL],[101,PBMoves::SPLISHYSPLASH],[101,PBMoves::PIKAPAPOW]]
+		:Ability => [PBAbilities::SURGESURFER],
+		:Movelist => [[0,PBMoves::PSYCHIC],[1,PBMoves::SPEEDSWAP],[1,PBMoves::THUNDERSHOCK],
+			[1,PBMoves::TAILWHIP],[1,PBMoves::QUICKATTACK],[1,PBMoves::THUNDERBOLT]]
 	}
 },
 
@@ -2769,14 +2846,13 @@ PBSpecies::SANDSHREW => {
 		:Ability => [PBAbilities::SNOWCLOAK,PBAbilities::SLUSHRUSH],
 		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::DEFENSECURL],[3,PBMoves::BIDE],
 			[5,PBMoves::POWDERSNOW],[7,PBMoves::ICEBALL],[9,PBMoves::RAPIDSPIN],
-			[11,PBMoves::MIST],[13,PBMoves::FURYCUTTER],[15,PBMoves::METALCLAW],[17,PBMoves::SWIFT],
-			[19,PBMoves::ROLLOUT],[21,PBMoves::FURYSWIPES],[23,PBMoves::IRONDEFENSE],[26,PBMoves::SLASH],
-			[28,PBMoves::ICESHARD],[30,PBMoves::IRONHEAD],[32,PBMoves::MIRRORCOAT],[34,PBMoves::GYROBALL],
-			[36,PBMoves::ICEPUNCH],[38,PBMoves::SWORDSDANCE],[42,PBMoves::HAIL],[45,PBMoves::SNOWSCAPE],
-			[48,PBMoves::BLIZZARD]],
-		:EggMoves => [PBMoves::AMNESIA,PBMoves::CELEBRATE,PBMoves::CHIPAWAY,PBMoves::COUNTER,PBMoves::CRUSHCLAW,PBMoves::CURSE,
+			[11,PBMoves::FURYCUTTER],[14,PBMoves::METALCLAW],[17,PBMoves::SWIFT],
+			[20,PBMoves::FURYSWIPES],[23,PBMoves::IRONDEFENSE],[26,PBMoves::SLASH],
+			[30,PBMoves::IRONHEAD],[34,PBMoves::GYROBALL],[38,PBMoves::SWORDSDANCE],
+			[42,PBMoves::HAIL],[46,PBMoves::BLIZZARD]],
+		:EggMoves => [PBMoves::AMNESIA,PBMoves::CHIPAWAY,PBMoves::COUNTER,PBMoves::CRUSHCLAW,PBMoves::CURSE,
 				PBMoves::ENDURE,PBMoves::FLAIL,PBMoves::HONECLAWS,PBMoves::ICICLECRASH,PBMoves::ICICLESPEAR,
-				PBMoves::METALCLAW,PBMoves::NIGHTSLASH,PBMoves::POISONSTING,PBMoves::SANDATTACK],
+				PBMoves::METALCLAW,PBMoves::NIGHTSLASH],
 		:WildHoldItems => [0,PBItems::PECHABERRY,0],
 		:GetEvo => [[PBSpecies::SANDSLASH,PBEvolution::Item,PBItems::ICESTONE]]
 	}
@@ -2804,15 +2880,12 @@ PBSpecies::SANDSLASH => {
 		:Height => 12,
 		:Weight => 550,
 		:Ability => [PBAbilities::SNOWCLOAK,PBAbilities::SLUSHRUSH],
-		:Movelist => [[0,PBMoves::ICICLESPEAR],[1,PBMoves::SPIKYSHIELD],[1,PBMoves::ICICLECRASH],[1,PBMoves::METALBURST],
-			[1,PBMoves::COUNTER],[1,PBMoves::ICICLESPEAR],[1,PBMoves::SCRATCH],[1,PBMoves::DEFENSECURL],[3,PBMoves::BIDE],
-			[5,PBMoves::POWDERSNOW],[7,PBMoves::ICEBALL],[9,PBMoves::RAPIDSPIN],[11,PBMoves::MIST],[13,PBMoves::FURYCUTTER],
-			[15,PBMoves::METALCLAW],[17,PBMoves::SWIFT],[19,PBMoves::ROLLOUT],[21,PBMoves::FURYSWIPES],[23,PBMoves::IRONDEFENSE],
-			[26,PBMoves::SLASH],[28,PBMoves::ICESHARD],[30,PBMoves::IRONHEAD],[32,PBMoves::MIRRORCOAT],[34,PBMoves::GYROBALL],
-			[36,PBMoves::ICEPUNCH],[38,PBMoves::SWORDSDANCE],[42,PBMoves::HAIL],[45,PBMoves::SNOWSCAPE],[48,PBMoves::BLIZZARD]],
-		:EggMoves => [PBMoves::AMNESIA,PBMoves::CELEBRATE,PBMoves::CHIPAWAY,PBMoves::COUNTER,PBMoves::CRUSHCLAW,PBMoves::CURSE,
+		:Movelist => [[0,PBMoves::ICICLESPEAR],[1,PBMoves::METALBURST],[1,PBMoves::ICICLECRASH],
+			[1,PBMoves::SLASH],[1,PBMoves::DEFENSECURL],[1,PBMoves::ICEBALL],
+			[1,PBMoves::METALCLAW]],
+		:EggMoves => [PBMoves::AMNESIA,PBMoves::CHIPAWAY,PBMoves::COUNTER,PBMoves::CRUSHCLAW,PBMoves::CURSE,
 				PBMoves::ENDURE,PBMoves::FLAIL,PBMoves::HONECLAWS,PBMoves::ICICLECRASH,PBMoves::ICICLESPEAR,
-				PBMoves::METALCLAW,PBMoves::NIGHTSLASH,PBMoves::POISONSTING,PBMoves::SANDATTACK],
+				PBMoves::METALCLAW,PBMoves::NIGHTSLASH],
 		:WildHoldItems => [0,PBItems::PECHABERRY,0]
 	},
 
@@ -2842,18 +2915,17 @@ PBSpecies::VULPIX => {
 		:Type1 => PBTypes::ICE,
 		:Type2 => PBTypes::ICE,
 		:Ability => [PBAbilities::SNOWCLOAK,PBAbilities::SNOWWARNING],
-		:Movelist => [[1,PBMoves::POWDERSNOW],[1,PBMoves::TAILWHIP],[1,PBMoves::DISABLE],[1,PBMoves::TACKLE],
-			[3,PBMoves::ROAR],[5,PBMoves::MIST],[7,PBMoves::QUICKATTACK],[9,PBMoves::BABYDOLLEYES],
-			[12,PBMoves::ICESHARD],[14,PBMoves::CONFUSERAY],[15,PBMoves::ICYWIND],[17,PBMoves::PAYBACK],
-			[19,PBMoves::SPITE],[21,PBMoves::DRAININGKISS],[23,PBMoves::CAPTIVATE],[25,PBMoves::FEINTATTACK],
-			[27,PBMoves::HEX],[29,PBMoves::ICEFANG],[31,PBMoves::AURORABEAM],[33,PBMoves::EXTRASENSORY],
-			[35,PBMoves::SAFEGUARD],[37,PBMoves::ICEBEAM],[39,PBMoves::IMPRISON],[41,PBMoves::AURORAVEIL],
-			[43,PBMoves::FREEZEDRY],[45,PBMoves::GRUDGE],[47,PBMoves::NASTYPLOT],[49,PBMoves::BLIZZARD],
-			[51,PBMoves::SHEERCOLD]],
-		:EggMoves => [PBMoves::AGILITY,PBMoves::CELEBRATE,PBMoves::CHARM,PBMoves::DISABLE,PBMoves::EMBER,PBMoves::ENCORE,
-				PBMoves::ENERGYBALL,PBMoves::EXTRASENSORY,PBMoves::FIREBLAST,PBMoves::FIRESPIN,PBMoves::FLAIL,
-				PBMoves::FLAMETHROWER,PBMoves::FREEZEDRY,PBMoves::HOWL,PBMoves::HYPNOSIS,PBMoves::MOONBLAST,
-				PBMoves::POWERSWAP,PBMoves::SPITE,PBMoves::SECRETPOWER,PBMoves::TAILSLAP,PBMoves::WILLOWISP],
+		:Movelist => [[1,PBMoves::POWDERSNOW],[4,PBMoves::TAILWHIP],[7,PBMoves::ROAR],
+			[9,PBMoves::BABYDOLLEYES],[10,PBMoves::ICESHARD],[12,PBMoves::CONFUSERAY],
+			[15,PBMoves::ICYWIND],[18,PBMoves::PAYBACK],[20,PBMoves::MIST],
+			[23,PBMoves::FEINTATTACK],[26,PBMoves::HEX],[28,PBMoves::AURORABEAM],
+			[31,PBMoves::EXTRASENSORY],[34,PBMoves::SAFEGUARD],[36,PBMoves::ICEBEAM],
+			[39,PBMoves::IMPRISON],[42,PBMoves::BLIZZARD],[44,PBMoves::GRUDGE],
+			[47,PBMoves::CAPTIVATE],[50,PBMoves::SHEERCOLD]],
+		:EggMoves => [PBMoves::AGILITY,PBMoves::CHARM,PBMoves::DISABLE,PBMoves::ENCORE,
+				PBMoves::EXTRASENSORY,PBMoves::FLAIL,PBMoves::FREEZEDRY,PBMoves::HOWL,
+				PBMoves::HYPNOSIS,PBMoves::MOONBLAST,PBMoves::POWERSWAP,PBMoves::SPITE,
+				PBMoves::SECRETPOWER,PBMoves::TAILSLAP],
 		:WildHoldItems => [0,PBItems::SNOWBALL,0],
 		:GetEvo => [[PBSpecies::NINETALES,PBEvolution::Item,PBItems::ICESTONE]]
 	}
@@ -2891,18 +2963,13 @@ PBSpecies::NINETALES => {
 		:BaseStats => [73,67,75,109,81,100],
 		:EVs => [0,0,0,2,0,0],
 		:Ability => [PBAbilities::SNOWCLOAK,PBAbilities::SNOWWARNING],
-		:Movelist => [[0,PBMoves::DAZZLINGGLEAM],[1,PBMoves::DAZZLINGGLEAM],[1,PBMoves::HYPNOSIS],[1,PBMoves::POWDERSNOW],
-			[1,PBMoves::TAILWHIP],[1,PBMoves::DISABLE],[1,PBMoves::TACKLE],[3,PBMoves::ROAR],[5,PBMoves::MIST],
-			[7,PBMoves::QUICKATTACK],[9,PBMoves::BABYDOLLEYES],[12,PBMoves::ICESHARD],[14,PBMoves::CONFUSERAY],
-			[15,PBMoves::ICYWIND],[17,PBMoves::PAYBACK],[19,PBMoves::SPITE],[21,PBMoves::DRAININGKISS],
-			[23,PBMoves::CAPTIVATE],[25,PBMoves::FEINTATTACK],[27,PBMoves::HEX],[29,PBMoves::ICEFANG],
-			[31,PBMoves::AURORABEAM],[33,PBMoves::EXTRASENSORY],[35,PBMoves::SAFEGUARD],[37,PBMoves::ICEBEAM],
-			[39,PBMoves::IMPRISON],[41,PBMoves::AURORAVEIL],[43,PBMoves::FREEZEDRY],[45,PBMoves::GRUDGE],
-			[47,PBMoves::NASTYPLOT],[49,PBMoves::BLIZZARD],[51,PBMoves::SHEERCOLD]],
-		:EggMoves => [PBMoves::AGILITY,PBMoves::CELEBRATE,PBMoves::CHARM,PBMoves::DISABLE,PBMoves::EMBER,PBMoves::ENCORE,
-				PBMoves::ENERGYBALL,PBMoves::EXTRASENSORY,PBMoves::FIREBLAST,PBMoves::FIRESPIN,PBMoves::FLAIL,
-				PBMoves::FLAMETHROWER,PBMoves::FREEZEDRY,PBMoves::HOWL,PBMoves::HYPNOSIS,PBMoves::MOONBLAST,
-				PBMoves::POWERSWAP,PBMoves::SPITE,PBMoves::SECRETPOWER,PBMoves::TAILSLAP,PBMoves::WILLOWISP],
+		:Movelist => [[0,PBMoves::DAZZLINGGLEAM],[1,PBMoves::IMPRISON],[1,PBMoves::NASTYPLOT],
+			[1,PBMoves::ICEBEAM],[1,PBMoves::ICESHARD],[1,PBMoves::CONFUSERAY],
+			[1,PBMoves::SAFEGUARD]],
+		:EggMoves => [PBMoves::AGILITY,PBMoves::CHARM,PBMoves::DISABLE,PBMoves::ENCORE,
+				PBMoves::EXTRASENSORY,PBMoves::FLAIL,PBMoves::FREEZEDRY,PBMoves::HOWL,
+				PBMoves::HYPNOSIS,PBMoves::MOONBLAST,PBMoves::POWERSWAP,PBMoves::SPITE,
+				PBMoves::SECRETPOWER,PBMoves::TAILSLAP],
 		:WildHoldItems => [0,PBItems::SNOWBALL,0]
 	}
 },
@@ -2931,14 +2998,14 @@ PBSpecies::DIGLETT => {
 		:Type2 => PBTypes::STEEL,
 		:BaseStats => [10,55,30,90,35,40],
 		:Ability => [PBAbilities::SANDVEIL,PBAbilities::TANGLINGHAIR,PBAbilities::SANDFORCE],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::SANDATTACK],[1,PBMoves::METALCLAW],[4,PBMoves::GROWL],
-			[7,PBMoves::ASTONISH],[10,PBMoves::MUDSLAP],[14,PBMoves::MAGNITUDE],[18,PBMoves::BULLDOZE],
-			[20,PBMoves::FURYSWIPES],[22,PBMoves::SUCKERPUNCH],[25,PBMoves::MUDBOMB],[28,PBMoves::EARTHPOWER],
-			[31,PBMoves::DIG],[33,PBMoves::AGILITY],[35,PBMoves::IRONHEAD],[37,PBMoves::SLASH],
-			[39,PBMoves::EARTHQUAKE],[41,PBMoves::SANDSTORM],[43,PBMoves::FISSURE]],
+		:Movelist => [[1,PBMoves::SANDATTACK],[1,PBMoves::METALCLAW],[4,PBMoves::GROWL],
+			[7,PBMoves::ASTONISH],[10,PBMoves::MUDSLAP],[14,PBMoves::MAGNITUDE],
+			[18,PBMoves::BULLDOZE],[22,PBMoves::SUCKERPUNCH],[25,PBMoves::MUDBOMB],
+			[28,PBMoves::EARTHPOWER],[31,PBMoves::DIG],[35,PBMoves::IRONHEAD],
+			[39,PBMoves::EARTHQUAKE],[43,PBMoves::FISSURE]],
 		:EggMoves => [PBMoves::ANCIENTPOWER,PBMoves::BEATUP,PBMoves::ENDURE,PBMoves::FEINTATTACK,
-				PBMoves::FINALGAMBIT,PBMoves::REVERSAL,PBMoves::FLASH,PBMoves::HEADBUTT,PBMoves::MEMENTO,
-				PBMoves::METALSOUND,PBMoves::HONECLAWS,PBMoves::PURSUIT,PBMoves::THRASH],
+				PBMoves::FINALGAMBIT,PBMoves::HEADBUTT,PBMoves::MEMENTO,PBMoves::METALSOUND,PBMoves::HONECLAWS,
+				PBMoves::PURSUIT,PBMoves::REVERSAL,PBMoves::FLASH],
 		:Weight => 10
 	},
 
@@ -2981,13 +3048,12 @@ PBSpecies::DUGTRIO => {
 		:BaseStats => [35,100,60,110,50,70],
 		:EVs => [0,2,0,0,0,0],
 		:Ability => [PBAbilities::SANDVEIL,PBAbilities::TANGLINGHAIR,PBAbilities::SANDFORCE],
-		:Movelist => [[0,PBMoves::SANDTOMB],[0,PBMoves::TRIATTACK],[1,PBMoves::MAKEITRAIN],[1,PBMoves::ROTOTILLER],
-			[1,PBMoves::NIGHTSLASH],[1,PBMoves::SCREECH],[1,PBMoves::TRIATTACK],[1,PBMoves::SANDTOMB],
-			[1,PBMoves::SCRATCH],[1,PBMoves::SANDATTACK],[1,PBMoves::METALCLAW],[4,PBMoves::GROWL],
-			[7,PBMoves::ASTONISH],[10,PBMoves::MUDSLAP],[14,PBMoves::MAGNITUDE],[18,PBMoves::BULLDOZE],
-			[20,PBMoves::FURYSWIPES],[22,PBMoves::SUCKERPUNCH],[25,PBMoves::MUDBOMB],[28,PBMoves::EARTHPOWER],
-			[31,PBMoves::DIG],[33,PBMoves::AGILITY],[35,PBMoves::IRONHEAD],[37,PBMoves::SLASH],
-			[39,PBMoves::EARTHQUAKE],[41,PBMoves::SANDSTORM],[43,PBMoves::FISSURE]],
+		:Movelist => [[0,PBMoves::SANDTOMB],[1,PBMoves::ROTOTILLER],[1,PBMoves::NIGHTSLASH],
+			[1,PBMoves::TRIATTACK],[1,PBMoves::SANDATTACK],[1,PBMoves::METALCLAW],[1,PBMoves::GROWL],
+			[4,PBMoves::GROWL],[7,PBMoves::ASTONISH],[10,PBMoves::MUDSLAP],[14,PBMoves::MAGNITUDE],
+			[18,PBMoves::BULLDOZE],[22,PBMoves::SUCKERPUNCH],[25,PBMoves::MUDBOMB],
+			[30,PBMoves::EARTHPOWER],[35,PBMoves::DIG],[41,PBMoves::IRONHEAD],
+			[47,PBMoves::EARTHQUAKE],[53,PBMoves::FISSURE]],
 		:Weight => 666
 	},
 
@@ -3025,19 +3091,10 @@ PBSpecies::RELICANTH => {
 		:BaseStats => [160,120,55,80,100,55], #? Cosmic adds +85 to BST
 		:EVs => [1,1,0,0,1,0],
 		:Ability => [PBAbilities::SHADOWTAG,PBAbilities::GRAVITOSY,PBAbilities::ANALYTIC,PBAbilities::STURDINESS],
-		:Movelist => [[1,PBMoves::AQUAJET],[1,PBMoves::ASTRALSHOT],[1,PBMoves::FLAIL],[1,PBMoves::CURSE],
-			[1,PBMoves::TACKLE],[1,PBMoves::HARDEN],[1,PBMoves::MUDSPORT],[1,PBMoves::THUNDERBOLT],
-			[1,PBMoves::REFRESH],[6,PBMoves::MUDSPORT],[10,PBMoves::WATERGUN],[10,PBMoves::WATERSPOUT],
-			[15,PBMoves::ROCKTOMB],[15,PBMoves::AQUARING],[18,PBMoves::ROOST],[21,PBMoves::ANCIENTPOWER],
-			[22,PBMoves::EARTHPOWER],[26,PBMoves::IRONHEAD],[26,PBMoves::PSYCHICFANGS],[31,PBMoves::ANCIENTPOWER],
-			[31,PBMoves::IRONDEFENSE],[31,PBMoves::TAKEDOWN],[35,PBMoves::YAWN],[40,PBMoves::ICEBEAM],
-			[40,PBMoves::REFLECT],[40,PBMoves::LIGHTSCREEN],[41,PBMoves::REST],[41,PBMoves::CRUNCH],
-			[46,PBMoves::HYDROPUMP],[46,PBMoves::SIGNALBEAM],[50,PBMoves::DRAGONTAIL],[55,PBMoves::RECOVER],
-			[56,PBMoves::HEADSMASH],[60,PBMoves::COMETSHOWER],[70,PBMoves::MIRRORCOAT],[75,PBMoves::COSMICRAY],
-			[105,PBMoves::COSMICBARRAGE]],
+		:Movelist => [[1,PBMoves::AQUAJET],[1,PBMoves::ASTRALSHOT],[1,PBMoves::FLAIL],[1,PBMoves::CURSE],[1,PBMoves::TACKLE],[1,PBMoves::HARDEN],[1,PBMoves::MUDSPORT],[1,PBMoves::THUNDERBOLT],[1,PBMoves::REFRESH],[6,PBMoves::MUDSPORT],[10,PBMoves::WATERGUN],[10,PBMoves::WATERSPOUT],[15,PBMoves::ROCKTOMB],[15,PBMoves::AQUARING],[18,PBMoves::ROOST],[21,PBMoves::ANCIENTPOWER],[22,PBMoves::EARTHPOWER],[26,PBMoves::IRONHEAD],[26,PBMoves::PSYCHICFANGS],[31,PBMoves::ANCIENTPOWER],[31,PBMoves::IRONDEFENSE],[31,PBMoves::TAKEDOWN],[35,PBMoves::YAWN],[40,PBMoves::ICEBEAM],[40,PBMoves::REFLECT],[40,PBMoves::LIGHTSCREEN],[41,PBMoves::REST],[41,PBMoves::CRUNCH],[46,PBMoves::HYDROPUMP],[46,PBMoves::SIGNALBEAM],[50,PBMoves::DRAGONTAIL],[55,PBMoves::RECOVER],[56,PBMoves::HEADSMASH],[60,PBMoves::COMETSHOWER],[70,PBMoves::MIRRORCOAT],[75,PBMoves::COSMICRAY],[105,PBMoves::COSMICBARRAGE]],
 		:Weight => 280,
 		:Height => 4,
-		:kind => "Cosmic Fish"
+		:kind => "Cosmic Feesh"
 	}
 },
 
@@ -3070,13 +3127,13 @@ PBSpecies::MEOWTH => {
 		:Type2 => PBTypes::DARK,
 		:BaseStats => [40,35,35,90,50,40],
 		:EVs => [0,2,0,0,0,0],
-		:Ability => [PBAbilities::PICKUP,PBAbilities::TECHNICIAN,PBAbilities::RATTLED,PBAbilities::BONANZA,PBAbilities::FORTUNE,PBAbilities::MOUNTAINEER],
+		:Ability => [PBAbilities::PICKUP,PBAbilities::TECHNICIAN,PBAbilities::RATTLED],
 		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],[6,PBMoves::BITE],
 			[9,PBMoves::FAKEOUT],[14,PBMoves::FURYSWIPES],[17,PBMoves::SCREECH],
 			[22,PBMoves::FEINTATTACK],[25,PBMoves::TAUNT],[30,PBMoves::PAYDAY],
-			[33,PBMoves::FEINT],[38,PBMoves::CAPTIVATE],[41,PBMoves::ASSURANCE],
-			[46,PBMoves::SLASH],[48,PBMoves::NASTYPLOT],[50,PBMoves::NIGHTSLASH],
-			[53,PBMoves::DARKPULSE],[55,PBMoves::PLAYROUGH]],
+			[33,PBMoves::SLASH],[38,PBMoves::NASTYPLOT],[41,PBMoves::ASSURANCE],
+			[46,PBMoves::CAPTIVATE],[49,PBMoves::NIGHTSLASH],[50,PBMoves::FEINT],
+			[55,PBMoves::DARKPULSE]],
 		:EggMoves => [PBMoves::AMNESIA,PBMoves::ASSIST,PBMoves::CHARM,PBMoves::COVET,PBMoves::FLAIL,PBMoves::FLATTER,
 			PBMoves::FOULPLAY,PBMoves::HYPNOSIS,PBMoves::PARTINGSHOT,PBMoves::PUNISHMENT,
 			PBMoves::SNATCH,PBMoves::SPITE],
@@ -3089,13 +3146,12 @@ PBSpecies::MEOWTH => {
 		:Type2 => PBTypes::STEEL,
 		:BaseStats => [40,35,35,90,50,40],
 		:EVs => [0,2,0,0,0,0],
-		:Ability => [PBAbilities::PICKUP,PBAbilities::TOUGHCLAWS,PBAbilities::UNNERVE,PBAbilities::BONANZA,PBAbilities::FORTUNE,PBAbilities::MOUNTAINEER],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],[4,PBMoves::FAKEOUT],[8,PBMoves::HONECLAWS],
-			[12,PBMoves::FURYSWIPES],[16,PBMoves::METALCLAW],[20,PBMoves::SCREECH],[24,PBMoves::TAUNT],
-			[29,PBMoves::PAYDAY],[32,PBMoves::SWAGGER],[36,PBMoves::METALSOUND],[40,PBMoves::SLASH],
+		:Ability => [PBAbilities::PICKUP,PBAbilities::TOUGHCLAWS,PBAbilities::UNNERVE],
+		:Movelist => [[1,PBMoves::FAKEOUT],[1,PBMoves::GROWL],[4,PBMoves::HONECLAWS],[8,PBMoves::SCRATCH],
+			[12,PBMoves::PAYDAY],[16,PBMoves::METALCLAW],[20,PBMoves::TAUNT],[24,PBMoves::SWAGGER],
+			[29,PBMoves::FURYSWIPES],[32,PBMoves::SCREECH],[36,PBMoves::SLASH],[40,PBMoves::METALSOUND],
 			[44,PBMoves::THRASH]],
-		:EggMoves => [PBMoves::COVET,PBMoves::FEINT,PBMoves::FLAIL,PBMoves::SPITE,PBMoves::DOUBLEEDGE,PBMoves::CURSE,
-			PBMoves::NIGHTSLASH],
+		:EggMoves => [PBMoves::COVET,PBMoves::FLAIL,PBMoves::SPITE,PBMoves::DOUBLEEDGE,PBMoves::CURSE,PBMoves::NIGHTSLASH],
 		:GetEvo => [[PBSpecies::PERRSERKER,PBEvolution::Level,28]]
 	},
 
@@ -3119,14 +3175,14 @@ PBSpecies::PERSIAN => {
 		:Type2 => PBTypes::DARK,
 		:BaseStats => [65,60,60,115,75,65],
 		:EVs => [0,2,0,0,0,0],
-		:Ability => [PBAbilities::FURCOAT,PBAbilities::TECHNICIAN,PBAbilities::RATTLED,PBAbilities::HIGHRISE,PBAbilities::MOUNTAINEER],
-		:Movelist => [[0,PBMoves::SWIFT],[0,PBMoves::POWERGEM],[1,PBMoves::QUASH],[1,PBMoves::AMNESIA],[1,PBMoves::HYPNOSIS],
-			[1,PBMoves::SWITCHEROO],[1,PBMoves::POWERGEM],[1,PBMoves::SWIFT],[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],
-			[6,PBMoves::BITE],[9,PBMoves::FAKEOUT],[14,PBMoves::FURYSWIPES],[17,PBMoves::SCREECH],
-			[22,PBMoves::FEINTATTACK],[25,PBMoves::TAUNT],[30,PBMoves::PAYDAY],
-			[33,PBMoves::FEINT],[38,PBMoves::CAPTIVATE],[41,PBMoves::ASSURANCE],
-			[46,PBMoves::SLASH],[48,PBMoves::NASTYPLOT],[50,PBMoves::NIGHTSLASH],
-			[53,PBMoves::DARKPULSE],[55,PBMoves::PLAYROUGH]],
+		:Ability => [PBAbilities::FURCOAT,PBAbilities::TECHNICIAN,PBAbilities::RATTLED],
+		:Movelist => [[0,PBMoves::SWIFT],[1,PBMoves::QUASH],[1,PBMoves::PLAYROUGH],[1,PBMoves::SWITCHEROO],
+			[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],[1,PBMoves::BITE],[1,PBMoves::FAKEOUT],[6,PBMoves::BITE],
+			[9,PBMoves::FAKEOUT],[14,PBMoves::FURYSWIPES],[17,PBMoves::SCREECH],
+			[22,PBMoves::FEINTATTACK],[25,PBMoves::TAUNT],[32,PBMoves::POWERGEM],
+			[37,PBMoves::SLASH],[44,PBMoves::NASTYPLOT],[49,PBMoves::ASSURANCE],
+			[56,PBMoves::CAPTIVATE],[61,PBMoves::NIGHTSLASH],[65,PBMoves::FEINT],
+			[69,PBMoves::DARKPULSE]],
 		:GetEvo => [],
 		:Height => 11,
 		:Weight => 330
@@ -3145,14 +3201,14 @@ PBSpecies::GEODUDE => {
 		:DexEntry => "If you accidentally step on a Geodude sleeping on the ground, you'll hear a crunching sound and feel a shock ripple through your entire body.",
 		:Type2 => PBTypes::ELECTRIC,
 		:Ability => [PBAbilities::MAGNETPULL,PBAbilities::STURDY,PBAbilities::GALVANIZE],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],[2,PBMoves::THUNDERSHOCK],[4,PBMoves::CHARGE],
-			[6,PBMoves::ROCKPOLISH],[8,PBMoves::BIDE],[10,PBMoves::ROLLOUT],[12,PBMoves::SPARK],[14,PBMoves::TAKEDOWN],
-			[16,PBMoves::ROCKTHROW],[18,PBMoves::SMACKDOWN],[22,PBMoves::THUNDERPUNCH],[24,PBMoves::SELFDESTRUCT],
-			[28,PBMoves::STEALTHROCK],[30,PBMoves::ROCKBLAST],[34,PBMoves::DISCHARGE],[36,PBMoves::EXPLOSION],
-			[38,PBMoves::ROCKSLIDE],[40,PBMoves::DOUBLEEDGE],[42,PBMoves::STONEEDGE]],
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],[4,PBMoves::CHARGE],
+			[6,PBMoves::ROCKPOLISH],[10,PBMoves::ROLLOUT],[12,PBMoves::SPARK],
+			[16,PBMoves::ROCKTHROW],[18,PBMoves::SMACKDOWN],[22,PBMoves::THUNDERPUNCH],
+			[24,PBMoves::SELFDESTRUCT],[28,PBMoves::STEALTHROCK],[30,PBMoves::ROCKBLAST],
+			[34,PBMoves::DISCHARGE],[36,PBMoves::EXPLOSION],[40,PBMoves::DOUBLEEDGE],
+			[42,PBMoves::STONEEDGE]],
 		:EggMoves => [PBMoves::AUTOTOMIZE,PBMoves::BLOCK,PBMoves::COUNTER,PBMoves::CURSE,PBMoves::ENDURE,PBMoves::FLAIL,
-			PBMoves::MAGNETRISE,PBMoves::ROCKCLIMB,PBMoves::SANDATTACK,PBMoves::SCREECH,PBMoves::WIDEGUARD,
-			PBMoves::ZAPCANNON],
+			PBMoves::MAGNETRISE,PBMoves::ROCKCLIMB,PBMoves::SCREECH,PBMoves::WIDEGUARD],
 		:Weight => 203,
 		:WildHoldItems => [0,PBItems::CELLBATTERY,0]
 	}
@@ -3170,11 +3226,12 @@ PBSpecies::GRAVELER => {
 		:DexEntry => "They eat rocks and often get into a scrap over them. The shock of Graveler smashing together causes a flash of light and a booming noise.",
 		:Type2 => PBTypes::ELECTRIC,
 		:Ability => [PBAbilities::MAGNETPULL,PBAbilities::STURDY,PBAbilities::GALVANIZE],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],[2,PBMoves::THUNDERSHOCK],[4,PBMoves::CHARGE],
-			[6,PBMoves::ROCKPOLISH],[8,PBMoves::BIDE],[10,PBMoves::ROLLOUT],[12,PBMoves::SPARK],[14,PBMoves::TAKEDOWN],
-			[16,PBMoves::ROCKTHROW],[18,PBMoves::SMACKDOWN],[22,PBMoves::THUNDERPUNCH],[24,PBMoves::SELFDESTRUCT],
-			[28,PBMoves::STEALTHROCK],[30,PBMoves::ROCKBLAST],[34,PBMoves::DISCHARGE],[36,PBMoves::EXPLOSION],
-			[38,PBMoves::ROCKSLIDE],[40,PBMoves::DOUBLEEDGE],[42,PBMoves::STONEEDGE]],
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],[4,PBMoves::CHARGE],[1,PBMoves::ROCKPOLISH],
+			[1,PBMoves::CHARGE],[6,PBMoves::ROCKPOLISH],[10,PBMoves::ROLLOUT],[12,PBMoves::SPARK],
+			[16,PBMoves::ROCKTHROW],[18,PBMoves::SMACKDOWN],[22,PBMoves::THUNDERPUNCH],
+			[24,PBMoves::SELFDESTRUCT],[30,PBMoves::STEALTHROCK],[34,PBMoves::ROCKBLAST],
+			[40,PBMoves::DISCHARGE],[44,PBMoves::EXPLOSION],[50,PBMoves::DOUBLEEDGE],
+			[54,PBMoves::STONEEDGE]],
 		:Weight => 1100,
 		:WildHoldItems => [0,PBItems::CELLBATTERY,0]
 	}
@@ -3192,12 +3249,12 @@ PBSpecies::GOLEM => {
 		:DexEntry => "Because it can't fire boulders at a rapid pace, it's been known to seize nearby Geodude and fire them from its back.",
 		:Type2 => PBTypes::ELECTRIC,
 		:Ability => [PBAbilities::MAGNETPULL,PBAbilities::STURDY,PBAbilities::GALVANIZE],
-		:Movelist => [[1,PBMoves::MEGAPUNCH],[1,PBMoves::STEAMROLLER],[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],
-			[2,PBMoves::THUNDERSHOCK],[4,PBMoves::CHARGE],[6,PBMoves::ROCKPOLISH],[8,PBMoves::BIDE],
-			[10,PBMoves::ROLLOUT],[12,PBMoves::SPARK],[14,PBMoves::TAKEDOWN],[16,PBMoves::ROCKTHROW],
-			[18,PBMoves::SMACKDOWN],[22,PBMoves::THUNDERPUNCH],[24,PBMoves::SELFDESTRUCT],[28,PBMoves::STEALTHROCK],
-			[30,PBMoves::ROCKBLAST],[34,PBMoves::DISCHARGE],[36,PBMoves::EXPLOSION],[38,PBMoves::ROCKSLIDE],
-			[40,PBMoves::DOUBLEEDGE],[42,PBMoves::STONEEDGE],[44,PBMoves::HEAVYSLAM],[50,PBMoves::DOUBLESHOCK]],
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],[4,PBMoves::CHARGE],[1,PBMoves::ROCKPOLISH],
+			[1,PBMoves::CHARGE],[6,PBMoves::ROCKPOLISH],[10,PBMoves::ROLLOUT],[12,PBMoves::SPARK],
+			[16,PBMoves::ROCKTHROW],[18,PBMoves::SMACKDOWN],[22,PBMoves::THUNDERPUNCH],
+			[24,PBMoves::SELFDESTRUCT],[30,PBMoves::STEALTHROCK],[34,PBMoves::ROCKBLAST],
+			[40,PBMoves::DISCHARGE],[44,PBMoves::EXPLOSION],[50,PBMoves::DOUBLEEDGE],
+			[54,PBMoves::STONEEDGE],[62,PBMoves::DOUBLESHOCK]],
 		:Height => 17,
 		:Weight => 3160,
 		:WildHoldItems => [0,PBItems::CELLBATTERY,0]
@@ -3221,13 +3278,12 @@ PBSpecies::GRIMER => {
 		:Type2 => PBTypes::DARK,
 		:Ability => [PBAbilities::POISONTOUCH,PBAbilities::GLUTTONY,PBAbilities::POWEROFALCHEMY],
 		:Movelist => [[1,PBMoves::POUND],[1,PBMoves::POISONGAS],[4,PBMoves::HARDEN],[7,PBMoves::BITE],
-			[12,PBMoves::DISABLE],[15,PBMoves::ACIDSPRAY],[18,PBMoves::POISONFANG],[21,PBMoves::MINIMIZE],
-			[26,PBMoves::FLING],[29,PBMoves::KNOCKOFF],[31,PBMoves::CRUNCH],[33,PBMoves::TOXIC],
-			[35,PBMoves::SCREECH],[37,PBMoves::SLUDGEBOMB],[40,PBMoves::GUNKSHOT],[43,PBMoves::ACIDARMOR],
+			[12,PBMoves::DISABLE],[15,PBMoves::ACIDSPRAY],[18,PBMoves::POISONFANG],
+			[21,PBMoves::MINIMIZE],[26,PBMoves::FLING],[29,PBMoves::KNOCKOFF],[32,PBMoves::CRUNCH],
+			[37,PBMoves::SCREECH],[40,PBMoves::GUNKSHOT],[43,PBMoves::ACIDARMOR],
 			[46,PBMoves::BELCH],[48,PBMoves::MEMENTO]],
-		:EggMoves => [PBMoves::ASSURANCE,PBMoves::CELEBRATE,PBMoves::CLEARSMOG,PBMoves::CURSE,
-			PBMoves::GASTROACID,PBMoves::IMPRISON,PBMoves::MEANLOOK,PBMoves::POWERUPPUNCH,PBMoves::PURSUIT,
-			PBMoves::RECYCLE,PBMoves::SCARYFACE,PBMoves::SHADOWSNEAK,PBMoves::SLUDGE,PBMoves::SPITE,
+		:EggMoves => [PBMoves::ASSURANCE,PBMoves::CLEARSMOG,PBMoves::CURSE,PBMoves::IMPRISON,PBMoves::MEANLOOK,PBMoves::POWERUPPUNCH,
+			PBMoves::PURSUIT,PBMoves::SCARYFACE,PBMoves::SHADOWSNEAK,PBMoves::SPITE,
 			PBMoves::SPITUP,PBMoves::STOCKPILE,PBMoves::SWALLOW],
 		:Height => 7,
 		:Weight => 420
@@ -3285,11 +3341,13 @@ PBSpecies::MUK => {
 		:DexEntry => "While it's unexpectedly quiet and friendly, if it's not fed any trash for a while, it will smash its Trainer's furnishings and eat up the fragments.",
 		:Type2 => PBTypes::DARK,
 		:Ability => [PBAbilities::POISONTOUCH,PBAbilities::GLUTTONY,PBAbilities::POWEROFALCHEMY],
-		:Movelist => [[0,PBMoves::VENOMDRENCH],[1,PBMoves::MOONBLAST],[1,PBMoves::HAZE],[1,PBMoves::VENOMDRENCH],
-			[1,PBMoves::POUND],[1,PBMoves::POISONGAS],[4,PBMoves::HARDEN],[7,PBMoves::BITE],[12,PBMoves::DISABLE],
-			[15,PBMoves::ACIDSPRAY],[18,PBMoves::POISONFANG],[21,PBMoves::MINIMIZE],[26,PBMoves::FLING],
-			[29,PBMoves::KNOCKOFF],[31,PBMoves::CRUNCH],[33,PBMoves::TOXIC],[35,PBMoves::SCREECH],[37,PBMoves::SLUDGEBOMB],
-			[40,PBMoves::GUNKSHOT],[43,PBMoves::ACIDARMOR],[46,PBMoves::BELCH],[48,PBMoves::MEMENTO]],
+		:Movelist => [[0,PBMoves::VENOMDRENCH],[1,PBMoves::POUND],
+			[1,PBMoves::POISONGAS],[1,PBMoves::HARDEN],
+			[4,PBMoves::HARDEN],[7,PBMoves::BITE],
+			[12,PBMoves::DISABLE],[15,PBMoves::ACIDSPRAY],[18,PBMoves::POISONFANG],
+			[21,PBMoves::MINIMIZE],[26,PBMoves::FLING],[29,PBMoves::KNOCKOFF],[32,PBMoves::CRUNCH],
+			[37,PBMoves::SCREECH],[40,PBMoves::GUNKSHOT],[46,PBMoves::ACIDARMOR],
+			[52,PBMoves::BELCH],[57,PBMoves::MEMENTO]],
 		:Height => 10,
 		:Weight => 520
 	},
@@ -3329,14 +3387,9 @@ PBSpecies::EXEGGUTOR => {
 		:Type2 => PBTypes::DRAGON,
 		:BaseStats => [95,105,85,45,125,75],
 		:Ability => [PBAbilities::FRISK,PBAbilities::FRISK,PBAbilities::HARVEST],
-		:Movelist => [[0,PBMoves::DRAGONHAMMER],[1,PBMoves::SOFTBOILED],[1,PBMoves::POWERWHIP],[1,PBMoves::DRAGONPULSE],
-			[1,PBMoves::PSYSHOCK],[1,PBMoves::SEEDBOMB],[1,PBMoves::GROWTH],[1,PBMoves::DRAGONHAMMER],[1,PBMoves::BARRAGE],
-			[1,PBMoves::HYPNOSIS],[1,PBMoves::ABSORB],[6,PBMoves::CONFUSION],[11,PBMoves::LEECHSEED],[13,PBMoves::BULLETSEED],
-			[15,PBMoves::SWEETSCENT],[17,PBMoves::REFLECT],[19,PBMoves::STUNSPORE],[21,PBMoves::POISONPOWDER],
-			[23,PBMoves::SLEEPPOWDER],[25,PBMoves::MEGADRAIN],[27,PBMoves::PSYBEAM],[29,PBMoves::NATURALGIFT],
-			[31,PBMoves::EGGBOMB],[33,PBMoves::BESTOW],[35,PBMoves::SYNTHESIS],[37,PBMoves::UPROAR],
-			[39,PBMoves::WOODHAMMER],[41,PBMoves::GIGADRAIN],[43,PBMoves::EXTRASENSORY],[45,PBMoves::LEAFSTORM],
-			[47,PBMoves::WORRYSEED],[50,PBMoves::PSYCHIC],[53,PBMoves::SOLARBEAM]],
+		:Movelist => [[0,PBMoves::DRAGONHAMMER],[1,PBMoves::SEEDBOMB],[1,PBMoves::BARRAGE],
+			[1,PBMoves::HYPNOSIS],[1,PBMoves::CONFUSION],[17,PBMoves::PSYSHOCK],
+			[27,PBMoves::EGGBOMB],[37,PBMoves::WOODHAMMER],[47,PBMoves::LEAFSTORM]],
 		:Height => 109,
 		:Weight => 4156
 	}
@@ -3367,14 +3420,12 @@ PBSpecies::MAROWAK => {
 		:Type2 => PBTypes::GHOST,
 		:BaseStats => [60,80,110,45,50,80],
 		:Ability => [PBAbilities::CURSEDBODY,PBAbilities::LIGHTNINGROD,PBAbilities::ROCKHEAD],
-		:Movelist => [[0,PBMoves::SHADOWBONE],[1,PBMoves::SWORDSDANCE],[1,PBMoves::FLAMEWHEEL],
-			[1,	PBMoves::FIRESPIN],[1,PBMoves::SCREECH][1,PBMoves::SHADOWBONE],[1,PBMoves::MUDSLAP],
-			[1,PBMoves::GROWL],[3,PBMoves::TAILWHIP],[5,PBMoves::HEADBUTT],[7,PBMoves::LEER],
-			[9,PBMoves::FOCUSENERGY],[11,PBMoves::BONECLUB],[13,PBMoves::RAGE],[17,PBMoves::CHARM],
-			[19,PBMoves::HEX],[21,PBMoves::FALSESWIPE],[23,PBMoves::FLING],[25,PBMoves::WILLOWISP],
-			[27,PBMoves::BONERUSH],[31,PBMoves::RETALIATE],[33,PBMoves::STOMPINGTANTRUM],
-			[37,PBMoves::THRASH],[41,PBMoves::BONEMERANG],[43,PBMoves::ENDEAVOR],[47,PBMoves::DOUBLEEDGE],
-			[50,PBMoves::FLAREBLITZ]],
+		:Movelist => [[1,PBMoves::GROWL],[1,PBMoves::TAILWHIP],[1,PBMoves::BONECLUB],[1,PBMoves::FLAMEWHEEL],
+			[3,PBMoves::TAILWHIP],[7,PBMoves::BONECLUB],[11,PBMoves::FLAMEWHEEL],[13,PBMoves::LEER],
+			[17,PBMoves::HEX],[21,PBMoves::BONEMERANG],[23,PBMoves::WILLOWISP],
+			[27,PBMoves::SHADOWBONE],[33,PBMoves::THRASH],[37,PBMoves::FLING],
+			[43,PBMoves::STOMPINGTANTRUM],[49,PBMoves::ENDEAVOR],[53,PBMoves::FLAREBLITZ],
+			[59,PBMoves::RETALIATE],[65,PBMoves::BONERUSH]],
 		:GetEvo => [],
 		:Weight => 340
 	},
@@ -3456,15 +3507,10 @@ PBSpecies::GROWLITHE => {
 	"Hisui" => {
 		:DexEntry => "They patrol their territory in pairs. I believe the igneous rock components in the fur of this species are the result of volcanic activity in its habitat.",
 		:Type2 => PBTypes::ROCK,
-		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD,PBAbilities::ROCKHEAD,PBAbilities::JUSTIFIED],
+		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD],
 		:BaseStats => [60,75,45,55,65,50],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[1,PBMoves::EMBER],[4,PBMoves::HOWL],[8,PBMoves::BITE],
-			[12,PBMoves::FLAMEWHEEL],[16,PBMoves::HELPINGHAND],[20,PBMoves::ROCKTHROW],[24,PBMoves::FIREFANG],
-			[28,PBMoves::RETALIATE],[32,PBMoves::CRUNCH],[36,PBMoves::TAKEDOWN],[40,PBMoves::FLAMETHROWER],
-			[44,PBMoves::ROAR],[48,PBMoves::ROCKSLIDE],[52,PBMoves::REVERSAL],[56,PBMoves::DOUBLEEDGE],
-			[60,PBMoves::FLAREBLITZ]],
-		:EggMoves => [PBMoves::COVET,PBMoves::DOUBLEEDGE,PBMoves::DOUBLEKICK,PBMoves::HEADSMASH,PBMoves::MORNINGSUN,
-			PBMoves::SACREDFIRE,PBMoves::THRASH],
+		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::EMBER],[4,PBMoves::HOWL],[8,PBMoves::BITE],[12,PBMoves::FLAMEWHEEL],[16,PBMoves::HELPINGHAND],[24,PBMoves::FIREFANG],[28,PBMoves::RETALIATE],[32,PBMoves::CRUNCH],[40,PBMoves::FLAMETHROWER],[44,PBMoves::ROAR],[48,PBMoves::ROCKSLIDE],[52,PBMoves::REVERSAL],[56,PBMoves::FLAREBLITZ]],
+		:EggMoves => [PBMoves::DOUBLEKICK,PBMoves::THRASH,PBMoves::DOUBLEEDGE,PBMoves::MORNINGSUN,PBMoves::COVET,PBMoves::HEADSMASH],
 		:Weight => 227,
 		:Height => 8
 	}
@@ -3487,14 +3533,11 @@ PBSpecies::ARCANINE => {
 	"Hisui" => {
 		:DexEntry => "Despite its bulk, it deftly feints every which way, leading opponents on a deceptively merry chase as it all but dances around them.",
 		:Type2 => PBTypes::ROCK,
-		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD,PBAbilities::CONQUEROR,PBAbilities::JUSTIFIED],
+		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::FLASHFIRE,PBAbilities::ROCKHEAD],
 		:BaseStats => [95,115,80,90,95,80],
-		:Movelist => [[0,PBMoves::EXTREMESPEED],[1,PBMoves::AGILITY],[1,PBMoves::EXTREMESPEED],[1,PBMoves::TACKLE],
-			[1,PBMoves::LEER],[1,PBMoves::EMBER],[4,PBMoves::HOWL],[8,PBMoves::BITE],[12,PBMoves::FLAMEWHEEL],
-			[16,PBMoves::HELPINGHAND],[20,PBMoves::ROCKTHROW],[24,PBMoves::FIREFANG],[28,PBMoves::RETALIATE],
-			[32,PBMoves::CRUNCH],[36,PBMoves::TAKEDOWN],[40,PBMoves::FLAMETHROWER],[44,PBMoves::ROAR],
-			[48,PBMoves::ROCKSLIDE],[52,PBMoves::REVERSAL],[56,PBMoves::DOUBLEEDGE],[60,PBMoves::FLAREBLITZ],
-			[64,PBMoves::RAGINGFURY]],
+		:Movelist => [[0,PBMoves::EXTREMESPEED],[1,PBMoves::LEER],[1,PBMoves::ROCKTHROW],[1,PBMoves::FIREFANG],[1,PBMoves::EMBER],[1,PBMoves::HOWL],[1,PBMoves::BITE],[1,PBMoves::FLAMEWHEEL],
+			[1,PBMoves::HELPINGHAND],[1,PBMoves::FIREFANG],[1,PBMoves::RETALIATE],[1,PBMoves::CRUNCH],[1,PBMoves::ROAR],[1,PBMoves::ROCKSLIDE],[1,PBMoves::REVERSAL],[1,PBMoves::FLAREBLITZ],
+			[5,PBMoves::FLAMETHROWER],[64,PBMoves::RAGINGFURY]],
 		:Weight => 1680,
 		:Height => 20
 	},
@@ -3521,12 +3564,8 @@ PBSpecies::VOLTORB => {
 	"Hisui" => {
 		:DexEntry => "An enigmatic Pokémon that happens to bear a resemblance to a Poké Ball. When excited, it discharges the electric current it has stored in its belly, then lets out a great, uproarious laugh.",
 		:Type2 => PBTypes::GRASS,
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::CHARGE],[3,PBMoves::THUNDERSHOCK],[5,PBMoves::THUNDERWAVE],
-			[7,PBMoves::STUNSPORE],[9,PBMoves::BULLETSEED],[11,PBMoves::ROLLOUT],[13,PBMoves::SCREECH],
-			[16,PBMoves::CHARGEBEAM],[18,PBMoves::SPARK],[20,PBMoves::SWIFT],[22,PBMoves::ELECTROBALL],
-			[26,PBMoves::SELFDESTRUCT],[29,PBMoves::GYROBALL],[31,PBMoves::THUNDERBOLT],[34,PBMoves::SEEDBOMB],
-			[37,PBMoves::THUNDER],[39,PBMoves::DISCHARGE],[41,PBMoves::EXPLOSION],[46,PBMoves::ENERGYBALL],
-			[50,PBMoves::GRASSYTERRAIN]],
+		:Movelist => [[1,PBMoves::THUNDERSHOCK],[5,PBMoves::TACKLE],[9,PBMoves::THUNDERWAVE],[15,PBMoves::SPARK],
+				 [21,PBMoves::ENERGYBALL],[29,PBMoves::THUNDERBOLT],[37,PBMoves::THUNDER],[47,PBMoves::SELFDESTRUCT]],
 		:EggMoves => [PBMoves::LEECHSEED,PBMoves::RECYCLE,PBMoves::WORRYSEED],
 		:Weight => 130,
 		:GetEvo => [[PBSpecies::ELECTRODE,PBEvolution::Item,PBItems::LEAFSTONE]]
@@ -3549,12 +3588,10 @@ PBSpecies::ELECTRODE => {
 	"Hisui" => {
 		:DexEntry => "The tissue on the surface of its body is curiously similar in composition to an Apricorn. When irritated, this Pokémon lets loose an electric current equal to 20 lightning bolts.",
 		:Type2 => PBTypes::GRASS,
-		:Movelist => [[0,PBMoves::CHLOROBLAST],[1,PBMoves::CHLOROBLAST],[1,PBMoves::TACKLE],[1,PBMoves::CHARGE],
-			[3,PBMoves::THUNDERSHOCK],[5,PBMoves::THUNDERWAVE],[7,PBMoves::STUNSPORE],[9,PBMoves::BULLETSEED],
-			[11,PBMoves::ROLLOUT],[13,PBMoves::SCREECH],[16,PBMoves::CHARGEBEAM],[18,PBMoves::SPARK],[20,PBMoves::SWIFT],
-			[22,PBMoves::ELECTROBALL],[26,PBMoves::SELFDESTRUCT],[29,PBMoves::GYROBALL],[31,PBMoves::THUNDERBOLT],
-			[34,PBMoves::SEEDBOMB],[37,PBMoves::THUNDER],[39,PBMoves::DISCHARGE],[41,PBMoves::EXPLOSION],
-			[46,PBMoves::ENERGYBALL],[50,PBMoves::GRASSYTERRAIN]],
+		:Movelist => [[1,PBMoves::CHARGE],[1,PBMoves::TACKLE],[4,PBMoves::THUNDERSHOCK],[6,PBMoves::STUNSPORE],[9,PBMoves::BULLETSEED],
+			[11,PBMoves::ROLLOUT],[13,PBMoves::SCREECH],[16,PBMoves::CHARGEBEAM],[20,PBMoves::SWIFT],[22,PBMoves::ELECTROBALL],
+			[26,PBMoves::SELFDESTRUCT],[29,PBMoves::ENERGYBALL],[34,PBMoves::SEEDBOMB],[34,PBMoves::DISCHARGE],[41,PBMoves::EXPLOSION],
+			[46,PBMoves::GYROBALL],[50,PBMoves::GRASSYTERRAIN],[57,PBMoves::CHLOROBLAST]],
 		:Weight => 710
 	}
 },
@@ -3575,16 +3612,9 @@ PBSpecies::QWILFISH => {
 	"Hisui" => {
 		:DexEntry => "Fishers detest this troublesome Pokémon because it sprays poison from its spines, getting it everywhere. A different form of Qwilfish lives in other regions.",
 		:Type1 => PBTypes::DARK,
-		:Ability => [PBAbilities::TOXICDEBRIS,PBAbilities::POISONPOINT,PBAbilities::SWIFTSWIM,
-			PBAbilities::INTIMIDATE],
-		:Movelist => [[1,PBMoves::POISONSTING],[1,PBMoves::TACKLE],[4,PBMoves::HARDEN],[8,PBMoves::BITE],
-			[12,PBMoves::SPIKES],[14,PBMoves::FELLSTINGER],[16,PBMoves::MINIMIZE],[20,PBMoves::WATERPULSE],
-			[24,PBMoves::SELFDESTRUCT],[26,PBMoves::PINMISSILE],[28,PBMoves::TOXICSPIKES],[32,PBMoves::BRINE],
-			[36,PBMoves::STOCKPILE],[36,PBMoves::SPITUP],[40,PBMoves::TOXIC],[44,PBMoves::DARKPULSE],
-			[48,PBMoves::POISONJAB],[50,PBMoves::AQUATAIL],[52,PBMoves::BARBBARRAGE],[56,PBMoves::DOUBLEEDGE],
-			[60,PBMoves::CRUNCH],[66,PBMoves::DESTINYBOND]],
-		:EggMoves => [PBMoves::AQUAJET,PBMoves::ASTONISH,PBMoves::BUBBLEBEAM,PBMoves::FLAIL,PBMoves::ICEBALL,
-			PBMoves::SUPERSONIC],
+		:Ability => [PBAbilities::TOXICDEBRIS,PBAbilities::SWIFTSWIM,PBAbilities::INTIMIDATE],
+		:Movelist => [[1,PBMoves::POISONSTING],[5,PBMoves::SPIKES],[9,PBMoves::PINMISSILE],[15,PBMoves::BARBBARRAGE],[21,PBMoves::WATERPULSE],
+	 			[26,PBMoves::DARKPULSE],[29,PBMoves::POISONJAB],[37,PBMoves::AQUATAIL],[47,PBMoves::DOUBLEEDGE],[57,PBMoves::SELFDESTRUCT]],
 		:GetEvo => [[PBSpecies::OVERQWIL,PBEvolution::HasMove,PBMoves::BARBBARRAGE]]
 	}
 },
@@ -3617,28 +3647,18 @@ PBSpecies::SNEASEL => {
 		:DexEntry => "Its sturdy, curved claws are ideal for traversing precipitous cliffs. From the tips of these claws drips a venom that infiltrates the nerves of any prey caught in Sneasel's grasp.",
 		:Type1 => PBTypes::FIGHTING,
 		:Type2 => PBTypes::POISON,
-		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::KEENEYE,PBAbilities::SHARPNESS,
-			PBAbilities::DODGE,PBAbilities::PICKPOCKET,PBAbilities::HIGHRISE,PBAbilities::POISONTOUCH,
-			PBAbilities::MELEE],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[1,PBMoves::TAUNT],[6,PBMoves::ROCKSMASH],
-			[8,PBMoves::QUICKATTACK],[11,PBMoves::METALCLAW],[18,PBMoves::SWIFT],[24,PBMoves::SCREECH],
-			[30,PBMoves::SLASH],[34,PBMoves::HONECLAWS],[36,PBMoves::POISONJAB],[42,PBMoves::AGILITY],
-			[48,PBMoves::BRICKBREAK],[54,PBMoves::SWORDSDANCE],[60,PBMoves::CLOSECOMBAT]],
-		:EggMoves => [PBMoves::COUNTER,PBMoves::CRUSHCLAW,PBMoves::DETECT,PBMoves::DIRECLAW,PBMoves::DOUBLEHIT,
-			PBMoves::DRAINPUNCH,PBMoves::FAKEOUT,PBMoves::FEINT,PBMoves::FOCUSENERGY,PBMoves::IRONTAIL,
-			PBMoves::NIGHTSLASH,PBMoves::QUICKGUARD,PBMoves::SHADOWSNEAK,PBMoves::SNARL,PBMoves::SWITCHEROO],
+		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::SHARPNESS,PBAbilities::POISONTOUCH],
+		:Movelist => [[1,PBMoves::QUICKATTACK],[6,PBMoves::ROCKSMASH],[11,PBMoves::SWIFT],[18,PBMoves::SLASH],[25,PBMoves::POISONJAB],[34,PBMoves::SWORDSDANCE],[43,PBMoves::CLOSECOMBAT],[50,PBMoves::DRAINPUNCH]],
+		:EggMoves => [PBMoves::FAKEOUT,PBMoves::FEINT,PBMoves::COUNTER,PBMoves::NIGHTSLASH,
+			PBMoves::DOUBLEHIT,PBMoves::SWITCHEROO,PBMoves::CRUSHCLAW,PBMoves::QUICKGUARD,PBMoves::DETECT],
 		:GetEvo => [[PBSpecies::SNEASLER,PBEvolution::DayHoldItem,PBItems::RAZORCLAW]]
 	},
 
 	"NuclearHisui" => {
 		:Type1 => PBTypes::FIGHTING,
 		:Type2 => PBTypes::NUCLEAR,
-		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::KEENEYE,PBAbilities::SHARPNESS,
-			PBAbilities::DODGE,PBAbilities::PICKPOCKET,PBAbilities::HIGHRISE,PBAbilities::POISONTOUCH],
-		:Movelist => [[1,PBMoves::NUCLEARSLASH],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[1,PBMoves::TAUNT],
-			[6,PBMoves::ROCKSMASH],[8,PBMoves::QUICKATTACK],[11,PBMoves::METALCLAW],[18,PBMoves::SWIFT],
-			[24,PBMoves::SCREECH],[30,PBMoves::SLASH],[34,PBMoves::HONECLAWS],[36,PBMoves::POISONJAB],
-			[42,PBMoves::AGILITY],[48,PBMoves::BRICKBREAK],[54,PBMoves::SWORDSDANCE],[60,PBMoves::CLOSECOMBAT]],
+		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::KEENEYE,PBAbilities::POISONTOUCH],
+		:Movelist => [[1,PBMoves::QUICKATTACK],[6,PBMoves::ROCKSMASH],[11,PBMoves::SWIFT],[18,PBMoves::SLASH],[25,PBMoves::POISONJAB],[34,PBMoves::SWORDSDANCE],[43,PBMoves::CLOSECOMBAT],[50,PBMoves::DRAINPUNCH]],
 		:GetEvo => [[PBSpecies::SNEASLER,PBEvolution::DayHoldItem,PBItems::RAZORCLAW]]
 	},
 
@@ -3647,15 +3667,9 @@ PBSpecies::SNEASEL => {
 		:BaseStats => [61,101,76,101,41,56],
 		:Type1 => PBTypes::ROCK,
 		:Type2 => PBTypes::GHOST,
-		:Ability => [PBAbilities::CURSEDBODY,PBAbilities::KEENEYE,PBAbilities::PICKPOCKET,
-			PBAbilities::INNERFOCUS,PBAbilities::TOUGHCLAWS],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::CONFUSERAY],[6,PBMoves::SANDATTACK],
-			[12,PBMoves::ASTONISH],[18,PBMoves::ACCELEROCK],[24,PBMoves::MEANLOOK],[30,PBMoves::ANCIENTPOWER],
-			[36,PBMoves::HONECLAWS],[42,PBMoves::SHADOWSNEAK],[48,PBMoves::ROCKPOLISH],[54,PBMoves::HEX],
-			[60,PBMoves::SLASH]],
-		:EggMoves => [PBMoves::FAKEOUT,PBMoves::DOUBLEHIT,PBMoves::ICEPUNCH,PBMoves::COUNTER,PBMoves::SPITE,
-			PBMoves::POISONFANG,PBMoves::THROATCHOP,PBMoves::CRUSHCLAW,PBMoves::CROSSPOISON,PBMoves::DETECT,
-			PBMoves::SKYUPPERCUT,PBMoves::DIRECLAW]
+		:Ability => [PBAbilities::CURSEDBODY,PBAbilities::TOUGHCLAWS],
+		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::CONFUSERAY],[6,PBMoves::SANDATTACK],[12,PBMoves::ASTONISH],[18,PBMoves::ACCELEROCK],[24,PBMoves::MEANLOOK],[30,PBMoves::ANCIENTPOWER],[36,PBMoves::HONECLAWS],[42,PBMoves::SHADOWSNEAK],[48,PBMoves::ROCKPOLISH],[54,PBMoves::HEX],[60,PBMoves::SLASH]],
+		:EggMoves => [PBMoves::FAKEOUT,PBMoves::DOUBLEHIT,PBMoves::ICEPUNCH,PBMoves::COUNTER,PBMoves::SPITE,PBMoves::POISONFANG,PBMoves::THROATCHOP,PBMoves::CRUSHCLAW,PBMoves::CROSSPOISON,PBMoves::DETECT,PBMoves::SKYUPPERCUT]
 	}
 },
 
@@ -3677,17 +3691,11 @@ PBSpecies::TYPHLOSION => {
 	"Hisui" => {
 		:DexEntry => "Said to purify lost, forsaken souls with its flames and guide them to the afterlife. I believe its form has been influenced by the energy of the sacred mountain towering at Hisui's center.",
 		:Type2 => PBTypes::GHOST,
-		:Ability => [PBAbilities::BLAZE,PBAbilities::INFILTRATOR,PBAbilities::FRISK,PBAbilities::FLASHFIRE],
+		:Ability => [PBAbilities::BLAZE,PBAbilities::INFILTRATOR],
 		:BaseStats => [73,84,78,95,119,85],
-		:Movelist => [[0,PBMoves::HEX],[1,PBMoves::GYROBALL],[1,PBMoves::OMINOUSWIND],[1,PBMoves::MYSTICALFIRE],
-			[1,PBMoves::SLASH],[1,PBMoves::HEX],[1,PBMoves::FURYCUTTER],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],
-			[6,PBMoves::SMOKESCREEN],[9,PBMoves::TACKLE],[11,PBMoves::EMBER],[13,PBMoves::QUICKATTACK],
-			[15,PBMoves::ROAR],[17,PBMoves::BITE],[19,PBMoves::FLAMEWHEEL],[21,PBMoves::DEFENSECURL],
-			[23,PBMoves::FURYSWIPES],[25,PBMoves::FLAMECHARGE],[27,PBMoves::SCARYFACE],[29,PBMoves::SWIFT],
-			[31,PBMoves::ROLLOUT],[33,PBMoves::LAVAPLUME],[35,PBMoves::REST],[37,PBMoves::INFERNO],
-			[39,PBMoves::DOUBLEEDGE],[41,PBMoves::INFERNALPARADE],[43,PBMoves::FLAMETHROWER],
-			[45,PBMoves::OVERHEAT],[47,PBMoves::BURNUP],[49,PBMoves::SHADOWBALL],[51,PBMoves::WILLOWISP],
-			[55,PBMoves::ERUPTION]]
+		:Movelist => [[0,PBMoves::HEX],[1,PBMoves::HEX],[1,PBMoves::QUICKATTACK],[1,PBMoves::ERUPTION],[1,PBMoves::WILLOWISP],[6,PBMoves::EMBER],[11,PBMoves::ROLLOUT],
+			[18,PBMoves::FLAMEWHEEL],[25,PBMoves::SWIFT],[34,PBMoves::FLAMETHROWER],[40,PBMoves::INFERNALPARADE],
+			[43,PBMoves::OVERHEAT],[43,PBMoves::SHADOWBALL],[50,PBMoves::BURNUP]]
 	},
 
 	"Egho" => {
@@ -3750,16 +3758,11 @@ PBSpecies::SAMUROTT => {
 	"Hisui" => {
 		:DexEntry => "Hard of heart and deft of blade, this rare form of Samurott is a product of the Pokémon's evolution in the region of Hisui. Its turbulent blows crash into foes like ceaseless pounding waves.",
 		:Type2 => PBTypes::DARK,
-		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::AQUABOOST,PBAbilities::SWIFTSWIM,PBAbilities::CONQUEROR,PBAbilities::SHARPNESS],
+		:Ability => [PBAbilities::TORRENT,PBAbilities::SHARPNESS],
 		:BaseStats => [90,108,80,85,100,65],
-		:Movelist => [[0,PBMoves::CEASELESSEDGE],[1,PBMoves::PSYCHOCUT],[1,PBMoves::POISONJAB],
-			[1,PBMoves::SACREDSWORD],[1,PBMoves::AQUACUTTER],[1,PBMoves::CEASELESSEDGE],
-			[1,PBMoves::TACKLE],[5,PBMoves::TAILWHIP],[7,PBMoves::WATERSPORT],[11,PBMoves::WATERGUN],
-			[13,PBMoves::FOCUSENERGY],[15,PBMoves::SOAK],[17,PBMoves::FURYCUTTER],[19,PBMoves::AQUAJET],
-			[21,PBMoves::REVENGE],[23,PBMoves::WATERPULSE],[25,PBMoves::AERIALACE],[29,PBMoves::SLASH],
-			[31,PBMoves::RAZORSHELL],[35,PBMoves::ENCORE],[37,PBMoves::SUCKERPUNCH],[39,PBMoves::RETALIATE],
-			[41,PBMoves::AQUATAIL],[43,PBMoves::MEGAHORN],[45,PBMoves::NIGHTSLASH],[49,PBMoves::SWORDSDANCE],
-			[52,PBMoves::DARKPULSE],[57,PBMoves::HYDROPUMP]],
+		:Movelist => [[0,PBMoves::CEASELESSEDGE],[1,PBMoves::NIGHTSLASH],[1,PBMoves::TACKLE],[1,PBMoves::SACREDSWORD],[1,PBMoves::SUCKERPUNCH],[6,PBMoves::AQUAJET],[11,PBMoves::SWORDSDANCE],
+			[18,PBMoves::WATERPULSE],[21,PBMoves::CEASELESSEDGE],[25,PBMoves::SLASH],[34,PBMoves::AQUACUTTER],
+			[40,PBMoves::DARKPULSE],[43,PBMoves::HYDROPUMP]],
 		:Weight => 582
 	},
 
@@ -3798,16 +3801,11 @@ PBSpecies::DECIDUEYE => {
 	"Hisui" => {
 		:DexEntry => "The air stored inside the rachises of Decidueye's feathers insulates the Pokémon against Hisui's extreme cold. This is firm proof that evolution can be influenced by environment.",
 		:Type2 => PBTypes::FIGHTING,
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::LONGREACH,PBAbilities::SCRAPPY,PBAbilities::STRONGHEEL],
+		:Ability => [PBAbilities::OVERGROW,PBAbilities::SCRAPPY],
 		:BaseStats => [88,112,80,60,95,95],
-		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::PSYCHOCUT],[1,PBMoves::SPIKES],[1,PBMoves::BULKUP],
-			[1,PBMoves::FOCUSENERGY],[1,PBMoves::ROCKSMASH],[1,PBMoves::TACKLE],[1,PBMoves::GROWL],
-			[4,PBMoves::LEAFAGE],[6,PBMoves::PECK],[8,PBMoves::FORESIGHT],[11,PBMoves::GUST],
-			[14,PBMoves::ASTONISH],[16,PBMoves::FURYATTACK],[18,PBMoves::SHADOWSNEAK],[20,PBMoves::RAZORLEAF],
-			[22,PBMoves::OMINOUSWIND],[25,PBMoves::SYNTHESIS],[27,PBMoves::MAGICALLEAF],[29,PBMoves::PLUCK],
-			[31,PBMoves::FEATHERDANCE],[33,PBMoves::AERIALACE],[35,PBMoves::ROOST],[37,PBMoves::SUCKERPUNCH],
-			[39,PBMoves::TRIPLEARROWS],[43,PBMoves::UTURN],[46,PBMoves::AURASPHERE],[49,PBMoves::NASTYPLOT],
-			[51,PBMoves::AIRSLASH],[54,PBMoves::LEAFBLADE],[58,PBMoves::BRAVEBIRD],[60,PBMoves::LEAFSTORM]],
+		:Movelist => [[0,PBMoves::TRIPLEARROWS],[1,PBMoves::ROCKSMASH],[1,PBMoves::TACKLE],[1,PBMoves::LEAFAGE],[1,PBMoves::LEAFSTORM],[1,PBMoves::UTURN],
+			[9,PBMoves::PECK],[12,PBMoves::SHADOWSNEAK],[15,PBMoves::RAZORLEAF],[20,PBMoves::SYNTHESIS],[25,PBMoves::PLUCK],[30,PBMoves::BULKUP],
+			[37,PBMoves::SUCKERPUNCH],[44,PBMoves::LEAFBLADE],[51,PBMoves::FEATHERDANCE],[58,PBMoves::BRAVEBIRD]],
 		:Weight => 370
 	}
 },
@@ -3815,27 +3813,13 @@ PBSpecies::DECIDUEYE => {
 PBSpecies::ZORUA => {
 	:FormName => {1 => "Hisui"},
 
-	:OnCreation => proc{
-		chancemaps=[797,803,807] # Map IDs for Hisuian form
-		if $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(2)
-			next randomnum==0 ? 1 : 0
-		else
-			next 0
-		end
- 	},
-
 	"Hisui" => {
 		:DexEntry => "A once-departed soul, returned to life in Hisui. Derives power from resentment, which rises as energy atop its head and takes on the forms of foes. In this way, Zorua vents lingering malice.",
 		:Type1 => PBTypes::NORMAL,
 		:Type2 => PBTypes::GHOST,
 		:BaseStats => [35,60,40,70,85,40],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[4,PBMoves::TORMENT],[8,PBMoves::SPITE],
-			[12,PBMoves::SHADOWSNEAK],[16,PBMoves::TAUNT],[20,PBMoves::CURSE],[22,PBMoves::SNARL],
-			[24,PBMoves::HONECLAWS],[26,PBMoves::SWIFT],[28,PBMoves::AGILITY],[32,PBMoves::KNOCKOFF],
-			[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],
-			[48,PBMoves::NASTYPLOT],[54,PBMoves::SHADOWBALL]],
-		:EggMoves => [PBMoves::COMEUPPANCE,PBMoves::DETECT,PBMoves::EXTRASENSORY,PBMoves::MEMENTO]
+		:Movelist => [[1,PBMoves::SHADOWSNEAK],[6,PBMoves::SNARL],[11,PBMoves::SWIFT],[18,PBMoves::BITTERMALICE],[25,PBMoves::SLASH],
+			[34,PBMoves::SHADOWCLAW],[43,PBMoves::NASTYPLOT]]
 	}
 },
 
@@ -3857,13 +3841,8 @@ PBSpecies::ZOROARK => {
 		:Type1 => PBTypes::NORMAL,
 		:Type2 => PBTypes::GHOST,
 		:BaseStats => [55,100,60,110,125,60],
-		:Movelist => [[0,PBMoves::EXTRASENSORY],[1,PBMoves::HAPPYHOUR],[1,PBMoves::ROCKSMASH],
-			[1,PBMoves::OMINOUSWIND],[1,PBMoves::EXTRASENSORY],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],
-			[4,PBMoves::TORMENT],[8,PBMoves::SPITE],[12,PBMoves::SHADOWSNEAK],[16,PBMoves::TAUNT],
-			[20,PBMoves::CURSE],[22,PBMoves::SNARL],[24,PBMoves::HONECLAWS],[26,PBMoves::SWIFT],
-			[28,PBMoves::AGILITY],[32,PBMoves::KNOCKOFF],[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],
-			[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],[48,PBMoves::NASTYPLOT],[52,PBMoves::UTURN],
-			[54,PBMoves::SHADOWBALL]],
+		:Movelist => [[1,PBMoves::SHADOWSNEAK],[6,PBMoves::SNARL],[11,PBMoves::SWIFT],[18,PBMoves::BITTERMALICE],[25,PBMoves::SLASH],
+			[34,PBMoves::SHADOWCLAW],[40,PBMoves::SHADOWBALL],[43,PBMoves::NASTYPLOT],[52,PBMoves::EXTRASENSORY]],
 		:Weight => 730
 	}
 },
@@ -3885,16 +3864,11 @@ PBSpecies::BRAVIARY => {
 		:DexEntry => "Screaming a bloodcurdling battle cry, this huge and ferocious bird Pokémon goes out on the hunt. It blasts lakes with shock waves, then scoops up any prey that float to the water's surface.",
 		:Type1 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,0,2,0],
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::PRIDE,PBAbilities::HERO,PBAbilities::TINTEDLENS,PBAbilities::TINTEDLENS],
+		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::TINTEDLENS],
 		:BaseStats => [110,57,70,70,123,80], #Canon: [110,83,70,65,112,70]
-		:Movelist => [[0,PBMoves::ESPERWING],[1,PBMoves::MYSTICALFIRE],[1,PBMoves::OMINOUSWIND],
-			[1,PBMoves::SUPERPOWER],[1,PBMoves::POUNCE],[1,PBMoves::PSYWAVE],[1,PBMoves::ESPERWING],
-			[1,PBMoves::PECK],[1,PBMoves::LEER],[5,PBMoves::FURYATTACK],[10,PBMoves::SCARYFACE],
-			[12,PBMoves::QUICKATTACK],[14,PBMoves::HONECLAWS],[16,PBMoves::TWISTER],[19,PBMoves::WINGATTACK],
-			[23,PBMoves::WHIRLWIND],[28,PBMoves::DEFOG],[32,PBMoves::AERIALACE],[37,PBMoves::SLASH],
-			[41,PBMoves::TAILWIND],[43,PBMoves::ROOST],[46,PBMoves::AIRSLASH],[50,PBMoves::CRUSHCLAW],
-			[55,PBMoves::SKYDROP],[59,PBMoves::THRASH],[64,PBMoves::BRAVEBIRD],[66,PBMoves::DOUBLEEDGE],
-			[72,PBMoves::SKYATTACK],[80,PBMoves::HURRICANE]],
+		:Movelist => [[1,PBMoves::QUICKATTACK],[6,PBMoves::AERIALACE],[11,PBMoves::TWISTER],[18,PBMoves::SLASH],
+			[20,PBMoves::AIRSLASH],[25,PBMoves::ESPERWING],[25,PBMoves::ROOST],[34,PBMoves::DOUBLEEDGE],[43,PBMoves::BRAVEBIRD],
+			[52,PBMoves::HURRICANE]],
 		:Weight => 434
 	}
 },
@@ -3906,12 +3880,10 @@ PBSpecies::SLIGGOO => {
 		:DexEntry => "A creature given to melancholy. I suspect its metallic shell developed as a result of the mucus on its skin reacting with the iron in Hisui's water.",
 		:Type2 => PBTypes::STEEL,
 		:BaseStats => [58,75,83,40,83,113],
-		:Ability => [PBAbilities::SAPSIPPER,PBAbilities::SHELLARMOR,PBAbilities::OVERCOAT,PBAbilities::GOOEY],
-		:Movelist => [[0,PBMoves::IRONHEAD],[1,PBMoves::IRONHEAD],[1,PBMoves::TACKLE],[1,PBMoves::ABSORB],
-			[5,PBMoves::BIDE],[9,PBMoves::WATERGUN],[13,PBMoves::DRAGONBREATH],[15,PBMoves::CURSE],
-			[18,PBMoves::BUBBLE],[20,PBMoves::FLAIL],[25,PBMoves::ACIDSPRAY],[28,PBMoves::RAINDANCE],
-			[30,PBMoves::WATERPULSE],[32,PBMoves::PROTECT],[35,PBMoves::BODYSLAM],[38,PBMoves::ACIDARMOR],
-			[40,PBMoves::MUDDYWATER],[42,PBMoves::SHELTER],[45,PBMoves::DRAGONPULSE],[47,PBMoves::HYDROPUMP]],
+		:Ability => [PBAbilities::SAPSIPPER,PBAbilities::SHELLARMOR,PBAbilities::GOOEY],
+		:Movelist => [[1,PBMoves::BUBBLE],[6,PBMoves::ACIDSPRAY],[11,PBMoves::ACIDARMOR],
+			[18,PBMoves::WATERPULSE],[25,PBMoves::DRAGONPULSE],[25,PBMoves::IRONHEAD],[34,PBMoves::SHELTER],
+			[43,PBMoves::HYDROPUMP]],
 		:Weight => 685
 	}
 },
@@ -3923,14 +3895,10 @@ PBSpecies::GOODRA => {
 		:DexEntry => "Able to freely control the hardness of its metallic shell. It loathes solitude and is extremely clingy—it will fume and run riot if those dearest to it ever leave its side.",
 		:Type2 => PBTypes::STEEL,
 		:BaseStats => [80,100,100,60,110,150],
-		:Ability => [PBAbilities::SAPSIPPER,PBAbilities::SHELLARMOR,PBAbilities::OVERCOAT,PBAbilities::GOOEY],
-		:Movelist => [[0,PBMoves::FEINT],[1,PBMoves::ROCKSMASH],[1,PBMoves::FEINT],[1,PBMoves::IRONHEAD],
-		[1,PBMoves::TACKLE],[1,PBMoves::ABSORB],[5,PBMoves::BIDE],[9,PBMoves::WATERGUN],
-		[13,PBMoves::DRAGONBREATH],[15,PBMoves::CURSE],[18,PBMoves::BUBBLE],[20,PBMoves::FLAIL],
-		[25,PBMoves::ACIDSPRAY],[28,PBMoves::RAINDANCE],[30,PBMoves::WATERPULSE],[32,PBMoves::PROTECT],
-		[35,PBMoves::BODYSLAM],[38,PBMoves::ACIDARMOR],[40,PBMoves::MUDDYWATER],[42,PBMoves::SHELTER],
-		[45,PBMoves::DRAGONPULSE],[47,PBMoves::HYDROPUMP],[51,PBMoves::IRONTAIL],[55,PBMoves::TEARFULLOOK],
-		[67,PBMoves::HEAVYSLAM]],
+		:Ability => [PBAbilities::SAPSIPPER,PBAbilities::SHELLARMOR,PBAbilities::GOOEY],
+		:Movelist => [[1,PBMoves::BUBBLE],[6,PBMoves::ACIDSPRAY],[11,PBMoves::ACIDARMOR],
+			[18,PBMoves::WATERPULSE],[25,PBMoves::DRAGONPULSE],[25,PBMoves::IRONHEAD],[34,PBMoves::SHELTER],
+			[43,PBMoves::HYDROPUMP]],
 		:Weight => 3341
 	}
 },
@@ -3945,13 +3913,11 @@ PBSpecies::WEEZING => {
 		:DexEntry => "This Pokémon consumes particles that contaminate the air. Instead of leaving droppings, it expels clean air.",
 		:Type2 => PBTypes::FAIRY,
 		:Ability => [PBAbilities::LEVITATE,PBAbilities::NEUTRALIZINGGAS,PBAbilities::MISTYSURGE],
-		:Movelist => [[0,PBMoves::DOUBLEHIT],[1,PBMoves::HEATWAVE],[1,PBMoves::STRANGESTEAM],
-			[1,PBMoves::AROMATICMIST],[1,PBMoves::DEFOG],[1,PBMoves::FAIRYWIND],[1,PBMoves::AROMATHERAPY],
-			[1,PBMoves::DOUBLEHIT],[1,PBMoves::TACKLE],[1,PBMoves::POISONGAS],[4,PBMoves::SMOG],
-			[6,PBMoves::SMOKESCREEN],[8,PBMoves::CLEARSMOG],[10,PBMoves::ASSURANCE],[12,PBMoves::GYROBALL],
-			[15,PBMoves::SLUDGE],[18,PBMoves::SELFDESTRUCT],[23,PBMoves::HAZE],[26,PBMoves::TOXIC],
-			[28,PBMoves::SLUDGEBOMB],[33,PBMoves::EXPLOSION],[37,PBMoves::MEMENTO],[40,PBMoves::BELCH],
-			[42,PBMoves::MISTYTERRAIN],[45,PBMoves::DESTINYBOND]]
+		:Movelist => [[0,PBMoves::DOUBLEHIT],[1,PBMoves::AROMATICMIST],[1,PBMoves::POISONGAS],[1,PBMoves::DEFOG],
+			[1,PBMoves::SMOG],[1,PBMoves::SMOKESCREEN],[1,PBMoves::FAIRYWIND],[1,PBMoves::HAZE],[1,PBMoves::HEATWAVE],[1,PBMoves::STRANGESTEAM],
+			[1,PBMoves::TACKLE],[12,PBMoves::CLEARSMOG],[16,PBMoves::ASSURANCE],[20,PBMoves::SLUDGE],
+			[24,PBMoves::AROMATHERAPY],[28,PBMoves::SELFDESTRUCT],[32,PBMoves::SLUDGEBOMB],[38,PBMoves::TOXIC],[44,PBMoves::BELCH],
+			[50,PBMoves::EXPLOSION],[56,PBMoves::MEMENTO],[62,PBMoves::DESTINYBOND],[68,PBMoves::MISTYTERRAIN]]
 	},
 
 	"Cosmic" => {
@@ -3984,13 +3950,9 @@ PBSpecies::FARFETCHD => {
 		:BaseStats => [52,95,55,55,58,62],
 		:Ability => [PBAbilities::STEADFAST,PBAbilities::SCRAPPY],
 		:Movelist => [[1,PBMoves::PECK],[1,PBMoves::SANDATTACK],[5,PBMoves::LEER],[10,PBMoves::FURYCUTTER],
-			[15,PBMoves::ROCKSMASH],[20,PBMoves::BRUTALSWING],[25,PBMoves::DETECT],[30,PBMoves::SLAM],
-			[35,PBMoves::KNOCKOFF],[40,PBMoves::DEFOG],[45,PBMoves::BRICKBREAK],[50,PBMoves::SWORDSDANCE],
-			[55,PBMoves::LEAFBLADE],[60,PBMoves::FINALGAMBIT],[65,PBMoves::BRAVEBIRD]],
-		:EggMoves => [PBMoves::AGILITY,PBMoves::AIRSLASH,PBMoves::COUNTER,PBMoves::COVET,PBMoves::CURSE,PBMoves::CUT,
-			PBMoves::DOUBLEEDGE,PBMoves::FEINT,PBMoves::FLAIL,PBMoves::FURYATTACK,PBMoves::MIRRORMOVE,PBMoves::NIGHTSLASH,
-			PBMoves::QUICKATTACK,PBMoves::QUICKGUARD,PBMoves::RAZORLEAF,PBMoves::SIMPLEBEAM,PBMoves::SLASH,
-			PBMoves::SKYATTACK],
+			[15,PBMoves::ROCKSMASH],[20,PBMoves::BRUTALSWING],[25,PBMoves::DETECT],[30,PBMoves::KNOCKOFF],[35,PBMoves::DEFOG],
+			[40,PBMoves::BRICKBREAK],[45,PBMoves::SWORDSDANCE],[50,PBMoves::SLAM],[55,PBMoves::LEAFBLADE],
+			[60,PBMoves::FINALGAMBIT],[65,PBMoves::BRAVEBIRD]],
 		:GetEvo => [[PBSpecies::SIRFETCHD,PBEvolution::LandCritical,3]]
 	}
 },
@@ -4014,11 +3976,8 @@ PBSpecies::PONYTA => {
 		:Type2 => PBTypes::PSYCHIC,
 		:Ability => [PBAbilities::RUNAWAY,PBAbilities::PASTELVEIL,PBAbilities::ANTICIPATION],
 		:Movelist => [[1,PBMoves::GROWL],[1,PBMoves::TACKLE],[5,PBMoves::TAILWHIP],[10,PBMoves::CONFUSION],
-			[15,PBMoves::FAIRYWIND],[20,PBMoves::STOMP],[25,PBMoves::PSYBEAM],[20,PBMoves::TAKEDOWN],[35,PBMoves::AGILITY],
-			[41,PBMoves::HEALPULSE],[45,PBMoves::DAZZLINGGLEAM],[50,PBMoves::PSYCHIC],[55,PBMoves::HEALINGWISH]],
-		:EggMoves => [PBMoves::DOUBLEEDGE,PBMoves::DOUBLEKICK,PBMoves::EMBER,PBMoves::FIREBLAST,PBMoves::FIRESPIN,
-			PBMoves::FLAREBLITZ,PBMoves::HORNDRILL,PBMoves::HYPNOSIS,PBMoves::MORNINGSUN,PBMoves::QUICKATTACK,
-			PBMoves::THRASH],
+			[15,PBMoves::FAIRYWIND],[20,PBMoves::AGILITY],[25,PBMoves::PSYBEAM],[30,PBMoves::STOMP],[35,PBMoves::HEALPULSE],
+			[41,PBMoves::TAKEDOWN],[45,PBMoves::DAZZLINGGLEAM],[50,PBMoves::PSYCHIC],[55,PBMoves::HEALINGWISH]]
 	}
 },
 
@@ -4040,10 +3999,10 @@ PBSpecies::RAPIDASH => {
 		:Type1 => PBTypes::PSYCHIC,
 		:Type2 => PBTypes::FAIRY,
 		:Ability => [PBAbilities::RUNAWAY,PBAbilities::PASTELVEIL,PBAbilities::ANTICIPATION],
-		:Movelist => [[0,PBMoves::PSYCHOCUT],[1,PBMoves::MEGAHORN],[1,PBMoves::QUICKATTACK],[1,PBMoves::GROWL],
-			[1,PBMoves::TACKLE],[5,PBMoves::TAILWHIP],[10,PBMoves::CONFUSION],[15,PBMoves::FAIRYWIND],
-			[20,PBMoves::STOMP],[25,PBMoves::PSYBEAM],[20,PBMoves::TAKEDOWN],[35,PBMoves::AGILITY],
-			[41,PBMoves::HEALPULSE],[45,PBMoves::DAZZLINGGLEAM],[50,PBMoves::PSYCHIC],[55,PBMoves::HEALINGWISH]]
+		:Movelist => [[0,PBMoves::PSYCHOCUT],[1,PBMoves::CONFUSION],[1,PBMoves::MEGAHORN],[1,PBMoves::GROWL],
+			[1,PBMoves::QUICKATTACK],[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[15,PBMoves::FAIRYWIND],[20,PBMoves::AGILITY],
+			[25,PBMoves::PSYBEAM],[30,PBMoves::STOMP],[35,PBMoves::HEALPULSE],[43,PBMoves::TAKEDOWN],[49,PBMoves::DAZZLINGGLEAM],
+			[56,PBMoves::PSYCHIC],[63,PBMoves::HEALINGWISH]]
 	}
 },
 
@@ -4055,12 +4014,11 @@ PBSpecies::ARTICUNO => {
 		:Type1 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,0,3,0],
 		:BaseStats => [90,85,85,95,125,100],
-		:Ability => [PBAbilities::COMPETITIVE,PBAbilities::MAGICIAN],
+		:Ability => [PBAbilities::COMPETITIVE],
 		:Movelist => [[1,PBMoves::GUST],[1,PBMoves::PSYCHOSHIFT],[5,PBMoves::CONFUSION],[10,PBMoves::REFLECT],
 			[15,PBMoves::HYPNOSIS],[20,PBMoves::AGILITY],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::TAILWIND],
 			[35,PBMoves::PSYCHOCUT],[40,PBMoves::RECOVER],[45,PBMoves::FREEZINGGLARE],[50,PBMoves::DREAMEATER],
-			[55,PBMoves::HURRICANE],[60,PBMoves::MINDREADER],[65,PBMoves::DOUBLETEAM],[70,PBMoves::FUTURESIGHT],
-			[75,PBMoves::TRICKROOM]],
+			[55,PBMoves::HURRICANE],[60,PBMoves::MINDREADER],[65,PBMoves::FUTURESIGHT],[70,PBMoves::TRICKROOM]],
 		:Weight => 509
 	}
 },
@@ -4073,12 +4031,11 @@ PBSpecies::ZAPDOS => {
 		:Type1 => PBTypes::FIGHTING,
 		:EVs => [0,3,0,0,0,0],
 		:BaseStats => [90,125,90,100,85,90],
-		:Ability => [PBAbilities::DEFIANT,PBAbilities::STRONGHEEL],
+		:Ability => [PBAbilities::DEFIANT],
 		:Movelist => [[1,PBMoves::PECK],[1,PBMoves::FOCUSENERGY],[5,PBMoves::ROCKSMASH],
 			[10,PBMoves::LIGHTSCREEN],[15,PBMoves::PLUCK],[20,PBMoves::AGILITY],[25,PBMoves::ANCIENTPOWER],
-			[30,PBMoves::BRICKBREAK],[35,PBMoves::DRILLPECK],[40,PBMoves::QUICKGUARD],
-			[45,PBMoves::THUNDEROUSKICK],[50,PBMoves::BULKUP],[55,PBMoves::COUNTER],[60,PBMoves::DETECT],
-			[65,PBMoves::CLOSECOMBAT],[70,PBMoves::REVERSAL]],
+			[30,PBMoves::BRICKBREAK],[35,PBMoves::DRILLPECK],[40,PBMoves::QUICKGUARD],[45,PBMoves::THUNDEROUSKICK],
+			[50,PBMoves::BULKUP],[55,PBMoves::COUNTER],[60,PBMoves::DETECT],[65,PBMoves::CLOSECOMBAT],[70,PBMoves::REVERSAL]],
 		:Weight => 582
 	}
 },
@@ -4091,7 +4048,7 @@ PBSpecies::MOLTRES => {
 		:Type1 => PBTypes::DARK,
 		:EVs => [0,0,0,0,0,3],
 		:BaseStats => [90,85,90,90,100,125],
-		:Ability => [PBAbilities::BERSERK,PBAbilities::FLASHFIRE],
+		:Ability => [PBAbilities::BERSERK],
 		:Movelist => [[1,PBMoves::GUST],[1,PBMoves::LEER],[5,PBMoves::PAYBACK],[10,PBMoves::SAFEGUARD],
 			[15,PBMoves::WINGATTACK],[20,PBMoves::AGILITY],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::SUCKERPUNCH],
 			[35,PBMoves::AIRSLASH],[40,PBMoves::AFTERYOU],[45,PBMoves::FIERYWRATH],[50,PBMoves::NASTYPLOT],
@@ -4142,9 +4099,8 @@ PBSpecies::SLOWPOKE => {
 		:Ability => [PBAbilities::GLUTTONY,PBAbilities::OWNTEMPO,PBAbilities::REGENERATOR],
 		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::CURSE],[3,PBMoves::GROWL],[6,PBMoves::ACID],[9,PBMoves::YAWN],
 			[12,PBMoves::CONFUSION],[15,PBMoves::DISABLE],[18,PBMoves::WATERPULSE],[21,PBMoves::HEADBUTT],
-			[24,PBMoves::ZENHEADBUTT],[27,PBMoves::SLACKOFF],[30,PBMoves::RAINDANCE],[33,PBMoves::SURF],
-			[36,PBMoves::PSYCHUP],[39,PBMoves::HEALPULSE],[42,PBMoves::AMNESIA],[45,PBMoves::PSYCHIC]],
-		:EggMoves => [PBMoves::BELCH,PBMoves::BELLYDRUM,PBMoves::BLOCK,PBMoves::STOMP],
+			[24,PBMoves::ZENHEADBUTT],[27,PBMoves::AMNESIA],[30,PBMoves::SURF],[33,PBMoves::SLACKOFF],[36,PBMoves::PSYCHIC],
+			[39,PBMoves::PSYCHUP],[42,PBMoves::RAINDANCE],[45,PBMoves::HEALPULSE]],
 		:GetEvo => [[PBSpecies::SLOWBRO,PBEvolution::Item,PBItems::GALARICACUFF],
 			[PBSpecies::SLOWKING,PBEvolution::Item,PBItems::GALARICAWREATH]]
 	}
@@ -4157,12 +4113,11 @@ PBSpecies::SLOWKING => {
 		:DexEntry => "A combination of toxins and the shock of evolving has increased Shellder’s intelligence to the point that Shellder now controls Slowking.",
 		:Type1 => PBTypes::POISON,
 		:Ability => [PBAbilities::CURIOUSMEDICINE,PBAbilities::OWNTEMPO,PBAbilities::REGENERATOR],
-		:Movelist => [[0,PBMoves::EERIESPELL],[1,PBMoves::CHILLYRECEPTION],[1,PBMoves::NASTYPLOT],[1,PBMoves::TOXICSPIKES],
-			[1,PBMoves::POWERGEM],[1,PBMoves::SWAGGER],[1,PBMoves::EERIESPELL],[1,PBMoves::TACKLE],[1,PBMoves::CURSE],
-			[3,PBMoves::GROWL],[6,PBMoves::ACID],[9,PBMoves::YAWN],[12,PBMoves::CONFUSION],[15,PBMoves::DISABLE],
-			[18,PBMoves::WATERPULSE],[21,PBMoves::HEADBUTT],[24,PBMoves::ZENHEADBUTT],[27,PBMoves::SLACKOFF],
-			[30,PBMoves::RAINDANCE],[33,PBMoves::SURF],[36,PBMoves::PSYCHUP],[39,PBMoves::HEALPULSE],[42,PBMoves::AMNESIA],
-			[45,PBMoves::PSYCHIC]]
+		:Movelist => [[0,PBMoves::EERIESPELL],[1,PBMoves::EERIESPELL],[1,PBMoves::NASTYPLOT],[1,PBMoves::TOXICSPIKES],
+			[1,PBMoves::POWERGEM],[1,PBMoves::SWAGGER],[1,PBMoves::TACKLE],[1,PBMoves::CURSE],[1,PBMoves::GROWL],[1,PBMoves::ACID],
+			[9,PBMoves::YAWN],[12,PBMoves::CONFUSION],[15,PBMoves::DISABLE],[18,PBMoves::WATERPULSE],[21,PBMoves::HEADBUTT],
+			[24,PBMoves::ZENHEADBUTT],[27,PBMoves::AMNESIA],[30,PBMoves::SURF],[33,PBMoves::SLACKOFF],[36,PBMoves::PSYCHIC],
+			[39,PBMoves::PSYCHUP],[42,PBMoves::RAINDANCE],[45,PBMoves::HEALPULSE]]
 	}
 },
 
@@ -4194,11 +4149,10 @@ PBSpecies::CORSOLA => {
 		:BaseStats => [60,55,100,30,65,100],
 		:Ability => [PBAbilities::WEAKARMOR,PBAbilities::CURSEDBODY],
 		:Movelist => [[1,PBMoves::HARDEN],[1,PBMoves::TACKLE],[5,PBMoves::ASTONISH],[10,PBMoves::DISABLE],
-			[15,PBMoves::SPITE],[20,PBMoves::NIGHTSHADE],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::HEX],
-			[35,PBMoves::CURSE],[40,PBMoves::STRENGTHSAP],[45,PBMoves::POWERGEM],[50,PBMoves::GRUDGE],
-			[55,PBMoves::MIRRORCOAT]],
-		:EggMoves => [PBMoves::CONFUSERAY,PBMoves::CORALBREAK,PBMoves::DESTINYBOND,PBMoves::HAZE,		
-			PBMoves::HEADSMASH,PBMoves::NATUREPOWER,PBMoves::WATERPULSE],
+			[15,PBMoves::SPITE],[20,PBMoves::ANCIENTPOWER],[25,PBMoves::HEX],[30,PBMoves::CURSE],[35,PBMoves::STRENGTHSAP],
+			[40,PBMoves::POWERGEM],[45,PBMoves::NIGHTSHADE],[50,PBMoves::GRUDGE],[55,PBMoves::MIRRORCOAT]],
+		:EggMoves => [PBMoves::CONFUSERAY,PBMoves::DESTINYBOND,PBMoves::HAZE,PBMoves::HEADSMASH,PBMoves::NATUREPOWER,
+			PBMoves::WATERPULSE],
 		:GetEvo => [[PBSpecies::CURSOLA,PBEvolution::Level,38]],
 		:Weight => 5
 	},
@@ -4214,11 +4168,10 @@ PBSpecies::CORSOLA => {
 		:BaseStats => [60,55,100,30,65,100],
 		:Ability => [PBAbilities::WEAKARMOR,PBAbilities::CURSEDBODY],
 		:Movelist => [[1,PBMoves::HARDEN],[1,PBMoves::TACKLE],[5,PBMoves::ASTONISH],[10,PBMoves::DISABLE],
-		[15,PBMoves::SPITE],[20,PBMoves::NIGHTSHADE],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::HEX],
-		[35,PBMoves::CURSE],[40,PBMoves::STRENGTHSAP],[45,PBMoves::POWERGEM],[50,PBMoves::GRUDGE],
-		[55,PBMoves::MIRRORCOAT]],
-		:EggMoves => [PBMoves::CONFUSERAY,PBMoves::CORALBREAK,PBMoves::DESTINYBOND,PBMoves::HAZE,		
-		PBMoves::HEADSMASH,PBMoves::NATUREPOWER,PBMoves::WATERPULSE],
+			[15,PBMoves::SPITE],[20,PBMoves::ANCIENTPOWER],[25,PBMoves::HEX],[30,PBMoves::CURSE],[35,PBMoves::STRENGTHSAP],
+			[40,PBMoves::POWERGEM],[45,PBMoves::NIGHTSHADE],[50,PBMoves::GRUDGE],[55,PBMoves::MIRRORCOAT]],
+		:EggMoves => [PBMoves::CONFUSERAY,PBMoves::DESTINYBOND,PBMoves::HAZE,PBMoves::HEADSMASH,PBMoves::NATUREPOWER,
+			PBMoves::WATERPULSE],
 		:GetEvo => [[PBSpecies::CURSOLA,PBEvolution::Level,38]],
 		:Weight => 5
 	},
@@ -4262,10 +4215,9 @@ PBSpecies::ZIGZAGOON => {
 	"Galarian" => {
 		:DexEntry => "Thought to be the oldest form of Zigzagoon, it moves in zigzags and wreaks havoc upon its surroundings.",
 		:Type1 => PBTypes::DARK,
-		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::TACKLE],[3,PBMoves::SANDATTACK],[6,PBMoves::LICK],
-			[9,PBMoves::SNARL],[12,PBMoves::HEADBUTT],[15,PBMoves::BABYDOLLEYES],[18,PBMoves::PINMISSILE],
-			[21,PBMoves::REST],[24,PBMoves::TAKEDOWN],[27,PBMoves::SCARYFACE],[30,PBMoves::COUNTER],
-			[43,PBMoves::TAUNT],[56,PBMoves::DOUBLEEDGE]],
+		:Movelist => [[1,PBMoves::LEER],[1,PBMoves::TACKLE],[3,PBMoves::SANDATTACK],[6,PBMoves::LICK],[9,PBMoves::SNARL],
+			[12,PBMoves::HEADBUTT],[15,PBMoves::BABYDOLLEYES],[18,PBMoves::PINMISSILE],[21,PBMoves::REST],[24,PBMoves::TAKEDOWN],
+			[27,PBMoves::SCARYFACE],[30,PBMoves::COUNTER],[33,PBMoves::TAUNT],[36,PBMoves::DOUBLEEDGE]],
 		:EggMoves => [PBMoves::KNOCKOFF,PBMoves::PARTINGSHOT,PBMoves::QUICKGUARD]
 	}
 },
@@ -4286,11 +4238,10 @@ PBSpecies::LINOONE => {
 	"Galarian" => {
 		:DexEntry => "This very aggressive Pokémon will recklessly challenge opponents stronger than itself.",
 		:Type1 => PBTypes::DARK,
-		:Movelist => [[0,PBMoves::FURYSWIPES],[1,PBMoves::FURYSWIPES],[1,PBMoves::LEER],[1,PBMoves::TACKLE],
-			[3,PBMoves::SANDATTACK],[6,PBMoves::LICK],[9,PBMoves::SNARL],[12,PBMoves::HEADBUTT],
-			[15,PBMoves::BABYDOLLEYES],[18,PBMoves::PINMISSILE],[21,PBMoves::REST],[24,PBMoves::TAKEDOWN],
-			[27,PBMoves::SCARYFACE],[30,PBMoves::COUNTER],[33,PBMoves::SWITCHEROO],[38,PBMoves::HONECLAWS],
-			[43,PBMoves::TAUNT],[45,PBMoves::SUCKERPUNCH],[52,PBMoves::NIGHTSLASH],[56,PBMoves::DOUBLEEDGE]],
+		:Movelist => [[0,PBMoves::NIGHTSLASH],[1,PBMoves::BABYDOLLEYES],[1,PBMoves::PINMISSILE],[1,PBMoves::LEER],[1,PBMoves::TACKLE],
+			[1,PBMoves::SANDATTACK],[1,PBMoves::LICK],[1,PBMoves::SWITCHEROO],[9,PBMoves::SNARL],
+			[12,PBMoves::HEADBUTT],[15,PBMoves::HONECLAWS],[18,PBMoves::FURYSWIPES],[23,PBMoves::REST],[28,PBMoves::TAKEDOWN],
+			[33,PBMoves::SCARYFACE],[38,PBMoves::COUNTER],[43,PBMoves::TAUNT],[48,PBMoves::DOUBLEEDGE]],
 		:GetEvo => [[PBSpecies::OBSTAGOON,PBEvolution::LevelNight,35]]
 	}
 },
@@ -4352,13 +4303,12 @@ PBSpecies::STUNFISK => {
 		:Type2 => PBTypes::STEEL,
 		:BaseStats => [109,81,99,32,66,84],
 		:Ability => [PBAbilities::MIMICRY],
-		:Movelist => [[1,PBMoves::MUDSLAP],[1,PBMoves::TACKLE],[1,PBMoves::WATERGUN],[1,PBMoves::ENDURE],
-			[5,PBMoves::METALCLAW],[10,PBMoves::METALSOUND],[15,PBMoves::REVENGE],[20,PBMoves::MUDSHOT],
-			[25,PBMoves::IRONDEFENSE],[30,PBMoves::SNAPTRAP],[35,PBMoves::FLAIL],[40,PBMoves::SUCKERPUNCH],
-			[45,PBMoves::BOUNCE],[50,PBMoves::MUDDYWATER],[55,PBMoves::FISSURE]],
-		:EggMoves => [PBMoves::ASTONISH,PBMoves::BIND,PBMoves::COUNTER,PBMoves::CURSE,PBMoves::EARTHPOWER,
-			PBMoves::MEFIRST,PBMoves::PAINSPLIT,PBMoves::REFLECTTYPE,PBMoves::SLEEPTALK,PBMoves::SPITE,
-			PBMoves::YAWN]
+		:Movelist => [[1,PBMoves::MUDSLAP],[1,PBMoves::TACKLE],[1,PBMoves::WATERGUN],[1,PBMoves::METALCLAW],
+									[5,PBMoves::ENDURE],[10,PBMoves::MUDSHOT],[15,PBMoves::REVENGE],[20,PBMoves::METALSOUND],[25,PBMoves::SUCKERPUNCH],
+									[30,PBMoves::IRONDEFENSE],[35,PBMoves::BOUNCE],[40,PBMoves::MUDDYWATER],[45,PBMoves::SNAPTRAP],[50,PBMoves::FLAIL],
+									[55,PBMoves::FISSURE]],
+		:EggMoves => [PBMoves::ASTONISH,PBMoves::BIND,PBMoves::COUNTER,PBMoves::CURSE,PBMoves::EARTHPOWER,PBMoves::MEFIRST,
+									PBMoves::PAINSPLIT,PBMoves::REFLECTTYPE,PBMoves::SLEEPTALK,PBMoves::SPITE,PBMoves::YAWN]
 	}
 },
 
@@ -4377,10 +4327,8 @@ PBSpecies::TAUROS => {
 		:BaseStats => [75,110,105,100,30,70],
 		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::ANGERPOINT,PBAbilities::CUDCHEW],
 		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[5,PBMoves::WORKUP],[10,PBMoves::DOUBLEKICK],
-			[15,PBMoves::ASSURANCE],[20,PBMoves::SCARYFACE],[25,PBMoves::HEADBUTT],[30,PBMoves::REST],
-			[35,PBMoves::SWAGGER],[40,PBMoves::ZENHEADBUTT],[45,PBMoves::RAGINGBULL],[50,PBMoves::THRASH],
-			[55,PBMoves::DOUBLEEDGE],[60,PBMoves::CLOSECOMBAT]],
-		:EggMoves => [PBMoves::CURSE,PBMoves::ENDEAVOR,PBMoves::SCREECH]
+			[15,PBMoves::ASSURANCE],[20,PBMoves::HEADBUTT],[25,PBMoves::SCARYFACE],[30,PBMoves::ZENHEADBUTT],[35,PBMoves::RAGINGBULL],
+			[40,PBMoves::REST],[45,PBMoves::SWAGGER],[50,PBMoves::THRASH],[55,PBMoves::DOUBLEEDGE],[60,PBMoves::CLOSECOMBAT]]
 	},
 
 	"Blaze Breed" => {
@@ -4389,10 +4337,8 @@ PBSpecies::TAUROS => {
 		:BaseStats => [75,110,105,100,30,70],
 		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::ANGERPOINT,PBAbilities::CUDCHEW],
 		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[5,PBMoves::WORKUP],[10,PBMoves::DOUBLEKICK],
-		[15,PBMoves::FLAMECHARGE],[20,PBMoves::SCARYFACE],[25,PBMoves::HEADBUTT],[30,PBMoves::REST],
-		[35,PBMoves::SWAGGER],[40,PBMoves::ZENHEADBUTT],[45,PBMoves::RAGINGBULL],[50,PBMoves::THRASH],
-		[55,PBMoves::FLAREBLITZ],[60,PBMoves::CLOSECOMBAT]],
-		:EggMoves => [PBMoves::CURSE,PBMoves::ENDEAVOR,PBMoves::SCREECH]
+			[15,PBMoves::FLAMECHARGE],[20,PBMoves::HEADBUTT],[25,PBMoves::SCARYFACE],[30,PBMoves::ZENHEADBUTT],[35,PBMoves::RAGINGBULL],
+			[40,PBMoves::REST],[45,PBMoves::SWAGGER],[50,PBMoves::THRASH],[55,PBMoves::FLAREBLITZ],[60,PBMoves::CLOSECOMBAT]]
 	},
 
 	"Aqua Breed" => {
@@ -4401,10 +4347,8 @@ PBSpecies::TAUROS => {
 		:BaseStats => [75,110,105,100,30,70],
 		:Ability => [PBAbilities::INTIMIDATE,PBAbilities::ANGERPOINT,PBAbilities::CUDCHEW],
 		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[5,PBMoves::WORKUP],[10,PBMoves::DOUBLEKICK],
-		[15,PBMoves::AQUAJET],[20,PBMoves::SCARYFACE],[25,PBMoves::HEADBUTT],[30,PBMoves::REST],
-		[35,PBMoves::SWAGGER],[40,PBMoves::ZENHEADBUTT],[45,PBMoves::RAGINGBULL],[50,PBMoves::THRASH],
-		[55,PBMoves::WAVECRASH],[60,PBMoves::CLOSECOMBAT]],
-		:EggMoves => [PBMoves::CURSE,PBMoves::ENDEAVOR,PBMoves::SCREECH]
+			[15,PBMoves::AQUAJET],[20,PBMoves::HEADBUTT],[25,PBMoves::SCARYFACE],[30,PBMoves::ZENHEADBUTT],[35,PBMoves::RAGINGBULL],
+			[40,PBMoves::REST],[45,PBMoves::SWAGGER],[50,PBMoves::THRASH],[55,PBMoves::WAVECRASH],[60,PBMoves::CLOSECOMBAT]]
 	}
 },
 
@@ -4416,13 +4360,10 @@ PBSpecies::WOOPER => {
 		:DexEntry => "After losing a territorial struggle, Wooper began living on land. The Pokémon changed over time, developing a poisonous film to protect its body.",
 		:Type1 => PBTypes::POISON,
 		:Type2 => PBTypes::GROUND,
-		:Ability => [PBAbilities::POISONPOINT,PBAbilities::WATERABSORB,PBAbilities::WATERABSORB,PBAbilities::DEEPSLEEP,PBAbilities::UNAWARE],
-		:Movelist => [[1,PBMoves::TAILWHIP],[1,PBMoves::POISONSTING],[1,PBMoves::MUDSHOT],[4,PBMoves::TACKLE],
-			[8,PBMoves::POISONTAIL],[12,PBMoves::TOXICSPIKES],[16,PBMoves::SLAM],[21,PBMoves::YAWN],
-			[24,PBMoves::POISONJAB],[28,PBMoves::SLUDGEWAVE],[32,PBMoves::AMNESIA],[40,PBMoves::TOXIC],
-			[44,PBMoves::EARTHQUAKE]],
-		:EggMoves => [PBMoves::AFTERYOU,PBMoves::ANCIENTPOWER,PBMoves::COUNTER,PBMoves::DOUBLEKICK,
-			PBMoves::MIST,PBMoves::RECOVER,PBMoves::SPITUP,PBMoves::STOCKPILE,PBMoves::SWALLOW],
+		:Ability => [PBAbilities::POISONPOINT,PBAbilities::WATERABSORB,PBAbilities::UNAWARE],
+		:Movelist => [[1,PBMoves::TAILWHIP],[1,PBMoves::MUDSHOT],[4,PBMoves::TACKLE],[8,PBMoves::POISONTAIL],
+			[12,PBMoves::TOXICSPIKES],[16,PBMoves::SLAM],[21,PBMoves::YAWN],[24,PBMoves::POISONJAB],[28,PBMoves::SLUDGEWAVE],
+			[32,PBMoves::AMNESIA],[36,PBMoves::TOXIC],[40,PBMoves::EARTHQUAKE]],
 		:GetEvo => [[PBSpecies::CLODSIRE,PBEvolution::Level,20]],
 	}
 },
@@ -4431,9 +4372,11 @@ PBSpecies::OINKOLOGNE => {
 	#Gender difference
 	"Female" => {
 		:DexEntry => "This is a meticulous Pokémon that likes to keep things tidy. It shrouds itself in a floral aroma that soothes the Pokémon around it.",
-		:Ability => [PBAbilities::AROMAVEIL,PBAbilities::LINGERINGAROMA,PBAbilities::GLUTTONY,
-			PBAbilities::THICKFAT],
-		:BaseStats => [115,90,70,65,59,90]
+		:Ability => [PBAbilities::AROMAVEIL, PBAbilities::GLUTTONY, PBAbilities::THICKFAT],
+		:BaseStats => [115,90,70,65,59,90],
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[3,PBMoves::DISARMINGVOICE],[6,PBMoves::ECHOEDVOICE],[9,PBMoves::MUDSHOT],
+			[12,PBMoves::COVET],[15,PBMoves::DIG],[17,PBMoves::HEADBUTT],[23,PBMoves::YAWN],[28,PBMoves::TAKEDOWN],
+			[30,PBMoves::WORKUP],[34,PBMoves::UPROAR],[39,PBMoves::DOUBLEEDGE],[45,PBMoves::EARTHPOWER],[51,PBMoves::BELCH]]
 	}
 },
 
@@ -6042,11 +5985,11 @@ PBSpecies::SLOWBRO => {
 	"Galarian" => {
 		:Type1 => PBTypes::POISON,
 		:Ability => [PBAbilities::QUICKDRAW,PBAbilities::OWNTEMPO,PBAbilities::REGENERATOR],
-		:Movelist => [[0,PBMoves::SHELLSIDEARM],[1,PBMoves::WITHDRAW],[1,PBMoves::SHELLSIDEARM],
-			[1,PBMoves::TACKLE],[1,PBMoves::CURSE],[3,PBMoves::GROWL],[6,PBMoves::ACID],[9,PBMoves::YAWN],
-			[12,PBMoves::CONFUSION],[15,PBMoves::DISABLE],[18,PBMoves::WATERPULSE],[21,PBMoves::HEADBUTT],
-			[24,PBMoves::ZENHEADBUTT],[27,PBMoves::SLACKOFF],[30,PBMoves::RAINDANCE],[33,PBMoves::SURF],
-			[36,PBMoves::PSYCHUP],[39,PBMoves::HEALPULSE],[42,PBMoves::AMNESIA],[45,PBMoves::PSYCHIC]]
+		:Movelist => [[0,PBMoves::SHELLSIDEARM],[1,PBMoves::SHELLSIDEARM],[1,PBMoves::WITHDRAW],
+			[1,PBMoves::TACKLE],[1,PBMoves::CURSE],[1,PBMoves::GROWL],[1,PBMoves::ACID],[9,PBMoves::YAWN],[12,PBMoves::CONFUSION],
+			[15,PBMoves::DISABLE],[18,PBMoves::WATERPULSE],[21,PBMoves::HEADBUTT],[24,PBMoves::ZENHEADBUTT],
+			[27,PBMoves::AMNESIA],[30,PBMoves::SURF],[33,PBMoves::SLACKOFF],[36,PBMoves::PSYCHIC],[39,PBMoves::PSYCHUP],
+			[42,PBMoves::RAINDANCE],[45,PBMoves::HEALPULSE]]
 	}
 },
 
@@ -6108,11 +6051,10 @@ PBSpecies::TREECKO => {
 	:FormName => {1 => "Rebornian"},
 
 	:OnCreation => proc{
-		mapStarterHall=[39]
 		mapChrysoliaForest=[465]
 		# Map IDs for Rebornian form
 		randomnum = rand(4)
-		if $game_map && ((mapStarterHall.include?($game_map.map_id) && randomnum==0) || mapChrysoliaForest.include?($game_map.map_id))
+		if $game_map && (mapChrysoliaForest.include?($game_map.map_id))
 			next 1
 		else
 			next 0
@@ -6453,7 +6395,7 @@ PBSpecies::ZACIAN => {
 
 	"King" => {
 		:DexEntry => "Able to cut down anything with a single strike, it became known as the Fairy King's Sword, and it inspired awe in friend and foe alike.",
-		:BaseStats => [92,150,115,148,80,115],
+		:BaseStats => [92,170,115,148,80,115],
 		:Type2 => PBTypes::STEEL,
 		:Weight => 3550
 	}
@@ -6467,7 +6409,7 @@ PBSpecies::ZAMAZENTA => {
 
 	"King" => {
 		:DexEntry => "Its ability to deflect any attack led to it being known as the Fighting Master's Shield. It was feared and respected by all.",
-		:BaseStats => [92,120,140,128,80,140],
+		:BaseStats => [92,130,145,128,80,145],
 		:Type2 => PBTypes::STEEL,
 		:Weight => 7850
 	}
@@ -6494,7 +6436,7 @@ PBSpecies::GALLADE => {
 
 	"Mega" => {
 		:BaseStats => [68,165,95,110,65,115],
-		:Ability => [PBAbilities::INNERFOCUS,PBAbilities::SHARPNESS],
+		:Ability => PBAbilities::SHARPNESS,
 		:Height => 16,
 		:Weight => 564
 	}
@@ -6640,7 +6582,7 @@ PBSpecies::DRILGANN => {
 
 	"Mega" => {
 		:BaseStats => [75,180,88,84,60,88],
-		:Ability => [PBAbilities::SANDRUSH,PBAbilities::SANDFORCE]
+		:Ability => PBAbilities::SANDFORCE
 	}
 },
 
@@ -6739,7 +6681,7 @@ PBSpecies::WHIMSICOTT => {
 
 	"Mega" => {
 		:BaseStats => [60,67,105,136,117,95],
-		:Ability => [PBAbilities::REGENERATOR,PBAbilities::PRANKSTER]
+		:Ability => PBAbilities::PRANKSTER
 	}
 },
 
@@ -6915,18 +6857,13 @@ PBSpecies::PIKACHU => {
 	:MegaForm => 3,
 
 	"Partner" => {
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::MOLDBREAKER],
-		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],[1,PBMoves::PIKAPAPOW],
-			[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],
-			[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],[1,PBMoves::TAILSLAP],[1,PBMoves::METEORMASH],
-			[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],
-			[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],
-			[3,PBMoves::PLAYNICE],[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::MOLDBREAKER],
+		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],
+			[1,PBMoves::PIKAPAPOW],[1,PBMoves::EXTREMESPEED],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[5,PBMoves::GROWL],[7,PBMoves::PLAYNICE],
+			[10,PBMoves::QUICKATTACK],[13,PBMoves::ELECTROBALL],[18,PBMoves::THUNDERWAVE],[21,PBMoves::FEINT],[23,PBMoves::DOUBLETEAM],[26,PBMoves::SPARK],
+			[29,PBMoves::NUZZLE],[34,PBMoves::DISCHARGE],[37,PBMoves::SLAM],[42,PBMoves::THUNDERBOLT],[45,PBMoves::AGILITY],[50,PBMoves::WILDCHARGE],
+			[53,PBMoves::LIGHTSCREEN],[58,PBMoves::THUNDER]],
 		:GetEvo => []
 	},
 	"Dyna" => {
@@ -6934,88 +6871,53 @@ PBSpecies::PIKACHU => {
 		:Ability => PBAbilities::SIMPLE
 	},
 	"Rock Star" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::GUTS],
-		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],[1,PBMoves::PIKAPAPOW],
-			[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],
-			[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],[1,PBMoves::TAILSLAP],[1,PBMoves::METEORMASH],
-			[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],
-			[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],
-			[3,PBMoves::PLAYNICE],[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::GUTS],
+		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],
+			[1,PBMoves::PIKAPAPOW],[1,PBMoves::METEORMASH],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[5,PBMoves::GROWL],[7,PBMoves::PLAYNICE],
+			[10,PBMoves::QUICKATTACK],[13,PBMoves::ELECTROBALL],[18,PBMoves::THUNDERWAVE],[21,PBMoves::FEINT],[23,PBMoves::DOUBLETEAM],[26,PBMoves::SPARK],
+			[29,PBMoves::NUZZLE],[34,PBMoves::DISCHARGE],[37,PBMoves::SLAM],[42,PBMoves::THUNDERBOLT],[45,PBMoves::AGILITY],[50,PBMoves::WILDCHARGE],
+			[53,PBMoves::LIGHTSCREEN],[58,PBMoves::THUNDER]],
 		:GetEvo => []
 	},
 	"Pop Star" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::TRIAGE],
-		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],[1,PBMoves::PIKAPAPOW],
-			[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],
-			[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],[1,PBMoves::TAILSLAP],[1,PBMoves::METEORMASH],
-			[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],
-			[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],
-			[3,PBMoves::PLAYNICE],[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::TRIAGE],
+		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],
+			[1,PBMoves::PIKAPAPOW],[1,PBMoves::DRAININGKISS],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[5,PBMoves::GROWL],[7,PBMoves::PLAYNICE],
+			[10,PBMoves::QUICKATTACK],[13,PBMoves::ELECTROBALL],[18,PBMoves::THUNDERWAVE],[21,PBMoves::FEINT],[23,PBMoves::DOUBLETEAM],[26,PBMoves::SPARK],
+			[29,PBMoves::NUZZLE],[34,PBMoves::DISCHARGE],[37,PBMoves::SLAM],[42,PBMoves::THUNDERBOLT],[45,PBMoves::AGILITY],[50,PBMoves::WILDCHARGE],
+			[53,PBMoves::LIGHTSCREEN],[58,PBMoves::THUNDER]],
 		:GetEvo => []
 	},
 	"Libre" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::HUGEPOWER],
-		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],[1,PBMoves::PIKAPAPOW],
-			[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],
-			[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],[1,PBMoves::TAILSLAP],[1,PBMoves::METEORMASH],
-			[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],
-			[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],
-			[3,PBMoves::PLAYNICE],[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::HUGEPOWER],
+		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],
+			[1,PBMoves::PIKAPAPOW],[1,PBMoves::FLYINGPRESS],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[5,PBMoves::GROWL],[7,PBMoves::PLAYNICE],
+			[10,PBMoves::QUICKATTACK],[13,PBMoves::ELECTROBALL],[18,PBMoves::THUNDERWAVE],[21,PBMoves::FEINT],[23,PBMoves::DOUBLETEAM],[26,PBMoves::SPARK],
+			[29,PBMoves::NUZZLE],[34,PBMoves::DISCHARGE],[37,PBMoves::SLAM],[42,PBMoves::THUNDERBOLT],[45,PBMoves::AGILITY],[50,PBMoves::WILDCHARGE],
+			[53,PBMoves::LIGHTSCREEN],[58,PBMoves::THUNDER]],
 		:GetEvo => []
 	},
 	"PhD" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::PSYCHIC,
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::TECHNICIAN],
-		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],[1,PBMoves::PIKAPAPOW],
-			[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],
-			[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],[1,PBMoves::TAILSLAP],[1,PBMoves::METEORMASH],
-			[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],
-			[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],
-			[3,PBMoves::PLAYNICE],[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::SURGESURFER],
+		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],
+			[1,PBMoves::PIKAPAPOW],[1,PBMoves::ELECTRICTERRAIN],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[5,PBMoves::GROWL],[7,PBMoves::PLAYNICE],
+			[10,PBMoves::QUICKATTACK],[13,PBMoves::ELECTROBALL],[18,PBMoves::THUNDERWAVE],[21,PBMoves::FEINT],[23,PBMoves::DOUBLETEAM],[26,PBMoves::SPARK],
+			[29,PBMoves::NUZZLE],[34,PBMoves::DISCHARGE],[37,PBMoves::SLAM],[42,PBMoves::THUNDERBOLT],[45,PBMoves::AGILITY],[50,PBMoves::WILDCHARGE],
+			[53,PBMoves::LIGHTSCREEN],[58,PBMoves::THUNDER]],
 		:GetEvo => []
 	},
 	"Belle" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::ICE,
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::SERENEGRACE],
-		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],[1,PBMoves::PIKAPAPOW],
-			[1,PBMoves::EXTREMESPEED],[1,PBMoves::OUTRAGE],[1,PBMoves::SWEETSCENT],[1,PBMoves::ICICLECRASH],[1,PBMoves::ELECTRICTERRAIN],
-			[1,PBMoves::FLYINGPRESS],[1,PBMoves::DRAININGKISS],[1,PBMoves::HEARTSTAMP],[1,PBMoves::TAILSLAP],[1,PBMoves::METEORMASH],
-			[1,PBMoves::HAPPYHOUR],[1,PBMoves::HOLDHANDS],[1,PBMoves::POWDERSNOW],[1,PBMoves::LEER],[1,PBMoves::TACKLE],[1,PBMoves::SING],
-			[1,PBMoves::YAWN],[1,PBMoves::SCRATCH],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::GROWL],
-			[3,PBMoves::PLAYNICE],[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::DOUBLEKICK],[11,PBMoves::NUZZLE],[13,PBMoves::SANDATTACK],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::FOCUSENERGY],[19,PBMoves::DOUBLETEAM],[21,PBMoves::SWIFT],[23,PBMoves::ELECTROBALL],
-			[25,PBMoves::SLAM],[27,PBMoves::SPARK],[29,PBMoves::FEINT],[31,PBMoves::SLASH],[33,PBMoves::DISCHARGE],[35,PBMoves::AGILITY],
-			[37,PBMoves::THUNDERBOLT],[41,PBMoves::IRONTAIL],[43,PBMoves::WILDCHARGE],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],
-			[50,PBMoves::LIGHTSCREEN]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::SERENEGRACE],
+		:Movelist => [[1,PBMoves::ZIPPYZAP],[1,PBMoves::FLOATYFALL],[1,PBMoves::SPLISHYSPLASH],
+			[1,PBMoves::PIKAPAPOW],[1,PBMoves::ICICLECRASH],[1,PBMoves::SING],[1,PBMoves::YAWN],[1,PBMoves::TAILWHIP],[1,PBMoves::THUNDERSHOCK],[5,PBMoves::GROWL],[7,PBMoves::PLAYNICE],
+			[10,PBMoves::QUICKATTACK],[13,PBMoves::ELECTROBALL],[18,PBMoves::THUNDERWAVE],[21,PBMoves::FEINT],[23,PBMoves::DOUBLETEAM],[26,PBMoves::SPARK],
+			[29,PBMoves::NUZZLE],[34,PBMoves::DISCHARGE],[37,PBMoves::SLAM],[42,PBMoves::THUNDERBOLT],[45,PBMoves::AGILITY],[50,PBMoves::WILDCHARGE],
+			[53,PBMoves::LIGHTSCREEN],[58,PBMoves::THUNDER]],
 		:GetEvo => []
 	}
 },
@@ -7024,13 +6926,8 @@ PBSpecies::PICHU => {
 	:FormName => {1 => "Spiky-Eared"},
 
 	"Spiky-Eared" => {
-		:BaseStats => [45,80,50,110,75,60],
-		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD,PBAbilities::SEQUENCE,PBAbilities::MOODMAKER,PBAbilities::MOTORDRIVE],
-		:Movelist => [[1,PBMoves::THUNDERSHOCK],[1,PBMoves::CHARM],[1,PBMoves::TAILWHIP],[3,PBMoves::PLAYNICE],
-			[5,PBMoves::THUNDERWAVE],[7,PBMoves::SWEETKISS],[9,PBMoves::HELPINGHAND],[11,PBMoves::NUZZLE],[13,PBMoves::CHARGE],
-			[15,PBMoves::QUICKATTACK],[17,PBMoves::ENDURE],[21,PBMoves::SWIFT],[25,PBMoves::SWAGGER],[27,PBMoves::SPARK],[31,PBMoves::DIZZYPUNCH],
-			[33,PBMoves::THUNDERBOLT],[35,PBMoves::AGILITY],[37,PBMoves::TEETERDANCE],[39,PBMoves::PAINSPLIT],[41,PBMoves::IRONTAIL],
-			[43,PBMoves::ENDEAVOR],[45,PBMoves::NASTYPLOT],[47,PBMoves::THUNDER],[50,PBMoves::PETALDANCE],[55,PBMoves::VOLTTACKLE]],
+		:BaseStats => [45,80,50,120,75,60],
+		:Ability => [PBAbilities::STATIC,PBAbilities::LIGHTNINGROD],
 		:GetEvo => []
 	}
 },
@@ -7051,17 +6948,12 @@ PBSpecies::EEVEE => {
 	},
 	"Partner" => {
 		:BaseStats => [65,75,70,75,65,85],
-		:Ability => [PBAbilities::PROTEAN,PBAbilities::ADAPTABILITY,PBAbilities::ANTICIPATION,
-			PBAbilities::TELEPATHY,PBAbilities::RUNAWAY],
-		:Movelist => [[1,PBMoves::BUZZYBUZZ],[1,PBMoves::SIZZLYSLIDE],[1,PBMoves::BOUNCYBUBBLE],
-			[1,PBMoves::BADDYBAD],[1,PBMoves::GLITZYGLOW],[1,PBMoves::SAPPYSEED],[1,PBMoves::FREEZYFROST],
-			[1,PBMoves::SPARKLYSWIRL],[1,PBMoves::VEEVEEVOLLEY],[1,PBMoves::HELPINGHAND],[1,PBMoves::GROWL],
-			[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[5,PBMoves::SANDATTACK],[7,PBMoves::BABYDOLLEYES],
-			[9,PBMoves::FOCUSENERGY],[11,PBMoves::COPYCAT],[13,PBMoves::MUDSLAP],[16,PBMoves::QUICKATTACK],
-			[19,PBMoves::DOUBLEKICK],[21,PBMoves::BITE],[23,PBMoves::COVET],[25,PBMoves::REFRESH],
-			[27,PBMoves::SWIFT],[29,PBMoves::MIMIC],[31,PBMoves::TRUMPCARD],[33,PBMoves::TAKEDOWN],
-			[35,PBMoves::CHARM],[37,PBMoves::BATONPASS],[39,PBMoves::CALMMIND],[41,PBMoves::DOUBLEEDGE],
-			[45,PBMoves::LASTRESORT]],
+		:Ability => [PBAbilities::PROTEAN,PBAbilities::ADAPTABILITY,PBAbilities::ANTICIPATION],
+		:Movelist => [[1,PBMoves::BUZZYBUZZ],[1,PBMoves::SIZZLYSLIDE],[1,PBMoves::BOUNCYBUBBLE],[1,PBMoves::BADDYBAD],
+			[1,PBMoves::GLITZYGLOW],[1,PBMoves::SAPPYSEED],[1,PBMoves::FREEZYFROST],[1,PBMoves::SPARKLYSWIRL],
+			[1,PBMoves::VEEVEEVOLLEY],[1,PBMoves::COVET],[1,PBMoves::HELPINGHAND],[1,PBMoves::GROWL],[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[5,PBMoves::SANDATTACK],[9,PBMoves::BABYDOLLEYES],
+			[13,PBMoves::QUICKATTACK],[17,PBMoves::BITE],[17,PBMoves::SWIFT],[20,PBMoves::REFRESH],[23,PBMoves::TAKEDOWN],[26,PBMoves::CHARM],
+			[30,PBMoves::COPYCAT],[33,PBMoves::BATONPASS],[37,PBMoves::DOUBLEEDGE],[41,PBMoves::LASTRESORT],[45,PBMoves::TRUMPCARD]],
 		:GetEvo => []
 	},
 	"Infinity" => {
@@ -7402,7 +7294,13 @@ PBSpecies::TOXTRICITY => {
 
 	"Low Key" => {
 		:DexEntry => "Many youths admire the way this Pokémon listlessly picks fights and keeps its cool no matter what opponent it faces.",
-		:Ability => [PBAbilities::PUNKROCK,PBAbilities::MINUS,PBAbilities::TECHNICIAN]
+		:Ability => [PBAbilities::PUNKROCK,PBAbilities::MINUS,PBAbilities::TECHNICIAN],
+		:Movelist => [[1,PBMoves::SPARK],[1,PBMoves::EERIEIMPULSE],[1,PBMoves::BELCH],[1,PBMoves::TEARFULLOOK],
+			[1,PBMoves::NUZZLE],[1,PBMoves::GROWL],[1,PBMoves::FLAIL],[1,PBMoves::ACID],[1,PBMoves::THUNDERSHOCK],
+			[1,PBMoves::ACIDSPRAY],[1,PBMoves::LEER],[1,PBMoves::NOBLEROAR],[4,PBMoves::CHARGE],[8,PBMoves::SHOCKWAVE],
+			[12,PBMoves::SCARYFACE],[16,PBMoves::TAUNT],[20,PBMoves::VENOMDRENCH],[24,PBMoves::SCREECH],
+			[28,PBMoves::SWAGGER],[32,PBMoves::TOXIC],[36,PBMoves::DISCHARGE],[40,PBMoves::POISONJAB],
+			[44,PBMoves::OVERDRIVE],[48,PBMoves::BOOMBURST],[52,PBMoves::MAGNETICFLUX]]
 	}
 },
 
@@ -7435,7 +7333,11 @@ PBSpecies::URSHIFU => {
 
 	"Rapid Strike" => {
 		:DexEntry => "It's believed that this Pokémon modeled its fighting style on the flow of a river—sometimes rapid, sometimes calm.",
-		:Type2 => PBTypes::WATER
+		:Type2 => PBTypes::WATER,
+		:Movelist => [[0,PBMoves::SURGINGSTRIKES],[1,PBMoves::SURGINGSTRIKES],[1,PBMoves::AQUAJET],[1,PBMoves::ROCKSMASH],
+			[1,PBMoves::LEER],[1,PBMoves::ENDURE],[1,PBMoves::FOCUSENERGY],[12,PBMoves::AERIALACE],[16,PBMoves::SCARYFACE],
+			[20,PBMoves::HEADBUTT],[24,PBMoves::BRICKBREAK],[28,PBMoves::DETECT],[32,PBMoves::BULKUP],[34,PBMoves::JETPUNCH],
+			[36,PBMoves::IRONHEAD],[40,PBMoves::DYNAMICPUNCH],[44,PBMoves::COUNTER],[48,PBMoves::CLOSECOMBAT],[52,PBMoves::FOCUSPUNCH],[58,PBMoves::AXEKICK]]
 	},
 
 	"Dyna X" => {
@@ -7653,13 +7555,9 @@ PBSpecies::AVALUGG => {
 		:Type2 => PBTypes::ROCK,
 		:BaseStats => [95,127,184,38,34,36],
 		:Ability => [PBAbilities::STRONGJAW,PBAbilities::STURDY,PBAbilities::ICEBODY],
-		:Movelist => [[0,PBMoves::WIDEGUARD],[1,PBMoves::WIDEGUARD],[1,PBMoves::TACKLE],[3,PBMoves::HARDEN],
-			[5,PBMoves::SHARPEN],[10,PBMoves::BITE],[12,PBMoves::POWDERSNOW],[15,PBMoves::RAPIDSPIN],
-			[18,PBMoves::ICESHARD],[20,PBMoves::TAKEDOWN],[22,PBMoves::ICYWIND],[24,PBMoves::CURSE],
-			[26,PBMoves::PROTECT],[30,PBMoves::ICEBALL],[33,PBMoves::IRONDEFENSE],[35,PBMoves::ICEFANG],
-			[39,PBMoves::CRUNCH],[41,PBMoves::EARTHPOWER],[43,PBMoves::RECOVER],[47,PBMoves::AVALANCHE],
-			[49,PBMoves::ROCKSLIDE],[51,PBMoves::DOUBLEEDGE],[56,PBMoves::MOUNTAINGALE],
-			[37,PBMoves::BLIZZARD]],
+		:Movelist => [[0,PBMoves::ROCKSLIDE],[1,PBMoves::TACKLE],[5,PBMoves::POWDERSNOW],[9,PBMoves::ICESHARD],
+			[15,PBMoves::BITE],[21,PBMoves::IRONDEFENSE],[29,PBMoves::CRUNCH],[29,PBMoves::EARTHPOWER],
+			[37,PBMoves::BLIZZARD],[37,PBMoves::MOUNTAINGALE],[47,PBMoves::DOUBLEEDGE]],
 		:Weight => 2624
 	}
 },
@@ -7791,23 +7689,13 @@ PBSpecies::MRMIME => {
 		:Type2 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,2,0,0],
 		:BaseStats => [50,65,65,100,90,90],
-		:Ability => [PBAbilities::VITALSPIRIT,PBAbilities::SCREENCLEANER,PBAbilities::STRONGHEEL,PBAbilities::ICEBODY],
-		:Movelist => [[1,PBMoves::MISTYTERRAIN],[1,PBMoves::ICESHARD],[1,PBMoves::RAPIDSPIN],
-			[1,PBMoves::ALLYSWITCH],[1,PBMoves::DOUBLEKICK],[1,PBMoves::MIRRORCOAT],[1,PBMoves::TICKLE],
-			[1,PBMoves::CONFUSION],[1,PBMoves::BARRIER],[1,PBMoves::POUND],[4,PBMoves::COPYCAT],
-			[8,PBMoves::MEDITATE],[10,PBMoves::ENCORE],[12,PBMoves::PROTECT],[14,PBMoves::DOUBLESLAP],
-			[16,PBMoves::MIMIC],[20,PBMoves::HYPNOSIS],[22,PBMoves::REFLECT],[22,PBMoves::LIGHTSCREEN],
-			[22,PBMoves::SAFEGUARD],[24,PBMoves::PSYBEAM],[26,PBMoves::ICYWIND],[29,PBMoves::RECYCLE],
-			[32,PBMoves::TRICK],[34,PBMoves::IRONDEFENSE],[36,PBMoves::ROLEPLAY],[38,PBMoves::SUBSTITUTE],
-			[40,PBMoves::BATONPASS],[42,PBMoves::ZENHEADBUTT],[44,PBMoves::CALMMIND],[46,PBMoves::SUCKERPUNCH],
-			[48,PBMoves::DAZZLINGGLEAM],[48,PBMoves::FREEZEDRY],[50,PBMoves::PSYCHIC],
-			[52,PBMoves::TEETERDANCE]],
-		:EggMoves => [PBMoves::CHARM,PBMoves::CONFUSERAY,PBMoves::FAKEOUT,PBMoves::FOLLOWME,
-			PBMoves::FUTURESIGHT,PBMoves::HEALINGWISH,PBMoves::HYPNOSIS,PBMoves::ICYWIND,PBMoves::LOVELYKISS,
-			PBMoves::MAGICROOM,PBMoves::MIMIC,PBMoves::MINDREADER,PBMoves::MUDSLAP,PBMoves::NASTYPLOT,
-			PBMoves::PERISHSONG,PBMoves::POWERSPLIT,PBMoves::POWERWHIP,PBMoves::PSYCHICTERRAIN,PBMoves::PURSUIT,
-			PBMoves::QUICKATTACK,PBMoves::SMOG,PBMoves::SONICBOOM,PBMoves::TEETERDANCE,PBMoves::TICKLE,
-			PBMoves::TRICK,PBMoves::WAKEUPSLAP],
+		:Ability => [PBAbilities::VITALSPIRIT,PBAbilities::SCREENCLEANER,PBAbilities::ICEBODY],
+		:Movelist => [[1,PBMoves::BATONPASS],[1,PBMoves::COPYCAT],[1,PBMoves::DAZZLINGGLEAM],[1,PBMoves::ENCORE],
+			[1,PBMoves::ICESHARD],[1,PBMoves::LIGHTSCREEN],[1,PBMoves::MIMIC],[1,PBMoves::MISTYTERRAIN],[1,PBMoves::POUND],
+			[1,PBMoves::PROTECT],[1,PBMoves::RAPIDSPIN],[1,PBMoves::RECYCLE],[1,PBMoves::REFLECT],[1,PBMoves::ROLEPLAY],
+			[1,PBMoves::SAFEGUARD],[12,PBMoves::CONFUSION],[16,PBMoves::ALLYSWITCH],[20,PBMoves::ICYWIND],[24,PBMoves::DOUBLEKICK],
+			[28,PBMoves::PSYBEAM],[32,PBMoves::HYPNOSIS],[36,PBMoves::MIRRORCOAT],[40,PBMoves::SUCKERPUNCH],[44,PBMoves::FREEZEDRY],
+			[48,PBMoves::PSYCHIC],[52,PBMoves::TEETERDANCE]],
 		:GetEvo => [[PBSpecies::MRRIME,PBEvolution::Level,42]]
 	}
 },
@@ -9514,74 +9402,47 @@ PBSpecies::FURFROU => {
 		"Star" => {
 			:Type2 => PBTypes::ELECTRIC,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-				[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-				[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-				[48,PBMoves::RETALIATE],[72,PBMoves::WILDCHARGE]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::WILDCHARGE]]
 		},
 		"Heart" => {
 			:Type2 => PBTypes::PSYCHIC,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::PSYCHICFANGS]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::PSYCHICFANGS]]
 		},
 		"Pharaoh" => {
 			:Type2 => PBTypes::GHOST,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::SHADOWBONE]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::SHADOWBONE]]
 		},
 		"Matron" => {
 			:Type2 => PBTypes::POISON,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::GUNKSHOT]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::GUNKSHOT]]
 		},
 		"Dandy" => {
 			:Type2 => PBTypes::DARK,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::KNOCKOFF]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::KNOCKOFF]]
 		},
 		"Kabuki" => {
 			:Type2 => PBTypes::FIGHTING,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::HIJUMPKICK]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::HIJUMPKICK]]
 		},
 		"La Reine" => {
 			:Type2 => PBTypes::WATER,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::AQUATAIL]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::AQUATAIL]]
 		},
 		"Debutante" => {
 			:Type2 => PBTypes::FAIRY,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::PLAYROUGH]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::PLAYROUGH]]
 		},
 		"Diamond" => {
 			:Type2 => PBTypes::ROCK,
 			:BaseStats => [85,135,60,112,55,90],
-			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
-			[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
-			[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-			[48,PBMoves::RETALIATE],[72,PBMoves::STONEEDGE]]
+			:Movelist => [[1,PBMoves::TACKLE], [1,PBMoves::GROWL], [5,PBMoves::SANDATTACK], [9,PBMoves::BABYDOLLEYES], [12,PBMoves::HEADBUTT], [15,PBMoves::TAILWHIP], [22,PBMoves::BITE], [27,PBMoves::ODORSLEUTH], [33,PBMoves::RETALIATE], [35,PBMoves::TAKEDOWN], [38,PBMoves::CHARM], [42,PBMoves::SUCKERPUNCH], [48,PBMoves::COTTONGUARD], [72,PBMoves::STONEEDGE]]
 		},
 },
 
@@ -9675,17 +9536,11 @@ PBSpecies::LILLIGANT => {
 		:DexEntry => "I suspect that its well-developed legs are the result of a life spent on mountains covered in deep snow. The scent it exudes from its flower crown heartens those in proximity.",
 		:Type2 => PBTypes::FIGHTING,
 		:BaseStats => [70,105,75,105,50,75],
-		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::LEAFGUARD,PBAbilities::HUSTLE,PBAbilities::LIFEFORCE,PBAbilities::STRONGHEEL],
-		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::FOCUSENERGY],[1,PBMoves::TEETERDANCE],
-			[1,PBMoves::ROCKSMASH],[1,PBMoves::ABSORB],[4,PBMoves::GROWTH],[8,PBMoves::LEAFAGE],
-			[10,PBMoves::LEECHSEED],[13,PBMoves::STUNSPORE],[15,PBMoves::POISONPOWDER],
-			[17,PBMoves::SLEEPPOWDER],[19,PBMoves::MEGADRAIN],[21,PBMoves::HELPINGHAND],[23,PBMoves::SYNTHESIS],
-			[25,PBMoves::DEFOG],[27,PBMoves::AFTERYOU],[29,PBMoves::MAGICALLEAF],[31,PBMoves::CHARM],
-			[33,PBMoves::MEGAKICK],[35,PBMoves::AROMATHERAPY],[37,PBMoves::GIGADRAIN],[39,PBMoves::DRAINPUNCH],
-			[41,PBMoves::SUNNYDAY],[43,PBMoves::ENERGYBALL],[45,PBMoves::ENTRAINMENT],[47,PBMoves::LEAFBLADE],
-			[49,PBMoves::RECOVER],[51,PBMoves::PETALBLIZZARD],[51,PBMoves::PETALDANCE],
-			[53,PBMoves::VICTORYDANCE],[55,PBMoves::AXEKICK],[57,PBMoves::LEAFSTORM],[59,PBMoves::CLOSECOMBAT],
-			[61,PBMoves::SOLARBLADE]],
+		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::LEAFGUARD,PBAbilities::HUSTLE],
+		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::ROCKSMASH],[1,PBMoves::ABSORB],[1,PBMoves::LEAFAGE],[5,PBMoves::AXEKICK],[9,PBMoves::STUNSPORE],
+			[15,PBMoves::POISONPOWDER],[21,PBMoves::ENERGYBALL],[29,PBMoves::SLEEPPOWDER],[34,PBMoves::DRAINPUNCH],
+			[37,PBMoves::LEAFBLADE],[37,PBMoves::RECOVER],[42,PBMoves::VICTORYDANCE],[47,PBMoves::LEAFSTORM],
+			[53,PBMoves::PETALDANCE],[57,PBMoves::CLOSECOMBAT]],
 		:Weight => 192,
 		:Height => 12
 	},
