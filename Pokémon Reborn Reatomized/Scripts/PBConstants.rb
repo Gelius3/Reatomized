@@ -217,6 +217,7 @@ class PBEffects
   PowerNap           = 172
   Tenacity           = 173
   Spirit             = 174
+  Nurse              = 175
 
   # These effects apply to a side
   LightScreen   = 200
