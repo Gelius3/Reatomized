@@ -462,13 +462,15 @@ class PokeBattle_Battler
   def pbInitEffects(batonpass, fakebattler=false)
     if !batonpass
       # These effects are retained if Baton Pass is used
-      @stages[PBStats::ATTACK]   = 0
-      @stages[PBStats::DEFENSE]  = 0
-      @stages[PBStats::SPEED]    = 0
-      @stages[PBStats::SPATK]    = 0
-      @stages[PBStats::SPDEF]    = 0
-      @stages[PBStats::EVASION]  = 0
-      @stages[PBStats::ACCURACY] = 0
+      if @effects[PBEffects::Nurse]!=true # Nurse check here to ensure it doesn't unintentionally reset stats
+        @stages[PBStats::ATTACK]   = 0
+        @stages[PBStats::DEFENSE]  = 0
+        @stages[PBStats::SPEED]    = 0
+        @stages[PBStats::SPATK]    = 0
+        @stages[PBStats::SPDEF]    = 0
+        @stages[PBStats::EVASION]  = 0
+        @stages[PBStats::ACCURACY] = 0
+      end # Nurse check ends
       @effects[PBEffects::AquaRing]    = false
       @effects[PBEffects::Confusion]   = 0
       @effects[PBEffects::Curse]       = false
@@ -667,6 +669,7 @@ class PokeBattle_Battler
     @effects[PBEffects::CudChew]          = []
     @effects[PBEffects::ParadoxBoost]     = []
     @effects[PBEffects::PowerNap]         = false
+    @effects[PBEffects::Nurse]            = false
     for i in 0...4
       next if !@battle.battlers[i] || fakebattler
       if @battle.battlers[i].effects[PBEffects::MultiTurnUser]==@index
