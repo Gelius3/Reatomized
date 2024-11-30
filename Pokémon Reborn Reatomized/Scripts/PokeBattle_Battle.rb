@@ -4912,7 +4912,7 @@ class PokeBattle_Battle
             patient.pbInitEffects(false)
             @battle.scene.pbUnSubstituteSprite(patient, patient.pbIsOpposing?(1))
             @battle.scene.pbUnVanishSprite(patient, true)
-            pbDisplay(_INTL("{2} was Nursed by its partner {1}!",i.pbThis,patient))
+            pbDisplay(_INTL("{2} was Nursed by its partner {1}!",i.pbThis,patient.pbThis))
           end
         end
       end
