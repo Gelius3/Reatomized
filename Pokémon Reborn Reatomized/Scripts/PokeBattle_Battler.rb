@@ -6004,7 +6004,7 @@ class PokeBattle_Battler
           pbIncreaseStatBasic(PBStats::SPDEF,1)
           pbIncreaseStatBasic(PBStats::SPEED,1)
           @battle.pbCommonAnimation("StatUp",user,nil)
-          @battle.pbDisplay(_INTL("{1}'s {2} raised its offenses and defenses!",pbThis,PBAbilities.getName(ability)))
+          @battle.pbDisplay(_INTL("{1}'s {2} raised its stats!",pbThis,PBAbilities.getName(ability)))
           user.effects[PBEffects::Conqueror]+=1
         end
       end
