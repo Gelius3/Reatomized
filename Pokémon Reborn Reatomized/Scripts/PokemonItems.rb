@@ -437,20 +437,20 @@ def pbSpeciesCompatible?(species,move,pokemon)
       if pokemon.form==0
         if (move == PBMoves::TORMENT) ||
           (move == PBMoves::QUASH) || (move == PBMoves::EMBARGO) ||
-          (move == PBMoves::SHADOWCLAW) ||
+          (move == PBMoves::SHADOWCLAW) || (move == PBMoves::POISONFANG) ||
           (move == PBMoves::DARKPULSE) || (move == PBMoves::SNATCH)
           return false
         end
       elsif pokemon.form==1
         if (move == PBMoves::WORKUP) || (move == PBMoves::CHARGEBEAM) ||
-          (move == PBMoves::WILDCHARGE)
+          (move == PBMoves::WILDCHARGE) || (move == PBMoves::FIREFANG)
         end 
       end
     when PBSpecies::RATICATE #Raticate
       if pokemon.form==0
         if (move == PBMoves::TORMENT) ||
           (move == PBMoves::QUASH) || (move == PBMoves::EMBARGO) ||
-          (move == PBMoves::SHADOWCLAW) ||
+          (move == PBMoves::SHADOWCLAW) || (move == PBMoves::POISONFANG) ||
           (move == PBMoves::DARKPULSE) || (move == PBMoves::BULKUP) ||
           (move == PBMoves::VENOSHOCK) || (move == PBMoves::SLUDGEWAVE) || 
           (move == PBMoves::SNATCH) || (move == PBMoves::KNOCKOFF)
@@ -458,7 +458,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
         end
       elsif pokemon.form==1
         if (move == PBMoves::WORKUP) || (move == PBMoves::CHARGEBEAM) ||
-          (move == PBMoves::WILDCHARGE)
+          (move == PBMoves::WILDCHARGE) || (move == PBMoves::FIREFANG)
           return false
         end 
       end      
