@@ -998,8 +998,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::SWIFT) || (move == PBMoves::UTURN) || (move == PBMoves::RAZORWIND) ||
           (move == PBMoves::ACROBATICS) || (move == PBMoves::BATONPASS) || (move == PBMoves::WHIRLWIND) ||
 	        (move == PBMoves::IRONTAIL) || (move == PBMoves::UPROAR) || (move == PBMoves::REFLECT) ||
-	        (move == PBMoves::HEATWAVE) || (move == PBMoves::AIRCUTTER) || (move == PBMoves::ROOST) ||
-	        (move == PBMoves::MUDSLAP)
+	        (move == PBMoves::HEATWAVE) || (move == PBMoves::AIRCUTTER) || (move == PBMoves::MUDSLAP)
           return false
         end
       end
@@ -1344,14 +1343,13 @@ def pbSpeciesCompatible?(species,move,pokemon)
           return false
         end
       elsif pokemon.form==0
-        if (move == PBMoves::PSYSHOCK) || (move == PBMoves::CALMMIND) || (move == PBMoves::DREAMEATER) ||
+        if (move == PBMoves::PSYSHOCK) || (move == PBMoves::ESPERWING) || (move == PBMoves::DREAMEATER) ||
           (move == PBMoves::PSYCHIC) || (move == PBMoves::SHADOWBALL) || (move == PBMoves::FUTURESIGHT) ||
           (move == PBMoves::TRICKROOM) || (move == PBMoves::ALLYSWITCH) || (move == PBMoves::PSYBEAM) ||
           (move == PBMoves::HYPERVOICE) || (move == PBMoves::SKILLSWAP) || (move == PBMoves::TRICK) ||
           (move == PBMoves::SCARYFACE) || (move == PBMoves::IMPRISON) || (move == PBMoves::PSYCHICNOISE) ||
           (move == PBMoves::POWERSWAP) || (move == PBMoves::GUARDSWAP) || (move == PBMoves::HYPNOSIS) ||
-          (move == PBMoves::PSYCHOCUT) || (move == PBMoves::STOREDPOWER) || (move == PBMoves::EXPANDINGFORCE) ||
-          (move == PBMoves::ESPERWING)
+          (move == PBMoves::PSYCHOCUT) || (move == PBMoves::STOREDPOWER) || (move == PBMoves::EXPANDINGFORCE)
           return false
         end
       end
@@ -3144,7 +3142,8 @@ end
 # Hisui
     when  PBSpecies::TYPHLOSION
       if pokemon.form==1
-        if (move == PBMoves::DYNAMICPUNCH) || (move == PBMoves::SCORCHINGSANDS) || (move == PBMoves::SEISMICTOSS)
+        if (move == PBMoves::DYNAMICPUNCH) || (move == PBMoves::SCORCHINGSANDS) ||
+          (move == PBMoves::SEISMICTOSS) || (move == PBMoves::EARTHPOWER)
           return false
         end
       elsif pokemon.form==0
