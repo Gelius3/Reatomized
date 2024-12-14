@@ -85,9 +85,9 @@ def isRotomMove?(move,pkmn)
     return true
   elsif pkmn.form==2 && move==PBMoves::HYDROPUMP
     return true
-  elsif pkmn.form==3 && move==PBMoves::BLIZZARD
+  elsif pkmn.form==3 && move==PBMoves::ICYWIND
     return true
-  elsif pkmn.form==4 && move==PBMoves::AIRSLASH
+  elsif pkmn.form==4 && move==PBMoves::HURRICANE
     return true
   elsif pkmn.form==5 && move==PBMoves::LEAFSTORM  
     return true
