@@ -1136,6 +1136,8 @@ class PokeBattle_Move
       if @id == PBMoves::AURASPHERE || @id == PBMoves::DRAGONPULSE || @id == PBMoves::DARKPULSE || @id == PBMoves::WATERPULSE || @id == PBMoves::ORIGINPULSE || @id == PBMoves::LASERPULSE || @id == PBMoves::PROTONBEAM || @id == PBMoves::GROUNDZERO || @id == PBMoves::TERRAINPULSE
         damagemult=(damagemult*1.5).round
       end
+    elsif (attacker.ability == PBAbilities::FIELDMASTER)
+      damagemult=(damagemult*1.5).round if (PBStuff::FIELDMOVE).include?(@id)
     elsif (attacker.ability == PBAbilities::LULLABY)
       if @id == PBMoves::ROUND
         damagemult=(damagemult*1.5).round
