@@ -1937,14 +1937,14 @@ class PokeBattle_Move_047 < PokeBattle_Move
        ((@battle.FE == PBFields::DESERTF || @battle.FE == PBFields::ASHENB) && (@id == PBMoves::SANDATTACK)) ||
        ((@battle.FE == PBFields::SHORTCIRCUITF || @battle.FE == PBFields::DARKCRYSTALC || @battle.FE == PBFields::MIRRORA || @battle.FE == PBFields::STARLIGHTA || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::GUFIELD) && (@id == PBMoves::FLASH)) ||
        (@battle.FE == PBFields::ASHENB && (@id == PBMoves::KINESIS))
-      ret=opponent.pbReduceStat(PBStats::ACCURACY,2,abilitymessage:false, statdropper: attacker)
+      attacker.ability == PBAbilities::FIELDMASTER ? ret=opponent.pbReduceStat(PBStats::ACCURACY,3,abilitymessage:false, statdropper: attacker) : ret=opponent.pbReduceStat(PBStats::ACCURACY,2,abilitymessage:false, statdropper: attacker) # Field Master
     elsif @battle.FE == PBFields::PSYCHICT && (@id == PBMoves::KINESIS)
       opponent.pbReduceStat(PBStats::ACCURACY,2,abilitymessage:false, statdropper: attacker)
       attacker.pbIncreaseStat(PBStats::ATTACK,2,abilitymessage:false) if attacker.pbCanIncreaseStatStage?(PBStats::ATTACK,false)
       attacker.pbIncreaseStat(PBStats::SPATK,2,abilitymessage:false) if attacker.pbCanIncreaseStatStage?(PBStats::SPATK,false)
       return 0
     else
-      ret=opponent.pbReduceStat(PBStats::ACCURACY,1,abilitymessage:false, statdropper: attacker)
+      attacker.ability == PBAbilities::FIELDMASTER ? ret=opponent.pbReduceStat(PBStats::ACCURACY,2,abilitymessage:false, statdropper: attacker) : ret=opponent.pbReduceStat(PBStats::ACCURACY,1,abilitymessage:false, statdropper: attacker) # Field Master
     end
     return ret ? 0 : -1
   end
@@ -2035,7 +2035,7 @@ class PokeBattle_Move_049 < PokeBattle_Move
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     return super(attacker,opponent,hitnum,alltargets,showanimation) if @basedamage>0
     pbShowAnimation(@id,attacker,opponent,hitnum,alltargets,showanimation)
-    ret=opponent.pbReduceStat(PBStats::EVASION,1,abilitymessage:false, statdropper: attacker)
+    attacker.ability == PBAbilities::FIELDMASTER ? ret=opponent.pbReduceStat(PBStats::EVASION,2,abilitymessage:false, statdropper: attacker) : ret=opponent.pbReduceStat(PBStats::EVASION,1,abilitymessage:false, statdropper: attacker) # Field Master
     ####
     if attacker.pbOpposingSide.effects[PBEffects::Reflect]>0
       attacker.pbOpposingSide.effects[PBEffects::Reflect]=0
@@ -2136,7 +2136,7 @@ class PokeBattle_Move_049 < PokeBattle_Move
 
   def pbAdditionalEffect(attacker,opponent)
     if opponent.pbCanReduceStatStage?(PBStats::EVASION,false)
-      opponent.pbReduceStat(PBStats::EVASION,1,abilitymessage:false, statdropper: attacker)
+      attacker.ability == PBAbilities::FIELDMASTER ? opponent.pbReduceStat(PBStats::EVASION,2,abilitymessage:false, statdropper: attacker) : opponent.pbReduceStat(PBStats::EVASION,1,abilitymessage:false, statdropper: attacker) # Field Master
     end
     opponent.pbOwnSide.effects[PBEffects::Reflect] = 0
     opponent.pbOwnSide.effects[PBEffects::LightScreen] = 0
@@ -5861,6 +5861,8 @@ class PokeBattle_Move_0D5 < PokeBattle_Move
     end
     pbShowAnimation(@id,attacker,nil,hitnum,alltargets,showanimation)
     if @battle.FE == PBFields::FORESTF && (@id == PBMoves::HEALORDER)
+      attacker.pbRecoverHP(((attacker.totalhp+1) * 0.66).floor,true)
+    elsif (attacker.ability == PBAbilities::FIELDMASTER) && (@id == PBMoves::MILKDRINK || @id == PBMoves::SOFTBOILED)
       attacker.pbRecoverHP(((attacker.totalhp+1) * 0.66).floor,true)
     else
       attacker.pbRecoverHP(((attacker.totalhp+1)/2).floor,true)
