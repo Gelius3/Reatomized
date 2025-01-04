@@ -2193,7 +2193,7 @@ class PokemonScreen
           havecommand=true
           if isConst?(pkmn.moves[i].id,PBMoves,:SOFTBOILED) ||
              isConst?(pkmn.moves[i].id,PBMoves,:MILKDRINK)
-            if pkmn.hp<=(pkmn.totalhp/5.0).floor
+            if pkmn.ability == PBABilities::FIELDMASTER ? pkmn.hp<=(pkmn.totalhp/10.0).floor : pkmn.hp<=(pkmn.totalhp/5.0).floor # Field Master
               pbDisplay(_INTL("Not enough HP..."))
               break
             end
@@ -2207,8 +2207,8 @@ class PokemonScreen
               if newpkmn.isEgg? || newpkmn.hp==0 || newpkmn.hp==newpkmn.totalhp || pkmnid==oldpkmnid
                 pbDisplay(_INTL("This item can't be used on that Pokémon."))
               else
-                pkmn.hp-=(pkmn.totalhp/5.0).floor
-                hpgain=pbItemRestoreHP(newpkmn,(pkmn.totalhp/5.0).floor)
+                (pkmn.ability == PBAbilities::FIELDMASTER) ? pkmn.hp-=(pkmn.totalhp/10.0).floor : pkmn.hp-=(pkmn.totalhp/5.0).floor # Field Master
+                (pkmn.ability == PBAbilities::FIELDMASTER) ? hpgain=pbItemRestoreHP(newpkmn,(pkmn.totalhp/3.0).floor) : hpgain=pbItemRestoreHP(newpkmn,(pkmn.totalhp/5.0).floor) # Field Master
                 @scene.pbDisplay(_INTL("{1}'s HP was restored by {2} points.",newpkmn.name,hpgain))
                 pbRefresh
               end
