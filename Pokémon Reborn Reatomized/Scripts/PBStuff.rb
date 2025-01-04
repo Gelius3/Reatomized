@@ -261,6 +261,10 @@ REPEATINGMOVE = arrayToConstant(PBMoves,[:ICEBALL, :OUTRAGE, :PETALDANCE, :ROLLO
 CHARGEMOVE = arrayToConstant(PBMoves,[:BIDE, :GEOMANCY, :RAZORWIND, :SKULLBASH, :SKYATTACK,
   :SOLARBEAM, :SOLARBLADE, :FREEZESHOCK, :ICEBURN, :METEORBEAM])
 
+###--------------------------------------FIELDMOVE--------------------------------------------------------------###
+FIELDMOVE = arrayToConstant(PBMoves,[:CUT, :FLY, :SURF, :STRENGTH, :WATERFALL, :DIVE, :ROCKSMASH,
+  :FLASH, :ROCKCLIMB, :HEADBUTT, :DIG, :WHIRLPOOL, :SECRETPOWER, :CHATTER, :CORALBREAK])
+
 ###---------------------------------------ITEMLISTS-------------------------------------------------------------###
 HPITEMS = arrayToConstant(PBItems,[:POTION,:SUPERPOTION,:ULTRAPOTION,:HYPERPOTION,:MAXPOTION,
   :FULLRESTORE, :BERRYJUICE, :RAGECANDYBAR, :SWEETHEART, :FRESHWATER, :SODAPOP, :LEMONADE,
