@@ -416,3 +416,4 @@
 471,STURDINESS,Sturdiness,"The Pokémon withstands with 1HP once, no matter how much it had before."
 472,BALANCEBRINGER,Balance Bringer,"After dealing the first hit, this Pokémon switches out."
 473,ARGONAUT,Argonaut,"Matches opponent's highest stat through stat boosts."
+474,FIELDMASTER,Field Master,"Boosts field moves."
