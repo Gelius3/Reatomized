@@ -240,6 +240,7 @@ class PokeBattle_ZMoves < PokeBattle_Move
             @battle.pbDisplay(_INTL("{1} was dragged out!",user.pbThis))
             @battle.pbOnActiveOne(user)
             user.pbAbilitiesOnSwitchIn(true)
+            user.pbPartner.pbAbilitiesOnSwitchIn(true) if user.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
             user.forcedSwitchEarlier = true
           end
         end
@@ -257,6 +258,7 @@ class PokeBattle_ZMoves < PokeBattle_Move
             @battle.pbReplace(ztargets[i].index,newpoke,false)
             @battle.pbOnActiveOne(ztargets[i])
             ztargets[i].pbAbilitiesOnSwitchIn(true)
+            ztargets[i].pbPartner.pbAbilitiesOnSwitchIn(true) if ztargets[i].pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
           end
         end
         # End of move usage
