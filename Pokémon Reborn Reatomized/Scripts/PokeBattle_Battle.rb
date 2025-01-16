@@ -1985,6 +1985,7 @@ class PokeBattle_Battle
       priority=pbPriority
       for i in priority
         i.pbAbilitiesOnSwitchIn(true) if switched.include?(i.index)
+        i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
       end
       for i in priority
         seedCheck
@@ -2568,6 +2569,7 @@ class PokeBattle_Battle
 
     # Re-update ability of mega-evolved mon
     @battlers[index].pbAbilitiesOnSwitchIn(true)
+    @battlers[index].pbPartner.pbAbilitiesOnSwitchIn(true) if @battlers[index].pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
   end
 
 
@@ -2622,6 +2624,7 @@ class PokeBattle_Battle
 
     # Re-update ability of ultra bursted mon
     @battlers[index].pbAbilitiesOnSwitchIn(true)
+    @battlers[index].pbPartner.pbAbilitiesOnSwitchIn(true) if @battlers[index].pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
   end
 
 
@@ -2994,6 +2997,7 @@ class PokeBattle_Battle
     for i in priority
       pbOnActiveOne(i)  # might cause weird ability behaviour on first turn
       i.pbAbilitiesOnSwitchIn(true)
+      i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     end
 
     # Check forms are correct
@@ -3115,6 +3119,7 @@ class PokeBattle_Battle
           for i in priority
             next if i.isFainted?
             i.pbAbilitiesOnSwitchIn(false)
+            #i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share /// didn't test this out yet
           end
         else
           pbJudge
@@ -3187,6 +3192,7 @@ class PokeBattle_Battle
           for i in priority
             next if i.isFainted?
             i.pbAbilitiesOnSwitchIn(false)
+            #i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share /// didn't test this out yet 2
           end
         else
           pbJudge
@@ -3221,6 +3227,7 @@ class PokeBattle_Battle
           for i in priority
             next if i.isFainted?
             i.pbAbilitiesOnSwitchIn(false)
+            #i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share /// didn't test this out yet 3
           end
         else
           pbJudge
@@ -3270,6 +3277,7 @@ class PokeBattle_Battle
       pbReplace(pkmn.index,newpoke,false)
       pbOnActiveOne(pkmn)
       pkmn.pbAbilitiesOnSwitchIn(true)
+      pkmn.pbPartner.pbAbilitiesOnSwitchIn(true) if pkmn.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     end
     return true
   end
@@ -3967,7 +3975,9 @@ class PokeBattle_Battle
     end
     if switched.length>0
       for i in priority
-        i.pbAbilitiesOnSwitchIn(true) if switched.include?(i.index)
+        if switched.include?(i.index) # Tweaked just slightly for the below Share code
+          i.pbAbilitiesOnSwitchIn(true)
+          i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
       end
     end
     @switching=false
@@ -5862,6 +5872,7 @@ class PokeBattle_Battle
         pbReplace(i.index,newpoke,false)
         pbOnActiveOne(i)
         i.pbAbilitiesOnSwitchIn(true)
+        i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
       end
     end
 
@@ -5951,6 +5962,7 @@ class PokeBattle_Battle
     for i in priority
       next if i.isFainted?
       i.pbAbilitiesOnSwitchIn(false)
+      #i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share /// didn't test this out yet 4
     end
     # Opportunist / Protosynthesis / Quark Drive checkpoint
     priority.each {|i| i.opportunistCheck}
