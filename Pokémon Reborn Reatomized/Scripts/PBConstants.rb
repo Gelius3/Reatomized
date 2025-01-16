@@ -206,7 +206,7 @@ class PBEffects
   Syrup              = 161
   CudChew            = 162
   ParadoxBoost       = 163 # Protosynthesis / Quark Drive
-  Sketched           = 164
+  Sketched           = 164 # Trait Inheritance
   SketchedAbility    = 165
   Sequence           = 166
   Reincarnation      = 167 # Cosmic Reincarnation
@@ -218,6 +218,8 @@ class PBEffects
   Tenacity           = 173
   Spirit             = 174
   Nurse              = 175
+  Share              = 176
+  SharedAbility      = 177
 
   # These effects apply to a side
   LightScreen   = 200
