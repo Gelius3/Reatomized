@@ -2988,6 +2988,9 @@ class PokeBattle_Move_067 < PokeBattle_Move
        PBAbilities.getName(attacker.backupability)))
     attacker.pbAbilitiesOnSwitchIn(true)
     opponent.pbAbilitiesOnSwitchIn(true)
+    # Share
+    attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0
+    opponent.pbPartner.pbAbilitiesOnSwitchIn(true) if opponent.pbPartner.effects[PBEffects::SharedAbility]!=0
     return 0
   end
 end
@@ -3058,6 +3061,7 @@ class PokeBattle_Move_069 < PokeBattle_Move
     attacker.effects[PBEffects::DisableMove]=0
     @battle.pbDisplay(_INTL("{1} transformed into {2}!",attackername,opponent.pbThis(true)))
     attacker.pbAbilitiesOnSwitchIn(true)
+    attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     return 0
   end
 end
@@ -6451,6 +6455,7 @@ class PokeBattle_Move_0ED < PokeBattle_Move
     @battle.pbReplace(attacker.index,newpoke,true)
     @battle.pbOnActiveOne(attacker)
     attacker.pbAbilitiesOnSwitchIn(true)
+    attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     return 0
   end
 end
@@ -8167,6 +8172,7 @@ class PokeBattle_Move_120 < PokeBattle_Move
     @battle.pbReplace(attacker.index,newpoke)
     @battle.pbOnActiveOne(attacker)
     attacker.pbAbilitiesOnSwitchIn(true)
+    attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     return 0
   end
 end
@@ -8602,6 +8608,7 @@ class PokeBattle_Move_13D < PokeBattle_Move
       @battle.pbReplace(attacker.index,newpoke)
       @battle.pbOnActiveOne(attacker)
       attacker.pbAbilitiesOnSwitchIn(true)
+      attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     else
       attacker.vanished=false
       @battle.pbCommonAnimation("Fade in",attacker,nil)
@@ -11383,6 +11390,7 @@ class PokeBattle_Move_261 < PokeBattle_Move
       @battle.pbReplace(attacker.index,newpoke)
       @battle.pbOnActiveOne(attacker)
       attacker.pbAbilitiesOnSwitchIn(true)
+      attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     else
       attacker.vanished=false
       @battle.pbCommonAnimation("Fade in",attacker,nil)
@@ -11503,6 +11511,7 @@ class PokeBattle_Move_265 < PokeBattle_Move
     attacker.effects[PBEffects::UsingSubstituteRightNow] = false
     @battle.pbOnActiveOne(attacker)
     attacker.pbAbilitiesOnSwitchIn(true)
+      attacker.pbPartner.pbAbilitiesOnSwitchIn(true) if attacker.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
     return 0
   end
 end
