@@ -629,6 +629,8 @@ class PokeBattle_Battler
     @effects[PBEffects::TracedAbility]    = 0
     @effects[PBEffects::Sketched]         = false
     @effects[PBEffects::SketchedAbility]  = 0 if self.ability != PBAbilities::TRAITINHERITANCE
+    @effects[PBEffects::Share]            = false
+    @effects[PBEffects::SharedAbility]    = 0
     @effects[PBEffects::Transform]        = false
     @effects[PBEffects::Truant]           = false
     @effects[PBEffects::TwoTurnAttack]    = 0
@@ -727,12 +729,14 @@ class PokeBattle_Battler
     # Cure status of previous Pokemon with Natural Cure
     if self.ability == PBAbilities::NATURALCURE || ((self.ability == PBAbilities::TRACE &&
       self.effects[PBEffects::TracedAbility]==PBAbilities::NATURALCURE) || (self.ability == PBAbilities::TRAITINHERITANCE &&
-      self.effects[PBEffects::SketchedAbility]==PBAbilities::NATURALCURE)) && @pokemon
+      self.effects[PBEffects::SketchedAbility]==PBAbilities::NATURALCURE) || (self.ability == PBAbilities::SHARE &&
+      self.effects[PBEffects::SharedAbility]==PBAbilities::NATURALCURE)) && @pokemon
       self.status=0
     end
     if (self.ability == PBAbilities::REGENERATOR || ((self.ability == PBAbilities::TRACE &&
       self.effects[PBEffects::TracedAbility]==PBAbilities::REGENERATOR) || (self.ability == PBAbilities::TRAITINHERITANCE &&
-      self.effects[PBEffects::SketchedAbility]==PBAbilities::REGENERATOR))) && @pokemon && @hp>0
+      self.effects[PBEffects::SketchedAbility]==PBAbilities::REGENERATOR) || (self.ability == PBAbilities::SHARE &&
+      self.effects[PBEffects::SharedAbility]==PBAbilities::REGENERATOR))) && @pokemon && @hp>0
         self.pbRecoverHP((totalhp/3.0).floor)
     end
     pbInitPokemon(pkmn,index)
@@ -2062,6 +2066,21 @@ class PokeBattle_Battler
       end
     end
 
+    # Share
+    if self.ability == PBAbilities::SHARE || (self.effects[PBEffects::Share]==false && self.effects[PBEffects::SharedAbility]!=0)
+      @effects[PBEffects::SharedAbility]=0
+      if (@effects[PBEffects::Share] || onactive) && !pbPartner.isFainted? && pbPartner.ability != 0 # maybe make some kind of blacklist later
+        partnerAbility=self.pbPartner.ability
+        @ability=partnerAbility
+        abilityname=PBAbilities.getName(partnerAbility)
+        @effects[PBEffects::SharedAbility]=partnerAbility
+        @battle.pbDisplay(_INTL("{1} is sharing {2}'s ability {3}!",pbThis,pbPartner.pbThis,abilityname))
+        @effects[PBEffects::Share]=false
+      else
+        @effects[PBEffects::Share]=true
+      end
+    end
+
     # Surges
     current_field = @battle.field.effect
     if (self.ability == PBAbilities::ELECTRICSURGE || self.ability == PBAbilities::HADRONENGINE) && onactive && @battle.canChangeFE?(PBFields::ELECTRICT)
@@ -3322,6 +3341,7 @@ class PokeBattle_Battler
         @effects[PBEffects::DisableMove]=0
         @battle.pbDisplay(_INTL("{1} transformed into {2}!",oldname,choice.pbThis(true)))
         self.pbAbilitiesOnSwitchIn(true)
+        #self.pbPartner.pbAbilitiesOnSwitchIn(true) if self.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share // unsure about this one, sharing Imposter might be a problem
       end
     end
 
@@ -3519,6 +3539,9 @@ class PokeBattle_Battler
               @battle.pbDisplay(_INTL("{1} swapped its {2} Ability with {3}!", target.pbThis, PBAbilities.getName(target.ability), user.pbThis(true)))
               user.pbAbilitiesOnSwitchIn(true)
               target.pbAbilitiesOnSwitchIn(true)
+              # Share
+              user.pbPartner.pbAbilitiesOnSwitchIn(true) if user.pbPartner.effects[PBEffects::SharedAbility]!=0
+              target.pbPartner.pbAbilitiesOnSwitchIn(true) if target.pbPartner.effects[PBEffects::SharedAbility]!=0
             end
           end
           if target.ability == PBAbilities::LINGERINGAROMA && !user.isFainted?
@@ -6671,6 +6694,7 @@ class PokeBattle_Battler
           @battle.pbReplace(i.index,newpoke,false)
           @battle.pbOnActiveOne(i)
           i.pbAbilitiesOnSwitchIn(true)
+          i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
         end
         if i.forcedSwitch == true
           #remove gem when forced switching out mid attack
@@ -6699,6 +6723,7 @@ class PokeBattle_Battler
           @battle.pbDisplay(_INTL("{1} was dragged out!",i.pbThis))
           @battle.pbOnActiveOne(i)
           i.pbAbilitiesOnSwitchIn(true)
+          i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
           i.forcedSwitchEarlier = true
         end
       end
