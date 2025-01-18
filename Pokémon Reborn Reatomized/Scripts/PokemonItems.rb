@@ -644,7 +644,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
 	        (move == PBMoves::SNARL) || (move == PBMoves::THUNDERWAVE) || (move == PBMoves::SNATCH) ||
 	        (move == PBMoves::LASTRESORT) || (move == PBMoves::WATERPULSE) || (move == PBMoves::QUICKATTACK) ||
 	        (move == PBMoves::ENCORE) || (move == PBMoves::NIGHTMARE) || (move == PBMoves::TORMENT) ||
-	        (move == PBMoves::FLASH) || (move == PBMoves::POUNCE) || (move == PBMoves::LUNGE)
+	        (move == PBMoves::FLASH) || (move == PBMoves::POUNCE) || (move == PBMoves::LUNGE) ||
+          (move == PBMoves::DESTINYBOND)
           return false
         end
       end 
@@ -686,7 +687,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
       elsif pokemon.form==1
 	      if (move == PBMoves::INCINERATE) || (move == PBMoves::LIGHTSCREEN) || (move == PBMoves::BODYPRESS) ||
 	        (move == PBMoves::REFLECT) || (move == PBMoves::IRONHEAD) || (move == PBMoves::FISSURE) ||
-	        (move == PBMoves::ROAR)
+	        (move == PBMoves::ROAR) || (move == PBMoves::WILLOWISP) || (move == PBMoves::UTURN)
 	        return false
 	      end
       end      
@@ -702,7 +703,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
         end
       elsif pokemon.form==1
 	      if (move == PBMoves::INCINERATE) || (move == PBMoves::LIGHTSCREEN) || (move == PBMoves::ROAR) ||
-	        (move == PBMoves::REFLECT) || (move == PBMoves::FISSURE) || (move == PBMoves::AVALANCHE)
+	        (move == PBMoves::REFLECT) || (move == PBMoves::FISSURE) || (move == PBMoves::AVALANCHE) ||
+          (move == PBMoves::WILLOWISP) || (move == PBMoves::UTURN)
 	        return false
 	      end
       end    
@@ -1039,7 +1041,7 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::PSYCHOCUT) || (move == PBMoves::FOULPLAY) || (move == PBMoves::SCARYFACE) ||
           (move == PBMoves::WATERPULSE) || (move == PBMoves::HELPINGHAND) || (move == PBMoves::KNOCKOFF) ||
           (move == PBMoves::ICICLESPEAR) || (move == PBMoves::TRIPLEAXEL) || (move == PBMoves::UPPERHAND) ||
-          (move == PBMoves::NIGHTMARE)
+          (move == PBMoves::NIGHTMARE) || (move == PBMoves::SUCKERPUNCH)
           return false
         end
       end
@@ -1208,7 +1210,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
         if (move == PBMoves::SCREECH) || (move == PBMoves::ICEFANG) || (move == PBMoves::METALCLAW) ||
           (move == PBMoves::CRUNCH) ||  (move == PBMoves::IRONDEFENSE) || (move == PBMoves::METALSOUND) ||
           (move == PBMoves::FLASHCANNON) || (move == PBMoves::BIND) || (move == PBMoves::COUNTER) ||
-          (move == PBMoves::STEELBEAM) || (move == PBMoves::TERRAINPULSE)
+          (move == PBMoves::STEELBEAM) || (move == PBMoves::TERRAINPULSE) || (move == PBMoves::GYROBALL) ||
+          (move == PBMoves::NATUREPOWER) || (move == PBMoves::IRONHEAD)
           return false
         end
       elsif pokemon.form==1
@@ -1403,8 +1406,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
           return false
         end
       elsif pokemon.form==1
-        if (move == PBMoves::CHARM) || (move == PBMoves::TAILSLAP) || (move == PBMoves::EXTREMESPEED) ||
-          (move == PBMoves::TOXIC) || (move == PBMoves::COVET)
+        if (move == PBMoves::CHARM) || (move == PBMoves::TAILSLAP) || (move == PBMoves::COVET) ||
+          (move == PBMoves::TOXIC)
           return false
         end
       end
@@ -1417,8 +1420,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
           return false
         end
       elsif pokemon.form==1
-        if (move == PBMoves::CHARM) || (move == PBMoves::TAILSLAP) || (move == PBMoves::EXTREMESPEED) ||
-          (move == PBMoves::TOXIC) || (move == PBMoves::COVET) || (move == PBMoves::PLAYROUGH)
+        if (move == PBMoves::CHARM) || (move == PBMoves::TAILSLAP) || (move == PBMoves::PLAYROUGH) ||
+          (move == PBMoves::TOXIC)
           return false
         end
       end
@@ -1453,7 +1456,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
     when PBSpecies::DARUMAKA # Darumaka
       if pokemon.form==0
         if (move == PBMoves::ICEPUNCH) || (move == PBMoves::AVALANCHE) || (move == PBMoves::POWDERSNOW) ||
-          (move == PBMoves::ICEFANG) || (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) 
+          (move == PBMoves::ICEFANG) || (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) ||
+          (move == PBMoves::ICESPINNER)
           return false
         end
       elsif pokemon.form==2
@@ -1465,7 +1469,8 @@ def pbSpeciesCompatible?(species,move,pokemon)
     when PBSpecies::DARMANITAN # Darmanitan
       if pokemon.form==0
         if (move == PBMoves::ICEPUNCH) || (move == PBMoves::AVALANCHE) || (move == PBMoves::POWDERSNOW) ||
-          (move == PBMoves::ICEFANG) || (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) 
+          (move == PBMoves::ICEFANG) || (move == PBMoves::ICEBEAM) || (move == PBMoves::BLIZZARD) ||
+          (move == PBMoves::ICESPINNER)
           return false
         end
       elsif pokemon.form==2
@@ -1483,18 +1488,24 @@ def pbSpeciesCompatible?(species,move,pokemon)
           (move == PBMoves::BRUTALSWING) || (move == PBMoves::EARTHQUAKE) || (move == PBMoves::EARTHPOWER)
           return false
         end
-        elsif pokemon.form==2
-          if (move == PBMoves::EXPUNGE) || (move == PBMoves::GAMMARAY) || (move == PBMoves::OVERDOSAGE) ||
-            (move == PBMoves::HALFLIFE)
-            return false
-          end
+      elsif pokemon.form==2
+        if (move == PBMoves::EXPUNGE) || (move == PBMoves::GAMMARAY) || (move == PBMoves::OVERDOSAGE) ||
+          (move == PBMoves::HALFLIFE)
+          return true
+        elsif (move == PBMoves::ROCKSLIDE) || (move == PBMoves::SANDSTORM) || (move == PBMoves::ROCKTOMB) ||
+          (move == PBMoves::BRUTALSWING) || (move == PBMoves::EARTHQUAKE) || (move == PBMoves::EARTHPOWER)
+          return false
+        end
       elsif pokemon.form==3
         if (move == PBMoves::EXPUNGE) || (move == PBMoves::GAMMARAY) || (move == PBMoves::OVERDOSAGE) ||
           (move == PBMoves::HALFLIFE)
+          return true
+        elsif (move == PBMoves::AFTERYOU) || (move == PBMoves::TELEKINESIS) || (move == PBMoves::EMBARGO) ||
+          (move == PBMoves::SWAGGER) || (move == PBMoves::INFESTATION)
           return false
         end
       elsif pokemon.form==1
-        if (move == PBMoves::SHOCKWAVE) || (move == PBMoves::TELEKINESIS) || (move == PBMoves::EMBARGO) ||
+        if (move == PBMoves::AFTERYOU) || (move == PBMoves::TELEKINESIS) || (move == PBMoves::EMBARGO) ||
           (move == PBMoves::SWAGGER) || (move == PBMoves::INFESTATION)
           return false
         end
@@ -2725,8 +2736,13 @@ end
   end
   when PBSpecies::MEOWSTIC
       if pokemon.form==1
-  if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) || (move == PBMoves::IONICSTRAIN) || (move == PBMoves::OVERDOSAGE) 
-    return true
+        if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) || (move == PBMoves::IONICSTRAIN) ||
+          (move == PBMoves::OVERDOSAGE) 
+        return true
+      elsif pokemon.form==3
+        if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) || (move == PBMoves::IONICSTRAIN) ||
+          (move == PBMoves::OVERDOSAGE) 
+        return true
   end
 end
 when PBSpecies::SWIRLIX
@@ -3166,7 +3182,7 @@ end
           (move == PBMoves::AURASPHERE) || (move == PBMoves::SPIKES) || (move == PBMoves::SCARYFACE) ||
           (move == PBMoves::ROCKTOMB) || (move == PBMoves::BRICKBREAK) || (move == PBMoves::TAUNT) ||
           (move == PBMoves::REVERSAL) || (move == PBMoves::FOCUSBLAST) || (move == PBMoves::CLOSECOMBAT) ||
-          (move == PBMoves::FOCUSPUNCH) || (move == PBMoves::COACHING)
+          (move == PBMoves::FOCUSPUNCH) || (move == PBMoves::COACHING) || (move == PBMoves::MEGAKICK)
           return false
         end
       end
@@ -3176,9 +3192,8 @@ end
           return false
         end
       elsif pokemon.form==0
-        if (move == PBMoves::DARKPULSE) || (move == PBMoves::SUCKERPUNCH) || (move == PBMoves::PSYCHOCUT) ||
-          (move == PBMoves::POISONJAB) || (move == PBMoves::SNARL) || (move == PBMoves::LASHOUT) ||
-          (move == PBMoves::THROATCHOP)
+        if (move == PBMoves::DARKPULSE) || (move == PBMoves::SUCKERPUNCH) || (move == PBMoves::THROATCHOP) ||
+          (move == PBMoves::SNARL) || (move == PBMoves::LASHOUT)
           return false
         end
       end
@@ -3371,8 +3386,8 @@ end
           (move == PBMoves::STOREDPOWER) || (move == PBMoves::NIGHTSHADE) || (move == PBMoves::PSYSHOCK) ||
           (move == PBMoves::SHADOWBALL) || (move == PBMoves::HYPERVOICE) || (move == PBMoves::CALMMIND) ||
           (move == PBMoves::PSYCHICTERRAIN) || (move == PBMoves::VACUUMWAVE) || (move == PBMoves::PSYCHUP) ||
-          (move == PBMoves::FUTURESIGHT) || (move == PBMoves::EXPANDINGFORCE) || (move == PBMoves::PSYCHICNOISE)
-	  (move == PBMoves::ESPERWING)
+          (move == PBMoves::FUTURESIGHT) || (move == PBMoves::EXPANDINGFORCE) || (move == PBMoves::SHOCKWAVE) ||
+          (move == PBMoves::PSYCHICNOISE) ||(move == PBMoves::ESPERWING)
           return false
         end
       end
@@ -3401,9 +3416,8 @@ end
       end
     when  PBSpecies::AVALUGG
       if pokemon.form==0
-        if (move == PBMoves::EARTHPOWER) || (move == PBMoves::POWERSHIFT) || (move == PBMoves::SANDSTORM) ||
-          (move == PBMoves::DIG) || (move == PBMoves::ROCKBLAST) || (move == PBMoves::STEALTHROCK) ||
-          (move == PBMoves::METEORBEAM) || (move == PBMoves::HARDPRESS)
+        if (move == PBMoves::METEORBEAM) || (move == PBMoves::POWERSHIFT) || (move == PBMoves::SANDSTORM) ||
+          (move == PBMoves::DIG) || (move == PBMoves::ROCKBLAST) || (move == PBMoves::STEALTHROCK)
           return false
         end
       elsif pokemon.form==1
