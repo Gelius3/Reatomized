@@ -172,26 +172,25 @@ PBSpecies::WORMADAM => {
 		:BaseStats => [60,79,105,36,59,85],
 		:EVs => [0,0,2,0,0,0],
 		:Type2 => PBTypes::GROUND,
-		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::ROLLOUT],[1,PBMoves::MUDSLAP],
-		[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],[1,PBMoves::STRUGGLEBUG],
-		[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],[23,PBMoves::CONFUSION],
-		[26,PBMoves::ROCKBLAST],[28,PBMoves::HARDEN],[30,PBMoves::INFESTATION],[32,PBMoves::CAPTIVATE],
-		[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],[39,PBMoves::FLAIL],[41,PBMoves::ATTRACT],
-		[43,PBMoves::EARTHPOWER],[45,PBMoves::PSYCHIC],[47,PBMoves::FISSURE],[50,PBMoves::SUCKERPUNCH],
-		[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE],[59,PBMoves::LEAFSTORM]],
+		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::GUST],[1,PBMoves::TACKLE],
+		[1,PBMoves::PROTECT],[1,PBMoves::STRUGGLEBUG],[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],
+		[20,PBMoves::HIDDENPOWER],[23,PBMoves::CONFUSION],[26,PBMoves::ROCKBLAST],[28,PBMoves::HARDEN],
+		[30,PBMoves::INFESTATION],[32,PBMoves::CAPTIVATE],[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],
+		[39,PBMoves::FLAIL],[41,PBMoves::ATTRACT],[43,PBMoves::EARTHPOWER],[45,PBMoves::PSYCHIC],
+		[47,PBMoves::FISSURE],[50,PBMoves::SUCKERPUNCH],[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE],
+		[59,PBMoves::SHOREUP]],
 	},
 
 	"Trash Cloak" => {
 		:BaseStats => [60,69,95,36,69,95],
 		:EVs => [0,0,1,0,0,1],
 		:Type2 => PBTypes::STEEL,
-		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::MAGNETRISE],[1,PBMoves::TELEKINESIS],
-		[1,PBMoves::ALLYSWITCH],[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],
+		:Movelist => [[0,PBMoves::GUST],[1,PBMoves::GUST],[1,PBMoves::TACKLE],[1,PBMoves::PROTECT],
 		[1,PBMoves::STRUGGLEBUG],[10,PBMoves::STRINGSHOT],[15,PBMoves::BUGBITE],[20,PBMoves::HIDDENPOWER],
 		[23,PBMoves::CONFUSION],[26,PBMoves::MIRRORSHOT],[28,PBMoves::METALSOUND],[30,PBMoves::INFESTATION],
 		[32,PBMoves::CAPTIVATE],[35,PBMoves::PSYBEAM],[37,PBMoves::SILVERWIND],[39,PBMoves::FLAIL],
 		[41,PBMoves::ATTRACT],[43,PBMoves::IRONHEAD],[45,PBMoves::PSYCHIC],[47,PBMoves::METALBURST],
-		[50,PBMoves::SUCKERPUNCH],[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE]],
+		[50,PBMoves::SUCKERPUNCH],[53,PBMoves::BUGBUZZ],[56,PBMoves::QUIVERDANCE],[59,PBMoves::RECOVER]],
 	}
 },
 
@@ -713,6 +712,7 @@ PBSpecies::NECROZMA => {
 		:BaseStats => [97,157,127,77,113,109],
 		:EVs => [0,3,0,0,0,0],
 		:Type2 => PBTypes::STEEL,
+		:Ability => PBAbilities::FULLMETALBODY,PBAbilities::PRISMARMOR,PBAbilities::BEASTBOOST
 		:Height => 38,
 		:Weight => 4600
 	},
@@ -723,6 +723,7 @@ PBSpecies::NECROZMA => {
 		:EVs => [0,0,0,0,3,0],
 		:Type2 => PBTypes::GHOST,
 		:Height => 42,
+		:Ability => PBAbilities::SHADOWSHIELD,PBAbilities::PRISMARMOR,PBAbilities::BEASTBOOST
 		:Weight => 3500
 	},
 
@@ -1345,7 +1346,7 @@ PBSpecies::YAMASK => {
 			[40,PBMoves::PROTECT],[44,PBMoves::SHADOWBALL],[48,PBMoves::EARTHQUAKE],[52,PBMoves::DESTINYBOND]],
 		:EggMoves => [PBMoves::ALLYSWITCH,PBMoves::CRAFTYSHIELD,PBMoves::DISABLE,PBMoves::ENDURE,
 			PBMoves::FAKETEARS,PBMoves::HEALBLOCK,PBMoves::IMPRISON,PBMoves::MEMENTO,PBMoves::NASTYPLOT,
-			PBMoves::NIGHTMARE,PBMoves::POLTERGEIST,PBMoves::TOXICSPIKES],
+			PBMoves::NIGHTMARE,PBMoves::STRENGTHSAP,PBMoves::TOXICSPIKES],
 		:GetEvo => [[PBSpecies::RUNERIGUS,PBEvolution::LevelNight,34]]
 	},
 
@@ -1361,7 +1362,7 @@ PBSpecies::YAMASK => {
 		[28,PBMoves::BRUTALSWING],[32,PBMoves::HEX],[36,PBMoves::POWERSPLIT],[36,PBMoves::GUARDSPLIT],
 		[40,PBMoves::PROTECT],[44,PBMoves::SHADOWBALL],[48,PBMoves::EARTHQUAKE],[52,PBMoves::DESTINYBOND]],
 	:EggMoves => [PBMoves::ALLYSWITCH,PBMoves::CRAFTYSHIELD,PBMoves::DISABLE,PBMoves::ENDURE,
-		PBMoves::FAKETEARS,PBMoves::POLTERGEIST,PBMoves::TOXICSPIKES],
+		PBMoves::FAKETEARS,PBMoves::STRENGTHSAP,PBMoves::TOXICSPIKES],
 		:GetEvo => [[PBSpecies::RUNERIGUS,PBEvolution::LevelNight,34]]
 	}
 },
@@ -2293,7 +2294,13 @@ PBSpecies::GLIGAR => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::POISONSTING],[4,PBMoves::SANDATTACK],[7,PBMoves::HARDEN],[9,PBMoves::MUDSLAP],
+		[12,PBMoves::QUICKATTACK],[16,PBMoves::FURYCUTTER],[19,PBMoves::FEINTATTACK],[21,PBMoves::POISONTAIL],
+		[23,PBMoves::NUCLEARSLASH],[25,PBMoves::AERIALACE],[27,PBMoves::SCREECH],[29,PBMoves::HALFLIFE],
+		[31,PBMoves::MUDBOMB],[34,PBMoves::ACROBATICS],[36,PBMoves::KNOCKOFF],[38,PBMoves::POISONJAB],
+		[40,PBMoves::SLASH],[42,PBMoves::SWORDSDANCE],[44,PBMoves::UTURN],[46,PBMoves::CRABHAMMER],
+		[49,PBMoves::SKYUPPERCUT],[55,PBMoves::XSCISSOR],[60,PBMoves::EARTHQUAKE],[65,PBMoves::GUILLOTINE]]
 	}
 },
 
@@ -2301,7 +2308,15 @@ PBSpecies::GLISCOR => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::THUNDERFANG],[1,PBMoves::ICEFANG],[1,PBMoves::FIREFANG],
+		[1,PBMoves::NIGHTSLASH],[1,PBMoves::PINMISSILE],[1,PBMoves::POISONSTING],[4,PBMoves::SANDATTACK],
+		[7,PBMoves::HARDEN],[9,PBMoves::MUDSLAP],[12,PBMoves::QUICKATTACK],[16,PBMoves::FURYCUTTER],
+		[19,PBMoves::FEINTATTACK],[21,PBMoves::POISONTAIL],[23,PBMoves::NUCLEARSLASH],[25,PBMoves::AERIALACE],
+		[27,PBMoves::SCREECH],[29,PBMoves::HALFLIFE],[31,PBMoves::MUDBOMB],[34,PBMoves::ACROBATICS],
+		[36,PBMoves::KNOCKOFF],[38,PBMoves::POISONJAB],[40,PBMoves::SLASH],[42,PBMoves::SWORDSDANCE],
+		[44,PBMoves::UTURN],[46,PBMoves::CRABHAMMER],[49,PBMoves::SKYUPPERCUT],[52,PBMoves::EARTHPOWER],
+		[55,PBMoves::XSCISSOR],[60,PBMoves::EARTHQUAKE],[65,PBMoves::GUILLOTINE]]
 	}
 },
 
@@ -2325,7 +2340,11 @@ PBSpecies::CHYINMUNK => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::GROWL],[1,PBMoves::TACKLE],[6,PBMoves::CHARGE],[13,PBMoves::THUNDERSHOCK],
+		[15,PBMoves::QUICKATTACK],[15,PBMoves::GAMMARAY],[20,PBMoves::DOUBLETEAM],[24,PBMoves::SPARK],
+		[32,PBMoves::HYPERFANG],[34,PBMoves::ENDEAVOR],[39,PBMoves::SUPERFANG],[47,PBMoves::PROTONBEAM],
+		[52,PBMoves::AGILITY]]
 	}
 },
 
@@ -2333,7 +2352,11 @@ PBSpecies::KINETMUNK => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::GROWL],[1,PBMoves::TACKLE],[6,PBMoves::CHARGE],[13,PBMoves::THUNDERSHOCK],
+		[15,PBMoves::QUICKATTACK],[15,PBMoves::GAMMARAY],[20,PBMoves::DOUBLETEAM],[24,PBMoves::SPARK],
+		[28,PBMoves::BITE],[32,PBMoves::HYPERFANG],[34,PBMoves::ENDEAVOR],[39,PBMoves::SUPERFANG],
+		[44,PBMoves::DISCHARGE],[47,PBMoves::PROTONBEAM],[52,PBMoves::AGILITY]]
 	}
 },
 
@@ -2365,7 +2388,11 @@ PBSpecies::TONEMY => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::POISONGAS],[1,PBMoves::TACKLE],[9,PBMoves::SMOG],[16,PBMoves::LICK],
+		[21,PBMoves::GASTROACID],[25,PBMoves::POISONFANG],[31,PBMoves::RADIOACID],[33,PBMoves::HAZE],
+		[35,PBMoves::NUCLEARSLASH],[37,PBMoves::SPITUP],[37,PBMoves::STOCKPILE],[37,PBMoves::SWALLOW],
+		[40,PBMoves::TOXIC],[42,PBMoves::HALFLIFE],[49,PBMoves::GUNKSHOT]]
 	}
 },
 
@@ -2373,7 +2400,11 @@ PBSpecies::TOFURANG => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::POISONGAS],[1,PBMoves::TACKLE],[9,PBMoves::SMOG],[16,PBMoves::LICK],
+		[21,PBMoves::GASTROACID],[25,PBMoves::POISONFANG],[31,PBMoves::RADIOACID],[33,PBMoves::HAZE],
+		[35,PBMoves::NUCLEARSLASH],[37,PBMoves::SPITUP],[37,PBMoves::STOCKPILE],[37,PBMoves::SWALLOW],
+		[40,PBMoves::TOXIC],[42,PBMoves::HALFLIFE],[45,PBMoves::BODYSLAM],[49,PBMoves::GUNKSHOT]]
 	}
 },
 
@@ -2381,7 +2412,12 @@ PBSpecies::OWTEN => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::PECK],[1,PBMoves::CHARM],[4,PBMoves::FORESIGHT],[8,PBMoves::QUICKATTACK],
+		[13,PBMoves::CONFUSION],[15,PBMoves::GAMMARAY],[19,PBMoves::SING],[23,PBMoves::WINGATTACK],
+		[26,PBMoves::OMINOUSWIND],[30,PBMoves::DOUBLETEAM],[32,PBMoves::NUCLEARWIND],[34,PBMoves::PSYCHUP],
+		[38,PBMoves::AIRSLASH],[40,PBMoves::ZENHEADBUTT],[44,PBMoves::BRAVEBIRD],[46,PBMoves::PROTONBEAM],
+		[50,PBMoves::SKYATTACK]]
 	}
 },
 
@@ -2389,7 +2425,12 @@ PBSpecies::ESHOUTEN => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::BITE],[1,PBMoves::BITE],[1,PBMoves::PECK],[1,PBMoves::CHARM],
+		[4,PBMoves::FORESIGHT],[8,PBMoves::QUICKATTACK],[13,PBMoves::CONFUSION],[15,PBMoves::GAMMARAY],
+		[19,PBMoves::SING],[23,PBMoves::WINGATTACK],[26,PBMoves::OMINOUSWIND],[30,PBMoves::DOUBLETEAM],
+		[32,PBMoves::NUCLEARWIND],[34,PBMoves::PSYCHUP],[38,PBMoves::AIRSLASH],[40,PBMoves::ZENHEADBUTT],
+		[44,PBMoves::BRAVEBIRD],[46,PBMoves::PROTONBEAM],[50,PBMoves::SKYATTACK]]
 	}
 },
 
@@ -2413,7 +2454,11 @@ PBSpecies::TANCOON => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::SANDATTACK],[4,PBMoves::HOWL],[7,PBMoves::SUDDENSTRIKE],
+		[9,PBMoves::ODORSLEUTH],[11,PBMoves::SNARL],[13,PBMoves::ROAR],[15,PBMoves::GAMMARAY],[17,PBMoves::BITE],
+		[19,PBMoves::SCARYFACE],[21,PBMoves::SWAGGER],[23,PBMoves::TAKEDOWN],[25,PBMoves::TAUNT],
+		[27,PBMoves::NUCLEARSLASH],[31,PBMoves::CRUNCH],[33,PBMoves::FACADE],[37,PBMoves::FOULPLAY]]
 	}
 },
 
@@ -2421,23 +2466,12 @@ PBSpecies::TANSCURE => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
-	}
-},
-
-PBSpecies::PALIJ => {
-	:FormName => {1 => "Nuclear"},
-
-	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
-	}
-},
-
-PBSpecies::PAJAY => {
-	:FormName => {1 => "Nuclear"},
-
-	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::TAILSLAP],[1,PBMoves::TAILSLAP],[1,PBMoves::TACKLE],[1,PBMoves::SANDATTACK],
+		[4,PBMoves::HOWL],[7,PBMoves::SUDDENSTRIKE],[9,PBMoves::ODORSLEUTH],[11,PBMoves::SNARL],
+		[13,PBMoves::ROAR],[15,PBMoves::GAMMARAY],[17,PBMoves::BITE],[19,PBMoves::SCARYFACE],
+		[21,PBMoves::SWAGGER],[23,PBMoves::TAKEDOWN],[25,PBMoves::TAUNT],[27,PBMoves::NUCLEARSLASH],
+		[31,PBMoves::CRUNCH],[33,PBMoves::FACADE],[37,PBMoves::FOULPLAY],[41,PBMoves::HALFLIFE]]
 	}
 },
 
@@ -2445,7 +2479,39 @@ PBSpecies::PAHAR => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::PECK],[4,PBMoves::EMBER],[8,PBMoves::GROWL],[11,PBMoves::QUICKATTACK],
+		[13,PBMoves::GAMMARAY],[15,PBMoves::INCINERATE],[18,PBMoves::AIRCUTTER],[22,PBMoves::FLAMEBURST],
+		[25,PBMoves::SUNNYDAY],[27,PBMoves::NUCLEARWIND],[29,PBMoves::FEATHERDANCE],[32,PBMoves::MIRRORMOVE],
+		[36,PBMoves::ROOST],[38,PBMoves::HALFLIFE],[39,PBMoves::AIRSLASH],[43,PBMoves::LAVAPLUME],
+		[46,PBMoves::TAILWIND],[48,PBMoves::PROTONBEAM],[50,PBMoves::FLAMETHROWER],[53,PBMoves::BRAVEBIRD]]
+	}
+},
+
+PBSpecies::PALIJ => {
+	:FormName => {1 => "Nuclear"},
+
+	"Nuclear" => {
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::PECK],[4,PBMoves::EMBER],[8,PBMoves::GROWL],[11,PBMoves::QUICKATTACK],
+		[13,PBMoves::GAMMARAY],[15,PBMoves::INCINERATE],[18,PBMoves::AIRCUTTER],[22,PBMoves::FLAMEBURST],
+		[25,PBMoves::SUNNYDAY],[27,PBMoves::NUCLEARWIND],[29,PBMoves::FEATHERDANCE],[32,PBMoves::MIRRORMOVE],
+		[36,PBMoves::ROOST],[38,PBMoves::HALFLIFE],[39,PBMoves::AIRSLASH],[43,PBMoves::LAVAPLUME],
+		[46,PBMoves::TAILWIND],[48,PBMoves::PROTONBEAM],[50,PBMoves::FLAMETHROWER],[53,PBMoves::BRAVEBIRD]]
+	}
+},
+
+PBSpecies::PAJAY => {
+	:FormName => {1 => "Nuclear"},
+
+	"Nuclear" => {
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::WILLOWISP],[1,PBMoves::WILLOWISP],[1,PBMoves::PECK],[4,PBMoves::EMBER],
+		[8,PBMoves::GROWL],[11,PBMoves::QUICKATTACK],[13,PBMoves::GAMMARAY],[15,PBMoves::INCINERATE],
+		[18,PBMoves::AIRCUTTER],[22,PBMoves::FLAMEBURST],[25,PBMoves::SUNNYDAY],[27,PBMoves::NUCLEARWIND],
+		[29,PBMoves::FEATHERDANCE],[32,PBMoves::MIRRORMOVE],[36,PBMoves::ROOST],[38,PBMoves::HALFLIFE],
+		[39,PBMoves::AIRSLASH],[43,PBMoves::LAVAPLUME],[46,PBMoves::TAILWIND],[48,PBMoves::PROTONBEAM],
+		[50,PBMoves::FLAMETHROWER],[53,PBMoves::BRAVEBIRD],[55,PBMoves::FIERYDANCE]]
 	}
 },
 
@@ -2453,7 +2519,14 @@ PBSpecies::JERBOLTA => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::DEFENSECURL],[1,PBMoves::NUZZLE],[5,PBMoves::SANDATTACK],
+		[9,PBMoves::QUICKATTACK],[13,PBMoves::CHARM],[15,PBMoves::SPARK],[17,PBMoves::ENDURE],
+		[19,PBMoves::MAGNITUDE],[21,PBMoves::MUDSHOT],[23,PBMoves::THUNDERFANG],[25,PBMoves::ROLLOUT],
+		[27,PBMoves::ELECTRIFY],[29,PBMoves::ELECTROBALL],[31,PBMoves::DIG],[33,PBMoves::HYPERFANG],
+		[37,PBMoves::DISCHARGE],[41,PBMoves::EARTHPOWER],[43,PBMoves::VOLTSWITCH],[45,PBMoves::BOUNCE],
+		[47,PBMoves::RADIOACID],[49,PBMoves::ELECTRICTERRAIN],[51,PBMoves::NUCLEARWASTE],[53,PBMoves::SUPERFANG],
+		[55,PBMoves::PROTONBEAM],[57,PBMoves::SCORCHINGSANDS]]
 	}
 },
 
@@ -2461,7 +2534,11 @@ PBSpecies::BAASHAUN => {
 	:FormName => {2 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::LOWKICK],[1,PBMoves::LEER],[7,PBMoves::FOCUSENERGY],[13,PBMoves::STOMP],
+		[15,PBMoves::BEATUP],[19,PBMoves::SCARYFACE],[21,PBMoves::NUCLEARSLASH],[25,PBMoves::REVENGE],
+		[27,PBMoves::HALFLIFE],[31,PBMoves::FEINTATTACK],[35,PBMoves::SUBMISSION],[37,PBMoves::JUMPKICK],
+		[43,PBMoves::CROSSCHOP],[47,PBMoves::FOULPLAY],[49,PBMoves::HIJUMPKICK]]
 	}
 },
 
@@ -2469,15 +2546,12 @@ PBSpecies::BAASCHAF => {
 	:FormName => {2 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
-	}
-},
-
-PBSpecies::TRAWPINT => {
-	:FormName => {1 => "Nuclear"},
-
-	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::SEISMICTOSS],[1,PBMoves::SEISMICTOSS],[1,PBMoves::LOWKICK],[1,PBMoves::LEER],
+		[7,PBMoves::FOCUSENERGY],[13,PBMoves::STOMP],[15,PBMoves::BEATUP],[19,PBMoves::SCARYFACE],
+		[21,PBMoves::NUCLEARSLASH],[25,PBMoves::REVENGE],[27,PBMoves::HALFLIFE],[31,PBMoves::FEINTATTACK],
+		[35,PBMoves::SUBMISSION],[37,PBMoves::JUMPKICK],[40,PBMoves::SHADOWBALL],[43,PBMoves::CROSSCHOP],
+		[45,PBMoves::ATOMICPUNCH],[47,PBMoves::FOULPLAY],[49,PBMoves::HIJUMPKICK],[57,PBMoves::AXEKICK]]
 	}
 },
 
@@ -2485,7 +2559,25 @@ PBSpecies::COSTRAW => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::WRAP],[1,PBMoves::LEER],[8,PBMoves::ABSORB],[12,PBMoves::CONFUSION],
+		[14,PBMoves::GAMMARAY],[16,PBMoves::ACID],[20,PBMoves::MEGADRAIN],[24,PBMoves::CONFUSERAY],
+		[28,PBMoves::SLUDGE],[32,PBMoves::STOCKPILE],[34,PBMoves::SPITUP],[34,PBMoves::SWALLOW],
+		[36,PBMoves::RADIOACID],[38,PBMoves::LEECHLIFE],[41,PBMoves::SLUDGEBOMB],[44,PBMoves::TOXIC],
+		[47,PBMoves::PROTONBEAM],[49,PBMoves::PSYCHIC]]
+	}
+},
+
+PBSpecies::TRAWPINT => {
+	:FormName => {1 => "Nuclear"},
+
+	"Nuclear" => {
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::WRAP],[1,PBMoves::LEER],[8,PBMoves::ABSORB],[12,PBMoves::CONFUSION],
+		[14,PBMoves::GAMMARAY],[16,PBMoves::ACID],[20,PBMoves::MEGADRAIN],[24,PBMoves::CONFUSERAY],
+		[28,PBMoves::SLUDGE],[32,PBMoves::STOCKPILE],[34,PBMoves::SPITUP],[34,PBMoves::SWALLOW],
+		[36,PBMoves::RADIOACID],[38,PBMoves::LEECHLIFE],[41,PBMoves::SLUDGEBOMB],[44,PBMoves::TOXIC],
+		[47,PBMoves::PROTONBEAM],[49,PBMoves::PSYCHIC]]
 	}
 },
 
@@ -2493,7 +2585,11 @@ PBSpecies::TUBJAW => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[6,PBMoves::WATERGUN],[10,PBMoves::BITE],
+		[14,PBMoves::AQUAJET],[18,PBMoves::TORMENT],[22,PBMoves::SCARYFACE],[26,PBMoves::ICEFANG],
+		[31,PBMoves::SWAGGER],[33,PBMoves::HALFLIFE],[35,PBMoves::ASSURANCE],[38,PBMoves::THRASH],
+		[40,PBMoves::NUCLEARSLASH],[42,PBMoves::AQUATAIL],[47,PBMoves::CRUNCH]]
 	}
 },
 
@@ -2501,7 +2597,11 @@ PBSpecies::TUBAREEL => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[6,PBMoves::WATERGUN],[10,PBMoves::BITE],
+		[14,PBMoves::AQUAJET],[18,PBMoves::TORMENT],[22,PBMoves::SCARYFACE],[26,PBMoves::ICEFANG],
+		[31,PBMoves::SWAGGER],[33,PBMoves::HALFLIFE],[35,PBMoves::ASSURANCE],[38,PBMoves::THRASH],
+		[40,PBMoves::NUCLEARSLASH],[42,PBMoves::AQUATAIL],[47,PBMoves::CRUNCH]]
 	}
 },
 
@@ -2509,7 +2609,11 @@ PBSpecies::NUPIN => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::ABSORB],[7,PBMoves::GROWTH],[11,PBMoves::MEGADRAIN],
+		[17,PBMoves::SYNTHESIS],[21,PBMoves::SHOCKWAVE],[27,PBMoves::SUNNYDAY],[31,PBMoves::GIGADRAIN],
+		[37,PBMoves::THUNDERBOLT],[41,PBMoves::RECOVER],[43,PBMoves::ENERGYBALL],[45,PBMoves::RADIOACID],
+		[50,PBMoves::ACIDARMOR],[52,PBMoves::NUCLEARWASTE],[57,PBMoves::SOLARBEAM]]
 	}
 },
 
@@ -2517,7 +2621,12 @@ PBSpecies::GELLIN => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::MAGNETRISE],[1,PBMoves::MAGNETRISE],[1,PBMoves::TACKLE],[1,PBMoves::ABSORB],
+		[7,PBMoves::GROWTH],[11,PBMoves::MEGADRAIN],[17,PBMoves::SYNTHESIS],[21,PBMoves::SHOCKWAVE],
+		[27,PBMoves::SUNNYDAY],[31,PBMoves::GIGADRAIN],[37,PBMoves::THUNDERBOLT],[41,PBMoves::RECOVER],
+		[43,PBMoves::ENERGYBALL],[45,PBMoves::RADIOACID],[47,PBMoves::ACUPRESSURE],[50,PBMoves::ACIDARMOR],
+		[52,PBMoves::NUCLEARWASTE],[57,PBMoves::SOLARBEAM]]
 	}
 },
 
@@ -2525,7 +2634,11 @@ PBSpecies::BARAND => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::PECK],[6,PBMoves::SANDATTACK],[11,PBMoves::LEER],[16,PBMoves::BITE],
+		[21,PBMoves::FORCEPALM],[23,PBMoves::NUCLEARSLASH],[26,PBMoves::TAKEDOWN],[28,PBMoves::HALFLIFE],
+		[31,PBMoves::DRAGONCLAW],[36,PBMoves::CRUSHCLAW],[41,PBMoves::DRAGONDANCE],[46,PBMoves::SLASH],
+		[48,PBMoves::ATOMICPUNCH],[51,PBMoves::DRAGONRUSH],[56,PBMoves::CRUSHGRIP]]
 	}
 },
 
@@ -2533,7 +2646,12 @@ PBSpecies::PARAUDIO => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[8,PBMoves::ROAR],[13,PBMoves::CONFUSION],
+		[16,PBMoves::SNARL],[20,PBMoves::SUPERSONIC],[24,PBMoves::PSYBEAM],[28,PBMoves::ROUND],
+		[32,PBMoves::ZENHEADBUTT],[36,PBMoves::PSYSHOCK],[38,PBMoves::UPROAR],[41,PBMoves::NASTYPLOT],
+		[44,PBMoves::PSYCHIC],[48,PBMoves::RADIOACID],[50,PBMoves::HYPERVOICE],[52,PBMoves::NUCLEARWASTE],
+		[60,PBMoves::BOOMBURST]]
 	}
 },
 
@@ -2541,7 +2659,12 @@ PBSpecies::PARABOOM => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[8,PBMoves::ROAR],[13,PBMoves::CONFUSION],
+		[16,PBMoves::SNARL],[20,PBMoves::SUPERSONIC],[24,PBMoves::PSYBEAM],[28,PBMoves::ROUND],
+		[32,PBMoves::ZENHEADBUTT],[36,PBMoves::PSYSHOCK],[38,PBMoves::UPROAR],[41,PBMoves::NASTYPLOT],
+		[44,PBMoves::PSYCHIC],[48,PBMoves::RADIOACID],[50,PBMoves::HYPERVOICE],[52,PBMoves::NUCLEARWASTE],
+		[60,PBMoves::BOOMBURST]]
 	}
 },
 
@@ -2630,19 +2753,32 @@ PBSpecies::DAIKATUNA => {
 	}
 },
 
-PBSpecies::LUCHABRA => {
-	:FormName => {1 => "Nuclear"},
-
-	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
-	}
-},
-
 PBSpecies::CHUPACHO => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::ABSORB],[1,PBMoves::SCARYFACE],[6,PBMoves::POISONSTING],[8,PBMoves::BITE],
+		[11,PBMoves::FEINT],[17,PBMoves::PURSUIT],[21,PBMoves::SCREECH],[24,PBMoves::POISONFANG],
+		[29,PBMoves::TWINEEDLE],[33,PBMoves::TOXICSPIKES],[35,PBMoves::KNOCKOFF],[37,PBMoves::NUCLEARSLASH],
+		[41,PBMoves::AGILITY],[43,PBMoves::HALFLIFE],[45,PBMoves::CROSSPOISON],[51,PBMoves::TOXIC],
+		[53,PBMoves::LEECHLIFE]]
+	}
+},
+
+PBSpecies::LUCHABRA => {
+	:FormName => {1 => "Nuclear"},
+
+	"Nuclear" => {
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::BEATUP],[1,PBMoves::LOWSWEEP],[1,PBMoves::BEATUP],[1,PBMoves::LOWSWEEP],
+		[1,PBMoves::ABSORB],[1,PBMoves::SCARYFACE],[6,PBMoves::POISONSTING],[8,PBMoves::BITE],
+		[11,PBMoves::FEINT],[17,PBMoves::PURSUIT],[21,PBMoves::SCREECH],[24,PBMoves::POISONFANG],
+		[29,PBMoves::TWINEEDLE],[33,PBMoves::TOXICSPIKES],[35,PBMoves::KNOCKOFF],[37,PBMoves::NUCLEARSLASH],
+		[39,PBMoves::MATBLOCK],[41,PBMoves::AGILITY],[42,PBMoves::BULKUP],[43,PBMoves::HALFLIFE],
+		[45,PBMoves::CROSSPOISON],[47,PBMoves::CLOSECOMBAT],[49,PBMoves::SEISMICTOSS],[51,PBMoves::TOXIC],
+		[53,PBMoves::LEECHLIFE],[55,PBMoves::POISONJAB],[57,PBMoves::ATOMICPUNCH],[59,PBMoves::DYNAMICPUNCH],
+		[61,PBMoves::CROSSCHOP]]
 	}
 },
 
@@ -2674,7 +2810,12 @@ PBSpecies::HAGOOP => {
 	:FormName => {1 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::MUDSPORT],[1,PBMoves::ASTONISH],[1,PBMoves::MUDSLAP],[7,PBMoves::THUNDERSHOCK],
+		[10,PBMoves::SLUDGE],[14,PBMoves::CAMOUFLAGE],[18,PBMoves::IONDELUGE],[22,PBMoves::MUDSHOT],
+		[26,PBMoves::PARABOLICCHARGE],[30,PBMoves::BODYSLAM],[36,PBMoves::SLUDGEBOMB],[38,PBMoves::NUCLEARWASTE],
+		[40,PBMoves::RECOVER],[42,PBMoves::DISCHARGE],[44,PBMoves::RADIOACID],[46,PBMoves::SLUDGEWAVE],
+		[48,PBMoves::THUNDERBOLT],[50,PBMoves::SUCKERPUNCH],[52,PBMoves::PROTONBEAM],[56,PBMoves::THUNDER]]
 	}
 },
 
@@ -2687,7 +2828,13 @@ PBSpecies::HAAGROSS => {
  	},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::MUDSPORT],[1,PBMoves::ASTONISH],[1,PBMoves::MUDSLAP],[7,PBMoves::THUNDERSHOCK],
+		[10,PBMoves::SLUDGE],[14,PBMoves::CAMOUFLAGE],[18,PBMoves::IONDELUGE],[22,PBMoves::MUDSHOT],
+		[26,PBMoves::PARABOLICCHARGE],[30,PBMoves::BODYSLAM],[36,PBMoves::SLUDGEBOMB],[38,PBMoves::NUCLEARWASTE],
+		[40,PBMoves::RECOVER],[42,PBMoves::DISCHARGE],[44,PBMoves::RADIOACID],[46,PBMoves::SLUDGEWAVE],
+		[48,PBMoves::THUNDERBOLT],[50,PBMoves::SUCKERPUNCH],[52,PBMoves::PROTONBEAM],[54,PBMoves::WILDCHARGE],
+		[56,PBMoves::THUNDER]]
 	}
 },
 
@@ -3088,9 +3235,9 @@ PBSpecies::MEOWTH => {
 			[33,PBMoves::FEINT],[38,PBMoves::CAPTIVATE],[41,PBMoves::ASSURANCE],
 			[46,PBMoves::SLASH],[48,PBMoves::NASTYPLOT],[50,PBMoves::NIGHTSLASH],
 			[53,PBMoves::DARKPULSE],[55,PBMoves::PLAYROUGH]],
-		:EggMoves => [PBMoves::AMNESIA,PBMoves::ASSIST,PBMoves::CHARM,PBMoves::COVET,PBMoves::FLAIL,
-			PBMoves::FLATTER,PBMoves::FOULPLAY,PBMoves::HYPNOSIS,PBMoves::MAKEITRAIN,PBMoves::PARTINGSHOT,
-			PBMoves::PUNISHMENT,PBMoves::SNATCH,PBMoves::SPITE],
+		:EggMoves => [PBMoves::AMNESIA,PBMoves::ASSIST,PBMoves::CHARM,PBMoves::COVET,PBMoves::DESTINYBOND,
+			PBMoves::FLAIL,PBMoves::FLATTER,PBMoves::FOULPLAY,PBMoves::HYPNOSIS,PBMoves::MAKEITRAIN,
+			PBMoves::PARTINGSHOT,PBMoves::PUNISHMENT,PBMoves::SNATCH,PBMoves::SPITE],
 		:GetEvo => [[PBSpecies::PERSIAN,PBEvolution::Happiness,0]]
 	},
 
@@ -3600,8 +3747,8 @@ PBSpecies::QWILFISH => {
 			[36,PBMoves::STOCKPILE],[36,PBMoves::SPITUP],[40,PBMoves::TOXIC],[44,PBMoves::DARKPULSE],
 			[48,PBMoves::POISONJAB],[50,PBMoves::AQUATAIL],[52,PBMoves::BARBBARRAGE],[56,PBMoves::DOUBLEEDGE],
 			[60,PBMoves::CRUNCH],[66,PBMoves::DESTINYBOND]],
-		:EggMoves => [PBMoves::AQUAJET,PBMoves::ASTONISH,PBMoves::BUBBLEBEAM,PBMoves::FLAIL,PBMoves::ICEBALL,
-			PBMoves::SUPERSONIC],
+		:EggMoves => [PBMoves::AQUAJET,PBMoves::ASTONISH,PBMoves::BANEFULBUNKER,PBMoves::BUBBLEBEAM,
+			PBMoves::FLAIL,PBMoves::MORTALSPIN,PBMoves::SUPERSONIC],
 		:GetEvo => [[PBSpecies::OVERQWIL,PBEvolution::HasMove,PBMoves::BARBBARRAGE]]
 	}
 },
@@ -3769,14 +3916,13 @@ PBSpecies::SAMUROTT => {
 		:Type2 => PBTypes::DARK,
 		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::AQUABOOST,PBAbilities::SWIFTSWIM,PBAbilities::CONQUEROR,PBAbilities::SHARPNESS],
 		:BaseStats => [90,108,80,85,100,65],
-		:Movelist => [[0,PBMoves::CEASELESSEDGE],[1,PBMoves::PSYCHOCUT],[1,PBMoves::POISONJAB],
-			[1,PBMoves::SACREDSWORD],[1,PBMoves::AQUACUTTER],[1,PBMoves::CEASELESSEDGE],
-			[1,PBMoves::TACKLE],[5,PBMoves::TAILWHIP],[7,PBMoves::WATERSPORT],[11,PBMoves::WATERGUN],
-			[13,PBMoves::FOCUSENERGY],[15,PBMoves::SOAK],[17,PBMoves::FURYCUTTER],[19,PBMoves::AQUAJET],
-			[21,PBMoves::REVENGE],[23,PBMoves::WATERPULSE],[25,PBMoves::AERIALACE],[29,PBMoves::SLASH],
-			[31,PBMoves::RAZORSHELL],[35,PBMoves::ENCORE],[37,PBMoves::SUCKERPUNCH],[39,PBMoves::RETALIATE],
-			[41,PBMoves::AQUATAIL],[43,PBMoves::MEGAHORN],[45,PBMoves::NIGHTSLASH],[49,PBMoves::SWORDSDANCE],
-			[52,PBMoves::DARKPULSE],[57,PBMoves::HYDROPUMP]],
+		:Movelist => [[0,PBMoves::CEASELESSEDGE],,[1,PBMoves::CEASELESSEDGE],[1,PBMoves::TACKLE],
+			[5,PBMoves::TAILWHIP],[7,PBMoves::WATERSPORT],[11,PBMoves::WATERGUN],[13,PBMoves::FOCUSENERGY],
+			[15,PBMoves::SOAK],[17,PBMoves::FURYCUTTER],[19,PBMoves::AQUAJET],[21,PBMoves::REVENGE],
+			[23,PBMoves::WATERPULSE],[25,PBMoves::AERIALACE],[29,PBMoves::SLASH],[31,PBMoves::RAZORSHELL],
+			[35,PBMoves::ENCORE],[37,PBMoves::SUCKERPUNCH],[39,PBMoves::RETALIATE],[41,PBMoves::AQUATAIL],
+			[43,PBMoves::MEGAHORN],[45,PBMoves::NIGHTSLASH],[49,PBMoves::SWORDSDANCE],[52,PBMoves::DARKPULSE],
+			[57,PBMoves::HYDROPUMP]],
 		:Weight => 582
 	},
 
@@ -3817,14 +3963,14 @@ PBSpecies::DECIDUEYE => {
 		:Type2 => PBTypes::FIGHTING,
 		:Ability => [PBAbilities::OVERGROW,PBAbilities::LONGREACH,PBAbilities::SCRAPPY,PBAbilities::STRONGHEEL],
 		:BaseStats => [88,112,80,60,95,95],
-		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::PSYCHOCUT],[1,PBMoves::SPIKES],[1,PBMoves::BULKUP],
-			[1,PBMoves::FOCUSENERGY],[1,PBMoves::ROCKSMASH],[1,PBMoves::TACKLE],[1,PBMoves::GROWL],
-			[4,PBMoves::LEAFAGE],[6,PBMoves::PECK],[8,PBMoves::FORESIGHT],[11,PBMoves::GUST],
-			[14,PBMoves::ASTONISH],[16,PBMoves::FURYATTACK],[18,PBMoves::SHADOWSNEAK],[20,PBMoves::RAZORLEAF],
-			[22,PBMoves::OMINOUSWIND],[25,PBMoves::SYNTHESIS],[27,PBMoves::MAGICALLEAF],[29,PBMoves::PLUCK],
-			[31,PBMoves::FEATHERDANCE],[33,PBMoves::AERIALACE],[35,PBMoves::ROOST],[37,PBMoves::SUCKERPUNCH],
-			[39,PBMoves::TRIPLEARROWS],[43,PBMoves::UTURN],[46,PBMoves::AURASPHERE],[49,PBMoves::NASTYPLOT],
-			[51,PBMoves::AIRSLASH],[54,PBMoves::LEAFBLADE],[58,PBMoves::BRAVEBIRD],[60,PBMoves::LEAFSTORM]],
+		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::AXEKICK],[1,PBMoves::BULKUP],[1,PBMoves::ROCKSMASH],
+			[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[4,PBMoves::LEAFAGE],[6,PBMoves::PECK],[8,PBMoves::FORESIGHT],
+			[11,PBMoves::GUST],[14,PBMoves::ASTONISH],[16,PBMoves::FURYATTACK],[18,PBMoves::SHADOWSNEAK],
+			[20,PBMoves::RAZORLEAF],[22,PBMoves::OMINOUSWIND],[25,PBMoves::SYNTHESIS],[27,PBMoves::MAGICALLEAF],
+			[29,PBMoves::PLUCK],[31,PBMoves::FEATHERDANCE],[33,PBMoves::AERIALACE],[35,PBMoves::ROOST],
+			[37,PBMoves::SUCKERPUNCH],[39,PBMoves::TRIPLEARROWS],[43,PBMoves::UTURN],[46,PBMoves::AURASPHERE],
+			[49,PBMoves::NASTYPLOT],[51,PBMoves::AIRSLASH],[54,PBMoves::LEAFBLADE],[58,PBMoves::BRAVEBIRD],
+			[60,PBMoves::LEAFSTORM],[140,PBMoves::THOUSANDARROWS]],
 		:Weight => 370
 	}
 },
@@ -3852,7 +3998,8 @@ PBSpecies::ZORUA => {
 			[24,PBMoves::HONECLAWS],[26,PBMoves::SWIFT],[28,PBMoves::AGILITY],[32,PBMoves::KNOCKOFF],
 			[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],
 			[48,PBMoves::NASTYPLOT],[54,PBMoves::SHADOWBALL]],
-		:EggMoves => [PBMoves::COMEUPPANCE,PBMoves::DETECT,PBMoves::EXTRASENSORY,PBMoves::MEMENTO]
+		:EggMoves => [PBMoves::BITTERBLADE,PBMoves::COMEUPPANCE,PBMoves::DETECT,PBMoves::EXTRASENSORY,
+		PBMoves::GLARE,PBMoves::MEMENTO,PBMoves::MOONBLAST]
 	}
 },
 
@@ -3874,13 +4021,12 @@ PBSpecies::ZOROARK => {
 		:Type1 => PBTypes::NORMAL,
 		:Type2 => PBTypes::GHOST,
 		:BaseStats => [55,100,60,110,125,60],
-		:Movelist => [[0,PBMoves::EXTRASENSORY],[1,PBMoves::HAPPYHOUR],[1,PBMoves::ROCKSMASH],
-			[1,PBMoves::OMINOUSWIND],[1,PBMoves::EXTRASENSORY],[1,PBMoves::SCRATCH],[1,PBMoves::LEER],
-			[4,PBMoves::TORMENT],[8,PBMoves::SPITE],[12,PBMoves::SHADOWSNEAK],[16,PBMoves::TAUNT],
-			[20,PBMoves::CURSE],[22,PBMoves::SNARL],[24,PBMoves::HONECLAWS],[26,PBMoves::SWIFT],
-			[28,PBMoves::AGILITY],[32,PBMoves::KNOCKOFF],[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],
-			[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],[48,PBMoves::NASTYPLOT],[52,PBMoves::UTURN],
-			[54,PBMoves::SHADOWBALL]],
+		:Movelist => [[0,PBMoves::EXTRASENSORY],[1,PBMoves::HAPPYHOUR],[1,PBMoves::EXTRASENSORY],
+			[1,PBMoves::SCRATCH],[1,PBMoves::LEER],[4,PBMoves::TORMENT],[8,PBMoves::SPITE],
+			[12,PBMoves::SHADOWSNEAK],[16,PBMoves::TAUNT],[20,PBMoves::CURSE],[22,PBMoves::SNARL],
+			[24,PBMoves::HONECLAWS],[26,PBMoves::SWIFT],[28,PBMoves::AGILITY],[32,PBMoves::KNOCKOFF],
+			[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],
+			[48,PBMoves::NASTYPLOT],[52,PBMoves::UTURN],[54,PBMoves::SHADOWBALL]],
 		:Weight => 730
 	}
 },
@@ -3903,9 +4049,8 @@ PBSpecies::BRAVIARY => {
 		:Type1 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,0,2,0],
 		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::PRIDE,PBAbilities::HERO,PBAbilities::TINTEDLENS,PBAbilities::TINTEDLENS],
-		:BaseStats => [110,57,70,70,123,80], #Canon: [110,83,70,65,112,70]
-		:Movelist => [[0,PBMoves::ESPERWING],[1,PBMoves::MYSTICALFIRE],[1,PBMoves::OMINOUSWIND],
-			[1,PBMoves::SUPERPOWER],[1,PBMoves::POUNCE],[1,PBMoves::PSYWAVE],[1,PBMoves::ESPERWING],
+		:BaseStats => [110,83,70,65,112,70]
+		:Movelist => [[0,PBMoves::ESPERWING],[1,PBMoves::SUPERPOWER],[1,PBMoves::PSYWAVE],[1,PBMoves::ESPERWING],
 			[1,PBMoves::PECK],[1,PBMoves::LEER],[5,PBMoves::FURYATTACK],[10,PBMoves::SCARYFACE],
 			[12,PBMoves::QUICKATTACK],[14,PBMoves::HONECLAWS],[16,PBMoves::TWISTER],[19,PBMoves::WINGATTACK],
 			[23,PBMoves::WHIRLWIND],[28,PBMoves::DEFOG],[32,PBMoves::AERIALACE],[37,PBMoves::SLASH],
@@ -3941,7 +4086,7 @@ PBSpecies::GOODRA => {
 		:Type2 => PBTypes::STEEL,
 		:BaseStats => [80,100,100,60,110,150],
 		:Ability => [PBAbilities::SAPSIPPER,PBAbilities::SHELLARMOR,PBAbilities::OVERCOAT,PBAbilities::GOOEY],
-		:Movelist => [[0,PBMoves::FEINT],[1,PBMoves::ROCKSMASH],[1,PBMoves::FEINT],[1,PBMoves::IRONHEAD],
+		:Movelist => [[0,PBMoves::FEINT],[1,PBMoves::FEINT],[1,PBMoves::IRONHEAD],
 		[1,PBMoves::TACKLE],[1,PBMoves::ABSORB],[5,PBMoves::BIDE],[9,PBMoves::WATERGUN],
 		[13,PBMoves::DRAGONBREATH],[15,PBMoves::CURSE],[18,PBMoves::BUBBLE],[20,PBMoves::FLAIL],
 		[25,PBMoves::ACIDSPRAY],[28,PBMoves::RAINDANCE],[30,PBMoves::WATERPULSE],[32,PBMoves::PROTECT],
@@ -4034,9 +4179,10 @@ PBSpecies::PONYTA => {
 			[15,PBMoves::FAIRYWIND],[20,PBMoves::STOMP],[25,PBMoves::PSYBEAM],[20,PBMoves::TAKEDOWN],
 			[35,PBMoves::AGILITY],[41,PBMoves::HEALPULSE],[45,PBMoves::DAZZLINGGLEAM],[50,PBMoves::PSYCHIC],
 			[55,PBMoves::HEALINGWISH]],
-		:EggMoves => [PBMoves::DOUBLEEDGE,PBMoves::DOUBLEKICK,PBMoves::EMBER,PBMoves::EXTREMESPEED,
-			PBMoves::FIREBLAST,PBMoves::FIRESPIN,PBMoves::FLAREBLITZ,PBMoves::HORNDRILL,PBMoves::HYPNOSIS,
-			PBMoves::PLAYROUGH,PBMoves::MORNINGSUN,PBMoves::QUICKATTACK,PBMoves::THRASH,PBMoves::ZENHEADBUTT],
+		:EggMoves => [PBMoves::AQUAJET,PBMoves::DOUBLEEDGE,PBMoves::DOUBLEKICK,PBMoves::EMBER,
+			PBMoves::EXTREMESPEED,PBMoves::FIREBLAST,PBMoves::FIRESPIN,PBMoves::FLAREBLITZ,PBMoves::HORNDRILL,
+			PBMoves::HYPNOSIS,PBMoves::PLAYROUGH,PBMoves::MORNINGSUN,PBMoves::QUICKATTACK,PBMoves::THRASH,
+			PBMoves::ZENHEADBUTT],
 	}
 },
 
@@ -4219,13 +4365,19 @@ PBSpecies::CORSOLA => {
 			[35,PBMoves::CURSE],[40,PBMoves::STRENGTHSAP],[45,PBMoves::POWERGEM],[50,PBMoves::GRUDGE],
 			[55,PBMoves::MIRRORCOAT]],
 		:EggMoves => [PBMoves::CONFUSERAY,PBMoves::CORALBREAK,PBMoves::DESTINYBOND,PBMoves::HAZE,		
-			PBMoves::HEADSMASH,PBMoves::NATUREPOWER,PBMoves::WATERPULSE],
+			PBMoves::HEADSMASH,PBMoves::NATUREPOWER,PBMoves::SALTCURE,PBMoves::WATERPULSE],
 		:GetEvo => [[PBSpecies::CURSOLA,PBEvolution::Level,38]],
 		:Weight => 5
 	},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::HARDEN],[4,PBMoves::WATERGUN],[6,PBMoves::REFRESH],
+		[8,PBMoves::LUCKYCHANT],[10,PBMoves::AQUARING],[12,PBMoves::BUBBLE],[16,PBMoves::LIFEDEW],
+		[19,PBMoves::ROCKBLAST],[21,PBMoves::GAMMARAY],[23,PBMoves::BUBBLEBEAM],[25,PBMoves::SPIKECANNON],
+		[27,PBMoves::ANCIENTPOWER],[29,PBMoves::ENDURE],[31,PBMoves::FLAIL],[33,PBMoves::RECOVER],
+		[35,PBMoves::LIGHTSCREEN],[37,PBMoves::BRINE],[39,PBMoves::IRONDEFENSE],[41,PBMoves::EARTHPOWER],
+		[43,PBMoves::POWERGEM],[45,PBMoves::MIRRORCOAT],[47,PBMoves::CORALBREAK],[47,PBMoves::PROTONBEAM]]
 	},
 
 	"NuclearGalarian" => {
@@ -4235,11 +4387,9 @@ PBSpecies::CORSOLA => {
 		:BaseStats => [60,55,100,30,65,100],
 		:Ability => [PBAbilities::WEAKARMOR,PBAbilities::CURSEDBODY],
 		:Movelist => [[1,PBMoves::HARDEN],[1,PBMoves::TACKLE],[5,PBMoves::ASTONISH],[10,PBMoves::DISABLE],
-		[15,PBMoves::SPITE],[20,PBMoves::NIGHTSHADE],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::HEX],
-		[35,PBMoves::CURSE],[40,PBMoves::STRENGTHSAP],[45,PBMoves::POWERGEM],[50,PBMoves::GRUDGE],
-		[55,PBMoves::MIRRORCOAT]],
-		:EggMoves => [PBMoves::CONFUSERAY,PBMoves::CORALBREAK,PBMoves::DESTINYBOND,PBMoves::HAZE,		
-		PBMoves::HEADSMASH,PBMoves::NATUREPOWER,PBMoves::WATERPULSE],
+		[15,PBMoves::SPITE],[20,PBMoves::NIGHTSHADE],[23,PBMoves::GAMMARAY],[25,PBMoves::ANCIENTPOWER],
+		[30,PBMoves::HEX],[35,PBMoves::CURSE],[40,PBMoves::STRENGTHSAP],[43,PBMoves::PROTONBEAM],
+		[45,PBMoves::POWERGEM],[50,PBMoves::GRUDGE],[55,PBMoves::MIRRORCOAT]],
 		:GetEvo => [[PBSpecies::CURSOLA,PBEvolution::Level,38]],
 		:Weight => 5
 	},
@@ -4255,7 +4405,12 @@ PBSpecies::CURSOLA => {
 	:FormName => {3 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::PERISHSONG],[1,PBMoves::PERISHSONG],[1,PBMoves::HARDEN],[1,PBMoves::TACKLE],
+		[5,PBMoves::ASTONISH],[10,PBMoves::DISABLE],[15,PBMoves::SPITE],[20,PBMoves::NIGHTSHADE],
+		[23,PBMoves::GAMMARAY],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::HEX],[33,PBMoves::RADIOACID],
+		[35,PBMoves::CURSE],[40,PBMoves::STRENGTHSAP],[43,PBMoves::PROTONBEAM],[45,PBMoves::POWERGEM],
+		[50,PBMoves::GRUDGE],[55,PBMoves::MIRRORCOAT]]
 	}
 },
 
@@ -4263,7 +4418,15 @@ PBSpecies::CORSOREEF => {
 	:FormName => {2 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::ICICLESPEAR],[1,PBMoves::ICICLESPEAR],[1,PBMoves::TACKLE],[1,PBMoves::HARDEN],
+		[4,PBMoves::WATERGUN],[6,PBMoves::REFRESH],[8,PBMoves::LUCKYCHANT],[10,PBMoves::AQUARING],
+		[12,PBMoves::BUBBLE],[16,PBMoves::LIFEDEW],[19,PBMoves::ROCKBLAST],[21,PBMoves::GAMMARAY],
+		[23,PBMoves::BUBBLEBEAM],[25,PBMoves::SPIKECANNON],[27,PBMoves::ANCIENTPOWER],[29,PBMoves::ENDURE],
+		[31,PBMoves::FLAIL],[32,PBMoves::RADIOACID],[33,PBMoves::RECOVER],[35,PBMoves::LIGHTSCREEN],
+		[37,PBMoves::BRINE],[39,PBMoves::IRONDEFENSE],[41,PBMoves::EARTHPOWER],[43,PBMoves::POWERGEM],
+		[45,PBMoves::MIRRORCOAT],[47,PBMoves::CORALBREAK],[47,PBMoves::PROTONBEAM],[49,PBMoves::TOXIC],
+		[51,PBMoves::SHELLSMASH]]
 	}
 },
 
@@ -4287,7 +4450,8 @@ PBSpecies::ZIGZAGOON => {
 			[9,PBMoves::SNARL],[12,PBMoves::HEADBUTT],[15,PBMoves::BABYDOLLEYES],[18,PBMoves::PINMISSILE],
 			[21,PBMoves::REST],[24,PBMoves::TAKEDOWN],[27,PBMoves::SCARYFACE],[30,PBMoves::COUNTER],
 			[43,PBMoves::TAUNT],[56,PBMoves::DOUBLEEDGE]],
-		:EggMoves => [PBMoves::KNOCKOFF,PBMoves::PARTINGSHOT,PBMoves::QUICKGUARD]
+		:EggMoves => [PBMoves::CRUSHCLAW,PBMoves::EXTREMESPEED,PBMoves::KNOCKOFF,PBMoves::PARTINGSHOT,
+			PBMoves::QUICKGUARD]
 	}
 },
 
@@ -4377,8 +4541,8 @@ PBSpecies::STUNFISK => {
 			[5,PBMoves::METALCLAW],[10,PBMoves::METALSOUND],[15,PBMoves::REVENGE],[20,PBMoves::MUDSHOT],
 			[25,PBMoves::IRONDEFENSE],[30,PBMoves::SNAPTRAP],[35,PBMoves::FLAIL],[40,PBMoves::SUCKERPUNCH],
 			[45,PBMoves::BOUNCE],[50,PBMoves::MUDDYWATER],[55,PBMoves::FISSURE]],
-		:EggMoves => [PBMoves::ASTONISH,PBMoves::BIND,PBMoves::COUNTER,PBMoves::CURSE,PBMoves::EARTHPOWER,
-			PBMoves::MEFIRST,PBMoves::PAINSPLIT,PBMoves::REFLECTTYPE,PBMoves::SLEEPTALK,PBMoves::SPITE,
+		:EggMoves => [PBMoves::ASTONISH,PBMoves::BIND,PBMoves::COUNTER,PBMoves::CURSE,PBMoves::MEFIRST,
+			PBMoves::PAINSPLIT,PBMoves::REFLECTTYPE,PBMoves::SLEEPTALK,PBMoves::SPIKYSHIELD,PBMoves::SPITE,
 			PBMoves::YAWN]
 	}
 },
@@ -4443,7 +4607,8 @@ PBSpecies::WOOPER => {
 			[24,PBMoves::POISONJAB],[28,PBMoves::SLUDGEWAVE],[32,PBMoves::AMNESIA],[40,PBMoves::TOXIC],
 			[44,PBMoves::EARTHQUAKE]],
 		:EggMoves => [PBMoves::AFTERYOU,PBMoves::ANCIENTPOWER,PBMoves::COUNTER,PBMoves::DOUBLEKICK,
-			PBMoves::MIST,PBMoves::RECOVER,PBMoves::SPITUP,PBMoves::STOCKPILE,PBMoves::SWALLOW],
+			PBMoves::GRASTROACID,PBMoves::MIST,PBMoves::RECOVER,PBMoves::SOAK,PBMoves::SPITUP,PBMoves::STOCKPILE,
+			PBMoves::SWALLOW],
 		:GetEvo => [[PBSpecies::CLODSIRE,PBEvolution::Level,20]],
 	}
 },
@@ -5571,7 +5736,16 @@ PBSpecies::GYARADOS => {
 	},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::BITE],[1,PBMoves::AURORABEAM],[1,PBMoves::WHIRLPOOL],[1,PBMoves::REFLECT],
+		[1,PBMoves::THRASH],[1,PBMoves::ROAR],[1,PBMoves::DISABLE],[1,PBMoves::FOCUSENERGY],[1,PBMoves::WRAP],
+		[1,PBMoves::BIND],[1,PBMoves::GROWL],[1,PBMoves::BITE],[1,PBMoves::SPLASH],[15,PBMoves::TACKLE],
+		[20,PBMoves::LEER],[22,PBMoves::DRAGONRAGE],[23,PBMoves::NUCLEARWASTE],[24,PBMoves::FLAIL],
+		[26,PBMoves::RAGE],[28,PBMoves::TWISTER],[29,PBMoves::RADIOACID],[30,PBMoves::SONICBOOM],
+		[32,PBMoves::WATERPULSE],[34,PBMoves::SCARYFACE],[36,PBMoves::DRAGONTAIL],[38,PBMoves::BUBBLEBEAM],
+		[40,PBMoves::ICEFANG],[42,PBMoves::BRINE],[44,PBMoves::RAINDANCE],[46,PBMoves::HYDROPUMP],
+		[48,PBMoves::CRUNCH],[49,PBMoves::PROTONBEAM],[50,PBMoves::HURRICANE],[52,PBMoves::AQUATAIL],
+		[54,PBMoves::DRAGONDANCE],[56,PBMoves::WATERFALL],[58,PBMoves::OUTRAGE],[60,PBMoves::HYPERBEAM]]
 	},
 
 	"Mega" => {
@@ -5585,6 +5759,15 @@ PBSpecies::GYARADOS => {
 		:Type2 => PBTypes::NUCLEAR,
 		:BaseStats => [95,155,109,81,70,130],
 		:Ability => PBAbilities::MOLDBREAKER,
+		:Movelist => [[0,PBMoves::BITE],[1,PBMoves::AURORABEAM],[1,PBMoves::WHIRLPOOL],[1,PBMoves::REFLECT],
+		[1,PBMoves::THRASH],[1,PBMoves::ROAR],[1,PBMoves::DISABLE],[1,PBMoves::FOCUSENERGY],[1,PBMoves::WRAP],
+		[1,PBMoves::BIND],[1,PBMoves::GROWL],[1,PBMoves::BITE],[1,PBMoves::SPLASH],[15,PBMoves::TACKLE],
+		[20,PBMoves::LEER],[22,PBMoves::DRAGONRAGE],[23,PBMoves::NUCLEARWASTE],[24,PBMoves::FLAIL],
+		[26,PBMoves::RAGE],[28,PBMoves::TWISTER],[29,PBMoves::RADIOACID],[30,PBMoves::SONICBOOM],
+		[32,PBMoves::WATERPULSE],[34,PBMoves::SCARYFACE],[36,PBMoves::DRAGONTAIL],[38,PBMoves::BUBBLEBEAM],
+		[40,PBMoves::ICEFANG],[42,PBMoves::BRINE],[44,PBMoves::RAINDANCE],[46,PBMoves::HYDROPUMP],
+		[48,PBMoves::CRUNCH],[49,PBMoves::PROTONBEAM],[50,PBMoves::HURRICANE],[52,PBMoves::AQUATAIL],
+		[54,PBMoves::DRAGONDANCE],[56,PBMoves::WATERFALL],[58,PBMoves::OUTRAGE],[60,PBMoves::HYPERBEAM]],
 		:Weight => 3050
 	},
 	
@@ -6585,7 +6768,13 @@ PBSpecies::EKANS => {
 	:FormName => {2 => "Nuclear"},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::WRAP],[1,PBMoves::LEER],[1,PBMoves::POISONSTING],[4,PBMoves::BITE],
+		[6,PBMoves::TAILWHIP],[8,PBMoves::ACID],[10,PBMoves::HEADBUTT],[12,PBMoves::GLARE],[17,PBMoves::SCREECH],
+		[20,PBMoves::SLAM],[22,PBMoves::RADIOACID],[26,PBMoves::SPITUP],[26,PBMoves::STOCKPILE],
+		[26,PBMoves::SWALLOW],[27,PBMoves::NUCLEARWASTE],[30,PBMoves::ACIDSPRAY],[32,PBMoves::MUDBOMB],
+		[34,PBMoves::GASTROACID],[38,PBMoves::POISONJAB],[40,PBMoves::TOXIC],[42,PBMoves::SLUDGEBOMB],
+		[44,PBMoves::THRASH],[48,PBMoves::BELCH],[52,PBMoves::HAZE],[55,PBMoves::COIL],[60,PBMoves::GUNKSHOT]]
 	}
 },
 
@@ -6606,13 +6795,33 @@ PBSpecies::ARBOK => {
 	},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[1,PBMoves::CRUNCH],[1,PBMoves::SCARYFACE],[1,PBMoves::REFRESH],[1,PBMoves::SUCKERPUNCH],
+		[1,PBMoves::CRUNCH],[1,PBMoves::ICEFANG],[1,PBMoves::THUNDERFANG],[1,PBMoves::FIREFANG],
+		[1,PBMoves::SCARYFACE],[1,PBMoves::WRAP],[1,PBMoves::LEER],[1,PBMoves::POISONSTING],[4,PBMoves::BITE],
+		[6,PBMoves::TAILWHIP],[8,PBMoves::ACID],[10,PBMoves::HEADBUTT],[12,PBMoves::GLARE],[17,PBMoves::SCREECH],
+		[20,PBMoves::SLAM],[22,PBMoves::RADIOACID],[24,PBMoves::DISABLE],[26,PBMoves::SPITUP],
+		[26,PBMoves::STOCKPILE],[26,PBMoves::SWALLOW],[27,PBMoves::NUCLEARWASTE],[28,PBMoves::MEGADRAIN],
+		[30,PBMoves::ACIDSPRAY],[32,PBMoves::MUDBOMB],[34,PBMoves::GASTROACID],[36,PBMoves::SKULLBASH],
+		[38,PBMoves::POISONJAB],[40,PBMoves::TOXIC],[42,PBMoves::SLUDGEBOMB],[44,PBMoves::THRASH],
+		[46,PBMoves::LUNGE],[48,PBMoves::BELCH],[50,PBMoves::NUCLEARSLASH],[52,PBMoves::HAZE],[55,PBMoves::COIL],
+		[60,PBMoves::GUNKSHOT]]
 	},
 
 	"MegaNuke" => {
 		:Type2 => PBTypes::NUCLEAR,
 		:BaseStats => [60,130,100,90,65,95],
-		:Ability => PBAbilities::PETRIFY
+		:Ability => PBAbilities::PETRIFY,
+		:Movelist => [[1,PBMoves::CRUNCH],[1,PBMoves::SCARYFACE],[1,PBMoves::REFRESH],[1,PBMoves::SUCKERPUNCH],
+		[1,PBMoves::CRUNCH],[1,PBMoves::ICEFANG],[1,PBMoves::THUNDERFANG],[1,PBMoves::FIREFANG],
+		[1,PBMoves::SCARYFACE],[1,PBMoves::WRAP],[1,PBMoves::LEER],[1,PBMoves::POISONSTING],[4,PBMoves::BITE],
+		[6,PBMoves::TAILWHIP],[8,PBMoves::ACID],[10,PBMoves::HEADBUTT],[12,PBMoves::GLARE],[17,PBMoves::SCREECH],
+		[20,PBMoves::SLAM],[22,PBMoves::RADIOACID],[24,PBMoves::DISABLE],[26,PBMoves::SPITUP],
+		[26,PBMoves::STOCKPILE],[26,PBMoves::SWALLOW],[27,PBMoves::NUCLEARWASTE],[28,PBMoves::MEGADRAIN],
+		[30,PBMoves::ACIDSPRAY],[32,PBMoves::MUDBOMB],[34,PBMoves::GASTROACID],[36,PBMoves::SKULLBASH],
+		[38,PBMoves::POISONJAB],[40,PBMoves::TOXIC],[42,PBMoves::SLUDGEBOMB],[44,PBMoves::THRASH],
+		[46,PBMoves::LUNGE],[48,PBMoves::BELCH],[50,PBMoves::NUCLEARSLASH],[52,PBMoves::HAZE],[55,PBMoves::COIL],
+		[60,PBMoves::GUNKSHOT]]
 	},
 
 	"Mega" => {
@@ -6639,13 +6848,29 @@ PBSpecies::BAARIETTE => {
 	},
 
 	"Nuclear" => {
-		:Type2 => PBTypes::NUCLEAR
+		:Type2 => PBTypes::NUCLEAR,
+		:Movelist => [[0,PBMoves::KARATECHOP],[1,PBMoves::VITALTHROW],[1,PBMoves::TAUNT],[1,PBMoves::COUNTER],
+		[1,PBMoves::KARATECHOP],[1,PBMoves::SEISMICTOSS],[1,PBMoves::LOWKICK],[1,PBMoves::LEER],
+		[7,PBMoves::FOCUSENERGY],[13,PBMoves::STOMP],[15,PBMoves::BEATUP],[19,PBMoves::SCARYFACE],
+		[21,PBMoves::NUCLEARSLASH],[25,PBMoves::REVENGE],[27,PBMoves::HALFLIFE],[31,PBMoves::FEINTATTACK],
+		[35,PBMoves::SUBMISSION],[37,PBMoves::JUMPKICK],[40,PBMoves::SHADOWBALL],[43,PBMoves::CROSSCHOP],
+		[45,PBMoves::ATOMICPUNCH],[47,PBMoves::FOULPLAY],[49,PBMoves::HIJUMPKICK],[51,PBMoves::COMEUPPANCE],
+		[53,PBMoves::MEGAPUNCH],[53,PBMoves::MEGAKICK],[55,PBMoves::SUCKERPUNCH],[57,PBMoves::AXEKICK],
+		[59,PBMoves::DYNAMICPUNCH]]
 	},
 
 	"MegaNuke" => {
 		:Type2 => PBTypes::NUCLEAR,
 		:BaseStats => [100,160,107,100,75,103],
-		:Ability => PBAbilities::BLOODLUST
+		:Ability => PBAbilities::BLOODLUST,
+		:Movelist => [[0,PBMoves::KARATECHOP],[1,PBMoves::VITALTHROW],[1,PBMoves::TAUNT],[1,PBMoves::COUNTER],
+		[1,PBMoves::KARATECHOP],[1,PBMoves::SEISMICTOSS],[1,PBMoves::LOWKICK],[1,PBMoves::LEER],
+		[7,PBMoves::FOCUSENERGY],[13,PBMoves::STOMP],[15,PBMoves::BEATUP],[19,PBMoves::SCARYFACE],
+		[21,PBMoves::NUCLEARSLASH],[25,PBMoves::REVENGE],[27,PBMoves::HALFLIFE],[31,PBMoves::FEINTATTACK],
+		[35,PBMoves::SUBMISSION],[37,PBMoves::JUMPKICK],[40,PBMoves::SHADOWBALL],[43,PBMoves::CROSSCHOP],
+		[45,PBMoves::ATOMICPUNCH],[47,PBMoves::FOULPLAY],[49,PBMoves::HIJUMPKICK],[51,PBMoves::COMEUPPANCE],
+		[53,PBMoves::MEGAPUNCH],[53,PBMoves::MEGAKICK],[55,PBMoves::SUCKERPUNCH],[57,PBMoves::AXEKICK],
+		[59,PBMoves::DYNAMICPUNCH]]
 	},
 
 	"Mega" => {
@@ -7678,9 +7903,9 @@ PBSpecies::AVALUGG => {
 			[5,PBMoves::SHARPEN],[10,PBMoves::BITE],[12,PBMoves::POWDERSNOW],[15,PBMoves::RAPIDSPIN],
 			[18,PBMoves::ICESHARD],[20,PBMoves::TAKEDOWN],[22,PBMoves::ICYWIND],[24,PBMoves::CURSE],
 			[26,PBMoves::PROTECT],[30,PBMoves::ICEBALL],[33,PBMoves::IRONDEFENSE],[35,PBMoves::ICEFANG],
-			[39,PBMoves::CRUNCH],[41,PBMoves::EARTHPOWER],[43,PBMoves::RECOVER],[47,PBMoves::AVALANCHE],
-			[49,PBMoves::ROCKSLIDE],[51,PBMoves::DOUBLEEDGE],[56,PBMoves::MOUNTAINGALE],
-			[37,PBMoves::BLIZZARD]],
+			[37,PBMoves::BLIZZARD],[39,PBMoves::CRUNCH],[41,PBMoves::EARTHPOWER],[43,PBMoves::RECOVER],
+			[47,PBMoves::AVALANCHE],[49,PBMoves::ROCKSLIDE],[51,PBMoves::DOUBLEEDGE],[56,PBMoves::MOUNTAINGALE],
+			[101,PBMoves::MIGHTYCLEAVE]],
 		:Weight => 2624
 	}
 },
@@ -9538,7 +9763,7 @@ PBSpecies::FURFROU => {
 			:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[5,PBMoves::TAILWHIP],[9,PBMoves::SANDATTACK],
 				[12,PBMoves::BABYDOLLEYES],[15,PBMoves::ODORSLEUTH],[22,PBMoves::BITE],[27,PBMoves::HEADBUTT],
 				[33,PBMoves::CHARM],[35,PBMoves::TAKEDOWN],[38,PBMoves::SUCKERPUNCH],[42,PBMoves::COTTONGUARD],
-				[48,PBMoves::RETALIATE],[72,PBMoves::WILDCHARGE]]
+				[48,PBMoves::RETALIATE],[72,PBMoves::ZINGZAP]]
 		},
 		"Heart" => {
 			:Type2 => PBTypes::PSYCHIC,
