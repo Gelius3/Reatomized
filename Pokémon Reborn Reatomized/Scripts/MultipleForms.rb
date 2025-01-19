@@ -5714,7 +5714,6 @@ PBSpecies::GYARADOS => {
 		1 => "Mega",
 		2 => "Nuclear",
 		3 => "MegaNuke",
-		4 => "Yoshitsune-Mega"
 	},
 
 	:DefaultForm => {
@@ -5761,13 +5760,6 @@ PBSpecies::GYARADOS => {
 		[54,PBMoves::DRAGONDANCE],[56,PBMoves::WATERFALL],[58,PBMoves::OUTRAGE],[60,PBMoves::HYPERBEAM]],
 		:Weight => 3050
 	},
-	
-	"Yoshitsune-Mega" => {
-		:BaseStats => [95,139,79,67,130,100],
-		:Ability => PBAbilities::HYDRABOND,
-		:Weight => 3050,
-		:Type2 => PBTypes::FIRE
-	}
 },
 
 PBSpecies::AERODACTYL => {
@@ -9815,84 +9807,11 @@ PBSpecies::FURFROU => {
 		},
 },
 
-PBSpecies::PETILIL => {
-	:FormName => {
-		6 => "Celestial",
-		7 => "Cosmic",
-		9 => "Delta1",
-		10 => "Delta2"
-	},
-
-	:OnCreation => proc{
-		mapCelestial=[335] # Map IDs for Celestial form
-		mapCosmic=[305]
-		mapDelta2=[755]
-		mapDelta1=[756]
-		if $game_map && mapCelestial.include?($game_map.map_id)
-			next 6
-		elsif $game_map && mapCosmic.include?($game_map.map_id)
-			next 7
-		elsif $game_map && mapDelta1.include?($game_map.map_id)
-			next 9
-		elsif $game_map && mapDelta2.include?($game_map.map_id)
-			next 10
-		else
-			next 0
-		end
-	},
-
-	"Celestial" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::FLYING,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [55,65,60,60,50,50],
-		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::DRIZZLE,PBAbilities::AERILATE],
-		:Movelist => [[1,PBMoves::ABSORB],[1,PBMoves::PECK],[4,PBMoves::GROWTH],[8,PBMoves::LEECHSEED],[10,PBMoves::SLEEPPOWDER],[13,PBMoves::MEGADRAIN],[17,PBMoves::SYNTHESIS],[19,PBMoves::MAGICALLEAF],[22,PBMoves::STUNSPORE],[26,PBMoves::GIGADRAIN],[28,PBMoves::AROMATHERAPY],[31,PBMoves::HELPINGHAND],[35,PBMoves::ENERGYBALL],[37,PBMoves::ENTRAINMENT],[40,PBMoves::SUNNYDAY],[44,PBMoves::AFTERYOU],[46,PBMoves::LEAFSTORM]]
-	},
-	"Cosmic" => {
-		:DexEntry => "Although appearing to be a form of Petilil this Pokémon was first found in a meteor crash site similar to solrock and lunatone. Very little is known about it other than it likes to nest in Crystal caves and often looks up towards the stars at night.",
-		:Type1 => PBTypes::COSMIC,
-		:Type2 => PBTypes::BUG,
-		:BaseStats => [110,30,70,15,20,70], #? Cosmic adds +35 to BST
-		:Ability => [PBAbilities::STURDY,PBAbilities::HUSTLE,PBAbilities::SKILLLINK],
-		:Movelist => [[0,PBMoves::COSMICBARRAGE],[1,PBMoves::COSMICBARRAGE],[1,PBMoves::ABSORB],[5,PBMoves::LEAFAGE],
-					 [9,PBMoves::STUNSPORE],[12,PBMoves::IRONDEFENSE],[15,PBMoves::POISONPOWDER],[15,PBMoves::TWINEEDLE],[15,PBMoves::MEGADRAIN],[15,PBMoves::ROCKPOLISH],[17,PBMoves::WIDEGUARD],[18,PBMoves::BULLETSEED],[20,PBMoves::BUGBITE],[21,PBMoves::GIGADRAIN],[21,PBMoves::LEECHLIFE],[21,PBMoves::ENERGYBALL],[25,PBMoves::ROCKBLAST],[25,PBMoves::POWERGEM],[25,PBMoves::FURYCUTTER],[28,PBMoves::QUIVERDANCE],[29,PBMoves::SLEEPPOWDER],[30,PBMoves::FELLSTINGER],[30,PBMoves::ASTRALSHOT],[30,PBMoves::ROCKSLIDE],[34,PBMoves::VICTORYDANCE],[35,PBMoves::ACCELEROCK],[37,PBMoves::LEAFBLADE],[37,PBMoves::RECOVER],[45,PBMoves::COSMICRAY],[47,PBMoves::LEAFSTORM],[48,PBMoves::STEAMROLLER],[50,PBMoves::METEORBEAM],[50,PBMoves::FIRSTIMPRESSION],[53,PBMoves::PETALDANCE],[55,PBMoves::MINIMIZE],[55,PBMoves::STONEEDGE],[57,PBMoves::CLOSECOMBAT],[60,PBMoves::DECRYSTALLIZATION],[65,PBMoves::COMETSHOWER],[100,PBMoves::DIAMONDSTORM]]
-	},
-	"Delta1" => {
-		:DexEntry => "A Delta Species discovered by Steads42. It can be seen from within submarines, frolicking along the deep sea floor.",
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [45,35,50,30,70,50],
-		:Ability => [PBAbilities::STORMDRAIN,PBAbilities::FLASHFIRE,PBAbilities::REGENERATOR],
-		:Movelist => [[1,PBMoves::BUBBLE],[4,PBMoves::ACIDARMOR],[8,PBMoves::AQUARING],[10,PBMoves::MIST],[13,PBMoves::EMBER],[17,PBMoves::RECOVER],[19,PBMoves::BUBBLEBEAM],[22,PBMoves::WILLOWISP],[26,PBMoves::FLAMEBURST],[28,PBMoves::REFLECTTYPE],[31,PBMoves::PROTECT],[35,PBMoves::SCALD],[37,PBMoves::ENTRAINMENT],[40,PBMoves::RAINDANCE],[44,PBMoves::AFTERYOU],[46,PBMoves::MYSTICALFIRE]],
-		:EggMoves => [PBMoves::ACIDARMOR,PBMoves::BUBBLEBEAM,PBMoves::ENTRAINMENT,PBMoves::FLAMEBURST,PBMoves::MIST,PBMoves::MYSTICALFIRE,PBMoves::REFLECTTYPE,PBMoves::ACID,PBMoves::AFTERYOU,PBMoves::AQUATAIL,PBMoves::BIND,PBMoves::EARTHPOWER,PBMoves::ENDEAVOR,PBMoves::ENDURE,PBMoves::GASTROACID,PBMoves::GIGADRAIN,PBMoves::HEALBELL,PBMoves::HEATWAVE,PBMoves::MAGICCOAT,PBMoves::MIMIC,PBMoves::PAINSPLIT,PBMoves::SIGNALBEAM,PBMoves::SNORE,PBMoves::SPITE,PBMoves::WATERPULSE,PBMoves::WHIRLPOOL]
-	},
-	"Delta2" => {
-		:DexEntry => "A Delta Species discovered by shadowsofme. It gracefully descends upon weary travelers, restoring their morale and energy in the process.",
-		:Type1 => PBTypes::FAIRY,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [45,35,50,30,70,50],
-		:Ability => [PBAbilities::SERENEGRACE,PBAbilities::SYNCHRONIZE,PBAbilities::HEALER],
-		:Movelist => [[1,PBMoves::FAIRYWIND],[4,PBMoves::BABYDOLLEYES],[8,PBMoves::FEATHERDANCE],[10,PBMoves::CHARM],[13,PBMoves::GUST],[17,PBMoves::ROOST],[19,PBMoves::DISARMINGVOICE],[22,PBMoves::WHIRLWIND],[26,PBMoves::AIRCUTTER],[28,PBMoves::DEFOG],[31,PBMoves::MISTYTERRAIN],[35,PBMoves::DAZZLINGGLEAM],[37,PBMoves::ENTRAINMENT],[40,PBMoves::TAILWIND],[44,PBMoves::AFTERYOU],[46,PBMoves::HURRICANE]],
-		:EggMoves => [PBMoves::BABYDOLLEYES,PBMoves::CHARM,PBMoves::DISARMINGVOICE,PBMoves::ENTRAINMENT,PBMoves::MISTYTERRAIN,PBMoves::WHIRLWIND,PBMoves::ACID,PBMoves::AFTERYOU,PBMoves::AIRCUTTER,PBMoves::AURASPHERE,PBMoves::BOUNCE,PBMoves::DEFOG,PBMoves::ENDEAVOR,PBMoves::ENDURE,PBMoves::HEALBELL,PBMoves::HEATWAVE,PBMoves::HELPINGHAND,PBMoves::HURRICANE,PBMoves::HYPERVOICE,PBMoves::ICYWIND,PBMoves::LASTRESORT,PBMoves::MAGICCOAT,PBMoves::MAGICROOM,PBMoves::MIMIC,PBMoves::ROLEPLAY,PBMoves::SKYATTACK,PBMoves::SNORE,PBMoves::SWIFT,PBMoves::TAILWIND,PBMoves::TWISTER,PBMoves::WONDERROOM]
-	}
-},
-
 PBSpecies::LILLIGANT => {
 	:FormName => {
 		1 => "Dev",
 		2 => "Hisui",
-		3 => "Alolan A",
-		4 => "Alolan B",
-		5 => "Rebornian",
-		6 => "Celestial",
-		7 => "Cosmic",
-		8 => "Paldean",
-		9 => "Delta1",
-		10 => "Delta2",
-		11 => "TOTEM",
-		12 => "Galarian",
-		13 => "Mega"
+		3 => "Rebornian"
 	},
 
 	:DefaultForm => 0,
@@ -9919,54 +9838,6 @@ PBSpecies::LILLIGANT => {
 		:Weight => 192,
 		:Height => 12
 	},
-	"Alolan A" => {
-		:DexEntry => "The love for sunbathing has made it possible to sustain increadibly high and harsh temperatures. The scent it exudes from its ever-burning flower is told to be reinvigorating.",
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [70,50,70,120,105,65],
-		:Ability => [PBAbilities::DROUGHT,PBAbilities::SOLARPOWER,PBAbilities::ALOLANTECHNIQUESA],
-		:Movelist => [[0,PBMoves::FIERYDANCE],[1,PBMoves::FIERYDANCE],[1,PBMoves::ABSORB],[5,PBMoves::EMBER],
-					 [9,PBMoves::WILLOWISP],[15,PBMoves::POISONPOWDER],[15,PBMoves::MEGADRAIN],[17,PBMoves::INCINERATE],
-					 [21,PBMoves::GIGADRAIN],[21,PBMoves::FLAMETHROWER],[28,PBMoves::QUIVERDANCE],[28,PBMoves::VICTORYDANCE],
-					 [29,PBMoves::FLAMEBURST],[37,PBMoves::SYNTHESIS],[42,PBMoves::LAVAPLUME],[42,PBMoves::ENERGYBALL],
-					 [46,PBMoves::PETALDANCE],[50,PBMoves::MYSTICALFIRE],[50,PBMoves::PETALBLIZZARD],
-					 [55,PBMoves::FIREBLAST],[70,PBMoves::INFERNO],[80,PBMoves::INFERNALFIREBLAST],[80,PBMoves::INFERNALWATERBLAST],[80,PBMoves::LEAFSTORM]],
-		:Weight => 154,
-		:Height => 11
-	},
-	"Alolan B" => {
-		:DexEntry => "The love for sunbathing has made it possible to sustain increadibly high and harsh temperatures. The scent it exudes from its ever-bubbling flower is told to be reinvigorating.",
-		:Type2 => PBTypes::WATER,
-		:BaseStats => [70,50,65,105,120,70],
-		:Ability => [PBAbilities::DRIZZLE,PBAbilities::REGENERATOR,PBAbilities::ALOLANTECHNIQUESB],
-		:Movelist => [[0,PBMoves::FIERYDANCE],[1,PBMoves::FIERYDANCE],[1,PBMoves::ABSORB],[5,PBMoves::EMBER],
-					 [9,PBMoves::WILLOWISP],[15,PBMoves::POISONPOWDER],[15,PBMoves::MEGADRAIN],[17,PBMoves::WATERPULSE],
-					 [21,PBMoves::GIGADRAIN],[21,PBMoves::BUBBLEBEAM],[28,PBMoves::QUIVERDANCE],[28,PBMoves::VICTORYDANCE],
-					 [29,PBMoves::HYDROPUMP],[37,PBMoves::SYNTHESIS],[42,PBMoves::AQUARING],[42,PBMoves::ENERGYBALL],
-					 [46,PBMoves::PETALDANCE],[50,PBMoves::SCALD],[50,PBMoves::PETALBLIZZARD],
-					 [55,PBMoves::FIREBLAST],[70,PBMoves::INFERNO],[80,PBMoves::INFERNALFIREBLAST],[80,PBMoves::INFERNALWATERBLAST],[80,PBMoves::LEAFSTORM]],
-		:Weight => 154,
-		:Height => 11
-	},
-	"Galarian" => {
-		:DexEntry => "The mysterious energy cointaned in the various Dens that can be found in Galar have given this Pokèmon the ability to artistically paint anything and anyone.",
-		:Type1 => PBTypes::NORMAL,
-		:Type2 => PBTypes::NORMAL,
-		:BaseStats => [80,80,80,80,80,80],
-		:Ability => [PBAbilities::INTERFERENCE,PBAbilities::PERVASIVENESS,PBAbilities::TRAITINHERITANCE],
-		:Movelist => [[1,PBMoves::DOODLE],[1,PBMoves::SKETCH],[11,PBMoves::SKETCH],[21,PBMoves::SKETCH],[31,PBMoves::SKETCH],[41,PBMoves::SKETCH],[51,PBMoves::SKETCH],[61,PBMoves::SKETCH],[71,PBMoves::SKETCH],[81,PBMoves::SKETCH],[91,PBMoves::SKETCH]],
-		:Weight => 192,
-		:Height => 12
-	},
-	"Paldean" => {
-		:DexEntry => "From enjoying sunbathing, to dancing under the sun. The researchers think this species was influenced by the folklore of the place it comes from, thus evolving into the skillful dance it is nowadays.",
-		:Type2 => PBTypes::FAIRY,
-		:Type1 => PBTypes::FIGHTING,
-		:BaseStats => [80,75,85,110,50,80],
-		:Ability => [PBAbilities::TRIAGE,PBAbilities::HUGEPOWER,PBAbilities::GRANDIOSE],
-		:Movelist => [[0,PBMoves::ROCKSMASH],[1,PBMoves::ROCKSMASH],[1,PBMoves::SHADOWSNEAK],[1,PBMoves::FAKEOUT],[1,PBMoves::ABSORB],[5,PBMoves::LEAFAGE],[9,PBMoves::STUNSPORE],[14,PBMoves::FEINT],[15,PBMoves::POISONPOWDER],[15,PBMoves::MEGADRAIN],[15,PBMoves::POWERUPPUNCH],[21,PBMoves::GIGADRAIN],[21,PBMoves::FUTURESIGHT],[23,PBMoves::PLAYROUGH],[25,PBMoves::DAZZLINGGLEAM],[28,PBMoves::QUIVERDANCE],[29,PBMoves::SLEEPPOWDER],[34,PBMoves::DRAINPUNCH],[35,PBMoves::PSYCHOCUT],[37,PBMoves::LEAFBLADE],[37,PBMoves::RECOVER],[42,PBMoves::VICTORYDANCE],[43,PBMoves::NIGHTSLASH],[47,PBMoves::LEAFSTORM],[53,PBMoves::PETALDANCE],[56,PBMoves::MOONBLAST],[57,PBMoves::CLOSECOMBAT],[70,PBMoves::KNOCKOFF],[77,PBMoves::DESTINYBOND],[84,PBMoves::QUICKGUARD],[84,PBMoves::WIDEGUARD],[91,PBMoves::SPIRITBREAK]],
-		:Weight => 192,
-		:Height => 12
-	},
 	"Rebornian" => {
 		:DexEntry => ".",
 		:Type1 => PBTypes::ICE,
@@ -9982,53 +9853,6 @@ PBSpecies::LILLIGANT => {
 		:Weight => 235,
 		:Height => 14
 	},
-	"Celestial" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::FLYING,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [85,100,90,100,85,80], #? Celestial adds +60 to BST
-		:Ability => [PBAbilities::AERILATE,PBAbilities::DRIZZLE,PBAbilities::CELESTIALAURA,PBAbilities::CELESTIALREINCARNATION],
-		:Movelist => [[0,PBMoves::FEATHERDANCE],[0,PBMoves::FURYSWIPES],[0,PBMoves::FURYATTACK],[1,PBMoves::FEATHERDANCE],
-					[1,PBMoves::ABSORB],[1,PBMoves::ENDEAVOR],[1,PBMoves::QUICKATTACK],[1,PBMoves::SUCKERPUNCH],[1,PBMoves::PECK],[5,PBMoves::AERIALACE],[5,PBMoves::FAKEOUT],[5,PBMoves::FALSESWIPE],[9,PBMoves::STUNSPORE],[10,PBMoves::TRIATTACK],[10,PBMoves::SLASH],[15,PBMoves::POISONPOWDER],[15,PBMoves::DEFOG],[15,PBMoves::THROATCHOP],[18,PBMoves::BULLETSEED],[18,PBMoves::BARRAGE],[18,PBMoves::ROCKBLAST],[18,PBMoves::PINMISSILE],[18,PBMoves::COMETPUNCH],[18,PBMoves::FURYATTACK],[18,PBMoves::SPIKECANNON],[20,PBMoves::SWIFT],[21,PBMoves::GIGADRAIN],[21,PBMoves::FACADE],[21,PBMoves::DRILLPECK],[25,PBMoves::BODYSLAM],[25,PBMoves::HEADBUTT],[25,PBMoves::DARKPULSE],[28,PBMoves::QUIVERDANCE],[29,PBMoves::SLEEPPOWDER],[29,PBMoves::CHIPAWAY],[31,PBMoves::VICTORYDANCE],[33,PBMoves::HYPERVOICE],[33,PBMoves::CRUSHCLAW],[35,PBMoves::TAILWIND],[37,PBMoves::LEAFBLADE],[37,PBMoves::CRUNCH],[37,PBMoves::ROOST],[42,PBMoves::VICTORYDANCE],[45,PBMoves::HYPERBEAM],[46,PBMoves::HYPERFANG],[47,PBMoves::ACROBATICS],[50,PBMoves::EXTREMESPEED],[50,PBMoves::THRASH],[53,PBMoves::PETALDANCE],[55,PBMoves::KNOCKOFF],[57,PBMoves::CLOSECOMBAT],[59,PBMoves::GIGAIMPACT],[60,PBMoves::LEAFSTORM],[80,PBMoves::STORMCUTTER],[80,PBMoves::POWERTRIP],[90,PBMoves::BOOMBURST],[100,PBMoves::REVIVALBLESSING]
-					],
-	},
-	"Cosmic" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::COSMIC,
-		:Type2 => PBTypes::BUG,
-		:BaseStats => [170,40,115,35,40,115], #? Cosmic adds +35 to BST
-		:Ability => [PBAbilities::TOXICDEBRIS,PBAbilities::MOXIE,PBAbilities::PURIFYINGSALT],
-		:Movelist => [[0,PBMoves::COSMICBARRAGE],[1,PBMoves::COSMICBARRAGE],[1,PBMoves::ABSORB],[5,PBMoves::LEAFAGE],
-					 [9,PBMoves::STUNSPORE],[15,PBMoves::POISONPOWDER],[15,PBMoves::TWINEEDLE],[15,PBMoves::MEGADRAIN],[15,PBMoves::ROCKPOLISH],[18,PBMoves::BULLETSEED],[18,PBMoves::BARRAGE],[18,PBMoves::ROCKBLAST],[18,PBMoves::PINMISSILE],[18,PBMoves::COMETPUNCH],[18,PBMoves::FURYATTACK],[18,PBMoves::SPIKECANNON],[20,PBMoves::BUGBITE],[21,PBMoves::GIGADRAIN],[21,PBMoves::LEECHLIFE],[21,PBMoves::ENERGYBALL],[25,PBMoves::ROCKBLAST],[25,PBMoves::POWERGEM],[25,PBMoves::FURYCUTTER],[28,PBMoves::QUIVERDANCE],[29,PBMoves::SLEEPPOWDER],[30,PBMoves::FELLSTINGER],[30,PBMoves::ROCKSLIDE],[30,PBMoves::ASTRALSHOT],[34,PBMoves::VICTORYDANCE],[35,PBMoves::ACCELEROCK],[37,PBMoves::LEAFBLADE],[37,PBMoves::MOONLIGHT],[37,PBMoves::MORNINGSUN],[40,PBMoves::WIDEGUARD],[42,PBMoves::RECOVER],[45,PBMoves::COSMICRAY],[47,PBMoves::LEAFSTORM],[48,PBMoves::STEAMROLLER],[50,PBMoves::METEORBEAM],[50,PBMoves::STRENGTHSAP],[50,PBMoves::FIRSTIMPRESSION],[53,PBMoves::PETALDANCE],[55,PBMoves::CAUSTICBREATH],[55,PBMoves::GEMSTONEGLIMMER],[55,PBMoves::STONEEDGE],[57,PBMoves::CLOSECOMBAT],[70,PBMoves::DECRYSTALLIZATION],[75,PBMoves::COMETSHOWER],[80,PBMoves::SALTCURE],[111,PBMoves::BATONPASS]],
-	},
-	"Delta1" => {
-		:DexEntry => "The flame atop its head burns so intensely that not even water can douse it. It has been know to help guide diving humans to safety.",
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [70,60,75,90,110,75],
-		:Ability => [PBAbilities::STORMDRAIN,PBAbilities::FLASHFIRE,PBAbilities::REGENERATOR],
-		:Movelist => [[1,PBMoves::BUBBLE],[1,PBMoves::AQUARING],[1,PBMoves::EMBER],[1,PBMoves::RECOVER],[10,PBMoves::CONFUSERAY],[28,PBMoves::TAILGLOW],[46,PBMoves::HYDROPUMP],[50,PBMoves::FIERYDANCE]],
-		:EggMoves => [PBMoves::ACIDARMOR,PBMoves::BUBBLEBEAM,PBMoves::ENTRAINMENT,PBMoves::FLAMEBURST,PBMoves::MIST,PBMoves::MYSTICALFIRE,PBMoves::REFLECTTYPE,PBMoves::ACID,PBMoves::AFTERYOU,PBMoves::AQUATAIL,PBMoves::BIND,PBMoves::EARTHPOWER,PBMoves::ENDEAVOR,PBMoves::ENDURE,PBMoves::GASTROACID,PBMoves::GIGADRAIN,PBMoves::HEALBELL,PBMoves::HEATWAVE,PBMoves::MAGICCOAT,PBMoves::MIMIC,PBMoves::PAINSPLIT,PBMoves::SIGNALBEAM,PBMoves::SNORE,PBMoves::SPITE,PBMoves::WATERPULSE,PBMoves::WHIRLPOOL]
-	},
-	"Delta2" => {
-		:DexEntry => "Capable of producing massive barriers that provide weaker Pokémon with a sanctuary, it observed the Torren Region from afar during its greatest times of crisis.",
-		:Type1 => PBTypes::FAIRY,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [70,60,75,90,110,75],
-		:Ability => [PBAbilities::SERENEGRACE,PBAbilities::SYNCHRONIZE,PBAbilities::HEALER],
-		:Movelist => [[1,PBMoves::FAIRYWIND],[1,PBMoves::FEATHERDANCE],[1,PBMoves::GUST],[1,PBMoves::ROOST],[10,PBMoves::SWEETKISS],[28,PBMoves::AGILITY],[46,PBMoves::AURASPHERE],[50,PBMoves::MOONBLAST]],
-		:EggMoves => [PBMoves::BABYDOLLEYES,PBMoves::CHARM,PBMoves::DISARMINGVOICE,PBMoves::ENTRAINMENT,PBMoves::MISTYTERRAIN,PBMoves::WHIRLWIND,PBMoves::ACID,PBMoves::AFTERYOU,PBMoves::AIRCUTTER,PBMoves::AURASPHERE,PBMoves::BOUNCE,PBMoves::DEFOG,PBMoves::ENDEAVOR,PBMoves::ENDURE,PBMoves::HEALBELL,PBMoves::HEATWAVE,PBMoves::HELPINGHAND,PBMoves::HURRICANE,PBMoves::HYPERVOICE,PBMoves::ICYWIND,PBMoves::LASTRESORT,PBMoves::MAGICCOAT,PBMoves::MAGICROOM,PBMoves::MIMIC,PBMoves::ROLEPLAY,PBMoves::SKYATTACK,PBMoves::SNORE,PBMoves::SWIFT,PBMoves::TAILWIND,PBMoves::TWISTER,PBMoves::WONDERROOM]
-	},
-	"TOTEM" => {
-		:Type1 => PBTypes::STELLAR,
-		:BaseStats => [200,80,150,145,160,150],
-		:Ability => [PBAbilities::MULTICORE]
-	},
-	"Mega" => {
-		:Type1 => PBTypes::GRASS,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [70,60,100,110,140,100] #! Mega adds +100 to BST
-	}
 },
 
 #! This stays untouched <3
