@@ -1951,15 +1951,6 @@ PBSpecies::MEOWSTIC => {
 	}
 },
 
-PBSpecies::KINGAMBIT => {
-	#Gender difference
-	"Female" => {
-		:BaseStats => [100,135,50,120,60,85],
-		:Ability => [PBAbilities::KEENEYE,PBAbilities::INFILTRATOR,PBAbilities::COMPETITIVE,
-			PBAbilities::SHARPNESS,PBAbilities::SHACKLE,PBAbilities::PARRY]
-	}
-},
-
 PBSpecies::HAWLUCHA => {
 	:FormName => {1 => "Nuclear"},
 
@@ -8346,21 +8337,14 @@ PBSpecies::RIOLU => {
 
 PBSpecies::GRENINJA => {
 	:FormName => {
-		1 => "Zalophus-Mega",
-		2 => "Genji-Mega"
+		1 => "BattleBond",
 	},
 
-	"Zalophus-Mega" => {
+	"BattleBond" => {
 		:BaseStats => [72,145,67,132,153,71],
 		:Ability => PBAbilities::SHARPNESS,
 		:Weight => 40
 	},
-
-	"Genji-Mega" => {
-		:BaseStats => [36,163,67,150,171,71],
-		:Ability => PBAbilities::SHARPNESS,
-		:Weight => 80
-	}
 },
 
 PBSpecies::CHIMCHAR => {
