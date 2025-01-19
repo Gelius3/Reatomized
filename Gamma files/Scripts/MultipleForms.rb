@@ -3058,18 +3058,14 @@ PBSpecies::NINETALES => {
 
 PBSpecies::DIGLETT => {
 	:FormName => {
-		1 => "Alolan",
-		3 => "Cosmic"
+		1 => "Alolan"
 	},
 
 	:OnCreation => proc{
 		aMaps=[33, 34, 35, 199, 201, 202, 203, 204]
-		cMaps=[305]
-		# Map IDs for Alolan and Cosmic forms respectively
+		# Map IDs for Alolan
 		if $game_map && aMaps.include?($game_map.map_id)
 			next 1
-		elsif $game_map && cMaps.include?($game_map.map_id)
-			next 3
 		else
 			next 0
 		end
@@ -3090,30 +3086,12 @@ PBSpecies::DIGLETT => {
 				PBMoves::METALSOUND,PBMoves::HONECLAWS,PBMoves::PURSUIT,PBMoves::THRASH],
 		:Weight => 10
 	},
-
-	"Cosmic" => {
-		:DexEntry => "Its head sports an opal that gives it extra sturdiness.",
-		:Type1 => PBTypes::ROCK,
-		:Type2 => PBTypes::COSMIC,
-		:BaseStats => [45,30,55,90,40,35],
-		:Ability => [PBAbilities::SANDSTREAM,PBAbilities::SANDFORCE,PBAbilities::PROTEAN],
-		:Movelist => [[1,PBMoves::SANDATTACK],[1,PBMoves::METALCLAW],[4,PBMoves::GROWL],
-			[7,PBMoves::ASTONISH],[10,PBMoves::MUDSLAP],[14,PBMoves::MAGNITUDE],
-			[18,PBMoves::BULLDOZE],[22,PBMoves::SUCKERPUNCH],[25,PBMoves::MUDBOMB],
-			[28,PBMoves::EARTHPOWER],[31,PBMoves::DIG],[35,PBMoves::IRONHEAD],
-			[39,PBMoves::EARTHQUAKE],[43,PBMoves::FISSURE]],
-		:EggMoves => [PBMoves::ANCIENTPOWER,PBMoves::BEATUP,PBMoves::ENDURE,PBMoves::FEINTATTACK,
-				PBMoves::FINALGAMBIT,PBMoves::REVERSAL,PBMoves::FLASH,PBMoves::HEADBUTT,PBMoves::MEMENTO,
-				PBMoves::METALSOUND,PBMoves::HONECLAWS,PBMoves::PURSUIT,PBMoves::THRASH],
-		:Weight => 10
-	},
 },
 
 PBSpecies::DUGTRIO => {
 	:FormName => {
 		1 => "Alolan",
-		2 => "Mega",
-		3 => "Cosmic"
+		2 => "Mega"
 	},
 
 	:OnCreation => proc{
@@ -3144,19 +3122,6 @@ PBSpecies::DUGTRIO => {
 		:BaseStats => [85,120,75,135,60,70],
 		:Ability => [PBAbilities::MOLDBREAKER],
 	},
-
-	"Cosmic" => {
-		:DexEntry => "It's head is surrounded by Cosmic opals that give it protection from the ambient above and below.",
-		:Type1 => PBTypes::ROCK,
-		:Type2 => PBTypes::COSMIC,
-		:BaseStats => [68,93,70,108,68,78], #? Cosmic adds +60 to BST
-		:EVs => [0,0,2,0,0,0],
-		:Ability => [PBAbilities::SANDSTREAM,PBAbilities::SANDFORCE,PBAbilities::PROTEAN],
-		:Movelist => [[0,PBMoves::SANDTOMB],[1,PBMoves::ROTOTILLER],[1,PBMoves::DEFENSECURL],[1,PBMoves::NIGHTSLASH],
-			[1,PBMoves::TRIATTACK],[1,PBMoves::SCRATCH],[1,PBMoves::ROCKTOMB],[1,PBMoves::SANDATTACK],[1,PBMoves::METALCLAW],[1,PBMoves::GROWL],[4,PBMoves::GROWL],[7,PBMoves::ASTONISH],[10,PBMoves::MUDSLAP],[14,PBMoves::MAGNITUDE],
-			[16,PBMoves::ROCKTHROW],[18,PBMoves::SMACKDOWN],[18,PBMoves::BULLDOZE],[22,PBMoves::SUCKERPUNCH],[25,PBMoves::MUDBOMB],[28,PBMoves::ROCKTOMB],[28,PBMoves::STEALTHROCK],[30,PBMoves::ROCKBLAST],[30,PBMoves::EARTHPOWER],[31,PBMoves::ROCKSLIDE],[35,PBMoves::DIG],[38,PBMoves::IRONDEFENSE],[40,PBMoves::DOUBLEEDGE],[41,PBMoves::SLASH],[41,PBMoves::IRONHEAD],[42,PBMoves::STONEEDGE],[47,PBMoves::EARTHQUAKE],[50,PBMoves::TRIPLEEDGE],[53,PBMoves::FISSURE],[60,PBMoves::HEAVYSLAM],[70,PBMoves::METALBURST]],
-		:Weight => 666
-	}
 },
 
 PBSpecies::RELICANTH => {
