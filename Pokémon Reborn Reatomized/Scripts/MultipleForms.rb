@@ -9820,28 +9820,6 @@ PBSpecies::LILLIGANT => {
 	},
 },
 
-#! This stays untouched <3
-PBSpecies::TEDDINOMO => {
-	:FormName => {
-		1 => "Saiyan",
-		4 => "Kaio-ken"
-	},
-
-	"Saiyan" => {
-		:BaseStats => [121,151,71,136,75,66], #! BST is 620
-		:Ability => PBAbilities::PLOTARMOR,
-		:Weight => 9001
-	},
-
-	"Kaio-ken" => {
-		:Type1 => PBTypes::NORMAL,
-		:Type2 => PBTypes::COSMIC,
-		:BaseStats => [121,151,71,136,75,66], #! BST is 620
-		:Ability => PBAbilities::ANCIENTPRESSURE,
-		:Weight => 9001
-	},
-},
-
 PBSpecies::DEDENNE => {
 	:FormName => {
 		1 => "Dev",
