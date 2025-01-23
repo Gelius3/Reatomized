@@ -9905,7 +9905,6 @@ class PokeBattle_Move_176 < PokeBattle_Move
       spatkmult *= 1.5 if attacker.hasWorkingItem(:CHOICESPECS)
       spatkmult *= 2 if attacker.hasWorkingItem(:DEEPSEATOOTH) && (attacker.pokemon.species == PBSpecies::CLAMPERL)
       spatkmult *= 2 if attacker.hasWorkingItem(:LIGHTBALL) && (attacker.pokemon.species == PBSpecies::PIKACHU || attacker.pokemon.species == PBSpecies::PICHU)
-      spatkmult *= 1.3 if attacker.hasWorkingItem(:SAIYANITE) && (attacker.pokemon.species == PBSpecies::TEDDINOMO)
       spatkmult *= 1.5 if attacker.ability == PBAbilities::FLAREBOOST && (attacker.status==PBStatuses::BURN || @battle.FE == PBFields::BURNINGF)
       spatkmult *= 1.5 if attacker.ability == PBAbilities::MINUS && attacker.pbPartner.ability == PBAbilities::PLUS
       spatkmult *= 1.5 if attacker.ability == PBAbilities::PLUS && attacker.pbPartner.ability == PBAbilities::MINUS
@@ -12555,7 +12554,6 @@ class PokeBattle_Move_915 < PokeBattle_Move
 
   def pbBaseDamage(basedmg,attacker,opponent)
     ret=@calcbasedmg
-    ret *= 0.25 if (attacker.species == PBSpecies::MISSINGNO)
     @calcbasedmg+=basedmg
     return ret
   end

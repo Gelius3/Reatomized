@@ -183,7 +183,6 @@ class PokemonStorage
     pkmn.form=2 if pkmn.species == PBSpecies::SABLEYE && pkmn.form == 3
     pkmn.form=0 if pkmn.species == PBSpecies::EISCUE && pkmn.form == 1
     pkmn.form=0 if pkmn.species == PBSpecies::PALAFIN && pkmn.form != 0
-    pkmn.form=0 if pkmn.species == PBSpecies::TEDDINOMO && pkmn.form != 0
     pkmn.form=1 if pkmn.species == PBSpecies::INFERNAPE && pkmn.form == 2
     pkmn.form=0 if pkmn.species == PBSpecies::GRENINJA && pkmn.form == 1
     pkmn.form=0 if pkmn.species == PBSpecies::GYARADOS && pkmn.form == 4

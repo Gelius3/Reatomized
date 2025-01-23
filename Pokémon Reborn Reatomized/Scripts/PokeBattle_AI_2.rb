@@ -2397,11 +2397,6 @@ class PokeBattle_AI
 				recoveramount = @attacker.totalhp/2.0
 				recoveramount = @attacker.totalhp*0.66 if @mondata.skill>=BESTSKILL && @move.id==PBMoves::HEALORDER && @battle.FE == PBFields::FORESTF # Forest
 				miniscore = recovercode(recoveramount)
-				if (attacker.species == PBSpecies::MISSINGNO2 && attacker.form==47)
-					if @attacker.hp < 0.7*@attacker.totalhp
-						miniscore*=2
-					end
-				end
 			when 0xd6 # Roost
 				miniscore = recovercode()
 				bestmove=checkAIbestMove()
@@ -7375,8 +7370,6 @@ miniscore*=5   if (@battle.FE == PBFields::GRASSYT && @attacker.species == PBSpe
 				abilityscore*=1.3 if attacker.moves.any? {|moveloop| moveloop!=nil && moveloop.pbType(attacker)==PBTypes::GHOST}
 			when PBAbilities::MERCILESS
 				abilityscore*=1.3
-			when PBAbilities::PLOTARMOR
-				abilityscore*=-9999 if attacker.form == 4 && attacker.species == PBSpecies::TEDDINOMO
 			when PBAbilities::WATERBUBBLE
 				abilityscore*=1.5
 				abilityscore*=1.3 if attacker.moves.any? {|moveloop| moveloop!=nil && moveloop.pbType(attacker)==PBTypes::FIRE}
@@ -9343,15 +9336,6 @@ miniscore*=5   if (@battle.FE == PBFields::GRASSYT && @attacker.species == PBSpe
 		noswitchscore = statantiscore + hazardantiscore + betterswitchscore + secondwindscore
 		noswitchscore += 999 if Reborn == true && !@battle.doublebattle && @battle.opponent.name=="Priscilla"
 		
-		#!teddinomoIsHere = false
-		#!for i in @mondata.party
-		#!	next if i.nil?
-		#!	next if @mondata.party.index(i) == @attacker.pokemonIndex
-		#!	next if @mondata.partyroles[@mondata.party.find_index(i)].include?(PBSpecies::TEDDINOMO)
-		#!	teddinomoIsHere = true
-		#!end
-		#!finalscore-=9999 if teddinomoIsHere && @mondata.party.index(i).species == PBSpecies::TEDDINOMO
-
 		PBDebug.log(sprintf("%s: initial noswitchscore: %d",PBSpecies.getName(@attacker.species),noswitchscore)) if $INTERNAL
 		finalscore = switchscore - noswitchscore
 		finalscore/=2.0 if @mondata.skill<HIGHSKILL
@@ -10209,10 +10193,6 @@ miniscore*=5   if (@battle.FE == PBFields::GRASSYT && @attacker.species == PBSpe
 				if (attacker.pokemon.species == PBSpecies::PIKACHU || attacker.pokemon.species == PBSpecies::PICHU)
 					atk=(atk*2.0).round
 				end
-			elsif (attitemworks && attacker.item == PBItems::SAIYANITE)
-				if (attacker.pokemon.species == PBSpecies::TEDDINOMO)
-					atk=(atk*1.3).round
-				end
 			elsif (attitemworks && attacker.item == PBItems::CHOICEBAND) && move.pbIsPhysical?(type)
 				atk=(atk*1.5).round
 			elsif (attitemworks && attacker.item == PBItems::CHOICESPECS) && move.pbIsSpecial?(type)
@@ -10317,8 +10297,6 @@ miniscore*=5   if (@battle.FE == PBFields::GRASSYT && @attacker.species == PBSpe
 				defense=(defense*1.5).round if opponent.pokemon.species == PBSpecies::PIKACHU
 			when PBItems::LIGHTBALL
 				defense=(defense*1.5).round if (opponent.pokemon.species == PBSpecies::PIKACHU || opponent.pokemon.species == PBSpecies::PICHU)
-			when PBItems::SAIYANITE
-				defense=(defense*1.1).round if opponent.pokemon.species == PBSpecies::TEDDINOMO
 			end
 		end		
 

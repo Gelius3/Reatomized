@@ -734,7 +734,6 @@ def pbMiniCheckEvolution(pokemon,evonib,level,poke)
   koffingMaps=[696,697,698,699,700,701,702]
   mrmimeMaps=[412,710,711,712,725,713,716,718,726,719,720,727,721,728,717,714,722,742,715,723,724,729]
   remoraidMaps=[234,465,840,875] #Rebornian Octillery (Chrysolia Forest, Chrysolia Deepwoods)
-  heroMaps=[27] #Teddinomo atop Pyrous Mountain
   case evonib
     when PBEvolution::Happiness
       return poke if pokemon.happiness>=220
@@ -885,8 +884,6 @@ def pbMiniCheckEvolution(pokemon,evonib,level,poke)
         end
       elsif (pokemon.species==PBSpecies::MAGNETON && pokemon.form==0) || pokemon.species==PBSpecies::NOSEPASS || pokemon.species==PBSpecies::CHARJABUG
         return poke if magneticMaps.include?($game_map.map_id)
-      elsif pokemon.species==PBSpecies::TEDDIURSA #Teddinomo
-        return poke if heroMaps.include?($game_map.map_id) && pokemon.level>=40
       else
         return poke if $game_map.map_id==level
       end

@@ -625,7 +625,7 @@ def pbLoadPokemonBitmap(pokemon, back=false)
   return pbLoadPokemonBitmapSpecies(pokemon,pokemon.species,back)
 end
 
-ShitList = [PBSpecies::EXEGGUTOR,PBSpecies::KYUREM,PBSpecies::TANGROWTH,PBSpecies::STEELIX,PBSpecies::AVALUGG,PBSpecies::CLAWITZER,PBSpecies::SWALOT,PBSpecies::URAYNE,PBSpecies::TEDDINOMO,PBSpecies::GARCHOMP,PBSpecies::REGIGIGAS,PBSpecies::DEOXYS]
+ShitList = [PBSpecies::EXEGGUTOR,PBSpecies::KYUREM,PBSpecies::TANGROWTH,PBSpecies::STEELIX,PBSpecies::AVALUGG,PBSpecies::CLAWITZER,PBSpecies::SWALOT,PBSpecies::URAYNE,PBSpecies::GARCHOMP,PBSpecies::REGIGIGAS,PBSpecies::DEOXYS]
 # This is a lie now; leaving it in case we care later: Note: Returns an AnimatedBitmap, not a Bitmap
 def pbLoadPokemonBitmapSpecies(pokemon, species, back=false)
   #load dummy bitmap

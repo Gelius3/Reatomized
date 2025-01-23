@@ -1775,8 +1775,6 @@ class PokeBattle_Move
         atkmult=(atkmult*2.0).round if attacker.pokemon.species == PBSpecies::CLAMPERL && pbIsSpecial?(type) && @battle.FE !=24
       elsif attacker.item == PBItems::LIGHTBALL
         atkmult=(atkmult*2.0).round if attacker.pokemon.species == PBSpecies::PIKACHU && @battle.FE !=24
-      elsif attacker.item == PBItems::SAIYANITE
-        atkmult=(atkmult*1.3).round if attacker.pokemon.species == PBSpecies::TEDDINOMO && @battle.FE !=24
       elsif attacker.item == PBItems::CHOICEBAND
         atkmult=(atkmult*1.5).round if pbIsPhysical?(type)
       elsif attacker.item == PBItems::CHOICESPECS 
@@ -1966,9 +1964,6 @@ class PokeBattle_Move
     end
     if opponent.item == PBItems::LIGHTBALL && opponent.pokemon.species == PBSpecies::PIKACHU && @battle.FE != PBFields::GLITCHF
       defmult=(defmult*1.5).round
-    end
-    if opponent.item == PBItems::SAIYANITE && opponent.pokemon.species == PBSpecies::TEDDINOMO && @battle.FE != PBFields::GLITCHF
-      defmult=(defmult*1.1).round
     end
     if opponent.hasWorkingItem(:ASSAULTVEST) && pbHitsSpecialStat?(type) && @battle.FE != PBFields::GLITCHF
       defmult=(defmult*1.5).round

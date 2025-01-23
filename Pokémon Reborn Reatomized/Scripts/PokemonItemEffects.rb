@@ -3391,13 +3391,13 @@ ItemHandlers::UseOnPokemon.add(:PARTNERRIBBON,proc{|item,pokemon,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:GALARIANFEATHER,proc{|item,pokemon,scene|
-  if [PBSpecies::ARTICUNO,PBSpecies::ZAPDOS,PBSpecies::MOLTRES, PBSpecies::THUFIZER].include?(pokemon.species) && pokemon.form==0 && pokemon.hp>=0
+  if [PBSpecies::ARTICUNO,PBSpecies::ZAPDOS,PBSpecies::MOLTRES].include?(pokemon.species) && pokemon.form==0 && pokemon.hp>=0
     pokemon.form=1
     pokemon.resetMoves
     scene.pbRefresh
     scene.pbDisplay(_INTL("{1} changed to its Galarian forme!",pokemon.name))
     next true
-  elsif [PBSpecies::ARTICUNO,PBSpecies::ZAPDOS,PBSpecies::MOLTRES, PBSpecies::THUFIZER].include?(pokemon.species) && pokemon.form==1 && pokemon.hp>=0
+  elsif [PBSpecies::ARTICUNO,PBSpecies::ZAPDOS,PBSpecies::MOLTRES].include?(pokemon.species) && pokemon.form==1 && pokemon.hp>=0
     pokemon.form=0
     pokemon.resetMoves
     scene.pbRefresh

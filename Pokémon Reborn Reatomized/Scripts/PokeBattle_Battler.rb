@@ -1023,8 +1023,6 @@ class PokeBattle_Battler
         speed*=0.5 if self.turncount>=3
       when PBAbilities::WONDERGUARD
         speed*=2 if self.pokemon.species == PBSpecies::SHEDINJA
-      when PBAbilities::PLOTARMOR
-        speed*=1.2 if self.pokemon.species == PBSpecies::TEDDINOMO && self.pokemon.form == 1 ##CHECK FOR SPEED TEDDINOMO
     end
     speed=(speed*0.8).round if (self.ability == PBAbilities::ABSTRACT || self.pbPartner.ability == PBAbilities::ABSTRACT) && @battle.trickroom>0 # Trickster+
     case @battle.FE
@@ -1182,7 +1180,6 @@ class PokeBattle_Battler
     self.form=2 if @species==PBSpecies::SABLEYE && @pokemon.form==3
     self.form=0 if @species==PBSpecies::EISCUE && @pokemon.form==1
     self.form=0 if @species==PBSpecies::PALAFIN && @pokemon.form!=0
-    self.form=0 if @species==PBSpecies::TEDDINOMO && @pokemon.form!=0
     self.form=1 if @species==PBSpecies::INFERNAPE && @pokemon.form==2
     self.form=0 if @species==PBSpecies::GRENINJA && @pokemon.form==1
     self.form=0 if @species==PBSpecies::GYARADOS && @pokemon.form==4
@@ -1463,29 +1460,6 @@ class PokeBattle_Battler
         end
       end
     end
-    # Missing No 2
-    if (self.pokemon && self.pokemon.species == PBSpecies::MISSINGNO2) && !self.isFainted? && !@battle.pbOwnedByPlayer?(@index)
-        if @hp<=((@totalhp/2).floor)
-          if self.form == 41
-            @battle.pbCommonAnimation("UltraBurst",self,nil)
-            self.form = 42; transformed=true
-          end
-        end
-        if self.form == 43
-          self.form = 44
-          @battle.pbCommonAnimation("MegaEvolution",self,nil)
-          transformed=true
-        end
-        if !@effects[PBEffects::Transform] && !thismove.nil?
-          if (self.form == 48 || self.form == 49) && thismove.basedamage > 0
-            self.form = 47 ; transformed = true
-          elsif self.form == 47 && thismove.basedamage == 0
-            randomnum = rand(2)
-            randomnum==0 ? self.form = 48 : self.form = 49
-            transformed = true
-          end
-        end
-    end
     # Rage Mode
     if (self.pokemon && self.pokemon.species == PBSpecies::INFERNAPE) && !self.isFainted?
       if self.ability == PBAbilities::RAGINGBLAZE
@@ -1661,36 +1635,6 @@ class PokeBattle_Battler
             @battle.pbDisplay(_INTL("{1}'s shields went down!",pbThis))
           end
         end
-      end
-    end
-    # Missing No 2
-    if (self.pokemon && self.pokemon.species == PBSpecies::MISSINGNO2) && !self.isFainted? && !@battle.pbOwnedByPlayer?(@index)
-      if self.form == 44 && self.turncount>0
-        randomnum = rand(2)
-        randomnum==0 ? self.form = 46 : self.form = 45
-        @battle.pbCommonAnimation("MegaEvolution",self,nil)
-        pbUpdate(true)
-        @battle.scene.pbChangePokemon(self,@pokemon)
-      end
-      if (self.form == 45 || self.form == 46) && self.turncount>1
-        self.form = 16
-        @battle.pbCommonAnimation("MegaEvolution",self,nil)
-        pbUpdate(true)
-        @battle.scene.pbChangePokemon(self,@pokemon)
-      end
-      if (self.form == 50 || self.form == 51 || self.form == 52)
-        case self.form
-        when 50
-          randomnum = [51, 52].sample
-        when 51
-          randomnum = [50, 52].sample
-        when 52
-          randomnum = [50, 51].sample
-        end
-        self.form = randomnum
-        @battle.pbCommonAnimation("TypeRoll",self,nil)
-        pbUpdate(true)
-        @battle.scene.pbChangePokemon(self,@pokemon)
       end
     end
     # Zygarde
@@ -2536,18 +2480,6 @@ class PokeBattle_Battler
         self.form=2
       end
     end
-    # Zero to Hero - Teddinomo
-    if (self.species == PBSpecies::TEDDINOMO) && self.ability == PBAbilities::ZEROTOHERO && onactive
-      if (self.form == 0 && (@battle.FE == PBFields::BIGTOPA || @battle.FE == PBFields::HOLYF || @battle.FE == PBFields::NEWW || @battle.FE == PBFields::GUFIELD || @battle.FE == PBFields::DWORLD)) || self.form == 2
-        self.form=1
-        @battle.pbCommonAnimation("MegaEvolution",self,nil)
-        pbUpdate(true)
-        @battle.scene.pbChangePokemon(self,@pokemon)
-        @battle.pbDisplay(_INTL("{1} went Super Saiyan!",pbThis))
-      elsif self.form == 0
-        self.form=2
-      end
-    end
     # ...
     if self.pokemon.species == 1282 && @battle.pbOwnedByPlayer?(@index)
       self.form=0 if self.form!=0
@@ -3360,7 +3292,7 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("The aura manifests itself around {1}!", pbThis(true)))
       self.pbIncreaseStatBasic(PBStats::DEFENSE,1)
       @battle.pbDisplay(_INTL("The aura grows stronger!"))
-      self.pbIncreaseStatBasic(PBStats::SPEED,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO].include?(self.species)
+      self.pbIncreaseStatBasic(PBStats::SPEED,1) unless [PBSpecies::ARCEUS].include?(self.species)
       @battle.pbDisplay(_INTL("The aura's presence is overwhelming!"))
       self.pbIncreaseStatBasic(PBStats::SPATK,1)
       @battle.pbDisplay(_INTL("The aura bursts onto the field!"))
@@ -3368,11 +3300,11 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("The battlefield has been engulfed by the aura!"))
       self.pbIncreaseStatBasic(PBStats::ACCURACY,1)
       @battle.pbDisplay(_INTL("The aura manifested around {1}!", pbThis(true)))
-      self.pbIncreaseStatBasic(PBStats::ATTACK,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
-      self.pbIncreaseStatBasic(PBStats::DEFENSE,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
-      self.pbIncreaseStatBasic(PBStats::SPEED,1) unless [PBSpecies::CRUSTLE, PBSpecies::NECROZMA, PBSpecies::TEDDINOMO, PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species)
-      self.pbIncreaseStatBasic(PBStats::SPATK,1) unless [PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
-      self.pbIncreaseStatBasic(PBStats::SPDEF,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::TEDDINOMO, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::ATTACK,1) unless [PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::DEFENSE,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::SPEED,1) unless [PBSpecies::CRUSTLE, PBSpecies::NECROZMA, PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species)
+      self.pbIncreaseStatBasic(PBStats::SPATK,1) unless [PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
+      self.pbIncreaseStatBasic(PBStats::SPDEF,1) unless [PBSpecies::CRUSTLE, PBSpecies::ARCEUS, PBSpecies::RATICATE].include?(self.species) #? Nerfing for Lin,4 and Lin,5
       @battle.pbDisplay(_INTL("{1}'s aura boosted its stats!",pbThis))
       #* Specific Species Area
       if self.species == PBSpecies::AMBIPOM #! Ambipom
@@ -3393,15 +3325,15 @@ class PokeBattle_Battler
         self.pbIncreaseStatBasic(PBStats::SPATK,1)
         self.pbIncreaseStatBasic(PBStats::ACCURACY,3)
         @battle.pbDisplay(_INTL("{1}'s cosmic aura heightened its stats!",pbThis))
-      elsif self.species == PBSpecies::PYROIMENCE || self.species == PBSpecies::DREADXISTENCE #! Pyroimence and Dreadxistence
-        @battle.pbDisplay(_INTL("{1} is primed to the fight!",pbThis))
-        self.pbIncreaseStatBasic(PBStats::ACCURACY,2)
-        self.effects[PBEffects::FocusEnergy]=1
-        @battle.pbDisplay(_INTL("A substitute barrier protects {1}!",pbThis)) #? substitute barrier announcement
-        self.effects[PBEffects::Substitute]=50
-        @battle.pbDisplay(_INTL("{1}'s aura protects it for a turn!",pbThis))
-        self.effects[PBEffects::Protect]=true
-        self.effects[PBEffects::MultiTurn]=1
+
+     #   @battle.pbDisplay(_INTL("{1} is primed to the fight!",pbThis))
+     #   self.pbIncreaseStatBasic(PBStats::ACCURACY,2)
+     #   self.effects[PBEffects::FocusEnergy]=1
+     #   @battle.pbDisplay(_INTL("A substitute barrier protects {1}!",pbThis)) #? substitute barrier announcement
+     #   self.effects[PBEffects::Substitute]=50
+     #   @battle.pbDisplay(_INTL("{1}'s aura protects it for a turn!",pbThis))
+     #   self.effects[PBEffects::Protect]=true
+     #   self.effects[PBEffects::MultiTurn]=1
       elsif self.species == PBSpecies::VOLCARONA #! Volcarona
         @battle.pbDisplay(_INTL("{1} is primed to the fight!",pbThis))
         self.effects[PBEffects::FocusEnergy]=1
@@ -3438,15 +3370,15 @@ class PokeBattle_Battler
         @battle.pbDisplay(_INTL("The legendary aura's presence shields {1} like a substitute!",pbThis(true)))
         self.effects[PBEffects::Substitute]=100
       elsif self.species == PBSpecies::ARCEUS #! Arceus
-      elsif self.species == PBSpecies::TEDDINOMO #! Teddinomo
-        @battle.pbDisplay(_INTL("You feel the presence of a cosmic aura!"))
-        @battle.pbDisplay(_INTL("The aura shines through {1}!",pbThis(true)))
-        self.pbIncreaseStatBasic(PBStats::ACCURACY,1)
-        @battle.pbDisplay(_INTL("The aura flows stronger!"))
-        self.pbIncreaseStatBasic(PBStats::ACCURACY,1)
-        @battle.pbDisplay(_INTL("The aura expands through the universe!"))
-        self.pbIncreaseStatBasic(PBStats::ACCURACY,3)
-        @battle.pbDisplay(_INTL("The aura's pressure is overwhelming!"))
+
+     #   @battle.pbDisplay(_INTL("You feel the presence of a cosmic aura!"))
+     #   @battle.pbDisplay(_INTL("The aura shines through {1}!",pbThis(true)))
+     #   self.pbIncreaseStatBasic(PBStats::ACCURACY,1)
+     #   @battle.pbDisplay(_INTL("The aura flows stronger!"))
+     #   self.pbIncreaseStatBasic(PBStats::ACCURACY,1)
+     #   @battle.pbDisplay(_INTL("The aura expands through the universe!"))
+     #   self.pbIncreaseStatBasic(PBStats::ACCURACY,3)
+     #   @battle.pbDisplay(_INTL("The aura's pressure is overwhelming!"))
       end
     end
   end
@@ -6808,7 +6740,6 @@ class PokeBattle_Battler
     spatkmult *= 1.5 if self.item == PBItems::CHOICESPECS
     spatkmult *= 2 if self.item == PBItems::DEEPSEATOOTH && self.pokemon.species == PBSpecies::CLAMPERL
     spatkmult *= 2 if self.item == PBItems::LIGHTBALL && self.pokemon.species == PBSpecies::PIKACHU
-    spatkmult *= 1.3 if self.item == PBItems::SAIYANITE && self.pokemon.species == PBSpecies::TEDDINOMO
     spatkmult *= 1.5 if self.ability == PBAbilities::MINUS && self.pbPartner.ability == PBAbilities::PLUS
     spatkmult *= 1.5 if self.ability == PBAbilities::PLUS && self.pbPartner.ability == PBAbilities::MINUS
     spatkmult *= 1.5 if self.ability == PBAbilities::SOLARPOWER && @battle.pbWeather==PBWeather::SUNNYDAY
@@ -6822,7 +6753,6 @@ class PokeBattle_Battler
     #spdefmult *= 1.5 if self.item == PBItems::EEVIUMZ2 && self.species == PBSpecies::EEVEE
     spdefmult *= 1.5 if self.item == PBItems::PIKANIUMZ2 && self.species == PBSpecies::PIKACHU
     spdefmult *= 1.5 if self.item == PBItems::LIGHTBALL && self.species == PBSpecies::PIKACHU
-    spdefmult *= 1.1 if self.item == PBItems::SAIYANITE && self.species == PBSpecies::TEDDINOMO
     spdefmult *= 2 if self.item == PBItems::DEEPSEASCALE && self.pokemon.species == PBSpecies::CLAMPERL
     spdefmult *= 1.5 if self.item == PBItems::METALPOWDER && self.pokemon.species == PBSpecies::DITTO && !self.effects[PBEffects::Transform]
     spdefmult *= 1.5 if self.ability == PBAbilities::FLOWERGIFT && @battle.pbWeather==PBWeather::SUNNYDAY

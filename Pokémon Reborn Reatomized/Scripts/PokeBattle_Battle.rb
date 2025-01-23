@@ -6139,7 +6139,6 @@ class PokeBattle_Battle
       i.form=2 if i.species == PBSpecies::SABLEYE && i.form == 3
       i.form=0 if i.species == PBSpecies::EISCUE && i.form == 1
       i.form=0 if i.species == PBSpecies::PALAFIN && i.form != 0
-      i.form=0 if i.species == PBSpecies::TEDDINOMO && i.form != 0
       i.form=1 if i.species == PBSpecies::INFERNAPE && i.form == 2
       i.form=0 if i.species == PBSpecies::GRENINJA && i.form == 1
       i.form=0 if i.species == PBSpecies::GYARADOS && i.form == 4

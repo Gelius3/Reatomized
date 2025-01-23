@@ -4,10 +4,6 @@ PBSpecies::UNOWN => {
 	:OnCreation => proc{rand(28)}
 },
 
-PBSpecies::MISSINGNO => {
-	:OnCreation => proc{rand(6)}
-},
-
 PBSpecies::FLABEBE => {
 	:OnCreation => proc{rand(5)}
 },
@@ -4148,29 +4144,6 @@ PBSpecies::MOLTRES => {
 	}
 },
 
-PBSpecies::THUFIZER => {
-	:FormName => {1 => "Galarian"},
-
-	"Galarian" => {
-		:DexEntry => "This fusion is more stable than its Kantonian counterpart, but it emits an aura of great malice.",
-		:Type1 => PBTypes::PFD,
-		:EVs => [0,0,0,0,1,2],
-		:BaseStats => [90,98,88,95,103,105],
-		:Ability => [PBAbilities::COMPETITIVE,PBAbilities::BERSERK],
-		:Movelist => [[1,PBMoves::GUST],[1,PBMoves::LEER],[5,PBMoves::PAYBACK],[10,PBMoves::SAFEGUARD],
-			[15,PBMoves::WINGATTACK],[20,PBMoves::AGILITY],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::SUCKERPUNCH],
-			[35,PBMoves::AIRSLASH],[40,PBMoves::AFTERYOU],[45,PBMoves::FIERYWRATH],[50,PBMoves::NASTYPLOT],
-			[55,PBMoves::HURRICANE],[60,PBMoves::ENDURE],[65,PBMoves::MEMENTO],[70,PBMoves::SKYATTACK],[1,PBMoves::PECK],[1,PBMoves::FOCUSENERGY],[5,PBMoves::ROCKSMASH],
-			[10,PBMoves::LIGHTSCREEN],[15,PBMoves::PLUCK],[20,PBMoves::AGILITY],[25,PBMoves::ANCIENTPOWER],
-			[30,PBMoves::BRICKBREAK],[35,PBMoves::DRILLPECK],[40,PBMoves::QUICKGUARD],[45,PBMoves::THUNDEROUSKICK],
-			[50,PBMoves::BULKUP],[55,PBMoves::COUNTER],[60,PBMoves::DETECT],[65,PBMoves::CLOSECOMBAT],[70,PBMoves::REVERSAL],[1,PBMoves::GUST],[1,PBMoves::PSYCHOSHIFT],[5,PBMoves::CONFUSION],[10,PBMoves::REFLECT],
-			[15,PBMoves::HYPNOSIS],[20,PBMoves::AGILITY],[25,PBMoves::ANCIENTPOWER],[30,PBMoves::TAILWIND],
-			[35,PBMoves::PSYCHOCUT],[40,PBMoves::RECOVER],[45,PBMoves::FREEZINGGLARE],[50,PBMoves::DREAMEATER],
-			[55,PBMoves::HURRICANE],[60,PBMoves::MINDREADER],[65,PBMoves::FUTURESIGHT],[70,PBMoves::TRICKROOM]],
-		:Weight => 584
-	}
-},
-
 PBSpecies::SLOWPOKE => {
 	:FormName => {2 => "Galarian"},
 
@@ -5169,29 +5142,6 @@ PBSpecies::TSAREENA => {
 #todo##################### Multicore Variants #####################todo#
 
 #? i should've done this before...
-
-PBSpecies::PYTHONOVA => {
-	:FormName => {
-		1 => "Mega",
-		19 => "Dev"
-	},
-	:DefaultForm => 0,
-	:MegaForm => 1,
-
-	"Mega" => {
-		:Type1 => PBTypes::GFW,
-		:Type2 => PBTypes::DRAGON,
-		#:BaseStats => [150,65,100,35,75,105], #! Base form [530]
-		:BaseStats => [100,147,30,151,162,40], #? Mega Form [630]
-		#:BaseStats => [150,155,5,151,159,10], #todo Proposed [630]
-		:Ability => PBAbilities::ANCIENTPRESSURE,
-		:Weight => 500
-	},
-
-	"Dev" => {
-		:Ability => PBAbilities::MULTICORE
-	}
-},
 
 PBSpecies::CORPHISH => {
 	:FormName => {1 => "Rebornian"},
@@ -7862,22 +7812,6 @@ PBSpecies::BRELOOM => {
 	"Mega" => {
 		:BaseStats => [80,145,80,105,70,80],
 		:Ability => [PBAbilities::NOGUARD],
-	}
-},
-
-PBSpecies::PYROIMENCE => {
-	:FormName => {1 => "LegendaryFight"},
-
-	"LegendaryFight" => {
-		:BaseStats => [190,105,130,25,85,145]
-	}
-},
-
-PBSpecies::DREADXISTENCE => {
-	:FormName => {1 => "LegendaryFight"},
-
-	"LegendaryFight" => {
-		:BaseStats => [89,155,93,92,155,96]
 	}
 },
 
