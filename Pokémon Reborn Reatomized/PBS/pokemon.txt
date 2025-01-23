@@ -724,7 +724,7 @@ WildItemUncommon=GRIPCLAW
 BattlerPlayerY=30
 BattlerEnemyY=21
 BattlerAltitude=0
-Evolutions=SANDSILK,LevelSand,22,SANDSLASH,Level,22
+Evolutions=SANDSLASH,Level,22
 [28]
 Name=Sandslash
 InternalName=SANDSLASH
@@ -5927,7 +5927,7 @@ Pokedex=It licks its palms that are sweetened by being soaked in honey. A Teddiu
 BattlerPlayerY=31
 BattlerEnemyY=23
 BattlerAltitude=0
-Evolutions=TEDDINOMO,Location,40,URSARING,Level,30
+Evolutions=URSARING,Level,30
 [217]
 Name=Ursaring
 InternalName=URSARING
@@ -16058,7 +16058,7 @@ Pokedex=They employ an electrically charged web to trap their prey. While it is 
 BattlerPlayerY=29
 BattlerEnemyY=38
 BattlerAltitude=0
-Evolutions=VOLTAIRON,Level,60
+Evolutions=
 [597]
 Name=Ferroseed
 InternalName=FERROSEED
