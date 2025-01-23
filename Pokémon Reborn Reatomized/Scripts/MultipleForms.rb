@@ -75,12 +75,9 @@ PBSpecies::DEOXYS => {
 		1 => "Attack Form",
 		2 => "Defense Form",
 		3 => "Speed Form",
-		4 => "PULSE",
-		5 => "Health Form"
 	},
 
 	:DefaultForm => 0, #Not really
-	:PulseForm => 4,
 
 	"Attack Form" => {
 		:BaseStats => [50,180,20,150,180,20],
@@ -96,17 +93,6 @@ PBSpecies::DEOXYS => {
 		:BaseStats => [50, 95, 90,180, 95, 90],
 		:EVs => [0,0,0,3,0,0],
 	},
-
-	"PULSE" => {
-		:BaseStats => [80,180,160,40,160,180],
-		:EVs => [0,2,2,3,1,1],
-		:Ability => PBAbilities::ENCHANTEDCANNON
-	},
-
-	"Health Form" => {
-		:BaseStats => [150,95,90,180,95,90],
-		:EVs => [0,0,0,3,0,0],
-	}
 },
 
 PBSpecies::BURMY => {
@@ -781,34 +767,18 @@ PBSpecies::INDEEDEE => {
 
 PBSpecies::CHARMANDER => {
 	:FormName => {
-		4 => "Rebornian",
-		5 => "Egho",
-		6 => "Rebornian Wasteland"
+		4 => "Egho",
+		5 => "Rebornian"
 	},
 
 	:OnCreation => proc{
-		mapStarterHallVolcano=[27,39] # Map IDs for Rebornian form
 		mapWasteland=[209]
 		randomnum = rand(4)
-		if $game_map && mapStarterHallVolcano.include?($game_map.map_id) && randomnum==0
-			next 4
 		elsif $game_map && mapWasteland.include?($game_map.map_id)
-			next 6
+			next 5
 		else
 			next 0
 		end
-	},
-
-	"Rebornian" => {
-		:DexEntry => "The candles of this region have given a new form to our favorite starter!",
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::NORMAL,
-		:BaseStats => [39,56,40,59,65,50],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::DROUGHT],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[4,PBMoves::EMBER],[6,PBMoves::QUICKATTACK],[7,PBMoves::FOCUSENERGY],[10,PBMoves::BITE],[13,PBMoves::PURSUIT],[22,PBMoves::CRUNCH],[25,PBMoves::SUCKERPUNCH],
-			[29,PBMoves::SUPERFANG],[31,PBMoves::DOUBLEEDGE]],
-		:EggMoves => [PBMoves::COUNTER,PBMoves::FINALGAMBIT,PBMoves::FURYSWIPES,PBMoves::MEFIRST,PBMoves::SNATCH,PBMoves::UPROAR],
-		:Weight => 370
 	},
 
 	"Egho" => {
@@ -830,7 +800,7 @@ PBSpecies::CHARMANDER => {
 		:kind => "Flare Lizard"
 	},
 
-	"Rebornian Wasteland" => {
+	"Rebornian" => {
 		:DexEntry => "This Pokémon has a mixture of thousands of deadly toxins and minerals inside its belly and tail. Due to its body's naturally high temperature, the venomous solution inside it glows bright, attracting bugs and other preys.",
 		:Type1 => PBTypes::POISON,
 		:Type2 => PBTypes::POISON,
@@ -846,21 +816,8 @@ PBSpecies::CHARMANDER => {
 
 PBSpecies::CHARMELEON => {
 	:FormName => {
-		4 => "Rebornian",
-		5 => "Egho",
-		6 => "Rebornian Wasteland"
-	},
-
-	"Rebornian" => {
-		:DexEntry => "People do not like when this is referred as the perfect first evolution.",
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [75,62,80,73,65,65],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::DROUGHT],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[4,PBMoves::QUICKATTACK],
-			[7,PBMoves::FOCUSENERGY],[10,PBMoves::BITE],[13,PBMoves::PURSUIT],[22,PBMoves::CRUNCH],
-			[25,PBMoves::SUCKERPUNCH],[29,PBMoves::SUPERFANG],[31,PBMoves::DOUBLEEDGE]],
-		:Weight => 38
+		4 => "Egho",
+		5 => "Rebornian"
 	},
 
 	"Egho" => {
@@ -880,7 +837,7 @@ PBSpecies::CHARMELEON => {
 		:kind => "Flare Dragon"
 	},
 
-	"Rebornian Wasteland" => {
+	"Rebornian" => {
 		:DexEntry => "After evolving, the venom inside its body becomes stronger, which is said to make this Pokémon more aggressive. This may explain Charmeleon's inclination for rebellious behavior.",
 		:Type1 => PBTypes::POISON,
 		:Type2 => PBTypes::POISON,
@@ -3124,37 +3081,6 @@ PBSpecies::DUGTRIO => {
 	},
 },
 
-PBSpecies::RELICANTH => {
-	:FormName => {1 => "Cosmic"},
-
-	:OnCreation => proc{
-		cMaps=[862] # Splashing Grounds # Map IDs for Cosmic Form
-		next $game_map && cMaps.include?($game_map.map_id) ? 1 : 0
- 	},
-
-	"Cosmic" => {
-		:DexEntry => "Its form has remained the same for one hundred million eons. Its body is filled with cosmic dust, so it can withstand the pressure of the deep cosmos.",
-		:Type1 => PBTypes::COSMIC,
-		:Type2 => PBTypes::WATER,
-		:BaseStats => [160,120,55,80,100,55], #? Cosmic adds +85 to BST
-		:EVs => [1,1,0,0,1,0],
-		:Ability => [PBAbilities::SHADOWTAG,PBAbilities::GRAVITOSY,PBAbilities::ANALYTIC,PBAbilities::STURDINESS],
-		:Movelist => [[1,PBMoves::AQUAJET],[1,PBMoves::ASTRALSHOT],[1,PBMoves::FLAIL],[1,PBMoves::CURSE],
-			[1,PBMoves::TACKLE],[1,PBMoves::HARDEN],[1,PBMoves::MUDSPORT],[1,PBMoves::THUNDERBOLT],
-			[1,PBMoves::REFRESH],[6,PBMoves::MUDSPORT],[10,PBMoves::WATERGUN],[10,PBMoves::WATERSPOUT],
-			[15,PBMoves::ROCKTOMB],[15,PBMoves::AQUARING],[18,PBMoves::ROOST],[21,PBMoves::ANCIENTPOWER],
-			[22,PBMoves::EARTHPOWER],[26,PBMoves::IRONHEAD],[26,PBMoves::PSYCHICFANGS],[31,PBMoves::ANCIENTPOWER],
-			[31,PBMoves::IRONDEFENSE],[31,PBMoves::TAKEDOWN],[35,PBMoves::YAWN],[40,PBMoves::ICEBEAM],
-			[40,PBMoves::REFLECT],[40,PBMoves::LIGHTSCREEN],[41,PBMoves::REST],[41,PBMoves::CRUNCH],
-			[46,PBMoves::HYDROPUMP],[46,PBMoves::SIGNALBEAM],[50,PBMoves::DRAGONTAIL],[55,PBMoves::RECOVER],
-			[56,PBMoves::HEADSMASH],[60,PBMoves::COMETSHOWER],[70,PBMoves::MIRRORCOAT],[75,PBMoves::COSMICRAY],
-			[105,PBMoves::COSMICBARRAGE]],
-		:Weight => 280,
-		:Height => 4,
-		:kind => "Cosmic Fish"
-	}
-},
-
 PBSpecies::MEOWTH => {
 	:FormName => {
 		1 => "Alolan",
@@ -4998,34 +4924,9 @@ PBSpecies::TORTERRA => {
 },
 
 PBSpecies::INFERNAPE => {
-	:FormName => {
-		1 => "Rebornian",
-		2 => "Rebornian Rage",
-		3 => "Mega"
-	},
-
+	:FormName => {1 => "Mega"},
 	:DefaultForm => 0,
-	:MegaForm => 3,
-
-	"Rebornian" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [77,106,69,116,101,69],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE,PBAbilities::PARRY],
-		:Movelist => [[1,PBMoves::KNOCKOFF],[1,PBMoves::BULKUP],[1,PBMoves::FACADE],[1,PBMoves::VACUUMWAVE],[1,PBMoves::FLAREBLITZ],[1,PBMoves::BRUTALSWING],[1,PBMoves::MACHPUNCH],[1,PBMoves::NASTYPLOT],[1,PBMoves::FOULPLAY],[1,PBMoves::SLACKOFF],[1,PBMoves::LASHOUT],[1,PBMoves::NIGHTDAZE],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::BRICKBREAK],[19,PBMoves::FLAMEWHEEL],[26,PBMoves::FEINT],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]],
-		:Weight => 370
-	},
-
-	"Rebornian Rage" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::NUCLEAR,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [77,106,138,174,101,138],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT,PBAbilities::RAGINGBLAZE,PBAbilities::PARRY],
-		:Movelist => [[1,PBMoves::KNOCKOFF],[1,PBMoves::BULKUP],[1,PBMoves::FACADE],[1,PBMoves::VACUUMWAVE],[1,PBMoves::FLAREBLITZ],[1,PBMoves::BRUTALSWING],[1,PBMoves::MACHPUNCH],[1,PBMoves::NASTYPLOT],[1,PBMoves::FOULPLAY],[1,PBMoves::SLACKOFF],[1,PBMoves::LASHOUT],[1,PBMoves::NIGHTDAZE],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::THROATCHOP],[19,PBMoves::FLAMEWHEEL],[26,PBMoves::FEINT],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]],
-		:Weight => 370
-	},
+	:MegaForm => 1,
 
 	"Mega" => {
 		:BaseStats => [96,134,81,118,124,81],
@@ -5483,9 +5384,8 @@ PBSpecies::CHARIZARD => {
 		1 => "Mega X",
 		2 => "Mega Y",
 		3 => "Dyna",
-		4 => "Rebornian",
-		5 => "Egho",
-		6 => "Rebornian Wasteland"
+		4 => "Egho",
+		5 => "Rebornian"
 	},
 
 	:DefaultForm => 0,
@@ -5514,15 +5414,6 @@ PBSpecies::CHARIZARD => {
 		:Weight => 1105
 	},
 
-	"Rebornian" => {
-		:DexEntry => "Even though it seems like this Pokèmon has lost its flame, the plasma inside its body is capable of heating it up to sun surface level.",
-		:BaseStats => [90,105,94,96,85,80],
-		:Ability => [PBAbilities::DROUGHT,PBAbilities::INNERFLAME],
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::DRAGON,
-		:Movelist => [[0,PBMoves::WILLOWISP],[1,PBMoves::DRAGONCLAW],[1,PBMoves::EMBER],[1,PBMoves::GROWL],[1,PBMoves::HEATWAVE],[1,PBMoves::SCRATCH],[1,PBMoves::SMOKESCREEN],[1,PBMoves::SHADOWCLAW],[7,PBMoves::FIREPUNCH],[9,PBMoves::TAUNT],[12,PBMoves::POWERUPPUNCH],[16,PBMoves::SCARYFACE],[19,PBMoves::SLASH],[26,PBMoves::ROOST],[30,PBMoves::PLAYROUGH],[34,PBMoves::FLAMETHROWER],[38,PBMoves::IRONHEAD],[42,PBMoves::CLOSECOMBAT],[44,PBMoves::OUTRAGE],[48,PBMoves::DRAGONDANCE],[52,PBMoves::SUCKERPUNCH],[58,PBMoves::CALMMIND],[68,PBMoves::FLAREBLITZ]]
-	},
-
 	"Egho" => {
 		:DexEntry => "A powerful dragon Pokémon that is said to be hard to tame. It likes to soar high above the clouds.",
 		:Type2 => PBTypes::DRAGON,
@@ -5542,7 +5433,7 @@ PBSpecies::CHARIZARD => {
 		:kind => "Sacred Dragon"
 	},
 
-	"Rebornian Wasteland" => {
+	"Rebornian" => {
 		:DexEntry => "As Charizard grows old, the metallic compounds of its venomous fluids begins to sediment on the tip of its tail, making the needle in it bigger and sturdier. Just a little sting from this Pokémon's needle is enough to kill a person within seconds.",
 		:Type1 => PBTypes::POISON,
 		:BaseStats => [120,110,95,50,40,120],
@@ -6045,25 +5936,14 @@ PBSpecies::ABSOL => {
 },
 
 PBSpecies::GARCHOMP => {
-	:FormName => {
-		1 => "Mega",
-		2 => "PULSE"
-	},
-
+	:FormName => {1 => "Mega"},
 	:DefaultForm => 0,
 	:MegaForm => 1,
-	:PulseForm => 2,
 
 	"Mega" => {
 		:BaseStats => [108,170,115,92,120,95],
 		:Ability => PBAbilities::SANDFORCE,
 		:Weight => 950
-	},
-
-	"PULSE" => {
-		:BaseStats => [120,170,120,120,120,120],
-		:Ability => PBAbilities::QUICKSTART,
-		:Weight => 1950
 	}
 },
 
@@ -6256,86 +6136,16 @@ PBSpecies::SWAMPERT => {
 	}
 },
 
-PBSpecies::TREECKO => {
-	:FormName => {1 => "Rebornian"},
-
-	:OnCreation => proc{
-		mapStarterHall=[39]
-		mapChrysoliaForest=[465]
-		# Map IDs for Rebornian form
-		randomnum = rand(4)
-		if $game_map && ((mapStarterHall.include?($game_map.map_id) && randomnum==0) || mapChrysoliaForest.include?($game_map.map_id))
-			next 1
-		else
-			next 0
-		end
-	},
-
-	"Rebornian" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [40,65,55,70,45,35],
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::UNBURDEN],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::SUPERSONIC],[1,PBMoves::SWIFT],[5,PBMoves::SUPERSONIC],[8,PBMoves::SWIFT],[12,PBMoves::LIGHTSCREEN],[12,PBMoves::REFLECT],[12,PBMoves::SAFEGUARD],[15,PBMoves::MACHPUNCH],[20,PBMoves::SILVERWIND],[24,PBMoves::COMETPUNCH],[29,PBMoves::BATONPASS],[33,PBMoves::AGILITY],[35,PBMoves::XSCISSOR],[38,PBMoves::BUGBUZZ],[42,PBMoves::AIRSLASH],[47,PBMoves::DOUBLEEDGE]],
-		:Weight => 450
-	}
-},
-
-PBSpecies::GROVYLE => {
-	:FormName => {1 => "Rebornian"}, 
-
-	"Rebornian" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::GRASS,
-		:BaseStats => [50,85,65,95,65,45],
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::UNBURDEN],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::SUPERSONIC],[1,PBMoves::SWIFT],[5,PBMoves::SUPERSONIC],[8,PBMoves::SWIFT],[12,PBMoves::LIGHTSCREEN],[12,PBMoves::REFLECT],[12,PBMoves::SAFEGUARD],[15,PBMoves::MACHPUNCH],[20,PBMoves::SILVERWIND],[24,PBMoves::COMETPUNCH],[29,PBMoves::BATONPASS],[33,PBMoves::AGILITY],[35,PBMoves::XSCISSOR],[38,PBMoves::BUGBUZZ],[42,PBMoves::AIRSLASH],[47,PBMoves::DOUBLEEDGE]],
-		:Weight => 450
-	}
-},
-
 PBSpecies::SCEPTILE => {
-	:FormName => {
-		1 => "Rebornian",
-		2 => "Mega",
-		3 => "Mega Rebornian"
-	},
-
-	:DefaultForm => {
-		PBItems::SCEPTILITE => 0,
-		PBItems::SCEPTILITER => 1
-	},
-	:MegaForm => {
-		PBItems::SCEPTILITE => 2,
-		PBItems::SCEPTILITER => 3
-	},
-
-	"Rebornian" => {
-		:BaseStats => [70,105,85,120,85,65],
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::SHARPNESS],
-		:Height => 17,
-		:Weight => 1020,
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::GRASS,
-		:Movelist => [[1, PBMoves::SCRATCH],[3, PBMoves::GROWL],[6, PBMoves::ASTONISH],[9, PBMoves::INGRAIN],[12, PBMoves::MAGICALLEAF],[15, PBMoves::SHADOWSNEAK],[15, PBMoves::AERIALACE],[18, PBMoves::LEECHSEED],[21, PBMoves::FURYSWIPES],[24, PBMoves::OMINOUSWIND],[27, PBMoves::MEGADRAIN],[30, PBMoves::SHADOWPUNCH],[33, PBMoves::SUCKERPUNCH],[36, PBMoves::LEAFBLADE],[39, PBMoves::SHADOWBALL],[42, PBMoves::SYNTHESIS],[45, PBMoves::SHADOWCLAW],[48, PBMoves::WOODHAMMER],[51, PBMoves::ENERGYBALL],[54, PBMoves::LEAFSTORM],[54, PBMoves::SACREDSWORD],[54, PBMoves::SOLARBLADE],[57, PBMoves::PHANTOMFORCE]],
-	},
+	:FormName => {1 => "Mega",},
+	:DefaultForm => 0,
+	:MegaForm => 2,
 
 	"Mega" => {
 		:BaseStats => [70,110,75,145,145,85],
 		:Ability => PBAbilities::LIGHTNINGROD,
 		:Height => 19,
 		:Weight => 1020,
-		:Type2 => PBTypes::DRAGON
-	},
-
-	"Mega Rebornian" => {
-		:BaseStats => [70,145,85,145,110,75],
-		:Ability => PBAbilities::DRAGONSWORD,
-		:Height => 19,
-		:Weight => 1020,
-		:Type1 => PBTypes::GHOST,
 		:Type2 => PBTypes::DRAGON
 	},
 },
@@ -6479,7 +6289,6 @@ PBSpecies::GLALIE => {
 		1 => "Mega",
 		2 => "Nuclear",
 		3 => "MegaNuke",
-		4 => "Rebornian"
 	},
 
 	:DefaultForm => {
@@ -6509,16 +6318,6 @@ PBSpecies::GLALIE => {
 		:Height => 21,
 		:Weight => 3502
 	},
-
-	"Rebornian" => {
-		:Type1 => PBTypes::STEEL,
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [80,110,95,75,55,80],
-		:Ability => [PBAbilities::STRONGJAW,PBAbilities::CLEARBODY,PBAbilities::SHEERFORCE],
-		:Movelist => [[1,PBMoves::IRONHEAD],[1,PBMoves::SCALESHOT],[1,PBMoves::IRONTAIL],[1,PBMoves::BITE],[1,PBMoves::CRUNCH],[42,PBMoves::FIREFANG],[42,PBMoves::ICEFANG],[42,PBMoves::THUNDERFANG],[45,PBMoves::CHAINCHOMP],[47,PBMoves::PSYCHICFANGS],[49,PBMoves::JAWLOCK],[52,PBMoves::DRAGONRUSH],[55,PBMoves::OUTRAGE],[70,PBMoves::GIGAIMPACT]],
-		:Height => 15,
-		:Weight => 360
-	}
 },
 
 PBSpecies::SALAMENCE => {
@@ -6980,21 +6779,6 @@ PBSpecies::KINGLER => {
 	"Dyna" => {
 		:BaseStats => [75,150,130,100,50,70],
 		:Ability => PBAbilities::TOUGHCLAWS
-	}
-},
-
-PBSpecies::MUNCHLAX => {
-	:FormName => {2 => "Rebornian"},
-
-	:OnCreation => proc{
-		mapDesert=[694,703,704,705] # Map IDs for Rebornian form
-		next $game_map && mapDesert.include?($game_map.map_id) ? 2 : 0
-	},
-
-	"Rebornian" => {
-		:BaseStats => [135,40,85,5,85,40],
-		:Ability => [PBAbilities::PICKUP,PBAbilities::THICKFAT,PBAbilities::GLUTTONY],
-		:Movelist => [[1,PBMoves::LASTRESORT],[1,PBMoves::RECYCLE],[1,PBMoves::LICK],[1,PBMoves::METRONOME],[1,PBMoves::ODORSLEUTH],[1,PBMoves::TACKLE],[4,PBMoves::DEFENSECURL],[9,PBMoves::AMNESIA],[12,PBMoves::LICK],[17,PBMoves::CHIPAWAY],[20,PBMoves::SCREECH],[25,PBMoves::BODYSLAM],[28,PBMoves::STOCKPILE],[33,PBMoves::SWALLOW],[36,PBMoves::ROLLOUT],[41,PBMoves::FLING],[44,PBMoves::BELLYDRUM],[49,PBMoves::NATURALGIFT],[50,PBMoves::SNATCH],[57,PBMoves::LASTRESORT]]
 	}
 },
 
@@ -8006,18 +7790,6 @@ PBSpecies::MRMIME => {
 	}
 },
 
-PBSpecies::REGIGIGAS => {
-	:FormName => {1 => "PULSE"},
-	:DefaultForm => 0,
-	:PulseForm => 1,
-
-	"PULSE" => {
-		:BaseStats => [160,210,160,130,160,150],
-		:Ability => PBAbilities::AUTOMATRON,
-		:Weight => 14621
-	}
-},
-
 PBSpecies::ARCEUS => {
 	:FormName => {
 		21 => "PULSE",
@@ -8246,34 +8018,6 @@ PBSpecies::GOLURK => {
 	}
 },
 
-PBSpecies::ELECTIVIRE => {
-	:FormName => {1 => "Rebornian"},
-
-	"Rebornian" => {
-		:BaseStats => [90,125,85,106,69,75],
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::STEEL,
-		:Ability => [PBAbilities::IRONFIST,PBAbilities::NOGUARD,PBAbilities::MOTORDRIVE],
-		:Movelist => [[1,PBMoves::ELECTRICTERRAIN],[1,PBMoves::IONDELUGE],[1,PBMoves::FIREPUNCH],[1,PBMoves::QUICKATTACK],[1,PBMoves::LEER],[1,PBMoves::THUNDERSHOCK],[1,PBMoves::LOWKICK],[5,PBMoves::THUNDERSHOCK],[8,PBMoves::LOWKICK],[12,PBMoves::SWIFT],[15,PBMoves::SHOCKWAVE],[19,PBMoves::THUNDERWAVE],[22,PBMoves::BULLETPUNCH],[26,PBMoves::LIGHTSCREEN],[29,PBMoves::THUNDERPUNCH],[36,PBMoves::DISCHARGE],[40,PBMoves::IRONHEAD],[42,PBMoves::SCREECH],[43,PBMoves::SHIFTGEAR],[49,PBMoves::THUNDERBOLT],[49,PBMoves::IONICWHIPLASH],[55,PBMoves::THUNDER],[62,PBMoves::GIGAIMPACT],[65,PBMoves::ELECTRICTERRAIN]],
-		:Weight => 350,
-		:Height => 28
-	}
-},
-
-PBSpecies::OCTILLERY => {
-	:FormName => {1 => "Rebornian"},
-
-	"Rebornian" => {
-		:BaseStats => [110,70,80,40,110,80],
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::FAIRY,
-		:Ability => [PBAbilities::SUCTIONCUPS,PBAbilities::SNIPER,PBAbilities::ENCHANTEDCANNON],
-		:Movelist => [[0,PBMoves::OCTAZOOKA],[0,PBMoves::DRAININGKISS],[1,PBMoves::GUNKSHOT],[1,PBMoves::ROCKBLAST],[1,PBMoves::WATERGUN],[1,PBMoves::CONSTRICT],[1,PBMoves::PSYBEAM],[1,PBMoves::AURORABEAM],[6,PBMoves::CONSTRICT],[10,PBMoves::PSYBEAM],[14,PBMoves::AURORABEAM],[15,PBMoves::CHARGEBEAM],[18,PBMoves::BUBBLEBEAM],[22,PBMoves::FOCUSENERGY],[25,PBMoves::DRAININGKISS],[28,PBMoves::WRINGOUT],[30,PBMoves::DAZZLINGGLEAM],[32,PBMoves::MISTYTERRAIN],[34,PBMoves::SIGNALBEAM],[40,PBMoves::ICEBEAM],[45,PBMoves::LUSTERBEAM],[46,PBMoves::BULLETSEED],[50,PBMoves::MOONBLAST],[52,PBMoves::HYDROPUMP],[58,PBMoves::HYPERBEAM],[64,PBMoves::SOAK]],
-		:Weight => 350,
-		:Height => 28
-	}
-},
-
 PBSpecies::RIOLU => {
 	:FormName => {1 => "Rebornian"},
 
@@ -8302,49 +8046,6 @@ PBSpecies::GRENINJA => {
 		:Ability => PBAbilities::SHARPNESS,
 		:Weight => 40
 	},
-},
-
-PBSpecies::CHIMCHAR => {
-	:FormName => {1 => "Rebornian"},
-
-	:OnCreation => proc{
-		mapStarterHall=[39] # Map IDs for Rebornian form
-		randomnum = rand(4)
-		next $game_map && mapStarterHall.include?($game_map.map_id) && randomnum==0 ? 1 : 0
-	},
-
-	"Rebornian" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [60,60,50,70,60,30],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT],
-		:Movelist => [[1,PBMoves::FAKEOUT],[1,PBMoves::SCRATCH],[6,PBMoves::EMBER],[9,PBMoves::TAUNT],
-			[12,PBMoves::SNARL],[15,PBMoves::MACHPUNCH],[17,PBMoves::FLAMEWHEEL],[23,PBMoves::NASTYPLOT],
-			[25,PBMoves::HOTHEAD],[31,PBMoves::FACADE],[33,PBMoves::FIRELASH],[39,PBMoves::SUCKERPUNCH],[41,PBMoves::SLACKOFF],[47,PBMoves::NIGHTDAZE]],
-		:Weight => 370
-	}
-},
-
-PBSpecies::MONFERNO => {
-	:FormName => {1 => "Rebornian"},
-
-	:OnCreation => proc{
-		mapDesertt=[703,704,705] # Map IDs for Rebornian form
-		next $game_map && mapDesertt.include?($game_map.map_id) ? 1 : 0
-	},
-
-	"Rebornian" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [65,80,50,90,75,50],
-		:Ability => [PBAbilities::BLAZE,PBAbilities::FURIOUSSPIRIT],
-		:Movelist => [[1,PBMoves::FAKEOUT],[1,PBMoves::SCRATCH],[1,PBMoves::EMBER],[1,PBMoves::FLAMETHROWER],[1,PBMoves::MACHPUNCH],[1,PBMoves::SCRATCH],[6,PBMoves::EMBER],[9,PBMoves::TAUNT],
-			[12,PBMoves::SNARL],[15,PBMoves::MACHPUNCH],[19,PBMoves::FLAMEWHEEL],[23,PBMoves::NASTYPLOT],
-			[25,PBMoves::HOTHEAD],[31,PBMoves::FACADE],[33,PBMoves::FIRELASH],[36,PBMoves::KNOCKOFF],[39,PBMoves::SUCKERPUNCH],[41,PBMoves::SLACKOFF],[47,PBMoves::NIGHTDAZE],[74,PBMoves::FLAREBLITZ]],
-		:Weight => 370
-	}
 },
 
 PBSpecies::LARVESTA => {
@@ -8387,25 +8088,6 @@ PBSpecies::VOLCARONA => {
 
 	"Totem" => {
 		:Ability => PBAbilities::SWARM
-	}
-},
-
-PBSpecies::LEDIAN => { # Special thanks to Etay from the Reborn Server <3
-	:FormName => {1 => "Rebornian"},
-
-	:OnCreation => proc{
-		mapCemetery=[152,552] # Map IDs for Rebornian form
-		next $game_map && mapCemetery.include?($game_map.map_id) ? 1 : 0
-	},
-
-	"Rebornian" => {
-		:DexEntry => ".",
-		:Type1 => PBTypes::STEEL,
-		:Type2 => PBTypes::BUG,
-		:BaseStats => [60,60,80,100,10,80],
-		:Ability => [PBAbilities::PUREPOWER,PBAbilities::INTIMIDATE,PBAbilities::TROUBLESHOOTER],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::SUPERSONIC],[1,PBMoves::SWIFT],[5,PBMoves::SUPERSONIC],[8,PBMoves::SWIFT],[12,PBMoves::LIGHTSCREEN],[12,PBMoves::REFLECT],[12,PBMoves::SAFEGUARD],[15,PBMoves::MACHPUNCH],[20,PBMoves::SILVERWIND],[24,PBMoves::COMETPUNCH],[25,PBMoves::SHADOWSNEAK],[29,PBMoves::BATONPASS],[33,PBMoves::AGILITY],[35,PBMoves::XSCISSOR],[38,PBMoves::BUGBUZZ],[42,PBMoves::AIRSLASH],[45,PBMoves::IRONHEAD],[47,PBMoves::DOUBLEEDGE],[50,PBMoves::KINGSSHIELD],[50,PBMoves::SACREDSWORD]],
-		:Weight => 450
 	}
 },
 

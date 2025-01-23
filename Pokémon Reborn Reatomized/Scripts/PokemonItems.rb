@@ -3500,19 +3500,19 @@ end
         end
       end 
     when  PBSpecies::CHARMANDER
-      if pokemon.form==5
+      if pokemon.form==4
         if (move == PBMoves::TWISTER) || (move == PBMoves::TORMENT) ||
           (move == PBMoves::DRAGONTAIL) || (move == PBMoves::DUALCHOP) ||
           (move == PBMoves::ZENHEADBUTT) || (move == PBMoves::THUNDERFANG) ||
           (move == PBMoves::BREAKINGSWIPE) || (move == PBMoves::SCALESHOT)
           return true
         end
-      elsif pokemon.form==5
+      elsif pokemon.form==4
         if (move == PBMoves::BRICKBREAK) || (move == PBMoves::THUNDERPUNCH) ||
           (move == PBMoves::MEGAKICK)
           return false
         end
-      elsif pokemon.form==6
+      elsif pokemon.form==5
         if [PBMoves::MEGAPUNCH,PBMoves::FIREPUNCH,PBMoves::THUNDERPUNCH,PBMoves::PINMISSILE,PBMoves::FIRESPIN,PBMoves::DIG,PBMoves::SCREECH,PBMoves::REST,PBMoves::ROCKSLIDE,PBMoves::THIEF,PBMoves::PROTECT,PBMoves::SCARYFACE,PBMoves::RAINDANCE,PBMoves::SUNNYDAY,PBMoves::BEATUP,PBMoves::WILLOWISP,PBMoves::FACADE,PBMoves::HELPINGHAND,PBMoves::REVENGE,PBMoves::BRICKBREAK,PBMoves::FAKETEARS,PBMoves::ROCKTOMB,PBMoves::FLING,PBMoves::DRAINPUNCH,PBMoves::SHADOWCLAW,PBMoves::THUNDERFANG,PBMoves::FIREFANG,PBMoves::CROSSPOISON,PBMoves::VENOSHOCK,PBMoves::LOWSWEEP,PBMoves::TAILSLAP,PBMoves::MYSTICALFIRE,PBMoves::FALSESWIPE,PBMoves::BRUTALSWING,PBMoves::STOMPINGTANTRUM,PBMoves::BLASTBURN,PBMoves::DUALCHOP,PBMoves::FIREPLEDGE,PBMoves::GASTROACID,PBMoves::GIGADRAIN,PBMoves::HEATWAVE,PBMoves::GUNKSHOT,PBMoves::IRONTAIL,PBMoves::KNOCKOFF,PBMoves::OUTRAGE,PBMoves::STEALTHROCK,PBMoves::SUPERFANG,PBMoves::SUPERPOWER,PBMoves::UPROAR,PBMoves::ATOMICPUNCH,PBMoves::NUCLEARSLASH,PBMoves::RADIOACID,PBMoves::NUCLEARFANGS,PBMoves::EMERGENCYEXIT].include?(move)
           return true
         else
@@ -3520,19 +3520,19 @@ end
         end
       end
     when  PBSpecies::CHARMELEON
-      if pokemon.form==5
+      if pokemon.form==4
         if (move == PBMoves::TWISTER) || (move == PBMoves::TORMENT) ||
           (move == PBMoves::DRAGONTAIL) || (move == PBMoves::DUALCHOP) ||
           (move == PBMoves::ZENHEADBUTT) || (move == PBMoves::THUNDERFANG) ||
           (move == PBMoves::BREAKINGSWIPE) || (move == PBMoves::SCALESHOT)
           return true
         end
-      elsif pokemon.form==5
+      elsif pokemon.form==4
         if (move == PBMoves::BRICKBREAK) || (move == PBMoves::THUNDERPUNCH) ||
           (move == PBMoves::MEGAKICK)
           return false
         end
-      elsif pokemon.form==6
+      elsif pokemon.form==5
         if [PBMoves::MEGAPUNCH,PBMoves::FIREPUNCH,PBMoves::THUNDERPUNCH,PBMoves::PINMISSILE,PBMoves::FIRESPIN,PBMoves::DIG,PBMoves::SCREECH,PBMoves::REST,PBMoves::ROCKSLIDE,PBMoves::THIEF,PBMoves::PROTECT,PBMoves::SCARYFACE,PBMoves::RAINDANCE,PBMoves::SUNNYDAY,PBMoves::BEATUP,PBMoves::WILLOWISP,PBMoves::FACADE,PBMoves::HELPINGHAND,PBMoves::REVENGE,PBMoves::BRICKBREAK,PBMoves::FAKETEARS,PBMoves::ROCKTOMB,PBMoves::FLING,PBMoves::DRAINPUNCH,PBMoves::SHADOWCLAW,PBMoves::THUNDERFANG,PBMoves::FIREFANG,PBMoves::CROSSPOISON,PBMoves::VENOSHOCK,PBMoves::LOWSWEEP,PBMoves::TAILSLAP,PBMoves::MYSTICALFIRE,PBMoves::FALSESWIPE,PBMoves::BRUTALSWING,PBMoves::STOMPINGTANTRUM,PBMoves::BLASTBURN,PBMoves::DUALCHOP,PBMoves::FIREPLEDGE,PBMoves::GASTROACID,PBMoves::GIGADRAIN,PBMoves::HEATWAVE,PBMoves::GUNKSHOT,PBMoves::IRONTAIL,PBMoves::KNOCKOFF,PBMoves::OUTRAGE,PBMoves::STEALTHROCK,PBMoves::SUPERFANG,PBMoves::SUPERPOWER,PBMoves::UPROAR,PBMoves::ATOMICPUNCH,PBMoves::NUCLEARSLASH,PBMoves::RADIOACID,PBMoves::NUCLEARFANGS,PBMoves::EMERGENCYEXIT].include?(move)
           return true
         else
@@ -3540,12 +3540,12 @@ end
         end
       end
     when  PBSpecies::CHARIZARD
-      if pokemon.form==5
+      if pokemon.form==4
         if (move == PBMoves::DUALCHOP) || (move == PBMoves::SHOCKWAVE) ||
           (move == PBMoves::ZENHEADBUTT) || (move == PBMoves::THUNDERFANG)
           return true
         end
-      elsif pokemon.form==5
+      elsif pokemon.form==4
         if (move == PBMoves::BRICKBREAK) || (move == PBMoves::THUNDERPUNCH) ||
           (move == PBMoves::MEGAKICK) ||(move == PBMoves::STEELWING) ||
           (move == PBMoves::AIRCUTTER) ||(move == PBMoves::DEFOG) ||
@@ -3554,7 +3554,7 @@ end
           (move == PBMoves::DUALWINGBEAT) || (move == PBMoves::DUALWINGBEAT)
           return false
         end
-      elsif pokemon.form==6
+      elsif pokemon.form==5
         if [PBMoves::MEGAPUNCH,PBMoves::FIREPUNCH,PBMoves::THUNDERPUNCH,PBMoves::PINMISSILE,PBMoves::FIRESPIN,PBMoves::DIG,PBMoves::SCREECH,PBMoves::REST,PBMoves::ROCKSLIDE,PBMoves::THIEF,PBMoves::PROTECT,PBMoves::SCARYFACE,PBMoves::RAINDANCE,PBMoves::SUNNYDAY,PBMoves::BEATUP,PBMoves::WILLOWISP,PBMoves::FACADE,PBMoves::HELPINGHAND,PBMoves::REVENGE,PBMoves::BRICKBREAK,PBMoves::FAKETEARS,PBMoves::ROCKTOMB,PBMoves::FLING,PBMoves::DRAINPUNCH,PBMoves::SHADOWCLAW,PBMoves::THUNDERFANG,PBMoves::FIREFANG,PBMoves::CROSSPOISON,PBMoves::VENOSHOCK,PBMoves::LOWSWEEP,PBMoves::TAILSLAP,PBMoves::MYSTICALFIRE,PBMoves::FALSESWIPE,PBMoves::BRUTALSWING,PBMoves::STOMPINGTANTRUM,PBMoves::BLASTBURN,PBMoves::DUALCHOP,PBMoves::FIREPLEDGE,PBMoves::GASTROACID,PBMoves::GIGADRAIN,PBMoves::HEATWAVE,PBMoves::GUNKSHOT,PBMoves::IRONTAIL,PBMoves::KNOCKOFF,PBMoves::OUTRAGE,PBMoves::STEALTHROCK,PBMoves::SUPERFANG,PBMoves::SUPERPOWER,PBMoves::UPROAR,PBMoves::ATOMICPUNCH,PBMoves::NUCLEARSLASH,PBMoves::RADIOACID,PBMoves::NUCLEARFANGS,PBMoves::EMERGENCYEXIT,PBMoves::FLY,PBMoves::STEELWING,PBMoves::BOUNCE,PBMoves::ACROBATICS,PBMoves::AIRSLASH,PBMoves::SKYATTACK].include?(move)
           return true
         else
