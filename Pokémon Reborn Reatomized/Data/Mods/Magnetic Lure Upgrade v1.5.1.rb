@@ -4,7 +4,6 @@ CosmeticForms.push(PBSpecies::DUDUNSPARCE) rescue nil
 CosmeticForms.push(PBSpecies::MAUSHOLD) rescue nil
 CosmeticForms.push(PBSpecies::POLTCHAGEIST) rescue nil
 CosmeticForms.push(PBSpecies::SINISTCHA) rescue nil
-CosmeticForms.push(PBSpecies::MISSINGNO) rescue nil
 
 def mlu_hasRelevantForms?(species)
   return false if !PokemonForms[species]
