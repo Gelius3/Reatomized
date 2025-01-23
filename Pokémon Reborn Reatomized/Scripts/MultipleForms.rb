@@ -698,7 +698,7 @@ PBSpecies::NECROZMA => {
 		:BaseStats => [97,157,127,77,113,109],
 		:EVs => [0,3,0,0,0,0],
 		:Type2 => PBTypes::STEEL,
-		:Ability => PBAbilities::FULLMETALBODY,PBAbilities::PRISMARMOR,PBAbilities::BEASTBOOST
+		:Ability => [PBAbilities::FULLMETALBODY,PBAbilities::PRISMARMOR,PBAbilities::BEASTBOOST],
 		:Height => 38,
 		:Weight => 4600
 	},
@@ -709,7 +709,7 @@ PBSpecies::NECROZMA => {
 		:EVs => [0,0,0,0,3,0],
 		:Type2 => PBTypes::GHOST,
 		:Height => 42,
-		:Ability => PBAbilities::SHADOWSHIELD,PBAbilities::PRISMARMOR,PBAbilities::BEASTBOOST
+		:Ability => [PBAbilities::SHADOWSHIELD,PBAbilities::PRISMARMOR,PBAbilities::BEASTBOOST],
 		:Weight => 3500
 	},
 
@@ -774,7 +774,7 @@ PBSpecies::CHARMANDER => {
 	:OnCreation => proc{
 		mapWasteland=[209]
 		randomnum = rand(4)
-		elsif $game_map && mapWasteland.include?($game_map.map_id)
+		if $game_map && mapWasteland.include?($game_map.map_id)
 			next 5
 		else
 			next 0
@@ -3798,7 +3798,7 @@ PBSpecies::SAMUROTT => {
 		:Type2 => PBTypes::DARK,
 		:Ability => [PBAbilities::TORRENT,PBAbilities::SHELLARMOR,PBAbilities::AQUABOOST,PBAbilities::SWIFTSWIM,PBAbilities::CONQUEROR,PBAbilities::SHARPNESS],
 		:BaseStats => [90,108,80,85,100,65],
-		:Movelist => [[0,PBMoves::CEASELESSEDGE],,[1,PBMoves::CEASELESSEDGE],[1,PBMoves::TACKLE],
+		:Movelist => [[0,PBMoves::CEASELESSEDGE],[1,PBMoves::CEASELESSEDGE],[1,PBMoves::TACKLE],
 			[5,PBMoves::TAILWHIP],[7,PBMoves::WATERSPORT],[11,PBMoves::WATERGUN],[13,PBMoves::FOCUSENERGY],
 			[15,PBMoves::SOAK],[17,PBMoves::FURYCUTTER],[19,PBMoves::AQUAJET],[21,PBMoves::REVENGE],
 			[23,PBMoves::WATERPULSE],[25,PBMoves::AERIALACE],[29,PBMoves::SLASH],[31,PBMoves::RAZORSHELL],
@@ -3931,7 +3931,7 @@ PBSpecies::BRAVIARY => {
 		:Type1 => PBTypes::PSYCHIC,
 		:EVs => [0,0,0,0,2,0],
 		:Ability => [PBAbilities::KEENEYE,PBAbilities::SHEERFORCE,PBAbilities::DEFIANT,PBAbilities::PRIDE,PBAbilities::HERO,PBAbilities::TINTEDLENS,PBAbilities::TINTEDLENS],
-		:BaseStats => [110,83,70,65,112,70]
+		:BaseStats => [110,83,70,65,112,70],
 		:Movelist => [[0,PBMoves::ESPERWING],[1,PBMoves::SUPERPOWER],[1,PBMoves::PSYWAVE],[1,PBMoves::ESPERWING],
 			[1,PBMoves::PECK],[1,PBMoves::LEER],[5,PBMoves::FURYATTACK],[10,PBMoves::SCARYFACE],
 			[12,PBMoves::QUICKATTACK],[14,PBMoves::HONECLAWS],[16,PBMoves::TWISTER],[19,PBMoves::WINGATTACK],
@@ -4489,7 +4489,7 @@ PBSpecies::WOOPER => {
 			[24,PBMoves::POISONJAB],[28,PBMoves::SLUDGEWAVE],[32,PBMoves::AMNESIA],[40,PBMoves::TOXIC],
 			[44,PBMoves::EARTHQUAKE]],
 		:EggMoves => [PBMoves::AFTERYOU,PBMoves::ANCIENTPOWER,PBMoves::COUNTER,PBMoves::DOUBLEKICK,
-			PBMoves::GRASTROACID,PBMoves::MIST,PBMoves::RECOVER,PBMoves::SOAK,PBMoves::SPITUP,PBMoves::STOCKPILE,
+			PBMoves::GASTROACID,PBMoves::MIST,PBMoves::RECOVER,PBMoves::SOAK,PBMoves::SPITUP,PBMoves::STOCKPILE,
 			PBMoves::SWALLOW],
 		:GetEvo => [[PBSpecies::CLODSIRE,PBEvolution::Level,20]],
 	}

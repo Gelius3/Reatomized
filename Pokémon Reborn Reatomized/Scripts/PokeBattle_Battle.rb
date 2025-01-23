@@ -3980,6 +3980,7 @@ class PokeBattle_Battle
           i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
       end
     end
+    end
     @switching=false
     # Opportunist / Protosynthesis / Quark Drive checkpoint
     priority.each {|i| i.opportunistCheck}

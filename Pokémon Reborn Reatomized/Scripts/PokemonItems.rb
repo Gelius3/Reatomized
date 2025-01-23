@@ -2744,6 +2744,7 @@ end
           (move == PBMoves::IONICSTRAIN) || (move == PBMoves::OVERDOSAGE) 
         return true
       end
+    end
   end
 when PBSpecies::SWIRLIX
     if pokemon.form==1
