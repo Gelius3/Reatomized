@@ -1181,16 +1181,18 @@ MARKCHARM=4015
 EXPCHARM=4016
 GLIMMERINGCHARM=4017
 INFINITYREPEL=4018
+TM198=4019
+TM199=4020
 
 def PBItems.getName(id)
 return pbGetMessage(MessageTypes::Items,id)
 end
 
 def PBItems.getCount
-return 4019
+return 4021
 end
 
 def PBItems.maxValue
-return 4018
+return 4020
 end
 end

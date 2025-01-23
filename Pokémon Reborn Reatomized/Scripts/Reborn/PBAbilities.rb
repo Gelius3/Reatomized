@@ -417,15 +417,16 @@ CELESTIALREINCARNATION=470
 STURDINESS=471
 BALANCEBRINGER=472
 ARGONAUT=473
+FIELDMASTER=474
 
 def self.getName(id)
 return pbGetMessage(MessageTypes::Abilities,id)
 end
 def self.getCount
-return 418
+return 419
 end
 
 def self.maxValue
-return 473
+return 474
 end
 end
