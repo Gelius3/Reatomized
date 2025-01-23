@@ -2692,9 +2692,8 @@ end
 end
 when PBSpecies::FLETCHLING
     if pokemon.form==1
-if (move == PBMoves::NUCLEARWIND) || (move == PBMoves::EMERGENCYEXIT) || (move == PBMoves::BLASTWAVE) ||
-  (move == PBMoves::NUCLEARSLASH) ||
-  (move == PBMoves::GAMMARAY)
+if (move == PBMoves::NUCLEARWIND) || (move == PBMoves::EMERGENCYEXIT) || 
+  (move == PBMoves::BLASTWAVE) || (move == PBMoves::NUCLEARSLASH) || (move == PBMoves::GAMMARAY)
   return true
 end
 end
@@ -2730,34 +2729,35 @@ end
       end
   when PBSpecies::ESPURR
       if pokemon.form==1
-  if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) || (move == PBMoves::IONICSTRAIN) || (move == PBMoves::OVERDOSAGE) 
-    return true
-  end
+       if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) ||
+        (move == PBMoves::IONICSTRAIN) || (move == PBMoves::OVERDOSAGE) 
+      return true
+    end
   end
   when PBSpecies::MEOWSTIC
       if pokemon.form==1
-        if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) || (move == PBMoves::IONICSTRAIN) ||
-          (move == PBMoves::OVERDOSAGE) 
+        if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) ||
+          (move == PBMoves::IONICSTRAIN) || (move == PBMoves::OVERDOSAGE) 
         return true
       elsif pokemon.form==3
-        if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) || (move == PBMoves::IONICSTRAIN) ||
-          (move == PBMoves::OVERDOSAGE) 
+        if (move == PBMoves::GAMMARAY) || (move == PBMoves::HALFLIFE) ||
+          (move == PBMoves::IONICSTRAIN) || (move == PBMoves::OVERDOSAGE) 
         return true
+      end
   end
-end
 when PBSpecies::SWIRLIX
     if pokemon.form==1
-if (move == PBMoves::NUCLEARWASTE) || (move == PBMoves::EXPUNGE) || (move == PBMoves::OVERDOSAGE) ||
-   (move == PBMoves::RADIOACID)
-  return true
-end
-end
+      if (move == PBMoves::NUCLEARWASTE) || (move == PBMoves::EXPUNGE) ||
+         (move == PBMoves::OVERDOSAGE) || (move == PBMoves::RADIOACID)
+      return true
+    end
+  end
 when PBSpecies::SLURPUFF
     if pokemon.form==1
-if (move == PBMoves::NUCLEARWASTE) || (move == PBMoves::EXPUNGE) || (move == PBMoves::OVERDOSAGE) ||
-  (move == PBMoves::RADIOACID)
-  return true
-end
+      if (move == PBMoves::NUCLEARWASTE) || (move == PBMoves::EXPUNGE) ||
+        (move == PBMoves::OVERDOSAGE) || (move == PBMoves::RADIOACID)
+      return true
+    end
 end
 when PBSpecies::DEDENNE
     if pokemon.form==2
