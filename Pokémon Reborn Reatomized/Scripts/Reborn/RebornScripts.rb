@@ -1534,12 +1534,12 @@ end
       f.close
       localVer = localVer.to_f
       if remoteVer > localVer     
-        if System.platform[/Mac/]
-          message = "A new update has been detected!\n\nCurrent version: #{localVer}\nNew version: #{remoteVer}\n\nPlease close the game and run the Reborn_Updater utility included with the download to fetch the new version."
-        else
+      #  if System.platform[/Mac/]
+       #   message = "A new update has been detected!\n\nCurrent version: #{localVer}\nNew version: #{remoteVer}\n\nPlease close the game and run the Reborn_Updater utility included with the download to fetch the new version."
+       # else
           message = "A new update has been detected!\n\nCurrent version: #{localVer}\nNew version: #{remoteVer}\n\nPlease close the game and run updater.exe to fetch the new version."
-        end
-        print message
+       # end
+       # print message
       end
     end
   end
