@@ -333,6 +333,12 @@ class PokeBattle_Battler
     return w
   end
 
+  def height
+    h=(@pokemon) ? @pokemon.height : 500
+    h=1 if h<1
+    return h
+  end
+
   def owned
     return (@pokemon) ? $Trainer.owned[@pokemon.species] && !@battle.opponent : false
   end
