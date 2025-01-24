@@ -652,6 +652,11 @@ class PokeBattle_Pokemon
     return $cache.pkmn_dex[@species][:Weight]
   end
 
+# Returns the height of this Pokémon.
+def height
+  return $cache.pkmn_dex[@species][:Height]
+end
+
 # Returns the EV yield of this Pokémon.
   def evYield
     return $cache.pkmn_dex[@species][:EVs]
