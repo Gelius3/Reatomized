@@ -285,7 +285,7 @@ class PokeBattle_Pokemon
   alias __mf_type1 type1
   alias __mf_type2 type2
   alias __mf_weight weight
-	#alias __mf_height height
+  alias __mf_height height
   alias __mf_getMoveList getMoveList
   alias __mf_wildHoldItems wildHoldItems
 	alias __mf_baseExp baseExp
