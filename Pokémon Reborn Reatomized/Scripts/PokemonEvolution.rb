@@ -734,6 +734,7 @@ def pbMiniCheckEvolution(pokemon,evonib,level,poke)
   koffingMaps=[696,697,698,699,700,701,702]
   mrmimeMaps=[412,710,711,712,725,713,716,718,726,719,720,727,721,728,717,714,722,742,715,723,724,729]
   remoraidMaps=[234,465,840,875] #Rebornian Octillery (Chrysolia Forest, Chrysolia Deepwoods)
+  munchmaps=[412, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 742]	
   case evonib
     when PBEvolution::Happiness
       return poke if pokemon.happiness>=220
@@ -746,6 +747,12 @@ def pbMiniCheckEvolution(pokemon,evonib,level,poke)
       return poke if pokemon.happiness>=220 && PBDayNight.isNight?(pbGetTimeNow)
     when PBEvolution::Level
       case pokemon.species
+	 when 446             # Munchlax to Rebornian Snorlax
+          if munchMaps.include?($game_map.map_id)
+            pokemon.form=2
+          else
+            pokemon.form=0
+          end
         when 104            # Cubone -> Marowak forms
           if PBDayNight.isNight?(pbGetTimeNow) || marowakMaps.include?($game_map.map_id)
             pokemon.form=1
