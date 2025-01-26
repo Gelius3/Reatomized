@@ -6748,8 +6748,8 @@ PBSpecies::SNORLAX => {
 	},
 
 	"Rebornian" => {
-		:Type1 => PBTypes::GROUND,
-		:Type2 => PBTypes::NORMAL,
+		:Type1 => PBTypes::ICE,
+		:Type2 => PBTypes::GROUND,
 		:BaseStats => [168,42,105,68,70,87],
 		:Ability => [PBAbilities::IMMUNITY,PBAbilities::THICKFAT,PBAbilities::GLUTTONY],
 		:Movelist => [[1,PBMoves::TACKLE],[4,PBMoves::DEFENSECURL],[9,PBMoves::AMNESIA],[12,PBMoves::LICK],[17,PBMoves::CHIPAWAY],[20,PBMoves::YAWN],[25,PBMoves::BODYSLAM],[28,PBMoves::REST],[28,PBMoves::SNORE],[33,PBMoves::SLEEPTALK],[35,PBMoves::GIGAIMPACT],[36,PBMoves::ROLLOUT],[41,PBMoves::BLOCK],[44,PBMoves::BELLYDRUM],[49,PBMoves::CRUNCH],[50,PBMoves::HEAVYSLAM],[57,PBMoves::EARTHPOWER]]
