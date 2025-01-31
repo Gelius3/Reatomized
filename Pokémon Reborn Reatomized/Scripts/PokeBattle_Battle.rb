@@ -5581,7 +5581,7 @@ class PokeBattle_Battle
           for mon in [i, i.pbPartner]
             next if mon.isFainted? && !PBStuff::TWOTURNMOVE.include?(mon.effects[PBEffects::TwoTurnAttack])
             if (mon.ability == PBAbilities::CONTRARY || mon.ability == PBAbilities::ALOLANTECHNIQUESB || mon.ability == PBAbilities::REVERSALIZE) && !mon.pbTooHigh?(PBStats::SPEED)
-              mon.pbReduceStatBasic(PBStats::SPEED,4)
+              mon.pbIncreaseStatBasic(PBStats::SPEED,4)
                 pbCommonAnimation("StatUp",mon,nil)
                 pbDisplay(_INTL("{1}'s Speed went way up!",mon.pbThis))
             elsif !mon.pbTooLow?(PBStats::SPEED)
