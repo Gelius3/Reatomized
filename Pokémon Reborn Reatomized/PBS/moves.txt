@@ -708,7 +708,7 @@
 708,CLANGOROUSSOUL,Clangorous Soul,183,0,DRAGON,Status,0,5,0,10,0,dk,"The user raises all its stats by using some of its HP."
 709,BODYPRESS,Body Press,184,80,FIGHTING,Physical,100,10,0,00,0,abef,"The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target."
 710,DECORATE,Decorate,185,0,FAIRY,Status,0,15,0,00,0,,"The user sharply raises the target's Attack and Sp. Atk stats by decorating the target."
-711,DRUMBEATING,Drum Beating,044,80,GRASS,Physical,100,10,100,00,0,befk,"The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat."
+711,DRUMBEATING,Drum Beating,044,80,GRASS,Physical,100,10,100,00,0,bef,"The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat."
 712,SNAPTRAP,Snap Trap,0CF,35,GRASS,Physical,100,15,0,00,0,abef,"The user snares the target in a snap trap for four to five turns."
 713,PYROBALL,Pyro Ball,00A,120,FIRE,Physical,90,5,0,00,0,befg,"The user attacks by igniting a small stone and launching it as a fiery ball at the target. This may also leave the target with a burn."
 714,BEHEMOTHBLADE,Behemoth Blade,178,100,STEEL,Physical,100,5,0,00,0,abef,"The user becomes a gigantic sword and cuts the target. This move deals twice the damage if the target is Dynamaxed."
