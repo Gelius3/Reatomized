@@ -5486,9 +5486,6 @@ class PokeBattle_Battler
     if target
       aboveHalfHp = target.hp>(target.totalhp/2.0).floor
     end
-    if target
-      aboveQuarterHp = target.hp>(target.totalhp/4.0).floor
-    end
 
     for i in 0...numhits
       if user.status==PBStatuses::SLEEP && !thismove.pbCanUseWhileAsleep? && !@simplemove
@@ -5745,7 +5742,7 @@ class PokeBattle_Battler
         end
       end
       # Power Nap
-      if !target.isFainted? && aboveQuarterHp && target.hp<=(target.totalhp/4.0).floor && target.effects[PBEffects::PowerNap]==false
+      if !target.isFainted? && aboveHalfHp && (target.hp + target.pbBerryRecoverAmount)<=(target.totalhp/2.0).floor && target.effects[PBEffects::PowerNap]==false
         if (target.abilityWorks? && (target.ability == PBAbilities::POWERNAP)) && (target.pbCanSleep?(true,true,true) || !(target.status==PBStatuses::SLEEP))
           target.pbSleepSelf(3)
           @battle.pbDisplay(_INTL("{1} took a Power Nap!",target.pbThis))
@@ -5754,7 +5751,7 @@ class PokeBattle_Battler
         end
       end
       # Spirit
-      if !target.isFainted? && aboveQuarterHp && (target.hp<=(target.totalhp/4.0).floor) && target.pokemon.spirit==false
+      if !target.isFainted? && aboveHalfHp && (target.hp + target.pbBerryRecoverAmount)<=(target.totalhp/2.0).floor && target.pokemon.spirit==false
         if (target.abilityWorks? && (target.ability == PBAbilities::SPIRIT))
           hp=target.pbRecoverHP((target.totalhp/2.0).floor,true) if target.effects[PBEffects::HealBlock]==0
           if !pbTooHigh?(PBStats::ATTACK)
