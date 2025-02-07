@@ -4502,7 +4502,7 @@ ALTARIA,36,40
 INDEEDEE,38,42
 DUSTOX,38,41
 DUSTOX,39,45
-TREECKO,39,45
+DUSTOX,39,45
 #########################
 467 # Water Treatment Center
 4,4,4
