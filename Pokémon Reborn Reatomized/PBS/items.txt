@@ -1016,7 +1016,7 @@
 1063,JUMPLUFFITE,Jumpluffite,6,500,"Have Jumpluff hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
 1064,SUNFLORITE,Sunflorite,6,500,"Have Sunflora hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
 1065,SHUCKLENITE,Shucklenite,6,500,"Have Shuckle hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
-1066,DELIBIRDITE,Deblibirdite,6,500,"Have Delibird hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
+1066,DELIBIRDITE,Delibirdite,6,500,"Have Delibird hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
 1067,BRELOOMITE,Breloomite,6,500,"Have Breloom hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
 1068,EXPLOUDITE,Exploudite,6,500,"Have Exploud hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
 1069,ZANGOOSITE,Zangoosite,6,500,"Have Zangoose hold it, and this stone will enable it to Mega-evolve during battle.",0,0,0,
