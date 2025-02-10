@@ -34,6 +34,13 @@ Events.onTrainerPartyLoad+=proc {|sender,e|
         end
       end
     end
+    if trainer.trainertype==PBTrainers::NWCultist && trainer.name=="Kaiden"
+      for i in party
+        if (i.species==PBSpecies::RAFFITI && i.ability==PBAbilities::QUICKFEET)
+          i.status=PBStatuses::BURN
+        end  
+      end
+    end
     if trainer.trainertype==PBTrainers::ARKHAOS && trainer.name=="Arkhaos"
       for i in party
         if (i.species==PBSpecies::MISSINGNO2 && i.ability==PBAbilities::MARVELSCALE)
