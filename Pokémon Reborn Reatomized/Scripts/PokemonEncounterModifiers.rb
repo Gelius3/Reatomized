@@ -550,7 +550,7 @@ Events.onWildPokemonCreate+=proc {|sender,e|
     when 154 # Form 4
       pokemon.form=4
     when 155 # Form 5
-      pokemon.form=5
+      pokemon.form=4
     when 156 # Form 6
       pokemon.form=6
     when 159 # Diancie
