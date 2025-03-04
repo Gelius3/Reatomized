@@ -1096,7 +1096,7 @@
 1144,TM201,TM201,4,6000,"The user electrifies its body and drops onto the target to inflict damage. If this move misses, the user takes damage instead.",3,0,0,SUPERCELLSLAM
 1145,TM202,TM202,4,6000,"Does more damage the higher the target's health is.",3,0,0,HARDPRESS
 1146,TM203,TM203,4,6000,"Encourages ally Pokémon, boosting their Critical Strike chance.",3,0,0,DRAGONCHEER
-1147,TM204,TM204,4,6000,"Attack the target with an angelic voice. Confuses all opponents that boosted their stats this turn.",3,0,0,ALLURINGVOICE
+1201,TM204,TM204,4,6000,"Attack the target with an angelic voice. Confuses all opponents that boosted their stats this turn.",3,0,0,ALLURINGVOICE
 1147,TM205,TM205,4,6000,"Damages the target and prevents it from healing for two turns.",3,0,0,PSYCHICNOISE
 1148,TM206,TM206,4,6000,"Reacts to the enemy's priority move and flinches them.",3,0,0,UPPERHAND
 1149,METALALLOY,Metal Alloy,1,1100,"A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.",1,0,0,
