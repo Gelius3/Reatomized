@@ -379,9 +379,6 @@ class PokeBattle_Move
       if attacker.ability == PBAbilities::TERAVOLT && @battle.FE == PBFields::ELECTRICT
         mod=2 if otype == PBTypes::GROUND
       end
-      if opponent.ability == PBAbilities::TRANSISTOR
-        mod=1 if (atype == PBTypes::GROUND)
-      end
 
       # Effect related type effectiveness changes
       if opponent.effects[PBEffects::Electrify]
@@ -1080,28 +1077,10 @@ class PokeBattle_Move
       damagemult=(damagemult*1.5).round if (PBStuff::STINGMOVE).include?(@id)
     elsif attacker.ability == PBAbilities::ACCELERATION 
       damagemult=(damagemult*1.5).round if [26,108,180,252,278,306,310,314,526,550,836,955,963,989].include?(@id)
-    elsif attacker.ability == PBAbilities::ROCKYPAYLOAD && type == PBTypes::ROCK
-      if @battle.FE == PBFields::ROCKYF
-        damagemult=(damagemult*2).round
-      else
-        damagemult=(damagemult*1.5).round 
-      end
-    elsif attacker.ability == PBAbilities::TRANSISTOR && type==PBTypes::ELECTRIC 
-      if @battle.FE == PBFields::ELECTRICT || @battle.FE == PBFields::FACTORYF || @battle.FE == PBFields::SHORTCIRCUITF 
-        damagemult=(damagemult*2).round
-      else
-        damagemult=(damagemult*1.5).round 
-      end 
     elsif (attacker.ability == PBAbilities::PLUS || attacker.ability == PBAbilities::MINUS) && type == PBTypes::ELECTRIC 
       damagemult=(damagemult*1.3).round 
     elsif attacker.ability == PBAbilities::ELEMENTALIST && (type == PBTypes::FIRE || type == PBTypes::WATER || type == PBTypes::ELECTRIC) # Uranium
       damagemult=(damagemult*1.5).round
-    elsif attacker.ability == PBAbilities::DRAGONSMAW && type==PBTypes::DRAGON
-      if @battle.FE == PBFields::DRAGONSD 
-        damagemult=(damagemult*2).round
-      else
-        damagemult=(damagemult*1.5).round 
-      end 
     elsif attacker.ability == PBAbilities::RECKLESS
       if @function==0xFA ||  # Take Down, etc.
         @function==0xFB ||  # Double-Edge, etc.
@@ -2137,10 +2116,16 @@ class PokeBattle_Move
     end
 
     # STAB
-    if (attacker.pbHasType?(type) || (attacker.ability == PBAbilities::STEELWORKER && type == PBTypes::STEEL) || (attacker.ability == PBAbilities::INNERFLAME && type == PBTypes::FIRE)) && (options&IGNOREPKMNTYPES)==0
+    if (attacker.pbHasType?(type) || (attacker.ability == PBAbilities::STEELWORKER && type == PBTypes::STEEL) || (attacker.ability == PBAbilities::TRANSISTOR && type == PBTypes::ELECTRIC) || (attacker.ability == PBAbilities::DRAGONSMAW && type == PBTypes::DRAGON) || (attacker.ability == PBAbilities::ROCKYPAYLOAD && type == PBTypes::ROCK)) && (options&IGNOREPKMNTYPES)==0
       if attacker.ability == PBAbilities::ADAPTABILITY
         damage=(damage*2).round
       elsif (attacker.ability == PBAbilities::STEELWORKER && type == PBTypes::STEEL) && @battle.FE == PBFields::FACTORYF # Factory Field
+        damage=(damage*2).round
+      elsif (attacker.ability == PBAbilities::TRANSISTOR && type == PBTypes::ELECTRIC) && (@battle.FE == PBFields::ELECTRICT || @battle.FE == PBFields::FACTORYF || @battle.FE == PBFields::SHORTCIRCUITF) # Bonus Fields
+        damage=(damage*2).round
+      elsif (attacker.ability == PBAbilities::DRAGONSMAW && type == PBTypes::DRAGON) && @battle.FE == PBFields::DRAGONSD # Dragon's Den
+        damage=(damage*2).round
+      elsif (attacker.ability == PBAbilities::ROCKYPAYLOAD && type == PBTypes::ROCK) && @battle.FE == PBFields::ROCKYF # Rocky Field
         damage=(damage*2).round
       elsif (attacker.ability == PBAbilities::INNERFLAME && type == PBTypes::FIRE) && (@battle.FE == PBFields::BURNINGF || @battle.FE == PBFields::SUPERHEATEDF || @battle.FE == PBFields::DRAGONSD)
         damage=(damage*2).round
