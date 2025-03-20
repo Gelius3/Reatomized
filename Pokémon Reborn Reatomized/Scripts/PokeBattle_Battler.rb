@@ -678,6 +678,9 @@ class PokeBattle_Battler
     @effects[PBEffects::ParadoxBoost]     = []
     @effects[PBEffects::PowerNap]         = false
     @effects[PBEffects::Nurse]            = false
+    @effects[PBEffects::Bodyguard]        = false
+    @effects[PBEffects::Bodyguarding]     = false
+    @effects[PBEffects::Shield]           = false
     for i in 0...4
       next if !@battle.battlers[i] || fakebattler
       if @battle.battlers[i].effects[PBEffects::MultiTurnUser]==@index
@@ -2019,7 +2022,7 @@ class PokeBattle_Battler
     # Share
     if self.ability == PBAbilities::SHARE || (self.effects[PBEffects::Share]==false && self.effects[PBEffects::SharedAbility]!=0)
       @effects[PBEffects::SharedAbility]=0
-      if (@effects[PBEffects::Share] || onactive) && !pbPartner.isFainted? && pbPartner.ability != 0 # maybe make some kind of blacklist later
+      if (@effects[PBEffects::Share] || onactive) && !pbPartner.isFainted? && pbPartner.ability != PBAbilities::IMPOSTER && pbPartner.ability != 0 # maybe make some kind of blacklist later
         partnerAbility=self.pbPartner.ability
         @ability=partnerAbility
         abilityname=PBAbilities.getName(partnerAbility)
@@ -2336,6 +2339,9 @@ class PokeBattle_Battler
           else
             @battle.pbDisplay(_INTL("The opposing team cannot use items!"))
           end
+      end
+      case self.pbPartner.ability
+        when PBAbilities::DECOY, PBAbilities::BODYGUARD, PBAbilities::SHIELD then @battle.pbDisplay(_INTL("{2} is protecting {1}!",pbThis,pbPartner.pbThis))
       end
     end
     # Air Balloon Message
@@ -3179,7 +3185,7 @@ class PokeBattle_Battler
           if (movedata.basedamage>0 && eff>4 &&
              movedata.function!=0x71 && # Counter
              movedata.function!=0x72 && # Mirror Coat
-             movedata.function!=0x73) || # Metal Burst
+             movedata.function!=0x73) || # Metal Burst & Comeuppance
              (movedata.function==0x70 && eff>0) # OHKO
             found=true
             break
@@ -3554,7 +3560,8 @@ class PokeBattle_Battler
             @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!",target.pbThis, PBAbilities.getName(target.ability),user.pbThis(true)))
           end
           # Melee
-          if user.ability == PBAbilities::MELEE && !target.pbPartner.isFainted? && !target.pbPartner.hasWorkingAbility(:MAGICGUARD) && !(move.target == PBTargets::AllNonUsers) && !(move.target == PBTargets::AllOpposing)
+          if user.ability == PBAbilities::MELEE && !target.pbPartner.isFainted? && !target.pbPartner.hasWorkingAbility(:MAGICGUARD) && 
+            !(move.target == PBTargets::AllNonUsers) && !(move.target == PBTargets::AllOpposing) && !target.hasWorkingAbility(:SHIELD)
             @battle.scene.pbDamageAnimation(target.pbPartner,0)
             target.pbPartner.pbReduceHP((target.pbPartner.totalhp/16.0).floor)
             @battle.pbDisplay(_INTL("{1}'s {2} hurt {3}!",user.pbThis, PBAbilities.getName(user.ability),target.pbPartner.pbThis(true)))
@@ -3631,7 +3638,7 @@ class PokeBattle_Battler
               user.forcedSwitch = true
             end
           end
-	end
+      	end
       end
     end
 
@@ -4024,7 +4031,7 @@ class PokeBattle_Battler
         if user.hasWorkingAbility(:SPONGE) && !target.pbPartner.isFainted? && !target.pbPartner.hasWorkingAbility(:MAGICGUARD) && 
          !(move.target == PBTargets::AllNonUsers) && !(move.target == PBTargets::AllOpposing) && 
          (move.function==0xDD || move.function==0xDE || move.function==0x139 || #move.function==0x277 Matcha Gotcha is not single target || 
-         move.function==0x804 || move.function==0x909 || move.function==0x914)
+          move.function==0x804 || move.function==0x909 || move.function==0x914) && !target.hasWorkingAbility(:SHIELD)
           @battle.scene.pbDamageAnimation(target.pbPartner,0)
           damageSponged=target.pbPartner.pbReduceHP((target.pbPartner.totalhp/16.0).floor)
           user.pbRecoverHP(damageSponged,true)
@@ -4768,8 +4775,22 @@ class PokeBattle_Battler
        thismove.target==PBTargets::OppositeOpposing
       for i in priority # use Pokémon latest in priority
         next if !pbIsOpposing?(i.index) || i.isFainted?
-        if i.effects[PBEffects::FollowMe] || i.effects[PBEffects::RagePowder] || 
-	   (i.hasWorkingAbility(:DECOY) && !((i.pbPartner.hasWorkingAbility(:LIGHTNINGROD) && thismove.type == PBTypes::ELECTRIC) || (i.pbPartner.hasWorkingAbility(:STORMDRAIN) && thismove.type == PBTypes::WATER))) # Prioritize Lightning Rod and Storm Drain # TODO fix more Decoy edgecases later, current check is scuffed		
+        # Reatomized start
+        # smartProtection = PBTypes.getCombinedEffectiveness(thismove.type, i.pbPartner.type1, i.pbPartner.type2)>0 ? true : false # scrapped # Does not protect the target if the move fails.
+        if target == i.pbPartner && !i.pbPartner.moldbroken
+          if i.hasWorkingAbility(:DECOY) && !i.pbPartner.damagestate.substitute
+            target=i
+            changeeffect = 0
+          end
+          if i.hasWorkingAbility(:BODYGUARD) && i.effects[PBEffects::Bodyguard] == false && i.effects[PBEffects::Bodyguarding] == false && thismove.basedamage>0
+            target=i
+            changeeffect = 0
+            @battle.pbDisplay(_INTL("{1} took one for the team!",i.pbThis))
+            i.effects[PBEffects::Bodyguarding] = true
+          end
+        end
+        # Reatomized end
+        if i.effects[PBEffects::FollowMe] || i.effects[PBEffects::RagePowder]
           unless (i.effects[PBEffects::RagePowder] && (self.ability == PBAbilities::OVERCOAT || self.pbHasType?(:GRASS) || self.hasWorkingItem(:SAFETYGOGGLES))) # change target to this
             target=i
             changeeffect = 0
@@ -5257,6 +5278,11 @@ class PokeBattle_Battler
       end
       return false
     end
+    if target.pbPartner.hasWorkingAbility(:SHIELD) && target.pbPartner.effects[PBEffects::Shield] == false && (thismove.target==PBTargets::AllOpposing || thismove.target==PBTargets::AllNonUsers)
+      @battle.pbDisplay(_INTL("{1}'s shield shattered!",target.pbPartner.pbThis))
+      target.pbPartner.effects[PBEffects::Shield] = true
+      return false
+    end
     return true
   end
 
@@ -5483,6 +5509,7 @@ class PokeBattle_Battler
     berserkcheck=false
     angyshellplus=false
     angyshellminus=false
+    spiritCheck=false
     if target
       aboveHalfHp = target.hp>(target.totalhp/2.0).floor
     end
@@ -5752,20 +5779,19 @@ class PokeBattle_Battler
       end
       # Spirit
       if !target.isFainted? && aboveHalfHp && (target.hp + target.pbBerryRecoverAmount)<=(target.totalhp/2.0).floor && target.pokemon.spirit==false
-        if (target.abilityWorks? && (target.ability == PBAbilities::SPIRIT))
-          hp=target.pbRecoverHP((target.totalhp/2.0).floor,true) if target.effects[PBEffects::HealBlock]==0
+        if (target.abilityWorks? && (target.ability == PBAbilities::SPIRIT) && target.effects[PBEffects::HealBlock]==0)
+            hp=target.pbRecoverHP((target.totalhp/2.0).floor,true)
           if !pbTooHigh?(PBStats::ATTACK)
             target.pbIncreaseStatBasic(PBStats::ATTACK,1)
-            @battle.pbCommonAnimation("StatUp",target,nil)
-            spiritAtkCheck=true
+            spiritCheck=true
           end
           if !pbTooHigh?(PBStats::SPATK)
             target.pbIncreaseStatBasic(PBStats::SPATK,1)
-            @battle.pbCommonAnimation("StatUp",target,nil)
-            spiritSpAtkCheck=true
+            spiritCheck=true
           end
-          target.pokemon.spirit=true if (spiritAtkCheck || spiritSpAtkCheck || target.effects[PBEffects::HealBlock]==0)
-          #@battle.pbDisplay(_INTL("{1}!",target.pbThis)) if target.pokemon.spirit==true ## add ability activation text here Idk
+          @battle.pbDisplay(_INTL("{1}'s spirit has risen!",target.pbThis))
+          @battle.pbCommonAnimation("StatUp",target,nil) if statCheck
+          target.pokemon.spirit=true
         end
       end
       # Grudge
@@ -6847,6 +6873,11 @@ class PokeBattle_Battler
       @battle.battlers[i].statdownanimplayed = false
       @battle.battlers[i].statupanimplayed = false
       @battle.battlers[i].statrepeat = false
+      if @battle.battlers[i].effects[PBEffects::Bodyguarding] == true
+        @battle.battlers[i].effects[PBEffects::Bodyguard] = true
+        @battle.battlers[i].effects[PBEffects::Bodyguarding] = false
+        @battle.pbDisplay(_INTL("{1}'s guard is cooling off!",@battle.battlers[i].pbThis))
+      end
     end
   end
 

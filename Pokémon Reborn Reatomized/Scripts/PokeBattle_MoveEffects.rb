@@ -3260,7 +3260,7 @@ class PokeBattle_Move_074 < PokeBattle_Move
 
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
     ret = super(attacker,opponent,hitnum,alltargets,showanimation) if @basedamage>0
-    if opponent.pbPartner && !opponent.pbPartner.isFainted?
+    if opponent.pbPartner && !opponent.pbPartner.isFainted? && !opponent.hasWorkingAbility(:SHIELD)
       opponent.pbPartner.pbReduceHP((opponent.pbPartner.totalhp / 16.0).floor)
       @battle.pbDisplay(_INTL("The bursting flame hit {1}!", opponent.pbPartner.pbThis(true)))
       (opponent.pbPartner).pbFaint if (opponent.pbPartner).isFainted?
@@ -7544,7 +7544,7 @@ end
 ################################################################################
 class PokeBattle_Move_10C < PokeBattle_Move
   def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
-    if attacker.effects[PBEffects::Substitute]>0
+    if attacker.effects[PBEffects::Substitute]>0 || attacker.hasWorkingAbility(:DECOY)
       @battle.pbDisplay(_INTL("{1} already has a substitute!",attacker.pbThis))
       return -1
     end
@@ -11480,7 +11480,7 @@ class PokeBattle_Move_265 < PokeBattle_Move
     if !@battle.pbCanChooseNonActive?(attacker.index)
       @battle.pbDisplay(_INTL("But it failed!"))
       return -1
-    elsif attacker.effects[PBEffects::Substitute] > 0
+    elsif attacker.effects[PBEffects::Substitute] > 0 || attacker.hasWorkingAbility(:DECOY)
       @battle.pbDisplay(_INTL("{1} already has a decoy!",attacker.pbThis))
       return -1
     elsif attacker.hp <= (attacker.totalhp/2.0).ceil
@@ -12515,7 +12515,7 @@ class PokeBattle_Move_914 < PokeBattle_Move
   end
 
   def pbAdditionalEffect(attacker,opponent)
-    if attacker.effects[PBEffects::Substitute]>0
+    if attacker.effects[PBEffects::Substitute]>0 || attacker.hasWorkingAbility(:DECOY)
       return -1
     end
     sublife=[(attacker.totalhp/2.0).floor,1].max

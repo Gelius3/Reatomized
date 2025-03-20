@@ -1903,6 +1903,9 @@ class PokeBattle_Move
     if opponent.ability == PBAbilities::PUNKROCK && isSoundBased? && !(opponent.moldbroken)
       defmult=(defmult*2).round
     end
+    if opponent.ability == PBAbilities::BODYGUARD && opponent.effects[PBEffects::Bodyguard] == false && opponent.effects[PBEffects::Bodyguarding] == true
+      defmult=(defmult*2).round
+    end
     if ((@battle.pbWeather==PBWeather::SUNNYDAY && !opponent.hasWorkingItem(:UTILITYUMBRELLA)) || @battle.FE == PBFields::FLOWERGARDENF) &&
     !(opponent.moldbroken) && pbIsSpecial?(type)
       if opponent.ability == PBAbilities::FLOWERGIFT && opponent.species == PBSpecies::CHERRIM

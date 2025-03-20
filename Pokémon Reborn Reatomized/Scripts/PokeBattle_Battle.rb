@@ -1984,8 +1984,10 @@ class PokeBattle_Battle
     if switched.length>0
       priority=pbPriority
       for i in priority
-        i.pbAbilitiesOnSwitchIn(true) if switched.include?(i.index)
-        i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
+        if switched.include?(i.index)
+          i.pbAbilitiesOnSwitchIn(true)
+          i.pbPartner.pbAbilitiesOnSwitchIn(true) if i.pbPartner.effects[PBEffects::SharedAbility]!=0 # Share
+        end
       end
       for i in priority
         seedCheck
@@ -4151,6 +4153,14 @@ class PokeBattle_Battle
       @battlers[i].effects[PBEffects::BeakBlast]        =false
       @battlers[i].effects[PBEffects::ClangedScales]    =false
       @battlers[i].effects[PBEffects::ShellTrap]        =false
+      if @battlers[i].effects[PBEffects::Bodyguard] == true
+        pbDisplay(_INTL("{1}'s guard is back up!",@battlers[i].pbThis))
+      end
+      @battlers[i].effects[PBEffects::Bodyguard]        =false
+      if @battlers[i].effects[PBEffects::Shield] == true
+        pbDisplay(_INTL("{1}'s shield recovered!",@battlers[i].pbThis))
+      end
+      @battlers[i].effects[PBEffects::Shield]           =false
       if @field.effect==PBFields::BURNINGF && @battlers[i].effects[PBEffects::BurnUp] # Burning Field
         @battlers[i].type1= @battlers[i].pokemon.type1
         @battlers[i].type2= @battlers[i].pokemon.type2
@@ -4740,16 +4750,16 @@ class PokeBattle_Battle
       # Deep Sleep
       if i.ability == PBAbilities::DEEPSLEEP && i.effects[PBEffects::HealBlock]== 0 && i.status == PBStatuses::SLEEP
         hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
-        pbDisplay(_INTL("{1} recovered health in a Deep Sleep!",i.pbThis)) if hpgain>0
+        pbDisplay(_INTL("{1} recovered health in a deep sleep!",i.pbThis)) if hpgain>0
       end
       # Rebuild
       if i.ability == PBAbilities::REBUILD && i.effects[PBEffects::HealBlock]==0 && i.lastHPLost <= 0
         if @field.effect == PBFields::ROCKYF || @field.effect == PBFields::CAVE
         hpgain=i.pbRecoverHP((i.totalhp/4.0).floor,true)
-        pbDisplay(_INTL("{1} reassembled through Rebuild!",i.pbThis)) if hpgain>0
+        pbDisplay(_INTL("The unharmed {1} rebuilt itself!",i.pbThis)) if hpgain>0
         else
         hpgain=i.pbRecoverHP((i.totalhp/8.0).floor,true)
-        pbDisplay(_INTL("{1} reassembled through Rebuild!",i.pbThis)) if hpgain>0
+        pbDisplay(_INTL("The unharmed {1} rebuilt itself!",i.pbThis)) if hpgain>0
         end
       end
       # Life Force
@@ -4923,7 +4933,7 @@ class PokeBattle_Battle
             patient.pbInitEffects(false)
             @battle.scene.pbUnSubstituteSprite(patient, patient.pbIsOpposing?(1))
             @battle.scene.pbUnVanishSprite(patient, true)
-            pbDisplay(_INTL("{2} was Nursed by its partner {1}!",i.pbThis,patient.pbThis))
+            pbDisplay(_INTL("{1} was nursed by its partner!",patient.pbThis))
           end
         end
       end
@@ -5301,7 +5311,7 @@ class PokeBattle_Battle
     for i in priority
       next if i.isFainted?
       if ((i.pbOpposing1.hasWorkingAbility(:LULLABY) && i.pbOpposing1.effects[PBEffects::ThroatChop]==0) || (i.pbOpposing2.hasWorkingAbility(:LULLABY) && i.pbOpposing2.effects[PBEffects::ThroatChop]==0)) && 
-	      pbRandom(10)>1 && i.pbCanSleep?(false,false,false) && !(i.hasWorkingAbility(:SOUNDPROOF))
+	      pbRandom(10)<1 && i.pbCanSleep?(false,false,false) && !(i.hasWorkingAbility(:SOUNDPROOF))
         i.pbSleep
         pbDisplay(_INTL("A lullaby made {1} fall asleep!",i.pbThis))
         i.pbBerryCureCheck

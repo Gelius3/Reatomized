@@ -220,6 +220,9 @@ class PBEffects
   Nurse              = 175
   Share              = 176
   SharedAbility      = 177
+  Bodyguard          = 178
+  Bodyguarding       = 179
+  Shield             = 180
 
   # These effects apply to a side
   LightScreen   = 200
