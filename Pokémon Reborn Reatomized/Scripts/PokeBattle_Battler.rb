@@ -3528,7 +3528,7 @@ class PokeBattle_Battler
               @battle.pbDisplay(_INTL("{1}'s {2} lowered {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
             end
           end
-	  if target.ability == PBAbilities::SHACKLE
+          if target.ability == PBAbilities::SHACKLE
             if user.hasWorkingAbility(:CONTRARY) || user.hasWorkingAbility(:ALOLANTECHNIQUESB) || user.hasWorkingAbility(:REVERSALIZE)
               user.pbReduceStat(PBStats::SPEED,1,statmessage:false)
               @battle.pbDisplay(_INTL("{1}'s {2} boosted {3}'s Speed!",target.pbThis,PBAbilities.getName(target.ability),user.pbThis(true)))
@@ -5278,7 +5278,7 @@ class PokeBattle_Battler
       end
       return false
     end
-    if target.pbPartner.hasWorkingAbility(:SHIELD) && target.pbPartner.effects[PBEffects::Shield] == false && (thismove.target==PBTargets::AllOpposing || thismove.target==PBTargets::AllNonUsers)
+    if target.pbPartner.hasWorkingAbility(:SHIELD) && target.pbPartner.effects[PBEffects::Shield] == false && (thismove.target==PBTargets::AllOpposing || thismove.target==PBTargets::AllNonUsers) && !target.moldbroken
       @battle.pbDisplay(_INTL("{1}'s shield shattered!",target.pbPartner.pbThis))
       target.pbPartner.effects[PBEffects::Shield] = true
       return false
