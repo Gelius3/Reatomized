@@ -3412,7 +3412,8 @@ ItemHandlers::UseOnPokemon.add(:GALARIANFEATHER,proc{|item,pokemon,scene|
 ItemHandlers::UseOnPokemon.add(:ENERGYCORE,proc{|item,pokemon,scene|
   formnames = PokemonForms.dig(pokemon.species,:FormName)
   if formnames != nil
-    nuclearFormName = pokemon.form == 0 ? "Nuclear" : "Nuclear" + formnames[pokemon.form] # We got NuclearGalar and NuclearHisui too
+    safetyCheck = ([PBSpecies::SNEASLER, PBSpecies::RUNERIGUS].include?(pokemon.species)) ? [0, 1, 2].include?(pokemon.form) : pokemon.form == 0
+    nuclearFormName = safetyCheck ? "Nuclear" : "Nuclear" + formnames[pokemon.form] # We got NuclearGalar and NuclearHisui too
     nuclearFormNumber = formnames.key(nuclearFormName)
     if nuclearFormNumber != nil && pokemon.form != nuclearFormNumber
       pokemon.form = nuclearFormNumber
