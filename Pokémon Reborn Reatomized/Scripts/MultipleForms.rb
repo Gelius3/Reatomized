@@ -6090,7 +6090,7 @@ PBSpecies::SWAMPERT => {
 PBSpecies::SCEPTILE => {
 	:FormName => {1 => "Mega",},
 	:DefaultForm => 0,
-	:MegaForm => 2,
+	:MegaForm => 1,
 
 	"Mega" => {
 		:BaseStats => [70,110,75,145,145,85],
