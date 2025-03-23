@@ -3126,7 +3126,7 @@ class PokeBattle_Battler
       end
     end
     # Flower Garden Entry
-    if @battle.field.effect == PBFields::FLOWERGARDENF && [PBAbilities::FLOWERGIFT,PBAbilities::FLOWERVEIL,PBAbilities::DROUGHT,PBAbilities::DRIZZLE].include?(ability) && onactive
+    if @battle.field.effect == PBFields::FLOWERGARDENF && [PBAbilities::FLOWERGIFT,PBAbilities::FLOWERVEIL,PBAbilities::DROUGHT,PBAbilities::DRIZZLE,PBAbilities::ORICHALCUMPULSE].include?(ability) && onactive
       message = _INTL("{1}'s {2}", pbThis,PBAbilities.getName(ability))
       @battle.growField(message)
     end
