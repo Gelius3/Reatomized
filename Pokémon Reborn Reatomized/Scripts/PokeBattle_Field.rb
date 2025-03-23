@@ -279,7 +279,7 @@ class PokeBattle_Battle
 
   def canChangeFE?(newfield=[])
     newfield = [newfield] if newfield && !newfield.is_a?(Array)
-    return !([PBFields::UNDERWATER,PBFields::GLITCHF,PBFields::NEWW]+newfield).include?(@field.effect)
+    return !([PBFields::UNDERWATER,PBFields::NEWW]+newfield).include?(@field.effect)
   end
 
   def breakField
