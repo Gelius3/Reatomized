@@ -3699,7 +3699,7 @@ class PokeBattle_Battler
         end
       end
       # Thrust
-      if user.hasWorkingAbility(:THRUST) && @battle.pbRandom(10)<2 && !target.damagestate.substitute
+      if user.hasWorkingAbility(:THRUST) && @battle.pbRandom(10)<2 && !target.damagestate.substitute && !user.isFainted? && !target.isFainted?
         choices = []
         party=@battle.pbParty(target.index)
         for i in 0...party.length
