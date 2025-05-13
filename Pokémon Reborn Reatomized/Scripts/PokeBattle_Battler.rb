@@ -3918,7 +3918,7 @@ class PokeBattle_Battler
           end
         end
         # Electromorphosis and Wind Power
-        if (target.hasWorkingAbility(:ELECTROMORPHOSIS) || (target.hasWorkingAbility(:WINDPOWER) && PBStuff::WINDMOVE.include?(thismove.id))) && target.effects[PBEffects::Charge]<2
+        if (target.hasWorkingAbility(:ELECTROMORPHOSIS) || (target.hasWorkingAbility(:WINDPOWER) && PBStuff::WINDMOVE.include?(move.id))) && target.effects[PBEffects::Charge]<2
           target.effects[PBEffects::Charge]=2
           @battle.pbDisplay(_INTL("{1}'s {2} charged it with power!", target.pbThis,PBAbilities.getName(target.ability)))
         end

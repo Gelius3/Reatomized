@@ -331,7 +331,8 @@ PBSpecies::BASCULEGION => {
 	#Gender difference
 	"Female" => {
 		:DexEntry => "It can afflict a target with terrifying illusions that are under its control. The deeper the sadness in its friends' souls, the paler Basculegion becomes.",
-		:BaseStats => [120,80,65,78,112,75] #Canon: [120,92,65,78,100,75]
+		:BaseStats => [120,80,65,78,112,75], #Canon: [120,92,65,78,100,75]
+		:WildItemRare => :EXPCANDYM
 	}
 },
 
@@ -606,17 +607,20 @@ PBSpecies::ORICORIO => {
 
 	"Pom-Pom" => {
 		:DexEntry => "It creates an electric charge by rubbing its feathers together. It dances over to its enemies and delivers shocking electrical punches.",
-		:Type1 => PBTypes::ELECTRIC
+		:Type1 => PBTypes::ELECTRIC,
+		:WildHoldItems => [0,PBItems::YELLOWNECTAR,0]
 	},
 
 	"Pa'u" => {
 		:DexEntry => "This Oricorio relaxes by swaying gently. This increases its psychic energy, which it then fires at its enemies.",
-		:Type1 => PBTypes::PSYCHIC
+		:Type1 => PBTypes::PSYCHIC,
+		:WildHoldItems => [0,PBItems::PINKNECTAR,0]
 	},
 
 	"Sensu" => {
 		:DexEntry => "It summons the dead with its dreamy dancing. From their malice, it draws power with which to curse its enemies.",
-		:Type1 => PBTypes::GHOST
+		:Type1 => PBTypes::GHOST,
+		:WildHoldItems => [0,PBItems::PURPLENECTAR,0]
 	}
 },
 
@@ -3508,7 +3512,9 @@ PBSpecies::GROWLITHE => {
 		:EggMoves => [PBMoves::COVET,PBMoves::DOUBLEEDGE,PBMoves::DOUBLEKICK,PBMoves::HEADSMASH,
 			PBMoves::MORNINGSUN,PBMoves::SACREDFIRE,PBMoves::THRASH],
 		:Weight => 227,
-		:Height => 8
+		:Height => 8,
+		:WildItemCommon => :RAWSTBERRY,
+		:WildItemRare => :EXPCANDYS
 	}
 },
 
@@ -3538,7 +3544,9 @@ PBSpecies::ARCANINE => {
 			[44,PBMoves::ROAR],[48,PBMoves::ROCKSLIDE],[52,PBMoves::REVERSAL],[56,PBMoves::DOUBLEEDGE],
 			[60,PBMoves::FLAREBLITZ],[64,PBMoves::RAGINGFURY]],
 		:Weight => 1680,
-		:Height => 20
+		:Height => 20,
+		:WildItemCommon => :RAWSTBERRY,
+		:WildItemRare => :EXPCANDYM
 	},
 
 	"Mega" => {
@@ -3572,7 +3580,8 @@ PBSpecies::VOLTORB => {
 		:EggMoves => [PBMoves::ICESPINNER,PBMoves::LEECHSEED,PBMoves::RAPIDSPIN,PBMoves::RECYCLE,
 			PBMoves::WORRYSEED],
 		:Weight => 130,
-		:GetEvo => [[PBSpecies::ELECTRODE,PBEvolution::Item,PBItems::LEAFSTONE]]
+		:GetEvo => [[PBSpecies::ELECTRODE,PBEvolution::Item,PBItems::LEAFSTONE]],
+		:WildItemRare => :EXPCANDYS
 	}
 },
 
@@ -3598,7 +3607,8 @@ PBSpecies::ELECTRODE => {
 			[20,PBMoves::SWIFT],[22,PBMoves::ELECTROBALL],[26,PBMoves::SELFDESTRUCT],[29,PBMoves::GYROBALL],
 			[31,PBMoves::THUNDERBOLT],[34,PBMoves::SEEDBOMB],[37,PBMoves::THUNDER],[39,PBMoves::DISCHARGE],
 			[41,PBMoves::EXPLOSION],[46,PBMoves::ENERGYBALL],[50,PBMoves::GRASSYTERRAIN]],
-		:Weight => 710
+		:Weight => 710,
+		:WildItemRare => :EXPCANDYS
 	}
 },
 
@@ -3628,7 +3638,8 @@ PBSpecies::QWILFISH => {
 			[60,PBMoves::CRUNCH],[66,PBMoves::DESTINYBOND]],
 		:EggMoves => [PBMoves::AQUAJET,PBMoves::ASTONISH,PBMoves::BANEFULBUNKER,PBMoves::BUBBLEBEAM,
 			PBMoves::FLAIL,PBMoves::MORTALSPIN,PBMoves::SUPERSONIC],
-		:GetEvo => [[PBSpecies::OVERQWIL,PBEvolution::HasMove,PBMoves::BARBBARRAGE]]
+		:GetEvo => [[PBSpecies::OVERQWIL,PBEvolution::HasMove,PBMoves::BARBBARRAGE]],
+		:WildItemRare => :EXPCANDYS
 	}
 },
 
@@ -3670,7 +3681,9 @@ PBSpecies::SNEASEL => {
 		:EggMoves => [PBMoves::COUNTER,PBMoves::CRUSHCLAW,PBMoves::DETECT,PBMoves::DIRECLAW,PBMoves::DOUBLEHIT,
 			PBMoves::DRAINPUNCH,PBMoves::FAKEOUT,PBMoves::FEINT,PBMoves::FOCUSENERGY,PBMoves::IRONTAIL,
 			PBMoves::NIGHTSLASH,PBMoves::QUICKGUARD,PBMoves::SHADOWSNEAK,PBMoves::SNARL,PBMoves::SWITCHEROO],
-		:GetEvo => [[PBSpecies::SNEASLER,PBEvolution::DayHoldItem,PBItems::RAZORCLAW]]
+		:GetEvo => [[PBSpecies::SNEASLER,PBEvolution::DayHoldItem,PBItems::RAZORCLAW]],
+		:WildItemUncommon => :RAZORCLAW,
+		:WildItemRare => :EXPCANDYS
 	},
 
 	"NuclearHisui" => {
@@ -3730,7 +3743,9 @@ PBSpecies::TYPHLOSION => {
 			[31,PBMoves::ROLLOUT],[33,PBMoves::LAVAPLUME],[35,PBMoves::REST],[37,PBMoves::INFERNO],
 			[39,PBMoves::DOUBLEEDGE],[41,PBMoves::INFERNALPARADE],[43,PBMoves::FLAMETHROWER],
 			[45,PBMoves::OVERHEAT],[47,PBMoves::BURNUP],[49,PBMoves::SHADOWBALL],[51,PBMoves::WILLOWISP],
-			[55,PBMoves::ERUPTION]]
+			[55,PBMoves::ERUPTION]],
+		:WildItemCommon => :SITRUSBERRY,
+		:WildItemRare => :EXPCANDYL
 	},
 
 	"Egho" => {
@@ -3803,7 +3818,9 @@ PBSpecies::SAMUROTT => {
 			[37,PBMoves::ENCORE],[39,PBMoves::FLAIL],[41,PBMoves::SUCKERPUNCH],[43,PBMoves::RETALIATE],
 			[45,PBMoves::AQUATAIL],[47,PBMoves::MEGAHORN],[49,PBMoves::NIGHTSLASH],[52,PBMoves::WATERPLEDGE],
 			[55,PBMoves::SWORDSDANCE],[57,PBMoves::DARKPULSE],[62,PBMoves::HYDROPUMP]],
-		:Weight => 582
+		:Weight => 582,
+		:WildItemCommon => :SITRUSBERRY,
+		:WildItemRare => :EXPCANDYL
 	},
 
 	"Mega" => {
@@ -3851,7 +3868,9 @@ PBSpecies::DECIDUEYE => {
 			[37,PBMoves::SUCKERPUNCH],[39,PBMoves::TRIPLEARROWS],[43,PBMoves::UTURN],[46,PBMoves::AURASPHERE],
 			[49,PBMoves::NASTYPLOT],[51,PBMoves::AIRSLASH],[54,PBMoves::LEAFBLADE],[58,PBMoves::BRAVEBIRD],
 			[60,PBMoves::LEAFSTORM],[140,PBMoves::THOUSANDARROWS]],
-		:Weight => 370
+		:Weight => 370,
+		:WildItemCommon => :SITRUSBERRY,
+		:WildItemRare => :EXPCANDYL
 	}
 },
 
@@ -3879,7 +3898,8 @@ PBSpecies::ZORUA => {
 			[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],
 			[48,PBMoves::NASTYPLOT],[54,PBMoves::SHADOWBALL]],
 		:EggMoves => [PBMoves::BITTERBLADE,PBMoves::COMEUPPANCE,PBMoves::DETECT,PBMoves::EXTRASENSORY,
-		PBMoves::GLARE,PBMoves::MEMENTO,PBMoves::MOONBLAST]
+		PBMoves::GLARE,PBMoves::MEMENTO,PBMoves::MOONBLAST],
+		:WildItemRare => :EXPCANDYS
 	}
 },
 
@@ -3907,7 +3927,8 @@ PBSpecies::ZOROARK => {
 			[24,PBMoves::HONECLAWS],[26,PBMoves::SWIFT],[28,PBMoves::AGILITY],[32,PBMoves::KNOCKOFF],
 			[34,PBMoves::SLASH],[36,PBMoves::BITTERMALICE],[40,PBMoves::FOULPLAY],[44,PBMoves::SHADOWCLAW],
 			[48,PBMoves::NASTYPLOT],[52,PBMoves::UTURN],[54,PBMoves::SHADOWBALL]],
-		:Weight => 730
+		:Weight => 730,
+		:WildItemRare => :EXPCANDYM
 	}
 },
 
@@ -3937,7 +3958,8 @@ PBSpecies::BRAVIARY => {
 			[41,PBMoves::TAILWIND],[43,PBMoves::ROOST],[46,PBMoves::AIRSLASH],[50,PBMoves::CRUSHCLAW],
 			[55,PBMoves::SKYDROP],[59,PBMoves::THRASH],[64,PBMoves::BRAVEBIRD],[66,PBMoves::DOUBLEEDGE],
 			[72,PBMoves::SKYATTACK],[80,PBMoves::HURRICANE]],
-		:Weight => 434
+		:Weight => 434,
+		:WildItemRare => :EXPCANDYM
 	}
 },
 
@@ -3954,7 +3976,8 @@ PBSpecies::SLIGGOO => {
 			[18,PBMoves::BUBBLE],[20,PBMoves::FLAIL],[25,PBMoves::ACIDSPRAY],[28,PBMoves::RAINDANCE],
 			[30,PBMoves::WATERPULSE],[32,PBMoves::PROTECT],[35,PBMoves::BODYSLAM],[38,PBMoves::ACIDARMOR],
 			[40,PBMoves::MUDDYWATER],[42,PBMoves::SHELTER],[45,PBMoves::DRAGONPULSE],[47,PBMoves::HYDROPUMP]],
-		:Weight => 685
+		:Weight => 685,
+		:WildItemRare => :EXPCANDYM
 	}
 },
 
@@ -3973,7 +3996,8 @@ PBSpecies::GOODRA => {
 		[35,PBMoves::BODYSLAM],[38,PBMoves::ACIDARMOR],[40,PBMoves::MUDDYWATER],[42,PBMoves::SHELTER],
 		[45,PBMoves::DRAGONPULSE],[47,PBMoves::HYDROPUMP],[51,PBMoves::IRONTAIL],[55,PBMoves::TEARFULLOOK],
 		[67,PBMoves::HEAVYSLAM]],
-		:Weight => 3341
+		:Weight => 3341,
+		:WildItemRare => :EXPCANDYL
 	}
 },
 
@@ -3993,7 +4017,8 @@ PBSpecies::WEEZING => {
 			[6,PBMoves::SMOKESCREEN],[8,PBMoves::CLEARSMOG],[10,PBMoves::ASSURANCE],[12,PBMoves::GYROBALL],
 			[15,PBMoves::SLUDGE],[18,PBMoves::SELFDESTRUCT],[23,PBMoves::HAZE],[26,PBMoves::TOXIC],
 			[28,PBMoves::SLUDGEBOMB],[33,PBMoves::EXPLOSION],[37,PBMoves::MEMENTO],[40,PBMoves::BELCH],
-			[42,PBMoves::MISTYTERRAIN],[45,PBMoves::DESTINYBOND]]
+			[42,PBMoves::MISTYTERRAIN],[45,PBMoves::DESTINYBOND]],
+		:WildHoldItems => [0,PBItems::ELEMENTALSEED,0]
 	},
 
 	"Cosmic" => {
@@ -5741,7 +5766,7 @@ PBSpecies::BLAZIKEN => {
 	:MegaForm => 1,
 
 	"Mega" => {
-		:BaseStats => [80,160,80,100,130,80],
+		:BaseStats => [80,160,80,115,130,80],
 		:Ability => PBAbilities::SPEEDBOOST,
 		:Weight => 520
 	}
@@ -6081,7 +6106,7 @@ PBSpecies::SWAMPERT => {
 	:MegaForm => 1,
 
 	"Mega" => {
-		:BaseStats => [100,150,110,70,85,110],
+		:BaseStats => [100,150,110,70,90,110],
 		:Ability => PBAbilities::SWIFTSWIM,
 		:Height => 19,
 		:Weight => 1020
@@ -7608,7 +7633,8 @@ PBSpecies::AVALUGG => {
 			[37,PBMoves::BLIZZARD],[39,PBMoves::CRUNCH],[41,PBMoves::EARTHPOWER],[43,PBMoves::RECOVER],
 			[47,PBMoves::AVALANCHE],[49,PBMoves::ROCKSLIDE],[51,PBMoves::DOUBLEEDGE],[56,PBMoves::MOUNTAINGALE],
 			[101,PBMoves::MIGHTYCLEAVE]],
-		:Weight => 2624
+		:Weight => 2624,
+		:WildItemRare => :EXPCANDYM
 	}
 },
 
@@ -9437,7 +9463,9 @@ PBSpecies::LILLIGANT => {
 			[53,PBMoves::VICTORYDANCE],[55,PBMoves::AXEKICK],[57,PBMoves::LEAFSTORM],[59,PBMoves::CLOSECOMBAT],
 			[61,PBMoves::SOLARBLADE]],
 		:Weight => 192,
-		:Height => 12
+		:Height => 12,
+		:WildItemCommon => :LUMBERRY,
+		:WildItemRare => :EXPCANDYM
 	},
 	"Rebornian" => {
 		:DexEntry => ".",
