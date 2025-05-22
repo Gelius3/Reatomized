@@ -419,9 +419,6 @@ class PokeBattle_Pokemon
       type = getID(PBTypes,type)
     end
     ret = (self.type1==type || self.type2==type)
-    if !ret && !ignorefusion && FUSIONTYPES[type]
-      ret = FUSIONTYPES[type].any? {|ftype| self.type1==ftype || self.type2==ftype}
-    end
     return ret
   end
 

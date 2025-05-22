@@ -227,18 +227,8 @@ def pbDayCareGenerateEgg
     babyspecies=pbGetNonIncenseLowestSpecies(babyspecies)
   elsif (babyspecies == PBSpecies::MANTYKE) && !(mother.item == PBItems::WAVEINCENSE) && !(father.item == PBItems::WAVEINCENSE)
     babyspecies=pbGetNonIncenseLowestSpecies(babyspecies)
-  elsif (babyspecies == PBSpecies::OOZMA)
-    babyspecies=PBSpecies::GRIMER
-  elsif (babyspecies == PBSpecies::SKULKRAKEN)
-    babyspecies=PBSpecies::SHELLDER
-  elsif (babyspecies == PBSpecies::GRIMFOWL)
-    babyspecies=PBSpecies::HOOTHOOT
-  elsif (babyspecies == PBSpecies::VILEDOOM) || (babyspecies == PBSpecies::MORTOSSUM)
-    babyspecies=PBSpecies::ODDISH
   elsif (babyspecies == PBSpecies::CLODSIRE)
     babyspecies=PBSpecies::WOOPER
-  elsif [PBSpecies::OMEON, PBSpecies::CHAMPEON, PBSpecies::LEPIDEON, PBSpecies::GUARDEON, PBSpecies::OBSIDEON, PBSpecies::SCORPEON, PBSpecies::SPHYNXEON, PBSpecies::NIMBEON, PBSpecies::DRACONEON, PBSpecies::EEVEEON, PBSpecies::VAREON].include?(babyspecies)
-    babyspecies=PBSpecies::EEVEE
   end
   # Generate egg
   egg=PokeBattle_Pokemon.new(babyspecies,EGGINITIALLEVEL,$Trainer)
@@ -253,15 +243,6 @@ def pbDayCareGenerateEgg
       else 
         egg.form=mainparent.form
       end
-    end
-    if mainparent.species == PBSpecies::SKULKRAKEN || mainparent.species == PBSpecies::GRIMFOWL || mainparent.species == PBSpecies::VILEDOOM || mainparent.species == PBSpecies::MORTOSSUM
-      egg.form = 1
-    end
-    if mainparent.species == PBSpecies::OMEON || mainparent.species == PBSpecies::CHAMPEON || mainparent.species == PBSpecies::LEPIDEON || mainparent.species == PBSpecies::GUARDEON || mainparent.species == PBSpecies::OBSIDEON || mainparent.species == PBSpecies::SCORPEON || mainparent.species == PBSpecies::SPHYNXEON || mainparent.species == PBSpecies::NIMBEON || mainparent.species == PBSpecies::DRACONEON || mainparent.species == PBSpecies::EEVEEON || mainparent.species == PBSpecies::VAREON
-      egg.form = 3
-    end
-    if mainparent.species == PBSpecies::OOZMA
-      egg.form = 4
     end
   # Randomise personal ID
   pid=rand(65536)

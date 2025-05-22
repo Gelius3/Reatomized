@@ -1663,9 +1663,6 @@ class PokeBattle_AI
 				statarray = [0,2,0,0,2,0,0] if @mondata.skill >= BESTSKILL && @move.id==PBMoves::COSMICPOWER && [3,9,29,34,35,37].include?(@battle.FE)
 				statarray = [0,2,0,0,2,0,0] if @mondata.skill >= BESTSKILL && @move.id==PBMoves::DEFENDORDER && @battle.FE == PBFields::FORESTF
 				miniscore = selfstatboost(statarray)
-			when 0x802 # Eevoboost
-				statarray = [1,1,1,1,1,0,0]
-				miniscore = selfstatboost(statarray)
 			when 0x800 # Groom Guard
 				statarray = [0,0,0,0,3,0,0]
 				miniscore = selfstatboost(statarray)
@@ -2458,14 +2455,6 @@ class PokeBattle_AI
 				recoveramount = @attacker.totalhp/4.0
 				miniscore = recovercode(recoveramount)
 				miniscore += healpulsecode*0.5
-				if !@battle.opponent.is_a?(Array)
-					if (@battle.opponent.trainertype==PBTrainers::ARKHAOS)
-						score=10
-						if @opponent.hp < 0.7*@opponent.totalhp && @opponent.hp > 0.3*@opponent.totalhp
-							score*=5
-						end
-					end
-				end
 			when 0x212 # Jungle Healing
 				if @move.id==PBMoves::JUNGLEHEALING
 					recoveramount = @attacker.totalhp/4.0
@@ -3911,7 +3900,7 @@ class PokeBattle_AI
 		miniscore*=1.5 if @opponent.effects[PBEffects::Encore]>0 && @opponent.moves[(@opponent.effects[PBEffects::EncoreIndex])].basedamage==0
 		miniscore*=0.5 if @battle.doublebattle
 		miniscore*=2 if @attacker.ability == PBAbilities::SUPERLUCK || @attacker.ability == PBAbilities::SNIPER
-		miniscore*=1.2 if @mondata.attitemworks && (@attacker.item == PBItems::SCOPELENS || @attacker.item == PBItems::RAZORCLAW || (@attacker.item == PBItems::STICK && (@attacker.pokemon.species==PBSpecies::FARFETCHD || @attacker.pokemon.species==PBSpecies::SIRFETCHD)) || (@attacker.item == PBItems::LUCKYPUNCH && @attacker.pokemon.species==PBSpecies::CHANSEY) || (@attacker.item == PBItems::LONGCLUB && @attacker.pokemon.species==PBSpecies::TERATHWACK))
+		miniscore*=1.2 if @mondata.attitemworks && (@attacker.item == PBItems::SCOPELENS || @attacker.item == PBItems::RAZORCLAW || (@attacker.item == PBItems::STICK && (@attacker.pokemon.species==PBSpecies::FARFETCHD || @attacker.pokemon.species==PBSpecies::SIRFETCHD)) || (@attacker.item == PBItems::LUCKYPUNCH && @attacker.pokemon.species==PBSpecies::CHANSEY))
 		miniscore*=1.3 if (@mondata.attitemworks && @attacker.item == PBItems::LANSATBERRY)
 		miniscore*=0.2 if @opponent.ability == PBAbilities::ANGERPOINT || @opponent.ability == PBAbilities::SHELLARMOR || @opponent.ability == PBAbilities::BATTLEARMOR
 		miniscore*=0.5 if @attacker.pbHasMove?(PBMoves::LASERFOCUS) || @attacker.pbHasMove?(PBMoves::FROSTBREATH) || @attacker.pbHasMove?(PBMoves::STORMTHROW)

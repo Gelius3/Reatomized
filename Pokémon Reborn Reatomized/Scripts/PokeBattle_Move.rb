@@ -736,7 +736,7 @@ class PokeBattle_Move
 
     typemod *= (@battle.FE == PBFields::BURNINGF ? 4 : 2) if type == PBTypes::FIRE && opponent.effects[PBEffects::TarShot]
 
-    typemod *= 4 if (@id == PBMoves::FREEZEDRY || @id == PBMoves::ICEBLAST) && opponent.hasType?(PBTypes::WATER) && !@battle.typesInverted?
+    typemod *= 4 if @id == PBMoves::FREEZEDRY && opponent.hasType?(PBTypes::WATER) && !@battle.typesInverted?
 
     typemod *= 2 if @id == PBMoves::CUT && opponent.hasType?(PBTypes::GRASS) && (@battle.FE == PBFields::FORESTF || (@battle.FE == PBFields::FLOWERGARDENF && @battle.field.counter > 0))
 
@@ -984,7 +984,6 @@ class PokeBattle_Move
     c+=1 if attacker.pbPartner.hasWorkingAbility(:MOODMAKER)
     c+=2 if attacker.ability == PBAbilities::TANGLEDFEET && attacker.effects[PBEffects::Confusion] > 0
     c+=2 if attacker.hasWorkingItem(:STICK) && (attacker.pokemon.species == PBSpecies::FARFETCHD || attacker.pokemon.species == PBSpecies::SIRFETCHD)
-    c+=2 if attacker.hasWorkingItem(:LONGCLUB) && (attacker.pokemon.species == PBSpecies::TERATHWACK)
     c+=2 if attacker.hasWorkingItem(:LUCKYPUNCH) && (attacker.pokemon.species == PBSpecies::CHANSEY)
     if @battle.FE == PBFields::MIRRORA
       buffs = 0
@@ -1112,7 +1111,7 @@ class PokeBattle_Move
     elsif attacker.ability == PBAbilities::HIGHRISE && attacker.height>opponent.height
       damagemult=(damagemult*1.5).round
     elsif (attacker.ability == PBAbilities::MEGALAUNCHER)
-      if @id == PBMoves::AURASPHERE || @id == PBMoves::DRAGONPULSE || @id == PBMoves::DARKPULSE || @id == PBMoves::WATERPULSE || @id == PBMoves::ORIGINPULSE || @id == PBMoves::LASERPULSE || @id == PBMoves::PROTONBEAM || @id == PBMoves::GROUNDZERO || @id == PBMoves::TERRAINPULSE
+      if @id == PBMoves::AURASPHERE || @id == PBMoves::DRAGONPULSE || @id == PBMoves::DARKPULSE || @id == PBMoves::WATERPULSE || @id == PBMoves::ORIGINPULSE || @id == PBMoves::LASERPULSE || @id == PBMoves::PROTONBEAM || @id == PBMoves::TERRAINPULSE
         damagemult=(damagemult*1.5).round
       end
     elsif (attacker.ability == PBAbilities::FIELDMASTER)

@@ -2096,7 +2096,7 @@ def pbCompileAllData(mustcompile)
     pbCompileMachines
     # Depends on PBSpecies, PBItems, PBMoves
     yield(_INTL("Compiling Trainer data"))
-    pbCompileTrainers
+    #pbCompileTrainers
     # Depends on PBTrainers
     yield(_INTL("Compiling phone data"))
     #pbCompilePhoneData

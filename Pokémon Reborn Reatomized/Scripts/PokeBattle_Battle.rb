@@ -6152,7 +6152,6 @@ class PokeBattle_Battle
       i.form=1 if i.species == PBSpecies::INFERNAPE && i.form == 2
       i.form=0 if i.species == PBSpecies::GRENINJA && i.form == 1
       i.form=0 if i.species == PBSpecies::GYARADOS && i.form == 4
-      i.form=0 if i.species == PBSpecies::MISSINGNO2 && i.form != 0
     end
     for i in $Trainer.party
       i.setItem(i.itemInitial)

@@ -3708,7 +3708,7 @@ end
       elsif pokemon.form==1
         if (move == PBMoves::PSYCHUP) || (move == PBMoves::MAGICCOAT) ||
           (move == PBMoves::ZENHEADBUTT) || (move == PBMoves::IMPRISON) ||
-          (move == PBMoves::STOREDPOWER) || (move == PBMoves::BRAINSTORM)
+          (move == PBMoves::STOREDPOWER)
           return false
         end
       end
@@ -3793,7 +3793,7 @@ end
           (move == PBMoves::MUDDYWATER) || (move == PBMoves::PLAYROUGH) ||
           (move == PBMoves::MISTYEXPLOSION) || (move == PBMoves::WHIRLPOOL) ||
           (move == PBMoves::CHILLINGWATER) || (move == PBMoves::SNOWSCAPE) ||
-          (move == PBMoves::ICESPINNER) || (move == PBMoves::FLASHFLOOD)  
+          (move == PBMoves::ICESPINNER)
           return false
         end
       end

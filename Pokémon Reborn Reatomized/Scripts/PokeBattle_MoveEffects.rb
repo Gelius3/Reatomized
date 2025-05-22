@@ -11945,109 +11945,7 @@ class PokeBattle_Move_288 < PokeBattle_Move
   end
 end
 
-################################################## Infinity ##################################################
-
-################################################################################
-# Increases the user's Special Defense by 3 stages. (Groom Guard)
-################################################################################
-class PokeBattle_Move_800 < PokeBattle_Move
-  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
-    return super(attacker,opponent,hitnum,alltargets,showanimation) if @basedamage>0
-    return -1 if !attacker.pbCanIncreaseStatStage?(PBStats::SPDEF,true)
-    pbShowAnimation(@id,attacker,opponent,hitnum,alltargets,showanimation)
-    ret=attacker.pbIncreaseStat(PBStats::SPDEF,3,abilitymessage:false)
-    return ret ? 0 : -1
-  end
-
-  def pbAdditionalEffect(attacker,opponent)
-    if attacker.pbCanIncreaseStatStage?(PBStats::SPDEF,false)
-      attacker.pbIncreaseStat(PBStats::SPDEF,3,abilitymessage:false)
-    end
-    return true
-  end
-end
-
-################################################################################
-# User takes recoil damage equal to 1/3 of the damage this move dealt. It also has a 35% chance to poison the target. (Cactus Smash)
-################################################################################
-class PokeBattle_Move_801 < PokeBattle_Move
-  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
-    ret=super(attacker,opponent,hitnum,alltargets,showanimation)
-    if opponent.damagestate.calcdamage>0 &&
-       attacker.ability != PBAbilities::ROCKHEAD &&
-       attacker.ability != PBAbilities::MAGICGUARD
-      attacker.pbReduceHP([1,((opponent.damagestate.hplost+1)/3).floor].max)
-      @battle.pbDisplay(_INTL("{1} is damaged by the recoil!",attacker.pbThis))
-    end
-    return ret
-  end
-
-  def pbAdditionalEffect(attacker,opponent)
-    return false if !opponent.pbCanPoison?(false)
-    opponent.pbPoison(attacker)
-    @battle.pbDisplay(_INTL("{1} was poisoned!",opponent.pbThis))
-    return true
-  end
-end
-
-################################################################################
-# Increases all the user's stats by 1 stage each. (Eevoboost)
-################################################################################
-class PokeBattle_Move_802 < PokeBattle_Move
-  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
-    if !attacker.pbCanIncreaseStatStage?(PBStats::ATTACK,false) &&
-       !attacker.pbCanIncreaseStatStage?(PBStats::DEFENSE,false) &&
-       !attacker.pbCanIncreaseStatStage?(PBStats::SPATK,false) &&
-       !attacker.pbCanIncreaseStatStage?(PBStats::SPDEF,false) &&
-       !attacker.pbCanIncreaseStatStage?(PBStats::SPEED,false)
-      @battle.pbDisplay(_INTL("{1}'s stats won't go any higher!",attacker.pbThis))
-      return -1
-    end
-    pbShowAnimation(@id,attacker,nil,hitnum,alltargets,showanimation)
-    showanim=true
-    boost_amount=1
-    for stat in [PBStats::ATTACK,PBStats::DEFENSE,PBStats::SPATK,PBStats::SPDEF,PBStats::SPEED]
-      if attacker.pbCanIncreaseStatStage?(stat,false)
-        attacker.pbIncreaseStat(stat,boost_amount,abilitymessage:false)
-      end
-    end
-    return 0
-  end
-end
-
-################################################################################
-# Destroys temporary created terrain if present. May burn, freeze or paralyze. (Big Bang Cosmic)
-################################################################################
-class PokeBattle_Move_803 < PokeBattle_Move
-  def pbEffect(attacker,opponent,hitnum=0,alltargets=nil,showanimation=true)
-    ret=super(attacker,opponent,hitnum,alltargets,showanimation)
-    if [PBFields::ELECTRICT, PBFields::GRASSYT, PBFields::MISTYT, PBFields::PSYCHICT].include?(@battle.field.effect) && @battle.field.duration > 0
-      @battle.field.duration=0
-      @battle.endTempField
-      @battle.pbDisplay(_INTL("The terrain was destroyed!"))
-    end
-    return ret
-  end
-
-  def pbAdditionalEffect(attacker,opponent)
-    rnd=@battle.pbRandom(3)
-    case rnd
-      when 0
-        return false if !opponent.pbCanBurn?(false)
-        opponent.pbBurn(attacker)
-        @battle.pbDisplay(_INTL("{1} was burned!",opponent.pbThis))
-      when 1
-        return false if !opponent.pbCanFreeze?(false)
-        opponent.pbFreeze
-        @battle.pbDisplay(_INTL("{1} was frozen solid!",opponent.pbThis))
-      when 2
-        return false if !opponent.pbCanParalyze?(false)
-        opponent.pbParalyze(attacker)
-        @battle.pbDisplay(_INTL("{1} is paralyzed! It may be unable to move!",opponent.pbThis))
-    end
-    return true
-  end
-end
+################################################## Reatomized Custom ##################################################
 
 ################################################################################
 # User gains half the HP it inflicts as damage. (Needle Drain)
@@ -12077,10 +11975,6 @@ class PokeBattle_Move_804 < PokeBattle_Move
     return true
   end
 end
-
-
-
-################################################## Reatomized Custom ##################################################
 
 ################################################################################
 # Ionic Whiplash

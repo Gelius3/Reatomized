@@ -48,21 +48,3 @@ class PBTypes
     return e>4
   end
 end
-
-FUSIONTYPES = hashArrayToConstant(PBTypes,{
-  PBTypes::NORMAL   => [:NPG],
-  PBTypes::GHOST    => [:SWG],
-  PBTypes::BUG      => [:BS],
-  PBTypes::POISON   => [:PF,:NPG],
-  PBTypes::FIGHTING => [:FG,:GFS,:PFD],
-  PBTypes::FLYING   => [:WGF,:PF],
-  PBTypes::GROUND   => [:WGF,:FG,:GFS,:NPG],
-  PBTypes::STEEL    => [:SWG,:GS,:BS,:GFS],
-  PBTypes::GRASS    => [:GFW,:GS],
-  PBTypes::FIRE     => [:IFE,:EFW,:GFW],
-  PBTypes::WATER    => [:EFW,:WGF,:SWG,:GFW],
-  PBTypes::ELECTRIC => [:IFE,:EFW],
-  PBTypes::ICE      => [:IFE],
-  PBTypes::PSYCHIC  => [:PFD],
-  PBTypes::DARK     => [:PFD]
-})

@@ -379,3 +379,322 @@ Final action chosen:                                        |[Prefer Ingrain]
 Deoxys used Hyper Beam
 [The wild Abomasnow lost 243 HP, now has 0 HP]
 [The wild Abomasnow fainted]
+************************** Round 1 *******************************
+**Exception: uninitialized constant PokeBattle_Battler::FUSIONTYPES
+["PokeBattle_Battler:870:in `pbHasType?'", "PokeBattle_AI_2:10380:in `pbRoughDamage'", "PokeBattle_AI_2:323:in `block in buildMoveScores'", "PokeBattle_AI_2:319:in `each'", "PokeBattle_AI_2:319:in `buildMoveScores'", "PokeBattle_AI_2:138:in `block in processAIturn'", "PokeBattle_AI_2:121:in `each'", "PokeBattle_AI_2:121:in `processAIturn'", "PokeBattle_ActualScene:3428:in `pbChooseEnemyCommand'", "PokeBattle_Battle:3900:in `pbCommandPhase'", "PokeBattle_Battle:3689:in `block (2 levels) in pbStartBattleCore'", "PBDebug:4:in `logonerr'", "PokeBattle_Battle:3688:in `block in pbStartBattleCore'", "PokeBattle_Battle:3678:in `loop'", "PokeBattle_Battle:3678:in `pbStartBattleCore'", "PokeBattle_Battle:3434:in `pbStartBattle'", "PokemonTrainers:398:in `block (2 levels) in pbTrainerBattle'", "PokemonField:679:in `pbSceneStandby'", "PokemonTrainers:397:in `block in pbTrainerBattle'", "PokemonField:1013:in `pbBattleAnimation'", "PokemonTrainers:396:in `pbTrainerBattle'", "(eval):1:in `pbExecuteScript'", "Interpreter:243:in `eval'", "Interpreter:243:in `pbExecuteScript'", "Interpreter:673:in `command_111'", "Interpreter:311:in `execute_command'", "Interpreter:193:in `block in update'", "Interpreter:106:in `loop'", "Interpreter:106:in `update'", "Scene_Map:103:in `block in update'", "Scene_Map:101:in `loop'", "Scene_Map:101:in `update'", "Scene_Map:68:in `block in main'", "Scene_Map:65:in `loop'", "Scene_Map:65:in `main'", "Main:45:in `mainFunctionDebug'", "Main:24:in `block in mainFunction'", "Compiler:66:in `pbCriticalCode'", "Main:24:in `mainFunction'", "Main:81:in `block (2 levels) in <main>'", "Main:80:in `loop'", "Main:80:in `block in <main>'", "Section000:307:in `eval'", "Section000:307:in `block in <main>'", "Section000:303:in `each'", "Section000:303:in `each_with_index'", "Section000:303:in `<main>'", "-e:in `eval'"]
+Orchynx used Leech Seed
+**Exception: uninitialized constant PBSpecies::MISSINGNO2
+["PokeBattle_Battler:5472:in `pbTryUseMove'", "PokeBattle_Battler:6162:in `pbUseMove'", "PokeBattle_Battler:6957:in `block in pbProcessTurn'", "PBDebug:4:in `logonerr'", "PokeBattle_Battler:6956:in `pbProcessTurn'", "PokeBattle_Battle:4068:in `block in pbAttackPhase'", "PokeBattle_Battle:4067:in `each'", "PokeBattle_Battle:4067:in `pbAttackPhase'", "PokeBattle_Battle:3695:in `block (2 levels) in pbStartBattleCore'", "PBDebug:4:in `logonerr'", "PokeBattle_Battle:3693:in `block in pbStartBattleCore'", "PokeBattle_Battle:3678:in `loop'", "PokeBattle_Battle:3678:in `pbStartBattleCore'", "PokeBattle_Battle:3434:in `pbStartBattle'", "PokemonTrainers:398:in `block (2 levels) in pbTrainerBattle'", "PokemonField:679:in `pbSceneStandby'", "PokemonTrainers:397:in `block in pbTrainerBattle'", "PokemonField:1013:in `pbBattleAnimation'", "PokemonTrainers:396:in `pbTrainerBattle'", "(eval):1:in `pbExecuteScript'", "Interpreter:243:in `eval'", "Interpreter:243:in `pbExecuteScript'", "Interpreter:673:in `command_111'", "Interpreter:311:in `execute_command'", "Interpreter:193:in `block in update'", "Interpreter:106:in `loop'", "Interpreter:106:in `update'", "Scene_Map:103:in `block in update'", "Scene_Map:101:in `loop'", "Scene_Map:101:in `update'", "Scene_Map:68:in `block in main'", "Scene_Map:65:in `loop'", "Scene_Map:65:in `main'", "Main:45:in `mainFunctionDebug'", "Main:24:in `block in mainFunction'", "Compiler:66:in `pbCriticalCode'", "Main:24:in `mainFunction'", "Main:81:in `block (2 levels) in <main>'", "Main:80:in `loop'", "Main:80:in `block in <main>'", "Section000:307:in `eval'", "Section000:307:in `block in <main>'", "Section000:303:in `each'", "Section000:303:in `each_with_index'", "Section000:303:in `<main>'", "-e:in `eval'"]
+************************** Round 2 *******************************
+************************** Round 1 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Nidoran: Tackle=[15, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Nidoran , HP percentage: 100.0 %
+Held Item:  , Ability: Rivalry , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |47.4 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |15 
+Tackle - 0 vs Orchynx, Final scoring move:                  |15 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Nidoran lost 4 HP, now has 15 HP]
+Nidoran used Tackle
+[Orchynx lost 3 HP, now has 17 HP]
+************************** Round 2 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Nidoran: Tackle=[17, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Nidoran , HP percentage: 78.9 %
+Held Item:  , Ability: Rivalry , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |47.4 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |17 
+Tackle - 0 vs Orchynx, Final scoring move:                  |17 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Nidoran used Tackle
+[Orchynx lost 3 HP, now has 14 HP]
+Orchynx used Scratch
+[The foe Nidoran lost 5 HP, now has 10 HP]
+************************** Round 3 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Nidoran: Tackle=[21, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Nidoran , HP percentage: 52.6 %
+Held Item:  , Ability: Rivalry , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |47.4 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |21 
+Tackle - 0 vs Orchynx, Final scoring move:                  |21 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Nidoran lost 4 HP, now has 6 HP]
+Nidoran used Tackle
+[Orchynx lost 3 HP, now has 11 HP]
+************************** Round 4 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Nidoran: Tackle=[27, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Nidoran , HP percentage: 31.6 %
+Held Item:  , Ability: Rivalry , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |47.4 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |27 
+Tackle - 0 vs Orchynx, Final scoring move:                  |27 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Nidoran used Tackle
+[Orchynx lost 4 HP, now has 7 HP]
+Orchynx used Leech Seed
+[The foe Nidoran lost 2 HP, now has 4 HP]
+[Orchynx gained 2 HP, now has 9 HP]
+************************** Round 5 *******************************
+[Preferring damaging move]
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Nidoran: Tackle=[36, -1, -1, -1], Leer=[5, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Nidoran , HP percentage: 21.1 %
+Held Item:  , Ability: Rivalry , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |47.4 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |5 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |33 
+Tackle - 0 vs Orchynx, Final scoring move:                  |36 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Nidoran lost 4 HP, now has 0 HP]
+[The foe Nidoran fainted]
+************************** Round 1 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Litten: Scratch=[9, -1, -1, -1], Growl=[0, -1, -1, -1]]
+[Prefer Scratch]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Litten , HP percentage: 100.0 %
+Held Item:  , Ability: Blaze , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |25.0 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Growl - 0 vs Orchynx, Init scoring move:                    |10 
+Growl - 0 vs Orchynx, Final scoring move:                   |0 
+
+Scratch - 0 vs Orchynx, Init scoring move:                  |9 
+Scratch - 0 vs Orchynx, Final scoring move:                 |9 
+
+Final action chosen:                                        |[Prefer Scratch]   
+ ______________________________________________________________________________ 
+
+Litten used Scratch
+[Orchynx lost 2 HP, now has 20 HP]
+Orchynx used Leech Seed
+[The foe Litten lost 2 HP, now has 18 HP]
+[Orchynx gained 2 HP, now has 22 HP]
+************************** Round 2 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Litten: Scratch=[9, -1, -1, -1], Growl=[0, -1, -1, -1]]
+[Prefer Scratch]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Litten , HP percentage: 90.0 %
+Held Item:  , Ability: Blaze , Field: no field
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |25.0 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Growl - 0 vs Orchynx, Init scoring move:                    |10 
+Growl - 0 vs Orchynx, Final scoring move:                   |0 
+
+Scratch - 0 vs Orchynx, Init scoring move:                  |9 
+Scratch - 0 vs Orchynx, Final scoring move:                 |9 
+
+Final action chosen:                                        |[Prefer Scratch]   
+ ______________________________________________________________________________ 
+
+Litten used Scratch
+[Orchynx lost 2 HP, now has 20 HP]
+Orchynx used Scratch
+[The foe Litten lost 4 HP, now has 14 HP]
+[The foe Litten lost 2 HP, now has 12 HP]
+[Orchynx gained 2 HP, now has 22 HP]
+************************** Round 3 *******************************
+************************** Round 1 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Yungoos: Tackle=[18, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Yungoos , HP percentage: 100.0 %
+Held Item:  , Ability: Adaptability , Field: 
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |0.0 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |18 
+Tackle - 0 vs Orchynx, Final scoring move:                  |18 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Yungoos lost 6 HP, now has 12 HP]
+Yungoos used Tackle
+[Orchynx lost 4 HP, now has 18 HP]
+************************** Round 2 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Yungoos: Tackle=[22, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Yungoos , HP percentage: 66.7 %
+Held Item:  , Ability: Adaptability , Field: 
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |38.9 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |22 
+Tackle - 0 vs Orchynx, Final scoring move:                  |22 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Yungoos lost 6 HP, now has 6 HP]
+Yungoos used Tackle
+[Orchynx lost 3 HP, now has 15 HP]
+************************** Round 3 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Yungoos: Tackle=[26, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Yungoos , HP percentage: 33.3 %
+Held Item:  , Ability: Adaptability , Field: 
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |38.9 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |26 
+Tackle - 0 vs Orchynx, Final scoring move:                  |26 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Yungoos lost 5 HP, now has 1 HP]
+Yungoos used Tackle
+[Orchynx lost 3 HP, now has 12 HP]
+************************** Round 4 *******************************
+[Not preferring status move]
+ShouldSwitchScore: -1000 
+
+[The foe Yungoos: Tackle=[33, -1, -1, -1], Leer=[7, -1, -1, -1]]
+[Prefer Tackle]
+
+ ______________________________________________________________________________ 
+Scoring for battler: Yungoos , HP percentage: 5.6 %
+Held Item:  , Ability: Adaptability , Field: 
+                                                            |AI Scores
+Expected Damage taken from Orchynx                          |38.9 % 
+
+Scoring for Switching to other mon                          |-1000 
+ 
+Leer - 0 vs Orchynx, Init scoring move:                     |10 
+Leer - 0 vs Orchynx, Final scoring move:                    |7 
+
+Tackle - 0 vs Orchynx, Init scoring move:                   |33 
+Tackle - 0 vs Orchynx, Final scoring move:                  |33 
+
+Final action chosen:                                        |[Prefer Tackle]    
+ ______________________________________________________________________________ 
+
+Orchynx used Scratch
+[The foe Yungoos lost 1 HP, now has 0 HP]
+[The foe Yungoos fainted]

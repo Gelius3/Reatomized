@@ -421,7 +421,7 @@ class PokeBattle_Battle
           end
         end
       when PBFields::CORROSIVEF
-        if (thismove.id == PBMoves::SMOG || thismove.id == PBMoves::CLEARSMOG || thismove.id == PBMoves::POISONGAS || thismove.id == PBMoves::STRANGESTEAM || thismove.id == PBMoves::CORROSIVEGAS || thismove.id == PBMoves::FOGGYSTRIKE)
+        if (thismove.id == PBMoves::SMOG || thismove.id == PBMoves::CLEARSMOG || thismove.id == PBMoves::POISONGAS || thismove.id == PBMoves::STRANGESTEAM || thismove.id == PBMoves::CORROSIVEGAS)
           @field.counter += 1
             case @field.counter
               when 1

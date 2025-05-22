@@ -767,7 +767,6 @@ PBSpecies::INDEEDEE => {
 
 PBSpecies::CHARMANDER => {
 	:FormName => {
-		4 => "Egho",
 		5 => "Rebornian"
 	},
 
@@ -779,25 +778,6 @@ PBSpecies::CHARMANDER => {
 		else
 			next 0
 		end
-	},
-
-	"Egho" => {
-		:DexEntry => "A small dragon Pokémon that enjoys a competitive bout. As it battles, the flame on its tail gets hotter.",
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [39,52,43,65,60,50],
-		:EVs => [0,0,0,1,0,0],
-		:Ability => [PBAbilities::OBLIVIOUS,PBAbilities::COMPETITIVE,PBAbilities::COMPETITIVE],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],[5,PBMoves::EMBER],
-			[7,PBMoves::HONECLAWS],[10,PBMoves::NAILFLICK],[13,PBMoves::SMOKESCREEN],
-			[17,PBMoves::FLAMEWHEEL],[20,PBMoves::SCARYFACE],[24,PBMoves::INCINERATE],
-			[26,PBMoves::DRAGONRAGE],[28,PBMoves::FIREFANG],[34,PBMoves::FLAMEBURST],
-			[37,PBMoves::FLAMETHROWER],[40,PBMoves::DRAGONPULSE],[44,PBMoves::INFERNO]],
-		:EggMoves => [PBMoves::ANCIENTPOWER,PBMoves::BITE,PBMoves::CRUNCH,
-				PBMoves::DRAGONDANCE,PBMoves::DRAGONPULSE,PBMoves::DRAGONRUSH,
-				PBMoves::FLAREBLITZ,PBMoves::METALCLAW,PBMoves::OUTRAGE,PBMoves::POWERSWAP],
-		:Weight => 85,
-		:Height => 8,
-		:kind => "Flare Lizard"
 	},
 
 	"Rebornian" => {
@@ -816,25 +796,7 @@ PBSpecies::CHARMANDER => {
 
 PBSpecies::CHARMELEON => {
 	:FormName => {
-		4 => "Egho",
 		5 => "Rebornian"
-	},
-
-	"Egho" => {
-		:DexEntry => "Without pity, its sharp claws destroy foes. If it encounters a strong enemy, it becomes agitated, and the flame on its tail flares with a bluish white color.",
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [58,64,58,80,80,65],
-		:EVs => [0,0,0,1,0,0],
-		:Ability => [PBAbilities::OBLIVIOUS,PBAbilities::COMPETITIVE,PBAbilities::COMPETITIVE],
-		:Movelist => [[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],[5,PBMoves::EMBER],
-			[7,PBMoves::HONECLAWS],[10,PBMoves::NAILFLICK],[13,PBMoves::SMOKESCREEN],
-			[16,PBMoves::NOSTRILFLARE],[19,PBMoves::FLAMEWHEEL],[23,PBMoves::SCARYFACE],[27,PBMoves::INCINERATE],
-			[29,PBMoves::DRAGONRAGE],[31,PBMoves::FIREFANG],[35,PBMoves::DRAGONCLAW],
-			[38,PBMoves::FLAMEBURST],[41,PBMoves::FLAMETHROWER],[45,PBMoves::DRAGONPULSE],
-			[47,PBMoves::DRAGONDANCE],[49,PBMoves::INFERNO]],
-		:Weight => 190,
-		:Height => 13,
-		:kind => "Flare Dragon"
 	},
 
 	"Rebornian" => {
@@ -1666,8 +1628,7 @@ PBSpecies::DUOSION => {
 
 PBSpecies::TRUBBISH => {
 	:FormName => {
-		2 => "Nuclear",
-		4 => "Egho"
+		2 => "Nuclear"
 	},
 
 	:OnCreation => proc{
@@ -1682,26 +1643,6 @@ PBSpecies::TRUBBISH => {
 
 	"Nuclear" => {
 		:Type2 => PBTypes::NUCLEAR
-	},
-
-	"Egho" => {
-		:DexEntry => "As a result of urban clean-up initiatives, many Trubbish were mistakenly thrown into garbage cans. Being too weak to escape, they instead repurpose the cans as armor.",
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [50,40,72,45,60,62],
-		:EVs => [0,0,1,0,0,0],
-		:Ability => [PBAbilities::BATTLEARMOR,PBAbilities::FILTER],
-		:Movelist => [[1,PBMoves::MUDSLAP],[1,PBMoves::SMOG],[1,PBMoves::TOXICSPIKES],
-			[3,PBMoves::RECYCLE],[7,PBMoves::BULLETPUNCH],[12,PBMoves::ACIDSPRAY],
-			[14,PBMoves::TOXIC],[18,PBMoves::SLUDGE],[23,PBMoves::STOCKPILE],
-			[23,PBMoves::SWALLOW],[25,PBMoves::BODYSLAM],[29,PBMoves::SLUDGEBOMB],
-			[34,PBMoves::HEAVYSLAM],[36,PBMoves::PROTECT],[40,PBMoves::IRONDEFENSE],
-			[45,PBMoves::DARKPULSE],[47,PBMoves::FLASHCANNON],[50,PBMoves::BELCH]],
-		:EggMoves => [PBMoves::CURSE,PBMoves::HAZE,PBMoves::MUDSPORT,
-				PBMoves::ROCKBLAST,PBMoves::POWERGEM,PBMoves::SANDATTACK,
-				PBMoves::SELFDESTRUCT,PBMoves::SPIKES,PBMoves::CLEARSMOG],
-		:Weight => 430,
-		:Height => 6,
-		:kind => "Trash Can"
 	}
 },
 
@@ -3255,8 +3196,7 @@ PBSpecies::GOLEM => {
 PBSpecies::GRIMER => {
 	:FormName => {
 		1 => "Alolan",
-		3 => "Nuclear",
-		4 => "Egho"
+		3 => "Nuclear"
 	},
 
 	:OnCreation => proc{
@@ -3283,29 +3223,6 @@ PBSpecies::GRIMER => {
 
 	"Nuclear" => {
 		:Type2 => PBTypes::NUCLEAR
-	},
-
-	"Egho" => {
-		:DexEntry => "This version of Grimer is made up of hot asphalt. Often used in cities to help fill potholes, this Pokémon's body reaches temperatures of just over 300 degrees.",
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [80,70,50,25,60,40],
-		:EVs => [1,0,0,0,0,0],
-		:Ability => [PBAbilities::STENCH,PBAbilities::FLAREBOOST,PBAbilities::POISONTOUCH],
-		:Movelist => [[1,PBMoves::POISONGAS],[1,PBMoves::METALCLAW],[4,PBMoves::HARDEN],
-			[7,PBMoves::MUDSLAP],[12,PBMoves::SMACKDOWN],[15,PBMoves::SLUDGE],
-			[18,PBMoves::MINIMIZE],[21,PBMoves::BULLETPUNCH],[23,PBMoves::HEAVYSLAM],
-			[26,PBMoves::SLUDGEBOMB],[29,PBMoves::FLING],[32,PBMoves::ROCKSLIDE],
-			[35,PBMoves::SCREECH],[37,PBMoves::SLUDGEWAVE],[40,PBMoves::ACIDARMOR],
-			[43,PBMoves::GUNKSHOT],[45,PBMoves::KNOCKOFF],[49,PBMoves::MEMENTO],
-			[52,PBMoves::METEORMASH],[55,PBMoves::STONEEDGE]],
-		:EggMoves => [PBMoves::ACIDSPRAY,PBMoves::CURSE,PBMoves::HAZE,
-				PBMoves::FLAMECHARGE,PBMoves::LICK,PBMoves::MEANLOOK,
-				PBMoves::FIREPUNCH,PBMoves::SHADOWPUNCH,PBMoves::SHADOWSNEAK,
-				PBMoves::STOCKPILE,PBMoves::SPITUP,PBMoves::SWALLOW,
-				PBMoves::ROCKPOLISH],
-		:Weight => 2050,
-		:Height => 10,
-		:kind => "Coal Tar"
 	}
 },
 
@@ -3313,8 +3230,7 @@ PBSpecies::MUK => {
 	:FormName => {
 		1 => "Alolan",
 		2 => "PULSE",
-		3 => "Nuclear",
-		4 => "Egho"
+		3 => "Nuclear"
 	},
 
 	:OnCreation => proc{
@@ -3347,26 +3263,6 @@ PBSpecies::MUK => {
 		:BaseStats => [105,105,70,40,97,250],
 		:Ability => PBAbilities::PROTEAN,
 		:Weight => 1023
-	},
-
-	"Egho" => {
-		:DexEntry => "As Muk traverses urban areas, various debris and items get stuck in it. The differing street signs that end up in Muk help set it apart from one another.",
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [110,105,70,55,95,65],
-		:EVs => [2,1,0,0,0,0],
-		:Ability => [PBAbilities::STENCH,PBAbilities::FLAREBOOST,PBAbilities::POISONTOUCH],
-		:Movelist => [[1,PBMoves::POISONGAS],[1,PBMoves::METALCLAW],[4,PBMoves::HARDEN],
-			[7,PBMoves::MUDSLAP],[12,PBMoves::SMACKDOWN],[15,PBMoves::SLUDGE],
-			[18,PBMoves::MINIMIZE],[21,PBMoves::BULLETPUNCH],[23,PBMoves::HEAVYSLAM],
-			[26,PBMoves::SLUDGEBOMB],[29,PBMoves::FLING],[32,PBMoves::ROCKSLIDE],
-			[35,PBMoves::SCREECH],[37,PBMoves::SLUDGEWAVE],[43,PBMoves::ACIDARMOR],
-			[49,PBMoves::GUNKSHOT],[51,PBMoves::KNOCKOFF],[57,PBMoves::MEMENTO],
-			[61,PBMoves::METEORMASH],[64,PBMoves::STONEEDGE],[68,PBMoves::SCORCHINGSANDS],
-			[72,PBMoves::TARTANTRUM]],
-		:GetEvo => [[PBSpecies::OOZMA,PBEvolution::Item,PBItems::FIRESTONE]],
-		:Weight => 3950,
-		:Height => 14,
-		:kind => "Tar Pond"
 	}
 },
 
@@ -3722,7 +3618,6 @@ PBSpecies::SNEASEL => {
 PBSpecies::TYPHLOSION => {
 	:FormName => {
 		1 => "Hisui",
-		2 => "Egho",
 		3 => "Rebornian",
 		4 => "Mega X",
 		5 => "Mega Y"
@@ -3750,24 +3645,6 @@ PBSpecies::TYPHLOSION => {
 			[55,PBMoves::ERUPTION]],
 		:WildItemCommon => :SITRUSBERRY,
 		:WildItemRare => :EXPCANDYL
-	},
-
-	"Egho" => {
-		:DexEntry => "Typhlosion is very dangerous to be around if it is not in a good mood. The energy that is generated from the heat and electricity matches that of a nuclear reactor.",
-		:Type2 => PBTypes::ELECTRIC,
-		:BaseStats => [84,64,94,97,120,78],
-		:EVs => [0,0,0,1,2,0],
-		:Ability => [PBAbilities::STATIC,PBAbilities::CLOUDNINE],
-		:Movelist => [[0,PBMoves::SHOCKWAVE],[1,PBMoves::FIREPLEDGE],[1,PBMoves::FLAMEWHEEL],
-			[1,PBMoves::TACKLE],[1,PBMoves::LEER],[6,PBMoves::SMOKESCREEN],
-			[10,PBMoves::EMBER],[13,PBMoves::THUNDERSHOCK],[19,PBMoves::SPARK],
-			[22,PBMoves::DEFENSECURL],[28,PBMoves::FLAMECHARGE],[31,PBMoves::SWIFT],
-			[40,PBMoves::LAVAPLUME],[43,PBMoves::WILDCHARGE],[51,PBMoves::NATUREPOWER],
-			[54,PBMoves::THUNDERBOLT],[62,PBMoves::HEATWAVE],[66,PBMoves::THUNDER],
-			[70,PBMoves::TAILWIND]],
-		:Weight => 680,
-		:Height => 19,
-		:kind => "Ash Cloud"
 	},
 
 	"Rebornian" => {
@@ -4028,10 +3905,10 @@ PBSpecies::WEEZING => {
 	"Cosmic" => {
 		:DexEntry => "After evolving, this Pokémon's body mass increases significantly, making it produce an enormous amount of inebriating gas that puts Weezing on a terrible bad trip. ",
 		:Type2 => PBTypes::COSMIC,
-		:BaseStats => [100,50,70,110,90,120], #? Cosmic increases by +50
+		:BaseStats => [100,50,70,110,90,120], # ? Cosmic increases by +50
 		:Ability => [PBAbilities::LEVITATE,PBAbilities::NEUTRALIZINGGAS,PBAbilities::CURIOUSMEDICINE],
 		:Movelist => [[0,PBMoves::DOUBLEHIT],[1,PBMoves::DEFOG],[1,PBMoves::SMOG],[1,PBMoves::SMOKESCREEN],
-			[1,PBMoves::ASTRALSHOT],[1,PBMoves::CLEARSMOG],[1,PBMoves::SLUDGE],[1,PBMoves::DESTINYBOND],[1,PBMoves::MOONLIGHT],[40,PBMoves::TOXIC],[42,PBMoves::COSMICRAY],[46,PBMoves::MYSTICALFIRE],[50,PBMoves::BELCH],[57,PBMoves::MOONBLAST],[60,PBMoves::COSMICDANCE],[105,PBMoves::COSMICBARRAGE]]
+			[1,PBMoves::CLEARSMOG],[1,PBMoves::SLUDGE],[1,PBMoves::DESTINYBOND],[1,PBMoves::MOONLIGHT],[40,PBMoves::TOXIC],[42,PBMoves::PSYBEAM],[46,PBMoves::MYSTICALFIRE],[50,PBMoves::BELCH],[57,PBMoves::MOONBLAST],[60,PBMoves::COSMICDANCE],[105,PBMoves::COSMICBARRAGE]]
 	},
 },
 
@@ -4701,7 +4578,6 @@ PBSpecies::STARMIE => {
 
 PBSpecies::NOCTOWL => {
 	:FormName => {
-		1 => "Egho",
 		2 => "Mega"
 	},
 
@@ -4717,26 +4593,6 @@ PBSpecies::NOCTOWL => {
 
 	:DefaultForm => 0,
 	:MegaForm => 2,
-
-	"Egho" => {
-		:DexEntry => "Noctowl use the crest on its head to reflect light into the eyes of its prey. On moonless nights, one may mistake the crest as the actual moon.",
-		:Type1 => PBTypes::DARK,
-		:BaseStats => [86,50,77,70,99,70],
-		:EVs => [0,0,0,0,2,0],
-		:Ability => [PBAbilities::UNNERVE,PBAbilities::NOGUARD],
-		:Movelist => [[0,PBMoves::FOULPLAY],
-			[1,PBMoves::GROWL],[1,PBMoves::GUST],[1,PBMoves::ECHOEDVOICE],
-			[5,PBMoves::HYPNOSIS],[9,PBMoves::CONFUSION],[13,PBMoves::NIGHTSHADE],
-			[17,PBMoves::HORNATTACK],[21,PBMoves::NIGHTMARE],[25,PBMoves::OMINOUSWIND],
-			[29,PBMoves::SNARL],[33,PBMoves::AIRSLASH],[37,PBMoves::RAZORWIND],
-			[41,PBMoves::MOONBLAST],[45,PBMoves::SNATCH],[49,PBMoves::NIGHTDAZE],
-			[53,PBMoves::ROOST],[57,PBMoves::DREAMEATER],[62,PBMoves::HURRICANE],
-			[66,PBMoves::NASTYPLOT]],
-		:GetEvo => [[PBSpecies::GRIMFOWL,PBEvolution::Item,PBItems::DUSKSTONE]],
-		:Weight => 498,
-		:Height => 19,
-		:kind => "Moon Owl"
-	},
 
 	"Mega" => {
 		:Type1 => PBTypes::PSYCHIC,
@@ -5239,7 +5095,7 @@ PBSpecies::KOFFING => {
 		:Type2 => PBTypes::COSMIC,
 		:BaseStats => [60,35,45,65,60,95], #? Cosmic increases by +30
 		:Ability => [PBAbilities::LEVITATE,PBAbilities::NEUTRALIZINGGAS,PBAbilities::CURIOUSMEDICINE],
-		:Movelist => [[1,PBMoves::POISONGAS],[1,PBMoves::TACKLE],[4,PBMoves::SMOG],[4,PBMoves::EMBER],[7,PBMoves::SMOKESCREEN],[12,PBMoves::CLEARSMOG],[15,PBMoves::PSYBEAM],[18,PBMoves::SLUDGE],[23,PBMoves::FLAMEBURST],[26,PBMoves::COSMICPOWER],[29,PBMoves::ASTRALSHOT],[34,PBMoves::SLUDGEBOMB],[37,PBMoves::TOXIC],[42,PBMoves::MYSTICALFIRE],[52,PBMoves::COSMICDANCE]]
+		:Movelist => [[1,PBMoves::POISONGAS],[1,PBMoves::TACKLE],[4,PBMoves::SMOG],[4,PBMoves::EMBER],[7,PBMoves::SMOKESCREEN],[12,PBMoves::CLEARSMOG],[15,PBMoves::PSYBEAM],[18,PBMoves::SLUDGE],[23,PBMoves::FLAMEBURST],[26,PBMoves::COSMICPOWER],[34,PBMoves::SLUDGEBOMB],[37,PBMoves::TOXIC],[42,PBMoves::MYSTICALFIRE],[52,PBMoves::COSMICDANCE]]
 	}
 },
 
@@ -5257,7 +5113,7 @@ PBSpecies::BALTOY => {
 		:Type2 => PBTypes::GHOST,
 		:BaseStats => [75,20,55,40,40,70],
 		:Ability => [PBAbilities::LEVITATE,PBAbilities::CURSEDBODY,PBAbilities::SHADOWTAG],
-		:Movelist => [[1,PBMoves::HARDEN],[1,PBMoves::ASTONISH],[1,PBMoves::RAPIDSPIN],[4,PBMoves::CURSE],[7,PBMoves::MUDSLAP],[10,PBMoves::MAGNITUDE],[13,PBMoves::CONFUSERAY],[16,PBMoves::HEX],[19,PBMoves::ANCIENTPOWER],[21,PBMoves::COSMICPOWER],[23,PBMoves::ASTRALSHOT],[25,PBMoves::MOONLIGHT],[28,PBMoves::MUDBOMB],[31,PBMoves::EXTRASENSORY],[34,PBMoves::BITTERMALICE],[36,PBMoves::PERISHSONG],[38,PBMoves::EARTHPOWER],[40,PBMoves::SHADOWBALL],[40,PBMoves::PERISHSONG],[43,PBMoves::SANDSTORM],[46,PBMoves::DESTINYBOND],[46,PBMoves::PERISHSONG]]
+		:Movelist => [[1,PBMoves::HARDEN],[1,PBMoves::ASTONISH],[1,PBMoves::RAPIDSPIN],[4,PBMoves::CURSE],[7,PBMoves::MUDSLAP],[10,PBMoves::MAGNITUDE],[13,PBMoves::CONFUSERAY],[16,PBMoves::HEX],[19,PBMoves::ANCIENTPOWER],[21,PBMoves::COSMICPOWER],[25,PBMoves::MOONLIGHT],[28,PBMoves::MUDBOMB],[31,PBMoves::EXTRASENSORY],[34,PBMoves::BITTERMALICE],[36,PBMoves::PERISHSONG],[38,PBMoves::EARTHPOWER],[40,PBMoves::SHADOWBALL],[40,PBMoves::PERISHSONG],[43,PBMoves::SANDSTORM],[46,PBMoves::DESTINYBOND],[46,PBMoves::PERISHSONG]]
 	}
 },
 
@@ -5281,7 +5137,7 @@ PBSpecies::CLAYDOL => {
 		:Type2 => PBTypes::GHOST,
 		:BaseStats => [110,50,110,50,70,120],
 		:Ability => [PBAbilities::LEVITATE,PBAbilities::CURSEDBODY,PBAbilities::SHADOWTAG],
-		:Movelist => [[0,PBMoves::COSMICRAY],[1,PBMoves::HYPERBEAM],[1,PBMoves::TELEPORT],[1,PBMoves::RAPIDSPIN],[1,PBMoves::PERISHSONG],[1,PBMoves::COSMICPOWER],[1,PBMoves::BITTERMALICE],[1,PBMoves::HYPNOSIS],[1,PBMoves::NIGHTMARE],[40,PBMoves::EARTHPOWER],[43,PBMoves::SHADOWBALL],[46,PBMoves::SANDSTORM],[48,PBMoves::DESTINYBOND],[55,PBMoves::COSMICRAY],[80,PBMoves::COMETSHOWER]]
+		:Movelist => [[1,PBMoves::HYPERBEAM],[1,PBMoves::TELEPORT],[1,PBMoves::RAPIDSPIN],[1,PBMoves::PERISHSONG],[1,PBMoves::COSMICPOWER],[1,PBMoves::BITTERMALICE],[1,PBMoves::HYPNOSIS],[1,PBMoves::NIGHTMARE],[40,PBMoves::EARTHPOWER],[43,PBMoves::SHADOWBALL],[46,PBMoves::SANDSTORM],[48,PBMoves::DESTINYBOND]]
 	},
 
 	"Mega" => {
@@ -5318,8 +5174,7 @@ PBSpecies::GROUDON => {
 PBSpecies::VENUSAUR => {
 	:FormName => {
 		1 => "Mega",
-		2 => "Dyna",
-		3 => "Egho"
+		2 => "Dyna"
 	},
 
 	:DefaultForm => 0,
@@ -5338,25 +5193,6 @@ PBSpecies::VENUSAUR => {
 	"Dyna" => {
 		:BaseStats => [105,80,100,80,120,140],
 		:Ability => PBAbilities::EFFECTSPORE
-	},
-
-	"Egho" => {
-		:DexEntry => "Large, thorn covered brambles protect an aged cactus. Small rodent Pokémon tend to make nests in the dry grass patches at the base of the cactus.",
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [80,109,88,67,90,100],
-		:EVs => [0,2,0,0,0,2],
-		:Ability => [PBAbilities::ROCKHEAD,PBAbilities::SOLIDROCK,PBAbilities::SANDSTREAM],
-		:Movelist => [[0,PBMoves::BULLDOZE],[1,PBMoves::THORNWHIP],
-			[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[1,PBMoves::HARDEN],
-			[5,PBMoves::ABSORB],[6,PBMoves::SANDATTACK],[8,PBMoves::DRYNEEDLES],
-			[10,PBMoves::BARBEDTACKLE],[12,PBMoves::LEECHSEED],[14,PBMoves::ROCKTHROW],
-			[20,PBMoves::SANDSTORM],[23,PBMoves::MAGNITUDE],[26,PBMoves::NEEDLEARM],
-			[30,PBMoves::ROCKBLAST],[33,PBMoves::STEALTHROCK],[40,PBMoves::ROCKSLIDE],
-			[42,PBMoves::ROCKPOLISH],[47,PBMoves::SOLARBEAM],[50,PBMoves::EARTHQUAKE],
-			[53,PBMoves::EARTHPOWER],[55,PBMoves::STONEEDGE],[60,PBMoves::CACTUSSMASH],[70,PBMoves::HEADSMASH]],
-		:Weight => 2800,
-		:Height => 26,
-		:kind => "Harsh Plant"
 	}
 },
 
@@ -5365,7 +5201,6 @@ PBSpecies::CHARIZARD => {
 		1 => "Mega X",
 		2 => "Mega Y",
 		3 => "Dyna",
-		4 => "Egho",
 		5 => "Rebornian"
 	},
 
@@ -5395,25 +5230,6 @@ PBSpecies::CHARIZARD => {
 		:Weight => 1105
 	},
 
-	"Egho" => {
-		:DexEntry => "A powerful dragon Pokémon that is said to be hard to tame. It likes to soar high above the clouds.",
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [76,88,75,106,109,80],
-		:EVs => [0,0,0,1,0,0],
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::COMPETITIVE,PBAbilities::INTIMIDATE],
-		:Movelist => [[0,PBMoves::DRAGONCLAW],[1,PBMoves::SHADOWCLAW],
-			[1,PBMoves::SCRATCH],[1,PBMoves::GROWL],[5,PBMoves::EMBER],
-			[7,PBMoves::HONECLAWS],[10,PBMoves::NAILFLICK],[13,PBMoves::SMOKESCREEN],
-			[16,PBMoves::NOSTRILFLARE],[19,PBMoves::FLAMEWHEEL],[23,PBMoves::SCARYFACE],[27,PBMoves::INCINERATE],
-			[29,PBMoves::DRAGONRAGE],[31,PBMoves::FIREFANG],[35,PBMoves::DRAGONCLAW],
-			[42,PBMoves::FLAMEBURST],[46,PBMoves::FLAMETHROWER],[50,PBMoves::DRAGONPULSE],
-			[52,PBMoves::DRAGONDANCE],[54,PBMoves::INFERNO],[58,PBMoves::HEATWAVE],
-			[62,PBMoves::OUTRAGE],[66,PBMoves::FLAREBLITZ],[70,PBMoves::DRACOBLITZ]],
-		:Weight => 905,
-		:Height => 23,
-		:kind => "Sacred Dragon"
-	},
-
 	"Rebornian" => {
 		:DexEntry => "As Charizard grows old, the metallic compounds of its venomous fluids begins to sediment on the tip of its tail, making the needle in it bigger and sturdier. Just a little sting from this Pokémon's needle is enough to kill a person within seconds.",
 		:Type1 => PBTypes::POISON,
@@ -5428,8 +5244,7 @@ PBSpecies::CHARIZARD => {
 PBSpecies::BLASTOISE => {
 	:FormName => {
 		1 => "Mega" ,
-		2 => "Dyna",
-		3 => "Egho"
+		2 => "Dyna"
 	},
 
 	:DefaultForm => 0,
@@ -5448,27 +5263,6 @@ PBSpecies::BLASTOISE => {
 		:BaseStats => [119,83,130,48,145,105],
 		:Ability => PBAbilities::LIGHTNINGROD,
 		:Weight => 1011
-	},
-
-	"Egho" => {
-		:DexEntry => "Blastoise drift around high in the sky, forming ice crystals on their shell that they use in battle once the've landed.",
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [79,80,95,81,95,100],
-		:EVs => [0,0,1,0,1,2],
-		:Ability => [PBAbilities::SERENEGRACE,PBAbilities::DRIZZLE,PBAbilities::SNOWWARNING],
-		:Movelist => [[0,PBMoves::AIRSLASH],[1,PBMoves::GUST],
-			[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[1,PBMoves::WITHDRAW],
-			[5,PBMoves::BUBBLE],[6,PBMoves::NIMBUSFIST],[9,PBMoves::AQUARING],
-			[12,PBMoves::BITE],[15,PBMoves::FOGGYSTRIKE],[19,PBMoves::BUBBLEBEAM],
-			[20,PBMoves::ICESHARD],[21,PBMoves::MIST],[25,PBMoves::PROTECT],
-			[27,PBMoves::AIRCUTTER],[28,PBMoves::WATERPULSE],[31,PBMoves::AQUATAIL],
-			[35,PBMoves::ICYWIND],[38,PBMoves::RAINDANCE],[42,PBMoves::HAIL],
-			[44,PBMoves::AURORABEAM],[47,PBMoves::TYPHOON],[50,PBMoves::HYDROPUMP],
-			[54,PBMoves::TAILWIND],[56,PBMoves::DISCHARGE],[58,PBMoves::HURRICANE],
-			[62,PBMoves::BLIZZARD],[66,PBMoves::WILDCHARGE],[70,PBMoves::SHELLSMASH]],
-		:Weight => 760,
-		:Height => 16,
-		:kind => "Cloud Lord"
 	}
 },
 
@@ -6219,8 +6013,7 @@ PBSpecies::CAMERUPT => {
 
 PBSpecies::ALTARIA => {
 	:FormName => {
-		1 => "Mega",
-		2 => "Egho"
+		1 => "Mega"
 	},
 
 	:OnCreation => proc{
@@ -6242,26 +6035,6 @@ PBSpecies::ALTARIA => {
 		:Height => 15,
 		:Weight => 2060,
 		:Type2 => PBTypes::FAIRY
-	},
-
-	"Egho" => {
-		:DexEntry => "Altaria's body is so cold that it sometimes freezes the moisture in the air around it into crystals. If you hear an Altaria's song, you can be sure a hail storm is coming.",
-		:Type2 => PBTypes::ICE,
-		:BaseStats => [80,60,90,105,95,60],
-		:EVs => [0,0,0,2,0,0],
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::CONTRARY],
-		:Movelist => [[0,PBMoves::DEFOG],[1,PBMoves::PLUCK],[1,PBMoves::DRAGONDANCE],
-			[1,PBMoves::PECK],[1,PBMoves::GROWL],[4,PBMoves::POWDERSNOW],
-			[8,PBMoves::SING],[10,PBMoves::HAZE],[11,PBMoves::RAZORWIND],
-			[13,PBMoves::GUST],[15,PBMoves::WEATHERBALL],[17,PBMoves::FROSTBREATH],
-			[18,PBMoves::ENTRAINMENT],[21,PBMoves::ROUND],[25,PBMoves::UPROAR],
-			[25,PBMoves::HAIL],[29,PBMoves::REFRESH],[34,PBMoves::PERISHSONG],
-			[37,PBMoves::DRAGONBREATH],[42,PBMoves::COTTONGUARD],[47,PBMoves::DRAGONPULSE],
-			[49,PBMoves::ICEBEAM],[50,PBMoves::ROOST],[56,PBMoves::FREEZEDRY],
-			[60,PBMoves::HYPERVOICE],[64,PBMoves::BLIZZARD]],
-		:Weight => 240,
-		:Height => 10,
-		:kind => "Dry-Ice Dragon"
 	}
 },
 
@@ -7015,8 +6788,7 @@ PBSpecies::PICHU => {
 PBSpecies::EEVEE => {
 	:FormName => {
 		1 => "Dyna",
-		2 => "Partner",
-		3 => "Infinity"
+		2 => "Partner"
 	},
 
 	:DefaultForm => 0,
@@ -7040,51 +6812,6 @@ PBSpecies::EEVEE => {
 			[35,PBMoves::CHARM],[37,PBMoves::BATONPASS],[39,PBMoves::CALMMIND],[41,PBMoves::DOUBLEEDGE],
 			[45,PBMoves::LASTRESORT]],
 		:GetEvo => []
-	},
-	"Infinity" => {
-		:GetEvo => [
-			# 18 = DayHoldItem
-			[PBSpecies::VAPOREON,18,PBItems::SPLASHPLATE],
-			[PBSpecies::JOLTEON,18,PBItems::ZAPPLATE],
-			[PBSpecies::FLAREON,18,PBItems::FLAMEPLATE],
-			[PBSpecies::ESPEON,18,PBItems::MINDPLATE],
-			[PBSpecies::UMBREON,18,PBItems::DREADPLATE],
-			[PBSpecies::LEAFEON,18,PBItems::MEADOWPLATE],
-			[PBSpecies::GLACEON,18,PBItems::ICICLEPLATE],
-			[PBSpecies::SYLVEON,18,PBItems::PIXIEPLATE],
-			[PBSpecies::NUCLEON,18,PBItems::ATOMICPLATE],
-			[PBSpecies::OMEON,18,PBItems::SPOOKYPLATE],
-			[PBSpecies::CHAMPEON,18,PBItems::FISTPLATE],
-			[PBSpecies::LEPIDEON,18,PBItems::INSECTPLATE],
-			[PBSpecies::GUARDEON,18,PBItems::IRONPLATE],
-			[PBSpecies::OBSIDEON,18,PBItems::STONEPLATE],
-			[PBSpecies::SCORPEON,18,PBItems::TOXICPLATE],
-			[PBSpecies::SPHYNXEON,18,PBItems::EARTHPLATE],
-			[PBSpecies::NIMBEON,18,PBItems::SKYPLATE],
-			[PBSpecies::DRACONEON,18,PBItems::DRACOPLATE],
-			# 19 = NightHoldItem
-			[PBSpecies::VAPOREON,19,PBItems::SPLASHPLATE],
-			[PBSpecies::JOLTEON,19,PBItems::ZAPPLATE],
-			[PBSpecies::FLAREON,19,PBItems::FLAMEPLATE],
-			[PBSpecies::ESPEON,19,PBItems::MINDPLATE],
-			[PBSpecies::UMBREON,19,PBItems::DREADPLATE],
-			[PBSpecies::LEAFEON,19,PBItems::MEADOWPLATE],
-			[PBSpecies::GLACEON,19,PBItems::ICICLEPLATE],
-			[PBSpecies::SYLVEON,19,PBItems::PIXIEPLATE],
-			[PBSpecies::NUCLEON,19,PBItems::ATOMICPLATE],
-			[PBSpecies::OMEON,19,PBItems::SPOOKYPLATE],
-			[PBSpecies::CHAMPEON,19,PBItems::FISTPLATE],
-			[PBSpecies::LEPIDEON,19,PBItems::INSECTPLATE],
-			[PBSpecies::GUARDEON,19,PBItems::IRONPLATE],
-			[PBSpecies::OBSIDEON,19,PBItems::STONEPLATE],
-			[PBSpecies::SCORPEON,19,PBItems::TOXICPLATE],
-			[PBSpecies::SPHYNXEON,19,PBItems::EARTHPLATE],
-			[PBSpecies::NIMBEON,19,PBItems::SKYPLATE],
-			[PBSpecies::DRACONEON,19,PBItems::DRACOPLATE],
-			# 7 = Item
-			[PBSpecies::EEVEEON,7,PBItems::ASTRALSTONE],
-			[PBSpecies::VAREON,7,PBItems::VARIASTONE]
-		],
 	}
 },
 
@@ -7442,8 +7169,7 @@ PBSpecies::GARBODOR => {
 	:FormName => {
 		1 => "Mega",
 		2 => "Nuclear",
-		3 => "MegaNuke",
-		4 => "Egho"
+		3 => "MegaNuke"
 	},
 
 	:OnCreation => proc{
@@ -7482,24 +7208,6 @@ PBSpecies::GARBODOR => {
 
 	"Nuclear" => {
 		:Type2 => PBTypes::NUCLEAR
-	},
-
-	"Egho" => {
-		:DexEntry => "When Trubbish eat enough to get too big for their can, they will evolve into a Garbodor. They get larger with the more waste they stuff in their dumpster.",
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [80,50,97,75,90,82],
-		:EVs => [0,0,2,0,0,0],
-		:Ability => [PBAbilities::BATTLEARMOR,PBAbilities::FILTER],
-		:Movelist => [[1,PBMoves::MUDSLAP],[1,PBMoves::SMOG],[1,PBMoves::TOXICSPIKES],
-			[3,PBMoves::RECYCLE],[7,PBMoves::BULLETPUNCH],[12,PBMoves::ACIDSPRAY],
-			[14,PBMoves::TOXIC],[18,PBMoves::SLUDGE],[23,PBMoves::STOCKPILE],
-			[23,PBMoves::SWALLOW],[25,PBMoves::BODYSLAM],[29,PBMoves::SLUDGEBOMB],
-			[34,PBMoves::HEAVYSLAM],[36,PBMoves::PROTECT],[42,PBMoves::IRONDEFENSE],
-			[48,PBMoves::DARKPULSE],[51,PBMoves::FLASHCANNON],[55,PBMoves::BELCH],
-			[59,PBMoves::EXPLOSION]],
-		:Weight => 1773,
-		:Height => 18,
-		:kind => "Dumpster"
 	}
 },
 
@@ -7507,8 +7215,7 @@ PBSpecies::TANGROWTH => {
 	:FormName => {
 		1 => "PULSE C",
 		2 => "PULSE B",
-		3 => "PULSE A",
-		4 => "Egho"
+		3 => "PULSE A"
 	},
 
 	:OnCreation => proc{
@@ -7558,26 +7265,6 @@ PBSpecies::TANGROWTH => {
 		:Ability => PBAbilities::STAMINA,
 		:Weight => 2675,
 		:Type2 => PBTypes::ROCK
-	},
-
-	"Egho" => {
-		:DexEntry => "Tangrowth has the ability to absorb and supply electricity through the prongs on the ends of its arms, enabling it to act as a sort of living battery.",
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [114,55,107,92,90,77],
-		:EVs => [0,0,2,0,0,2],
-		:Ability => [PBAbilities::VOLTABSORB,PBAbilities::MOTORDRIVE,PBAbilities::STATIC],
-		:Movelist => [[0,PBMoves::WILDCHARGE],
-			[1,PBMoves::BIND],[1,PBMoves::MAGNETRISE],[1,PBMoves::THUNDERSHOCK],
-			[4,PBMoves::VINEWHIP],[7,PBMoves::PROTECT],[10,PBMoves::ABSORB],
-			[14,PBMoves::HIDDENPOWER],[17,PBMoves::COIL],[20,PBMoves::CHARGEBEAM],
-			[23,PBMoves::MEGADRAIN],[25,PBMoves::IRONHEAD],[27,PBMoves::RECOVER],
-			[30,PBMoves::IRONDEFENSE],[33,PBMoves::GIGADRAIN],[35,PBMoves::DISCHARGE],
-			[40,PBMoves::FLASHCANNON],[46,PBMoves::POWERWHIP],[49,PBMoves::SIMPLEBEAM],
-			[53,PBMoves::AUTOTOMIZE],[56,PBMoves::THUNDER]],
-		:Weight => 350,
-		:Height => 10,
-		:kind => "Cable Salad"
 	}
 },
 
@@ -7657,8 +7344,7 @@ PBSpecies::SWALOT => {
 
 PBSpecies::MAGNEZONE => {
 	:FormName => {
-		1 => "PULSE",
-		2 => "Egho"
+		1 => "PULSE"
 	},
 
 	:OnCreation => proc{
@@ -7678,25 +7364,6 @@ PBSpecies::MAGNEZONE => {
 		:BaseStats => [70,70,160,70,230,140],
 		:Ability => PBAbilities::LEVITATE,
 		:Weight => 1673
-	},
-
-	"Egho" => {
-		:DexEntry => "This Magnezone is a result of a sudden mutation causing one of the Magneton's bodies to absorb the other two and grow rapidly in power.",
-		:Type1 => PBTypes::GRASS,
-		:BaseStats => [80,120,90,60,70,115],
-		:EVs => [0,2,0,0,0,2],
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::REGENERATOR,PBAbilities::ANALYTIC],
-		:Movelist => [[0,PBMoves::HEAVYSLAM],[1,PBMoves::GROWTH],[1,PBMoves::MIRRORCOAT],[1,PBMoves::BARRIER],
-			[1,PBMoves::TACKLE],[4,PBMoves::SUPERSONIC],[7,PBMoves::MAGICALLEAF],
-			[11,PBMoves::SONICBOOM],[15,PBMoves::LEECHSEED],[18,PBMoves::VINEWHIP],
-			[21,PBMoves::MAGNETBOMB],[25,PBMoves::RAZORLEAF],[29,PBMoves::METALBURST],
-			[32,PBMoves::BODYSLAM],[35,PBMoves::SLAM],[38,PBMoves::SEEDBOMB],
-			[42,PBMoves::SCREECH],[45,PBMoves::IRONHEAD],[47,PBMoves::HORNLEECH],
-			[50,PBMoves::LOCKON],[54,PBMoves::BULLDOZE],[57,PBMoves::FISSURE],
-			[62,PBMoves::AUTOTOMIZE],[65,PBMoves::WOODHAMMER]],
-		:Weight => 2850,
-		:Height => 22,
-		:kind => "Overgrown"
 	}
 },
 
@@ -8041,7 +7708,7 @@ PBSpecies::LARVESTA => {
 		:Type2 => PBTypes::DARK,
 		:BaseStats => [55,85,55,60,50,55],
 		:Ability => [PBAbilities::ELEMENTALIST,PBAbilities::DARKAURA,PBAbilities::DUSKILATE],
-		:Movelist => [[1,PBMoves::EMBER],[1,PBMoves::ASTRALSHOT],[1,PBMoves::STRINGSHOT],[10,PBMoves::ABSORB],[20,PBMoves::TAKEDOWN],[30,PBMoves::FLAMECHARGE],[40,PBMoves::BUGBITE],[50,PBMoves::WEAKENINGJUMPSCARE],[60,PBMoves::FLAMEWHEEL],[70,PBMoves::BUGBUZZ],[80,PBMoves::AMNESIA],[90,PBMoves::THRASH],[100,PBMoves::FLAREBLITZ]],
+		:Movelist => [[1,PBMoves::EMBER],[1,PBMoves::STRINGSHOT],[10,PBMoves::ABSORB],[20,PBMoves::TAKEDOWN],[30,PBMoves::FLAMECHARGE],[40,PBMoves::BUGBITE],[50,PBMoves::WEAKENINGJUMPSCARE],[60,PBMoves::FLAMEWHEEL],[70,PBMoves::BUGBUZZ],[80,PBMoves::AMNESIA],[90,PBMoves::THRASH],[100,PBMoves::FLAREBLITZ]],
 		:EggMoves => [PBMoves::ACIDARMOR,PBMoves::BUBBLEBEAM,PBMoves::FLAMEBURST,PBMoves::MIST,PBMoves::MYSTICALFIRE,PBMoves::ACID,PBMoves::AFTERYOU,PBMoves::AQUATAIL,PBMoves::BIND,PBMoves::EARTHPOWER,PBMoves::ENDURE,PBMoves::GIGADRAIN,PBMoves::HEALBELL,PBMoves::HEATWAVE,PBMoves::PAINSPLIT,PBMoves::SIGNALBEAM,PBMoves::SNORE,PBMoves::SPITE,PBMoves::WATERPULSE,PBMoves::WHIRLPOOL,PBMoves::HYDROPUMP,PBMoves::FIREBLAST,PBMoves::FLAMETHROWER,PBMoves::OMINOUSWIND,PBMoves::SLUDGEBOMB,PBMoves::AURORABEAM,PBMoves::ICEBEAM,PBMoves::LAVAPLUME,PBMoves::SLUDGEWAVE,PBMoves::DISCHARGE,PBMoves::DAZZLINGGLEAM,PBMoves::TEETERDANCE,PBMoves::ROOST,PBMoves::HYPERVOICE,PBMoves::THUNDER,PBMoves::BLIZZARD,PBMoves::THUNDERWAVE,PBMoves::THUNDERBOLT,PBMoves::HYPERBEAM,PBMoves::DRAGONDANCE],
 		:Weight => 120
 	}
@@ -8060,7 +7727,7 @@ PBSpecies::VOLCARONA => {
 		:Type2 => PBTypes::DARK,
 		:BaseStats => [98,62,89,109,127,95], #? Cosmic adds +30 to BST
 		:Ability => [PBAbilities::DUSKILATE,PBAbilities::DARKAURA,PBAbilities::PROTEAN],
-		:Movelist => [[0,PBMoves::COMETSHOWER],[1,PBMoves::COSMICDANCE],[1,PBMoves::ASTRALSHOT],[1,PBMoves::QUIVERDANCE],[1,PBMoves::FIERYDANCE],[1,PBMoves::NASTYPLOT],[1,PBMoves::WHIRLWIND],[60,PBMoves::COSMICDANCE],[60,PBMoves::TRIATTACK],[60,PBMoves::STRENGTHSAP],[63,PBMoves::BUGBUZZ],[65,PBMoves::DARKPULSE],[67,PBMoves::TAUNT],[69,PBMoves::FIERYDANCE],[71,PBMoves::HURRICANE],[73,PBMoves::RAGEPOWDER],[75,PBMoves::HYPERVOICE],[75,PBMoves::COSMICRAY],[75,PBMoves::MOONBLAST],[90,PBMoves::BOOMBURST]],
+		:Movelist => [[1,PBMoves::COSMICDANCE],[1,PBMoves::QUIVERDANCE],[1,PBMoves::FIERYDANCE],[1,PBMoves::NASTYPLOT],[1,PBMoves::WHIRLWIND],[60,PBMoves::COSMICDANCE],[60,PBMoves::TRIATTACK],[60,PBMoves::STRENGTHSAP],[63,PBMoves::BUGBUZZ],[65,PBMoves::DARKPULSE],[67,PBMoves::TAUNT],[69,PBMoves::FIERYDANCE],[71,PBMoves::HURRICANE],[73,PBMoves::RAGEPOWDER],[75,PBMoves::HYPERVOICE],[75,PBMoves::MOONBLAST],[90,PBMoves::BOOMBURST]],
 		:Weight => 100
 	},
 
@@ -8103,746 +7770,13 @@ PBSpecies::MIMIKYU => {
 	}
 },
 
-###################### Egho Region Variants ######################
-
-PBSpecies::BULBASAUR => {
-	:FormName => {3 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "The plants that grow on Bulbasaur use its body for nutrients. Bulbasaur relies on the plant for protection.",
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [44,60,54,37,50,64],
-		:EVs => [0,1,0,0,0,1],
-		:Ability => [PBAbilities::ROUGHSKIN,PBAbilities::POISONPOINT,PBAbilities::POISONPOINT],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[1,PBMoves::HARDEN],
-			[5,PBMoves::ABSORB],[6,PBMoves::SANDATTACK],[8,PBMoves::DRYNEEDLES],
-			[10,PBMoves::BARBEDTACKLE],[12,PBMoves::LEECHSEED],[14,PBMoves::ROCKTHROW],
-			[17,PBMoves::SANDSTORM],[20,PBMoves::MAGNITUDE],[23,PBMoves::NEEDLEARM],
-			[27,PBMoves::ROCKBLAST],[29,PBMoves::STEALTHROCK],[33,PBMoves::ROCKSLIDE],
-			[35,PBMoves::ROCKPOLISH],[39,PBMoves::SOLARBEAM],[41,PBMoves::EARTHQUAKE]],
-		:EggMoves => [PBMoves::CURSE,PBMoves::ENDURE,PBMoves::GIGADRAIN,PBMoves::SANDSTORM,
-				PBMoves::INGRAIN,PBMoves::NATUREPOWER,PBMoves::PETALDANCE,PBMoves::POWERWHIP,
-				PBMoves::SKULLBASH,PBMoves::LEAFSTORM],
-		:Weight => 160,
-		:Height => 9,
-		:kind => "Cactus Bulb"
-	}
-},
-
-PBSpecies::IVYSAUR => {
-	:FormName => {3 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "As the body of Ivysaur dries up, it grows a patch of dense vines that aid it in battle.",
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [60,80,65,45,67,78],
-		:EVs => [0,2,0,0,0,1],
-		:Ability => [PBAbilities::ROUGHSKIN,PBAbilities::POISONPOINT,PBAbilities::POISONPOINT],
-		:Movelist => [[0,PBMoves::THORNWHIP],
-			[1,PBMoves::TACKLE],[1,PBMoves::GROWL],[1,PBMoves::HARDEN],
-			[5,PBMoves::ABSORB],[6,PBMoves::SANDATTACK],[8,PBMoves::DRYNEEDLES],
-			[10,PBMoves::BARBEDTACKLE],[12,PBMoves::LEECHSEED],[14,PBMoves::ROCKTHROW],
-			[20,PBMoves::SANDSTORM],[23,PBMoves::MAGNITUDE],[26,PBMoves::NEEDLEARM],
-			[30,PBMoves::ROCKBLAST],[33,PBMoves::STEALTHROCK],[37,PBMoves::ROCKSLIDE],
-			[39,PBMoves::ROCKPOLISH],[43,PBMoves::SOLARBEAM],[46,PBMoves::EARTHQUAKE]],
-		:Weight => 700,
-		:Height => 14,
-		:kind => "Cactus Plant"
-	}
-},
-
-PBSpecies::SQUIRTLE => {
-	:FormName => {3 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Squirtle produces a small cloud as a tail that it then uses to float on top of and keep itself cool. They can often be found snoozing, sprawled out on their own cloud.",
-		:BaseStats => [44,48,65,43,50,64],
-		:EVs => [0,0,1,0,0,1],
-		:Ability => [PBAbilities::SERENEGRACE,PBAbilities::OVERCOAT,PBAbilities::OVERCOAT],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[1,PBMoves::WITHDRAW],
-			[5,PBMoves::BUBBLE],[6,PBMoves::NIMBUSFIST],[9,PBMoves::AQUARING],
-			[12,PBMoves::BITE],[15,PBMoves::FOGGYSTRIKE],[17,PBMoves::BUBBLEBEAM],
-			[18,PBMoves::ICESHARD],[19,PBMoves::MIST],[22,PBMoves::PROTECT],
-			[25,PBMoves::WATERPULSE],[28,PBMoves::AQUATAIL],[34,PBMoves::HAIL],
-			[40,PBMoves::HYDROPUMP]],
-		:EggMoves => [PBMoves::AQUAJET,PBMoves::AQUARING,PBMoves::BRINE,
-				PBMoves::HAZE,PBMoves::MIRRORCOAT,PBMoves::MIST,
-				PBMoves::MUDDYWATER,PBMoves::REFRESH,PBMoves::DEFOG],
-		:Weight => 85,
-		:Height => 5,
-		:kind => "Rain Cloud"
-	}
-},
-
-PBSpecies::WARTORTLE => {
-	:FormName => {3 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Wartortle's body starts to develop even more cloud forms, allowing it to temporarily hover sometimes. It uses the cloud as a cloak during foggy days.",
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [59,63,80,58,65,80],
-		:EVs => [0,0,1,0,0,2],
-		:Ability => [PBAbilities::SERENEGRACE,PBAbilities::OVERCOAT,PBAbilities::OVERCOAT],
-		:Movelist => [[0,PBMoves::GUST],
-			[1,PBMoves::TACKLE],[1,PBMoves::TAILWHIP],[1,PBMoves::WITHDRAW],
-			[5,PBMoves::BUBBLE],[6,PBMoves::NIMBUSFIST],[9,PBMoves::AQUARING],
-			[12,PBMoves::BITE],[15,PBMoves::FOGGYSTRIKE],[19,PBMoves::BUBBLEBEAM],
-			[20,PBMoves::ICESHARD],[21,PBMoves::MIST],[25,PBMoves::PROTECT],
-			[27,PBMoves::AIRCUTTER],[28,PBMoves::WATERPULSE],[31,PBMoves::AQUATAIL],
-			[35,PBMoves::ICYWIND],[38,PBMoves::HAIL],[42,PBMoves::TYPHOON],
-			[45,PBMoves::HYDROPUMP],[49,PBMoves::TAILWIND],[52,PBMoves::HURRICANE]],
-		:Weight => 200,
-		:Height => 10,
-		:kind => "Cloud Rider"
-	}
-},
-
-PBSpecies::SHELLDER => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		randomnum = rand(3)
-		next randomnum==0 ? 1 : 0
- 	},
-	
-	"Egho" => {
-		:DexEntry => "This Shellder can often times be found attached to a Slowbro. When removed and left alone, it will hunt down other sea creatures to feed on.",
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [52,40,70,31,55,57],
-		:EVs => [0,0,1,0,0,1],
-		:Ability => [PBAbilities::IRONBARBS,PBAbilities::SUPERLUCK],
-		:Movelist => [[1,PBMoves::SPIKES],[1,PBMoves::WITHDRAW],[1,PBMoves::RAPIDSPIN],
-			[1,PBMoves::PROTECT],[1,PBMoves::ACID],[5,PBMoves::GASTROACID],
-			[13,PBMoves::METALSOUND],[15,PBMoves::BUBBLE],[17,PBMoves::ABSORB],
-			[19,PBMoves::AQUARING],[20,PBMoves::ACIDSPRAY],[23,PBMoves::BUBBLEBEAM],
-			[27,PBMoves::POISONFANG],[33,PBMoves::RAZORSHELL],[36,PBMoves::MIRRORSHOT],
-			[38,PBMoves::SPITE],[42,PBMoves::IRONDEFENSE],
-			[45,PBMoves::LEECHLIFE],[48,PBMoves::HYDROPUMP],[52,PBMoves::SHELLSMASH]],
-		:EggMoves => [PBMoves::GUNKSHOT,PBMoves::STOCKPILE,PBMoves::SPITUP,
-				PBMoves::SWALLOW,PBMoves::BELCH,PBMoves::DRAGONTAIL,
-				PBMoves::BITE,PBMoves::CLEARSMOG,PBMoves::REFRESH],
-		:GetEvo => [[PBSpecies::SKULKRAKEN,PBEvolution::Level,39]],
-		:Weight => 410,
-		:Height => 12,
-		:kind => "Cone Shell"
-	}
-},
-
-PBSpecies::SPEAROW => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		maps=[333,334,335]
-		chancemaps=[519,573]
-		if $game_map && maps.include?($game_map.map_id)
-			next 1
-		elsif $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(2)
-			next randomnum==0 ? 1 : 0
-		else
-			next 0
-		end
- 	},
-	
-	"Egho" => {
-		:DexEntry => "These Spearow became an invasive species because it had no natural predators. In order to stay at the top of the food chain, it adapted into a vicious predator.",
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [40,70,25,70,26,31],
-		:EVs => [0,1,0,1,0,0],
-		:Ability => [PBAbilities::DEFIANT,PBAbilities::ADAPTABILITY],
-		:Movelist => [[1,PBMoves::PECK],[1,PBMoves::GROWL],[1,PBMoves::BEATUP],
-			[5,PBMoves::FURYATTACK],[9,PBMoves::BITE],[13,PBMoves::DOUBLEKICK],
-			[17,PBMoves::PURSUIT],[21,PBMoves::LOWSWEEP],[24,PBMoves::AGILITY],
-			[27,PBMoves::FOCUSENERGY],[30,PBMoves::JUMPKICK],[34,PBMoves::AMBUSH],
-			[38,PBMoves::CRUNCH],[42,PBMoves::HIJUMPKICK]],
-		:EggMoves => [PBMoves::ASTONISH,PBMoves::FEINTATTACK,PBMoves::FEATHERDANCE,
-				PBMoves::QUICKATTACK,PBMoves::RAZORWIND,PBMoves::SCARYFACE,
-				PBMoves::SUCKERPUNCH,PBMoves::CROSSPOISON,PBMoves::UPROAR,
-				PBMoves::WHIRLWIND],
-		:GetEvo => [[PBSpecies::FEAROW,PBEvolution::Level,25]],
-		:Weight => 280,
-		:Height => 4,
-		:kind => "Tiny Bird"
-	}
-},
-
-PBSpecies::FEAROW => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		chancemaps=[519,525,544,511,552,573]
-		if $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(2)
-			next randomnum==0 ? 1 : 0
-		else
-			next 0
-		end
-	},
-
-	"Egho" => {
-		:DexEntry => "Because its wings are too thin to fly effectively, it instead uses them as weapons, fanning them out to sweep opponents in all directions.",
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [65,112,55,110,50,50],
-		:EVs => [0,2,0,1,0,0],
-		:Ability => [PBAbilities::DEFIANT,PBAbilities::ADAPTABILITY],
-		:Movelist => [[0,PBMoves::NIGHTSLASH],[1,PBMoves::DRILLPECK],
-			[1,PBMoves::PECK],[1,PBMoves::GROWL],[1,PBMoves::BEATUP],
-			[5,PBMoves::FURYATTACK],[9,PBMoves::BITE],[13,PBMoves::DOUBLEKICK],
-			[17,PBMoves::PURSUIT],[21,PBMoves::LOWSWEEP],[24,PBMoves::AGILITY],
-			[27,PBMoves::CROSSCHOP],[30,PBMoves::STEELWING],[33,PBMoves::FOCUSENERGY],
-			[37,PBMoves::JUMPKICK],[41,PBMoves::AMBUSH],[47,PBMoves::BRAVEBIRD],
-			[49,PBMoves::CRUNCH],[53,PBMoves::THROATCHOP],[55,PBMoves::HIJUMPKICK]],
-		:Weight => 450,
-		:Height => 11,
-		:kind => "Beak"
-	}
-},
-
-PBSpecies::HOOTHOOT => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		chancemaps=[333,334,335,519,520,522,525,526,527,528,530,544,551,552,573]
-		if $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(2)
-			next randomnum==0 ? 1 : 0
-		else
-			next 0
-		end
-	},
-
-	"Egho" => {
-		:DexEntry => "The crescent on its head glows brightest when the moon is full. It can confuse prey by convincing them that the moon is coming right at them when it's really just bird.",
-		:Type1 => PBTypes::DARK,
-		:BaseStats => [60,30,40,40,56,36],
-		:EVs => [1,0,0,0,0,0],
-		:Ability => [PBAbilities::UNNERVE,PBAbilities::NOGUARD],
-		:Movelist => [[1,PBMoves::GROWL],[1,PBMoves::GUST],[1,PBMoves::ECHOEDVOICE],
-			[5,PBMoves::HYPNOSIS],[9,PBMoves::CONFUSION],[13,PBMoves::NIGHTSHADE],
-			[17,PBMoves::HORNATTACK],[21,PBMoves::NIGHTMARE],[25,PBMoves::OMINOUSWIND],
-			[29,PBMoves::SNARL],[33,PBMoves::AIRSLASH],[33,PBMoves::RAZORWIND],
-			[36,PBMoves::MOONBLAST],[41,PBMoves::SNATCH],[44,PBMoves::NIGHTDAZE],
-			[47,PBMoves::ROOST],[51,PBMoves::DREAMEATER],[58,PBMoves::NASTYPLOT]],
-		:EggMoves => [PBMoves::AGILITY,PBMoves::DEFOG,PBMoves::ICYWIND,
-				PBMoves::MIRRORMOVE,PBMoves::SKYATTACK,PBMoves::SUPERSONIC,
-				PBMoves::WHIRLWIND,PBMoves::DRILLPECK,PBMoves::MOONLIGHT],
-		:Weight => 235,
-		:Height => 90,
-		:kind => "Moon Owl"
-	}
-},
-
-PBSpecies::AZURILL => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "At birth, the tip of Azurill's tail holds a pebble no larger than a grain of sand. Over time, the pebble grows into a rock too large for Azurill to carry, forcing it to evolve.",
-		:Type1 => PBTypes::ROCK,
-		:Type2 => PBTypes::NORMAL,
-		:BaseStats => [50,40,30,25,20,25],
-		:EVs => [1,0,0,0,0,0],
-		:Ability => [PBAbilities::HUGEPOWER,PBAbilities::DRYSKIN],
-		:Movelist => [[1,PBMoves::ROLLOUT],[1,PBMoves::STEALTHROCK],[1,PBMoves::FAKETEARS],
-			[4,PBMoves::TACKLE],[9,PBMoves::MUDSLAP],[13,PBMoves::QUICKATTACK],
-			[16,PBMoves::ROCKTHROW]],
-		:EggMoves => [PBMoves::BODYSLAM,PBMoves::ENCORE,PBMoves::TAUNT,
-				PBMoves::SMACKDOWN,PBMoves::WISH,PBMoves::POWERUPPUNCH],
-		:Weight => 40,
-		:Height => 3,
-		:kind => "Pebble"
-	}
-},
-
-PBSpecies::MARILL => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		route2=[358]
-		chancemaps=[742]
-		if $game_map && route2.include?($game_map.map_id)
-			next 1
-		elsif $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(3)
-			next randomnum==0 ? 1 : 0
-		else
-			next 0
-		end
- 	},
-
-	"Egho" => {
-		:DexEntry => "It uses its tail to swing around the rock end with ease. When not in combat, it uses the rock as a perch to see above tall grass and watch for enemies.",
-		:Type1 => PBTypes::ROCK,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [70,50,40,40,20,30],
-		:EVs => [1,0,0,0,0,0],
-		:Ability => [PBAbilities::HUGEPOWER,PBAbilities::DRYSKIN],
-		:Movelist => [[0,PBMoves::KARATECHOP],[1,PBMoves::ROLLOUT],[1,PBMoves::STEALTHROCK],
-			[1,PBMoves::FAKETEARS],[4,PBMoves::TACKLE],[9,PBMoves::MUDSLAP],
-			[13,PBMoves::QUICKATTACK],[16,PBMoves::FLAIL],[18,PBMoves::ROCKTHROW],
-			[20,PBMoves::LOWKICK],[24,PBMoves::ROCKBLAST],[28,PBMoves::SUBMISSION],
-			[33,PBMoves::ASSURANCE],[38,PBMoves::FLING],[42,PBMoves::ARMTHRUST],
-			[46,PBMoves::DOUBLEEDGE]],
-		:EggMoves => [PBMoves::BODYSLAM,PBMoves::ENCORE,PBMoves::TAUNT,
-				PBMoves::SMACKDOWN,PBMoves::WISH,PBMoves::POWERUPPUNCH],
-		:Weight => 150,
-		:Height => 7,
-		:kind => "Rock Mouse"
-	}
-},
-
-PBSpecies::AZUMARILL => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		randomnum = rand(3)
-		next randomnum==0 ? 1 : 0
- 	},
-
-	"Egho" => {
-		:DexEntry => "In battle, Azumarill uses its tail as a flail or war hammer, swinging and smashing it into opponents. Outside of battle, it swings its tail fancily to attract a worthy partner.",
-		:Type1 => PBTypes::ROCK,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [100,80,65,55,60,60],
-		:EVs => [2,0,0,0,0,0],
-		:Ability => [PBAbilities::HUGEPOWER,PBAbilities::DRYSKIN],
-		:Movelist => [[0,PBMoves::REVERSAL],[1,PBMoves::KARATECHOP],[1,PBMoves::ROLLOUT],
-			[1,PBMoves::STEALTHROCK],[1,PBMoves::FAKETEARS],[4,PBMoves::TACKLE],
-			[9,PBMoves::MUDSLAP],[13,PBMoves::QUICKATTACK],[16,PBMoves::FLAIL],
-			[18,PBMoves::ROCKTHROW],[21,PBMoves::LOWKICK],[26,PBMoves::ROCKBLAST],
-			[32,PBMoves::SUBMISSION],[36,PBMoves::ASSURANCE],[42,PBMoves::FLING],
-			[46,PBMoves::ARMTHRUST],[50,PBMoves::DOUBLEEDGE],[60,PBMoves::HAMMERARM]],
-		:Weight => 460,
-		:Height => 10,
-		:kind => "Rock Rabbit"
-	}
-},
-
-PBSpecies::SWABLU => {
-	:FormName => {2 => "Egho"},
-
-	:OnCreation => proc{
-		chancemaps=[282,283,284,288,289,710,711,713,714,715,716] #Swablu from Aventurine Woods onwards
-		if $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(3)
-			next randomnum==0 ? 2 : 0
-		else
-			next 0
-		end
- 	},
-
-	"Egho" => {
-		:DexEntry => "Swablu tuck themselves into the cottony feathers they have to keep warm during blizzards. Flocks hum in unison as they're bundled up.",
-		:Type2 => PBTypes::ICE,
-		:BaseStats => [50,30,55,70,60,45],
-		:EVs => [0,0,0,1,0,0],
-		:Ability => [PBAbilities::LEVITATE,PBAbilities::CONTRARY],
-		:Movelist => [[1,PBMoves::PECK],[1,PBMoves::GROWL],[4,PBMoves::POWDERSNOW],
-			[8,PBMoves::SING],[10,PBMoves::HAZE],[11,PBMoves::RAZORWIND],
-			[13,PBMoves::GUST],[15,PBMoves::WEATHERBALL],[17,PBMoves::FROSTBREATH],
-			[18,PBMoves::ENTRAINMENT],[21,PBMoves::ROUND],[25,PBMoves::UPROAR],
-			[25,PBMoves::HAIL],[29,PBMoves::REFRESH],[34,PBMoves::PERISHSONG],
-			[39,PBMoves::COTTONGUARD],[42,PBMoves::DRAGONPULSE],[44,PBMoves::ICEBEAM],
-			[45,PBMoves::ROOST],[46,PBMoves::HYPERVOICE]],
-		:EggMoves => [PBMoves::AGILITY,PBMoves::DRAGONRUSH,PBMoves::MIST,
-				PBMoves::HYPERVOICE,PBMoves::POWERSWAP,PBMoves::PURSUIT,
-				PBMoves::ROOST,PBMoves::STOCKPILE,PBMoves::SWALLOW,
-				PBMoves::SPITUP],
-		:Weight => 42,
-		:Height => 4,
-		:kind => "Snow Cloud"
-	}
-},
-
-PBSpecies::LOTAD => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Lotad were used to carry ingredients for chefs many years ago, eventually adapting to serve other purposes in the kitchen. Lotad is a naturally occurring stove top.",
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [40,30,40,30,50,30],
-		:EVs => [0,0,0,0,1,0],
-		:Ability => [PBAbilities::HARVEST,PBAbilities::DRYSKIN],
-		:Movelist => [[1,PBMoves::SWEETSCENT],[1,PBMoves::MUDSLAP],[3,PBMoves::METALCLAW],
-			[5,PBMoves::RECYCLE],[7,PBMoves::EMBER],[11,PBMoves::STOCKPILE],
-			[13,PBMoves::REFRESH],[15,PBMoves::INCINERATE],[19,PBMoves::NATURALGIFT],
-			[23,PBMoves::TEETERDANCE],[27,PBMoves::SUNNYDAY],[31,PBMoves::FLAMETHROWER],
-			[35,PBMoves::IRONHEAD],[39,PBMoves::ENERGYBALL]],
-		:EggMoves => [PBMoves::THUNDERPUNCH,PBMoves::SWALLOW,PBMoves::SPITUP,
-				PBMoves::SPIKES,PBMoves::PETALBLIZZARD,PBMoves::SCALD,
-				PBMoves::MYSTICALFIRE,PBMoves::IRONDEFENSE],
-		:WildItemCommon => :SHUCABERRY,
-		:WildItemUncommon => :SALACBERRY,
-		:WildItemRare => :SITRUSBERRY,
-		:Weight => 80,
-		:Height => 6,
-		:kind => "Drying Pan"
-	}
-},
-
-PBSpecies::LOMBRE => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "The flat surface on top of its head sits at a constant 350 degrees Fahrenheit, making it perfect for frying almost any dish a chef could dream up.",
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [60,50,60,50,70,50],
-		:EVs => [0,0,0,0,2,0],
-		:Ability => [PBAbilities::HARVEST,PBAbilities::DRYSKIN],
-		:Movelist => [[1,PBMoves::SWEETSCENT],[1,PBMoves::MUDSLAP],[3,PBMoves::METALCLAW],
-			[5,PBMoves::RECYCLE],[7,PBMoves::EMBER],[11,PBMoves::STOCKPILE],
-			[13,PBMoves::REFRESH],[14,PBMoves::BULLETPUNCH],[16,PBMoves::INCINERATE],
-			[20,PBMoves::NATURALGIFT],[25,PBMoves::TEETERDANCE],[28,PBMoves::SUNNYDAY],
-			[30,PBMoves::PROTECT],[34,PBMoves::FLAMETHROWER],[38,PBMoves::IRONHEAD],
-			[42,PBMoves::ENERGYBALL],[44,PBMoves::AUTOTOMIZE],[46,PBMoves::AROMATHERAPY],
-			[48,PBMoves::HEAVYSLAM],[50,PBMoves::FIERYDANCE],[54,PBMoves::OVERHEAT]],
-		:WildItemCommon => :SHUCABERRY,
-		:WildItemUncommon => :SALACBERRY,
-		:WildItemRare => :SITRUSBERRY,
-		:GetEvo => [[PBSpecies::LUDICOLO,PBEvolution::Item,PBItems::FIRESTONE]],
-		:Weight => 735,
-		:Height => 13,
-		:kind => "Cook"
-	}
-},
-
-PBSpecies::LUDICOLO => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Anything cooked atop its head gains a unique flavor, which is different for each individual Ludicolo. Some restaurants main attraction is a specific Ludicolo flavoring.",
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [80,60,95,75,95,75],
-		:EVs => [0,0,0,0,3,0],
-		:Ability => [PBAbilities::HARVEST,PBAbilities::DRYSKIN],
-		:Movelist => [[0,PBMoves::BURNUP],
-			[1,PBMoves::SWEETSCENT],[1,PBMoves::MUDSLAP],[3,PBMoves::METALCLAW],
-			[5,PBMoves::RECYCLE],[7,PBMoves::EMBER],[11,PBMoves::STOCKPILE],
-			[13,PBMoves::REFRESH],[14,PBMoves::BULLETPUNCH],[16,PBMoves::INCINERATE],
-			[20,PBMoves::NATURALGIFT],[25,PBMoves::TEETERDANCE],[28,PBMoves::SUNNYDAY],
-			[30,PBMoves::PROTECT],[34,PBMoves::FLAMETHROWER],[38,PBMoves::IRONHEAD],
-			[42,PBMoves::ENERGYBALL],[46,PBMoves::AROMATHERAPY],[48,PBMoves::HEAVYSLAM],
-			[50,PBMoves::FIERYDANCE],[54,PBMoves::OVERHEAT]],
-		:WildItemCommon => :SHUCABERRY,
-		:WildItemUncommon => :SALACBERRY,
-		:WildItemRare => :SITRUSBERRY,
-		:Weight => 1300,
-		:Height => 17,
-		:kind => "Chef"
-	}
-},
-
-PBSpecies::MAGNEMITE => {
-	:FormName => {2 => "Egho"},
-
-	:OnCreation => proc{
-		chancemaps=[405,409,410,411]
-		if $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(3)
-			next randomnum==0 ? 2 : 0
-		else
-			next 0
-		end
- 	},
-
-	"Egho" => {
-		:DexEntry => "An EMP caused Magnemite to lose its magnetic field, rendering it lifeless. Over time plants fused with its body bringing it back to life.",
-		:Type1 => PBTypes::GRASS,
-		:BaseStats => [40,80,55,45,35,70],
-		:EVs => [0,1,0,0,0,1],
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::REGENERATOR,PBAbilities::ANALYTIC],
-		:Movelist => [[1,PBMoves::TACKLE],[4,PBMoves::SUPERSONIC],[7,PBMoves::MAGICALLEAF],
-			[11,PBMoves::SONICBOOM],[15,PBMoves::LEECHSEED],[18,PBMoves::VINEWHIP],
-			[21,PBMoves::MAGNETBOMB],[25,PBMoves::RAZORLEAF],[29,PBMoves::METALBURST],
-			[32,PBMoves::SLAM],[35,PBMoves::SEEDBOMB],[39,PBMoves::SCREECH],
-			[42,PBMoves::IRONHEAD],[46,PBMoves::LOCKON],[50,PBMoves::BULLDOZE],
-			[53,PBMoves::FISSURE],[57,PBMoves::AUTOTOMIZE]],
-		:EggMoves => [PBMoves::METEORMASH,PBMoves::BULLETPUNCH,PBMoves::EXPLOSION,
-				PBMoves::STUNSPORE,PBMoves::POISONPOWDER,PBMoves::SLEEPPOWDER,
-				PBMoves::AROMATHERAPY,PBMoves::SPIKES,PBMoves::MAGNETRISE],
-		:Weight => 200,
-		:Height => 4,
-		:kind => "Overgrown"
-	}
-},
-
-PBSpecies::MAGNETON => {
-	:FormName => {2 => "Egho"},
-
-	:OnCreation => proc{
-		chancemaps=[405,409,410,411]
-		if $game_map && chancemaps.include?($game_map.map_id)
-			randomnum = rand(3)
-			next randomnum==0 ? 2 : 0
-		else
-			next 0
-		end
- 	},
-
-	"Egho" => {
-		:DexEntry => "Instead of attaching to each other like standard Magnemite, these Magneton are grown from their original Magnemite form.",
-		:Type1 => PBTypes::GRASS,
-		:BaseStats => [65,105,70,70,60,95],
-		:EVs => [0,2,0,0,0,1],
-		:Ability => [PBAbilities::OVERGROW,PBAbilities::REGENERATOR,PBAbilities::ANALYTIC],
-		:Movelist => [[0,PBMoves::GROWTH],[1,PBMoves::MIRRORCOAT],[1,PBMoves::BARRIER],
-			[1,PBMoves::TACKLE],[4,PBMoves::SUPERSONIC],[7,PBMoves::MAGICALLEAF],
-			[11,PBMoves::SONICBOOM],[15,PBMoves::LEECHSEED],[18,PBMoves::VINEWHIP],
-			[21,PBMoves::MAGNETBOMB],[25,PBMoves::RAZORLEAF],[29,PBMoves::METALBURST],
-			[32,PBMoves::BODYSLAM],[35,PBMoves::SLAM],[38,PBMoves::SEEDBOMB],
-			[42,PBMoves::SCREECH],[45,PBMoves::IRONHEAD],[47,PBMoves::HORNLEECH],
-			[50,PBMoves::LOCKON],[54,PBMoves::BULLDOZE],[57,PBMoves::FISSURE],
-			[62,PBMoves::AUTOTOMIZE]],
-		:GetEvo => [[PBSpecies::MAGNEZONE,PBEvolution::Location,153]], #153 is Underoot
-		:Weight => 900,
-		:Height => 13,
-		:kind => "Overgrown"
-	}
-},
-
-PBSpecies::TANGELA => {
-	:FormName => {4 => "Egho"},
-
-	:OnCreation => proc{
-		maps=[198]
-		next $game_map && maps.include?($game_map.map_id) ? 4 : 0
- 	},	
-
-	"Egho" => {
-		:DexEntry => "After its habitat was destroyed to make way for a large city, Tangela was forced to adapt by using left over wire from the maintenance tunnels for its new body.",
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [60,70,90,45,80,90],
-		:EVs => [0,0,1,0,0,1],
-		:Ability => [PBAbilities::VOLTABSORB,PBAbilities::MOTORDRIVE,PBAbilities::STATIC],
-		:Movelist => [[1,PBMoves::BIND],[1,PBMoves::MAGNETRISE],[1,PBMoves::THUNDERSHOCK],
-			[4,PBMoves::VINEWHIP],[7,PBMoves::PROTECT],[10,PBMoves::ABSORB],
-			[14,PBMoves::HIDDENPOWER],[17,PBMoves::COIL],[20,PBMoves::CHARGEBEAM],
-			[23,PBMoves::MEGADRAIN],[25,PBMoves::IRONHEAD],[27,PBMoves::RECOVER],
-			[30,PBMoves::IRONDEFENSE],[33,PBMoves::GIGADRAIN],[35,PBMoves::DISCHARGE],
-			[40,PBMoves::FLASHCANNON],[46,PBMoves::POWERWHIP],[49,PBMoves::SIMPLEBEAM],
-			[53,PBMoves::AUTOTOMIZE]],
-		:EggMoves => [PBMoves::POWERGEM,PBMoves::ELECTROBALL,PBMoves::EXPLOSION,
-				PBMoves::FLAIL,PBMoves::HYPERBEAM,PBMoves::SPIKES,
-				PBMoves::INGRAIN,PBMoves::KNOCKOFF,PBMoves::IRONDEFENSE,
-				PBMoves::TAKEDOWN,PBMoves::POWERSWAP,PBMoves::BATONPASS],
-		:GetEvo => [[PBSpecies::TANGROWTH,PBEvolution::Item,PBItems::THUNDERSTONE]],
-		:Weight => 350,
-		:Height => 10,
-		:kind => "Cable"
-	}
-},
-
-PBSpecies::HAPPINY => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "In order to adapt to an environment of egg-stealing predators, Happiny has become hyper-aggressive and territorial. It carries an egg-shaped rock in its pouch.",
-		:Type1 => PBTypes::FIGHTING,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [65,100,15,30,5,5],
-		:EVs => [0,2,0,0,0,0],
-		:Ability => [PBAbilities::ANGERPOINT,PBAbilities::RECKLESS,PBAbilities::OWNTEMPO],
-		:Movelist => [[1,PBMoves::HELPINGHAND],[1,PBMoves::KARATECHOP],[1,PBMoves::POUND],
-			[1,PBMoves::FOLLOWME],[5,PBMoves::QUICKGUARD],[9,PBMoves::REFRESH],
-			[12,PBMoves::DEFENSECURL],[13,PBMoves::DOUBLESLAP],[18,PBMoves::HORNATTACK],
-			[22,PBMoves::ROCKTHROW],[28,PBMoves::ARMTHRUST],[32,PBMoves::BULKUP]],
-		:EggMoves => [PBMoves::FEINT,PBMoves::COUNTER,PBMoves::ENDURE,
-				PBMoves::REVENGE,PBMoves::HEALBELL,PBMoves::METEORMASH,
-				PBMoves::LASTRESORT,PBMoves::METRONOME,PBMoves::WAKEUPSLAP,
-				PBMoves::NATURALGIFT,PBMoves::BEATUP,PBMoves::BULLETPUNCH,
-				PBMoves::WIDEGUARD,PBMoves::OUTRAGE],
-		:Weight => 244,
-		:Height => 6,
-		:kind => "Territorial"
-	}
-},
-
-PBSpecies::CHANSEY => {
-	:FormName => {1 => "Egho"},
-
-	:OnCreation => proc{
-		randomnum = rand(3)
-		next randomnum==0 ? 1 : 0
-	},
-
-	"Egho" => {
-		:DexEntry => "Chansey is so obsessed with protecting eggs that it will even defend the nests of other Pokémon species. It uses its rock as a decoy egg to trick other predators.",
-		:Type1 => PBTypes::FIGHTING,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [105,250,35,50,5,5],
-		:EVs => [0,3,0,0,0,0],
-		:Ability => [PBAbilities::ANGERPOINT,PBAbilities::RECKLESS,PBAbilities::OWNTEMPO],
-		:Movelist => [[0,PBMoves::POWERUPPUNCH],
-			[1,PBMoves::HELPINGHAND],[1,PBMoves::KARATECHOP],[1,PBMoves::POUND],
-			[1,PBMoves::FOLLOWME],[5,PBMoves::QUICKGUARD],[9,PBMoves::REFRESH],
-			[12,PBMoves::DEFENSECURL],[13,PBMoves::DOUBLESLAP],[16,PBMoves::SOFTBOILED],
-			[18,PBMoves::HORNATTACK],[22,PBMoves::ROCKTHROW],[24,PBMoves::TAKEDOWN],
-			[28,PBMoves::ARMTHRUST],[32,PBMoves::BULKUP],[35,PBMoves::SUBMISSION],
-			[41,PBMoves::EGGBOMB],[45,PBMoves::FLING],[50,PBMoves::PLAYROUGH],
-			[53,PBMoves::DOUBLEEDGE],[57,PBMoves::HAMMERARM],[62,PBMoves::THRASH]],
-		:EggMoves => [PBMoves::FEINT,PBMoves::COUNTER,PBMoves::ENDURE,
-				PBMoves::REVENGE,PBMoves::HEALBELL,PBMoves::METEORMASH,
-				PBMoves::LASTRESORT,PBMoves::METRONOME,PBMoves::WAKEUPSLAP,
-				PBMoves::NATURALGIFT,PBMoves::BEATUP,PBMoves::BULLETPUNCH,
-				PBMoves::WIDEGUARD,PBMoves::OUTRAGE],
-		:Weight => 346,
-		:Height => 11,
-		:kind => "Protective"
-	}
-},
-
-PBSpecies::BLISSEY => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Because of the strong bond with their trainer, Blissey will do anything in its power to keep the trainer safe. Blissey are often considered too overbearing.",
-		:Type1 => PBTypes::FIGHTING,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [135,255,55,75,10,10],
-		:EVs => [0,4,0,0,0,0],
-		:Ability => [PBAbilities::ANGERPOINT,PBAbilities::RECKLESS,PBAbilities::OWNTEMPO],
-		:Movelist => [[0,PBMoves::CROSSCHOP],[1,PBMoves::POWERUPPUNCH],
-			[1,PBMoves::HELPINGHAND],[1,PBMoves::KARATECHOP],[1,PBMoves::POUND],
-			[1,PBMoves::FOLLOWME],[5,PBMoves::QUICKGUARD],[9,PBMoves::REFRESH],
-			[12,PBMoves::DEFENSECURL],[13,PBMoves::DOUBLESLAP],[16,PBMoves::SOFTBOILED],
-			[18,PBMoves::HORNATTACK],[22,PBMoves::ROCKTHROW],[24,PBMoves::TAKEDOWN],
-			[28,PBMoves::ARMTHRUST],[32,PBMoves::BULKUP],[35,PBMoves::SUBMISSION],
-			[41,PBMoves::EGGBOMB],[45,PBMoves::FLING],[50,PBMoves::PLAYROUGH],
-			[53,PBMoves::DOUBLEEDGE],[57,PBMoves::HAMMERARM],[62,PBMoves::THRASH]],
-		:Weight => 468,
-		:Height => 15,
-		:kind => "Guardian"
-	}
-},
-
-PBSpecies::ODDISH => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "As Oddish's habitat changed, it failed to adapt quick enough, which caused its leaves to wilt. Nowadays, these Oddish can be seen in dark caves and forests.",
-		:Type1 => PBTypes::GHOST,
-		:BaseStats => [45,30,65,50,75,55],
-		:EVs => [0,0,0,0,1,0],
-		:Ability => [PBAbilities::LEVITATE],
-		:Movelist => [[1,PBMoves::MEMENTO],[1,PBMoves::TAUNT],[1,PBMoves::PROTECT],
-			[1,PBMoves::CLEARSMOG],[5,PBMoves::LICK],[9,PBMoves::ACID],
-			[13,PBMoves::POISONGAS],[15,PBMoves::STUNSPORE],[17,PBMoves::SLEEPPOWDER],
-			[21,PBMoves::NIGHTSHADE],[25,PBMoves::OMINOUSWIND],[29,PBMoves::SLUDGEWAVE],
-			[33,PBMoves::HEX],[37,PBMoves::TOXIC],[41,PBMoves::NASTYPLOT]],
-		:EggMoves => [PBMoves::AFTERYOU,PBMoves::VENOSHOCK,PBMoves::MIST,
-				PBMoves::INGRAIN,PBMoves::SIMPLEBEAM,PBMoves::GRUDGE,
-				PBMoves::MOONLIGHT,PBMoves::SOLARBEAM,PBMoves::SPITE],
-		:Weight => 34,
-		:Height => 4,
-		:kind => "Wilted Weed"
-	}
-},
-
-PBSpecies::GLOOM => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Despite their abiotic features, when exposed to enough light, Oddish may evolve into Gloom. Gloom use decorative skulls to scare away other Pokémon.",
-		:Type1 => PBTypes::GHOST,
-		:BaseStats => [60,45,90,55,85,65],
-		:EVs => [0,0,0,0,2,0],
-		:Ability => [PBAbilities::LEVITATE],
-		:Movelist => [[0,PBMoves::VENOSHOCK],
-			[1,PBMoves::MEMENTO],[1,PBMoves::TAUNT],[1,PBMoves::PROTECT],
-			[1,PBMoves::CLEARSMOG],[5,PBMoves::LICK],[9,PBMoves::ACID],
-			[13,PBMoves::POISONGAS],[15,PBMoves::STUNSPORE],[17,PBMoves::SLEEPPOWDER],
-			[26,PBMoves::NIGHTSHADE],[30,PBMoves::OMINOUSWIND],[34,PBMoves::SLUDGEWAVE],
-			[38,PBMoves::HEX],[42,PBMoves::TOXIC],[46,PBMoves::NASTYPLOT]],
-		:GetEvo => [[PBSpecies::VILEDOOM,PBEvolution::HasMove,PBMoves::TOXIC],
-			[PBSpecies::MORTOSSUM,PBEvolution::Happiness,0]],
-		:Weight => 65,
-		:Height => 7,
-		:kind => "Wilted Weed"
-	}
-},
-
-PBSpecies::CHIKORITA => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Its spiky exterior protects it from predators. The spike tips are coated in a sweet and sticky substance that humans love, but most Pokémon hate.",
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [85,10,49,44,65,65],
-		:EVs => [1,0,0,0,0,0],
-		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::REGENERATOR],
-		:Movelist => [[1,PBMoves::AROMATHERAPY],[1,PBMoves::SWEETSCENT],[1,PBMoves::CHARM],
-			[1,PBMoves::ABSORB],[1,PBMoves::INGRAIN],[7,PBMoves::TWISTER],
-			[11,PBMoves::SLEEPPOWDER],[15,PBMoves::BIDE],[19,PBMoves::MAGICALLEAF],
-			[23,PBMoves::LEECHSEED],[27,PBMoves::DRAGONBREATH],[31,PBMoves::MEGADRAIN],
-			[35,PBMoves::ASSIST],[40,PBMoves::GIGADRAIN],[45,PBMoves::DRAGONPULSE],
-			[50,PBMoves::ENTRAINMENT],[55,PBMoves::WEATHERBALL]],
-		:EggMoves => [PBMoves::CRAFTYSHIELD,PBMoves::YAWN,
-				PBMoves::COTTONSPORE,PBMoves::SPIKYSHIELD,PBMoves::WIDEGUARD,
-				PBMoves::PAINSPLIT,PBMoves::LEAFSTORM,PBMoves::ENDURE,
-				PBMoves::STOCKPILE,PBMoves::SWALLOW,PBMoves::SPITUP],
-		:EggGroups => [:Dragon,:Grass],
-		:Weight => 64,
-		:Height => 11,
-		:kind => "Fruit"
-	}
-},
-
-PBSpecies::BAYLEEF => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "The red part of Bayleef is leathery hard, but the white bottom half of Bayleef is soft. Being vulnerable here requires it to be constantly vigilant of its surroundings.",
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [108,17,63,57,80,80],
-		:EVs => [2,0,0,0,0,0],
-		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::REGENERATOR],
-		:Movelist => [[0,PBMoves::BATONPASS],[1,PBMoves::TRIATTACK],
-			[1,PBMoves::AROMATHERAPY],[1,PBMoves::SWEETSCENT],[1,PBMoves::CHARM],
-			[1,PBMoves::ABSORB],[1,PBMoves::INGRAIN],[7,PBMoves::TWISTER],
-			[11,PBMoves::SLEEPPOWDER],[15,PBMoves::BIDE],[22,PBMoves::MAGICALLEAF],
-			[26,PBMoves::LEECHSEED],[30,PBMoves::DRAGONBREATH],[34,PBMoves::MEGADRAIN],
-			[39,PBMoves::ASSIST],[44,PBMoves::GIGADRAIN],[50,PBMoves::DRAGONPULSE],
-			[55,PBMoves::ENTRAINMENT],[60,PBMoves::WEATHERBALL]],
-		:EggGroups => [:Dragon,:Grass],
-		:Weight => 158,
-		:Height => 16,
-		:kind => "Fruit"
-	}
-},
+###################### Region Variants ######################
 
 PBSpecies::MEGANIUM => {
-	:FormName => {
-		1 => "Egho",
-		2 => "Mega"
-	},
+	:FormName => {2 => "Mega"},
 
 	:DefaultForm => 0,
 	:MegaForm => 2,
-
-	"Egho" => {
-		:DexEntry => "The black dots on the white part of Meganium are seeds that get scattered around when it battles, leading to the growth of fruit-bearing trees.",
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [143,24,83,75,100,100],
-		:EVs => [3,0,0,0,0,0],
-		:Ability => [PBAbilities::CHLOROPHYLL,PBAbilities::REGENERATOR],
-		:Movelist => [[0,PBMoves::SYNTHESIS],[1,PBMoves::TRIATTACK],
-			[1,PBMoves::BATONPASS],[1,PBMoves::SEISMICTOSS],
-			[1,PBMoves::AROMATHERAPY],[1,PBMoves::SWEETSCENT],[1,PBMoves::CHARM],
-			[1,PBMoves::ABSORB],[1,PBMoves::INGRAIN],[7,PBMoves::TWISTER],
-			[11,PBMoves::SLEEPPOWDER],[15,PBMoves::BIDE],[22,PBMoves::MAGICALLEAF],
-			[26,PBMoves::LEECHSEED],[30,PBMoves::DRAGONBREATH],[34,PBMoves::MEGADRAIN],
-			[43,PBMoves::ASSIST],[48,PBMoves::GIGADRAIN],[54,PBMoves::DRAGONPULSE],
-			[60,PBMoves::ENTRAINMENT],[65,PBMoves::WEATHERBALL]],
-		:EggGroups => [:Dragon,:Grass],
-		:Weight => 1005,
-		:Height => 23,
-		:kind => "Fruit Dragon"
-	},
 
 	"Mega" => {
 		:Type2 => PBTypes::FIRE,
@@ -8851,504 +7785,16 @@ PBSpecies::MEGANIUM => {
 	}
 },
 
-PBSpecies::CYNDAQUIL => {
-	:FormName => {2 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Cyndaquil is always producing a small cloud of volcanic ash, which is electrically charged. It can be tough to handle for new trainers.",
-		:Type2 => PBTypes::ELECTRIC,
-		:BaseStats => [50,38,52,60,65,44],
-		:EVs => [0,0,0,0,1,0],
-		:Ability => [PBAbilities::STATIC,PBAbilities::CLOUDNINE],
-		:Movelist => [[1,PBMoves::TACKLE],[1,PBMoves::LEER],[6,PBMoves::SMOKESCREEN],
-			[10,PBMoves::EMBER],[13,PBMoves::THUNDERSHOCK],[19,PBMoves::SPARK],
-			[22,PBMoves::DEFENSECURL],[28,PBMoves::FLAMECHARGE],[31,PBMoves::SWIFT],
-			[37,PBMoves::LAVAPLUME],[40,PBMoves::WILDCHARGE],[46,PBMoves::NATUREPOWER],
-			[49,PBMoves::THUNDERBOLT],[55,PBMoves::HEATWAVE],[58,PBMoves::THUNDER],
-			[60,PBMoves::TAILWIND]],
-		:EggMoves => [PBMoves::ZAPCANNON,PBMoves::FOULPLAY,
-				PBMoves::ELECTROBALL,PBMoves::SNARL,PBMoves::BOUNCE,
-				PBMoves::DEFOG,PBMoves::MUDSLAP,PBMoves::FLAMEBURST],
-		:Weight => 63,
-		:Height => 5,
-		:kind => "Ash Mouse"
-	}
-},
-
-PBSpecies::QUILAVA => {
-	:FormName => {2 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "As Quilava gets stronger, it is able to better control its volcanic ash cloud. It has learned to store and use the electricity generated by the cloud.",
-		:Type2 => PBTypes::ELECTRIC,
-		:BaseStats => [66,52,71,73,83,60],
-		:EVs => [0,0,0,1,1,0],
-		:Ability => [PBAbilities::STATIC,PBAbilities::CLOUDNINE],
-		:Movelist => [[0,PBMoves::FLAMEWHEEL],
-			[1,PBMoves::TACKLE],[1,PBMoves::LEER],[6,PBMoves::SMOKESCREEN],
-			[10,PBMoves::EMBER],[13,PBMoves::THUNDERSHOCK],[20,PBMoves::SPARK],
-			[23,PBMoves::DEFENSECURL],[29,PBMoves::FLAMECHARGE],[33,PBMoves::SWIFT],
-			[39,PBMoves::LAVAPLUME],[42,PBMoves::WILDCHARGE],[49,PBMoves::NATUREPOWER],
-			[52,PBMoves::THUNDERBOLT],[59,PBMoves::HEATWAVE],[62,PBMoves::THUNDER],
-			[65,PBMoves::TAILWIND]],
-		:Weight => 140,
-		:Height => 9,
-		:kind => "Ash Mouse"
-	}
-},
-
-PBSpecies::TOTODILE => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "The saliva in Totodile's mouth is corrosive to most materials. That, combined with its strong jaw, allows it to eat almost anything it gets its mouth on.",
-		:Type2 => PBTypes::POISON,
-		:BaseStats => [45,56,45,69,57,42],
-		:EVs => [0,0,0,1,0,0],
-		:Ability => [PBAbilities::MERCILESS,PBAbilities::SPEEDBOOST],
-		:Movelist => [[1,PBMoves::AGILITY],[1,PBMoves::POISONSTING],[1,PBMoves::MUDSLAP],
-			[6,PBMoves::WATERGUN],[8,PBMoves::ACID],[13,PBMoves::CRUSHCLAW],
-			[15,PBMoves::TOXICSPIKES],[20,PBMoves::WATERPULSE],[22,PBMoves::SUPERFANG],
-			[27,PBMoves::CROSSCHOP],[29,PBMoves::MUDSHOT],[34,PBMoves::LEECHLIFE],
-			[36,PBMoves::AQUATAIL],[41,PBMoves::MUDDYWATER],[43,PBMoves::JUMPKICK],
-			[48,PBMoves::SLUDGEBOMB],[50,PBMoves::HYDROPUMP]],
-		:EggMoves => [PBMoves::ACIDSPRAY,PBMoves::AQUAJET,PBMoves::AURASPHERE,
-				PBMoves::CRUNCH,PBMoves::ACIDARMOR,PBMoves::POISONFANG,
-				PBMoves::BATONPASS,PBMoves::THUNDERFANG,PBMoves::RAPIDSPIN],
-		:Weight => 95,
-		:Height => 6,
-		:kind => "Big Jaw"
-	}
-},
-
-PBSpecies::CROCONAW => {
-	:FormName => {1 => "Egho"},
-
-	"Egho" => {
-		:DexEntry => "Croconaw's hunched stance appears to be an adaptation to traversing cramped sewer tunnels. Rattata and Grimer are not safe in its territory.",
-		:Type2 => PBTypes::POISON,
-		:BaseStats => [65,70,59,87,70,54],
-		:EVs => [0,0,0,1,1,0],
-		:Ability => [PBAbilities::MERCILESS,PBAbilities::SPEEDBOOST],
-		:Movelist => [[0,PBMoves::SLUDGE],[1,PBMoves::POISONTAIL],
-			[1,PBMoves::AGILITY],[1,PBMoves::POISONSTING],[1,PBMoves::MUDSLAP],
-			[6,PBMoves::WATERGUN],[8,PBMoves::ACID],[13,PBMoves::CRUSHCLAW],
-			[15,PBMoves::TOXICSPIKES],[23,PBMoves::WATERPULSE],[25,PBMoves::SUPERFANG],
-			[31,PBMoves::CROSSCHOP],[33,PBMoves::MUDSHOT],[39,PBMoves::LEECHLIFE],
-			[42,PBMoves::AQUATAIL],[48,PBMoves::MUDDYWATER],[50,PBMoves::JUMPKICK],
-			[55,PBMoves::SLUDGEBOMB],[57,PBMoves::HYDROPUMP]],
-		:Weight => 250,
-		:Height => 11,
-		:kind => "Big Jaw"
-	}
-},
-
 PBSpecies::FERALIGATR => {
-	:FormName => {
-		1 => "Egho",
-		2 => "Mega"
-	},
+	:FormName => {2 => "Mega"},
 
 	:DefaultForm => 0,
 	:MegaForm => 2,
-
-	"Egho" => {
-		:DexEntry => "Feraligatr thrives in the dark murky waters of swamps and sewers. They cause problems in sewers because their strong jaws can rip through pipes with ease.",
-		:Type2 => PBTypes::POISON,
-		:BaseStats => [75,95,70,121,103,66],
-		:EVs => [0,0,0,2,1,0],
-		:Ability => [PBAbilities::MERCILESS,PBAbilities::SPEEDBOOST],
-		:Movelist => [[0,PBMoves::POISONFANG],[1,PBMoves::SLUDGE],[1,PBMoves::POISONTAIL],
-			[1,PBMoves::AGILITY],[1,PBMoves::POISONSTING],[1,PBMoves::MUDSLAP],
-			[6,PBMoves::WATERGUN],[8,PBMoves::ACID],[13,PBMoves::CRUSHCLAW],
-			[15,PBMoves::TOXICSPIKES],[23,PBMoves::WATERPULSE],[25,PBMoves::SUPERFANG],
-			[32,PBMoves::CROSSCHOP],[36,PBMoves::MUDSHOT],[43,PBMoves::LEECHLIFE],
-			[46,PBMoves::AQUATAIL],[53,PBMoves::MUDDYWATER],[56,PBMoves::JUMPKICK],
-			[62,PBMoves::SLUDGEBOMB],[65,PBMoves::HYDROPUMP],[70,PBMoves::VENOMSWIPE],[75,PBMoves::GUNKSHOT]],
-		:Weight => 888,
-		:Height => 23,
-		:kind => "Gaping Jaw"
-	},
 
 	"Mega" => {
 		:Type2 => PBTypes::DARK,
 		:BaseStats => [85,135,120,98,99,93],
 		:Ability => PBAbilities::SHEERFORCE
-	}
-},
-
-
-
-PBSpecies::MISSINGNO2 => {
-	:FormName => {
-		1 => "Snalo",
-		2 => "Hantama",
-		3 => "Aurostice",
-		4 => "Skarbinger",
-		5 => "Nemea",
-		6 => "Doodloo",
-		7 => "Tortove",
-		8 => "Asphere",
-		9 => "Raygoten",
-		10 => "Doomsday",
-		11 => "Arukida",
-		12 => "Gigagigearth",
-		13 => "Fungwar",
-		14 => "Laperouse",
-		15 => "Acretto",
-		16 => "Diablos",
-		17 => "Glamarde",
-		18 => "Demorigan",
-		19 => "Rasenmai",
-		20 => "Coronet",
-		21 => "M-Devimon",
-		22 => "Megadramon",
-		23 => "Crescemon",
-		24 => "A-Mermaimon",
-		25 => "Beelzebumon",
-		26 => "A-Beetlemon",
-		27 => "M-Seadramon",
-		28 => "Armagemon",
-		29 => "Omegamon",
-		30 => "Z-Milleniumon",
-		31 => "Ad-Yuyuko",
-		32 => "S-Sariel",
-		33 => "A-Flandre",
-		34 => "A-Patchouli",
-		35 => "D-Satori",
-		36 => "Shion",
-		37 => "X-Tenshi",
-		38 => "X-Utsuho",
-		39 => "X-Suwako",
-		40 => "Ex-Marisa",
-		41 => "Angeallen",
-		42 => "Angeallen2",
-		43 => "Diablos-Basic",
-		44 => "Diablos-Natural",
-		45 => "Diablos-Mountain",
-		46 => "Diablos-Grassland",
-		47 => "Shingyoku-o",
-		48 => "Shingyoku-f",
-		49 => "Shingyoku-m",
-		50 => "Asphere-Altair",
-		51 => "Asphere-Sirius",
-		52 => "Asphere-Vega"
-	},
-	"Snalo" => {
-		:Type1 => PBTypes::GRASS,
-		:Type2 => PBTypes::WATER,
-		:BaseStats => [65,25,120,80,85,110],
-		#Stats of Serplant
-		:Ability => [PBAbilities::WATERABSORB]
-	},
-	"Hantama" => {
-		:Type1 => PBTypes::GHOST,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [60,115,70,95,65,50],
-		:Ability => [PBAbilities::INTIMIDATE]
-	},
-	"Aurostice" => {
-		:Type1 => PBTypes::ICE,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [80,70,75,100,120,85],
-		:Ability => [PBAbilities::PIXILATE]
-	},
-	"Skarbinger" => {
-		:Type1 => PBTypes::STEEL,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [70,100,160,100,40,85],
-		:Ability => [PBAbilities::STURDY]
-	},
-	"Nemea" => {
-		:Type1 => PBTypes::GRASS,
-		:Type2 => PBTypes::POISON,
-		:BaseStats => [111,184,106,84,95,123],
-		:Ability => [PBAbilities::FLASHFIRE]
-		#Clone
-	},
-	"Doodloo" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::GHOST,
-		:BaseStats => [85,184,73,157,51,96],
-		:Ability => [PBAbilities::PUREPOWER]
-		#Clone
-	},
-	"Tortove" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [85,105,160,20,95,80],
-		:Ability => [PBAbilities::DROUGHT]
-	},
-	"Asphere" => {
-		:Type1 => PBTypes::ICE,
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [100,155,111,179,201,111],
-		:Ability => [PBAbilities::COMPOUNDEYES]
-		#Clone
-	},
-	"Raygoten" => {
-		:Type1 => PBTypes::FLYING,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [85,120,80,125,60,80],
-		:Ability => [PBAbilities::ADAPTABILITY]
-	},
-	"Doomsday" => {
-		:Type1 => PBTypes::GROUND,
-		:Type2 => PBTypes::GROUND,
-		:BaseStats => [200,120,200,20,20,200],
-		:Ability => [PBAbilities::UNAWARE]
-	},
-	"Arukida" => {
-		:Type1 => PBTypes::BUG,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [88,120,112,80,50,90],
-		:Ability => [PBAbilities::HUSTLE]
-	},
-	"Gigagigearth" => {
-		:Type1 => PBTypes::FIGHTING,
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [100,134,94,87,75,110],
-		:Ability => [PBAbilities::MOLDBREAKER]
-	},
-	"Fungwar" => {
-		:Type1 => PBTypes::NORMAL,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [90,130,90,100,90,120],
-		:Ability => [PBAbilities::SPEEDBOOST]
-	},
-	"Laperouse" => {
-		:Type1 => PBTypes::DRAGON,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [90,90,95,90,135,100],
-		:Ability => [PBAbilities::AERILATE]
-	},
-	"Acretto" => {
-		:Type1 => PBTypes::BUG,
-		:Type2 => PBTypes::ROCK,
-		:BaseStats => [145,105,130,50,50,100],
-		:Ability => [PBAbilities::SOLIDROCK]
-	},
-	"Diablos" => {
-		:Type1 => PBTypes::POISON,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [140,80,100,150,150,120], #720
-		:Ability => [PBAbilities::LEVITATE]
-	},
-	"Glamarde" => {
-		:Type1 => PBTypes::PSYCHIC,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [108,35,125,40,80,130],
-		:Ability => [PBAbilities::TRACE]
-	},
-	"Demorigan" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FAIRY,
-		:BaseStats => [80,130,90,106,100,94],
-		:Ability => [PBAbilities::MULTISCALE]
-	},
-	"Rasenmai" => {
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::POISON,
-		:BaseStats => [90,115,110,45,70,135],
-		:Ability => [PBAbilities::ANALYTIC]
-	},
-	"Coronet" => {
-		:Type1 => PBTypes::FAIRY,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [85,50,105,100,135,75],
-		:Ability => [PBAbilities::LEVITATE]
-	},
-	"M-Devimon" => {
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [100,145,80,85,80,130],
-		:Ability => [PBAbilities::STAKEOUT]
-	},
-	"Megadramon" => {
-		:Type1 => PBTypes::DRAGON,
-		:Type2 => PBTypes::STEEL,
-		:BaseStats => [90,145,120,90,85,90],
-		:Ability => [PBAbilities::TECHNICIAN]
-	},
-	"Crescemon" => {
-		:Type1 => PBTypes::FAIRY,
-		:Type2 => PBTypes::FIGHTING,
-		:BaseStats => [95,130,110,80,85,120],
-		:Ability => [PBAbilities::SHARPNESS]
-	},
-	"A-Mermaimon" => {
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::WATER,
-		:BaseStats => [100,80,100,130,170,135],
-		:Ability => [PBAbilities::TORRENT]
-	},
-	"Beelzebumon" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [100,90,120,160,160,120],
-		:Ability => [PBAbilities::MEGALAUNCHER]
-	},
-	"A-Beetlemon" => {
-		:Type1 => PBTypes::BUG,
-		:Type2 => PBTypes::ELECTRIC,
-		:BaseStats => [115,180,140,80,85,120],
-		:Ability => [PBAbilities::TERAVOLT]
-	},
-	"M-Seadramon" => {
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [100,80,95,130,170,140],
-		:Ability => [PBAbilities::STEELWORKER]
-	},
-	"Armagemon" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [180,110,145,40,180,145],
-		:Ability => [PBAbilities::UNAWARE]
-	},
-	"Omegamon" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::ICE,
-		:BaseStats => [110,165,105,150,165,105],
-		:Ability => [PBAbilities::DOWNLOAD]
-	},
-	"Z-Milleniumon" => {
-		:Type1 => PBTypes::QMARKS,
-		:Type2 => PBTypes::QMARKS,
-		:BaseStats => [250,200,250,0,200,250],
-		:Ability => [PBAbilities::MAGICBOUNCE]
-	},
-	"Ad-Yuyuko" => {
-		:Type1 => PBTypes::GRASS,
-		:Type2 => PBTypes::GHOST,
-		:BaseStats => [150,50,180,60,180,100],
-		:Ability => [PBAbilities::LEVITATE]
-	},
-	"S-Sariel" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [80,70,70,120,140,80],
-		:Ability => [PBAbilities::DARKAURA]
-	},
-	"A-Flandre" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [50,170,75,95,105,65],
-		:Ability => [PBAbilities::HUSTLE]
-	},
-	"A-Patchouli" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::WATER,
-		:BaseStats => [60,30,50,60,160,160],
-		:Ability => [PBAbilities::WATERBUBBLE]
-	},
-	"D-Satori" => {
-		:Type1 => PBTypes::PSYCHIC,
-		:Type2 => PBTypes::PSYCHIC,
-		:BaseStats => [220,60,65,60,60,65],
-		:Ability => [PBAbilities::SHADOWTAG]
-	},
-	"Shion" => {
-		:Type1 => PBTypes::POISON,
-		:Type2 => PBTypes::GHOST,
-		:BaseStats => [140,45,95,70,100,100],
-		:Ability => [PBAbilities::LEVITATE]
-	},
-	"X-Tenshi" => {
-		:Type1 => PBTypes::GROUND,
-		:Type2 => PBTypes::GROUND,
-		:BaseStats => [150,90,160,30,90,160],
-		:Ability => [PBAbilities::SANDSTREAM]
-	},
-	"X-Utsuho" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [95,105,85,125,175,85],
-		:Ability => [PBAbilities::DESOLATELAND]
-	},
-	"X-Suwako" => {
-		:Type1 => PBTypes::WATER,
-		:Type2 => PBTypes::GROUND,
-		:BaseStats => [115,160,105,85,105,100],
-		:Ability => [PBAbilities::PRIMORDIALSEA]
-	},
-	"Ex-Marisa" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [10,200,65,180,200,65],
-		:Ability => [PBAbilities::PRESSURE]
-	},
-	"Angeallen" => {
-		:Type1 => PBTypes::DRAGON,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [120,120,120,120,120,120],
-		:Ability => [PBAbilities::DELTASTREAM]
-	},
-	"Angeallen2" => {
-		:Type1 => PBTypes::DRAGON,
-		:Type2 => PBTypes::FLYING,
-		:BaseStats => [120,180,150,160,100,150],
-		:Ability => [PBAbilities::DELTASTREAM]
-	},
-	"Diablos-Basic" => {
-		:Type1 => PBTypes::DARK,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [80,80,80,80,80,80], #480
-		:Ability => [PBAbilities::CLEARBODY]
-	},
-	"Diablos-Natural" => {
-		:Type1 => PBTypes::FLYING,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [130,80,100,90,90,110], #600
-		:Ability => [PBAbilities::SPEEDBOOST]
-	},
-	"Diablos-Mountain" => {
-		:Type1 => PBTypes::PSYCHIC,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [135,80,100,115,115,115], #660
-		:Ability => [PBAbilities::BERSERK]
-	},
-	"Diablos-Grassland" => {
-		:Type1 => PBTypes::BUG,
-		:Type2 => PBTypes::DARK,
-		:BaseStats => [135,80,100,115,115,115], #660
-		:Ability => [PBAbilities::BLOODLUST]
-	},
-	"Shingyoku-o" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::ICE,
-		:BaseStats => [80,120,60,100,120,60],
-		:Ability => [PBAbilities::ADAPTABILITY]
-	},
-	"Shingyoku-f" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::FIRE,
-		:BaseStats => [80,45,100,45,100,170],
-		:Ability => [PBAbilities::TELEPATHY]
-	},
-	"Shingyoku-m" => {
-		:Type1 => PBTypes::ICE,
-		:Type2 => PBTypes::ICE,
-		:BaseStats => [80,45,170,45,100,100],
-		:Ability => [PBAbilities::TELEPATHY]
-	},
-	"Asphere-Altair" => {
-		:Type1 => PBTypes::ICE,
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [100,140,100,130,150,100],
-		:Ability => [PBAbilities::MARVELSCALE]
-	},
-	"Asphere-Sirius" => {
-		:Type1 => PBTypes::ELECTRIC,
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [100,100,120,130,150,120],
-		:Ability => [PBAbilities::MARVELSCALE]
-	},
-	"Asphere-Vega" => {
-		:Type1 => PBTypes::FIRE,
-		:Type2 => PBTypes::DRAGON,
-		:BaseStats => [100,120,110,130,150,110],
-		:Ability => [PBAbilities::MARVELSCALE]
 	}
 },
 

@@ -867,9 +867,6 @@ class PokeBattle_Battler
       type = getID(PBTypes,type)
     end
     ret = (self.type1==type || self.type2==type)
-    if !ret && !ignorefusion && FUSIONTYPES[type]
-      ret = FUSIONTYPES[type].any? {|ftype| self.type1==ftype || self.type2==ftype}
-    end
     return ret
   end
 
@@ -878,9 +875,6 @@ class PokeBattle_Battler
       type = getID(PBTypes,type)
     end
     ret = (self.type1==type || self.type2==type)
-    if !ret && !ignorefusion && FUSIONTYPES[type]
-      ret = FUSIONTYPES[type].any? {|ftype| self.type1==ftype || self.type2==ftype}
-    end
     return ret
   end
 
@@ -1192,7 +1186,6 @@ class PokeBattle_Battler
     self.form=1 if @species==PBSpecies::INFERNAPE && @pokemon.form==2
     self.form=0 if @species==PBSpecies::GRENINJA && @pokemon.form==1
     self.form=0 if @species==PBSpecies::GYARADOS && @pokemon.form==4
-    self.form=0 if @species==PBSpecies::MISSINGNO2 && @pokemon.form!=0
     #deactivate ability
     self.ability=0
     if droprelease!=nil
@@ -5467,27 +5460,6 @@ class PokeBattle_Battler
     
     if (self.ability == PBAbilities::STANCECHANGE || self.ability == PBAbilities::ASTRALRECKON)
       pbCheckForm(thismove)
-    end
-    # Missing No 2 Shingyoku
-    if (self.pokemon && self.pokemon.species == PBSpecies::MISSINGNO2) && (self.form == 47 || self.form == 48 || self.form == 49)
-      pbCheckForm(thismove)
-    end
-    if self.species == PBSpecies::MISSINGNO2 && (self.form == 50 || self.form == 51 || self.form == 52) && thismove.id != PBMoves::STRUGGLE && !self.effects[PBEffects::MagicBounced]
-      change = true
-      if protype == PBTypes::ICE && self.form != 50
-        self.form = 50
-      elsif protype == PBTypes::ELECTRIC && self.form != 51
-        self.form = 51
-      elsif protype == PBTypes::FIRE && self.form != 52
-        self.form = 52
-      else
-        change = false
-      end
-      if change
-        @battle.pbCommonAnimation("TypeRoll",self,nil)
-        pbUpdate(true)
-        @battle.scene.pbChangePokemon(self,@pokemon)
-      end
     end
     flags[:passedtrying]=true
     return true

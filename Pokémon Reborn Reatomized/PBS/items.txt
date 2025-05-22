@@ -1147,10 +1147,6 @@
 1194,TM251,TM251,4,6000,"The user delivers a double chop with their forearms crossed. Critical hits land more easily.",3,0,0,CROSSCHOP
 1195,TM252,TM252,4,6000,"The user damages the opposing Pokémon and lowers its defense and special defense.",3,0,0,CAUSTICBREATH
 1196,TM253,TM253,4,6000,"The user creates waves in the water to attack the target. This move does physical damage.",3,0,0,CORALBREAK
-1197,TM254,TM254,4,6000,"The user slams the target with a whimsical strike of the fangs. It may make the target flinch.",3,0,0,FAENGRUSH
-1198,TM255,TM255,4,6000,"The user attacks using psychic force whilst brainstorming. This may raise the user's Sp. Atk stat.",3,0,0,BRAINSTORM
-1199,TM256,TM256,4,6000,"The user causes a quick surge of flowing water to drown out the foe. This move always goes first.",3,0,0,FLASHFLOOD
-1200,TM257,TM257,4,6000,"The foe is blasted with a cloud of hot ash to inflict damage and lower accuracy.",3,0,0,CINDERBREATH
 3000,INCINEROARITE,Incineroarite,6,999,"Have Incineroar hold it, and this stone will enable it to Mega Evolve during battle.",0,0,0
 3001,LUCARIONITER,Lucarionite R,6,999,"Have Lucario hold it, and this stone will enable it to Mega Evolve during battle.",0,0,0
 3002,SAIYANITE,Saiyanite,6,999,"Have Teddinomo hold it. It's a special stone that boosts its Attack and Sp. Atk stats.",0,0,0
@@ -1162,12 +1158,6 @@
 3008,SHINYCHARMPP,Shiny Charm ++,8,0,"A shiny charm said to further increase the chance of finding a Shiny Pokémon in the wild.",0,0,6,
 3009,DEVCHARM,Dev Charm,8,0,"A charm said to increase all of your probabilities.",0,0,6,
 3010,COOCNUTMILK,Coocnut Milk,1,2100,"A commemorative item for the release of the mod.",1,0,0,
-4001,ASTRALSTONE,Astral Stone,1,7600,"A peculiar stone that makes certain species of Pokémon evolve. It has a colorful sparkle to it.",1,0,0
-4002,VARIASTONE,Varia Stone,1,7600,"An evolutionary stone that was designed in a lab. A  specific Pokémon may react to it.",1,0,0
-4003,TUSKFOSSIL2,Tusk Fossil - Ice,1,1000,"A fossil of an ancient Pokémon that lived during the ice age. It appears to be a tusk.",0,0,0
-4004,HORNFOSSIL,Horn Fossil - Ice,1,1000,"A fossil of an ancient Pokémon that lived during the ice age. It appears to be a horn.",0,0,0
-4005,LONGCLUB,Long Club,1,4000,"A long bone club, to be held by Terathwack, that ups the holder's critical-hit ratio.",0,0,0
-4006,QUANTUMUPGRADE,Quantum Upgrade,1,20000,"A software upgrade created by Professor ?????. It is designed to make an advanced upgrade to Porygon.",0,0,0,
 4007,TM197,TM197,4,3000,"The user creates a haze that eliminates every stat change among all the Pokémon engaged in battle. ",3,0,0,HAZE
 4008,COSMICMEMORY,Cosmic Memory,1,1000,"A memory disc that contains Cosmic-type data. It changes the type of the holder if held by a certain Pokémon.",0,0,0
 4009,COSMICPLATE,Cosmic Plate,1,1000,"An item to be held by a Pokémon. It's a stone tablet that boosts the power of Cosmic-type moves.",0,0,0

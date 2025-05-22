@@ -41,18 +41,6 @@ Events.onTrainerPartyLoad+=proc {|sender,e|
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::ARKHAOS && trainer.name=="Arkhaos"
-      for i in party
-        if (i.species==PBSpecies::MISSINGNO2 && i.ability==PBAbilities::MARVELSCALE)
-          i.status=PBStatuses::BURN
-        end  
-      end
-    end
-    if trainer.trainertype!=PBTrainers::ARKHAOS && trainer.trainertype!=PBTrainers::GLITCH1
-      for i in party
-        i.form = 0 if i.species==1282
-      end
-    end
     if Reborn && (trainer.trainertype==PBTrainers::DARKRAI) && trainer.name=="Darkrai"
       if party[3].species==PBSpecies::DARKRAI # [0] is the Pokemon's place in the trainer party, with 0 being slot 1 and so forth (must be changed in all following lines) & where species is the species to change
         party[3].name = $game_variables[782] if $game_variables[782].is_a?(String) && $game_variables[782] != ""
