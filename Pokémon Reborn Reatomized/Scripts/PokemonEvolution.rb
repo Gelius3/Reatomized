@@ -668,7 +668,6 @@ class PokemonEvolutionScene
           next -1
         end
       }
-      @pokemon.genderflag = @pokemon.gender if @newspecies == PBSpecies::NIDOROOK
       newspeciesname=PBSpecies.getName(@newspecies)
       oldspeciesname=PBSpecies.getName(@pokemon.species)
       @pokemon.species=@newspecies
