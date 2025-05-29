@@ -7892,7 +7892,6 @@ PBSpecies::LILLIGANT => {
 	},
 
 	:DefaultForm => 0,
-	:MegaForm => 13,
 
 	"Dev" => {
 		:Ability => PBAbilities::SIMPLE

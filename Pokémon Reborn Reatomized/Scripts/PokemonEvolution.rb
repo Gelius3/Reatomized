@@ -932,9 +932,8 @@ def pbMiniCheckEvolutionItem(pokemon,evonib,level,poke,item)
   # Checks for when an item is used on the Pokémon (e.g. an evolution stone)
   exeggutorMaps=[15,16,17,18,19,20,21,22,23,25,26,27,30,31,32,33,34,35,199,200,201,202,203,204,205,562,563,564,565,566,567,568]
   lilliMaps=[15,16,17,18,19,20,21,22,23,25,26,27,30,31,32,33,34,35,199,200,201,202,203,204,205,562,563,564,565,566,567,568]
-  rebornlilliMaps=[439] # Ametrine City
+  rebornlilliMaps=[439,457,458,459,460,461,462,464] # Ametrine City
   moonMaps=[642,643,646] # Teknite Ridge
-  paldeanlilliMaps=[586,601] # Neo Azurine Island
   rebornledianMaps=[358,360] # Route 2
   raichuMaps=[15,16,17,18,19,20,21,22,23,25,26,27,30,31,32,33,34,35,199,200,201,202,203,204,205,206,207,208,536,538,547,553,556,558,562,563,564,565,566,567,568,569,574,575,576,577,578,579,586,601,603,604,605]
   case evonib
@@ -961,18 +960,10 @@ def pbMiniCheckEvolutionItem(pokemon,evonib,level,poke,item)
         pokemon.form=0
       end
     when 548            # Lilligant
-      if (pokemon.form==6 || pokemon.form==9 || pokemon.form==10)
-        pokemon.form=pokemon.form
-      elsif pokemon.form==7 && ($game_variables[0552] > 23)
-        pokemon.form=pokemon.form 
-      elsif lilliMaps.include?($game_map.map_id) && $game_screen.weather_type == 5 # Lilligant Alolan
-        pokemon.form=3
-      elsif lilliMaps.include?($game_map.map_id) && $game_screen.weather_type != 5 # Lilligant Hisuian
+      if lilliMaps.include?($game_map.map_id) # Lilligant Hisuian
         pokemon.form=2
       elsif rebornlilliMaps.include?($game_map.map_id) # Lilligant Rebornian
-        pokemon.form=5
-      elsif paldeanlilliMaps.include?($game_map.map_id) # Lilligant Paldean
-        pokemon.form=8
+        pokemon.form=3
       else
         pokemon.form=0
       end
